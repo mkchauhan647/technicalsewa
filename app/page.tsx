@@ -1,4 +1,4 @@
-import FooterContact from '@/components/FooterContact'
+import FooterContact from '@/components/footer/FooterContact'
 import Image from 'next/image'
 import Link from 'next/link'
 
