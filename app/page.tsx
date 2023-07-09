@@ -1,6 +1,7 @@
 import HeroSection from '@/components/HeroSection'
 import WhyChooseUs from '@/components/WhyChooseUs'
 import FooterContact from '@/components/footer/FooterContact'
+import Categories from '@/components/repair/Categories'
 import Image from 'next/image'
 import Link from 'next/link'
 
