@@ -12,10 +12,9 @@ export default function Home() {
       <Link href="/allservices" >
           <h1>services</h1>
       </Link>
-      <Link href="/professionals" >
-          <h1>professionals</h1>
+      <Link href="/professionals">
+        <h1>professionals</h1>
       </Link>
-      <FooterContact />
     </main>
-  )
+  );
 }
