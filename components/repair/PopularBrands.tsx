@@ -1,6 +1,6 @@
 import React from 'react'
 
-function PopularBrands() {
+const PopularBrands = () => {
   return (
     <div>PopularBrands</div>
   )
