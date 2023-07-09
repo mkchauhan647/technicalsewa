@@ -1,10 +1,13 @@
 "use client"
 
 import React from 'react'
+import SliderCard from './SliderCard'
 
 const Slider = () => {
   return (
-    <div>Slider</div>
+    <div>
+      <SliderCard />
+    </div>
   )
 }
 

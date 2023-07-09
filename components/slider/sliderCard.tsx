@@ -1,9 +1,9 @@
 import React from 'react'
 
-const sliderCard = () => {
+const SliderCard = () => {
   return (
     <div>sliderCard</div>
   )
 }
 
-export default sliderCard
+export default SliderCard
