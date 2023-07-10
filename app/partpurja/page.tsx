@@ -14,8 +14,8 @@ const page = () => {
       </div>
 
       <select
-        name="pets"
-        id="pet-select"
+        name=""
+        id=""
         className="shadow-sm outline-none text-[14px] border-[1px] border-gray-200 p-4"
       >
         <option value="">Default Sorting</option>
