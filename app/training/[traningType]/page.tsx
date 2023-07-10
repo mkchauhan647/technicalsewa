@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router';
 import React from 'react'
 
-const page = () => {
-    let trainingType = "p"
+const page = ({params}:any) => {
+    let trainingType = params.traningType
   return (
     <>
       {trainingType === "fridgeactraining" && (
