@@ -1,12 +1,10 @@
-import { useRouter } from "next/router";
+import { useRouter } from 'next/router';
+import React from 'react'
 
-const TrainingPage = () => {
-  const router = useRouter();
-  const { trainingType } = router.query;
-
+const page = ({params}:any) => {
+    let trainingType = params.traningType
   return (
     <>
-   
       {trainingType === "fridgeactraining" && (
         <div>
           <div className="container mx-auto px-4 py-8">
@@ -312,7 +310,7 @@ const TrainingPage = () => {
       )}
      
     </>
-  );
-};
+  )
+}
 
-export default TrainingPage;
+export default page
