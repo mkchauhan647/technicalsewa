@@ -7,7 +7,7 @@ const HeroSection = () => {
   return (
     <>
       <div className="hero-section">
-        <div className="image-banner-container relative  ">
+        <div className="image-banner-container  relative hidden md:flex  ">
           <Image
             className="w-full h-[240px] object-cover "
             src="/assets/banner.jpg"
@@ -41,6 +41,16 @@ const HeroSection = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div className=" flex px-[40px] justify-center md:hidden">
+          <input
+            className="pl-[10px] border-[1px] border-[#C4C4C4] w-full outline-[#2591b2] rounded-[5px] "
+            placeholder="Search Service here..."
+            type="text"
+          />
+          <div className="flex justify-center items-center bg-[#2591B2] h-full py-[10px] px-[12px] rounded-[6px] ">
+            <BsSearch size={25} className="text-white cursor-pointer " />
           </div>
         </div>
       </div>
