@@ -107,10 +107,10 @@ const Footer = () => {
               </p>
               <div className="flex items-center justify-start md:justify-end my-[22px] w-full">
                 <input
-                  type="number"
+                  type="phone"
                   name="phonenumber"
                   placeholder="Type your mobile number "
-                  className="border rounded-[5px] h-[32px] bg-white pl-[14px] w-[170px] text-xs"
+                  className="border rounded-[5px] h-[32px] bg-white pl-[14px] w-[170px] text-xs outline-none"
                 />
                 <button className="bg-black rounded-tr-[5px] rounded-br-[5px] text-[#FBFCFE] leaing-[25.5px] font-notmal h-[32px] px-[8px] ">
                   SEND

@@ -32,8 +32,8 @@ const page = () => {
   ];
 
   return (
-    <div>
-      <div className="container mx-auto px-2 md:p-0 ">
+    <div className="  pt-[20px] pb-[79px] xl:w-[80rem] sm:w-full  m-auto flex flex-col items-center justify-center">
+      <div className=" px-2 md:p-0 ">
         {/* header  */}
         <h2 className="text-[32px] md:text-[42px] text-center md:text-left">
           Our Professionals
@@ -41,7 +41,7 @@ const page = () => {
 
         <div className="flex justify-between items-center pt-4 px-2 md:px-0">
           {/* page number  */}
-          <p className="text-center md:text-left text-[14px] md:text-[18px]">
+          <p className="text-center md:text-left text-[14px]">
             Showing 1-20 of 50
           </p>
           <div className="flex gap-4  items-center">
@@ -98,7 +98,7 @@ const page = () => {
 
       {/* download app section  */}
       <div className="bg-[#fbfcfe] py-10">
-        <div className="container mx-auto flex flex-col md:flex-row justify-center items-center gap-4">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-4">
           <div className="flex-1 flex flex-col gap-4">
             <h3 className="md:text-[32px] text-[18px] text-[#a6adbb] font-semibold text-center md:text-left">
               Download our App
