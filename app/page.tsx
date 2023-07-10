@@ -1,24 +1,25 @@
 import HeroSection from "@/components/HeroSection";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import FooterContact from "@/components/footer/FooterContact";
+import ApplicationRepair from "@/components/repair/ApplicationRepair";
 import Categories from "@/components/repair/Categories";
-import Slider from "@/components/slider/Slider";
-import Image from "next/image";
-import Link from "next/link";
+import ElectricianPlumbers from "@/components/repair/ElectricianPlumbers";
+import PopularBrands from "@/components/repair/PopularBrands";
+import Warrantyproducts from "@/components/repair/Warrantyproducts";
 
 export default function Home() {
+  const SliderData = fetch("https://smartcare.com.np/multiservice/masterconfig/publicmasterconfig/getSliderListpop1")
+  console.log(SliderData)
   return (
     <main>
       <HeroSection />
       <Categories />
-      <Slider />
+      <ApplicationRepair />
+      <PopularBrands />
+      <Warrantyproducts />
+      <ElectricianPlumbers />
       <WhyChooseUs />
-      <Link href="/allservices">
-        <h1>services</h1>
-      </Link>
-      <Link href="/professionals">
-        <h1>professionals</h1>
-      </Link>
+      <FooterContact />
     </main>
   );
 }
