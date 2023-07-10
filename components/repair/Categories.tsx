@@ -9,7 +9,7 @@ const Categories = async () => {
   const data = await categoryData.json();
   
   return (
-    <div  className='flex justify-center items-center flex-wrap gap-5 '>
+    <div  className='pt-[40px] pb-[40px] flex justify-center items-center flex-wrap gap-5 '>
       {data.brands.slice(0, 12).map((category: any) => (
         <CategoryCard
           key={category.imageUrl}
