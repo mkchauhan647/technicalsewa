@@ -74,7 +74,7 @@ const Nav = () => {
           </div>
           <Link href="/allservices">All Services</Link>
           <Link href="/professionals">Professionals</Link>
-          <Link href="/partpuja">Part Purja</Link>
+          <Link href="/partpurja">Part Purja</Link>
           <Link href="/login">
             <button className="flex gap-[5px] justify-center items-center bg-[#2591B2] rounded-[3px] cursor-pointer text-white px-[13px] py-[8.5px] ">
               <HiArrowRightOnRectangle size={20} className="text-white" />
@@ -111,9 +111,9 @@ const Nav = () => {
               <FaHome className="text-[#2591b2]" />
               Professionals
             </Link>
-            <Link className="flex px-[30px] gap-4 text-[20px] font-medium items-center  w-full justify-starts"  href="/partpuja">
+            <Link className="flex px-[30px] gap-4 text-[20px] font-medium items-center  w-full justify-starts"  href="/partpurja">
               <FaHome className="text-[#2591b2]" />
-              Part Puja
+              Part Purja
             </Link>
             <Link className="flex px-[30px] gap-4 text-[20px] font-medium items-center  w-full justify-starts"  href="/login">
               <FaHome className="text-[#2591b2]" />
