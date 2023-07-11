@@ -8,7 +8,7 @@ import PopularBrands from "@/components/repair/PopularBrands";
 import Warrantyproducts from "@/components/repair/Warrantyproducts";
 
 export default function Home() {
-  const SliderData = fetch("https://smartcare.com.np/multiservice/masterconfig/publicmasterconfig/getSliderListpop1")
+
   return (
     <main>
       <HeroSection />
