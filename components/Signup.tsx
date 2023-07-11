@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { BsEyeSlashFill } from "react-icons/bs";
+import { AiOutlineEye } from "react-icons/ai";
 
 const Signup = () => {
+  const [showPassword, setshowPassword] = useState(false);
+  const [showConfirmPassword, setshowConfirmPassword] = useState(false);
+
   return (
     <div className="flex flex-col  items-center gap-10 py-10">
       {/* logo and text  */}
@@ -20,64 +24,83 @@ const Signup = () => {
       {/* input  */}
       <div className="w-[80%] lg:w-[33.33%]  flex flex-col gap-5">
         <input
-          name="Mobile Number"
+          name="mobilenumber"
           className=" w-full  p-4 border-[1px] text-[14px] italic outline-none"
           type="text"
           placeholder="Mobile Number"
+          required
         />
         <input
-          name="First Name"
+          name="firstname"
           className=" w-full  p-4 border-[1px] text-[14px] italic outline-none"
           type="text"
           placeholder="First Name"
+          required
         />
         <input
-          name="Last Name"
+          name="lastname"
           className=" w-full  p-4 border-[1px] text-[14px] italic outline-none"
           type="text"
           placeholder="Last Name"
+          required
         />
         <input
-          name="Email Address"
+          name="emailaddress"
           className=" w-full  p-4 border-[1px] text-[14px] italic outline-none"
           type="text"
           placeholder="Email Address"
+          required
         />
         <input
-          name="Address"
+          name="address"
           className=" w-full  p-4 border-[1px] text-[14px] italic outline-none"
           type="text"
           placeholder="Address"
+          required
         />
+
         {/* password  */}
         <div className="flex items-center  border-[1px] justify-between">
-          <div className="border-r-[1px] w-[90%] p-4">
+          <div className=" pl-4">
             <input
-              name="Password"
+              name="password"
               className=" text-[14px] italic outline-none"
-              type="password"
+              type={`${showPassword === false ? "password" : "text"}`}
               placeholder="Password"
+              required
             />
           </div>
-          <BsEyeSlashFill className="w-[10%]" />
+          <div
+            className=" border-l-[1px] p-4"
+            onClick={() => setshowPassword(!showPassword)}
+          >
+            {showPassword ? <AiOutlineEye /> : <BsEyeSlashFill />}
+          </div>
         </div>
         <div className="flex items-center  border-[1px] justify-between">
-          <div className="border-r-[1px] w-[90%] p-4">
+          <div className=" pl-4">
             <input
-              name="Confirm Password"
+              name="confirmpassword"
               className=" text-[14px] italic outline-none"
-              type="password"
+              type={`${showConfirmPassword === false ? "password" : "text"}`}
               placeholder="Confirm Password"
+              required
             />
           </div>
-          <BsEyeSlashFill className="w-[10%]" />
+          <div
+            className=" border-l-[1px] p-4"
+            onClick={() => setshowConfirmPassword(!showConfirmPassword)}
+          >
+            {showConfirmPassword ? <AiOutlineEye /> : <BsEyeSlashFill />}
+          </div>
         </div>
 
         <input
-          name="Reffered By"
+          name="refferedby"
           className=" w-full  p-4 border-[1px] text-[14px] italic outline-none"
           type="text"
           placeholder="Reffered By"
+          required
         />
 
         <button className="w-full bg-[#2591b2] p-4 text-white rounded-md">

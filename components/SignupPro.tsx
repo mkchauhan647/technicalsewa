@@ -68,7 +68,7 @@ const SignupPro = () => {
 
         {/* password  */}
         <div className="flex items-center  border-[1px] justify-between">
-          <div className="border-r-[1px] w-[90%] p-4">
+          <div className="pl-4">
             <input
               name="password"
               className=" text-[14px] italic outline-none"
@@ -78,14 +78,14 @@ const SignupPro = () => {
             />
           </div>
           <div
-            className="w-[10%] "
+            className="border-l-[1px] p-4"
             onClick={() => setshowPassword(!showPassword)}
           >
-            {showPassword ? <BsEyeSlashFill /> : <AiOutlineEye />}
+            {showPassword ? <AiOutlineEye /> : <BsEyeSlashFill />}
           </div>
         </div>
         <div className="flex items-center  border-[1px] justify-between">
-          <div className="border-r-[1px] w-[90%] p-4">
+          <div className=" pl-4">
             <input
               name="confirmpassword"
               className=" text-[14px] italic outline-none"
@@ -95,10 +95,10 @@ const SignupPro = () => {
             />
           </div>
           <div
-            className="w-[10%]"
+            className=" border-l-[1px] p-4"
             onClick={() => setshowConfirmPassword(!showConfirmPassword)}
           >
-            {showConfirmPassword ? <BsEyeSlashFill /> : <AiOutlineEye />}
+            {showConfirmPassword ? <AiOutlineEye /> : <BsEyeSlashFill />}
           </div>
         </div>
 

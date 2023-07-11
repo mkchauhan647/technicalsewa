@@ -56,16 +56,16 @@ const page = () => {
     // </div>
 
     // sign up page started..
-    // <div>
-    //   <Signup />
-    // </div>
+    <div>
+      <Signup />
+    </div>
 
     // sign up page enededskjflks
     // sign up pro started...
 
-    <div>
-      <SignupPro />
-    </div>
+    // <div>
+    //   <SignupPro />
+    // </div>
   );
 };
 
