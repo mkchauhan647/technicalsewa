@@ -1,34 +1,62 @@
-"use client"
-import { baseUrl } from '@/app/otherItem/baseUrl';
-import React,{useRef, useState} from 'react'
+"use client";
+import { baseUrl } from "@/app/otherItem/baseUrl";
+import React, { useEffect, useRef, useState } from "react";
+
+const Modal = () => {
+  const [data, setData] = useState();
+  // const loadfeatureData = async () => {
+  //   const resp = await fetch(
+  //     `${baseUrl}multiservice/masterconfig/publicmasterconfig/getSliderListpop1`
+  //   );
+  //   console.log(resp,'ressspppspps')
+  // };
 
 
-const Modal = ({show,setShow}:any) => {
-  const [activeData,setActiveData] = useState();
 
-  const loadfeatureData = async()=>{
-  const resp =  fetch(
-    `${baseUrl}multiservice/masterconfig/publicmasterconfig/getSliderListpop1`)
-   console.log(resp)
-  }
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //      await fetch(
+  //         `${baseUrl}multiservice/masterconfig/publicmasterconfig/getSliderListpop1`
+  //       ).then((res)=>{ res.json().then((r)=>console.log(r))});
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   };
+  //   fetchData();
+  // }, []);
 
-  loadfeatureData();
+  const myDialog: any = useRef(null);
+
+  useEffect(() => {
+    if (myDialog) {
+      myDialog?.current.showModal();
+    }
+  }, []);
 
   return (
-   <dialog  data-modal className='md:w-[60%] w-full h-[400px] bg-[aliceblue]' open={show}>
-
-   <div className='flex gap-5'>
-    <h2>title</h2>
-    <button onClick={()=>setShow(!show)} className='float-right'>X</button>
-   </div>
-   <div>
-{/* {activeData?.map((dat)=>{
+    <dialog
+      ref={myDialog}
+      id="myDialog"
+      data-modal
+      className="md:w-[60%] w-full h-[400px] bg-[aliceblue]"
+    >
+      <div className="flex gap-5">
+        <h2>title</h2>
+        <button
+          onClick={() => myDialog?.current.close()}
+          className="float-right"
+        >
+          X
+        </button>
+      </div>
+      <div>
+        {/* {activeData?.map((dat)=>{
   <h2>ok</h2>
 })} */}
-   </div>
-  
-   </dialog>
-  )
-}
+      </div>
+    </dialog>
+  );
+};
 
-export default Modal
+export default Modal;

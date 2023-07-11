@@ -2,7 +2,7 @@ import React from "react";
 import { baseUrl } from "../../app/otherItem/baseUrl";
 import CategoryCard from "./CategoryCard";
 
-const Categories = async () => {
+const Categories = async ({allBrands}:any) => {
   const categoryData = await fetch(
     `${baseUrl}techsewa/masterconfig/publicmasterconfig/getServiceList`
   );
