@@ -1,10 +1,11 @@
 "use client"
 
+import Image from "next/image";
+import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 
-const SliderCard = () => {
-  const arr = [1, 2, 3, 4,5,6,7,8,9];
-
+const SliderCard = ({data}:any) => {
+  console.log(data)
   const [slider, setslider] = useState();
 
   var sliderRef:any = useRef(null);
@@ -43,10 +44,12 @@ const SliderCard = () => {
 
   return (
     <div  onMouseUp={DragStop} onMouseDown={DragStart} onMouseMove={Dragging} ref={sliderRef} className="overflow-hidden flex justify-center items-center gap-2 cursor-pointer">
-      {arr.map((ele: any) => (
-        <div className="w-1/6">
-          <div className="w-[150px] h-[100px] bg-blue-500">{ele}</div>
+      {data?.map((ele: any) => (
+        <Link href="/service/lcd-led-tv" className="w-1/6" >
+        <div key={ele?.title} >
+          <img width={10} height={10} src={ele?.image_url? ele?.image_url:""} alt={ele?.alt} className="h-[100px] w-[150px]" />
         </div>
+        </Link>
       ))}
     </div>
   );

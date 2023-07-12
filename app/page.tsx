@@ -9,12 +9,7 @@ import Warrantyproducts from "@/components/repair/Warrantyproducts";
 import { baseUrl } from "./otherItem/baseUrl";
 import axios from "axios";
 
-<<<<<<< HEAD
-export default function Home() {
-
-=======
 export default async function Home() {
- 
 
   const result = await axios.get(`${baseUrl}multiservice/masterconfig/publicmasterconfig/getSliderListpop1`)
   const allBrands = result?.data?.brands
@@ -33,10 +28,6 @@ export default async function Home() {
   const  electiricianPlumbersData = result?.data?.brands?.filter((val:any)=>{return  val.brand_name === "Electrician & Plumber"})
   console.log(electiricianPlumbersData)
 
-
-  
- 
->>>>>>> 87ae3a24adc008b28582f10a4425f60b0eddcafe
   return (
     <main>
       <HeroSection />
