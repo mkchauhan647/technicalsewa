@@ -55,14 +55,17 @@ const Nav = () => {
                 <div className="absolute z-10 mt-0 bg-white rounded-md shadow-lg md:w-[350px]">
                   <div className="py-1 ">
                     <p className=" pt-1 py-2"></p>
-                    <Link href="training/fridgeactraining" className="w-[full]">
+                    <Link
+                      href="/training/fridgeactraining"
+                      className="w-[full]"
+                    >
                       <p className="block px-6 py-2 text-sm text-[grey] hover:bg-gray-100">
                         Fridge & AC Training Training In Kathmandu
                       </p>
                       <hr />
                     </Link>
                     <Link
-                      href="training/wachingmachinetraining"
+                      href="/training/wachingmachinetraining"
                       className="w-[full]"
                     >
                       <p className="block px-6 py-2 text-sm text-[grey] hover:bg-gray-100">
@@ -71,7 +74,7 @@ const Nav = () => {
                       <hr />
                     </Link>
                     <Link
-                      href="training/homeappliancestraining"
+                      href="/training/homeappliancestraining"
                       className="w-[full]"
                     >
                       <p className="block px-6 py-2 text-sm text-[grey] hover:bg-gray-100">
@@ -79,13 +82,16 @@ const Nav = () => {
                       </p>
                       <hr />
                     </Link>
-                    <Link href="training/ledtvtraining" className="w-[full]">
+                    <Link href="/training/ledtvtraining" className="w-[full]">
                       <p className="block px-6 py-2 text-sm text-[grey] hover:bg-gray-100">
                         Led Tv Training In Kathmandu
                       </p>
                       <hr />
                     </Link>
-                    <Link href="training/plumbingtraining" className="w-[full]">
+                    <Link
+                      href="/training/plumbingtraining"
+                      className="w-[full]"
+                    >
                       <p className="block px-6 py-2 text-sm text-[grey] hover:bg-gray-100">
                         Plumbing Training In Kathmandu
                       </p>

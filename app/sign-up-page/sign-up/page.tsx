@@ -53,7 +53,7 @@ const page = () => {
 
   return (
     // sign up page started..
-    <div className="flex flex-col  items-center gap-10 py-10">
+    <div className="flex flex-col  items-center gap-10 py-10 ">
       {/* logo and text  */}
       <div className="flex flex-col items-center">
         <img
