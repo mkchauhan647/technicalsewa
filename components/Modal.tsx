@@ -1,8 +1,10 @@
 "use client";
+
 import { baseUrl } from "@/app/otherItem/baseUrl";
 import React, { useEffect, useRef, useState } from "react";
-
-const Modal = ({ filterData }: any) => {
+import Image from "next/image";
+import { RxCross2 } from "react-icons/rx";
+const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
   const [data, setData] = useState();
   // const loadfeatureData = async () => {
   //   const resp = await fetch(
@@ -28,35 +30,67 @@ const Modal = ({ filterData }: any) => {
 
   useEffect(() => {
     if (myDialog) {
-      myDialog?.current.showModal();
+      myDialog?.current?.showModal();
     }
   }, []);
 
   return (
-    <dialog
-      ref={myDialog}
-      id="myDialog"
-      data-modal
-      className="md:w-[60%] w-full h-[400px] bg-[aliceblue]"
-    >
-      <div className="flex gap-5">
-        {/* <h2>title</h2> */}
-        <button
-          onClick={() => myDialog?.current.close()}
-          className="float-right"
-        >
-          X
-        </button>
-        {filterData?.map((val: any) => {
+    <div>
+      <dialog
+        ref={myDialog}
+        id="myDialog"
+        data-modal
+        className="border-none  bg-[white] px-[24px] py-[20px] rounded-[10px] "
+      >
+        <div className="flex justify-between ">
+          <div className="flex gap-[10px] items-center pl-[10px]">
+            <Image src={imageUrl} alt={imgAlt} width={30} height={30} />
+            <h2 className="text-black font-medium text-[28px] leading-[20px]">
+              {brandName}{" "}
+            </h2>
+          </div>
+          {/* <button
+            onClick={() => myDialog?.current.close()}
+            className="float-right"
+          >
+            X
+          </button> */}
+          <RxCross2
+            size={16}
+            className="text-[#8C8C8C]"
+            onClick={() => myDialog?.current.close()}
+          />
+        </div>
+        <div className="p-5 grid grid-cols-4 gap-[10px]">
+          {filterData?.map((val: any) => (
+            <div className="flex flex-col justify-center items-center w-[173px] h-[128px]">
+              <div className="rounded-full p-4 border-2 border-[#036CDB] flex items-center w-[100px] h-[80px] overflow-hidden">
+                <Image
+                  src={val.image_url}
+                  alt={val.alt2}
+                  width={80}
+                  height={64}
+                  className=" rounded-full "
+                />
+              </div>
+              <p className="mt-[15px] text-[12px] text-center font-bold text-[#1C1E21] w-32 h-10">
+                {val.product_name}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* {filterData?.map((val: any) => {
           return <h2>{val.product_name}</h2>;
-        })}
-      </div>
-      <div>
-        {/* {activeData?.map((dat)=>{
+        })} */}
+
+        <div>
+          {/* {activeData?.map((dat)=>{
   <h2>ok</h2>
 })} */}
-      </div>
-    </dialog>
+        </div>
+      </dialog>
+    </div>
   );
 };
 
