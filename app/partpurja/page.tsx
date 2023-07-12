@@ -81,7 +81,7 @@ const page = () => {
           id=""
           className="shadow-sm outline-none text-[14px] border-[1px] border-gray-200 p-4"
         >
-          <option className="p-4" value="">
+          <option className="" value="">
             Default Sorting
           </option>
           <option value="">Ascending</option>
@@ -110,8 +110,12 @@ const page = () => {
               <h1 className="text-[12px] font-bold">{s.h3}</h1>
             </div>
             <div className="flex justify-between px-2">
-              <h3 className="text-[#f1eef4] text-[14px]"> {s.price}</h3>
-              <h3 className="text-[#ed1b26] text-[10px]"> {s.price}</h3>
+              <h3 className="text-[#3293b2] text-[14px] font-bold">
+                {s.price}
+              </h3>
+              <h3 className="text-[#ed1b26] text-[10px] line-through">
+                {s.price}
+              </h3>
             </div>
           </div>
         ))}

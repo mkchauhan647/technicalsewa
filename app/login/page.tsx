@@ -1,10 +1,38 @@
+"use client";
+
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { BsEyeSlashFill } from "react-icons/bs";
+import { AiOutlineEye } from "react-icons/ai";
+import { baseUrl } from "../otherItem/baseUrl";
+import axios from "axios";
+
 const page = () => {
+  const [input, setInput] = useState({
+    username: "",
+    password: "",
+  });
+
+  const handleChange = (e: any) => {
+    const { name, value } = e.target;
+    setInput({ ...input, [name]: value });
+  };
+
+  const handleSignIn = async () => {
+    let data = new FormData();
+    data.append("username", input.username);
+    data.append("password", input.password);
+    await axios
+      .post(`${baseUrl}techsewa/masterconfig/publiclogin/signinLate`, data)
+      .then((response) => {
+        console.log(response);
+      });
+  };
+  const [showPassword, setshowPassword] = useState(false);
+
   return (
-    <div className="bg-white">
-      <div className="flex flex-col  justify-center pt-[50px] xs:w-2/3 md:w-1/2 mx-[330px]">
+    <div className="bg-white  pt-[20px] pb-[79px]">
+      <div className="flex flex-col  justify-center pt-[50px] w-[80%] lg:w-[33.33%]  mx-auto px-4 md:p-0">
         <div className="flex flex-col items-center ">
           <div className="w-[150px] h-auto">
             <img
@@ -17,22 +45,31 @@ const page = () => {
             Sign in to use our service
           </h1>
         </div>
+
         <input
           type="text"
           name="username"
           required
-          placeholder="username"
+          onChange={handleChange}
+          placeholder="Username"
           className="border w-full border-[#D9D9D9] py-[12px] pl-[20px] mt-[20px] placeholder:text-[#666666]/[0.4] placeholder:italic placeholder:font-normal rounded-[2px] outline-none"
         />
-        <div className=" border border-[#D9D9D9] rounded-[2px] flex items-center mt-[24px] pr-[22px] w-full">
+
+        <div className=" border border-[#D9D9D9] rounded-[2px] flex items-center mt-[24px]  w-full">
           <input
-            type="text"
+            type={`${showPassword === false ? "password" : "text"}`}
             name="password"
-            placeholder="password"
+            placeholder="Password"
             required
-            className="w-full py-[12px] pl-[20px]  placeholder:text-[#666666]/[0.4] placeholder:italic placeholder:font-normal rounded-[2px]"
+            onChange={handleChange}
+            className="w-full py-[12px] pl-[20px]  placeholder:text-[#666666]/[0.4] placeholder:italic placeholder:font-normal rounded-[2px] outline-none"
           />
-          <BsEyeSlashFill className="text-[#666666]/[0.4]" size={14} />
+          <div
+            className=" border-l-[1px] p-4"
+            onClick={() => setshowPassword(!showPassword)}
+          >
+            {showPassword ? <AiOutlineEye /> : <BsEyeSlashFill />}
+          </div>
         </div>
         <Link
           href="#"
@@ -41,6 +78,7 @@ const page = () => {
           Forgot Password ?
         </Link>
         <button
+          onClick={handleSignIn}
           className="text-white text-[15px] leading-[18px] bg-[#2591B2] font-normal rounded-[2px] w-full py-[15px]
         mt-[44px]"
         >
@@ -81,7 +119,7 @@ const page = () => {
             Need an account ?
           </p>
           <Link
-            href=""
+            href="/sign-up-page"
             className="text-[13px] text-[#BB243F] leading-[10px] font-bold underline decoration-[#BB243F] cursor-pointer"
           >
             Sign up
