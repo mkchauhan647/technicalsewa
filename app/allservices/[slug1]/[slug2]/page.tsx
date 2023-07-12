@@ -112,7 +112,7 @@ const page = () => {
   return (
     <div>
       <div className="bg-[#382e2e] py-[20px]">
-        <div className="container mx-[290px]">
+        <div className="container px-[10px] 2xl:mx-[290px] md:mx-[166px]">
           <h2 className="font-semibold text-[20px] font-Roboto text-gray-400">
             Appliance Repair /
             <span className="text-white leading-[26px]">Refrigerator </span> /{" "}
@@ -121,7 +121,7 @@ const page = () => {
           <div className="w-[200px] h-[45px] bg-[#1D738D] flex itmes-center  text-white py-[5px] px-[15px] rounded-[6px] mt-[10px]">
             <AiFillStar size={30} />
             <p className="pl-[10px] text-[24px] font-semibold">4.65</p>
-            <p className="pl-[5px] self-end ">Out of 5</p>
+            <p className="pl-[5px] self-end mb-[5px]">Out of 5</p>
           </div>
           <div className="flex flex-col gap-[14px] mt-[30px]">
             <div className="flex gap-[10px] items-center">
@@ -151,7 +151,7 @@ const page = () => {
           </div>
         </div>
       </div>
-      <div className="mt-[50px] container mx-[290px]">
+      <div className="mt-[50px] container 2xl:mx-[290px] md:mx-[166px] px-[10px]">
         <h2 className="text-[#1D738D] text-[31px] font-normal leading-[30px]">
           Refrigerator Repair and Services - Smart Care
         </h2>
