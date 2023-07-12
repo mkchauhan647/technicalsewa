@@ -2,7 +2,7 @@
 import { baseUrl } from "@/app/otherItem/baseUrl";
 import React, { useEffect, useRef, useState } from "react";
 
-const Modal = () => {
+const Modal = ({ filterData }: any) => {
   const [data, setData] = useState();
   // const loadfeatureData = async () => {
   //   const resp = await fetch(
@@ -10,8 +10,6 @@ const Modal = () => {
   //   );
   //   console.log(resp,'ressspppspps')
   // };
-
-
 
   // useEffect(() => {
   //   const fetchData = async () => {
@@ -42,13 +40,16 @@ const Modal = () => {
       className="md:w-[60%] w-full h-[400px] bg-[aliceblue]"
     >
       <div className="flex gap-5">
-        <h2>title</h2>
+        {/* <h2>title</h2> */}
         <button
           onClick={() => myDialog?.current.close()}
           className="float-right"
         >
           X
         </button>
+        {filterData?.map((val: any) => {
+          return <h2>{val.product_name}</h2>;
+        })}
       </div>
       <div>
         {/* {activeData?.map((dat)=>{
