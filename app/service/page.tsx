@@ -39,6 +39,11 @@ const page = () => {
     return val.brand_name === "Appliances Repair";
   });
 
+  // dataa for Popular Brands
+  const PopularBrands = data?.filter((val: any) => {
+    return val.brand_name === "Popular Brands";
+  });
+
   const services = [
     {
       src: <GiWashingMachine />,
@@ -163,7 +168,7 @@ const page = () => {
             </div>
 
             {/* Card container started... */}
-            <div className="flex flex-wrap  items-center gap-16 p-4">
+            <div className="flex flex-wrap justify-center items-center gap-16 p-4">
               {filteredData?.map((value: any, index: any) => (
                 <div
                   key={index}
@@ -188,10 +193,38 @@ const page = () => {
             </div>
           </div>
 
-          <div className="hidden md:block bg-white min-h-[200px] md:w-[90%] p-5 rounded-md border-[1px]">
+          <div className="hidden md:block bg-white min-h-[112px] w-[90%] p-5 rounded-md border-[1px] border-gray-400 ">
             <div className="flex justify-center items-center gap-2 text-[#2591b2]">
+              {/* Heading Icon  */}
               <AiFillStar />
-              <span>Popular Brands</span>
+
+              {/* Title Name  */}
+              <span className="text-[#2591b2]">Popular Brands</span>
+            </div>
+
+            {/* Card container started... */}
+            <div className="flex flex-wrap justify-center items-center gap-16 p-4">
+              {PopularBrands?.map((value: any, index: any) => (
+                <div
+                  key={index}
+                  className={`${
+                    value.image_url ? "flex flex-col justify-center" : "hidden"
+                  }`}
+                >
+                  {value.image_url && (
+                    <>
+                      <Image
+                        width={100}
+                        height={100}
+                        className="h-[80px] w-[80px]"
+                        src={value.image_url && value.image_url}
+                        alt={value.alt2 && value.alt2}
+                      />
+                      <h3 className="text-[10px]">{value.product_name}</h3>
+                    </>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </div>
