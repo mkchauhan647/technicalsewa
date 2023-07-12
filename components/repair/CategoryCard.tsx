@@ -10,9 +10,18 @@ type props = {
   imgAlt: string;
 };
 
-const CategoryCard = ({ imageUrl, brandName, imgAlt }: props) => {
+const CategoryCard = ({ imageUrl, brandName, imgAlt, allBrands,id }: any) => {
   const [show, setShow] = useState(false);
   const [activeCatagory, setActiveCategory] = useState("");
+
+  console.log(imgAlt,'imgAlt')
+
+  console.log(allBrands)
+  
+
+
+  const filterData = allBrands?.filter((val:any)=>{return  val.brand_id === id})
+  console.log(filterData,'filterData')
 
   return (
     <div>
@@ -26,7 +35,7 @@ const CategoryCard = ({ imageUrl, brandName, imgAlt }: props) => {
         <Image src={imageUrl} alt={imgAlt} width={45} height={45} />
         <h2>{brandName}</h2>
       </div>
-      {show && <Modal />}
+      {show && <Modal filterData={filterData} />}
     </div>
   );
 };
