@@ -3,47 +3,22 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
+import Slider from "./Slider";
 
 const SliderCard = ({data}:any) => {
-  console.log(data)
-  const [slider, setslider] = useState();
 
-  var sliderRef:any = useRef(null);
-  
-  let isDragStart = false , prevPageX:any, prevScrollLeft:any;
-
-  const DragStart = (e:any)=>{
-    isDragStart= true;
-    prevPageX = e.pageX;
-    if (sliderRef.current){
-    prevScrollLeft = sliderRef.current.scrollLeft * 10 
-    console.log(prevScrollLeft)
-    }
-  }
-
-  const Dragging = (e: any) => {
-    if(isDragStart) return;
-    try {
-      let positionDiffrence = e.pageX - prevPageX;
-      setslider(e.pageX);
-      if (sliderRef.current) {
-        e.preventDefault()
-        sliderRef.current.scrollLeft =positionDiffrence
-        console.log(sliderRef.current.scrollLeft);
-      }
-    } catch (error) {}
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay:true
   };
 
-  const DragStop = ()=>{
-    isDragStart=false
-  }
-
-  useEffect(() => {
-
-  }, [slider]);
 
   return (
-    <div  onMouseUp={DragStop} onMouseDown={DragStart} onMouseMove={Dragging} ref={sliderRef} className="overflow-hidden flex justify-center items-center gap-2 cursor-pointer">
+    <Slider {...settings} className="overflow-hidden flex justify-center items-center gap-2 cursor-pointer">
       {data?.map((ele: any) => (
         <Link href="/service/lcd-led-tv" className="w-1/6" >
         <div key={ele?.title} >
@@ -51,7 +26,7 @@ const SliderCard = ({data}:any) => {
         </div>
         </Link>
       ))}
-    </div>
+    </Slider>
   );
 };
 
