@@ -1,6 +1,7 @@
 "use client"
 
-import SliderCard from "./SliderCard";
+import SliderCard from "./SlideCard";
+
 
 
 
