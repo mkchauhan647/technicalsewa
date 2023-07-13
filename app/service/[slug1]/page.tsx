@@ -1,12 +1,57 @@
-import React from "react";
+"use client";
+import { baseUrl } from "@/app/otherItem/baseUrl";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { BsNewspaper } from "react-icons/bs";
+import { useParams } from "next/navigation";
 
 const page = () => {
+  //state variable
+  const [data, setData] = useState<any>();
+
+  const params = useParams(); // getting params from URL
+
+  // ===========function-to-call-api-==========
+  const fetchedData = async () => {
+    const result = await axios.get(
+      `${baseUrl}multiservice/masterconfig/publicmasterconfig/getSliderListpop`
+    );
+    // setData(result?.data?.brands);
+    setData(result?.data?.brands);
+  };
+  // call fetchData() function once when components renders
+  useEffect(() => {
+    fetchedData();
+  }, []);
+  // ===============================================
+
+  // filter data based on URL params and stored to fitlerData vaiables
+  const filterData = data?.filter((val: any) => {
+    return val.url_product_name === params.slug1;
+  });
+
+  filterData && filterData.forEach((element:any) => {
+    console.log(element.brand_name)
+  })
+  
+  // console.log(params,'prrr')
+  // console.log(data,'data')
+
+  // const filterDataObject = filterData?.map((val:any) => {
+  //   brand_name: val?.brand_name;
+  //   product_name: val?.product_name;
+  // });
+
+  console.log(filterData)
+  
+
+
   return (
     <div className="container relative  lg:w-[80rem] mx-auto   ">
-      <div className="my-[20px] max-md:p-4 flex flex-col gap-4 ">
+      {filterData && filterData.map((val:any,index:any) =>(
+        <div className="my-[20px] max-md:p-4 flex flex-col gap-4 ">
         <p className="text-[18px] text-[#2591b2] leading-[17.01px] tracking-[0.02em] font-extrabold">
-          appliances Repair Service / Microwave Oven
+          {val.brand_name} / {val.product_name}
         </p>
         <span className="bg-[#2591b2] text-white font-bold rounded-[25px]  w-max py-[10px] px-[30px] ">
           4.5
@@ -26,6 +71,8 @@ const page = () => {
           </div>
         </div>
       </div>
+      ))}
+      
 
       <div className="flex">
         <div className="w-[70%]  ">

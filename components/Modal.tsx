@@ -4,29 +4,16 @@ import { baseUrl } from "@/app/otherItem/baseUrl";
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { RxCross2 } from "react-icons/rx";
+import { useRouter } from "next/navigation";
 const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
   const [data, setData] = useState();
-  // const loadfeatureData = async () => {
-  //   const resp = await fetch(
-  //     `${baseUrl}multiservice/masterconfig/publicmasterconfig/getSliderListpop1`
-  //   );
-  //   console.log(resp,'ressspppspps')
-  // };
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //      await fetch(
-  //         `${baseUrl}multiservice/masterconfig/publicmasterconfig/getSliderListpop1`
-  //       ).then((res)=>{ res.json().then((r)=>console.log(r))});
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   };
-  //   fetchData();
-  // }, []);
+  const router = useRouter();
+
+  console.log(filterData, "filter");
 
   const myDialog: any = useRef(null);
+
 
   useEffect(() => {
     if (myDialog) {
@@ -34,13 +21,15 @@ const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
     }
   }, []);
 
+
+
   return (
-    <div>
+    <div  >
       <dialog
         ref={myDialog}
         id="myDialog"
         data-modal
-        className="border-none  bg-[white] px-[24px] py-[20px] rounded-[10px] "
+        className="outline-none shadow-lg  bg-[white] px-[24px] py-[20px] rounded-[10px] "
       >
         <div className="flex justify-between ">
           <div className="flex gap-[10px] items-center pl-[10px]">
@@ -57,13 +46,16 @@ const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
           </button> */}
           <RxCross2
             size={16}
-            className="text-[#8C8C8C]"
+            className="text-[#8C8C8C] cursor-pointer "
             onClick={() => myDialog?.current.close()}
           />
         </div>
         <div className="p-5 grid grid-cols-4 gap-[10px]">
           {filterData?.map((val: any) => (
-            <div className="flex flex-col justify-center items-center w-[173px] h-[128px]">
+            <div
+              onClick={() => router.push(`/service/${val.url_product_name}`)}
+              className="flex cursor-pointer flex-col justify-center items-center w-[173px] h-[128px]"
+            >
               <div className="rounded-full p-4 border-2 border-[#036CDB] flex items-center w-[100px] h-[80px] overflow-hidden">
                 <Image
                   src={val.image_url}
