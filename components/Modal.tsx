@@ -1,31 +1,9 @@
-"use client";
+'use client'
 
-import { baseUrl } from "@/app/otherItem/baseUrl";
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { RxCross2 } from "react-icons/rx";
 const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
-  const [data, setData] = useState();
-  // const loadfeatureData = async () => {
-  //   const resp = await fetch(
-  //     `${baseUrl}multiservice/masterconfig/publicmasterconfig/getSliderListpop1`
-  //   );
-  //   console.log(resp,'ressspppspps')
-  // };
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //      await fetch(
-  //         `${baseUrl}multiservice/masterconfig/publicmasterconfig/getSliderListpop1`
-  //       ).then((res)=>{ res.json().then((r)=>console.log(r))});
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   };
-  //   fetchData();
-  // }, []);
-
   const myDialog: any = useRef(null);
 
   useEffect(() => {
@@ -49,12 +27,7 @@ const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
               {brandName}{" "}
             </h2>
           </div>
-          {/* <button
-            onClick={() => myDialog?.current.close()}
-            className="float-right"
-          >
-            X
-          </button> */}
+         
           <RxCross2
             size={16}
             className="text-[#8C8C8C]"
@@ -80,14 +53,7 @@ const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
           ))}
         </div>
 
-        {/* {filterData?.map((val: any) => {
-          return <h2>{val.product_name}</h2>;
-        })} */}
-
         <div>
-          {/* {activeData?.map((dat)=>{
-  <h2>ok</h2>
-})} */}
         </div>
       </dialog>
     </div>
