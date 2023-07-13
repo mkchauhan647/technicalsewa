@@ -14,28 +14,23 @@ export default async function Home() {
     `${baseUrl}multiservice/masterconfig/publicmasterconfig/getSliderListpop1`
   );
   const allBrands = result?.data?.brands;
-  console.log(allBrands);
 
   // dataa for ApplicationRepairData
   const applicationRepairData = result?.data?.brands?.filter((val: any) => {
     return val.brand_name === "Appliances Repair";
   });
-  console.log(applicationRepairData);
 
   const popularBrandsData = result?.data?.brands?.filter((val: any) => {
     return val.brand_name === "Popular Brands";
   });
-  console.log(popularBrandsData);
 
   const warrantyProductsData = result?.data?.brands?.filter((val: any) => {
     return val.brand_name === "Warranty Products";
   });
-  console.log(warrantyProductsData);
 
   const electiricianPlumbersData = result?.data?.brands?.filter((val: any) => {
     return val.brand_name === "Electrician & Plumber";
   });
-  console.log(electiricianPlumbersData);
 
   return (
     <main>
@@ -44,9 +39,7 @@ export default async function Home() {
       <ApplicationRepair applicationRepairData={applicationRepairData} />
       <PopularBrands popularBrandsData={popularBrandsData} />
       <Warrantyproducts warrantyProductsData={warrantyProductsData} />
-      <ElectricianPlumbers
-        electiricianPlumbersData={electiricianPlumbersData}
-      />
+      <ElectricianPlumbers electiricianPlumbersData={electiricianPlumbersData} />
       <WhyChooseUs />
       <FooterContact />
     </main>

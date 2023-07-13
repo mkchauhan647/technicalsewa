@@ -18,6 +18,7 @@ import { RiComputerFill } from "react-icons/ri";
 import { MdPestControl, MdAir, MdPlumbing } from "react-icons/md";
 import axios from "axios";
 import { baseUrl } from "../otherItem/baseUrl";
+import Image from "next/image";
 
 const page = () => {
   const [data, setData] = useState([]);
@@ -38,16 +39,9 @@ const page = () => {
     return val.brand_name === "Appliances Repair";
   });
 
-  const popularBrandsData = data?.filter((val: any) => {
+  // dataa for Popular Brands
+  const PopularBrands = data?.filter((val: any) => {
     return val.brand_name === "Popular Brands";
-  });
-
-  const warrantyProductsData = data?.filter((val: any) => {
-    return val.brand_name === "Warranty Products";
-  });
-
-  const electiricianPlumbersData = data?.filter((val: any) => {
-    return val.brand_name === "Electrician & Plumber";
   });
 
   const services = [
@@ -104,7 +98,14 @@ const page = () => {
   const [value, setValue] = useState(0);
 
   const [filteredData, setFilteredData] = useState<any>([]);
-  console.log(filteredData);
+
+  useEffect(() => {
+    setFilteredData(
+      data?.filter((val: any) => {
+        return val.brand_name === "Appliances Repair";
+      })
+    );
+  }, [data]);
 
   const handleTabClick = (index: any, n: any) => {
     setValue(index);
@@ -147,7 +148,7 @@ const page = () => {
         </div>
 
         {/* right side item div  */}
-        <div className="bg-[#f5f5f5] basis-[70%] md:basis-[78%] flex flex-col gap-8 text-center ">
+        <div className="bg-[#f5f5f5] basis-[70%] md:basis-[80%] flex flex-col gap-8 text-center ">
           <div className="md:hidden">
             {services[value] && (
               <h2 className="text-[14px] text-[#2591b2] text-left p-2">
@@ -167,24 +168,63 @@ const page = () => {
             </div>
 
             {/* Card container started... */}
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-wrap justify-center items-center gap-16 p-4">
               {filteredData?.map((value: any, index: any) => (
-                <div key={index} className="flex flex-col ">
-                  <img
-                    className="h-[100px] w-[100px]"
-                    src={value && value.image_url}
-                    alt={value && value.alt2}
-                  />
-                  {value.product_name}
+                <div
+                  key={index}
+                  className={`${
+                    value.image_url ? "flex flex-col justify-center" : "hidden"
+                  }`}
+                >
+                  {value.image_url && (
+                    <>
+                      <Image
+                        width={100}
+                        height={100}
+                        className="h-[80px] w-[80px]"
+                        src={value.image_url && value.image_url}
+                        alt={value.alt2 && value.alt2}
+                      />
+                      <h3 className="text-[10px]">{value.product_name}</h3>
+                    </>
+                  )}
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="hidden md:block bg-white min-h-[200px] md:w-[90%] p-5 rounded-md border-[1px]">
+          <div className="hidden md:block bg-white min-h-[112px] w-[90%] p-5 rounded-md border-[1px] border-gray-400 ">
             <div className="flex justify-center items-center gap-2 text-[#2591b2]">
+              {/* Heading Icon  */}
               <AiFillStar />
-              <span>Popular Brands</span>
+
+              {/* Title Name  */}
+              <span className="text-[#2591b2]">Popular Brands</span>
+            </div>
+
+            {/* Card container started... */}
+            <div className="flex flex-wrap justify-center items-center gap-16 p-4">
+              {PopularBrands?.map((value: any, index: any) => (
+                <div
+                  key={index}
+                  className={`${
+                    value.image_url ? "flex flex-col justify-center" : "hidden"
+                  }`}
+                >
+                  {value.image_url && (
+                    <>
+                      <Image
+                        width={100}
+                        height={100}
+                        className="h-[80px] w-[80px]"
+                        src={value.image_url && value.image_url}
+                        alt={value.alt2 && value.alt2}
+                      />
+                      <h3 className="text-[10px]">{value.product_name}</h3>
+                    </>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </div>

@@ -1,57 +1,31 @@
 "use client"
-
-import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useRef, useState } from "react";
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
-const SliderCard = ({data}:any) => {
-  console.log(data)
-  const [slider, setslider] = useState();
-
-  var sliderRef:any = useRef(null);
-  
-  let isDragStart = false , prevPageX:any, prevScrollLeft:any;
-
-  const DragStart = (e:any)=>{
-    isDragStart= true;
-    prevPageX = e.pageX;
-    if (sliderRef.current){
-    prevScrollLeft = sliderRef.current.scrollLeft * 10 
-    console.log(prevScrollLeft)
-    }
-  }
-
-  const Dragging = (e: any) => {
-    if(isDragStart) return;
-    try {
-      let positionDiffrence = e.pageX - prevPageX;
-      setslider(e.pageX);
-      if (sliderRef.current) {
-        e.preventDefault()
-        sliderRef.current.scrollLeft =positionDiffrence
-        console.log(sliderRef.current.scrollLeft);
-      }
-    } catch (error) {}
+const SliderCard = ({length,data}:any) => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: length,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 2000,
+    autoplaySpeed: 2000,
+    cssEase: "linear"
   };
 
-  const DragStop = ()=>{
-    isDragStart=false
-  }
-
-  useEffect(() => {
-
-  }, [slider]);
-
   return (
-    <div  onMouseUp={DragStop} onMouseDown={DragStart} onMouseMove={Dragging} ref={sliderRef} className="overflow-hidden flex justify-center items-center gap-2 cursor-pointer">
-      {data?.map((ele: any) => (
-        <Link href="/service/lcd-led-tv" className="w-1/6" >
-        <div key={ele?.title} >
-          <img width={10} height={10} src={ele?.image_url? ele?.image_url:""} alt={ele?.alt} className="h-[100px] w-[150px]" />
-        </div>
+    <Slider {...settings} className="overflow-hidden flex justify-center items-center gap-1 cursor-pointer">
+      {data?.map((ele: any, index:any) => (
+        <div key={index}  className={``}>
+        <Link  href={"service" + "/" + ele.product_name } className={``} >
+          <img  src={ele?.image_url? ele?.image_url:""} alt={ele?.alt2} className="h-[100px] w-[150px]" />
         </Link>
+        </div>
       ))}
-    </div>
+    </Slider>
   );
 };
 
