@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { BsEyeSlashFill } from "react-icons/bs";
 import { AiOutlineEye } from "react-icons/ai";
 import axios from "axios";
-import { baseUrl } from "@/app/otherItem/baseUrl";
+import { baseUrl } from "../../../public/baseUrl";
 
 const page = () => {
   const [input, setInput] = useState({
