@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { RxCross2 } from "react-icons/rx";
+import Link from "next/link";
 const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
   const myDialog: any = useRef(null);
 
@@ -36,7 +37,7 @@ const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
         </div>
         <div className="p-5 grid grid-cols-4 gap-[10px]">
           {filterData?.map((val: any) => (
-            <div className="flex flex-col justify-center items-center w-[173px] h-[128px]">
+            <Link key={val.product_name} href={`service/${val.product_name}`} className="flex flex-col justify-center items-center w-[173px] h-[128px]">
               <div className="rounded-full p-4 border-2 border-[#036CDB] flex items-center w-[100px] h-[80px] overflow-hidden">
                 <Image
                   src={val.image_url}
@@ -49,7 +50,7 @@ const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
               <p className="mt-[15px] text-[12px] text-center font-bold text-[#1C1E21] w-32 h-10">
                 {val.product_name}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
 
