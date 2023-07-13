@@ -17,7 +17,7 @@ import { FaStethoscope } from "react-icons/fa";
 import { RiComputerFill } from "react-icons/ri";
 import { MdPestControl, MdAir, MdPlumbing } from "react-icons/md";
 import axios from "axios";
-import { baseUrl } from "../otherItem/baseUrl";
+import { baseUrl } from "../../public/baseUrl";
 import Image from "next/image";
 
 const page = () => {

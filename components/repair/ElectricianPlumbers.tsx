@@ -1,4 +1,4 @@
-import React from 'react'
+'use client'
 import Slider from '../slider/Slider'
 
 const ElectricianPlumbers = ({electiricianPlumbersData}:any) => {

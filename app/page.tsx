@@ -6,7 +6,7 @@ import Categories from "@/components/repair/Categories";
 import ElectricianPlumbers from "@/components/repair/ElectricianPlumbers";
 import PopularBrands from "@/components/repair/PopularBrands";
 import Warrantyproducts from "@/components/repair/Warrantyproducts";
-import { baseUrl } from "./otherItem/baseUrl";
+import { baseUrl } from "../public/baseUrl";
 import axios from "axios";
 
 export default async function Home() {

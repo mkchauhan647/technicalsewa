@@ -1,10 +1,8 @@
-import Image from "next/image";
-import React from "react";
-import { MdMasks, MdSanitizer } from "react-icons/md";
-import { FaMaskFace } from "react-icons/fa6";
-import { IoCall } from "react-icons/io5";
+'use client'
+
 import { GiGloves } from "react-icons/gi";
 import { ImPhone } from "react-icons/im";
+import { MdMasks, MdSanitizer } from "react-icons/md";
 
 const WhyChooseUs = () => {
   return (
