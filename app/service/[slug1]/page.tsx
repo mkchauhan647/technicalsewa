@@ -1,5 +1,5 @@
 "use client";
-import { baseUrl } from "@/app/otherItem/baseUrl";
+import { baseUrl } from "../../../public/baseUrl";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { BsNewspaper } from "react-icons/bs";

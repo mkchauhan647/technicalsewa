@@ -4,7 +4,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { BsEyeSlashFill } from "react-icons/bs";
 import { AiOutlineEye } from "react-icons/ai";
-import { baseUrl } from "../otherItem/baseUrl";
+import { baseUrl } from "../../public/baseUrl";
 import axios from "axios";
 
 const page = () => {

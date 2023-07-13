@@ -1,4 +1,5 @@
-"use client";
+'use client'
+
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
@@ -39,7 +40,7 @@ const Nav = () => {
   return (
     <>
       <div className="sticky top-0 bg-white z-50">
-        <div className="Navbar relative border-b-[1px]   border-[#ededed]  flex justify-between max-lg:p-4 lg:justify-around max-md:justify-between items-center bg-white h-[70px] ">
+        <div className="Navbar relative border-b-[1px] mx-auto max-w-[1280px]  border-[#ededed]  flex justify-between max-lg:p-4 items-center bg-white h-[70px] ">
           <Link href="/">
             <Image
               src="/assets/ts-final-logo.png"

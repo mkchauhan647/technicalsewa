@@ -1,5 +1,5 @@
 import React from "react";
-import { baseUrl } from "../../app/otherItem/baseUrl";
+import { baseUrl } from "../../public/baseUrl";
 import CategoryCard from "./CategoryCard";
 
 const Categories = async ({ allBrands }: any) => {
@@ -8,7 +8,6 @@ const Categories = async ({ allBrands }: any) => {
   );
   const data = await categoryData.json();
 
-  // console.log(data,'ddd')
 
   return (
     <div className="pt-[40px] pb-[40px]  flex justify-center items-center flex-wrap gap-5 ">

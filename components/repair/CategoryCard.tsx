@@ -1,5 +1,4 @@
-"use client";
-
+'use client'
 import Image from "next/image";
 import React, { useState } from "react";
 import Modal from "../Modal";
@@ -12,7 +11,6 @@ type props = {
 
 const CategoryCard = ({ imageUrl, brandName, imgAlt, allBrands, id }: any) => {
   const [show, setShow] = useState(false);
-  const [activeCatagory, setActiveCategory] = useState("");
 
   const filterData = allBrands?.filter((val: any) => {
     return val.brand_id === id;
@@ -23,7 +21,6 @@ const CategoryCard = ({ imageUrl, brandName, imgAlt, allBrands, id }: any) => {
       <div
         onClick={() => {
           setShow(!show);
-          setActiveCategory(brandName);
         }}
         className="flex flex-col cursor-pointer items-center gap-3 w-[230px]"
       >
