@@ -2,6 +2,8 @@
 
 import SliderCard from "./SliderCard";
 
+
+
 const Slider =async ({data}:any) => {
   const length = data.length 
 
