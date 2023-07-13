@@ -7,19 +7,22 @@ import Link from "next/link";
 const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
   const myDialog: any = useRef(null);
 
+
   useEffect(() => {
     if (myDialog) {
       myDialog?.current?.showModal();
     }
   }, []);
 
+
+
   return (
-    <div>
+    <div  >
       <dialog
         ref={myDialog}
         id="myDialog"
         data-modal
-        className="border-none  bg-[white] px-[24px] py-[20px] rounded-[10px] "
+        className="outline-none shadow-lg  bg-[white] px-[24px] py-[20px] rounded-[10px] "
       >
         <div className="flex justify-between ">
           <div className="flex gap-[10px] items-center pl-[10px]">
@@ -31,7 +34,7 @@ const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
          
           <RxCross2
             size={16}
-            className="text-[#8C8C8C]"
+            className="text-[#8C8C8C] cursor-pointer "
             onClick={() => myDialog?.current.close()}
           />
         </div>
