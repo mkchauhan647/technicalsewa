@@ -28,7 +28,7 @@ const page = () => {
   // ===========function-to-call-api-==========
   const fetchedData = async () => {
     const result = await axios.get(
-      `${baseUrl}multiservice/masterconfig/publicmasterconfig/getSliderListpop`
+      `https://smartcare.com.np/multiservice/masterconfig/publicmasterconfig/getSliderListpop`
     );
     setData(result?.data?.brands);
   };
@@ -76,11 +76,11 @@ const page = () => {
           >
             <div
               style={{ backgroundImage: `url(${val?.image_url})` }}
-              className="bg-white h-[350px] bg-contain bg-no-repeat bg-center w-full relative  py-[20px]"
+              className="bg-white h-[350px] bg-contain bg-no-repeat bg-center w-full relative py-[20px]"
             >
               <div className="absolute top-0 z-0 h-full w-full left-0 bg-black/50 "></div>
 
-              <div className="container absolute h-full top-0 left-0 py-3  px-[10px] z-30  2xl:mx-[290px] md:mx-[166px]">
+              <div className="container absolute h-full top-0 left-0 py-3 px-[10px] z-30 2xl:mx-[290px] md:mx-[166px]">
                 <div className="flex flex-col ">
                   <h3 className="text-[#cdcecf] font-[600] text-[16px] ">
                     {val?.brand_name} /{" "}
@@ -93,14 +93,14 @@ const page = () => {
                   </h1>
                 </div>
 
-                <div className="w-[200px] h-[45px] bg-[#1D738D] flex itmes-center  text-white py-[5px] px-[15px] rounded-[6px] mt-[10px]">
+                <div className="w-[200px] h-[45px] bg-[#1D738D] flex itmes-center text-white py-[5px] px-[15px] rounded-[6px] mt-[10px]">
                   <AiFillStar size={30} />
                   <p className="pl-[10px] text-[24px] font-semibold">4.65</p>
                   <p className="pl-[5px] self-end mb-[5px]">Out of 5</p>
                 </div>
 
-                <div className="flex flex-col mt-[20px]  md:gap-[14px] ">
-                  <div className="flex  items-center">
+                <div className="flex flex-col mt-[20px] md:gap-[14px] ">
+                  <div className="flex items-center">
                     <div
                       className="flex pb-4 text-white text-justify flex-col gap-4"
                       dangerouslySetInnerHTML={{ __html: val?.product_desc }}
@@ -110,8 +110,8 @@ const page = () => {
               </div>
             </div>
 
-            <div className="w-[30%] lg:px-4 z-40  md:absolute md:top-[100px] md:right-0  ">
-              <div className="bg-[#2591b2] rounded-md shadow-md   w-[355px] p-4 lg:fixed  ">
+            <div className="w-[30%] lg:px-4 z-40 md:absolute md:top-[100px] md:right-0 ">
+              <div className="bg-[#2591b2] rounded-md shadow-md w-[355px] p-4 lg:fixed ">
                 <h2 className="text-white mb-4 text-[24px] font-medium text-center ">
                   Select product Category
                 </h2>
