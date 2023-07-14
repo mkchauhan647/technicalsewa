@@ -4,11 +4,11 @@ import React from "react";
 const page = ({ params }: any) => {
   let trainingType = params.traningType;
   return (
-    <>
+    <div className="max-w-[1280px] py-8  mx-auto">
       {/* fridge training  */}
       {trainingType === "fridgeactraining" && (
-        <div className="container mx-auto px-4 py-8">
-          <div>
+        <div>
+          <div className="pb-8">
             <h1 className="text-3xl font-bold mb-2">
               Fridge & AC Training Course in Nepal
             </h1>
@@ -84,8 +84,8 @@ const page = ({ params }: any) => {
 
       {/* waching machine training  */}
       {trainingType === "wachingmachinetraining" && (
-        <div className="container mx-auto px-4 py-8">
-          <div>
+        <div>
+          <div className="pb-8">
             <h1 className="text-3xl font-bold mb-2">
               Washing Machine Repair Training in Kathmandu
             </h1>
@@ -147,8 +147,8 @@ const page = ({ params }: any) => {
 
       {/* home appliance training  */}
       {trainingType === "homeappliancestraining" && (
-        <div className="container mx-auto px-4 py-8">
-          <div>
+        <div>
+          <div className="pb-8">
             <h1 className="text-3xl font-bold mb-2">
               Home Appliances Repair Training in Kathmandu
             </h1>
@@ -213,8 +213,8 @@ const page = ({ params }: any) => {
 
       {/* led tv training  */}
       {trainingType === "ledtvtraining" && (
-        <div className="container mx-auto px-4 py-8">
-          <div>
+        <div>
+          <div className="pb-8">
             <h1 className="text-3xl font-bold mb-2">
               LED TV Training in Kathmandu
             </h1>
@@ -276,8 +276,8 @@ const page = ({ params }: any) => {
 
       {/* plumbing training  */}
       {trainingType === "plumbingtraining" && (
-        <div className="container mx-auto px-4 py-8">
-          <div>
+        <div>
+          <div className="pb-8">
             <h1 className="text-3xl font-bold mb-2">
               Plumbing Training in Kathmandu
             </h1>
@@ -336,7 +336,7 @@ const page = ({ params }: any) => {
           </ul>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

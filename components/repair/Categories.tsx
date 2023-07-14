@@ -1,13 +1,23 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import { baseUrl } from "../../public/baseUrl";
 import CategoryCard from "./CategoryCard";
+import axios from "axios";
 
-const Categories = async ({ allBrands }: any) => {
-  const categoryData = await fetch(
-    `${baseUrl}techsewa/masterconfig/publicmasterconfig/getServiceList`
-  );
-  const data = await categoryData.json();
+const Categories = ({ allBrands }: any) => {
+  const [data, setData] = useState<any>([]);
+  const fetching = async () => {
+    await axios
+      .get(`${baseUrl}techsewa/masterconfig/publicmasterconfig/getServiceList`)
+      .then((res) => {
+        setData(res.data);
+      });
+  };
 
+  useEffect(() => {
+    fetching();
+  }, []);
 
   return (
     <div className="pt-[40px] pb-[40px]  flex justify-center items-center flex-wrap gap-5 ">

@@ -6,41 +6,42 @@ import { BsYoutube, BsTwitter } from "react-icons/bs";
 const Footer = () => {
   return (
     <div>
-      <div className="bg-[#2591B2] py-[10px] xl:px-[150px] 2xl:px-[300px]">
-        {/* heading of footer */}
-        <div className="container mx-auto">
+      <div className="bg-[#2591B2] ">
+        <div className="py-[10px]   max-w-[1280px] mx-auto">
+          {/* heading of footer */}
+
           <h2 className="font-semibold text-base leading-[19px] text-[#FFF] font-Roboto text-center ">
             We Are Available in
           </h2>
           {/* link of location */}
-          <div className="flex flex-col  mt-[40px] mb-[15px] px-[20px] md:px-[80px] 2xl:px-[150px] md:flex-row">
-            <div className="basis-[50%]">
-              <div className="flex justify-between font-Roboto font-normal text-base leading-[24px] text-[#FFF]">
-                <div className="flex flex-col gap-[10px]">
-                  <Link href="#">Pokhara</Link>
-                  <Link href="#">Chitwan</Link>
-                  <Link href="#">Lalitpur</Link>
-                  <Link href="#">Ilam</Link>
-                  <Link href="#">Manang</Link>
-                  <Link href="#">Dhangadi</Link>
-                </div>
-                <div className="flex flex-col gap-[10px]">
-                  <Link href="#">Butwal</Link>
-                  <Link href="#">Bhairahawa</Link>
-                  <Link href="#">Lumbini</Link>
-                  <Link href="#">Jhapa</Link>
-                  <Link href="#">Hetauda</Link>
-                </div>
-                <div className="flex flex-col gap-[10px]">
-                  <Link href="#">Kathmandu</Link>
-                  <Link href="#">Kavre</Link>
-                  <Link href="#">Mustang</Link>
-                  <Link href="#">Dharan</Link>
-                  <Link href="#">Sindupalchowk</Link>
-                </div>
+          <div className="flex flex-col md:flex-row justify-between gap-4 items-center  py-8">
+            <div className="flex gap-8 font-Roboto font-normal text-base leading-[24px] text-[#FFF]">
+              <div className="flex flex-col gap-[10px]">
+                <Link href="#">Pokhara</Link>
+                <Link href="#">Chitwan</Link>
+                <Link href="#">Lalitpur</Link>
+                <Link href="#">Ilam</Link>
+                <Link href="#">Manang</Link>
+                <Link href="#">Dhangadi</Link>
+              </div>
+              <div className="flex flex-col gap-[10px]">
+                <Link href="#">Butwal</Link>
+                <Link href="#">Bhairahawa</Link>
+                <Link href="#">Lumbini</Link>
+                <Link href="#">Jhapa</Link>
+                <Link href="#">Hetauda</Link>
+              </div>
+              <div className="flex flex-col gap-[10px]">
+                <Link href="#">Kathmandu</Link>
+                <Link href="#">Kavre</Link>
+                <Link href="#">Mustang</Link>
+                <Link href="#">Dharan</Link>
+                <Link href="#">Sindupalchowk</Link>
               </div>
             </div>
-            <div className="basis-[70%] flex items-center justify-center xl:justify-end">
+
+            {/* direction  */}
+            <div className=" flex items-center justify-center xl:justify-end">
               <Link
                 href=""
                 className="bg-[#203E9A] w-[95px] h-[28px] font-Roboto font-normal text-base leading-[24px] text-[#FFF] text-center border-[1px] border-solid border-[#E5E7EB]"
@@ -51,8 +52,8 @@ const Footer = () => {
           </div>
           <hr />
           {/* Next Foter */}
-          <div className="flex flex-col mt-[10px] gap-[30px]  md:justify-between px-[20px] md:px-[80px] 2xl:px-[150px] md:flex-row">
-            <div className=" flex  items-center gap-[20px]">
+          <div className="flex flex-col md:flex-row items-center justify-between  mt-[10px] gap-4 ">
+            <div className=" flex flex-col md:flex-row items-center gap-4">
               <Link
                 href=""
                 className="w-[210px] h-[52px] 2xl:h-[67px] bg-[#FFF] p-[3px] rounded-[3px]"
@@ -76,7 +77,7 @@ const Footer = () => {
               </div>
             </div>
             <div className="">
-              <div className="flex justify-start xl:justify-end gap-[10px]">
+              <div className="flex  justify-start xl:justify-end gap-[10px]">
                 <Link
                   href=""
                   className="flex items-center justify-center bg-[white] w-[35px] h-[35px] rounded-[50%]"
