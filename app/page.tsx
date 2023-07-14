@@ -8,6 +8,8 @@ import PopularBrands from "@/components/repair/PopularBrands";
 import Warrantyproducts from "@/components/repair/Warrantyproducts";
 import { baseUrl } from "../public/baseUrl";
 import axios from "axios";
+import Nav from "@/components/Nav";
+import Footer from "@/components/footer/Footer";
 
 export default async function Home() {
   const result = await axios.get(
@@ -33,6 +35,8 @@ export default async function Home() {
   });
 
   return (
+    <>
+    <Nav />
     <main>
       <HeroSection />
       <Categories allBrands={allBrands} />
@@ -43,5 +47,7 @@ export default async function Home() {
       <WhyChooseUs />
       <FooterContact />
     </main>
+    <Footer />
+    </>
   );
 }

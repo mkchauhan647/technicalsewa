@@ -28,7 +28,7 @@ const SlideCard = ({ length, data }: any) => {
           {
           breakpoint: 600,
           settings: {
-          slidesToShow: 3,
+          slidesToShow: 1,
           slidesToScroll: 1,
           speed: 10000,
           autoplaySpeed: 10000,
