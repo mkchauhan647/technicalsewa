@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
@@ -27,7 +27,7 @@ const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
               {brandName}{" "}
             </h2>
           </div>
-         
+
           <RxCross2
             size={16}
             className="text-[#8C8C8C]"
@@ -53,8 +53,7 @@ const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
           ))}
         </div>
 
-        <div>
-        </div>
+        <div></div>
       </dialog>
     </div>
   );

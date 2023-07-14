@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Image from "next/image";
 import React, { useState } from "react";
 import Modal from "../Modal";
@@ -22,10 +22,10 @@ const CategoryCard = ({ imageUrl, brandName, imgAlt, allBrands, id }: any) => {
         onClick={() => {
           setShow(!show);
         }}
-        className="flex flex-col items-center gap-3 w-[230px]"
+        className="flex flex-col items-center md:gap-3 gap-1 w-[160px] md:w-[230px]"
       >
         <Image src={imageUrl} alt={imgAlt} width={45} height={45} />
-        <h2>{brandName}</h2>
+        <h2 className="text-[16px] text-center">{brandName}</h2>
       </div>
       {show && (
         <Modal

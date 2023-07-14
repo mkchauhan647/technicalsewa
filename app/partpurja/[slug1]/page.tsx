@@ -1,33 +1,46 @@
-import React from "react";
+"use client";
+
+import { getSinglePartPurjaData } from "@/components/HelperFunction/PartpurjaDataFile";
+import { useEffect, useState } from "react";
 
 const page = () => {
+  const [singleData, setSingleData] = useState<any>([]);
+
+  useEffect(() => {
+    const data = getSinglePartPurjaData();
+    console.log(data);
+    setSingleData(data);
+  }, []);
+
   return (
-    <div className="pt-[20px] pb-[79px] xl:w-[80rem] m-auto p-8 md:px-0">
-      <div className="md:w-[60%]  m-auto border-[2px] border-[#2591b2] rounded-lg flex flex-col gap-2 p-10 text-[14px] text-[#a6adbb] font-bold">
+    <div className="pt-[20px] pb-[79px] max-w-[1280px] mx-auto  ">
+      <div className="sm:w-[60%] w-[80%]  mx-auto border-[2px] border-[#2591b2] rounded-lg flex flex-col gap-2 p-4 md:p-10 text-[14px] text-[#a6adbb] font-bold">
         <img
           className=" self-center w-[600px] h-[200px] md:h-[400px]"
-          src=""
+          src={singleData?.data?.filename}
           alt="image"
         />
-        <h1 className="bg-[#2591b2] self-center text-center w-[80%] sm:w-auto text-white font-normal rounded-xl px-4 py-2">
-          WM-TL-SUSPENSION RODS
-        </h1>
-        <h2>Whirlpool Top Load Suspension Tods </h2>
+        <div
+          className="bg-[#2591b2] self-center text-center w-[80%] sm:w-auto text-white font-normal rounded-xl px-4 py-2"
+          dangerouslySetInnerHTML={{ __html: singleData?.data?.blog_name }}
+        ></div>
+        <h2>{singleData?.data?.features}</h2>
         <hr />
-        <h2>Market Price: 3500.00</h2>
+        <h2>Market Price: {singleData?.data?.market_rate}</h2>
         <hr />
-        <h3 className="text-[#2591b2]">Our Offer: 2100.00</h3>
+        <h3 className="text-[#2591b2]">
+          Our Offer: {singleData?.data?.our_rate}
+        </h3>
         <hr />
 
-        <h2>Contact: 9619544555, 015970066</h2>
+        <h2>Contact: {singleData?.data?.contact_info}</h2>
         <hr />
 
         <h2>Description</h2>
-        <p className="text-[#ced2d9]">
-          This suspuension rods help to dampen the movement of the washer tub.
-          If one or more of the suspension rods are broken, the washer will
-          vibrate or sha
-        </p>
+        <div
+          className="text-[#ced2d9]"
+          dangerouslySetInnerHTML={{ __html: singleData?.data?.blog_desc }}
+        ></div>
         <hr />
       </div>
     </div>
