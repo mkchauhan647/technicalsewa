@@ -28,7 +28,7 @@ const SlideCard = ({ length, data }: any) => {
           {
           breakpoint: 600,
           settings: {
-          slidesToShow: 3,
+          slidesToShow: 1,
           slidesToScroll: 1,
           speed: 10000,
           autoplaySpeed: 10000,
@@ -50,7 +50,7 @@ const SlideCard = ({ length, data }: any) => {
       return (
         <Slider
           {...settings}
-          className="overflow-hidden flex justify-center items-center cursor-pointer px-10 pb-12 pt-4"
+          className="overflow-hidden flex justify-center items-center cursor-pointer md:px-10 pb-12 pt-4"
         >
           {data?.map((ele: any, index: any) => (
             <div key={index} className={``}>
