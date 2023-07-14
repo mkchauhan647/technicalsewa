@@ -20,8 +20,8 @@ const Categories = ({ allBrands }: any) => {
   }, []);
 
   return (
-    <div className="pt-[40px] pb-[40px] flex justify-center items-center flex-wrap gap-5 ">
-      {data?.brands?.slice(0, 12).map((category: any) => (
+    <div className="pt-[40px] pb-[40px]  flex justify-center items-center flex-wrap gap-5 ">
+      {data.brands.slice(0, 12).map((category: any) => (
         <CategoryCard
           id={category.brand_id}
           allBrands={allBrands}
