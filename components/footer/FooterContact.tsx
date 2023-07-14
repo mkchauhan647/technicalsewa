@@ -4,9 +4,9 @@ import React from "react";
 import { BsFillTelephoneFill } from "react-icons/bs";
 const FooterContact = () => {
   return (
-    <div>
-      <div className="bg-[#F4F5F9] pb-[40px] pt-[80px] mt-[11%]">
-        <div className="container mx-auto relative">
+    <div className="bg-[#F4F5F9]  ">
+      <div className=" pb-[40px] pt-[80px] mt-[11%] max-w-[1280px] mx-auto relative px-4 md:px-0">
+        <div className="container mx-auto ">
           <h2 className="font-bold text-[25px] leading-[38px] desired">
             Can't find your desired service? Let us know 24/7 in 9851201580
           </h2>
@@ -22,7 +22,7 @@ const FooterContact = () => {
           <img
             src="/../assets/girlssmile.png"
             alt="image of fottercontact"
-            className="absolute bottom-[-36%] right-[5%] w-[250px] h-auto md:block hidden"
+            className="absolute bottom-0 right-0 w-[250px] h-auto md:block hidden"
           />
         </div>
       </div>
