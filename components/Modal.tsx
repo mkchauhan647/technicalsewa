@@ -40,7 +40,7 @@ const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
         </div>
         <div className="p-5 grid grid-cols-4 gap-[10px]">
           {filterData?.map((val: any) => (
-            <Link key={val.product_name} href={`service/${val.product_name}`} className="flex flex-col justify-center items-center w-[173px] h-[128px]">
+            <Link key={val.product_name} href={`service/${val.url_product_name}`} className="flex flex-col justify-center items-center w-[173px] h-[128px]">
               <div className="rounded-full p-4 border-2 border-[#036CDB] flex items-center w-[100px] h-[80px] overflow-hidden">
                 <Image
                   src={val.image_url}
