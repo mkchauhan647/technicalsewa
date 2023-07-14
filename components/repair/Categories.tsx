@@ -1,6 +1,4 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { baseUrl } from "../../public/baseUrl";
 import CategoryCard from "./CategoryCard";
 import axios from "axios";
@@ -15,11 +13,12 @@ const Categories = ({ allBrands }: any) => {
       });
   };
 
-  useEffect(() => {
-    fetching();
-  }, []);
+  const data:any =await fetch(`${baseUrl}techsewa/masterconfig/publicmasterconfig/getServiceList`).then((res)=>{
+    return res.json();
+  })
 
   return (
+    <div className="pt-[40px] pb-[40px]  flex justify-center items-center flex-wrap gap-5 ">
     <div className="pt-[40px] pb-[40px] flex justify-around md:justify-center items-center flex-wrap md:gap-5 ">
       {data?.brands?.slice(0, 12).map((category: any) => (
         <CategoryCard
