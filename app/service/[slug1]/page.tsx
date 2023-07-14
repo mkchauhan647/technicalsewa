@@ -18,17 +18,17 @@ const page = () => {
 
   // filter data based on URL params and stored to fitlerData vaiables
   const filterData = data?.filter((val: any) => {
-    return val.url_product_name === params.slug1;
+    return val.url_product_name === decodeURIComponent(params.slug1);
   });
 
   // filtering product_id from data
   const filteredId: any = filterData?.map((element: any) => element.product_id);
-  console.log(filteredId && filteredId[0]);
+
 
   // ===========function-to-call-api-==========
   const fetchedData = async () => {
     const result = await axios.get(
-      `https://smartcare.com.np/multiservice/masterconfig/publicmasterconfig/getSliderListpop`
+      `${baseUrl}multiservice/masterconfig/publicmasterconfig/getSliderListpop`
     );
     setData(result?.data?.brands);
   };
@@ -44,8 +44,6 @@ const page = () => {
     setSelectCategoryData(result?.data);
   };
 
-  console.log(Number(filteredId), "idd");
-  console.log(selectCategoryData, "selectssss");
 
   // call fetchData() function once when components renders
   useEffect(() => {
@@ -59,12 +57,9 @@ const page = () => {
   }, [data]);
   // ===============================================
 
-  filterData &&
-    filterData.forEach((element: any) => {
-      console.log(element.brand_name);
-    });
 
-  console.log(filterData);
+
+ 
 
   return (
     <div>
@@ -123,7 +118,7 @@ const page = () => {
                           router.push(`/service/${params.slug1}/${val.model}`)
                         }
                         key={val.value}
-                        className="h-[20pxpx] flex justify-between items-center px-4 py-[12px] bg-white w-full text-black rounded-md "
+                        className="h-[20pxpx] cursor-pointer flex justify-between items-center px-4 py-[12px] bg-white w-full text-black rounded-md "
                       >
                         {val.text}
                         <SlArrowRight />

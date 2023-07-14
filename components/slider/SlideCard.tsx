@@ -46,6 +46,8 @@ const SlideCard = ({ length, data }: any) => {
           }
           ]
       };
+
+      console.log(data,'data-sliderCard')
     
       return (
         <Slider
@@ -55,7 +57,7 @@ const SlideCard = ({ length, data }: any) => {
           {data?.map((ele: any, index: any) => (
             <div key={index} className={``}>
               <Link
-                href={"service" + "/" + ele.product_name}
+                href={`/service/${ele?.url_product_name}`}
                 className={`flex flex-col items-center gap-1 py-2`}
               >
                 <img
