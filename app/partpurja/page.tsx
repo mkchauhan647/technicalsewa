@@ -1,4 +1,4 @@
-import LinkButton from "@/components/HelperFuncion/LinkButton";
+import LinkButton from "@/components/pageHelperComponents.js/PartPurjaLinkButton";
 import Link from "next/link";
 
 const page = async () => {
@@ -38,6 +38,7 @@ const page = async () => {
       <div className="relative flex flex-wrap justify-center gap-14 pt-10">
         {partpurjadata?.map((s: any, index: any) => (
           <Link
+          key={index}
             href={{
               pathname: `/partpurja/${s.page_url}`,
             }}

@@ -45,10 +45,7 @@ const SlideCard = ({ length, data }: any) => {
           }
           }
           ]
-      };
-
-      console.log(data,'data-sliderCard')
-    
+      };    
       return (
         <Slider
           {...settings}
