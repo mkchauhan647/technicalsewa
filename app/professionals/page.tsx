@@ -1,4 +1,6 @@
+import Nav from "@/components/Nav";
 import ProfessionalsCardButton from "@/components/ProfessionalsCardButton";
+import Footer from "@/components/footer/Footer";
 import Link from "next/link";
 import React from "react";
 import { RiLayoutGridFill } from "react-icons/ri";
@@ -12,6 +14,8 @@ const page = async () => {
   const professionalsData = await professinals.json();
 
   return (
+    <>
+    <Nav />
     <div className="  pt-[20px] pb-[79px] max-w-[1280px]  mx-auto flex flex-col items-center justify-center">
       <div className=" px-2 md:p-0 ">
         {/* header  */}
@@ -90,7 +94,7 @@ const page = async () => {
               Download our App
             </h3>
             <p className="text-[14px] md:text-[20px]">
-              Enter mobile number to ger APP download Link
+              Enter mobile number to get APP download Link
             </p>
           </div>
 
@@ -108,6 +112,8 @@ const page = async () => {
         </div>
       </div>
     </div>
+    <Footer />
+    </>
   );
 };
 
