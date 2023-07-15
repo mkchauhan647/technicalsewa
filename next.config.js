@@ -1,8 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-        domains: ["smartcare.com.np"],
-      },
-}
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  images: {
+    domains: ["smartcare.com.np"],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

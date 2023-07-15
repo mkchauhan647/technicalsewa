@@ -1,4 +1,6 @@
-import LinkButton from "@/components/HelperFuncion/LinkButton";
+import Nav from "@/components/Nav";
+import Footer from "@/components/footer/Footer";
+import LinkButton from "@/components/pageHelperComponents.js/PartPurjaLinkButton";
 import Link from "next/link";
 
 const page = async () => {
@@ -8,6 +10,8 @@ const page = async () => {
   const partpurjadata = await partpurja.json();
 
   return (
+    <>
+    <Nav />
     <div className=" pt-[20px] pb-[40px] max-w-[1280px] mx-auto overflow-hidden ">
       {/* text and option div */}
       <div className="flex justify-between items-center border-b-[1px] pb-10">
@@ -38,6 +42,7 @@ const page = async () => {
       <div className="relative flex flex-wrap justify-center gap-14 pt-10">
         {partpurjadata?.map((s: any, index: any) => (
           <Link
+          key={index}
             href={{
               pathname: `/partpurja/${s.page_url}`,
             }}
@@ -75,6 +80,8 @@ const page = async () => {
         ))}
       </div>
     </div>
+    <Footer />
+    </>
   );
   };
   

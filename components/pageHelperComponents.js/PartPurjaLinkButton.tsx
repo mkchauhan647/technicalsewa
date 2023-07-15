@@ -1,6 +1,6 @@
 "use client";
 
-import { postSinglPartPurjaData } from "./PartpurjaDataFile";
+import { postSinglPartPurjaData } from "../HelperFuncion/PartpurjaDataFile";
 
 const LinkButton = (data: any) => {
   const setData = () => {
