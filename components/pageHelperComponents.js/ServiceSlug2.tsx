@@ -94,7 +94,7 @@ const ServiceSlug2 = () => {
                   >
                     <div className="absolute top-0 z-0 h-full w-full left-0 bg-black/50 "></div>
 
-                    <div className="container absolute h-full top-0 left-0 py-3  px-[10px] z-30  2xl:mx-[290px] md:mx-[166px]">
+                    <div className="container absolute h-full top-0 left-0 py-3 px-[2px]  md:px-[10px] z-30  md:mx-[190px]">
                       <div className="flex flex-col ">
                         <h3 className="text-[#cdcecf] font-[600] text-[16px] ">
                           {val?.brand_name} /{" "}
@@ -132,8 +132,8 @@ const ServiceSlug2 = () => {
                     </div>
                   </div>
 
-                  <div className="w-[30%] lg:px-4 z-40  md:absolute md:top-[100px] md:right-0  ">
-                    <div className="bg-[#2591b2] rounded-md shadow-md   w-[355px] p-4 lg:fixed  ">
+                  <div className="w-[30%] lg:px-4 z-40  md:absolute md:top-[100px] md:right-14  ">
+                    <div className="bg-[#2591b2] rounded-md shadow-md w-[340px]  md:w-[355px] p-4 lg:fixed  ">
                       {finalData?.map((val: any,index:any) => {
                         return (
                           <div key={index} className="flex flex-col justify-center items-center">
@@ -152,7 +152,7 @@ const ServiceSlug2 = () => {
                             <div
                               key={val.value}
                               onClick={() => setopenMapComponent(true)}
-                              className="h-[20pxpx] cursor-pointer flex justify-between items-center px-4 py-[12px] bg-white w-full text-black rounded-md "
+                              className="hover:bg-gray-500 h-[20pxpx] cursor-pointer flex justify-between items-center px-4 py-[12px] bg-white w-full text-black rounded-md "
                             >
                               {val.text}
                               <SlArrowRight />
@@ -163,7 +163,7 @@ const ServiceSlug2 = () => {
                     </div>
                   </div>
 
-                  <div className="mt-[50px] w-[100%] md:w-[50%] container 2xl:mx-[290px] md:mx-[166px] px-[10px]">
+                  <div className="mt-[50px] w-[100%] md:w-[50%] container md:mx-[190px] px-[2px] md:px-[10px]">
                     {finalData &&
                       finalData.map((val: any,index:any) => {
                         return (

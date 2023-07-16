@@ -19,6 +19,7 @@ import { MdPestControl, MdAir, MdPlumbing } from "react-icons/md";
 import axios from "axios";
 import Image from "next/image";
 import { baseUrl } from "@/public/baseUrl";
+import Link from "next/link";
 
 const Service = () => {
   const [data, setData] = useState([]);
@@ -170,7 +171,8 @@ const Service = () => {
             {/* Card container started... */}
             <div className="flex flex-wrap justify-center items-center gap-16 p-4">
               {filteredData?.map((value: any, index: any) => (
-                <div
+                <Link
+                href={`/service/${value?.url_product_name}`}
                   key={index}
                   className={`${
                     value.image_url ? "flex flex-col justify-center" : "hidden"
@@ -188,7 +190,7 @@ const Service = () => {
                       <h3 className="text-[10px]">{value.product_name}</h3>
                     </>
                   )}
-                </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -212,7 +214,8 @@ const Service = () => {
                   }`}
                 >
                   {value.image_url && (
-                    <>
+                    <Link
+                    href={`/service/${value?.url_product_name}`}>
                       <Image
                         width={100}
                         height={100}
@@ -221,7 +224,7 @@ const Service = () => {
                         alt={value.alt2 && value.alt2}
                       />
                       <h3 className="text-[10px]">{value.product_name}</h3>
-                    </>
+                    </Link>
                   )}
                 </div>
               ))}
