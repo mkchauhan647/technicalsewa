@@ -10,20 +10,20 @@ import { useRouter } from "next/navigation";
 import MapComponent from "@/components/mapComponents/MapComponent";
 import { baseUrl } from "@/public/baseUrl";
 
-const ServiceSlug2 = () => {
+const ServiceSlug2 = ({data}:any) => {
   const [openMapComponent, setopenMapComponent] = useState(false);
-  const [data, setData] = useState<any>(null);
+  // const [data, setData] = useState<any>(null);
   const [selectCategoryData, setSelectCategoryData] = useState<any>();
   const [serviceCategoryData, setServiceCategoryData] = useState<any>();
   const params = useParams();
 
   // ===========function-to-call-api-==========
-  const fetchedData = async () => {
-    const result = await axios.get(
-      `${baseUrl}multiservice/masterconfig/publicmasterconfig/getSliderListpop`
-    );
-    setData(result?.data?.brands);
-  };
+  // const fetchedData = async () => {
+  //   const result = await axios.get(
+  //     `${baseUrl}multiservice/masterconfig/publicmasterconfig/getSliderListpop`
+  //   );
+  //   setData(result?.data?.brands);
+  // };
 
   // filter data based on URL params and stored to fitlerData vaiables
   const filterData = data?.filter((val: any) => {
@@ -47,11 +47,11 @@ const ServiceSlug2 = () => {
   //  ===============================
 
   //
-  useEffect(() => {
-    if (data === null) {
-      fetchedData();
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (data === null) {
+  //     fetchedData();
+  //   }
+  // }, []);
 
   const finalData = selectCategoryData?.filter((val: any) => {
     return val.model === decodeURIComponent(params.slug2);
@@ -103,6 +103,9 @@ const ServiceSlug2 = () => {
                               {val?.product_name} /{" "}
                               {decodeURIComponent(params.slug2)}
                             </span>{" "}
+                          </h3>
+                          <h3 className="w-[500px] text-white leading-[1.5] tracking-[1px] md:text-[30px] text-[24px] font-bold">
+                            {val?.title}
                           </h3>
                         </div>
 
@@ -175,7 +178,7 @@ const ServiceSlug2 = () => {
                         return (
                           <div
                             key={index}
-                            className="flex text-justify flex-col gap-4"
+                            className="flex text-justify md:w-[66%] flex-col gap-2"
                             dangerouslySetInnerHTML={{ __html: val?.content }}
                           />
                         );

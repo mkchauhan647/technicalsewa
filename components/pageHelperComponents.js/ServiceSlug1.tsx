@@ -1,23 +1,23 @@
-"use client";
+"use client"
+
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { BsNewspaper } from "react-icons/bs";
 import { useParams } from "next/navigation";
 import { AiFillStar } from "react-icons/ai";
-import { url } from "inspector";
 import { SlArrowRight } from "react-icons/sl";
 import { useRouter } from "next/navigation";
 import { baseUrl } from "@/public/baseUrl";
 
-const ServiceSlug1 = () => {
+const ServiceSlug1 = ({data}:any) => {
   //state variable
-  const [data, setData] = useState<any>(null);
+  // const [data, setData] = useState<any>(null);
   const [selectCategoryData, setSelectCategoryData] = useState<any>();
   const params = useParams(); // getting params from URL
   const router = useRouter();
 
   // filter data based on URL params and stored to fitlerData vaiables
-  const filterData = data?.filter((val: any) => {
+  const filterData =data && data?.filter((val: any) => {
     return val.url_product_name === decodeURIComponent(params.slug1);
   });
 
@@ -25,12 +25,12 @@ const ServiceSlug1 = () => {
   const filteredId: any = filterData?.map((element: any) => element.product_id);
 
   // ===========function-to-call-api-==========
-  const fetchedData = async () => {
-    const result = await axios.get(
-      `${baseUrl}multiservice/masterconfig/publicmasterconfig/getSliderListpop`
-    );
-    setData(result?.data?.brands);
-  };
+  // const fetchedData = async () => {
+  //   const result = await axios.get(
+  //     `${baseUrl}multiservice/masterconfig/publicmasterconfig/getSliderListpop`
+  //   );
+  //   setData(result?.data?.brands);
+  // };
 
   // =====data fetched for selectProductCategory====
   const fetchedData1 = async () => {
@@ -44,11 +44,11 @@ const ServiceSlug1 = () => {
   };
 
   // call fetchData() function once when components renders
-  useEffect(() => {
-    if (data === null) {
-      fetchedData();
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (data === null) {
+  //     fetchedData();
+  //   }
+  // }, []);
 
   useEffect(() => {
     fetchedData1();
@@ -130,7 +130,7 @@ const ServiceSlug1 = () => {
             {/* description of product paragraph  */}
             <div className="my-[50px] max-w-[1280px] mx-auto px-[2px]">
               <div
-                className="flex text-justify flex-col gap-4"
+                className="flex text-justify md:w-[66%] flex-col gap-2"
                 dangerouslySetInnerHTML={{ __html: val?.content }}
               />
             </div>

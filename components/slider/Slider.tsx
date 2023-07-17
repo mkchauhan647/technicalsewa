@@ -7,8 +7,8 @@ const Slider =({data}:any) => {
 
   return (
     <div className="flex justify-center ">
-      <div className={`${length>3? "max-w-[1350px]" : "max-w-[500px]"} `} >
-          <SlideCard length={length>3?7:2} data={data} />
+      <div className={`${length>3? "max-w-[1280px]" : "max-w-[500px]"} `} >
+          <SlideCard length={length>3?6:2} data={data} />
       </div>
     </div>
   );
