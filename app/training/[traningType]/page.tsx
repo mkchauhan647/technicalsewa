@@ -13,9 +13,9 @@ const page = ({ params }: any) => {
       {trainingType === "fridgeactraining" && (
         <div>
           <div className="pb-8">
-            <h1 className="text-3xl font-bold mb-2">
+            <h2 className="text-3xl font-bold mb-2">
               Fridge & AC Training Course in Nepal
-            </h1>
+            </h2>
             <p className="text-gray-600">
               Welcome to our Fridge & AC Training Course in Nepal! <br />
               Are you looking to gain comprehensive knowledge and hands-on
@@ -90,9 +90,9 @@ const page = ({ params }: any) => {
       {trainingType === "wachingmachinetraining" && (
         <div>
           <div className="pb-8">
-            <h1 className="text-3xl font-bold mb-2">
+            <h2 className="text-3xl font-bold mb-2">
               Washing Machine Repair Training in Kathmandu
-            </h1>
+            </h2>
             <p className="text-gray-600">
               Course Overview: Our Washing Machine Repair Training in Kathmandu
               is designed to equip you with the skills and knowledge needed to
@@ -153,9 +153,9 @@ const page = ({ params }: any) => {
       {trainingType === "homeappliancestraining" && (
         <div>
           <div className="pb-8">
-            <h1 className="text-3xl font-bold mb-2">
+            <h2 className="text-3xl font-bold mb-2">
               Home Appliances Repair Training in Kathmandu
-            </h1>
+            </h2>
             <p className="text-gray-600">
               Course Overview: Our Home Appliances Repair Training in Kathmandu
               provides comprehensive training to help you become a skilled
@@ -219,9 +219,9 @@ const page = ({ params }: any) => {
       {trainingType === "ledtvtraining" && (
         <div>
           <div className="pb-8">
-            <h1 className="text-3xl font-bold mb-2">
+            <h2 className="text-3xl font-bold mb-2">
               LED TV Training in Kathmandu
-            </h1>
+            </h2>
             <p className="text-gray-600">
               Course Overview: Our LED TV Training in Kathmandu is designed to
               provide you with the knowledge and skills required to repair and
@@ -282,9 +282,9 @@ const page = ({ params }: any) => {
       {trainingType === "plumbingtraining" && (
         <div>
           <div className="pb-8">
-            <h1 className="text-3xl font-bold mb-2">
+            <h2 className="text-3xl font-bold mb-2">
               Plumbing Training in Kathmandu
-            </h1>
+            </h2>
             <p className="text-gray-600">
               Course Overview: Our Plumbing Training in Kathmandu is designed to
               provide you with the skills and knowledge required to excel in the

@@ -41,9 +41,9 @@ const Login = () => {
               className="w-full h-full object-container"
             />
           </div>
-          <h1 className="text-[#666666] text-[13px] leading-[19.5px] font-light mt-[12px]">
+          <h2 className="text-[#666666] text-[13px] leading-[19.5px] font-light mt-[12px]">
             Sign in to use our service
-          </h1>
+          </h2>
         </div>
 
         <input

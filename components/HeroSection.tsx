@@ -19,9 +19,9 @@ const HeroSection = () => {
             height={240}
           />
           <div className=" absolute top-0 left-[50%] translate-x-[-50%] bg-white/[0.85] h-[240px] w-[720px] ">
-            <h1 className="text-[#2591B2] text-[20px] leading-[60.94px] font-medium text-center pl-[124.5px] mt-5 pr-[125.5px] ">
+            <h2 className="text-[#2591B2] text-[20px] leading-[60.94px] font-medium text-center pl-[124.5px] mt-5 pr-[125.5px] ">
               Professional Repair Services On Demand
-            </h1>
+            </h2>
             <p className="text-[#505056] font-medium text-center  ">
               One-stop solution for your services. Order any service, anytime.
             </p>

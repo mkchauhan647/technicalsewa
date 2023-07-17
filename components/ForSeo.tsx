@@ -96,13 +96,6 @@ const ForSeo = () => {
       </a>
       <a
         className="hidden"
-        href="https://www.facebook.com/people/repair-and-Solution/100089561034752/"
-        aria-label="8"
-      >
-        8
-      </a>
-      <a
-        className="hidden"
         href="https://technicalsewa.com/contact"
         aria-label="9"
       >
@@ -129,27 +122,7 @@ const ForSeo = () => {
       >
         12
       </a>
-      <a
-        className="hidden"
-        href="https://technicalsewa.com/repair-product/drone-commercial/motor-issues"
-        aria-label="13"
-      >
-        13
-      </a>
-      <a
-        className="hidden"
-        href="https://technicalsewa.com/repair/drone-commercial"
-        aria-label="14"
-      >
-        14
-      </a>
-      <a
-        className="hidden"
-        href="https://technicalsewa.com/repair-product/drone-commercial/motor-issues"
-        aria-label="15"
-      >
-        15
-      </a>
+     
 
       <p className="hidden">
         Technical Sewa-Professional <strong>Repair Service</strong> On Demand

@@ -141,9 +141,9 @@ const Service = () => {
               }`}
             >
               <div className="md:hidden  text-[#2591b2]">{src}</div>
-              <h1 className="md:text-[#a6adbb] font-medium text-[12px] md:text-[16px] text-center  md:text-left">
+              <h3 className="md:text-[#a6adbb] font-medium text-[12px] md:text-[16px] text-center  md:text-left">
                 {n}
-              </h1>
+              </h3>
             </div>
           ))}
         </div>
