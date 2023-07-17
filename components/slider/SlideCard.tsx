@@ -62,9 +62,9 @@ const SlideCard = ({ length, data }: any) => {
                   alt={ele?.alt2}
                   className="bg-white h-[100px] w-[160px] border-[1px] border-gray-100 rounded-sm hover:scale-[1.1] transition-hover duration-300"
                 />
-                <h1 className="text-[16px] text-center whitespace-nowrap font-bold">
+                <h2 className="text-[16px] text-center whitespace-nowrap font-bold">
                   {ele?.product_name}
-                </h1>
+                </h2>
                 <p className="text-[12px] text-[#a6adbb] px-2 text-center">
                   {ele.title}
                 </p>

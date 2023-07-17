@@ -83,9 +83,9 @@ const ServiceSlug1 = () => {
                       {val?.product_name}
                     </span>{" "}
                   </h3>
-                  <h1 className=" text-white leading-[1.5] tracking-[1px] text-[30px] font-bold">
+                  <h3 className=" text-white leading-[1.5] tracking-[1px] text-[30px] font-bold">
                     {val?.title}
-                  </h1>
+                  </h3>
                 </div>
 
                 <div className="w-[200px] h-[45px] bg-[#1D738D] flex itmes-center text-white py-[5px] px-[15px] rounded-[6px] mt-[10px]">
@@ -107,9 +107,9 @@ const ServiceSlug1 = () => {
 
             <div className="w-[30%] lg:px-4 z-40 md:absolute md:top-[100px] md:right-14 ">
               <div className="bg-[#2591b2] rounded-md shadow-md w-[340px] md:w-[355px] p-4 lg:fixed ">
-                <h2 className="text-white mb-4 text-[24px] font-medium text-center ">
+                <h3 className="text-white mb-4 text-[24px] font-medium text-center ">
                   Select product Category
-                </h2>
+                </h3>
                 <div className="flex flex-col px-2 gap-2 justify-center items-center">
                   {selectCategoryData?.map((val: any) => {
                     return (
