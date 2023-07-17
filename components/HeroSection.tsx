@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import Image from "next/image";
 import React from "react";
@@ -45,7 +45,7 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-        <div className=" flex px-[40px] justify-center md:hidden">
+        <div className=" flex mt-4 md:mt-0 px-[40px] justify-center md:hidden">
           <input
             className="pl-[10px] border-[1px] border-[#C4C4C4] w-full outline-[#2591b2] rounded-[5px] "
             placeholder="Search Service here..."

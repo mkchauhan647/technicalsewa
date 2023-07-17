@@ -58,7 +58,7 @@ const SignUp = () => {
       <div className="flex flex-col items-center">
         <img
           className="w-[100px] md:w-[150px]"
-          src="../Assets/ts-final-logo.png"
+          src="/assets/ts-final-logo.png"
           alt="logo"
         />
 
