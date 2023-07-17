@@ -79,9 +79,9 @@ const ServiceSlug1 = () => {
                         {val?.product_name}
                       </span>
                     </h3>
-                    <h1 className="w-[500px] text-white leading-[1.5] tracking-[1px] md:text-[30px] text-[24px] font-bold">
+                    <h3 className="w-[500px] text-white leading-[1.5] tracking-[1px] md:text-[30px] text-[24px] font-bold">
                       {val?.title}
-                    </h1>
+                    </h3>
                   </div>
 
                   <div className="w-[200px] h-[45px] bg-[#1D738D] flex itmes-center text-white py-[5px] px-[15px] rounded-[6px] mt-[10px]">
