@@ -32,126 +32,126 @@ const ForSeo = () => {
       </section>
 
       <a
-        className="h-[0px] overflow-hidden"
+        className="hidden"
         href="https://technicalsewa.com/"
         aria-label="1"
       >
         1
       </a>
       <a
-        className="h-[0px] overflow-hidden"
+        className="hidden"
         href="https://technicalsewa.com/repair/haier"
         aria-label="2"
       >
         2
       </a>
       <a
-        className="h-[0px] overflow-hidden"
+        className="hidden"
         href="https://technicalsewa.com/repair/cctv-service"
         aria-label="3"
       >
         3
       </a>
       <a
-        className="h-[0px] overflow-hidden"
+        className="hidden"
         href="https://technicalsewa.com/repair-product/cctv-service/new-installation"
         aria-label="4"
       >
         4
       </a>
       <a
-        className="h-[0px] overflow-hidden"
+        className="hidden"
         href="https://technicalsewa.com/cctv-service/new-installation"
         aria-label="5"
       >
         5
       </a>
       <a
-        className="h-[0px] overflow-hidden"
+        className="hidden"
         href="https://technicalsewa.com/new-furniture-making/double-bed-making"
         aria-label="6"
       >
         6
       </a>
       <a
-        className="h-[0px] overflow-hidden"
+        className="hidden"
         href="https://technicalsewa.com/new-furniture-making/double-bed-making"
         aria-label="7"
       >
         7
       </a>
       <a
-        className="h-[0px] overflow-hidden"
+        className="hidden"
         href="https://www.facebook.com/people/repair-and-Solution/100089561034752/"
         aria-label="8"
       >
         8
       </a>
       <a
-        className="h-[0px] overflow-hidden"
+        className="hidden"
         href="https://www.facebook.com/people/repair-and-Solution/100089561034752/"
         aria-label="8"
       >
         8
       </a>
       <a
-        className="h-[0px] overflow-hidden"
+        className="hidden"
         href="https://www.facebook.com/people/repair-and-Solution/100089561034752/"
         aria-label="8"
       >
         8
       </a>
       <a
-        className="h-[0px] overflow-hidden"
+        className="hidden"
         href="https://technicalsewa.com/contact"
         aria-label="9"
       >
         9
       </a>
       <a
-        className="h-[0px] overflow-hidden"
+        className="hidden"
         href="https://technicalsewa.com/repair/allservices"
         aria-label="10"
       >
         10
       </a>
       <a
-        className="h-[0px] overflow-hidden"
+        className="hidden"
         href="https://technicalsewa.com/repair/mi-tv"
         aria-label="11"
       >
         11{" "}
       </a>
       <a
-        className="h-[0px] overflow-hidden"
+        className="hidden"
         href="https://technicalsewa.com/repair/genuine-group"
         aria-label="12"
       >
         12
       </a>
       <a
-        className="h-[0px] overflow-hidden"
+        className="hidden"
         href="https://technicalsewa.com/repair-product/drone-commercial/motor-issues"
         aria-label="13"
       >
         13
       </a>
       <a
-        className="h-[0px] overflow-hidden"
+        className="hidden"
         href="https://technicalsewa.com/repair/drone-commercial"
         aria-label="14"
       >
         14
       </a>
       <a
-        className="h-[0px] overflow-hidden"
+        className="hidden"
         href="https://technicalsewa.com/repair-product/drone-commercial/motor-issues"
         aria-label="15"
       >
         15
       </a>
 
-      <p className="h-[0px] overflow-hidden">
+      <p className="hidden">
         Technical Sewa-Professional <strong>Repair Service</strong> On Demand
         repairs on demand, Appliances Repair, popular Brands, Warranty Products,
         Electrician & Plumber, Air-Purifier/Humidifier, Mobiles & Tabs, tv
@@ -164,7 +164,7 @@ const ForSeo = () => {
         Sewa, we understand the inconvenience caused by malfunctioning
         appliance, and our mission is to provide efficient and affordable repair{" "}
       </p>
-      <p>
+      <p className="hidden">
         services to get your appliances back to optimal performance. With our
         industry knowledge and extensive experience, we can quickly diagnose and
         address any issues, ensuring that your appliances are up and running in
@@ -177,7 +177,7 @@ const ForSeo = () => {
         Repair, popular Brands, Warranty Products, Electrician & Plumber,
         Air-Purifier/Humidifier, Mobiles & Tabs, tv Welcome to Technical Sewa,
         your premier destination for top-notch electronic repair
-        <strong className="h-[0px] overflow-hidden">service</strong>. With a
+        <strong className="hidden">service</strong>. With a
         focus on customer satisfaction and expertise in a wide range of
         appliances, we are your go-to solution for all your repair needs. Our
         team of skilled technicians specializes in repairing various appliances,
@@ -194,9 +194,9 @@ const ForSeo = () => {
         service in nepal, plumbing service in nepal Appliances Repair, popular
         Brands, Warranty Products,{" "}
       </p>
-      <p className="h-[0px] overflow-hidden">
-        {" "}
-        <strong>Electrician & Plumbers </strong>Air-Purifier/Humidifier, <br />{" "}
+      <p className="hidden">
+      
+        <strong>Electrician & Plumbers </strong>Air-Purifier/Humidifier, <br />
         , tv , washing machine, Repair, popular Brands, Warranty Products,
         Electrician & Plumber, Air-Purifier/Humidifier, Mobiles & Tabs, tv
         Welcome to Technical Sewa, your premier destination for top-notch
@@ -209,7 +209,7 @@ const ForSeo = () => {
         appliance, and our mission is to provide efficient and affordable repair
         services{" "}
       </p>
-      <strong className="h-[0px] overflow-hidden">
+      <strong className="hidden">
         share this on Facebook.
       </strong>
     </div>
