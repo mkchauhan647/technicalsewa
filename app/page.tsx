@@ -10,6 +10,7 @@ import { baseUrl } from "../public/baseUrl";
 import axios from "axios";
 import Nav from "@/components/Nav";
 import Footer from "@/components/footer/Footer";
+import ForSeo from "@/components/ForSeo";
 
 export default async function Home() {
   const result = await axios.get(
@@ -36,6 +37,7 @@ export default async function Home() {
 
   return (
     <>
+    <ForSeo />
     <Nav />
     <main>
       <HeroSection />
