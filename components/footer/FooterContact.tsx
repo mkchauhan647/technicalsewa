@@ -15,7 +15,7 @@ const FooterContact = () => {
               Request a service
             </button>
             <button className="flex items-center justify-center  gap-[10px] h-[50px] w-[180px] border border-[#2591B2] rounded-[4px] text-black">
-              <BsFillTelephoneFill className="text-[#2591B2]" size={20} />{" "}
+              <BsFillTelephoneFill className="text-[#2591B2]" size={20} />
               9851201580
             </button>
           </div>

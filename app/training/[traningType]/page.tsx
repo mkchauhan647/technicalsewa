@@ -1,9 +1,13 @@
+import Nav from "@/components/Nav";
+import Footer from "@/components/footer/Footer";
 import { useRouter } from "next/router";
 import React from "react";
 
 const page = ({ params }: any) => {
   let trainingType = params.traningType;
   return (
+    <>
+    <Nav />
     <div className="max-w-[1280px] py-8  mx-auto">
       {/* fridge training  */}
       {trainingType === "fridgeactraining" && (
@@ -337,6 +341,8 @@ const page = ({ params }: any) => {
         </div>
       )}
     </div>
+    <Footer />
+    </>
   );
 };
 
