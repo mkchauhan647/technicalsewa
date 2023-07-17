@@ -56,7 +56,6 @@ const ServiceSlug2 = () => {
   const finalData = selectCategoryData?.filter((val: any) => {
     return val.model === decodeURIComponent(params.slug2);
   });
- 
 
   // ===========================================
   const serviceCategoryId: any = finalData?.map(
@@ -94,7 +93,8 @@ const ServiceSlug2 = () => {
                   >
                     <div className="absolute top-0 z-0 h-full w-full left-0 bg-black/50 "></div>
 
-                    <div className="container absolute h-full top-0 left-0 py-3 px-[2px]  md:px-[10px] z-30  md:mx-[190px]">
+                    {/* banner description paragraph  */}
+                    <div className="container absolute h-full top-0 left-0 py-3 px-[2px]  md:px-[10px] z-30  md:mx-[190px] xl:mx-[80px] 2xl:mx-[300px]">
                       <div className="flex flex-col ">
                         <h3 className="text-[#cdcecf] font-[600] text-[16px] ">
                           {val?.brand_name} /{" "}
@@ -116,7 +116,7 @@ const ServiceSlug2 = () => {
                       <div className="flex flex-col mt-[20px]  md:gap-[14px] ">
                         <div className="flex  items-center">
                           {finalData &&
-                            finalData.map((val: any,index:any) => {
+                            finalData.map((val: any, index: any) => {
                               return (
                                 <div
                                   key={index}
@@ -132,11 +132,15 @@ const ServiceSlug2 = () => {
                     </div>
                   </div>
 
-                  <div className="w-[30%] lg:px-4 z-40  md:absolute md:top-[100px] md:right-14  ">
+                  {/* side hire a expert div  */}
+                  <div className="w-[30%] lg:px-4 z-40  md:absolute md:top-[100px] md:right-14   xl:right-4 2xl:right-28">
                     <div className="bg-[#2591b2] rounded-md shadow-md w-[340px]  md:w-[355px] p-4 lg:fixed  ">
-                      {finalData?.map((val: any,index:any) => {
+                      {finalData?.map((val: any, index: any) => {
                         return (
-                          <div key={index} className="flex flex-col justify-center items-center">
+                          <div
+                            key={index}
+                            className="flex flex-col justify-center items-center"
+                          >
                             <h2 className="text-white  text-[24px] font-medium text-center ">
                               Hire a Expert for
                             </h2>
@@ -163,9 +167,9 @@ const ServiceSlug2 = () => {
                     </div>
                   </div>
 
-                  <div className="mt-[50px] w-[100%] md:w-[50%] container md:mx-[190px] px-[2px] md:px-[10px]">
+                  <div className="max-w-[1280px] mx-auto mt-[50px] px-[2px] ">
                     {finalData &&
-                      finalData.map((val: any,index:any) => {
+                      finalData.map((val: any, index: any) => {
                         return (
                           <div
                             key={index}

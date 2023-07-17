@@ -3,7 +3,7 @@ import { baseUrl } from "../../public/baseUrl";
 import CategoryCard from "./CategoryCard";
 import axios from "axios";
 
-const Categories =async ({ allBrands }: any) => {
+const Categories = async ({ allBrands }: any) => {
   // const [data, setData] = useState<any>([]);
   // const fetching = async () => {
   //   await axios
@@ -17,9 +17,11 @@ const Categories =async ({ allBrands }: any) => {
   //   fetching();
   // }, []);
 
-  const data:any =await fetch(`${baseUrl}techsewa/masterconfig/publicmasterconfig/getServiceList`).then((res)=>{
+  const data: any = await fetch(
+    `${baseUrl}techsewa/masterconfig/publicmasterconfig/getServiceList`
+  ).then((res) => {
     return res.json();
-  })
+  });
 
   return (
     <div className="pt-[40px] pb-[40px]  flex justify-around md:justify-center items-center flex-wrap gap-1 md:gap-5 ">

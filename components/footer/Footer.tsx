@@ -15,7 +15,7 @@ const Footer = () => {
           </h2>
           {/* link of location */}
           <div className="flex flex-col md:flex-row justify-between gap-4 items-center  py-8">
-            <div className="flex gap-8 font-Roboto font-normal text-base leading-[24px] text-[#FFF]">
+            <div className="flex-1 flex gap-8 font-Roboto font-normal text-base leading-[24px] text-[#FFF]">
               <div className="flex flex-col gap-[10px]">
                 <Link href="#">Pokhara</Link>
                 <Link href="#">Chitwan</Link>
@@ -41,10 +41,10 @@ const Footer = () => {
             </div>
 
             {/* direction  */}
-            <div className=" flex items-center justify-center xl:justify-end">
+            <div className="flex-1  flex items-center justify-center">
               <Link
                 href=""
-                className="bg-[#203E9A] w-[95px] h-[28px] font-Roboto font-normal text-base leading-[24px] text-[#FFF] text-center border-[1px] border-solid border-[#E5E7EB]"
+                className=" bg-[#203E9A] w-[95px] h-[28px] font-Roboto font-normal text-base leading-[24px] text-[#FFF] text-center border-[1px] border-solid border-[#E5E7EB]"
               >
                 Direction
               </Link>
