@@ -10,11 +10,11 @@ const WhyChooseUs = () => {
       <div className="container mx-auto py-[60px] xl:w-[80rem] sm:w-full  sm-w-full m-auto px-4">
         <div className="flex items-center gap-[10px]">
           <div className="h-[3px] w-[40px] bg-black/[0.5]"></div>{" "}
-          <h1> WHY CHOOSE US</h1>
+          <h2> WHY CHOOSE US</h2>
         </div>
-        <h1 className="text-[25px] md:text-[35px] text-black mt-[10px] text-left font-bold">
+        <h3 className="text-[25px] md:text-[35px] text-black mt-[10px] text-left font-bold">
           Because We care about your safety..
-        </h1>
+        </h3>
         <div className="flex  flex-col md:flex-row  gap-4 md:gap-[40px] mt-[30px]">
           <div className="basis-[45%] grid grid-cols-2 gap-[30px]">
             <div className="bg-white h-[120px] cursor-pointer w-full flex border items-center justify-center transform hover:scale-[102%] duration-300 ease-out ">
