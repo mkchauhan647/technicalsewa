@@ -5,6 +5,7 @@ import Image from "next/image";
 import { RxCross2 } from "react-icons/rx";
 import Link from "next/link";
 const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
+  console.log(imgAlt, filterData);
   const myDialog: any = useRef(null);
 
   useEffect(() => {
@@ -25,7 +26,7 @@ const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
           <div className="flex gap-[10px]  items-center pl-[10px]">
             <Image src={imageUrl} alt={imgAlt} width={30} height={30} />
             <h2 className="text-black font-medium md:text-[28px] text-[21px] leading-[20px]">
-              {brandName}
+              {brandName}{" "}
             </h2>
           </div>
 
@@ -35,25 +36,27 @@ const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
             onClick={() => myDialog?.current.close()}
           />
         </div>
-        <div className="p-5 grid md:grid-cols-4 grid-cols-2">
+        <div className="p-5 grid md:grid-cols-4 grid-cols-2 gap-[10px]">
           {filterData?.map((val: any) => (
             <Link
               key={val.product_name}
               href={`service/${val.url_product_name}`}
-              className="flex flex-col justify-center items-center w-[100px] md:w-[170px] h-[120px] gap-2"
+              className="flex flex-col justify-center items-center w-[100px] md:w-[178px] h-[128px]"
             >
-              <div className="rounded-full p-2 border-2 border-[#036CDB] flex flex-col justify-center items-center w-[100px] h-[100px] overflow-hidden">
-                <Image
-                  src={val.image_url}
-                  alt={val.alt2}
-                  width={80}
-                  height={50}
-                  className="h-[60px] w-[60px]"
-                />
-                <p className="text-[12px] text-center font-bold text-[#1C1E21] w-32 h-10">
-                  {val.product_name}
-                </p>
+              <div className="rounded-full p-4 border-2 border-[#036CDB] flex items-center w-[100px] h-[80px] overflow-hidden">
+                {val.image_url && (
+                  <Image
+                    src={val.image_url}
+                    alt={val.alt2}
+                    width={80}
+                    height={64}
+                    className=" rounded-full "
+                  />
+                )}
               </div>
+              <p className="mt-[15px] text-[12px] text-center font-bold text-[#1C1E21] w-32 h-10">
+                {val.product_name}
+              </p>
             </Link>
           ))}
         </div>
