@@ -1,13 +1,12 @@
-'use client'
+"use client";
 
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { RxCross2 } from "react-icons/rx";
 import Link from "next/link";
 const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
-  console.log(imgAlt,filterData)
+  console.log(imgAlt, filterData);
   const myDialog: any = useRef(null);
-
 
   useEffect(() => {
     if (myDialog) {
@@ -15,10 +14,8 @@ const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
     }
   }, []);
 
-
-
   return (
-    <div  >
+    <div>
       <dialog
         ref={myDialog}
         id="myDialog"
@@ -32,33 +29,38 @@ const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
               {brandName}{" "}
             </h2>
           </div>
-         
+
           <RxCross2
             size={16}
             className="text-[#8C8C8C] cursor-pointer "
             onClick={() => myDialog?.current.close()}
           />
         </div>
-        <div className="p-5 grid md:grid-cols-4 grid-cols-2 gap-[10px]">
+        <div className="p-3 items-center grid md:grid-cols-4 grid-cols-2">
           {filterData?.map((val: any) => (
-            <Link key={val.product_name} href={`service/${val.url_product_name}`} className="flex flex-col justify-center items-center w-[100px] md:w-[178px] h-[128px]">
-              <div className="rounded-full p-4 border-2 border-[#036CDB] flex items-center w-[100px] h-[80px] overflow-hidden">
-                {val.image_url && <Image
-                  src={val.image_url}
-                  alt={val.alt2}
-                  width={80}
-                  height={64}
-                  className=" rounded-full "
-                />}
+            <Link
+              key={val.product_name}
+              href={`service/${val.url_product_name}`}
+              className="flex flex-col justify-center items-center w-[80px] md:w-[150px] h-[128px]"
+            >
+              <div className="rounded-md p-2 border-[1px] border-[#2591b2] flex flex-col items-center w-[100px] h-[100px] overflow-hidden">
+                {val.image_url && (
+                  <Image
+                    src={val.image_url}
+                    alt={val.alt2}
+                    width={80}
+                    height={64}
+                    className=" h-[60px] "
+                  />
+                )}
+                <p className="text-[12px] text-center font-bold text-[#1C1E21] w-32 h-10">
+                  {val.product_name}
+                </p>
               </div>
-              <p className="mt-[15px] text-[12px] text-center font-bold text-[#1C1E21] w-32 h-10">
-                {val.product_name}
-              </p>
             </Link>
           ))}
         </div>
-        <div>
-        </div>
+        <div></div>
       </dialog>
     </div>
   );
