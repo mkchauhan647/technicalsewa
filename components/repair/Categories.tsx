@@ -3,23 +3,28 @@ import { baseUrl } from "../../public/baseUrl";
 import CategoryCard from "./CategoryCard";
 import axios from "axios";
 
-const Categories = ({ allBrands }: any) => {
-  const [data, setData] = useState<any>([]);
-  const fetching = async () => {
-    await axios
-      .get(`${baseUrl}techsewa/masterconfig/publicmasterconfig/getServiceList`)
-      .then((res) => {
-        setData(res.data);
-      });
-  };
+const Categories = async ({ allBrands }: any) => {
+  // const [data, setData] = useState<any>([]);
+  // const fetching = async () => {
+  //   await axios
+  //     .get(`${baseUrl}techsewa/masterconfig/publicmasterconfig/getServiceList`)
+  //     .then((res) => {
+  //       setData(res.data);
+  //     });
+  // };
 
-  const data:any =await fetch(`${baseUrl}techsewa/masterconfig/publicmasterconfig/getServiceList`).then((res)=>{
+  // useEffect(() => {
+  //   fetching();
+  // }, []);
+
+  const data: any = await fetch(
+    `${baseUrl}techsewa/masterconfig/publicmasterconfig/getServiceList`
+  ).then((res) => {
     return res.json();
-  })
+  });
 
   return (
     <div className="pt-[40px] pb-[40px]  flex justify-center items-center flex-wrap gap-5 ">
-    <div className="pt-[40px] pb-[40px] flex justify-around md:justify-center items-center flex-wrap md:gap-5 ">
       {data?.brands?.slice(0, 12).map((category: any) => (
         <CategoryCard
           id={category.brand_id}
