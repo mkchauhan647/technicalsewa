@@ -5,6 +5,7 @@ import Image from "next/image";
 import { RxCross2 } from "react-icons/rx";
 import Link from "next/link";
 const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
+  console.log(imgAlt,filterData)
   const myDialog: any = useRef(null);
 
 
@@ -42,13 +43,13 @@ const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
           {filterData?.map((val: any) => (
             <Link key={val.product_name} href={`service/${val.url_product_name}`} className="flex flex-col justify-center items-center w-[100px] md:w-[178px] h-[128px]">
               <div className="rounded-full p-4 border-2 border-[#036CDB] flex items-center w-[100px] h-[80px] overflow-hidden">
-                <Image
+                {val.image_url && <Image
                   src={val.image_url}
                   alt={val.alt2}
                   width={80}
                   height={64}
                   className=" rounded-full "
-                />
+                />}
               </div>
               <p className="mt-[15px] text-[12px] text-center font-bold text-[#1C1E21] w-32 h-10">
                 {val.product_name}
