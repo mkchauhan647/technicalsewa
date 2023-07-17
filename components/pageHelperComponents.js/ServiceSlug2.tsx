@@ -94,39 +94,41 @@ const ServiceSlug2 = () => {
                     <div className="absolute top-0 z-0 h-full w-full left-0 bg-black/50 "></div>
 
                     {/* banner description paragraph  */}
-                    <div className="container absolute h-full top-0 left-0 py-3 px-[2px]  md:px-[10px] z-30  md:mx-[190px] xl:mx-[80px] 2xl:mx-[300px]">
-                      <div className="flex flex-col ">
-                        <h3 className="text-[#cdcecf] font-[600] text-[16px] ">
-                          {val?.brand_name} /{" "}
-                          <span className="text-white font-[600] text-[16px]">
-                            {val?.product_name} /{" "}
-                            {decodeURIComponent(params.slug2)}
-                          </span>{" "}
-                        </h3>
-                      </div>
+                    <div className=" absolute w-full left-0 ">
+                      <div className=" max-w-[1280px] mx-auto px-[2px]">
+                        <div className="flex flex-col ">
+                          <h3 className="text-[#cdcecf] font-[600] text-[16px] ">
+                            {val?.brand_name} /{" "}
+                            <span className="text-white font-[600] text-[16px]">
+                              {val?.product_name} /{" "}
+                              {decodeURIComponent(params.slug2)}
+                            </span>{" "}
+                          </h3>
+                        </div>
 
-                      <div className="w-[200px] h-[45px] bg-[#1D738D] flex itmes-center  text-white py-[5px] px-[15px] rounded-[6px] mt-[10px]">
-                        <AiFillStar size={30} />
-                        <p className="pl-[10px] text-[24px] font-semibold">
-                          4.65
-                        </p>
-                        <p className="pl-[5px] self-end mb-[5px]">Out of 5</p>
-                      </div>
+                        <div className="w-[200px] h-[45px] bg-[#1D738D] flex itmes-center  text-white py-[5px] px-[15px] rounded-[6px] mt-[10px]">
+                          <AiFillStar size={30} />
+                          <p className="pl-[10px] text-[24px] font-semibold">
+                            4.65
+                          </p>
+                          <p className="pl-[5px] self-end mb-[5px]">Out of 5</p>
+                        </div>
 
-                      <div className="flex flex-col mt-[20px]  md:gap-[14px] ">
-                        <div className="flex  items-center">
-                          {finalData &&
-                            finalData.map((val: any, index: any) => {
-                              return (
-                                <div
-                                  key={index}
-                                  className="flex pb-4 text-white text-justify flex-col gap-4"
-                                  dangerouslySetInnerHTML={{
-                                    __html: val?.description,
-                                  }}
-                                />
-                              );
-                            })}
+                        <div className="flex flex-col mt-[20px]  md:gap-[14px] ">
+                          <div className="flex  items-center">
+                            {finalData &&
+                              finalData.map((val: any, index: any) => {
+                                return (
+                                  <div
+                                    key={index}
+                                    className="flex pb-4 text-white text-justify flex-col gap-4"
+                                    dangerouslySetInnerHTML={{
+                                      __html: val?.description,
+                                    }}
+                                  />
+                                );
+                              })}
+                          </div>
                         </div>
                       </div>
                     </div>
