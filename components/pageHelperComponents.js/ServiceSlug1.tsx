@@ -37,7 +37,7 @@ const ServiceSlug1 = ({data}:any) => {
     const formData = new FormData();
     formData.append("product_id", filteredId);
     const result = await axios.post(
-      `${baseUrl}multiservice/publicControl/GetProductcategiryByProduct`,
+      `${baseUrl}techsewa/publicControl/GetProductcategiryByProduct`,
       formData
     );
     setSelectCategoryData(result?.data);
@@ -64,7 +64,9 @@ const ServiceSlug1 = ({data}:any) => {
             className="mb-[20px] overflow-hidden max-md:p-4 flex flex-col gap-4 relative"
           >
             <div
-              style={{ backgroundImage: `url(${val?.image_url})` }}
+              style={{ backgroundImage: `url(${val?.image_url.replace(
+                "https://smartcare.com.np/multiservice/",
+                "https://smartcare.com.np/multiservice/test/")})` }}
               className="bg-white h-[350px] bg-contain bg-no-repeat bg-center w-full relative py-[20px]"
             >
               <div className="absolute top-0 z-0 h-full w-full left-0 bg-black/50 "></div>

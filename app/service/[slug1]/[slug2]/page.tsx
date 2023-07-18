@@ -6,7 +6,7 @@ import React from 'react'
 
 const page = async () => {
 
-  const result = await fetch(`${baseUrl}multiservice/masterconfig/publicmasterconfig/getSliderListpop`);
+  const result = await fetch(`${baseUrl}techsewa/masterconfig/publicmasterconfig/getSliderListpop`);
   const data = await result.json();
 
   return (
