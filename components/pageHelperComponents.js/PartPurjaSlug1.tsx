@@ -18,7 +18,7 @@ const PartPurjaSlug1 = () => {
         <img
           className=" self-center w-[600px] h-[200px] md:h-[400px]"
           src={singleData?.data?.filename}
-          alt="image"
+          alt={singleData?.data?.features}
         />
         <div
           className="bg-[#2591b2] self-center text-center w-[80%] sm:w-auto text-white font-normal rounded-xl px-4 py-2"
