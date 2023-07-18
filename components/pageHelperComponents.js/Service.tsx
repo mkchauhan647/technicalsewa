@@ -183,7 +183,7 @@ const Service = () => {
                       <Image
                         width={100}
                         height={100}
-                        className="h-[80px] w-[80px]"
+                        className="h-[60px] w-[80px]"
                         src={value.image_url && value.image_url}
                         alt={value.alt2 && value.alt2}
                       />
