@@ -69,17 +69,7 @@ const ForSeo = () => {
         />
       </Head>
       <h1 className="hidden">hi this is used for seo purpose only</h1>
-      <h2 className="hidden">hi this is used for seo purpose only</h2>
-      <h3 className="hidden">hi this is used for seo purpose only</h3>
-      <h4 className="hidden">hi this is used for seo purpose only</h4>
-      <h5 className="hidden">hi this is used for seo purpose only</h5>
-      <p className="hidden">hi this is used for seo purpose only</p>
-      <p className="hidden">hi this is used for seo purpose only</p>
-      <p className="hidden">hi this is used for seo purpose only</p>
-      <p className="hidden">hi this is used for seo purpose only</p>
-      <p className="hidden">hi this is used for seo purpose only</p>
-      <p className="hidden">hi this is used for seo purpose only</p>
-      <p className="hidden">hi this is used for seo purpose only</p>
+      <h5 className="hidden">this is h5 tag used for seo purpose only</h5>
 
       <section className="hidden">
         <article className="hidden">
@@ -101,36 +91,49 @@ const ForSeo = () => {
       </a>
       <a
         className="hidden"
-        href="https://technicalsewa.com/repair/haier"
+        href="/haier"
         aria-label="2"
       >
         2
       </a>
       <a
         className="hidden"
-        href="https://technicalsewa.com/repair/cctv-service"
+        href="/cctv-service"
         aria-label="3"
       >
         3
       </a>
       <a
         className="hidden"
-        href="https://technicalsewa.com/repair-product/cctv-service/new-installation"
+        href="https://en.wikipedia.org/wiki/Tech"
         aria-label="4"
       >
         4
       </a>
       <a
         className="hidden"
-        href="https://en.wikipedia.org/wiki/Technical"
+        href="https://technicalsewa.com/cctv-service/new-installation"
         aria-label="5"
       >
-        wikipedia
+        5
       </a>
-     
       <a
         className="hidden"
-        href="https://www.facebook.com/people/repair-and-Solution/100089561034752/"
+        href="https://technicalsewa.com/new-furniture-making/double-bed-making"
+        aria-label="6"
+      >
+        6
+      </a>
+      <a
+        className="hidden"
+        href="https://technicalsewa.com/old-furniture-making/ricecooker-making"
+        aria-label="7"
+      >
+        7
+      </a>
+      <a
+        className="hidden"
+        href="https://en.wikipedia.org/wiki/Technical"
         aria-label="8"
       >
         8
@@ -144,17 +147,17 @@ const ForSeo = () => {
       </a>
       <a
         className="hidden"
-        href="https://technicalsewa.com/repair/allservices"
+        href="/allservices"
         aria-label="10"
       >
         10
       </a>
       <a
         className="hidden"
-        href="https://technicalsewa.com/repair/mi-tv"
+        href="/mi-tv"
         aria-label="11"
       >
-        11{" "}
+        11
       </a>
       <a
         className="hidden"
@@ -165,7 +168,7 @@ const ForSeo = () => {
       </a>
       <a
         className="hidden"
-        href="https://www.linkedIn.com/people/repair-and-Solution/100089561034752/"
+        href="https://www.linkedIn.com/people/"
         aria-label="8"
       >
         13
@@ -174,18 +177,12 @@ const ForSeo = () => {
       <p className="hidden">
         Technical Sewa-Professional <strong>Repair Service</strong> On Demand
         repairs on demand, Appliances Repair, popular Brands, Warranty Products,
-        Electrician & Plumber, Air-Purifier/Humidifier, Mobiles & Tabs, tv
+        Electrician & Plumber, Air-Purifier/Humidifier, Mobiles & Tabs, tv.
       </p>
       <p className="hidden">
         services to get your appliances back to optimal performance. With our
-        <strong className="hidden">service</strong>. With a focus on customer
-        satisfaction and expertise in a wide range of appliances, we are your
-        Brands, Warranty Products,{" "}
-      </p>
-      <p className="hidden">
-        <strong>Electrician & Plumbers </strong>Air-Purifier/Humidifier, <br />,
-        tv , washing machine, Repair, popular Brands, Warranty Products,
-        Electrician & Plumber, Air-Purifier/Humidifier, Mobiles & Tabs, tv
+        <strong className="hidden">TechnicalService</strong>. With a focus on customer
+        satisfaction and expertise in a wide range of appliances.{" "}
       </p>
       <strong className="hidden">share this on Facebook.</strong>
     </div>

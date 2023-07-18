@@ -55,7 +55,7 @@ const page = async () => {
                 <img
                   className="mix-blend-multiply h-[50%] md:h-[45%] border-[1px] rounded-t-md p-4"
                   src={s.filename}
-                  alt="products"
+                  alt={s.features}
                 />
                 <div className="flex flex-col gap-4 p-2">
                   <div className=" bg-[#e8ebf4] text-[#3293b2] rounded-full text-[10px] font-bold text-center py-4">
