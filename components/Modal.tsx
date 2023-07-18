@@ -20,7 +20,7 @@ const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
         ref={myDialog}
         id="myDialog"
         data-modal
-        className="outline-none shadow-lg  bg-[white] md:px-[24px] px-[10px] py-[20px] rounded-[10px] "
+        className="outline-none shadow-lg bg-[white] md:px-[24px] px-[10px] py-[20px] rounded-[10px] "
       >
         <div className="flex md:justify-between items-center gap-[10px] ">
           <div className="flex gap-[10px]  items-center pl-[10px]">
@@ -36,12 +36,12 @@ const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
             onClick={() => myDialog?.current.close()}
           />
         </div>
-        <div className="p-3 items-center grid md:grid-cols-4 grid-cols-2">
+        <div className="w-full grid md:grid-cols-4 grid-cols-2 place-items-center ">
           {filterData?.map((val: any) => (
             <Link
               key={val.product_name}
               href={`service/${val.url_product_name}`}
-              className="flex flex-col justify-center items-center w-[80px] md:w-[150px] h-[128px]"
+              className="flex flex-col justify-center items-center w-[80px] md:w-[120px] h-[120px]"
             >
               <div className="rounded-md p-2 border-[1px] border-[#2591b2] flex flex-col items-center w-[100px] h-[100px] overflow-hidden">
                 {val.image_url && (
@@ -60,7 +60,6 @@ const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
             </Link>
           ))}
         </div>
-        <div></div>
       </dialog>
     </div>
   );

@@ -123,9 +123,9 @@ const Footer = () => {
       </div>
       {/* copyright footer */}
       <div className="py-[9px] bg-[#054355]">
-        <p className="font-light text-[14px] text-white/[0.5] tracking-[0.3px] leading-[14.06px] text-center">
+        <h6 className="font-light text-[14px] text-white/[0.5] tracking-[0.3px] leading-[14.06px] text-center">
           Copyright2023 Technical Sewa All Rights Reserved
-        </p>
+        </h6>
       </div>
     </div>
   );

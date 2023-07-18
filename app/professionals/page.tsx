@@ -46,11 +46,13 @@ const page = async () => {
                 className="flex items-center border-[1px] rounded-md p-2 md:px-8 md:py-4 gap-2 lg:gap-10 "
               >
                 {/* image  */}
-                <img
-                  src={s.photo ? s.photo : "../Assets/user.jpg"}
-                  alt="image"
-                  className="flex-1"
-                />
+                <div className="flex-1">
+                  <img
+                    src={s.photo ? s.photo : "/assets/user.jpg"}
+                    alt="image"
+                    className="w-full max-h-[200px]"
+                  />
+                </div>
                 <div className="flex-1 flex flex-col gap-2 md:gap-5">
                   <h3 className="text-[#2591b2] text-[18px] lg:text-[24px] font-bold">
                     {s.sc_name}
