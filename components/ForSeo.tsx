@@ -122,25 +122,12 @@ const ForSeo = () => {
       </a>
       <a
         className="hidden"
-        href="https://technicalsewa.com/cctv-service/new-installation"
+        href="https://en.wikipedia.org/wiki/Technical"
         aria-label="5"
       >
-        5
+        wikipedia
       </a>
-      <a
-        className="hidden"
-        href="https://technicalsewa.com/new-furniture-making/double-bed-making"
-        aria-label="6"
-      >
-        6
-      </a>
-      <a
-        className="hidden"
-        href="https://technicalsewa.com/new-furniture-making/double-bed-making"
-        aria-label="7"
-      >
-        7
-      </a>
+     
       <a
         className="hidden"
         href="https://www.facebook.com/people/repair-and-Solution/100089561034752/"
