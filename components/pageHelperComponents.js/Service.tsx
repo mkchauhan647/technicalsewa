@@ -21,28 +21,11 @@ import Image from "next/image";
 import { baseUrl } from "@/public/baseUrl";
 import Link from "next/link";
 
-const Service = () => {
-  const [data, setData] = useState([]);
-
-  const allData = async () => {
-    const result = await axios.get(
-      `${baseUrl}multiservice/masterconfig/publicmasterconfig/getSliderListpop1`
-    );
-    setData(result?.data?.brands);
-  };
-
-  useEffect(() => {
-    allData();
-  }, []);
+const Service = ({data,PopularBrands}:any) => {
 
   // dataa for ApplicationRepairData
   const applicationRepairData = data?.filter((val: any) => {
     return val.brand_name === "Appliances Repair";
-  });
-
-  // dataa for Popular Brands
-  const PopularBrands = data?.filter((val: any) => {
-    return val.brand_name === "Popular Brands";
   });
 
   const services = [
