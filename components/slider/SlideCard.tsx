@@ -53,8 +53,8 @@ const SlideCard = ({ length, data }: any) => {
       modules={[Autoplay, Pagination, Navigation]}
     >
       {data?.map((ele: any, index: any) => (
-        <SwiperSlide>
-          <div key={index}>
+        <SwiperSlide key={index}>
+          <div>
             <Link
               href={`/service/${ele?.url_product_name}`}
               className={`flex flex-col items-center gap-1 py-2`}

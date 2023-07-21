@@ -15,6 +15,7 @@ import { MdLogin,MdOutlineHomeRepairService } from "react-icons/md";
 import { BiSolidInfoCircle } from "react-icons/bi";
 import {CgProfile} from "react-icons/cg"
 import {LuMailWarning} from "react-icons/lu"
+import useLocalstorage from "./HelperFuncion/useLocalstorage";
 
 
 
@@ -22,11 +23,10 @@ const Nav = () => {
   //state for navbar
   const [nav, setNav] = useState(false);
 
-  const credObj:any = localStorage.getItem("loginKey"); 
-  const parseCredObj = JSON.parse(credObj);
+  // const credObj:any =localStorage && localStorage.getItem("loginKey"); 
+  // const parseCredObj = JSON.parse(credObj);
 
-  
-
+  const {token:parseCredObj} = useLocalstorage();
 
   // stop scrolling when side-navigation is open
   useEffect(() => {
