@@ -106,9 +106,9 @@ const Footer = () => {
                   <BsTwitter className="text-[#2591B2] " size={20} />
                 </Link>
               </div>
-              <p className="font-normal text-[13px] leading-[24px] text-[#FFF] pt-[10px] text-left md:text-right">
+              <h5 className="font-normal text-[13px] leading-[24px] text-[#FFF] pt-[10px] text-left md:text-right">
                 Enter mobile number to get APP download Link
-              </p>
+              </h5>
               <div className="flex items-center justify-start md:justify-end my-[22px] w-full">
                 <input
                   type="phone"
