@@ -11,9 +11,9 @@ const Footer = () => {
         <div className="py-[10px]   max-w-[1280px] mx-auto">
           {/* heading of footer */}
 
-          <h2 className="font-semibold text-base leading-[19px] text-[#FFF] font-Roboto text-center ">
+          <div className="font-semibold text-base leading-[19px] text-[#FFF] font-Roboto text-center ">
             We Are Available in
-          </h2>
+          </div>
           {/* link of location */}
           <div className="flex flex-col md:flex-row justify-between gap-4 items-center  py-8">
             <div className="flex-1 flex gap-8 font-Roboto font-normal text-base leading-[24px] text-[#FFF]">
