@@ -25,9 +25,9 @@ const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
         <div className="flex md:justify-between items-center gap-[10px] ">
           <div className="flex gap-[10px]  items-center pl-[10px]">
             <Image src={imageUrl} alt={imgAlt} width={30} height={30} />
-            <h2 className="text-black font-medium md:text-[28px] text-[21px] leading-[20px]">
+            <p className="text-black font-medium md:text-[28px] text-[21px] leading-[20px]">
               {brandName}{" "}
-            </h2>
+            </p>
           </div>
 
           <RxCross2
@@ -46,7 +46,10 @@ const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
               <div className="rounded-md p-2 border-[1px] border-[#2591b2] flex flex-col items-center w-[100px] h-[100px] overflow-hidden">
                 {val.image_url && (
                   <Image
-                    src={val.image_url}
+                    src={val.image_url.replace(
+                      "https://smartcare.com.np/multiservice",
+                      "https://smartcare.com.np/techsewa"
+                    )}
                     alt={val.alt2}
                     width={80}
                     height={64}
