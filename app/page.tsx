@@ -19,20 +19,16 @@ export default async function Home() {
   );
 
   const allBrands = result?.data?.brands;
-  console.log(allBrands,'allbrands')
-
 
   // dataa for ApplicationRepairData
   const applicationRepairData = result?.data?.brands?.filter((val: any) => {
     return val.brand_name === "Appliances Repair";
   });
-  // console.log(applicationRepairData,'appData')
 
 
   const popularBrandsData = result?.data?.brands?.filter((val: any) => {
     return val.brand_name === "Popular Brands Repair";
   });
-  // console.log(popularBrandsData,'pBD')
 
   const warrantyProductsData = result?.data?.brands?.filter((val: any) => {
     return val.brand_name === "Warranty Repair Sewa";
@@ -49,7 +45,6 @@ export default async function Home() {
   const computerPrinterData = result?.data?.brands?.filter((val: any) => {
     return val.brand_name === "Computer/Printer Repair";
   });
-  console.log(computerPrinterData)
 
   return (
     <>
