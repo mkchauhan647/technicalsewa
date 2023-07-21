@@ -1,5 +1,4 @@
 "use client";
-
 import Link from "next/link";
 import React, { useState } from "react";
 import { BsEyeSlashFill } from "react-icons/bs";
@@ -23,12 +22,18 @@ const Login = () => {
     data.append("username", input.username);
     data.append("password", input.password);
     await axios
-      .post(`${baseUrl}techsewa/masterconfig/publiclogin/signinLate`, data)
+      .post(`https://smartcare.com.np/multiservice/masterconfig/publiclogin/signinlate`, data)
       .then((response) => {
-        console.log(response);
+          console.log(response)
+          const credObj = JSON.stringify(response?.data)
+          alert('login succesfully')
+          localStorage.setItem("loginKey",credObj)
       });
   };
+
   const [showPassword, setshowPassword] = useState(false);
+  
+  console.log("login-page-component");
 
   return (
     <div className="bg-white  pt-[20px] pb-[79px]">

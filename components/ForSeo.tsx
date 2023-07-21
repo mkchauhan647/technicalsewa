@@ -5,13 +5,10 @@ const ForSeo = () => {
   return (
     <div>
       <Head>
+        <link rel="apple-touch-icon" type="image/x-icon" sizes="180x180" href="/../assets/apple-icon.png"/>
         <link rel="icon" href="/favicon.ico" />
         <link rel="canonical" href="https://technicalsewa.com/" />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
+
         <meta
           name="google-site-verification"
           content="s4Xt-ttgXFwLDQmM-b_pAkaY52cuovGGAnlXMPIGZRA"

@@ -27,19 +27,21 @@ body {
     rgb(var(--background-start-rgb));
 } */
 
+
+
 .swiper-horizontal{
   width: 100% !important;
-}
-
-
-@media (max-width:1280px){
+  }
+  
+  
+  @media (max-width:1280px){
   .swiper-horizontal{
-    width: 85vw !important;
+  width: 85vw !important;
   }
-}
-
-@media (max-width:768px){
+  }
+  
+  @media (max-width:768px){
   .swiper-horizontalr{
-    width: 95vw !important;
+  width: 95vw !important;
   }
-}
+  }

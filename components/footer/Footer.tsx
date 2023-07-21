@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ImFacebook } from "react-icons/im";
 import { BiLogoInstagramAlt } from "react-icons/bi";
 import { BsYoutube, BsTwitter } from "react-icons/bs";
+import {IoLocationOutline, IoLocationSharp} from "react-icons/io5"
 const Footer = () => {
   return (
     <div>
@@ -17,36 +18,38 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between gap-4 items-center  py-8">
             <div className="flex-1 flex gap-8 font-Roboto font-normal text-base leading-[24px] text-[#FFF]">
               <div className="flex flex-col gap-[10px]">
-                <Link href="#">Pokhara</Link>
-                <Link href="#">Chitwan</Link>
-                <Link href="#">Lalitpur</Link>
-                <Link href="#">Ilam</Link>
-                <Link href="#">Manang</Link>
-                <Link href="#">Dhangadi</Link>
+                <Link prefetch={false} href="Pokhara">Pokhara</Link>
+                <Link prefetch={false} href="Chitwan">Chitwan</Link>
+                <Link prefetch={false} href="Lalitpur">Lalitpur</Link>
+                <Link prefetch={false} href="Ilam">Ilam</Link>
+                <Link prefetch={false} href="Manang">Manang</Link>
+                <Link prefetch={false} href="Dhangadi">Dhangadi</Link>
               </div>
               <div className="flex flex-col gap-[10px]">
-                <Link href="#">Butwal</Link>
-                <Link href="#">Bhairahawa</Link>
-                <Link href="#">Lumbini</Link>
-                <Link href="#">Jhapa</Link>
-                <Link href="#">Hetauda</Link>
+                <Link prefetch={false} href="butwal">Butwal</Link>
+                <Link prefetch={false} href="bhairahwa">Bhairahawa</Link>
+                <Link prefetch={false} href="lumbini">Lumbini</Link>
+                <Link prefetch={false} href="jhapa">Jhapa</Link>
+                <Link prefetch={false} href="hetauda">Hetauda</Link>
               </div>
               <div className="flex flex-col gap-[10px]">
-                <Link href="#">Kathmandu</Link>
-                <Link href="#">Kavre</Link>
-                <Link href="#">Mustang</Link>
-                <Link href="#">Dharan</Link>
-                <Link href="#">Sindupalchowk</Link>
+                <Link prefetch={false} href="kathmandu">Kathmandu</Link>
+                <Link prefetch={false} href="kavre">Kavre</Link>
+                <Link prefetch={false} href="mustang">Mustang</Link>
+                <Link prefetch={false} href="dharan">Dharan</Link>
+                <Link prefetch={false} href="sindupalchowk">Sindupalchowk</Link>
               </div>
             </div>
 
             {/* direction  */}
             <div className="flex-1  flex items-center justify-center">
               <Link
-                href=""
-                className=" bg-[#203E9A] w-[95px] h-[28px] font-Roboto font-normal text-base leading-[24px] text-[#FFF] text-center border-[1px] border-solid border-[#E5E7EB]"
+                target="_blank"
+                href="https://www.google.com/maps/place/27%C2%B042'08.4%22N+85%C2%B018'35.8%22E/@27.702328,85.309943,15z/data=!4m4!3m3!8m2!3d27.7023333!4d85.3099444?hl=en&entry=ttu"
+                className=" bg-white text-[#2591B2] flex py-4 items-center justify-center w-[95px] h-[28px] font-Roboto font-normal text-base leading-[24px]  text-center border-[1px] border-solid border-[#E5E7EB]"
               >
                 Direction
+                <IoLocationSharp className="text-green-500" size={20} />
               </Link>
             </div>
           </div>
