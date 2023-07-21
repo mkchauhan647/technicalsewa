@@ -27,19 +27,19 @@ body {
     rgb(var(--background-start-rgb));
 } */
 
-.slick-slider{
+.swiper-horizontal{
   width: 100% !important;
 }
 
 
 @media (max-width:1280px){
-  .slick-slider{
+  .swiper-horizontal{
     width: 85vw !important;
   }
 }
 
 @media (max-width:768px){
-  .slick-slider{
+  .swiper-horizontalr{
     width: 95vw !important;
   }
 }
