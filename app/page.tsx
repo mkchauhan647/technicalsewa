@@ -11,11 +11,13 @@ import axios from "axios";
 import Nav from "@/components/Nav";
 import Footer from "@/components/footer/Footer";
 import ForSeo from "@/components/ForSeo";
+import MedicalEquipment from "@/components/repair/MedicalEquipment";
 
 export default async function Home() {
   const result = await axios.get(
-    `${baseUrl}multiservice/masterconfig/publicmasterconfig/getSliderListpop1`
+    `${baseUrl}techsewa/masterconfig/publicmasterconfig/getSliderListpop1`
   );
+
   const allBrands = result?.data?.brands;
 
   // dataa for ApplicationRepairData
@@ -23,16 +25,25 @@ export default async function Home() {
     return val.brand_name === "Appliances Repair";
   });
 
+
   const popularBrandsData = result?.data?.brands?.filter((val: any) => {
-    return val.brand_name === "Popular Brands";
+    return val.brand_name === "Popular Brands Repair";
   });
 
   const warrantyProductsData = result?.data?.brands?.filter((val: any) => {
-    return val.brand_name === "Warranty Products";
+    return val.brand_name === "Warranty Repair Sewa";
   });
 
   const electiricianPlumbersData = result?.data?.brands?.filter((val: any) => {
     return val.brand_name === "Electrician & Plumber";
+  });
+
+  const medicalEquipmentData = result?.data?.brands?.filter((val: any) => {
+    return val.brand_name === "Medical Equipment Repair";
+  });
+
+  const computerPrinterData = result?.data?.brands?.filter((val: any) => {
+    return val.brand_name === "Computer/Printer Repair";
   });
 
   return (
@@ -45,7 +56,8 @@ export default async function Home() {
       <ApplicationRepair applicationRepairData={applicationRepairData} />
       <PopularBrands popularBrandsData={popularBrandsData} />
       <Warrantyproducts warrantyProductsData={warrantyProductsData} />
-      <ElectricianPlumbers electiricianPlumbersData={electiricianPlumbersData} />
+      <ElectricianPlumbers computerPrinterData={computerPrinterData} electiricianPlumbersData={electiricianPlumbersData} />
+      <MedicalEquipment medicalEquipmentData={medicalEquipmentData}  />
       <WhyChooseUs />
       <FooterContact />
     </main>

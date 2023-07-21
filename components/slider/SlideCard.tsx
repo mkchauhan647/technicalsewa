@@ -60,13 +60,16 @@ const SlideCard = ({ length, data }: any) => {
               className={`flex flex-col items-center gap-1 py-2`}
             >
               <img
-                src={ele?.image_url ? ele?.image_url : ""}
+                src={ele?.image_url?.replace(
+                  "https://smartcare.com.np/multiservice",
+                  "https://smartcare.com.np/techsewa"
+                )}
                 alt={ele?.alt2}
                 className="bg-white h-[90px] w-[150px] border-[1px] border-gray-100 rounded-sm hover:scale-[1.1] transition-hover duration-300"
               />
-              <h2 className="text-[16px] text-center whitespace-nowrap font-bold">
+              <p className="text-[16px] text-center whitespace-nowrap font-bold">
                 {ele?.product_name}
-              </h2>
+              </p>
               <p className="text-[12px] text-[#a6adbb] px-2 text-center">
                 {ele.title}
               </p>

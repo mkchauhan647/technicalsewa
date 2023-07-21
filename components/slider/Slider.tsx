@@ -3,7 +3,7 @@
 import SlideCard from "./SlideCard";
 
 const Slider =({data}:any) => {
-  const length = data.length 
+  const length = data?.length 
 
   return (
     <div className="flex justify-center ">
