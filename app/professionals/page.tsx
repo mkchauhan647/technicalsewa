@@ -96,9 +96,9 @@ const page = async () => {
         <div className="bg-[#fbfcfe] py-10">
           <div className="flex flex-col md:flex-row justify-center items-center gap-4">
             <div className="flex-1 flex flex-col gap-4">
-              <h3 className="md:text-[32px] text-[18px] text-[#a6adbb] font-semibold text-center md:text-left">
+              <p className="md:text-[32px] text-[18px] text-[#a6adbb] font-semibold text-center md:text-left">
                 Download our App
-              </h3>
+              </p>
               <p className="text-[14px] md:text-[20px]">
                 Enter mobile number to get APP download Link
               </p>
