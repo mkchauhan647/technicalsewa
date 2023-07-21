@@ -61,11 +61,11 @@ const Nav = () => {
           </Link>
           <div className="nav-links  hidden md:flex items-center gap-4 text-[#505056] ">
             <div className="group">
-              <div className="hover:text-[#2591b2]">Training</div>
+              <h2 className="hover:text-[#2591b2]">Training</h2>
               <div className="hidden group-hover:block">
                 <div className="absolute z-10 mt-0 bg-white rounded-md shadow-lg md:w-[350px]">
                   <div className="py-1 ">
-                    <p className=" pt-1 py-2"></p>
+                    <h3 className=" pt-1 py-2"></h3>
                     <Link
                       href="/training/fridgeactraining"
                       className="w-[full]"

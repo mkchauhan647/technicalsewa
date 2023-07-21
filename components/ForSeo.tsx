@@ -5,10 +5,12 @@ const ForSeo = () => {
   return (
     <div>
       <Head>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <link rel="apple-touch-icon" type="image/x-icon" sizes="180x180" href="/../assets/apple-icon.png"/>
         <link rel="icon" href="/favicon.ico" />
         <link rel="canonical" href="https://technicalsewa.com/" />
-
+        
         <meta
           name="google-site-verification"
           content="s4Xt-ttgXFwLDQmM-b_pAkaY52cuovGGAnlXMPIGZRA"
@@ -16,7 +18,7 @@ const ForSeo = () => {
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         <meta
           name="keywords"
-          content="technicalsewa, Appliances Repair, popular Brands, Warranty Products, Electrician & Plumber, Air-Purifier/Humidifier, Mobiles & Tabs, cctv Repair Service, Computer/Printer, Medical Equipment, Drone Repair, Carpenter Service, Cleaning & Pest Control"
+          content="technicalsewa, Technicalsewa and solution, Appliances Repair, popular Brands, Warranty Products, Electrician & Plumber, Air-Purifier/Humidifier, Mobiles & Tabs, cctv Repair Service, Computer/Printer, Medical Equipment, Drone Repair, Carpenter Service, Cleaning & Pest Control"
         />
         <meta
           name="author"
@@ -65,18 +67,19 @@ const ForSeo = () => {
           content="repairs on demand, drone repair service in nepal, refrigerator repair service in nepal, tv repairs near me, tv repair service in nepal, plumbing service in nepal"
         />
       </Head>
-      <h1 className="hidden">hi this is used for seo purpose only</h1>
-      <h5 className="hidden">this is h5 tag used for seo purpose only</h5>
-
+      <h1 className="hidden"><b>Technicalsewa and solution</b></h1>
       <section className="hidden">
         <article className="hidden">
           <p className="hidden">
-            Some information about my background and experience.
+          refrigerator repair service in nepal.
+          </p>
+          <p className="hidden">
+          one-stop-shop for all of electronic repair needs. 
           </p>
         </article>
         <article className="hidden">
           <ul className="hidden">
-            <li className="hidden">Skill 1</li>
+            <li className="hidden" ><b>Skill 1 </b></li>
             <li className="hidden">Skill 2</li>
             <li className="hidden">Skill 3</li>
           </ul>
@@ -171,12 +174,12 @@ const ForSeo = () => {
         13
       </a>
 
-      <p className="hidden">
+      <p lang="es" className="hidden">
         Technical Sewa-Professional <strong>Repair Service</strong> On Demand
         repairs on demand, Appliances Repair, popular Brands, Warranty Products,
         Electrician & Plumber, Air-Purifier/Humidifier, Mobiles & Tabs, tv.
       </p>
-      <p className="hidden">
+      <p lang="fr" className="hidden">
         services to get your appliances back to optimal performance. With our
         <strong className="hidden">TechnicalService</strong>. With a focus on customer
         satisfaction and expertise in a wide range of appliances.{" "}

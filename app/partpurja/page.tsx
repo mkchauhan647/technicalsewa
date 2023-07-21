@@ -68,12 +68,12 @@ const page = async () => {
                   ></div>
                 </div>
                 <div className="flex justify-between px-2">
-                  <h3 className="text-[#3293b2] text-[14px] font-bold">
+                  <p className="text-[#3293b2] text-[14px] font-bold">
                     {s.our_rate}
-                  </h3>
-                  <h3 className="text-[#ed1b26] text-[10px] line-through">
+                  </p>
+                  <p className="text-[#ed1b26] text-[10px] line-through">
                     {s.market_rate}
-                  </h3>
+                  </p>
                 </div>
               </div>
             </Link>
