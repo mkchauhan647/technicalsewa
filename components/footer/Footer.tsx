@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ImFacebook } from "react-icons/im";
 import { BiLogoInstagramAlt } from "react-icons/bi";
 import { BsYoutube, BsTwitter } from "react-icons/bs";
+import {IoLocationOutline, IoLocationSharp} from "react-icons/io5"
 const Footer = () => {
   return (
     <div>
@@ -45,9 +46,10 @@ const Footer = () => {
               <Link
                 target="_blank"
                 href="https://www.google.com/maps/place/27%C2%B042'08.4%22N+85%C2%B018'35.8%22E/@27.702328,85.309943,15z/data=!4m4!3m3!8m2!3d27.7023333!4d85.3099444?hl=en&entry=ttu"
-                className=" bg-[#203E9A] w-[95px] h-[28px] font-Roboto font-normal text-base leading-[24px] text-[#FFF] text-center border-[1px] border-solid border-[#E5E7EB]"
+                className=" bg-white text-[#2591B2] flex py-4 items-center justify-center w-[95px] h-[28px] font-Roboto font-normal text-base leading-[24px]  text-center border-[1px] border-solid border-[#E5E7EB]"
               >
                 Direction
+                <IoLocationSharp className="text-green-500" size={20} />
               </Link>
             </div>
           </div>

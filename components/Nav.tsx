@@ -15,7 +15,7 @@ import { MdLogin,MdOutlineHomeRepairService } from "react-icons/md";
 import { BiSolidInfoCircle } from "react-icons/bi";
 import {CgProfile} from "react-icons/cg"
 import {LuMailWarning} from "react-icons/lu"
-// import {MdOutlineHomeRepairService} from "react-icons/md"
+
 
 
 const Nav = () => {
@@ -24,9 +24,7 @@ const Nav = () => {
 
   const credObj:any = localStorage.getItem("loginKey"); 
   const parseCredObj = JSON.parse(credObj);
-  console.log(parseCredObj.id);
 
-  // const {parseCredObj} = getItemFromLocalstorage()
   
 
 
