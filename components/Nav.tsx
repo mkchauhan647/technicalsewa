@@ -65,7 +65,7 @@ const Nav = () => {
               <div className="hidden group-hover:block">
                 <div className="absolute z-10 mt-0 bg-white rounded-md shadow-lg md:w-[350px]">
                   <div className="py-1 ">
-                    <h3 className=" pt-1 py-2"></h3>
+                    <div className=" pt-1 py-2"></div>
                     <Link
                       href="/training/fridgeactraining"
                       className="w-[full]"

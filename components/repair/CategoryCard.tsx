@@ -25,7 +25,7 @@ const CategoryCard = ({ imageUrl, brandName, imgAlt, allBrands, id }: any) => {
         className="flex flex-col cursor-pointer items-center  md:gap-3 w-[160px] md:w-[230px]"
       >
         <Image src={imageUrl} alt={imgAlt} width={40} height={40} />
-        <b className="text-[16px] text-center">{brandName}</b>
+        <p className="text-[16px] text-center">{brandName}</p>
       </div>
       {show && (
         <Modal

@@ -10,7 +10,7 @@ const WhyChooseUs = () => {
       <div className="container mx-auto py-[60px] xl:w-[80rem] sm:w-full  sm-w-full m-auto px-4">
         <div className="flex items-center gap-[10px]">
           <div className="h-[3px] w-[40px] bg-black/[0.5]"></div>{" "}
-          <h2> WHY CHOOSE US</h2>
+          <div> WHY CHOOSE US</div>
         </div>
         <h3 className="text-[25px] md:text-[35px] text-black mt-[10px] text-left font-bold">
           Because We care about your safety..
