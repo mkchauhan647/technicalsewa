@@ -1,4 +1,4 @@
-'use client'
+"use client"
 
 import Image from "next/image";
 import Link from "next/link";
@@ -11,12 +11,24 @@ import { FaBars, FaHome, FaTimes } from "react-icons/fa";
 import { IoIosNotifications, IoMdCall } from "react-icons/io";
 import { LiaBlogSolid } from "react-icons/lia";
 import { BsFillPersonCheckFill } from "react-icons/bs";
-import { MdLogin } from "react-icons/md";
+import { MdLogin,MdOutlineHomeRepairService } from "react-icons/md";
 import { BiSolidInfoCircle } from "react-icons/bi";
+import {CgProfile} from "react-icons/cg"
+import {LuMailWarning} from "react-icons/lu"
+// import {MdOutlineHomeRepairService} from "react-icons/md"
+
 
 const Nav = () => {
   //state for navbar
   const [nav, setNav] = useState(false);
+
+  const credObj:any = localStorage.getItem("loginKey"); 
+  const parseCredObj = JSON.parse(credObj);
+  console.log(parseCredObj.id);
+
+  // const {parseCredObj} = getItemFromLocalstorage()
+  
+
 
   // stop scrolling when side-navigation is open
   useEffect(() => {
@@ -110,12 +122,31 @@ const Nav = () => {
             <Link className="hover:text-[#2591b2]" href="/partpurja">
               Part Purja
             </Link>
-            <Link className="hover:text-[#2591b2]" href="/login">
-              <button className="flex gap-[5px] justify-center items-center bg-[#2591B2] rounded-[3px] cursor-pointer text-white px-[13px] py-[8.5px] ">
-                <HiArrowRightOnRectangle size={20} className="text-white" />
-                Sign In
-              </button>
-            </Link>
+            {parseCredObj?.id ? (
+              <div className="flex items-center gap-4">
+                <Link className="hover:text-[#2591b2]" href="/profile">
+                  Profile
+                </Link>
+                <Link className="hover:text-[#2591b2]" href="/complains">
+                  Complains
+                </Link>
+              </div>
+            ) : null}
+            {!parseCredObj?.id ? (
+              <Link className="hover:text-[#2591b2]" href="/login">
+                <button className="flex gap-[5px] justify-center items-center bg-[#2591B2] rounded-[3px] cursor-pointer text-white px-[13px] py-[8.5px] ">
+                  <HiArrowRightOnRectangle size={20} className="text-white" />
+                  Sign In
+                </button>
+              </Link>
+            ) : (
+              <Link className="hover:text-[#2591b2]" href="#">
+                <button className="flex gap-[5px] justify-center items-center bg-[#2591B2] rounded-[3px] cursor-pointer text-white px-[13px] py-[8.5px] ">
+                  <HiArrowRightOnRectangle size={20} className="text-white" />
+                  Log Out
+                </button>
+              </Link>
+            )}
           </div>
 
           {/* ========toggle-menu-bar-click======== */}
@@ -139,7 +170,7 @@ const Nav = () => {
                 Home
               </Link>
 
-              <Link
+              {/* <Link
                 onClick={handleNavclose}
                 className="flex px-[30px] gap-4 text-[20px] font-normal items-center  w-full justify-starts"
                 href="#"
@@ -154,7 +185,8 @@ const Nav = () => {
               >
                 <LiaBlogSolid className="text-[#2591b2]" />
                 Blog
-              </Link>
+              </Link> */}
+
               <Link
                 onClick={handleNavclose}
                 className="flex px-[30px] gap-4 text-[20px] font-normal items-center  w-full justify-starts"
@@ -171,16 +203,56 @@ const Nav = () => {
                 <HiMiniWrenchScrewdriver className="text-[#2591b2]" />
                 Part Purja
               </Link>
-              <Link
-                onClick={handleNavclose}
-                className="flex px-[30px] gap-4 text-[20px] font-normal items-center  w-full justify-starts"
-                href="/login"
-              >
-                <MdLogin className="text-[#2591b2]" />
-                Login
-              </Link>
+              {parseCredObj?.id ? (
+                <div className="flex flex-col gap-[24px]">
+                  <Link
+                    onClick={handleNavclose}
+                    className="flex px-[30px] gap-4 text-[20px] font-normal items-center  w-full justify-starts"
+                    href="/service"
+                  >
+                    <MdOutlineHomeRepairService className="text-[#2591b2]" />
+                    All services
+                  </Link>
+                  <Link
+                    onClick={handleNavclose}
+                    className="flex px-[30px] gap-4 text-[20px] font-normal items-center  w-full justify-starts"
+                    href="/profile"
+                  >
+                    <CgProfile className="text-[#2591b2]" />
+                    profile
+                  </Link>
+                  <Link
+                    onClick={handleNavclose}
+                    className="flex px-[30px] gap-4 text-[20px] font-normal items-center  w-full justify-starts"
+                    href="/complains"
+                  >
+                    <LuMailWarning className="text-[#2591b2]" />
+                    Complains
+                  </Link>
+                </div>
+              ) : null}
+              {!parseCredObj?.id ? (
+                <Link
+                  onClick={handleNavclose}
+                  className="flex px-[30px] gap-4 text-[20px] font-normal items-center  w-full justify-starts"
+                  href="/login"
+                >
+                  <MdLogin className="text-[#2591b2]" />
+                  Login
+                </Link>
+              ) : (
+                <Link
+                  onClick={handleNavclose}
+                  className="flex px-[30px] gap-4 text-[20px] font-normal items-center  w-full justify-starts"
+                  href="#"
+                >
+                  <MdLogin className="text-[#2591b2]" />
+                  Logout
+                </Link>
+              )}
+
               <div className="h-[1px] bg-[#ededed] "></div>
-              <Link
+              {/* <Link
                 onClick={handleNavclose}
                 className="flex px-[30px] gap-4 text-[20px] font-normal items-center  w-full justify-starts"
                 href="/"
@@ -195,7 +267,7 @@ const Nav = () => {
               >
                 <IoMdCall className="text-[#2591b2]" />
                 Contact Us
-              </Link>
+              </Link> */}
             </div>
           )}
         </div>

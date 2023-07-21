@@ -21,30 +21,7 @@ import Image from "next/image";
 import { baseUrl } from "@/public/baseUrl";
 import Link from "next/link";
 
-const Service = () => {
-  const [data, setData] = useState([]);
-
-  const allData = async () => {
-    const result = await axios.get(
-      `${baseUrl}multiservice/masterconfig/publicmasterconfig/getSliderListpop1`
-    );
-    setData(result?.data?.brands);
-  };
-
-  useEffect(() => {
-    allData();
-  }, []);
-
-  // dataa for ApplicationRepairData
-  const applicationRepairData = data?.filter((val: any) => {
-    return val.brand_name === "Appliances Repair";
-  });
-
-  // dataa for Popular Brands
-  const PopularBrands = data?.filter((val: any) => {
-    return val.brand_name === "Popular Brands";
-  });
-
+const Service = ({ data, PopularBrands }: any) => {
   const services = [
     {
       src: <GiWashingMachine />,
@@ -150,14 +127,14 @@ const Service = () => {
 
         {/* right side item div  */}
         <div className="bg-[#f5f5f5] basis-[70%] md:basis-[80%] flex flex-col gap-8 text-center ">
-          <div className="md:hidden">
+          {/* <div className="md:hidden">
             {services[value] && (
               <h2 className="text-[14px] text-[#2591b2] text-left p-2">
                 {services[value].n}
               </h2>
             )}
-          </div>
-          <div className="hidden md:block bg-white min-h-[112px] w-[90%] p-5 rounded-md border-[1px] border-gray-400 ">
+          </div> */}
+          <div className=" md:block bg-white min-h-[112px] w-full md:w-[90%] p-0 md:p-5 rounded-md border-[1px] border-gray-400 ">
             <div className="flex justify-center items-center gap-2 text-[#2591b2]">
               {/* Heading Icon  */}
               {services[value] && services[value].src}
@@ -169,13 +146,13 @@ const Service = () => {
             </div>
 
             {/* Card container started... */}
-            <div className="flex flex-wrap justify-center items-center gap-16 p-4">
+            <div className="flex flex-wrap justify-around md:justify-center items-center  gap-6 md:gap-16 p-4">
               {filteredData?.map((value: any, index: any) => (
                 <Link
-                href={`/service/${value?.url_product_name}`}
+                  href={`/service/${value?.url_product_name}`}
                   key={index}
                   className={`${
-                    value.image_url ? "flex flex-col justify-center" : "hidden"
+                    value.image_url ? "flex flex-col w-[80px] justify-center" : "hidden"
                   }`}
                 >
                   {value.image_url && (
@@ -187,7 +164,7 @@ const Service = () => {
                         src={value.image_url && value.image_url}
                         alt={value.alt2 && value.alt2}
                       />
-                      <h3 className="text-[10px]">{value.product_name}</h3>
+                      <p className="text-[10px]  whitespace-pre-wrap  ">{value.product_name}</p>
                     </>
                   )}
                 </Link>
@@ -214,8 +191,7 @@ const Service = () => {
                   }`}
                 >
                   {value.image_url && (
-                    <Link
-                    href={`/service/${value?.url_product_name}`}>
+                    <Link href={`/service/${value?.url_product_name}`}>
                       <Image
                         width={100}
                         height={100}
