@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -11,22 +11,20 @@ import { FaBars, FaHome, FaTimes } from "react-icons/fa";
 import { IoIosNotifications, IoMdCall } from "react-icons/io";
 import { LiaBlogSolid } from "react-icons/lia";
 import { BsFillPersonCheckFill } from "react-icons/bs";
-import { MdLogin,MdOutlineHomeRepairService } from "react-icons/md";
+import { MdLogin, MdOutlineHomeRepairService } from "react-icons/md";
 import { BiSolidInfoCircle } from "react-icons/bi";
-import {CgProfile} from "react-icons/cg"
-import {LuMailWarning} from "react-icons/lu"
+import { CgProfile } from "react-icons/cg";
+import { LuMailWarning } from "react-icons/lu";
 import useLocalstorage from "./HelperFuncion/useLocalstorage";
-
-
 
 const Nav = () => {
   //state for navbar
   const [nav, setNav] = useState(false);
 
-  // const credObj:any =localStorage && localStorage.getItem("loginKey"); 
+  // const credObj:any =localStorage && localStorage.getItem("loginKey");
   // const parseCredObj = JSON.parse(credObj);
 
-  const {token:parseCredObj} = useLocalstorage();
+  const { token: parseCredObj } = useLocalstorage();
 
   // stop scrolling when side-navigation is open
   useEffect(() => {
@@ -111,8 +109,11 @@ const Nav = () => {
                 </div>
               </div>
             </div>
+            <Link className="hover:text-[#2591b2]" href="/blogs">
+              Blogs
+            </Link>
             <Link className="hover:text-[#2591b2]" href="/service">
-              All Services
+              Services
             </Link>
             <Link className="hover:text-[#2591b2]" href="/professionals">
               Professionals
@@ -176,14 +177,16 @@ const Nav = () => {
                 <IoIosNotifications className="text-[#2591b2]" />
                 Notifications
               </Link>
+               */}
+
               <Link
                 onClick={handleNavclose}
                 className="flex px-[30px] gap-4 text-[20px] font-normal items-center  w-full justify-starts"
-                href="#"
+                href="/blogs"
               >
                 <LiaBlogSolid className="text-[#2591b2]" />
                 Blog
-              </Link> */}
+              </Link>
 
               <Link
                 onClick={handleNavclose}
