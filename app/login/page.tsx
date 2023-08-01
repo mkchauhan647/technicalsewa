@@ -12,3 +12,9 @@ const page = () => {
 }
 
 export default page
+
+export async function generateMetadata(){
+  return{
+    title:`Login | Technical sewa`
+  }
+}

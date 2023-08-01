@@ -12,3 +12,10 @@ const page = () => {
 }
 
 export default page
+
+export async function generateMetadata(){
+
+  return{
+    title:`SignUp Pro | Technical sewa`
+  }
+}

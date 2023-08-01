@@ -33,8 +33,6 @@ const Login = () => {
 
   const [showPassword, setshowPassword] = useState(false);
   
-  console.log("login-page-component");
-
   return (
     <div className="bg-white  pt-[20px] pb-[79px]">
       <div className="flex flex-col  justify-center pt-[50px] w-[80%] lg:w-[33.33%]  mx-auto px-4 md:p-0">
