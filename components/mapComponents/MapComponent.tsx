@@ -1,3 +1,5 @@
+"use client"
+import { useRouter } from "next/navigation";
 import React, { useRef, useState } from "react";
 import {
   useJsApiLoader,
@@ -8,6 +10,7 @@ import {
 } from "@react-google-maps/api";
 
 const MapComponent = () => {
+  const router = useRouter();
   const [directionResponse, setDirectionResponse] = useState(null);
   const [distance, setDistance] = useState("");
   const [duration, setDuration] = useState("");
@@ -15,41 +18,60 @@ const MapComponent = () => {
   // inputSearch information from user
   const originRef = useRef<any>();
   const destinatinonRef = useRef<any>();
+  const nearestlocation = useRef<any>();
+
+  const [center,setCenter] = useState({ lat: 27.7172, lng: 85.324 })
+  // let center = { lat: 27.7172, lng: 85.324 }; // center location
 
 
+  const autocompleteRef = useRef<any>();
 
-  const center = { lat: 27.7172, lng: 85.324 }; // center location
+  // Function to handle Autocomplete place selection and setting value of lat and long of center.
+  const handlePlaceSelect = () => {
+    if (autocompleteRef.current !== null) {
+      const place = autocompleteRef.current.getPlace();
+      if (place && place.geometry) {
+        const lat = place.geometry.location.lat();
+        const lng = place.geometry.location.lng();
+        setCenter({ lat, lng })
+        // console.log(`Latitude: ${lat}, Longitude: ${lng}`);
+        // You can now use lat and lng as required
+      }
+    }
+  };
 
+
+  // setting google map api...
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: "AIzaSyC2iS_ad-zpImBQFaY3XeZVdzxNLU4nz8s",
     libraries: ["places"],
   });
 
   // show direction when user clicks direction button
-  const calculateRoute = async () => {
-    if (originRef.current.value === "" || destinatinonRef.current.value === "")
-      return;
+  // const calculateRoute = async () => {
+  //   if (originRef.current.value === "" || destinatinonRef.current.value === "")
+  //     return;
 
-    const directionService: any = new google.maps.DirectionsService();
-    const results = await directionService.route({
-      origin: originRef.current.value,
-      destination: destinatinonRef.current.value,
-      travelMode: google.maps.TravelMode.DRIVING,
-    });
+  //   const directionService: any = new google.maps.DirectionsService();
+  //   const results = await directionService.route({
+  //     origin: originRef.current.value,
+  //     destination: destinatinonRef.current.value,
+  //     travelMode: google.maps.TravelMode.DRIVING,
+  //   });
    
-    setDirectionResponse(results);
-    setDistance(results?.routes[0].legs[0].distance.text);
-    setDuration(results?.routes[0].legs[0].distance.text);
-  };
+  //   setDirectionResponse(results);
+  //   setDistance(results?.routes[0].legs[0].distance.text);
+  //   setDuration(results?.routes[0].legs[0].distance.text);
+  // };
 
   // clear route infromation when user clicks clear button
-    const clearRoute = () =>{
-      setDirectionResponse(null)
-      setDistance('')
-      setDuration('')
-      originRef.current.value = ""
-      destinatinonRef.current.value = ""
-    }
+    // const clearRoute = () =>{
+    //   setDirectionResponse(null)
+    //   setDistance('')
+    //   setDuration('')
+    //   originRef.current.value = ""
+    //   destinatinonRef.current.value = ""
+    // }
 
   if (!isLoaded) {
     return <h1>loading......</h1>;
@@ -63,39 +85,52 @@ const MapComponent = () => {
           <h3>Enter Address</h3>
         </div>
         <div className="flex my-4 items-center max-md:flex-col gap-4">
-          <Autocomplete>
+          {/* <Autocomplete>
             <input
               ref={originRef}
               className="bg-white outline-[1px] outline-[#2591B2]  p-2 "
               type="text"
               placeholder="origin"
             />
-          </Autocomplete>
-          <Autocomplete>
+          </Autocomplete> */}
+          {/* <Autocomplete>
             <input
               ref={destinatinonRef}
               className="bg-white outline-[1px] outline-[#2591B2]  p-2"
               type="text"
               placeholder="destination"
             />
+          </Autocomplete> */}
+          <Autocomplete className="w-full" 
+          onLoad={(autocomplete) => {
+            autocompleteRef.current = autocomplete;
+            autocomplete.setFields(['geometry']);
+          }}
+          onPlaceChanged={handlePlaceSelect}
+   >
+          <input
+              className="w-full bg-white outline-[1px] outline-[#2591B2]  p-2 "
+              type="text"
+              placeholder="Search Nearest Location"
+            />
           </Autocomplete>
-          <button
+          {/* <button
             onClick={calculateRoute}
             className="bg-[#2591B2] rounded-[3px] cursor-pointer text-white px-[13px] py-[8.5px] "
           >
             Direction
-          </button>
-          <button
+          </button> */}
+          {/* <button
             onClick={clearRoute}
             className="bg-red-600 rounded-[3px] cursor-pointer text-white px-[13px] py-[8.5px] "
           >
             Clear
-          </button>
+          </button> */}
         </div>
         <div className="w-[full] h-[50vh]  p-4 ">
           <GoogleMap
             center={center}
-            zoom={15}
+            zoom={14}
             mapContainerStyle={{ width: "100%", height: "100%" }}
           >
             <Marker position={center} />
@@ -109,8 +144,8 @@ const MapComponent = () => {
           <p>Latitude : {center.lat} Longitude : {center.lng}</p>
         </div>
         <div className="flex gap-5 justify-center " >
-          <button className=" bg-[#2591B2] rounded-[3px] cursor-pointer text-white px-[13px] py-[8.5px]" >Back</button>
-          <button className=" bg-[#2591B2] rounded-[3px] cursor-pointer text-white px-[13px] py-[8.5px]" >Proceed</button>
+          <button className=" bg-[#2591B2] rounded-[3px] cursor-pointer text-white px-[13px] py-[8.5px]" onClick={()=>router.back()} >Back</button>
+          <button className=" bg-[#2591B2] rounded-[3px] cursor-pointer text-white px-[13px] py-[8.5px]" onClick={()=>router.push("/login")} >Proceed</button>
         </div>
       </div>
     </div>
