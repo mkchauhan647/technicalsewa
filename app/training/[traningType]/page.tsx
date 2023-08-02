@@ -7,13 +7,14 @@ import { useRouter } from "next/router";
 import React from "react";
 
 async function getData(id: string) {
-  console.log("getting traing ? ", id);
+  const formData = new FormData();
+  formData.append("id", id);
 
   const res = await fetch(
     `${baseUrl}/techsewa/publiccontrol/publicmasterconfig/gettrainingDetails`,
     {
       method: "POST",
-      body: JSON.stringify({ id }),
+      body: formData,
     }
   );
   // The return value is *not* serialized
@@ -63,10 +64,12 @@ const page = async ({ params }: any) => {
         <div>
           <div className="pb-8">
             <h2 className="mb-2 text-3xl font-bold">{data?.training_title}</h2>
-            <p
-              className="text-gray-600"
-              dangerouslySetInnerHTML={{ __html: data?.detail }}
-            ></p>
+            {data?.detail && (
+              <p
+                className="text-gray-600"
+                dangerouslySetInnerHTML={{ __html: data?.detail }}
+              ></p>
+            )}
           </div>
         </div>
       </div>
