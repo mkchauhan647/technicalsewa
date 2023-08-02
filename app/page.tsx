@@ -25,7 +25,6 @@ export default async function Home() {
     return val.brand_name === "Appliances Repair";
   });
 
-
   const popularBrandsData = result?.data?.brands?.filter((val: any) => {
     return val.brand_name === "Popular Brands Repair";
   });
@@ -48,20 +47,23 @@ export default async function Home() {
 
   return (
     <>
-    <ForSeo />
-    <Nav />
-    <main>
-      <HeroSection />
-      <Categories allBrands={allBrands} />
-      <ApplicationRepair applicationRepairData={applicationRepairData} />
-      <PopularBrands popularBrandsData={popularBrandsData} />
-      <Warrantyproducts warrantyProductsData={warrantyProductsData} />
-      <ElectricianPlumbers computerPrinterData={computerPrinterData} electiricianPlumbersData={electiricianPlumbersData} />
-      <MedicalEquipment medicalEquipmentData={medicalEquipmentData}  />
-      <WhyChooseUs />
-      <FooterContact />
-    </main>
-    <Footer />
+      <ForSeo />
+      <Nav />
+      <main>
+        <HeroSection />
+        <Categories allBrands={allBrands} />
+        <ApplicationRepair applicationRepairData={applicationRepairData} />
+        <PopularBrands popularBrandsData={popularBrandsData} />
+        <Warrantyproducts warrantyProductsData={warrantyProductsData} />
+        <ElectricianPlumbers
+          computerPrinterData={computerPrinterData}
+          electiricianPlumbersData={electiricianPlumbersData}
+        />
+        <MedicalEquipment medicalEquipmentData={medicalEquipmentData} />
+        <WhyChooseUs />
+        <FooterContact />
+      </main>
+      <Footer />
     </>
   );
 }
