@@ -1,4 +1,3 @@
-
 import Head from "next/head";
 import React from "react";
 
@@ -6,9 +5,8 @@ const ForSeo = () => {
   return (
     <div>
       <Head>
-      <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" />
         <link rel="canonical" href="https://technicalsewa.com/" />
-        
         <meta
           name="google-site-verification"
           content="s4Xt-ttgXFwLDQmM-b_pAkaY52cuovGGAnlXMPIGZRA"
@@ -65,20 +63,22 @@ const ForSeo = () => {
           content="repairs on demand, drone repair service in nepal, refrigerator repair service in nepal, tv repairs near me, tv repair service in nepal, plumbing service in nepal"
         />
       </Head>
-      
-      <h1 className="hidden"><b>Technicalsewa and solution</b></h1>
+
+      <h1 className="hidden">
+        <b>Technicalsewa and solution</b>
+      </h1>
       <section className="hidden">
         <article className="hidden">
+          <p className="hidden">refrigerator repair service in nepal.</p>
           <p className="hidden">
-          refrigerator repair service in nepal.
-          </p>
-          <p className="hidden">
-          one-stop-shop for all of electronic repair needs. 
+            one-stop-shop for all of electronic repair needs.
           </p>
         </article>
         <article className="hidden">
           <ul className="hidden">
-            <li className="hidden" ><b>Skill 1 </b></li>
+            <li className="hidden">
+              <b>Skill 1 </b>
+            </li>
             <li className="hidden">Skill 2</li>
             <li className="hidden">Skill 3</li>
           </ul>
@@ -88,18 +88,10 @@ const ForSeo = () => {
       <a className="hidden" href="https://technicalsewa.com/" aria-label="1">
         1
       </a>
-      <a
-        className="hidden"
-        href="/haier"
-        aria-label="2"
-      >
+      <a className="hidden" href="/haier" aria-label="2">
         2
       </a>
-      <a
-        className="hidden"
-        href="/cctv-service"
-        aria-label="3"
-      >
+      <a className="hidden" href="/cctv-service" aria-label="3">
         3
       </a>
       <a
@@ -144,18 +136,10 @@ const ForSeo = () => {
       >
         9
       </a>
-      <a
-        className="hidden"
-        href="/allservices"
-        aria-label="10"
-      >
+      <a className="hidden" href="/allservices" aria-label="10">
         10
       </a>
-      <a
-        className="hidden"
-        href="/mi-tv"
-        aria-label="11"
-      >
+      <a className="hidden" href="/mi-tv" aria-label="11">
         11
       </a>
       <a
@@ -180,8 +164,8 @@ const ForSeo = () => {
       </p>
       <p lang="fr" className="hidden">
         services to get your appliances back to optimal performance. With our
-        <strong className="hidden">TechnicalService</strong>. With a focus on customer
-        satisfaction and expertise in a wide range of appliances.{" "}
+        <strong className="hidden">TechnicalService</strong>. With a focus on
+        customer satisfaction and expertise in a wide range of appliances.{" "}
       </p>
       <strong className="hidden">share this on Facebook.</strong>
     </div>

@@ -18,6 +18,11 @@ import { LuMailWarning } from "react-icons/lu";
 import useLocalstorage from "./HelperFuncion/useLocalstorage";
 import axios from "axios";
 
+interface TrainingCategory {
+  text: string;
+  value: string;
+}
+
 const Nav = () => {
   //state for navbar
   const [nav, setNav] = useState(false);
@@ -47,21 +52,26 @@ const Nav = () => {
   };
 
   // gettrainingcategories
-  const [categories,setCategories] = useState<any>(null);
+  const [categories, setCategories] = useState<TrainingCategory[]>([]);
 
-  const getCategories =async()=>{
-    await axios.get("https://smartcare.com.np/techsewa/publiccontrol/publicmasterconfig/gettrainingcategories").then((res)=>{
-    setCategories(res.data)
-  })}
+  const getCategories = async () => {
+    await axios
+      .get(
+        "https://smartcare.com.np/techsewa/publiccontrol/publicmasterconfig/gettrainingcategories"
+      )
+      .then((res) => {
+        setCategories(res.data);
+      });
+  };
 
-  useEffect(()=>{ 
+  useEffect(() => {
     getCategories();
-  },[])
-  console.log(categories)
+  }, []);
+  console.log(categories);
 
   return (
     <>
-      <div className="sticky top-0 bg-white z-50">
+      <div className="sticky top-0 z-50 bg-white">
         <div className="Navbar relative border-b-[1px] mx-auto max-w-[1280px]  border-[#ededed]  flex justify-between max-lg:p-4 items-center bg-white h-[70px] ">
           <Link href="/">
             <Image
@@ -77,59 +87,21 @@ const Nav = () => {
               <div className="hidden group-hover:block">
                 <div className="absolute z-10 mt-0 bg-white rounded-md shadow-lg md:w-[350px]">
                   <div className="py-1 h-[400px] overflow-y-scroll ">
-                    <div className=" pt-1 py-2"></div>
-                    <Link
-                      href="/training/fridgeactraining"
-                      className="w-[full]"
-                    >
-                      <p className="block px-6 py-2 text-sm text-[grey] hover:bg-gray-100">
-                        Fridge & AC Training Training In Kathmandu
-                      </p>
-                      <hr />
-                    </Link>
-                    <Link
-                      href="/training/wachingmachinetraining"
-                      className="w-[full]"
-                    >
-                      <p className="block px-6 py-2 text-sm text-[grey] hover:bg-gray-100">
-                        Washing Machine Repair Training In Kathmandu
-                      </p>
-                      <hr />
-                    </Link>
-                    <Link
-                      href="/training/homeappliancestraining"
-                      className="w-[full]"
-                    >
-                      <p className="block px-6 py-2 text-sm text-[grey] hover:bg-gray-100">
-                        Home Appliances Repair Training In Kathmandu
-                      </p>
-                      <hr />
-                    </Link>
-                    <Link href="/training/ledtvtraining" className="w-[full]">
-                      <p className="block px-6 py-2 text-sm text-[grey] hover:bg-gray-100">
-                        Led Tv Training In Kathmandu
-                      </p>
-                      <hr />
-                    </Link>
-                    <Link
-                      href="/training/plumbingtraining"
-                      className="w-[full]"
-                    >
-                      <p className="block px-6 py-2 text-sm text-[grey] hover:bg-gray-100">
-                        Plumbing Training In Kathmandu
-                      </p>
-                    </Link>
-                    {categories?.map((categorie:any)=>(
-                      <Link
-                      key={categorie.value}
-                      href="/training/plumbingtraining"
-                      className="w-[full]"
-                    >
-                      <p className="block px-6 py-2 text-sm text-[grey] hover:bg-gray-100">
-                       {categorie.text}
-                      </p>
-                    </Link>
-                    ))}
+                    <div className="py-2 pt-1"></div>
+                    {categories.map((cat, i) => {
+                      return (
+                        <Link
+                          key={i}
+                          href={`/training/${cat.value}`}
+                          className="w-[full]"
+                        >
+                          <p className="block px-6 py-2 text-sm text-[grey] hover:bg-gray-100">
+                            {cat.text}
+                          </p>
+                          <hr />
+                        </Link>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
@@ -147,7 +119,7 @@ const Nav = () => {
               Part Purja
             </Link>
             {parseCredObj?.id ? (
-              <div className="flex items-center gap-4">
+              <div className="flex gap-4 items-center">
                 <Link className="hover:text-[#2591b2]" href="/profile">
                   Profile
                 </Link>
@@ -174,7 +146,7 @@ const Nav = () => {
           </div>
 
           {/* ========toggle-menu-bar-click======== */}
-          <div onClick={handleNavClick} className="menu-btn md:hidden ">
+          <div onClick={handleNavClick} className="menu-btn md:hidden">
             {!nav ? (
               <FaBars className="text-[#2591b2] cursor-pointer " size={30} />
             ) : (
