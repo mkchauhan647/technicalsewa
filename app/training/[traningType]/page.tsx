@@ -66,7 +66,7 @@ const page = async ({ params }: any) => {
         {/* fridge training  */}
         <div>
           <div className="pb-8">
-            <h2 className="mb-2 text-3xl font-bold">{data?.training_title}</h2>
+            <h2 className="mb-2 text-2xl font-bold">{data?.training_title}</h2>
             {data?.detail && (
               <p
                 className="text-gray-600"
