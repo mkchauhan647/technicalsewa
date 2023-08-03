@@ -8,13 +8,16 @@ import React from "react";
 
 async function getData(id: string) {
   const formData = new FormData();
-  formData.append("id", id);
+  formData.append("id", `${id}`);
 
   const res = await fetch(
     `${baseUrl}/techsewa/publiccontrol/publicmasterconfig/gettrainingDetails`,
     {
       method: "POST",
       body: formData,
+      headers: {
+        "Cache-Control": `max-age=${60 * 60}`, // max 1 hour cache
+      },
     }
   );
   // The return value is *not* serialized
