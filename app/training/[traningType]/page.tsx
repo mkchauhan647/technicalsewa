@@ -1,3 +1,4 @@
+import Categorylist from "@/components/Categorylist";
 import Nav from "@/components/Nav";
 import { SEOBase } from "@/components/SEOBase";
 import Footer from "@/components/footer/Footer";
@@ -5,7 +6,6 @@ import { baseUrl } from "@/public/baseUrl";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import React from "react";
-
 async function getData(id: string) {
   const formData = new FormData();
   formData.append("id", `${id}`);
@@ -62,17 +62,29 @@ const page = async ({ params }: any) => {
         <meta property="og:locale" content="en_US" />
       </Head>
       <Nav />
-      <div className="max-w-[1280px] py-8  mx-auto">
+      <div className="max-w-[1280px] py-8  mx-auto md:px-0 px-[10px]">
         {/* fridge training  */}
-        <div>
-          <div className="pb-8">
-            <h2 className="mb-2 text-2xl font-bold">{data?.training_title}</h2>
+        <div className="flex flex-wrap gap-[30px] md:gap-0  md:justify-between pb-8">
+          <div className="w-full md:basis-[60%]">
+            <h2 className="mb-2 text-2xl font-bold pb-[10px]">
+              {data?.training_title}
+            </h2>
+            <div className="w-full h-[500px] cursor-pointer mb-[10px]">
+              <img
+                src="/../assets/dummyimage.webp"
+                alt="image of training"
+                className="w-full h-full object-fill"
+              />
+            </div>
             {data?.detail && (
               <p
                 className="text-gray-600"
                 dangerouslySetInnerHTML={{ __html: data?.detail }}
               ></p>
             )}
+          </div>
+          <div className="w-full md:basis-[35%]">
+            <Categorylist />
           </div>
         </div>
       </div>
