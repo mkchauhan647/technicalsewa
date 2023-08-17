@@ -2,16 +2,10 @@
 import { useRouter } from "next/navigation";
 import React from "react";
 
-const Categorylist = ({
-  activeId,
-  categories = [],
-}: {
-  activeId?: string;
-  categories: string[];
-}) => {
+const BlogCategorylist = ({ categories = [] }: { categories: string[] }) => {
   const { push } = useRouter();
   const handleCatClick = (id: any) => {
-    push(`/training/${id}`);
+    // push(`/training/${id}`);
     window.scrollTo(0, 0);
   };
   return (
@@ -20,9 +14,7 @@ const Categorylist = ({
         <div
           onClick={() => handleCatClick(cat?.value)}
           key={index}
-          className={`cursor-pointer hover:text-[#2591B2] hover:font-semibold flex  items-center justify-between py-5 border-b-[1px] border-solid border-[#3d4145] ${
-            activeId === cat?.value ? "text-[#2591B2] font-semibold" : ""
-          }`}
+          className="cursor-pointer hover:text-[#2591B2] hover:font-semibold flex  items-center justify-between py-5 border-b-[1px] border-solid border-[#3d4145]"
         >
           <h3 className=" text-[base]">{cat?.text}</h3>
           {/* <div className="rounded-full hover:bg-[#2591B2] bg-gray-400 w-[30px] h-[30px] flex items-center justify-center">
@@ -34,4 +26,4 @@ const Categorylist = ({
   );
 };
 
-export default Categorylist;
+export default BlogCategorylist;

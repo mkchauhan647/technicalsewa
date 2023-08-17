@@ -83,7 +83,9 @@ const Nav = () => {
           </Link>
           <div className="nav-links  hidden md:flex items-center gap-4 text-[#505056] ">
             <div className="group">
-              <h2 className="hover:text-[#2591b2]">Training</h2>
+              <Link href="/trainings" className="hover:text-[#2591b2]">
+                Training
+              </Link>
               <div className="hidden group-hover:block">
                 <div className="absolute z-10 mt-0 bg-white rounded-md shadow-lg md:w-[350px]">
                   <div className="py-1 h-[400px] overflow-y-scroll ">

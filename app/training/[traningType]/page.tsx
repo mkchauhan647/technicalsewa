@@ -2,6 +2,7 @@ import Categorylist from "@/components/Categorylist";
 import Nav from "@/components/Nav";
 import { SEOBase } from "@/components/SEOBase";
 import Footer from "@/components/footer/Footer";
+import { getTrainingCategoriesData } from "@/lib/api";
 import { baseUrl } from "@/public/baseUrl";
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -16,7 +17,7 @@ async function getData(id: string) {
       method: "POST",
       body: formData,
       headers: {
-        "Cache-Control": `max-age=${60 * 60}`, // max 1 hour cache
+        "Cache-Control": `max-age=${30 * 60}`, // max 1 hour cache
       },
     }
   );
@@ -35,7 +36,10 @@ const page = async ({ params }: any) => {
   let trainingId = params.traningType;
   const data = await getData(trainingId);
 
+  const trainingCategories = await getTrainingCategoriesData();
+
   const pageTitle = `${data?.training_title} - Training`;
+
   return (
     <>
       <Head>
@@ -69,22 +73,39 @@ const page = async ({ params }: any) => {
             <h2 className="mb-2 text-2xl font-bold pb-[10px]">
               {data?.training_title}
             </h2>
-            <div className="w-full h-[500px] cursor-pointer mb-[10px]">
-              <img
-                src="/../assets/dummyimage.webp"
-                alt="image of training"
-                className="w-full h-full object-fill"
-              />
-            </div>
+            {data?.image_1 && (
+              <div className="w-full h-[500px] cursor-pointer mb-[10px]">
+                <img
+                  src={data?.image_1}
+                  alt={`${data?.training_title} image #1}`}
+                  className="object-fill w-full h-full"
+                />
+              </div>
+            )}
             {data?.detail && (
               <p
                 className="text-gray-600"
                 dangerouslySetInnerHTML={{ __html: data?.detail }}
               ></p>
             )}
+            {data?.image_2 && (
+              <div className="w-full h-[500px] cursor-pointer mb-[10px]">
+                <img
+                  src={data?.image_2}
+                  alt={`${data?.training_title} image #2}`}
+                  className="object-fill w-full h-full"
+                />
+              </div>
+            )}
           </div>
           <div className="w-full md:basis-[35%]">
-            <Categorylist />
+            <div className="py-12 px-10 rounded-[10px] border-[2px] border-gray-200 text-[#3d4145] font-normal">
+              <h2 className="text-[24px] leading-[29px] pb-3">CATEGORIES</h2>
+              <Categorylist
+                categories={trainingCategories}
+                activeId={trainingId}
+              />
+            </div>
           </div>
         </div>
       </div>
