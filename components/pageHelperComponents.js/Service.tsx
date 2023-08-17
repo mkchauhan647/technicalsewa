@@ -106,7 +106,7 @@ const Service = ({ data, PopularBrands }: any) => {
         <AiOutlineSearch />
       </div>
 
-      <div className="flex gap-2 md:gap-6  py-4 ">
+      <div className="flex gap-2 py-4 md:gap-6">
         {/* left side services div  */}
         <div className="basis-[30%] md:basis-[22%] rounded-lg md:bg-[#2591b2] md:p-5 flex flex-col gap-4 overflow-y-auto h-[80vh] md:overflow-hidden md:h-auto cursor-pointer">
           {services.map(({ n, src }, index): any => (
@@ -146,7 +146,7 @@ const Service = ({ data, PopularBrands }: any) => {
             </div>
 
             {/* Card container started... */}
-            <div className="flex flex-wrap justify-around md:justify-center items-center  gap-6 md:gap-16 p-4">
+            <div className="flex flex-wrap gap-6 justify-around items-center p-4 md:justify-center md:gap-16">
               {filteredData?.map((value: any, index: any) => (
                 <Link
                   href={`/service/${value?.url_product_name}`}
@@ -182,7 +182,7 @@ const Service = ({ data, PopularBrands }: any) => {
             </div>
 
             {/* Card container started... */}
-            <div className="flex flex-wrap justify-center items-center gap-16 p-4">
+            <div className="flex flex-wrap gap-16 justify-center items-center p-4">
               {PopularBrands?.map((value: any, index: any) => (
                 <div
                   key={index}

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ImFacebook } from "react-icons/im";
 import { BiLogoInstagramAlt } from "react-icons/bi";
 import { BsYoutube, BsTwitter } from "react-icons/bs";
-import {IoLocationOutline, IoLocationSharp} from "react-icons/io5"
+import { IoLocationOutline, IoLocationSharp } from "react-icons/io5";
 const Footer = () => {
   return (
     <div>
@@ -15,34 +15,66 @@ const Footer = () => {
             We Are Available in
           </div>
           {/* link of location */}
-          <div className="flex flex-col md:flex-row justify-between gap-4 items-center  py-8">
+          <div className="flex flex-col gap-4 justify-between items-center py-8 md:flex-row">
             <div className="flex-1 flex gap-8 font-Roboto font-normal text-base leading-[24px] text-[#FFF]">
               <div className="flex flex-col gap-[10px]">
-                <Link prefetch={false} href="Pokhara">Pokhara</Link>
-                <Link prefetch={false} href="Chitwan">Chitwan</Link>
-                <Link prefetch={false} href="Lalitpur">Lalitpur</Link>
-                <Link prefetch={false} href="Ilam">Ilam</Link>
-                <Link prefetch={false} href="Manang">Manang</Link>
-                <Link prefetch={false} href="Dhangadi">Dhangadi</Link>
+                <Link prefetch={false} href="Pokhara">
+                  Pokhara
+                </Link>
+                <Link prefetch={false} href="Chitwan">
+                  Chitwan
+                </Link>
+                <Link prefetch={false} href="Lalitpur">
+                  Lalitpur
+                </Link>
+                <Link prefetch={false} href="Ilam">
+                  Ilam
+                </Link>
+                <Link prefetch={false} href="Manang">
+                  Manang
+                </Link>
+                <Link prefetch={false} href="Dhangadi">
+                  Dhangadi
+                </Link>
               </div>
               <div className="flex flex-col gap-[10px]">
-                <Link prefetch={false} href="butwal">Butwal</Link>
-                <Link prefetch={false} href="bhairahwa">Bhairahawa</Link>
-                <Link prefetch={false} href="lumbini">Lumbini</Link>
-                <Link prefetch={false} href="jhapa">Jhapa</Link>
-                <Link prefetch={false} href="hetauda">Hetauda</Link>
+                <Link prefetch={false} href="butwal">
+                  Butwal
+                </Link>
+                <Link prefetch={false} href="bhairahwa">
+                  Bhairahawa
+                </Link>
+                <Link prefetch={false} href="lumbini">
+                  Lumbini
+                </Link>
+                <Link prefetch={false} href="jhapa">
+                  Jhapa
+                </Link>
+                <Link prefetch={false} href="hetauda">
+                  Hetauda
+                </Link>
               </div>
               <div className="flex flex-col gap-[10px]">
-                <Link prefetch={false} href="kathmandu">Kathmandu</Link>
-                <Link prefetch={false} href="kavre">Kavre</Link>
-                <Link prefetch={false} href="mustang">Mustang</Link>
-                <Link prefetch={false} href="dharan">Dharan</Link>
-                <Link prefetch={false} href="sindupalchowk">Sindupalchowk</Link>
+                <Link prefetch={false} href="kathmandu">
+                  Kathmandu
+                </Link>
+                <Link prefetch={false} href="kavre">
+                  Kavre
+                </Link>
+                <Link prefetch={false} href="mustang">
+                  Mustang
+                </Link>
+                <Link prefetch={false} href="dharan">
+                  Dharan
+                </Link>
+                <Link prefetch={false} href="sindupalchowk">
+                  Sindupalchowk
+                </Link>
               </div>
             </div>
 
             {/* direction  */}
-            <div className="flex-1  flex items-center justify-center">
+            <div className="flex flex-1 justify-center items-center">
               <Link
                 target="_blank"
                 href="https://www.google.com/maps/place/27%C2%B042'08.4%22N+85%C2%B018'35.8%22E/@27.702328,85.309943,15z/data=!4m4!3m3!8m2!3d27.7023333!4d85.3099444?hl=en&entry=ttu"
@@ -56,7 +88,7 @@ const Footer = () => {
           <hr />
           {/* Next Foter */}
           <div className="flex flex-col md:flex-row items-center justify-between  mt-[10px] gap-4 ">
-            <div className=" flex flex-col md:flex-row items-center gap-4">
+            <div className="flex flex-col gap-4 items-center  md:flex-row">
               <Link
                 href=""
                 className="w-[210px] h-[52px] 2xl:h-[67px] bg-[#FFF] p-[3px] rounded-[3px]"
@@ -64,7 +96,7 @@ const Footer = () => {
                 <img
                   src="/../assets/logoofts.png"
                   alt="image of logo"
-                  className="w-full h-full object-contain"
+                  className="object-contain w-full h-full"
                 />
               </Link>
               <div className="flex flex-col font-Roboto text-[#FFF] gap-[10px]">
@@ -127,7 +159,8 @@ const Footer = () => {
       {/* copyright footer */}
       <div className="py-[9px] bg-[#054355]">
         <h6 className="font-light text-[14px] text-white/[0.5] tracking-[0.3px] leading-[14.06px] text-center">
-          Copyright2023 Technical Sewa All Rights Reserved
+          Copyright {new Date().getFullYear()} Technical Sewa All Rights
+          Reserved
         </h6>
       </div>
     </div>
