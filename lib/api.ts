@@ -56,10 +56,10 @@ export async function getTrainingCategoriesData() {
 
 export async function getBlogDataById(id: string) {
   const formData = new FormData();
-  formData.append("id", `${id}`);
+  formData.append("id", id);
   try {
     const res = await fetch(
-      `${baseUrl}/techsewa/publiccontrol/publicmasterconfig/getblogDetailsbyid`,
+      `${baseUrl}/techsewa/publiccontrol/publicmasterconfig/getblogDetailsbyidd`,
       {
         method: "POST",
         body: formData,

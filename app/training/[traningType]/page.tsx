@@ -47,10 +47,7 @@ const page = async ({ params }: any) => {
         <SEOBase title={pageTitle} />
         {/* Open Graph tags */}
         <meta property="og:title" content={`${data?.meta_title}`} />
-        <meta
-          property="og:description"
-          content="This is the OG description for the page."
-        />
+        <meta property="og:description" content={`${data?.meta_desc}`} />
         <meta
           property="og:image"
           content={data?.image_1 ? data?.image_1 : "/favicon.ico"}
