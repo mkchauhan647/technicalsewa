@@ -15,14 +15,14 @@ const BlogCard = ({ blog }: any) => {
     //             </h3>
     //             <div className='flex gap-4'>
     //                 <div className='basis-[40%] h-[150px]'>
-    //                     <img className='h-full w-full object-cover' src={blog.filename.replace(
+    //                     <img className='object-cover w-full h-full' src={blog.filename.replace(
     //                     "https://smartcare.com.np/multiservice/",
     //                     "https://smartcare.com.np/multiservice/test/")} />
     //                 </div>
 
     //                 <div className='basis-[60%] gap-2'>
     //                     <div className='h-[100px] overflow-hidden' dangerouslySetInnerHTML={{__html:blog.blog_desc.split('\n')[0]}} ></div>
-    //                     <Link href={`blogs/${blog.blog_name}`}> <button  className='bg-black text-white rounded p-3'>Readmore</button> </Link>
+    //                     <Link href={`blogs/${blog.blog_name}`}> <button  className='p-3 text-white bg-black rounded'>Readmore</button> </Link>
     //                 </div>
     //             </div>
     //         </div>
@@ -31,7 +31,7 @@ const BlogCard = ({ blog }: any) => {
       <div className="flex gap-4 rounded-[10px] border-[2px] border-gray-200 p-4">
         <div className="basis-[40%] h-[180px]">
           <img
-            className="h-full w-full object-cover"
+            className="object-cover w-full h-full"
             src={blog.filename.replace(
               "https://smartcare.com.np/multiservice/",
               "https://smartcare.com.np/multiservice/test/"
@@ -49,9 +49,9 @@ const BlogCard = ({ blog }: any) => {
           <div className="pb-[10px] text-gray-500 font-bold">
             {blog.created_ts}
           </div>
-          <Link href={`blogs/${blog.blog_name}`}>
+          <Link href={`blogs/${blog.blog_id}`}>
             {" "}
-            <button className="bg-black text-white rounded p-2">
+            <button className="p-2 text-white bg-black rounded">
               Readmore
             </button>{" "}
           </Link>
