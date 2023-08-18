@@ -1,8 +1,9 @@
 import BlogCategorylist from "@/components/BlogCategorylist";
+import Categorylist from "@/components/Categorylist";
 import Nav from "@/components/Nav";
 import Footer from "@/components/footer/Footer";
 import BlogCard from "@/components/pageHelperComponents.js/BlogCard";
-import { getTrainingCategoriesData } from "@/lib/api";
+import { getTrainingCategoriesData, getTrainings } from "@/lib/api";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -12,8 +13,9 @@ import { MdMasks, MdSanitizer } from "react-icons/md";
 import { URLSearchParams } from "url";
 
 const Page = async () => {
-  const trainingCategories = await getTrainingCategoriesData();
+  const trainings = await getTrainings();
 
+  const trainingCategories = await getTrainingCategoriesData();
   return (
     <>
       <Nav />
@@ -25,7 +27,7 @@ const Page = async () => {
           <div className="flex flex-wrap md:justify-between">
             <div className="w-full md:basis-[60%]">
               <div className="grid gap-4 md:grid-cols-1">
-                {trainingCategories.map((item: any, i: number) => {
+                {trainings.map((item: any, i: number) => {
                   return (
                     <div
                       key={i}
@@ -34,19 +36,23 @@ const Page = async () => {
                       <div className="basis-[25%] h-[120px]">
                         <img
                           className="object-cover w-full h-full"
-                          src={item?.image ?? "/assets/no-image.jpg"}
+                          src={
+                            item?.image_1 ??
+                            item?.image_2 ??
+                            "/assets/no-image.jpg"
+                          }
                         />
                       </div>
                       <div className="basis-[60%]">
                         <Link
-                          href={`/training/${item?.value}`}
+                          href={`/training/${item?.category}`}
                           className="font-bold hover:text-[#2591B2] text-[14px] md:text-[20px] mb-3 h-[40px] "
                         >
-                          {item?.text}
+                          {item?.training_title}
                         </Link>
 
                         <div className="h-[50px] overflow-hidden text-black font-normal">
-                          {item?.desc}
+                          {item?.short_detail}
                         </div>
                       </div>
                     </div>
@@ -56,6 +62,12 @@ const Page = async () => {
                 {/* {blogsdata.map((blog, i) => (
                   <BlogCard key={i} blog={blog} />
                 ))} */}
+              </div>
+            </div>
+            <div className="w-full md:basis-[35%]">
+              <div className="py-12 px-10 rounded-[10px] border-[2px] border-gray-200 text-[#3d4145] font-normal">
+                <h2 className="text-[24px] leading-[29px] pb-3">CATEGORIES</h2>
+                <Categorylist categories={trainingCategories} />
               </div>
             </div>
           </div>

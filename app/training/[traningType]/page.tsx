@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 import React from "react";
 async function getData(id: string) {
   const formData = new FormData();
-  formData.append("id", `${id}`);
+  formData.append("id", id);
 
   const res = await fetch(
     `${baseUrl}/techsewa/publiccontrol/publicmasterconfig/gettrainingDetails`,
@@ -34,7 +34,8 @@ async function getData(id: string) {
 
 const page = async ({ params }: any) => {
   let trainingId = params.traningType;
-  const data = await getData(trainingId);
+  let data = await getData(trainingId);
+  data = data?.[0] || data;
 
   const trainingCategories = await getTrainingCategoriesData();
 
