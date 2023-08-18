@@ -1,5 +1,7 @@
 # technicalsewa
 
+## Requiremnts
+Node Js v16
 
 
 ## Getting started
