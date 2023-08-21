@@ -6,9 +6,9 @@ import Head from "next/head";
 import React from "react";
 
 const page = async ({ params }: any) => {
-  let page_url = params.slug;
+  let blogId = params.id;
 
-  const blogData = await getBlogDataById(page_url);
+  const blogData = await getBlogDataById(blogId);
 
   const data = blogData?.[0] || blogData;
 
@@ -19,7 +19,7 @@ const page = async ({ params }: any) => {
         <SEOBase title={pageTitle} />
         {/* Open Graph tags */}
         <meta property="og:title" content={`${pageTitle}`} />
-        
+
         <meta
           property="og:image"
           content={data?.filename ? data?.filename : "/favicon.ico"}
@@ -38,7 +38,7 @@ const page = async ({ params }: any) => {
       <Nav />
       <div className="container flex justify-center py-6 mx-auto">
         <div className="max-w-[1200px]">
-          <h1 className="text-[30px] mb-2">{data?.blog_name}</h1>
+          <h1 className="text-[30px] mb-2 font-bold">{data?.blog_name}</h1>
           {data?.filename && (
             <div className="w-full h-[600px]">
               <img className="object-cover w-full h-full" src={data.filename} />
