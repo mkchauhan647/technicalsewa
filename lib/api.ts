@@ -68,6 +68,7 @@ export async function getBlogDataById(id: string) {
         },
       }
     );
+
     return res.json();
   } catch (error) {
     return { error: true };
