@@ -6,7 +6,7 @@ export async function getTrainings() {
       `${baseUrl}/techsewa/publiccontrol/publicmasterconfig/gettrainingDetails`,
       {
         headers: {
-          "Cache-Control": `max-age=${30 * 60}`, // max 30min cache
+          "Cache-Control": `max-age=${2 * 60}`, // max 30min cache
         },
       }
     );
@@ -26,7 +26,7 @@ export async function getTrainingDataById(id: string) {
         method: "POST",
         body: formData,
         headers: {
-          "Cache-Control": `max-age=${30 * 60}`, // max 30min cache
+          "Cache-Control": `max-age=${2 * 60}`, // max 30min cache
         },
       }
     );
@@ -44,7 +44,7 @@ export async function getTrainingCategoriesData() {
       `${baseUrl}/techsewa/publiccontrol/publicmasterconfig/gettrainingcategories`,
       {
         headers: {
-          "Cache-Control": `max-age=${30 * 60}`, // max 30min cache
+          "Cache-Control": `max-age=${2 * 60}`, // max 30min cache
         },
       }
     );
@@ -64,7 +64,7 @@ export async function getBlogDataById(id: string) {
         method: "POST",
         body: formData,
         headers: {
-          "Cache-Control": `max-age=${30 * 60}`, // max 30min cache
+          "Cache-Control": `max-age=${2 * 60}`, // max 30min cache
         },
       }
     );
@@ -87,7 +87,7 @@ export async function getBlogsByCategoryId(id: string) {
         method: "POST",
         body: formData,
         headers: {
-          "Cache-Control": `max-age=${30 * 60}`, // max 30min cache
+          "Cache-Control": `max-age=${2 * 60}`, // max 30min cache
         },
       }
     );
