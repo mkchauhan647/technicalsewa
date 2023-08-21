@@ -2,7 +2,7 @@ import BlogCategorylist from "@/components/BlogCategorylist";
 import Nav from "@/components/Nav";
 import Footer from "@/components/footer/Footer";
 import BlogCard from "@/components/pageHelperComponents.js/BlogCard";
-import { getTrainingCategoriesData } from "@/lib/api";
+import { getBlogsByCategoryId, getTrainingCategoriesData } from "@/lib/api";
 import Image from "next/image";
 import React from "react";
 import { GiGloves } from "react-icons/gi";
@@ -10,11 +10,10 @@ import { ImPhone } from "react-icons/im";
 import { MdMasks, MdSanitizer } from "react-icons/md";
 import { URLSearchParams } from "url";
 
-const page = async () => {
-  const blogs = await fetch(
-    "https://smartcare.com.np/techsewa/publiccontrol/publicmasterconfig/getblogdetails"
-  );
-  const blogsdata: [] = await blogs.json();
+const BlogsByCategoriesPage = async ({ params }: any) => {
+  let categoryId = params.id;
+
+  const blogs = await getBlogsByCategoryId(categoryId);
 
   const trainingCategories = await getTrainingCategoriesData();
 
@@ -24,14 +23,17 @@ const page = async () => {
       <div className="bg-[#FBFBFB] py-4 px-2 md:px-0">
         <div className="container mx-auto xl:w-[80rem] sm:w-full  sm-w-full m-auto">
           <h3 className="text-[25px] md:text-[35px] text-black my-[10px] text-left font-bold">
-            All Blogs
+            Blogs
           </h3>
-          <div className="flex flex-wrap space-y-2 md:justify-between">
+          <div className="flex flex-wrap md:justify-between">
             <div className="w-full md:basis-[60%]">
               <div className="grid gap-4 md:grid-cols-1">
-                {blogsdata.map((blog, i) => (
+                {blogs.map((blog, i) => (
                   <BlogCard key={i} blog={blog} />
                 ))}
+                {blogs?.length < 1 && (
+                  <h3>No any blogs available for requested category!</h3>
+                )}
               </div>
             </div>
             <div className="w-full  md:basis-[35%] py-12 px-10 rounded-[10px] border-[2px] border-gray-200 text-[#3d4145] font-normal">
@@ -46,7 +48,7 @@ const page = async () => {
   );
 };
 
-export default page;
+export default BlogsByCategoriesPage;
 
 export async function generateMetadata() {
   // const seocontet = await fetch(
@@ -55,6 +57,6 @@ export async function generateMetadata() {
   // const seocontetdata:[] = await seocontet.json();
 
   return {
-    title: `Blog | Technical sewa`,
+    title: `Blogs | Technical sewa`,
   };
 }

@@ -3,10 +3,8 @@ import { useRouter } from "next/navigation";
 import React from "react";
 
 const BlogCategorylist = ({ categories = [] }: { categories: string[] }) => {
-  const { push } = useRouter();
   const handleCatClick = (id: any) => {
-    // push(`/training/${id}`);
-    window.scrollTo(0, 0);
+    window.location.href = `/blogs/category/${id}`;
   };
   return (
     <div>
