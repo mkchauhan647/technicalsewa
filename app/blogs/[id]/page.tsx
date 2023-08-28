@@ -1,7 +1,8 @@
+import BlogCategorylist from "@/components/BlogCategorylist";
 import Nav from "@/components/Nav";
 import { SEOBase } from "@/components/SEOBase";
 import Footer from "@/components/footer/Footer";
-import { getBlogDataById } from "@/lib/api";
+import { getBlogDataById, getTrainingCategoriesData } from "@/lib/api";
 import Head from "next/head";
 import React from "react";
 
@@ -11,6 +12,8 @@ const page = async ({ params }: any) => {
   const blogData = await getBlogDataById(blogId);
 
   const data = blogData?.[0] || blogData;
+
+  const trainingCategories = await getTrainingCategoriesData();
 
   const pageTitle = `${data?.blog_name} - Blog`;
   return (
@@ -38,19 +41,33 @@ const page = async ({ params }: any) => {
       <Nav />
       <div className="container flex justify-center py-6 mx-auto">
         <div className="max-w-[1200px]">
-          <h1 className="text-[30px] mb-2 font-bold">{data?.blog_name}</h1>
-          {data?.filename && (
-            <div className="w-full h-[600px]">
-              <img className="object-cover w-full h-full" src={data.filename} />
-            </div>
-          )}
+          <div className="flex flex-wrap gap-[30px] md:gap-0  md:justify-between pb-8">
+            <div className="w-full md:basis-[60%]">
+              <h1 className="text-[30px] mb-2 font-bold">{data?.blog_name}</h1>
+              {data?.filename && (
+                <div className="w-full h-[600px]">
+                  <img
+                    className="object-cover w-full h-full"
+                    src={data.filename}
+                  />
+                </div>
+              )}
 
-          {data?.blog_desc && (
-            <div
-              className="mt-6"
-              dangerouslySetInnerHTML={{ __html: data?.blog_desc }}
-            ></div>
-          )}
+              {data?.blog_desc && (
+                <div
+                  className="mt-6"
+                  dangerouslySetInnerHTML={{ __html: data?.blog_desc }}
+                ></div>
+              )}
+            </div>
+
+            <div className="w-full md:basis-[35%]">
+              <div className="py-12 px-10 rounded-[10px] border-[2px] border-gray-200 text-[#3d4145] font-normal">
+                <h2 className="text-[24px] leading-[29px] pb-3">CATEGORIES</h2>
+                <BlogCategorylist categories={trainingCategories} />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <Footer />

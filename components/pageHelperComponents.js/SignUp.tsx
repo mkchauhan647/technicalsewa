@@ -18,11 +18,8 @@ const SignUp = () => {
     refferedby: "",
   });
 
-  let data = new FormData();
-
-  console.log(data);
-
   const handleSignUp = async () => {
+    let data = new FormData();
     if (input.password === input.confirmpassword) {
       data.append("phone", input.mobilenumber);
       data.append("first_name", input.firstname);
@@ -53,7 +50,7 @@ const SignUp = () => {
 
   return (
     // sign up page started..
-    <div className="flex flex-col  items-center gap-10 py-10 ">
+    <div className="flex flex-col gap-10 items-center py-10">
       {/* logo and text  */}
       <div className="flex flex-col items-center">
         <img
