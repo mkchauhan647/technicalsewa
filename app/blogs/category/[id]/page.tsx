@@ -28,7 +28,7 @@ const BlogsByCategoriesPage = async ({ params }: any) => {
           <div className="flex flex-wrap md:justify-between">
             <div className="w-full md:basis-[60%]">
               <div className="grid gap-4 md:grid-cols-1">
-                {blogs.map((blog, i) => (
+                {blogs.map((blog: any, i: number) => (
                   <BlogCard key={i} blog={blog} />
                 ))}
                 {blogs?.length < 1 && (
