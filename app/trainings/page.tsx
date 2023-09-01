@@ -25,15 +25,15 @@ const Page = async () => {
             Trainings
           </h3>
           <div className="flex flex-wrap md:justify-between">
-            <div className="w-full md:basis-[60%]">
+            <div className="w-full md:basis-[81%]">
               <div className="grid gap-4 md:grid-cols-1">
                 {trainings.map((item: any, i: number) => {
                   return (
                     <div
                       key={i}
-                      className="flex gap-4 rounded-[10px] border-[2px] border-gray-200 p-4 items-center"
+                      className="flex justify-between flex-wrap gap-4 rounded-[10px] border-[2px] border-gray-200 p-4 items-center"
                     >
-                      <div className="basis-[25%] h-[120px]">
+                      <div className="w-full md:basis-[25%] h-[160px] md:h-[120px] order-2 md:order-1">
                         <img
                           className="object-cover w-full h-full"
                           src={
@@ -43,10 +43,10 @@ const Page = async () => {
                           }
                         />
                       </div>
-                      <div className="basis-[60%]">
+                      <div className="w-full md:basis-[73%] order-1 md:order-2">
                         <Link
                           href={`/training/${item?.category}`}
-                          className="font-bold hover:text-[#2591B2] text-[14px] md:text-[20px] mb-3 h-[40px] "
+                          className="  font-bold hover:text-[#2591B2] text-[19px] md:text-[27px] mb-3 h-[40px] "
                         >
                           {item?.training_title}
                         </Link>
@@ -64,7 +64,7 @@ const Page = async () => {
                 ))} */}
               </div>
             </div>
-            <div className="w-full md:basis-[35%]">
+            <div className="w-full md:basis-[15%]">
               <div className="py-12 px-10 rounded-[10px] border-[2px] border-gray-200 text-[#3d4145] font-normal">
                 <h2 className="text-[24px] leading-[29px] pb-3">CATEGORIES</h2>
                 <Categorylist categories={trainingCategories} />
