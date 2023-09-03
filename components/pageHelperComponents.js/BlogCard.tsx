@@ -28,21 +28,22 @@ const BlogCard = ({ blog }: any) => {
     //         </div>
     //     </div>
     <>
-      <div className="flex gap-4 rounded-[10px] border-[2px] border-gray-200 p-4">
-        <Link href={`/blogs/${blog.blog_id}`}>
-          <div className="basis-[40%] h-[180px] hover:opacity-95">
+      <div className="flex flex-wrap gap-2 md:gap-0 md:justify-between rounded-[10px] border-[2px] border-gray-200 p-4">
+        <div className="w-full md:basis-[40%]  h-[180px] hover:opacity-95 order-2 md:order-1">
+          <Link href={`/blogs/${blog.blog_id}`} className="w-full h-full">
             <img
-              className="object-cover w-full h-full"
+              className="object-contain w-full h-full"
               src={blog.filename.replace(
                 "https://smartcare.com.np/multiservice/",
                 "https://smartcare.com.np/multiservice/test/"
               )}
             />
-          </div>
-        </Link>
-        <div className="basis-[60%]">
+          </Link>
+        </div>
+
+        <div className="w-full md:basis-[54%] order-1 md:order-2">
           <Link href={`/blogs/${blog.blog_id}`}>
-            <h3 className="hover:text-[#2591B2] font-bold text-[14px] md:text-[20px] mb-3 h-[40px] ">
+            <h3 className="hover:text-[#2591B2] font-bold text-[19px] md:text-[27px] mb-3 h-[40px] ">
               {blog.blog_name}
             </h3>
           </Link>

@@ -15,6 +15,7 @@ import { MdLogin, MdOutlineHomeRepairService } from "react-icons/md";
 import { BiSolidInfoCircle } from "react-icons/bi";
 import { CgProfile } from "react-icons/cg";
 import { LuMailWarning } from "react-icons/lu";
+import { MdModelTraining } from "react-icons/md";
 import useLocalstorage from "./HelperFuncion/useLocalstorage";
 import axios from "axios";
 
@@ -63,7 +64,6 @@ const Nav = () => {
         setCategories(res.data);
       });
   };
-
   useEffect(() => {
     getCategories();
   }, []);
@@ -177,6 +177,37 @@ const Nav = () => {
                 Notifications
               </Link>
                */}
+              <div className="group relative">
+                <Link
+                  href="/trainings"
+                  className="hover:text-[#2591b2] px-[30px] text-[20px] font-normal flex items-center justify-start gap-4"
+                  onClick={handleNavclose}
+                >
+                  <MdModelTraining className="text-[#2591b2]" />
+                  Training
+                </Link>
+                <div className="hidden group-hover:block">
+                  <div className="absolute z-10 mt-0 bg-white rounded-md shadow-lg md:w-[350px]">
+                    <div className="py-1 h-[400px] overflow-y-scroll ">
+                      <div className="py-2 pt-1"></div>
+                      {categories.map((cat, i) => {
+                        return (
+                          <Link
+                            key={i}
+                            href={`/training/${cat.value}`}
+                            className="w-[full]"
+                          >
+                            <p className="block px-6 py-2 text-sm text-[grey] hover:bg-gray-100">
+                              {cat.text}
+                            </p>
+                            <hr />
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               <Link
                 onClick={handleNavclose}
