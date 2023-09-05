@@ -6,7 +6,7 @@ import {
   AiFillSafetyCertificate,
   AiOutlineSearch,
 } from "react-icons/ai";
-import { useInView } from "react-intersection-observer";
+import { InView, useInView } from "react-intersection-observer";
 import {
   GiWashingMachine,
   GiCctvCamera,
@@ -22,7 +22,7 @@ import Image from "next/image";
 import { baseUrl } from "@/public/baseUrl";
 
 import Link from "next/link";
-
+import Activeviewrapper from "../Activeviewrapper";
 const Service = ({ data, PopularBrands }: any) => {
   const [activeview, setActiveview] = useState("");
   const {
@@ -36,6 +36,56 @@ const Service = ({ data, PopularBrands }: any) => {
     ref: popularbrand,
     inView: popularbrandview,
     entry: entryb,
+  } = useInView({
+    threshold: 0.3,
+  });
+  const {
+    ref: warranty,
+    inView: warrantyview,
+    entry: entryc,
+  } = useInView({
+    threshold: 0.3,
+  });
+  const {
+    ref: plumber,
+    inView: plumberview,
+    entry: entryd,
+  } = useInView({
+    threshold: 0.3,
+  });
+
+  const {
+    ref: air,
+    inView: airview,
+    entry: entrye,
+  } = useInView({
+    threshold: 0.3,
+  });
+  const {
+    ref: mobile,
+    inView: mobileview,
+    entry: entryf,
+  } = useInView({
+    threshold: 0.3,
+  });
+  const {
+    ref: cctv,
+    inView: cctvview,
+    entry: entryg,
+  } = useInView({
+    threshold: 0.3,
+  });
+  const {
+    ref: computer,
+    inView: computerview,
+    entry: entryh,
+  } = useInView({
+    threshold: 0.3,
+  });
+  const {
+    ref: medical,
+    inView: medicalview,
+    entry: entryi,
   } = useInView({
     threshold: 0.3,
   });
@@ -95,15 +145,13 @@ const Service = ({ data, PopularBrands }: any) => {
 
   const [filteredData, setFilteredData] = useState<any>([]);
   const [filterwarranty, setFilterwarranty] = useState<any>([]);
-  useEffect(() => {
-    if (repairapplicationview) {
-      setActiveview("Appliances Repair");
-    } else if (popularbrandview) {
-      setActiveview("Popular Brands");
-    } else {
-      setActiveview("");
-    }
-  }, [repairapplicationview, popularbrandview]);
+  const [filterplumber, setFilterplumber] = useState<any>([]);
+  const [filterair, setFilterair] = useState<any>([]);
+  const [filtermobile, setFiltermobile] = useState<any>([]);
+  const [filtercctv, setFiltercctv] = useState<any>([]);
+  const [filtercomputer, setFiltercomputer] = useState<any>([]);
+  const [filtermedical, setFiltermedical] = useState<any>([]);
+
   useEffect(() => {
     setFilteredData(
       data?.filter((val: any) => {
@@ -113,6 +161,36 @@ const Service = ({ data, PopularBrands }: any) => {
     setFilterwarranty(
       data?.filter((val: any) => {
         return val.brand_name === "Warranty Products";
+      })
+    );
+    setFilterplumber(
+      data?.filter((val: any) => {
+        return val.brand_name === "Electrician & Plumber";
+      })
+    );
+    setFilterair(
+      data?.filter((val: any) => {
+        return val.brand_name === "Air-Purifier/Humidifier";
+      })
+    );
+    setFiltermobile(
+      data?.filter((val: any) => {
+        return val.brand_name === "Mobile & Tabs";
+      })
+    );
+    setFiltercctv(
+      data?.filter((val: any) => {
+        return val.brand_name === "CCTV Repair Service";
+      })
+    );
+    setFiltercomputer(
+      data?.filter((val: any) => {
+        return val.brand_name === "Computer/Printer";
+      })
+    );
+    setFiltermedical(
+      data?.filter((val: any) => {
+        return (val.brand_name = "Medical Equipment");
       })
     );
   }, [data]);
@@ -137,17 +215,19 @@ const Service = ({ data, PopularBrands }: any) => {
         />
         <AiOutlineSearch />
       </div>
-      <div className="fixed w-[22%] rounded-lg md:bg-[#2591b2] md:p-5 flex flex-col gap-4 overflow-y-auto h-[80vh] md:overflow-hidden md:h-auto cursor-pointer">
+      <div className="fixed w-[18%]  flex flex-col gap-1 overflow-y-auto  md:overflow-hidden md:h-auto cursor-pointer">
         {services.map(({ n, src }, index): any => (
           <div
             onClick={() => handleTabClick(index, n)}
             key={index}
-            className={`   md:p-3 rounded-md flex flex-col  justify-center items-center md:items-start gap-2  ${
-              activeview === n ? "md:bg-black md:text-white" : "md:bg-white"
+            className={` text-black  md:p-1  flex flex-col pl-2  justify-center items-center gap-2 ${
+              activeview === n
+                ? "bg-[#EFEFEF] font-bold "
+                : "font-normal text-black"
             }`}
           >
             <div className="md:hidden  text-[#2591b2]">{src}</div>
-            <h3 className="md:text-[#a6adbb] font-medium text-[12px] md:text-[16px] text-center  md:text-left">
+            <h3 className="md:text-[black] font-medium text-[12px] md:text-[16px] text-center  md:text-left">
               {n}
             </h3>
           </div>
@@ -195,7 +275,6 @@ const Service = ({ data, PopularBrands }: any) => {
                 <span className="text-[#2591b2]">{services[value].n}</span>
               )}
             </div>
-
             {/* Card container started... */}
             <div className="flex flex-wrap gap-6 justify-around items-center p-4 md:justify-center md:gap-16">
               {filteredData?.map((value: any, index: any) => (
@@ -264,6 +343,270 @@ const Service = ({ data, PopularBrands }: any) => {
               ))}
             </div>
           </div>
+          <div
+            ref={warranty}
+            className="hidden  md:block bg-white min-h-[112px] w-[90%] p-5 rounded-md border-[1px] border-gray-400 "
+          >
+            <div className="flex justify-center items-center gap-2 text-[#2591b2]">
+              {/* Heading Icon  */}
+              <AiFillStar />
+
+              {/* Title Name  */}
+              <span className="text-[#2591b2]">Warranty Products</span>
+            </div>
+
+            {/* Card container started... */}
+            <div className="flex flex-wrap gap-16 justify-center items-center p-4">
+              {filterwarranty?.map((value: any, index: any) => (
+                <div
+                  key={index}
+                  className={`${
+                    value.image_url ? "flex flex-col justify-center" : "hidden"
+                  }`}
+                >
+                  {value.image_url && (
+                    <Link href={`/service/${value?.url_product_name}`}>
+                      <Image
+                        width={100}
+                        height={100}
+                        className="h-[80px] w-[80px]"
+                        src={value.image_url && value.image_url}
+                        alt={value.alt2 && value.alt2}
+                      />
+                      <h3 className="text-[10px]">{`value.product_name`}</h3>
+                    </Link>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div
+            ref={plumber}
+            className="hidden  md:block bg-white min-h-[112px] w-[90%] p-5 rounded-md border-[1px] border-gray-400 "
+          >
+            <div className="flex justify-center items-center gap-2 text-[#2591b2]">
+              {/* Heading Icon  */}
+              <AiFillStar />
+
+              {/* Title Name  */}
+              <span className="text-[#2591b2]">Electrician & Plumber</span>
+            </div>
+
+            {/* Card container started... */}
+            <div className="flex flex-wrap gap-16 justify-center items-center p-4">
+              {filterplumber?.map((value: any, index: any) => (
+                <div
+                  key={index}
+                  className={`${
+                    value.image_url ? "flex flex-col justify-center" : "hidden"
+                  }`}
+                >
+                  {value.image_url && (
+                    <Link href={`/service/${value?.url_product_name}`}>
+                      <Image
+                        width={100}
+                        height={100}
+                        className="h-[80px] w-[80px]"
+                        src={value.image_url && value.image_url}
+                        alt={value.alt2 && value.alt2}
+                      />
+                      <h3 className="text-[10px]">{`value.product_name`}</h3>
+                    </Link>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div
+            ref={air}
+            className="hidden  md:block bg-white min-h-[112px] w-[90%] p-5 rounded-md border-[1px] border-gray-400 "
+          >
+            <div className="flex justify-center items-center gap-2 text-[#2591b2]">
+              {/* Heading Icon  */}
+              <AiFillStar />
+
+              {/* Title Name  */}
+              <span className="text-[#2591b2]">Air-Purifier/Humidifier</span>
+            </div>
+
+            {/* Card container started... */}
+            <div className="flex flex-wrap gap-16 justify-center items-center p-4">
+              {filterair?.map((value: any, index: any) => (
+                <div
+                  key={index}
+                  className={`${
+                    value.image_url ? "flex flex-col justify-center" : "hidden"
+                  }`}
+                >
+                  {value.image_url && (
+                    <Link href={`/service/${value?.url_product_name}`}>
+                      <Image
+                        width={100}
+                        height={100}
+                        className="h-[80px] w-[80px]"
+                        src={value.image_url && value.image_url}
+                        alt={value.alt2 && value.alt2}
+                      />
+                      <h3 className="text-[10px]">{`value.product_name`}</h3>
+                    </Link>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div
+            ref={mobile}
+            className="hidden  md:block bg-white min-h-[112px] w-[90%] p-5 rounded-md border-[1px] border-gray-400 "
+          >
+            <div className="flex justify-center items-center gap-2 text-[#2591b2]">
+              {/* Heading Icon  */}
+              <AiFillStar />
+
+              {/* Title Name  */}
+              <span className="text-[#2591b2]">Mobile & Tabs</span>
+            </div>
+
+            {/* Card container started... */}
+            <div className="flex flex-wrap gap-16 justify-center items-center p-4">
+              {filtermobile?.map((value: any, index: any) => (
+                <div
+                  key={index}
+                  className={`${
+                    value.image_url ? "flex flex-col justify-center" : "hidden"
+                  }`}
+                >
+                  {value.image_url && (
+                    <Link href={`/service/${value?.url_product_name}`}>
+                      <Image
+                        width={100}
+                        height={100}
+                        className="h-[80px] w-[80px]"
+                        src={value.image_url && value.image_url}
+                        alt={value.alt2 && value.alt2}
+                      />
+                      <h3 className="text-[10px]">{`value.product_name`}</h3>
+                    </Link>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div
+            ref={cctv}
+            className="hidden  md:block bg-white min-h-[112px] w-[90%] p-5 rounded-md border-[1px] border-gray-400 "
+          >
+            <div className="flex justify-center items-center gap-2 text-[#2591b2]">
+              {/* Heading Icon  */}
+              <AiFillStar />
+
+              {/* Title Name  */}
+              <span className="text-[#2591b2]">CCTV Repair Service</span>
+            </div>
+
+            {/* Card container started... */}
+            <div className="flex flex-wrap gap-16 justify-center items-center p-4">
+              {filtercctv?.map((value: any, index: any) => (
+                <div
+                  key={index}
+                  className={`${
+                    value.image_url ? "flex flex-col justify-center" : "hidden"
+                  }`}
+                >
+                  {value.image_url && (
+                    <Link href={`/service/${value?.url_product_name}`}>
+                      <Image
+                        width={100}
+                        height={100}
+                        className="h-[80px] w-[80px]"
+                        src={value.image_url && value.image_url}
+                        alt={value.alt2 && value.alt2}
+                      />
+                      <h3 className="text-[10px]">{`value.product_name`}</h3>
+                    </Link>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div
+            ref={computer}
+            className="hidden  md:block bg-white min-h-[112px] w-[90%] p-5 rounded-md border-[1px] border-gray-400 "
+          >
+            <div className="flex justify-center items-center gap-2 text-[#2591b2]">
+              {/* Heading Icon  */}
+              <AiFillStar />
+
+              {/* Title Name  */}
+              <span className="text-[#2591b2]">Computer/Printer</span>
+            </div>
+
+            {/* Card container started... */}
+            <div className="flex flex-wrap gap-16 justify-center items-center p-4">
+              {filtercomputer?.map((value: any, index: any) => (
+                <div
+                  key={index}
+                  className={`${
+                    value.image_url ? "flex flex-col justify-center" : "hidden"
+                  }`}
+                >
+                  {value.image_url && (
+                    <Link href={`/service/${value?.url_product_name}`}>
+                      <Image
+                        width={100}
+                        height={100}
+                        className="h-[80px] w-[80px]"
+                        src={value.image_url && value.image_url}
+                        alt={value.alt2 && value.alt2}
+                      />
+                      <h3 className="text-[10px]">{`value.product_name`}</h3>
+                    </Link>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+          <Activeviewrapper
+            activeview={activeview}
+            view="Medical Equipment"
+            callback={setActiveview}
+          >
+            <div className="hidden  md:block bg-white min-h-[112px] w-[90%] p-5 rounded-md border-[1px] border-gray-400 ">
+              <div className="flex justify-center items-center gap-2 text-[#2591b2]">
+                {/* Heading Icon  */}
+                <AiFillStar />
+
+                {/* Title Name  */}
+                <span className="text-[#2591b2]">Medical Equipment</span>
+              </div>
+
+              {/* Card container started... */}
+              <div className="flex flex-wrap gap-16 justify-center items-center p-4">
+                {filtermedical?.map((value: any, index: any) => (
+                  <div
+                    key={index}
+                    className={`${
+                      value.image_url
+                        ? "flex flex-col justify-center"
+                        : "hidden"
+                    }`}
+                  >
+                    {value.image_url && (
+                      <Link href={`/service/${value?.url_product_name}`}>
+                        <Image
+                          width={100}
+                          height={100}
+                          className="h-[80px] w-[80px]"
+                          src={value.image_url && value.image_url}
+                          alt={value.alt2 && value.alt2}
+                        />
+                        <h3 className="text-[10px]">{`value.product_name`}</h3>
+                      </Link>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Activeviewrapper>
         </div>
       </div>
     </div>
