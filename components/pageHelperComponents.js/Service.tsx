@@ -79,6 +79,7 @@ const Service = ({ data, PopularBrands }: any) => {
   const [value, setValue] = useState(0);
 
   const [filteredData, setFilteredData] = useState<any>([]);
+  const [filteredAppliances, setFilteredAppliances] = useState<any>([]);
   const [filterwarranty, setFilterwarranty] = useState<any>([]);
   const [filterplumber, setFilterplumber] = useState<any>([]);
   const [filterair, setFilterair] = useState<any>([]);
@@ -89,6 +90,11 @@ const Service = ({ data, PopularBrands }: any) => {
 
   useEffect(() => {
     setFilteredData(
+      data?.filter((val: any) => {
+        return val.brand_name === "Appliances Repair";
+      })
+    );
+    setFilteredAppliances(
       data?.filter((val: any) => {
         return val.brand_name === "Appliances Repair";
       })
@@ -151,22 +157,23 @@ const Service = ({ data, PopularBrands }: any) => {
       <div className="md:bg-[#f5f5f5] pt-[20px] pb-[79px] xl:w-[90rem] px-4 sm:w-full m-auto flex">
         {/* input in mobile responsive  */}
 
-        <div className="sticky top-0 w-[18%] max-md:w-[20%] flex-shrink-0 flex-grow-0 flex flex-col gap-1 overflow-y-auto  md:overflow-hidden max-md:h-auto cursor-pointer h-screen">
+        <div className="sticky top-[80px] w-[18%] max-md:w-[20%] flex-shrink-0 flex-grow-0 flex flex-col gap-1 overflow-y-auto  md:overflow-hidden max-md:h-auto cursor-pointer h-screen">
           {services.map(({ n, src }, index): any => (
             <ScrollLink
               key={index}
-              activeClass="bg-[#EFEFEF] font-bold"
+              activeClass="bgd-[#EFEFEF] bg-[#dddddd] border-0 border-r-4 border-[#2591B2]"
               onSetActive={() => setActiveview(n)}
-              className={` text-black  md:p-1  pl-2   ${
-                activeview === n ? "" : "font-normal"
+              className={` text-black  md:p-1  pl-2    ${
+                activeview === n ? "font-bold" : ""
               }`}
               to={n}
               spy={true}
               smooth={true}
               duration={500}
               onClick={() => handleTabClick(index, n)}
+              offset={-100}
             >
-              <div className="flex flex-col gap-2 justify-center items-center">
+              <div className="flex flex-col gap-2 justify-center max-md:items-center">
                 <div className="md:hidden  text-[#2591b2]">{src}</div>
                 <h3 className="md:text-[black] font-medium text-[12px] md:text-[16px] text-center  md:text-left">
                   {n}
@@ -205,10 +212,7 @@ const Service = ({ data, PopularBrands }: any) => {
             )}
           </div> */}
 
-            <ScrollElement
-              name="Appliances Repair"
-              className=" md:block bg-white min-h-[112px] w-full md:w-[90%] p-0 md:p-5 rounded-md border-[1px] border-gray-400 "
-            >
+            <div className="md:hidden bg-white min-h-[112px] w-full p-0 md:p-5 rounded-md border-[1px] border-gray-400 ">
               <div>
                 <div className="flex justify-center items-center gap-2 text-[#2591b2]">
                   {/* Heading Icon  */}
@@ -222,6 +226,50 @@ const Service = ({ data, PopularBrands }: any) => {
                 {/* Card container started... */}
                 <div className="flex flex-wrap gap-6 justify-around items-center p-4 md:justify-center md:gap-16">
                   {filteredData?.map((value: any, index: any) => (
+                    <Link
+                      href={`/service/${value?.url_product_name}`}
+                      key={index}
+                      className={`${
+                        value.image_url
+                          ? "flex flex-col w-[80px] justify-center"
+                          : "hidden"
+                      }`}
+                    >
+                      {value.image_url && (
+                        <>
+                          <Image
+                            width={100}
+                            height={100}
+                            className="h-[60px] w-[80px]"
+                            src={value.image_url && value.image_url}
+                            alt={value.alt2 && value.alt2}
+                          />
+                          <p className="text-[10px]  whitespace-pre-wrap  ">
+                            {value.product_name}
+                          </p>
+                        </>
+                      )}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <ScrollElement
+              name="Appliances Repair"
+              className="hidden md:block bg-white min-h-[112px] w-[90%] p-5 rounded-md border-[1px] border-gray-400 "
+            >
+              <div>
+                <div className="flex justify-center items-center gap-2 text-[#2591b2]">
+                  {/* Heading Icon  */}
+                  <GiWashingMachine />
+
+                  {/* Title Name  */}
+                  <span className="text-[#2591b2]">Appliances Repair</span>
+                </div>
+                {/* Card container started... */}
+                <div className="flex flex-wrap gap-6 justify-around items-center p-4 md:justify-center md:gap-16">
+                  {filteredAppliances?.map((value: any, index: any) => (
                     <Link
                       href={`/service/${value?.url_product_name}`}
                       key={index}
@@ -284,7 +332,7 @@ const Service = ({ data, PopularBrands }: any) => {
                             src={value.image_url && value.image_url}
                             alt={value.alt2 && value.alt2}
                           />
-                          <h3 className="text-[10px]">{`value.product_name`}</h3>
+                          <h3 className="text-[10px]">{value.product_name}</h3>
                         </Link>
                       )}
                     </div>
@@ -326,7 +374,7 @@ const Service = ({ data, PopularBrands }: any) => {
                             src={value.image_url && value.image_url}
                             alt={value.alt2 && value.alt2}
                           />
-                          <h3 className="text-[10px]">{`value.product_name`}</h3>
+                          <h3 className="text-[10px]">{value.product_name}</h3>
                         </Link>
                       )}
                     </div>
@@ -368,7 +416,7 @@ const Service = ({ data, PopularBrands }: any) => {
                             src={value.image_url && value.image_url}
                             alt={value.alt2 && value.alt2}
                           />
-                          <h3 className="text-[10px]">{`value.product_name`}</h3>
+                          <h3 className="text-[10px]">{value.product_name}</h3>
                         </Link>
                       )}
                     </div>
@@ -412,7 +460,7 @@ const Service = ({ data, PopularBrands }: any) => {
                             src={value.image_url && value.image_url}
                             alt={value.alt2 && value.alt2}
                           />
-                          <h3 className="text-[10px]">{`value.product_name`}</h3>
+                          <h3 className="text-[10px]">{value.product_name}</h3>
                         </Link>
                       )}
                     </div>
@@ -454,7 +502,7 @@ const Service = ({ data, PopularBrands }: any) => {
                             src={value.image_url && value.image_url}
                             alt={value.alt2 && value.alt2}
                           />
-                          <h3 className="text-[10px]">{`value.product_name`}</h3>
+                          <h3 className="text-[10px]">{value.product_name}</h3>
                         </Link>
                       )}
                     </div>
@@ -496,7 +544,7 @@ const Service = ({ data, PopularBrands }: any) => {
                             src={value.image_url && value.image_url}
                             alt={value.alt2 && value.alt2}
                           />
-                          <h3 className="text-[10px]">{`value.product_name`}</h3>
+                          <h3 className="text-[10px]">{value.product_name}</h3>
                         </Link>
                       )}
                     </div>
@@ -538,7 +586,7 @@ const Service = ({ data, PopularBrands }: any) => {
                             src={value.image_url && value.image_url}
                             alt={value.alt2 && value.alt2}
                           />
-                          <h3 className="text-[10px]">{`value.product_name`}</h3>
+                          <h3 className="text-[10px]">{value.product_name}</h3>
                         </Link>
                       )}
                     </div>
@@ -580,7 +628,7 @@ const Service = ({ data, PopularBrands }: any) => {
                             src={value.image_url && value.image_url}
                             alt={value.alt2 && value.alt2}
                           />
-                          <h3 className="text-[10px]">{`value.product_name`}</h3>
+                          <h3 className="text-[10px]">{value.product_name}</h3>
                         </Link>
                       )}
                     </div>
