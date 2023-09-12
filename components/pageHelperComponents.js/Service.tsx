@@ -154,7 +154,7 @@ const Service = ({ data, PopularBrands }: any) => {
         />
         <AiOutlineSearch />
       </div>
-      <div className="md:bg-[#f5f5f5] pt-[20px] pb-[79px] xl:w-[90rem] px-4 sm:w-full m-auto flex">
+      <div className="md:bg-[#f5f5f5] pt-[20px] pb-[79px] xl:w-[80rem] 2xl:w-[80rem] px-4 sm:w-full m-auto flex">
         {/* input in mobile responsive  */}
 
         <div className="sticky top-[80px] w-[18%] max-md:w-[20%] flex-shrink-0 flex-grow-0 flex flex-col gap-1 overflow-y-auto  md:overflow-hidden max-md:h-auto cursor-pointer h-screen">
@@ -203,7 +203,7 @@ const Service = ({ data, PopularBrands }: any) => {
         </div> */}
 
           {/* right side item div  */}
-          <div className="bg-[#f5f5f5] basis-[70%] md:basis-[80%] ml-[20px] flex flex-col gap-8 text-center ">
+          <div className="bg-[#f5f5f5] basis-[70%] md:basis-[95%] ml-[20px] flex flex-col gap-8 text-center ">
             {/* <div className="md:hidden">
             {services[value] && (
               <h2 className="text-[14px] text-[#2591b2] text-left p-2">
@@ -257,7 +257,7 @@ const Service = ({ data, PopularBrands }: any) => {
 
             <ScrollElement
               name="Appliances Repair"
-              className="hidden md:block bg-white min-h-[112px] w-[90%] p-5 rounded-md border-[1px] border-gray-400 "
+              className="hidden md:block bg-white min-h-[112px] w-full p-5 rounded-md border-[1px] border-gray-400 "
             >
               <div>
                 <div className="flex justify-center items-center gap-2 text-[#2591b2]">
@@ -301,7 +301,7 @@ const Service = ({ data, PopularBrands }: any) => {
 
             <ScrollElement
               name="Popular Brands"
-              className="hidden md:block bg-white min-h-[112px] w-[90%] p-5 rounded-md border-[1px] border-gray-400 "
+              className="hidden md:block bg-white min-h-[112px] w-full p-5 rounded-md border-[1px] border-gray-400 "
             >
               <div>
                 <div className="flex justify-center items-center gap-2 text-[#2591b2]">
@@ -343,7 +343,7 @@ const Service = ({ data, PopularBrands }: any) => {
 
             <ScrollElement
               name="Warranty Products"
-              className="hidden  md:block bg-white min-h-[112px] w-[90%] p-5 rounded-md border-[1px] border-gray-400 "
+              className="hidden  md:block bg-white min-h-[112px] w-full p-5 rounded-md border-[1px] border-gray-400 "
             >
               <div>
                 <div className="flex justify-center items-center gap-2 text-[#2591b2]">
@@ -385,7 +385,7 @@ const Service = ({ data, PopularBrands }: any) => {
 
             <ScrollElement
               name="Electrician & Plumber"
-              className="hidden  md:block bg-white min-h-[112px] w-[90%] p-5 rounded-md border-[1px] border-gray-400 "
+              className="hidden  md:block bg-white min-h-[112px] w-full p-5 rounded-md border-[1px] border-gray-400 "
             >
               <div>
                 <div className="flex justify-center items-center gap-2 text-[#2591b2]">
@@ -427,7 +427,7 @@ const Service = ({ data, PopularBrands }: any) => {
 
             <ScrollElement
               name="Air-Purifier/Humidifier"
-              className="hidden  md:block bg-white min-h-[112px] w-[90%] p-5 rounded-md border-[1px] border-gray-400 "
+              className="hidden  md:block bg-white min-h-[112px] w-full p-5 rounded-md border-[1px] border-gray-400 "
             >
               <div>
                 <div className="flex justify-center items-center gap-2 text-[#2591b2]">
@@ -471,7 +471,7 @@ const Service = ({ data, PopularBrands }: any) => {
 
             <ScrollElement
               name="Mobile & Tabs"
-              className="hidden  md:block bg-white min-h-[112px] w-[90%] p-5 rounded-md border-[1px] border-gray-400 "
+              className="hidden  md:block bg-white min-h-[112px] w-full p-5 rounded-md border-[1px] border-gray-400 "
             >
               <div>
                 <div className="flex justify-center items-center gap-2 text-[#2591b2]">
@@ -513,7 +513,7 @@ const Service = ({ data, PopularBrands }: any) => {
 
             <ScrollElement
               name="CCTV Repair Service"
-              className="hidden  md:block bg-white min-h-[112px] w-[90%] p-5 rounded-md border-[1px] border-gray-400 "
+              className="hidden  md:block bg-white min-h-[112px] w-full p-5 rounded-md border-[1px] border-gray-400 "
             >
               <div>
                 <div className="flex justify-center items-center gap-2 text-[#2591b2]">
@@ -555,7 +555,7 @@ const Service = ({ data, PopularBrands }: any) => {
 
             <ScrollElement
               name="Computer/Printer"
-              className="hidden  md:block bg-white min-h-[112px] w-[90%] p-5 rounded-md border-[1px] border-gray-400 "
+              className="hidden  md:block bg-white min-h-[112px] w-full p-5 rounded-md border-[1px] border-gray-400 "
             >
               <div>
                 <div className="flex justify-center items-center gap-2 text-[#2591b2]">
@@ -597,7 +597,7 @@ const Service = ({ data, PopularBrands }: any) => {
 
             <ScrollElement
               name="Medical Equipment"
-              className="hidden  md:block bg-white min-h-[112px] w-[90%] p-5 rounded-md border-[1px] border-gray-400 "
+              className="hidden  md:block bg-white min-h-[112px] w-full p-5 rounded-md border-[1px] border-gray-400 "
             >
               <div>
                 <div className="flex justify-center items-center gap-2 text-[#2591b2]">
