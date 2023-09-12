@@ -36,7 +36,7 @@ const Login = () => {
   return (
     <div className="bg-white  pt-[20px] pb-[79px]">
       <div className="flex flex-col  justify-center pt-[50px] w-[80%] lg:w-[33.33%]  mx-auto px-4 md:p-0">
-        <div className="flex flex-col items-center ">
+        <div className="flex flex-col items-center">
           <div className="w-[150px] h-auto">
             <img
               src="/../assets/logoofts.png"
@@ -117,9 +117,9 @@ const Login = () => {
             />
           </Link>
         </div>
-        <div className="flex items-center justify-center mt-[57px] mb-[10px]">
+        <div className="flex items-center justify-center mt-[57px] mb-[10px] space-x-1">
           <p className="text-[13px] text-[#666666] leading-[10.72px] font-normal">
-            Need an account ?
+            Need an account?
           </p>
           <Link
             href="/sign-up-page"
