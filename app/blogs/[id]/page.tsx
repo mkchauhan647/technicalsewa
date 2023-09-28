@@ -42,7 +42,7 @@ const page = async ({ params }: any) => {
       <div className="container flex justify-center py-6 mx-auto">
         <div className="max-w-[1200px]">
           <div className="flex flex-wrap gap-[30px] md:gap-0  md:justify-between pb-8">
-            <div className="w-full md:basis-[81%]">
+            <div className="w-full md:basis-[79%]">
               <h1 className="text-[30px] mb-2 font-bold">{data?.blog_name}</h1>
               {data?.filename && (
                 <div className="w-full h-[600px]">
