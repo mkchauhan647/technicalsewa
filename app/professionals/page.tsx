@@ -39,7 +39,7 @@ const page = async () => {
           </div>
 
           {/* card  */}
-          <div className=" grid grid-cols-1 md:grid-cols-2  gap-5 py-4 md:py-8 px-2 md:px-0">
+          <div className=" grid grid-cols-1 md:grid-cols-3  gap-5 py-4 md:py-8 px-2 md:px-0">
             {professionalsData.map((s: any, index: any) => (
               <div
                 key={index}
@@ -72,7 +72,7 @@ const page = async () => {
                   </div>
 
                   {/* book now and view button */}
-                  <div className="flex gap-2 text-[16px]">
+                  <div className="flex gap-2 text-[11px]">
                     <Link
                       href="/service"
                       className="text-white bg-[#2591b2] rounded-md px-2 py-1 md:px-[17px] md:py-[6px]"
@@ -125,14 +125,13 @@ const page = async () => {
 
 export default page;
 
-
-export async function generateMetadata(){
+export async function generateMetadata() {
   // const seocontet = await fetch(
   //   "https://smartcare.com.np/techsewa/publiccontrol/publicmasterconfig/getSeoContent?url=https://smartcare.com.np/blogs"
   // );
   // const seocontetdata:[] = await seocontet.json();
 
-  return{
-    title:`Professionals | Technical sewa`
-  }
+  return {
+    title: `Professionals | Technical sewa`,
+  };
 }
