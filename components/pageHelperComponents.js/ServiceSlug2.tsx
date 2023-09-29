@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 import MapComponent from "@/components/mapComponents/MapComponent";
 import { baseUrl } from "@/public/baseUrl";
 
-const ServiceSlug2 = ({data}:any) => {
+const ServiceSlug2 = ({ data }: any) => {
   const [openMapComponent, setopenMapComponent] = useState(false);
   // const [data, setData] = useState<any>(null);
   const [selectCategoryData, setSelectCategoryData] = useState<any>();
@@ -88,9 +88,12 @@ const ServiceSlug2 = ({data}:any) => {
                   className="mb-[20px] max-md:p-4 flex flex-col gap-4 "
                 >
                   <div
-                    style={{ backgroundImage: `url(${val?.image_url.replace(
-                      "https://smartcare.com.np/multiservice/",
-                      "https://smartcare.com.np/multiservice/test/")})` }}
+                    style={{
+                      backgroundImage: `url(${val?.image_url.replace(
+                        "https://smartcare.com.np/multiservice/",
+                        "https://smartcare.com.np/multiservice/test/"
+                      )})`,
+                    }}
                     className="bg-white h-[350px] bg-contain bg-no-repeat bg-center w-full relative  py-[20px]"
                   >
                     <div className="absolute top-0 z-0 h-full w-full left-0 bg-black/50 "></div>
@@ -106,7 +109,7 @@ const ServiceSlug2 = ({data}:any) => {
                               {decodeURIComponent(params.slug2)}
                             </span>{" "}
                           </h3>
-                          <h3 className="w-[500px] text-white leading-[1.5] tracking-[1px] md:text-[30px] text-[24px] font-bold">
+                          <h3 className="max-w-[637px] text-white leading-[1.5] tracking-[1px] md:text-[30px] text-[24px] font-bold">
                             {val?.title}
                           </h3>
                         </div>
