@@ -18,6 +18,7 @@ import { LuMailWarning } from "react-icons/lu";
 import { MdModelTraining } from "react-icons/md";
 import useLocalstorage from "./HelperFuncion/useLocalstorage";
 import axios from "axios";
+import useAuthStore from "@/store/useAuthStore";
 
 interface TrainingCategory {
   text: string;
@@ -28,10 +29,12 @@ const Nav = () => {
   //state for navbar
   const [nav, setNav] = useState(false);
 
-  // const credObj:any =localStorage && localStorage.getItem("loginKey");
-  // const parseCredObj = JSON.parse(credObj);
+  const { isAuthenticated, user, signout } = useAuthStore();
 
-  const { token: parseCredObj } = useLocalstorage();
+  const handleLogout = () => {
+    signout();
+    window.location.href = "/";
+  };
 
   // stop scrolling when side-navigation is open
   useEffect(() => {
@@ -67,7 +70,6 @@ const Nav = () => {
   useEffect(() => {
     getCategories();
   }, []);
-  console.log(categories);
 
   return (
     <>
@@ -120,7 +122,7 @@ const Nav = () => {
             <Link className="hover:text-[#2591b2]" href="/partpurja">
               Part Purja
             </Link>
-            {parseCredObj?.id ? (
+            {isAuthenticated ? (
               <div className="flex gap-4 items-center">
                 <Link className="hover:text-[#2591b2]" href="/profile">
                   Profile
@@ -130,7 +132,7 @@ const Nav = () => {
                 </Link>
               </div>
             ) : null}
-            {!parseCredObj?.id ? (
+            {!isAuthenticated ? (
               <Link className="hover:text-[#2591b2]" href="/login">
                 <button className="flex gap-[5px] justify-center items-center bg-[#2591B2] rounded-[3px] cursor-pointer text-white px-[13px] py-[8.5px] ">
                   <HiArrowRightOnRectangle size={20} className="text-white" />
@@ -138,12 +140,13 @@ const Nav = () => {
                 </button>
               </Link>
             ) : (
-              <Link className="hover:text-[#2591b2]" href="#">
-                <button className="flex gap-[5px] justify-center items-center bg-[#2591B2] rounded-[3px] cursor-pointer text-white px-[13px] py-[8.5px] ">
-                  <HiArrowRightOnRectangle size={20} className="text-white" />
-                  Log Out
-                </button>
-              </Link>
+              <button
+                onClick={handleLogout}
+                className="flex transition-all hover:scale-105 gap-[5px] justify-center items-center bg-[#2591B2] rounded-[3px] cursor-pointer text-white px-[13px] py-[8.5px] "
+              >
+                <HiArrowRightOnRectangle size={20} className="text-white" />
+                Log Out
+              </button>
             )}
           </div>
 
@@ -177,7 +180,7 @@ const Nav = () => {
                 Notifications
               </Link>
                */}
-              <div className="group relative">
+              <div className="relative group">
                 <Link
                   href="/trainings"
                   className="hover:text-[#2591b2] px-[30px] text-[20px] font-normal flex items-center justify-start gap-4"
@@ -234,7 +237,7 @@ const Nav = () => {
                 <HiMiniWrenchScrewdriver className="text-[#2591b2]" />
                 Part Purja
               </Link>
-              {parseCredObj?.id ? (
+              {isAuthenticated ? (
                 <div className="flex flex-col gap-[24px]">
                   <Link
                     onClick={handleNavclose}
@@ -262,7 +265,7 @@ const Nav = () => {
                   </Link>
                 </div>
               ) : null}
-              {!parseCredObj?.id ? (
+              {!isAuthenticated ? (
                 <Link
                   onClick={handleNavclose}
                   className="flex px-[30px] gap-4 text-[20px] font-normal items-center  w-full justify-starts"
@@ -273,7 +276,10 @@ const Nav = () => {
                 </Link>
               ) : (
                 <Link
-                  onClick={handleNavclose}
+                  onClick={() => {
+                    handleNavclose();
+                    handleLogout();
+                  }}
                   className="flex px-[30px] gap-4 text-[20px] font-normal items-center  w-full justify-starts"
                   href="#"
                 >

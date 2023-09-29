@@ -5,8 +5,13 @@ import { BsEyeSlashFill } from "react-icons/bs";
 import { AiOutlineEye } from "react-icons/ai";
 import { baseUrl } from "../../public/baseUrl";
 import axios from "axios";
+import useAuthStore from "@/store/useAuthStore";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
+  const { push } = useRouter();
+  const { signin } = useAuthStore();
+  const [loading, setLoading] = useState(false);
   const [input, setInput] = useState({
     username: "",
     password: "",
@@ -18,21 +23,31 @@ const Login = () => {
   };
 
   const handleSignIn = async () => {
+    setLoading(true);
     let data = new FormData();
     data.append("username", input.username);
     data.append("password", input.password);
-    await axios
-      .post(`https://smartcare.com.np/multiservice/masterconfig/publiclogin/signinlate`, data)
-      .then((response) => {
-          console.log(response)
-          const credObj = JSON.stringify(response?.data)
-          alert('login succesfully')
-          localStorage.setItem("loginKey",credObj)
-      });
+    try {
+      const loginRes = await axios.post(
+        `https://smartcare.com.np/multiservice/masterconfig/publiclogin/signinlate`,
+        data
+      );
+
+      if (typeof loginRes.data === "object" && loginRes.data !== null) {
+        signin(loginRes.data);
+        push("/");
+      } else {
+        throw new Error("Login Failed");
+      }
+    } catch (error) {
+      //
+    } finally {
+      setLoading(false);
+    }
   };
 
   const [showPassword, setshowPassword] = useState(false);
-  
+
   return (
     <div className="bg-white  pt-[20px] pb-[79px]">
       <div className="flex flex-col  justify-center pt-[50px] w-[80%] lg:w-[33.33%]  mx-auto px-4 md:p-0">
@@ -44,7 +59,7 @@ const Login = () => {
               className="w-full h-full object-container"
             />
           </div>
-          <h2 className="text-[#666666] text-[13px] leading-[19.5px] font-light mt-[12px]">
+          <h2 className="text-[#666666] text-normal leading-[19.5px] font-semibold mt-[12px]">
             Sign in to use our service
           </h2>
         </div>
@@ -75,12 +90,13 @@ const Login = () => {
           </div>
         </div>
         <Link
-          href="#"
+          href="/account/forgot-password"
           className="text-[#666666] text-[13px] leading-[10px] font-light mt-[20px]"
         >
           Forgot Password ?
         </Link>
         <button
+          disabled={loading}
           onClick={handleSignIn}
           className="text-white text-[15px] leading-[18px] bg-[#2591B2] font-normal rounded-[2px] w-full py-[15px]
         mt-[44px]"
