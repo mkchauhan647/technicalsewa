@@ -22,6 +22,7 @@ import { baseUrl } from "@/public/baseUrl";
 
 import Link from "next/link";
 import { Link as ScrollLink, Element as ScrollElement } from "react-scroll";
+import Serviceproduct from "../Serviceproduct";
 const Service = ({ data, PopularBrands }: any) => {
   const [activeview, setActiveview] = useState("");
 
@@ -87,6 +88,9 @@ const Service = ({ data, PopularBrands }: any) => {
   const [filtercctv, setFiltercctv] = useState<any>([]);
   const [filtercomputer, setFiltercomputer] = useState<any>([]);
   const [filtermedical, setFiltermedical] = useState<any>([]);
+  const [filterdrone, setFilterdrone] = useState<any>([]);
+  const [filtercarenter, setFiltercarenter] = useState<any>([]);
+  const [filtercleaning, setFiltercleaning] = useState<any>([]);
 
   useEffect(() => {
     setFilteredData(
@@ -131,11 +135,26 @@ const Service = ({ data, PopularBrands }: any) => {
     );
     setFiltermedical(
       data?.filter((val: any) => {
-        return (val.brand_name = "Medical Equipment");
+        return val.brand_name === "Medical Equipment";
+      })
+    );
+    setFilterdrone(
+      data?.filter((val: any) => {
+        return val.brand_name === "Drone Repair";
+      })
+    );
+    setFiltercarenter(
+      data?.filter((val: any) => {
+        return val.brand_name === "Carenter Service";
+      })
+    );
+    setFiltercleaning(
+      data?.filter((val: any) => {
+        return val.brand_name === "Cleaning & Pest Control";
       })
     );
   }, [data]);
-
+  console.log("carenter service", filtercarenter);
   const handleTabClick = (index: any, n: any) => {
     setValue(index);
     setFilteredData(
@@ -636,6 +655,21 @@ const Service = ({ data, PopularBrands }: any) => {
                 </div>
               </div>
             </ScrollElement>
+            <Serviceproduct
+              icon={<GiDeliveryDrone />}
+              brandname={"Drone Repair"}
+              filterdata={filterdrone}
+            />
+            <Serviceproduct
+              icon={<GiHammerNails />}
+              brandname={"Carenter Service"}
+              filterdata={filtercarenter}
+            />
+            <Serviceproduct
+              icon={filtercarenter}
+              brandname={"Cleaning & Pest Control"}
+              filterdata={filtercleaning}
+            />
           </div>
         </div>
       </div>
