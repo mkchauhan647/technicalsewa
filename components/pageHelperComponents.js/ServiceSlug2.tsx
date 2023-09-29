@@ -1,18 +1,18 @@
 "use client";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { BsNewspaper } from "react-icons/bs";
 import { useParams } from "next/navigation";
 import { AiFillStar } from "react-icons/ai";
 import { url } from "inspector";
 import { SlArrowRight } from "react-icons/sl";
 import { useRouter } from "next/navigation";
-import MapComponent from "@/components/mapComponents/MapComponent";
 import { baseUrl } from "@/public/baseUrl";
+import ComplainForm from "@/features/complain/complain-form/complainForm";
+import useComplainFormStore from "@/store/useComplainInquiryStore";
 
-const ServiceSlug2 = ({data}:any) => {
-  const [openMapComponent, setopenMapComponent] = useState(false);
-  // const [data, setData] = useState<any>(null);
+const ServiceSlug2 = ({ data }: any) => {
+  const [complainForm, setComplainForm] = useState(false);
   const [selectCategoryData, setSelectCategoryData] = useState<any>();
   const [serviceCategoryData, setServiceCategoryData] = useState<any>();
   const params = useParams();
@@ -26,9 +26,10 @@ const ServiceSlug2 = ({data}:any) => {
   // };
 
   // filter data based on URL params and stored to fitlerData vaiables
-  const filterData = data?.filter((val: any) => {
-    return val.url_product_name === params.slug1;
-  });
+  const filterData = useMemo(
+    () => data?.filter((val: any) => val.url_product_name === params.slug1),
+    []
+  );
 
   //  ===============================
   const filteredId: any = filterData?.map((element: any) => element.product_id);
@@ -46,15 +47,8 @@ const ServiceSlug2 = ({data}:any) => {
   }, [data]);
   //  ===============================
 
-  //
-  // useEffect(() => {
-  //   if (data === null) {
-  //     fetchedData();
-  //   }
-  // }, []);
-
   const finalData = selectCategoryData?.filter((val: any) => {
-    return val.model === decodeURIComponent(params.slug2);
+    return val.model === decodeURIComponent(params["child-service-slug"]);
   });
 
   // ===========================================
@@ -75,10 +69,27 @@ const ServiceSlug2 = ({data}:any) => {
     serviceDataFetched();
   }, [selectCategoryData]);
   // ==================================================
+  const { setInquiryData } = useComplainFormStore();
+
+  // prp inquiry form data
+  useEffect(() => {
+    const item = data?.find(
+      (val: any) => val.url_product_name === params.slug1
+    );
+    if (!item || !serviceCategoryId) return;
+
+    const inquiryData = {
+      service_category: item?.brand_id,
+      product_category: serviceCategoryId?.[0],
+      brand_product_id: item?.product_id,
+      service_id: item?.brand_id,
+    };
+    setInquiryData(inquiryData);
+  }, [selectCategoryData]);
 
   return (
     <div>
-      {!openMapComponent ? (
+      {!complainForm ? (
         <div>
           {filterData &&
             filterData.map((val: any, index: any) => {
@@ -88,22 +99,25 @@ const ServiceSlug2 = ({data}:any) => {
                   className="mb-[20px] max-md:p-4 flex flex-col gap-4 "
                 >
                   <div
-                    style={{ backgroundImage: `url(${val?.image_url.replace(
-                      "https://smartcare.com.np/multiservice/",
-                      "https://smartcare.com.np/multiservice/test/")})` }}
+                    style={{
+                      backgroundImage: `url(${val?.image_url.replace(
+                        "https://smartcare.com.np/multiservice/",
+                        "https://smartcare.com.np/multiservice/test/"
+                      )})`,
+                    }}
                     className="bg-white h-[350px] bg-contain bg-no-repeat bg-center w-full relative  py-[20px]"
                   >
-                    <div className="absolute top-0 z-0 h-full w-full left-0 bg-black/50 "></div>
+                    <div className="absolute top-0 left-0 z-0 w-full h-full bg-black/50"></div>
 
                     {/* banner description paragraph  */}
-                    <div className=" absolute w-full left-0 ">
+                    <div className="absolute left-0 w-full">
                       <div className=" max-w-[1280px] mx-auto px-[2px]">
-                        <div className="flex flex-col ">
+                        <div className="flex flex-col">
                           <h3 className="text-[#cdcecf] font-[600] text-[16px] ">
                             {val?.brand_name} /{" "}
                             <span className="text-white font-[600] text-[16px]">
                               {val?.product_name} /{" "}
-                              {decodeURIComponent(params.slug2)}
+                              {decodeURIComponent(params["child-service-slug"])}
                             </span>{" "}
                           </h3>
                           <h3 className="w-[500px] text-white leading-[1.5] tracking-[1px] md:text-[30px] text-[24px] font-bold">
@@ -120,13 +134,13 @@ const ServiceSlug2 = ({data}:any) => {
                         </div>
 
                         <div className="flex flex-col mt-[20px]  md:gap-[14px] ">
-                          <div className="flex  items-center">
+                          <div className="flex items-center">
                             {finalData &&
                               finalData.map((val: any, index: any) => {
                                 return (
                                   <div
                                     key={index}
-                                    className="flex pb-4 text-white text-justify flex-col gap-4"
+                                    className="flex flex-col gap-4 pb-4 text-justify text-white"
                                     dangerouslySetInnerHTML={{
                                       __html: val?.description,
                                     }}
@@ -157,12 +171,12 @@ const ServiceSlug2 = ({data}:any) => {
                           </div>
                         );
                       })}
-                      <div className="flex flex-col px-2 gap-2 justify-center items-center">
+                      <div className="flex flex-col gap-2 justify-center items-center px-2">
                         {serviceCategoryData?.map((val: any) => {
                           return (
                             <div
                               key={val.value}
-                              onClick={() => setopenMapComponent(true)}
+                              onClick={() => setComplainForm(true)}
                               className="hover:bg-gray-500 h-[20pxpx] cursor-pointer flex justify-between items-center px-4 py-[12px] bg-white w-full text-black rounded-md "
                             >
                               {val.text}
@@ -191,7 +205,7 @@ const ServiceSlug2 = ({data}:any) => {
             })}
         </div>
       ) : (
-        <MapComponent />
+        <ComplainForm />
       )}
     </div>
   );

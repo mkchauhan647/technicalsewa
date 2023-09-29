@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useRouter } from "next/navigation";
 import React, { useRef, useState } from "react";
 import {
@@ -8,8 +8,14 @@ import {
   Autocomplete,
   DirectionsRenderer,
 } from "@react-google-maps/api";
+import useAuthStore from "@/store/useAuthStore";
 
-const MapComponent = () => {
+interface IProps {
+  onProceed: (location: { lat: number; lng: number }) => void;
+}
+
+const MapComponent = ({ onProceed }: IProps) => {
+  const { isAuthenticated } = useAuthStore();
   const router = useRouter();
   const [directionResponse, setDirectionResponse] = useState(null);
   const [distance, setDistance] = useState("");
@@ -20,9 +26,8 @@ const MapComponent = () => {
   const destinatinonRef = useRef<any>();
   const nearestlocation = useRef<any>();
 
-  const [center,setCenter] = useState({ lat: 27.7172, lng: 85.324 })
+  const [center, setCenter] = useState({ lat: 27.7172, lng: 85.324 });
   // let center = { lat: 27.7172, lng: 85.324 }; // center location
-
 
   const autocompleteRef = useRef<any>();
 
@@ -33,13 +38,11 @@ const MapComponent = () => {
       if (place && place.geometry) {
         const lat = place.geometry.location.lat();
         const lng = place.geometry.location.lng();
-        setCenter({ lat, lng })
+        setCenter({ lat, lng });
         // console.log(`Latitude: ${lat}, Longitude: ${lng}`);
-        // You can now use lat and lng as required
       }
     }
   };
-
 
   // setting google map api...
   const { isLoaded } = useJsApiLoader({
@@ -58,24 +61,30 @@ const MapComponent = () => {
   //     destination: destinatinonRef.current.value,
   //     travelMode: google.maps.TravelMode.DRIVING,
   //   });
-   
+
   //   setDirectionResponse(results);
   //   setDistance(results?.routes[0].legs[0].distance.text);
   //   setDuration(results?.routes[0].legs[0].distance.text);
   // };
 
   // clear route infromation when user clicks clear button
-    // const clearRoute = () =>{
-    //   setDirectionResponse(null)
-    //   setDistance('')
-    //   setDuration('')
-    //   originRef.current.value = ""
-    //   destinatinonRef.current.value = ""
-    // }
+  // const clearRoute = () =>{
+  //   setDirectionResponse(null)
+  //   setDistance('')
+  //   setDuration('')
+  //   originRef.current.value = ""
+  //   destinatinonRef.current.value = ""
+  // }
 
   if (!isLoaded) {
     return <h1>loading......</h1>;
   }
+
+  const handlePlaceService = () => {
+    if (!isAuthenticated) router.push("/login");
+    // order service
+    onProceed(center);
+  };
 
   return (
     <div className="flex max-w-[1280px] m-auto  justify-center items-center  ">
@@ -84,7 +93,7 @@ const MapComponent = () => {
           <h1 className="text-[#203EB2] font-bold">Location Info</h1>
           <h3>Enter Address</h3>
         </div>
-        <div className="flex my-4 items-center max-md:flex-col gap-4">
+        <div className="flex gap-4 items-center my-4 max-md:flex-col">
           {/* <Autocomplete>
             <input
               ref={originRef}
@@ -93,22 +102,16 @@ const MapComponent = () => {
               placeholder="origin"
             />
           </Autocomplete> */}
-          {/* <Autocomplete>
+
+          <Autocomplete
+            className="w-full"
+            onLoad={(autocomplete) => {
+              autocompleteRef.current = autocomplete;
+              autocomplete.setFields(["geometry"]);
+            }}
+            onPlaceChanged={handlePlaceSelect}
+          >
             <input
-              ref={destinatinonRef}
-              className="bg-white outline-[1px] outline-[#2591B2]  p-2"
-              type="text"
-              placeholder="destination"
-            />
-          </Autocomplete> */}
-          <Autocomplete className="w-full" 
-          onLoad={(autocomplete) => {
-            autocompleteRef.current = autocomplete;
-            autocomplete.setFields(['geometry']);
-          }}
-          onPlaceChanged={handlePlaceSelect}
-   >
-          <input
               className="w-full bg-white outline-[1px] outline-[#2591B2]  p-2 "
               type="text"
               placeholder="Search Nearest Location"
@@ -119,12 +122,6 @@ const MapComponent = () => {
             className="bg-[#2591B2] rounded-[3px] cursor-pointer text-white px-[13px] py-[8.5px] "
           >
             Direction
-          </button> */}
-          {/* <button
-            onClick={clearRoute}
-            className="bg-red-600 rounded-[3px] cursor-pointer text-white px-[13px] py-[8.5px] "
-          >
-            Clear
           </button> */}
         </div>
         <div className="w-[full] h-[50vh]  p-4 ">
@@ -139,13 +136,25 @@ const MapComponent = () => {
             )}
           </GoogleMap>
         </div>
-        <div className="mt-2" >
+        <div className="mt-2">
           <p className="font-bold">Address:</p>
-          <p>Latitude : {center.lat} Longitude : {center.lng}</p>
+          <p>
+            Latitude : {center.lat} Longitude : {center.lng}
+          </p>
         </div>
-        <div className="flex gap-5 justify-center " >
-          <button className=" bg-[#2591B2] rounded-[3px] cursor-pointer text-white px-[13px] py-[8.5px]" onClick={()=>router.back()} >Back</button>
-          <button className=" bg-[#2591B2] rounded-[3px] cursor-pointer text-white px-[13px] py-[8.5px]" onClick={()=>router.push("/login")} >Proceed</button>
+        <div className="flex gap-5 justify-center">
+          <button
+            className=" bg-[#2591B2] rounded-[3px] cursor-pointer text-white px-[13px] py-[8.5px]"
+            onClick={() => router.back()}
+          >
+            Back
+          </button>
+          <button
+            className=" bg-[#2591B2] rounded-[3px] cursor-pointer text-white px-[13px] py-[8.5px]"
+            onClick={handlePlaceService}
+          >
+            Proceed
+          </button>
         </div>
       </div>
     </div>
