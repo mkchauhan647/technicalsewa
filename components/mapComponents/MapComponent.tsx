@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   useJsApiLoader,
   GoogleMap,
@@ -75,6 +75,24 @@ const MapComponent = ({ onProceed }: IProps) => {
   //   originRef.current.value = ""
   //   destinatinonRef.current.value = ""
   // }
+
+  useEffect(() => {
+    // ASK FOR USER LOCATION
+    if (navigator.geolocation) {
+      console.log(navigator);
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          setCenter({ lat: latitude, lng: longitude });
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    } else {
+      console.log("Geolocation is not supported by this browser.");
+    }
+  }, []);
 
   if (!isLoaded) {
     return <h1>loading......</h1>;
