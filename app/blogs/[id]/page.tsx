@@ -42,10 +42,10 @@ const page = async ({ params }: any) => {
       <div className="container flex justify-center py-6 mx-auto">
         <div className="max-w-[1200px]">
           <div className="flex flex-wrap gap-[30px] md:gap-0  md:justify-between pb-8">
-            <div className="w-full md:basis-[81%]">
+            <div className="w-full md:basis-[79%]">
               <h1 className="text-[30px] mb-2 font-bold">{data?.blog_name}</h1>
               {data?.filename && (
-                <div className="w-full h-[600px]">
+                <div className="max-w-[80%] h-[324px]">
                   <img
                     className="object-cover w-full h-full"
                     src={data.filename}
@@ -60,7 +60,7 @@ const page = async ({ params }: any) => {
               )}
             </div>
             <div className="w-full md:basis-[15%]">
-              <div className="py-12 px-10 rounded-[10px] border-[2px] border-gray-200 text-[#3d4145] font-normal">
+              <div className="py-1 px-4 rounded-[10px] border-[2px] border-gray-200 text-[#3d4145] font-normal">
                 <h2 className="text-[24px] leading-[29px] pb-3">CATEGORIES</h2>
                 <BlogCategorylist categories={trainingCategories} />
               </div>

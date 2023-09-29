@@ -65,7 +65,7 @@ const Page = async () => {
               </div>
             </div>
             <div className="w-full md:basis-[15%]">
-              <div className="py-12 px-10 rounded-[10px] border-[2px] border-gray-200 text-[#3d4145] font-normal">
+              <div className="py-1 px-4 rounded-[10px] border-[2px] border-gray-200 text-[#3d4145] font-normal">
                 <h2 className="text-[24px] leading-[29px] pb-3">CATEGORIES</h2>
                 <Categorylist categories={trainingCategories} />
               </div>

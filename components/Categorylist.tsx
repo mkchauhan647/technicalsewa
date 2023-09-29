@@ -20,7 +20,7 @@ const Categorylist = ({
         <div
           onClick={() => handleCatClick(cat?.value)}
           key={index}
-          className={`cursor-pointer hover:text-[#2591B2] hover:font-semibold flex  items-center justify-between py-5 border-b-[1px] border-solid border-[#3d4145] ${
+          className={`cursor-pointer hover:text-[#2591B2] hover:font-semibold flex  items-center justify-between py-1 border-b-[1px] border-solid border-[#3d4145] ${
             activeId === cat?.value ? "text-[#2591B2] font-semibold" : ""
           }`}
         >
