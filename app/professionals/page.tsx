@@ -54,7 +54,7 @@ const page = async () => {
                   />
                 </div>
                 <div className="flex-1 flex flex-col gap-2 md:gap-5">
-                  <h3 className="text-[#2591b2] text-[18px] lg:text-[24px] font-bold">
+                  <h3 className="text-[#2591b2] text-[17px] font-bold">
                     {s.sc_name}
                   </h3>
 
