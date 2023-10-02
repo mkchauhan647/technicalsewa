@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import axios from "axios";
 import React, { useEffect, useState } from "react";
@@ -9,7 +9,7 @@ import { SlArrowRight } from "react-icons/sl";
 import { useRouter } from "next/navigation";
 import { baseUrl } from "@/public/baseUrl";
 
-const ServiceSlug1 = ({data}:any) => {
+const ServiceSlug1 = ({ data }: any) => {
   //state variable
   // const [data, setData] = useState<any>(null);
   const [selectCategoryData, setSelectCategoryData] = useState<any>();
@@ -17,9 +17,11 @@ const ServiceSlug1 = ({data}:any) => {
   const router = useRouter();
 
   // filter data based on URL params and stored to fitlerData vaiables
-  const filterData =data && data?.filter((val: any) => {
-    return val.url_product_name === decodeURIComponent(params.slug1);
-  });
+  const filterData =
+    data &&
+    data?.filter((val: any) => {
+      return val.url_product_name === decodeURIComponent(params.slug1);
+    });
 
   // filtering product_id from data
   const filteredId: any = filterData?.map((element: any) => element.product_id);
@@ -64,9 +66,12 @@ const ServiceSlug1 = ({data}:any) => {
             className="mb-[20px] overflow-hidden max-md:p-4 flex flex-col gap-4 relative"
           >
             <div
-              style={{ backgroundImage: `url(${val?.image_url.replace(
-                "https://smartcare.com.np/multiservice/",
-                "https://smartcare.com.np/multiservice/test/")})` }}
+              style={{
+                backgroundImage: `url(${val?.image_url.replace(
+                  "https://smartcare.com.np/multiservice/",
+                  "https://smartcare.com.np/multiservice/test/"
+                )})`,
+              }}
               className="bg-white h-[350px] bg-contain bg-no-repeat bg-center w-full relative py-[20px]"
             >
               <div className="absolute top-0 z-0 h-full w-full left-0 bg-black/50 "></div>
@@ -86,7 +91,7 @@ const ServiceSlug1 = ({data}:any) => {
                     </h3>
                   </div>
 
-                  <div className="w-[200px] h-[45px] bg-[#1D738D] flex itmes-center text-white py-[5px] px-[15px] rounded-[6px] mt-[10px]">
+                  <div className="w-[200px] h-[45px] bg-[#1D738D] flex itmes-center text-white py-[5px] px-[15px] rounded-[6px] mt-[5px]">
                     <AiFillStar size={30} />
                     <p className="pl-[10px] text-[24px] font-semibold">4.65</p>
                     <p className="pl-[5px] self-end mb-[5px]">Out of 5</p>
@@ -95,7 +100,7 @@ const ServiceSlug1 = ({data}:any) => {
                   <div className="  flex flex-col mt-[20px]  md:gap-[14px] ">
                     <div className="flex items-center">
                       <div
-                        className="flex pb-4 text-white text-justify flex-col gap-1 md:gap-4"
+                        className="flex pb-4 text-white text-justify flex-col gap-1 md:gap-3"
                         dangerouslySetInnerHTML={{ __html: val?.product_desc }}
                       />
                     </div>

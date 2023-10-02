@@ -43,7 +43,7 @@ const BlogCard = ({ blog }: any) => {
 
         <div className="w-full md:basis-[54%] order-1 md:order-2">
           <Link href={`/blogs/${blog.blog_id}`}>
-            <h3 className="hover:text-[#2591B2] font-bold text-[19px] md:text-[27px] mb-3 h-[40px] ">
+            <h3 className="hover:text-[#2591B2] font-bold text-[19px] md:text-[25px] mb-3 h-[40px] ">
               {blog.blog_name}
             </h3>
           </Link>
