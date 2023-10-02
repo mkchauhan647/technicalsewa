@@ -133,23 +133,14 @@ const ServiceSlug2 = ({ data }: any) => {
                           <p className="pl-[5px] self-end mb-[5px]">Out of 5</p>
                         </div>
 
-<<<<<<< HEAD
                         <div className="flex flex-col mt-[11px]  md:gap-[14px] ">
                           <div className="flex  items-center">
-=======
-                        <div className="flex flex-col mt-[20px]  md:gap-[14px] ">
-                          <div className="flex items-center">
->>>>>>> 0c252b4218f621194476c41d0bf83c60b27501fb
                             {finalData &&
                               finalData.map((val: any, index: any) => {
                                 return (
                                   <div
                                     key={index}
-<<<<<<< HEAD
                                     className="flex pb-4 text-white text-justify flex-col gap-2"
-=======
-                                    className="flex flex-col gap-4 pb-4 text-justify text-white"
->>>>>>> 0c252b4218f621194476c41d0bf83c60b27501fb
                                     dangerouslySetInnerHTML={{
                                       __html: val?.description,
                                     }}
