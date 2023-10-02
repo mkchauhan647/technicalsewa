@@ -28,13 +28,27 @@ async function getData(id: string) {
     // This will activate the closest `error.js` Error Boundary
     throw new Error("Failed to fetch data");
   }
-
   return res.json();
 }
 
 const page = async ({ params }: any) => {
-  let trainingId = params.traningType;
-  let data = await getData(trainingId);
+  let trainingSlug = params.traningType;
+  const res1 = await fetch(
+    "https://smartcare.com.np/techsewa/publiccontrol/publicmasterconfig/gettrainingcategories"
+  );
+  const data2 = await res1.json();
+  const finddata = data2.find(
+    (i: any) => i.text.replace(" ", "-").toLowerCase() === trainingSlug
+  );
+
+  // fetch all the categories
+  // find category id by matching slug/name
+
+  const trainingId = 1;
+  console.log(finddata);
+
+  let data = await getData(finddata?.value);
+  console.log("data ", data);
   data = data?.[0] || data;
 
   const trainingCategories = await getTrainingCategoriesData();
@@ -101,7 +115,7 @@ const page = async ({ params }: any) => {
               <h2 className="text-[24px] leading-[29px] pb-3">CATEGORIES</h2>
               <Categorylist
                 categories={trainingCategories}
-                activeId={trainingId}
+                activeId={finddata}
               />
             </div>
           </div>
