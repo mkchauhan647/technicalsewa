@@ -125,7 +125,7 @@ const ServiceSlug2 = ({ data }: any) => {
                           </h3>
                         </div>
 
-                        <div className="w-[200px] h-[45px] bg-[#1D738D] flex itmes-center  text-white py-[5px] px-[15px] rounded-[6px] mt-[10px]">
+                        <div className="w-[200px] h-[45px] bg-[#1D738D] flex itmes-center  text-white py-[5px] px-[15px] rounded-[6px] mt-[5px]">
                           <AiFillStar size={30} />
                           <p className="pl-[10px] text-[24px] font-semibold">
                             4.65
@@ -133,14 +133,14 @@ const ServiceSlug2 = ({ data }: any) => {
                           <p className="pl-[5px] self-end mb-[5px]">Out of 5</p>
                         </div>
 
-                        <div className="flex flex-col mt-[20px]  md:gap-[14px] ">
-                          <div className="flex items-center">
+                        <div className="flex flex-col mt-[11px]  md:gap-[14px] ">
+                          <div className="flex  items-center">
                             {finalData &&
                               finalData.map((val: any, index: any) => {
                                 return (
                                   <div
                                     key={index}
-                                    className="flex flex-col gap-4 pb-4 text-justify text-white"
+                                    className="flex pb-4 text-white text-justify flex-col gap-2"
                                     dangerouslySetInnerHTML={{
                                       __html: val?.description,
                                     }}

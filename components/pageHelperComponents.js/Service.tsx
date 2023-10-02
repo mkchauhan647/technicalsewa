@@ -173,10 +173,10 @@ const Service = ({ data, PopularBrands }: any) => {
         />
         <AiOutlineSearch />
       </div>
-      <div className="md:bg-[#f5f5f5] pt-[20px] pb-[79px] xl:w-[80rem] 2xl:w-[80rem] px-4 sm:w-full m-auto flex">
+      <div className="md:bg-[#f5f5f5] relative pt-[20px] pb-[79px] xl:w-[80rem] 2xl:w-[80rem] px-4 sm:w-full m-auto ">
         {/* input in mobile responsive  */}
 
-        <div className="sticky top-[80px] w-[18%] max-md:w-[20%] flex-shrink-0 flex-grow-0 flex flex-col gap-1 overflow-y-auto  md:overflow-hidden max-md:h-auto cursor-pointer h-screen">
+        <div className="fixed top-[80px] w-[18%] 2xl:w-[11%] flex-shrink-0 flex-grow-0 flex flex-col gap-1 overflow-y-auto  md:overflow-hidden max-md:h-auto cursor-pointer h-screen">
           {services.map(({ n, src }, index): any => (
             <ScrollLink
               key={index}
@@ -222,7 +222,7 @@ const Service = ({ data, PopularBrands }: any) => {
         </div> */}
 
           {/* right side item div  */}
-          <div className="bg-[#f5f5f5] basis-[70%] md:basis-[95%] ml-[20px] flex flex-col gap-8 text-center ">
+          <div className="bg-[#f5f5f5] basis-[70%] md:basis-[70%] ml-[130px] 2xl:ml-[236px] flex flex-col gap-8 text-center ">
             {/* <div className="md:hidden">
             {services[value] && (
               <h2 className="text-[14px] text-[#2591b2] text-left p-2">
