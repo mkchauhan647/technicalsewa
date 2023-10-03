@@ -38,7 +38,7 @@ const page = async ({ params }: any) => {
   );
   const data2 = await res1.json();
   const finddata = data2.find(
-    (i: any) => i.text.replace(" ", "-").toLowerCase() === trainingSlug
+    (i: any) => i?.text?.replace(" ", "-").toLowerCase() === trainingSlug
   );
 
   // fetch all the categories

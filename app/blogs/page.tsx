@@ -5,10 +5,6 @@ import BlogCard from "@/components/pageHelperComponents.js/BlogCard";
 import { getTrainingCategoriesData } from "@/lib/api";
 import Image from "next/image";
 import React from "react";
-import { GiGloves } from "react-icons/gi";
-import { ImPhone } from "react-icons/im";
-import { MdMasks, MdSanitizer } from "react-icons/md";
-import { URLSearchParams } from "url";
 
 const page = async () => {
   const blogs = await fetch(
