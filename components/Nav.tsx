@@ -103,7 +103,7 @@ const Nav = () => {
               type="text"
             />
             <div className="hidden md:flex justify-center items-center bg-[#2591B2] h-full py-[10px] px-[12px] rounded-[6px] ">
-              <BsSearch size={25} className="text-white cursor-pointer " />
+              <BsSearch size={25} className="text-white cursor-pointer" />
             </div>
           </div>
           <div className="nav-links  hidden md:flex items-center gap-4 text-[#505056] ">
@@ -120,7 +120,7 @@ const Nav = () => {
                         <Link
                           key={i}
                           href={`/training/${cat.text
-                            .replace(" ", "-")
+                            ?.replace(" ", "-")
                             .toLowerCase()}`}
                           className="w-[full]"
                         >
@@ -145,7 +145,7 @@ const Nav = () => {
                     <div className="py-2 pt-1"></div>
 
                     {categories.map((cat, i) => {
-                      const slug = cat.text.replace(" ", "-").toLowerCase();
+                      const slug = cat?.text?.replace(" ", "-").toLowerCase();
                       return (
                         <Link
                           key={i}
