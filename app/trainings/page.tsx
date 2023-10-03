@@ -46,7 +46,7 @@ const Page = async () => {
                       <div className="w-full md:basis-[73%] order-1 md:order-2">
                         <Link
                           href={`/training/${item?.training_title
-                            .replaceAll(" ", "-")
+                            ?.replaceAll(" ", "-")
                             .toLowerCase()}`}
                           className="  font-bold hover:text-[#2591B2] text-[19px] md:text-[27px] mb-3 h-[40px] "
                         >

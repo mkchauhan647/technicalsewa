@@ -36,7 +36,7 @@ const BlogCard = ({ blog }: any) => {
           >
             <img
               className="object-contain w-full h-full"
-              src={blog.filename.replace(
+              src={blog.filename?.replace(
                 "https://smartcare.com.np/multiservice/",
                 "https://smartcare.com.np/multiservice/test/"
               )}
@@ -48,8 +48,8 @@ const BlogCard = ({ blog }: any) => {
           <Link
             // href={`/blogs/${blog.blog_name.replaceAll(" ", "-").toLowerCase()}`}
             href={`/blogs/${blog.blog_name
-              .replaceAll(" ", "-")
-              .toLowerCase()}#${blog.blog_id}`}
+              ?.replaceAll(" ", "-")
+              ?.toLowerCase()}#${blog.blog_id}`}
           >
             <h3 className="hover:text-[#2591B2] font-bold text-[19px] md:text-[25px] mb-3 h-[40px] ">
               {blog.blog_name}
@@ -65,8 +65,8 @@ const BlogCard = ({ blog }: any) => {
           </div>
           <Link
             href={`/blogs/${blog.blog_name
-              .replaceAll(" ", "-")
-              .toLowerCase()}#${blog.blog_id}`}
+              ?.replaceAll(" ", "-")
+              ?.toLowerCase()}#${blog.blog_id}`}
           >
             <button className="p-2 hover:bg-[#2591B2] text-white bg-black rounded">
               Readmore
