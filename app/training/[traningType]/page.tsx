@@ -17,7 +17,7 @@ async function getData(id: string) {
       method: "POST",
       body: formData,
       headers: {
-        "Cache-Control": `max-age=${30 * 60}`, // max 1 hour cache
+        "Cache-Control": `max-age=${2 * 60}`, // max 2 min cache
       },
     }
   );

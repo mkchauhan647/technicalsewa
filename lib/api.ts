@@ -26,7 +26,7 @@ export async function getTrainingDataById(id: string) {
         method: "POST",
         body: formData,
         headers: {
-          "Cache-Control": `max-age=${2 * 60}`, // max 30min cache
+          "Cache-Control": `max-age=${2 * 60}`, // max 2min cache
         },
       }
     );
