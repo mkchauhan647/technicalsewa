@@ -15,10 +15,13 @@ const FooterContact = () => {
               <button className="w-[180px] h-[50px] rounded-[4px] bg-[#2591B2] hover:bg-[#2591B2]/[0.7] text-white text-base font-semibold tracking-[0.02em] ">
                 Request a service
               </button>
-              <button className="flex items-center justify-center  gap-[10px] h-[50px] w-[180px] border border-[#2591B2] rounded-[4px] text-black">
+              <a
+                href="tel:9851201580"
+                className="flex items-center justify-center  gap-[10px] h-[50px] w-[180px] border border-[#2591B2] rounded-[4px] text-black"
+              >
                 <BsFillTelephoneFill className="text-[#2591B2]" size={20} />
                 9851201580
-              </button>
+              </a>
             </div>
           </div>
           <img
