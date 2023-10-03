@@ -5,7 +5,7 @@ export async function getServiceListData() {
       `${baseUrl}/techsewa/publiccontrol/publicmasterconfig/getServiceList`,
       {
         headers: {
-          "Cache-Control": `max-age=${60 * 60}`, // max 1 hour cache
+          "Cache-Control": `max-age=${2 * 60}`, // max 1 hour cache
         },
       }
     );
