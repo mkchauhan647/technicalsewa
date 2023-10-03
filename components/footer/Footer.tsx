@@ -88,7 +88,7 @@ const Footer = () => {
           <hr />
           {/* Next Foter */}
           <div className="flex flex-col md:flex-row items-center justify-between  mt-[10px] gap-4 ">
-            <div className="flex flex-col gap-4 items-center  md:flex-row">
+            <div className="flex flex-col gap-4 md:gap-[48px]   md:flex-row">
               <Link
                 href=""
                 className="w-[210px] h-[52px] 2xl:h-[67px] bg-[#FFF] p-[3px] rounded-[3px]"
@@ -99,15 +99,61 @@ const Footer = () => {
                   className="object-contain w-full h-full"
                 />
               </Link>
+            </div>
+            <div className="flex flex-col gap-4 md:gap-[48px]   md:flex-row">
+              <div className="flex flex-col font-Roboto text-[#FFF] gap-[10px]">
+                <p className="font-bold text-[14px] leading-[16px]">
+                  Quick Links
+                </p>
+                <Link
+                  href="/"
+                  className="font-[300px] text-[13px] leading-[15px] "
+                >
+                  Home
+                </Link>
+                <Link
+                  href="/partpurja"
+                  className="font-[300px] text-[13px] leading-[15px]"
+                >
+                  Featured Product
+                </Link>
+                <Link
+                  href="#"
+                  className="font-[300px] text-[13px] leading-[15px]"
+                >
+                  About
+                </Link>
+                <Link
+                  href="#"
+                  className="font-[300px] text-[13px] leading-[15px]"
+                >
+                  Privacy Policy
+                </Link>
+                <Link
+                  href="#"
+                  className="font-[300px] text-[13px] leading-[15px]"
+                >
+                  Terms and Condition
+                </Link>
+              </div>
               <div className="flex flex-col font-Roboto text-[#FFF] gap-[10px]">
                 <Link href="#" className="font-bold text-[14px] leading-[16px]">
                   Contact us
                 </Link>
                 <p className="font-[300px] text-[13px] leading-[15px] ">
-                  Technical Sewa Pvt. Ltd.
+                  Technical Sewa and Solution Pvt. Ltd.
                 </p>
                 <p className="font-[300px] text-[13px] leading-[15px]">
                   Kumaripati,Lalitpur,Near Bluebird College,Nepal
+                </p>
+                <p className="font-[300px] text-[13px] leading-[15px]">
+                  Contact Number:977-1-5970066
+                </p>
+                <p className="font-[300px] text-[13px] leading-[15px]">
+                  Mobile Number:9851201580
+                </p>
+                <p className="font-[300px] text-[13px] leading-[15px]">
+                  Toll Free Number:16600144555
                 </p>
               </div>
             </div>

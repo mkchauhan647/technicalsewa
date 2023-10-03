@@ -7,10 +7,12 @@ import Head from "next/head";
 import React from "react";
 
 const page = async ({ params }: any) => {
-  let blogId = params.id;
-
+  console.log(params.id);
+  const title = params.id.split("#")[0];
+  const blogId = params.id.split("#")[1];
+  console.log(title, blogId);
   const blogData = await getBlogDataById(blogId);
-
+  console.log("blog", blogData);
   const data = blogData?.[0] || blogData;
 
   const trainingCategories = await getTrainingCategoriesData();

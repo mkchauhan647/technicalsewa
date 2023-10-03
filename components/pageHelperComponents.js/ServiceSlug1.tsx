@@ -86,7 +86,7 @@ const ServiceSlug1 = ({ data }: any) => {
                         {val?.product_name}
                       </span>
                     </h3>
-                    <h3 className="w-[500px] text-white leading-[1.5] tracking-[1px] md:text-[30px] text-[24px] font-bold">
+                    <h3 className="w-[308px] md:w-[500px] text-white leading-[1.5] tracking-[1px] md:text-[30px] text-[24px] font-bold">
                       {val?.title}
                     </h3>
                   </div>

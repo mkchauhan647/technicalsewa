@@ -87,7 +87,7 @@ const Nav = () => {
   return (
     <>
       <div className="sticky top-0 z-50 bg-white">
-        <div className="Navbar relative border-b-[1px] mx-auto max-w-[1280px]  border-[#ededed]  flex justify-between max-lg:p-4 items-center bg-white h-[70px] ">
+        <div className="Navbar relative border-b-[1px] mx-auto max-w-[1280px]  border-[#ededed] gap-[15px]   flex justify-between max-lg:p-4 items-center bg-white h-[70px] ">
           <Link href="/">
             <Image
               src="/assets/ts-final-logo.png"
@@ -98,11 +98,11 @@ const Nav = () => {
           </Link>
           <div className={`${showinput ? "flex gap-4" : "hidden"} `}>
             <input
-              className="pl-[10px] border-[1px] border-[#C4C4C4] w-[400px] outline-[#2591b2] rounded-[5px] "
+              className="pl-[10px]  md:mx-0 border-[1px] border-[#C4C4C4] w-[172px] md:w-[400px] outline-[#2591b2] rounded-[5px] h-[29px] md:h-[43px]"
               placeholder="Search Service here..."
               type="text"
             />
-            <div className="flex justify-center items-center bg-[#2591B2] h-full py-[10px] px-[12px] rounded-[6px] ">
+            <div className="hidden md:flex justify-center items-center bg-[#2591B2] h-full py-[10px] px-[12px] rounded-[6px] ">
               <BsSearch size={25} className="text-white cursor-pointer " />
             </div>
           </div>
