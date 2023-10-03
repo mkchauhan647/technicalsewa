@@ -97,7 +97,7 @@ const ServiceSlug1 = ({ data }: any) => {
                     <p className="pl-[5px] self-end mb-[5px]">Out of 5</p>
                   </div>
 
-                  <div className="  flex flex-col mt-[20px]  md:gap-[14px] ">
+                  <div className="  flex flex-col mt-[11px] md:mt-[20px]  md:gap-[14px] ">
                     <div className="flex items-center">
                       <div
                         className="flex pb-4 text-white text-justify flex-col gap-1 md:gap-3"
