@@ -68,7 +68,7 @@ const BlogCard = ({ blog }: any) => {
           <Link
             href={`/blogs/${blog?.blog_name
               .replaceAll(" ", "-")
-              .toLowerCase()}#${blog?.blog_id}`}
+              .toLowerCase()}/${blog?.blog_id}`}
           >
             <button className="p-2 hover:bg-[#2591B2] text-white bg-black rounded">
               Readmore
