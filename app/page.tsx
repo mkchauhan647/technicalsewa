@@ -23,27 +23,33 @@ export default async function Home() {
 
   // dataa for ApplicationRepairData
   const applicationRepairData = result?.data?.brands?.filter((val: any) => {
-    return val.brand_name === "Appliances Repair Sewa";
+    // return val.brand_name === "Appliances Repair Sewa";
+    return val.brand_id === "62";
   });
 
   const popularBrandsData = result?.data?.brands?.filter((val: any) => {
-    return val.brand_name === "Popular Brands Repair";
+    // return val.brand_name === "Popular Brands Repair";
+    return val.brand_id === "76";
   });
 
   const warrantyProductsData = result?.data?.brands?.filter((val: any) => {
-    return val.brand_name === "Warranty Repair Sewa";
+    // return val.brand_name === "Warranty Repair Sewa";
+    return val.brand_id === "61";
   });
 
   const electiricianPlumbersData = result?.data?.brands?.filter((val: any) => {
-    return val.brand_name === "Electrician & Plumber";
+    // return val.brand_name === "Electrician & Plumber";
+    return val.brand_id === "63";
   });
 
   const medicalEquipmentData = result?.data?.brands?.filter((val: any) => {
-    return val.brand_name === "Medical Equipment Repair";
+    // return val.brand_name === "Medical Equipment Repair";
+    return val.brand_id === "67";
   });
 
   const computerPrinterData = result?.data?.brands?.filter((val: any) => {
-    return val.brand_name === "Computer/Printer Repair";
+    // return val.brand_name === "Computer/Printer Repair";
+    return val.brand_id === "65";
   });
 
   return (
