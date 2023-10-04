@@ -2,8 +2,10 @@
 
 import Image from "next/image";
 import React from "react";
+
 import { MdLocationPin } from "react-icons/md";
 import { BsSearch } from "react-icons/bs";
+import Search from "./Search";
 
 const HeroSection = () => {
   return (
@@ -26,22 +28,13 @@ const HeroSection = () => {
               One-stop solution for your services. Order any service, anytime.
             </p>
             <div className="flex justify-around w-full gap-[10px] px-[32px] mt-[18px] ">
-              <div className=" flex justify-center items-center gap-[14px] px-[22.43px] py-[15px] bg-white rounded-[6px]">
+              <div className=" flex justify-center items-center gap-[14px]  py-[15px] bg-white rounded-[6px]">
                 <MdLocationPin size={25} className="text-[#2591b2]" />
                 <span className="text-[#1A1A1A] text-[16px] font-semibold ">
                   Kathmandu
                 </span>
               </div>
-              <div className="flex gap-4 ">
-                <input
-                  className="pl-[10px] border-[1px] border-[#C4C4C4] w-[400px] outline-[#2591b2] rounded-[5px] "
-                  placeholder="Search Service here..."
-                  type="text"
-                />
-                <div className="flex justify-center items-center bg-[#2591B2] h-full py-[10px] px-[12px] rounded-[6px] ">
-                  <BsSearch size={25} className="text-white cursor-pointer " />
-                </div>
-              </div>
+              <Search />
             </div>
           </div>
         </div>
