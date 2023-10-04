@@ -51,7 +51,7 @@ const BlogCard = ({ blog }: any) => {
             // href={`/blogs/${blog.blog_name.replaceAll(" ", "-").toLowerCase()}`}
             href={`/blogs/${blog?.blog_name
               .replaceAll(" ", "-")
-              .toLowerCase()}#${blog?.blog_id}`}
+              .toLowerCase()}/${blog?.blog_id}`}
           >
             <div className="md:pb-[10px] text-gray-500 font-bold">
               {blog?.created_ts}
@@ -70,7 +70,7 @@ const BlogCard = ({ blog }: any) => {
           {/* <Link
             href={`/blogs/${blog?.blog_name
               .replaceAll(" ", "-")
-              .toLowerCase()}#${blog?.blog_id}`}
+              .toLowerCase()}/${blog?.blog_id}`}
           >
             <button className="p-2 hover:bg-[#2591B2] text-white bg-black rounded">
               Readmore
