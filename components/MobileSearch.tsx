@@ -5,12 +5,12 @@ import Autocomplete from "@mui/material/Autocomplete";
 import { TextField, CircularProgress } from "@mui/material";
 import { useRouter } from "next/navigation";
 
-const Search = () => {
+const MobileSearch = () => {
   const [searchText, setSearchText] = useState("");
   const [services, setServices] = useState([]);
   const [suggestions, setSuggestions] = useState([{ label: "", id: "" }]);
   const [loading, setLoading] = useState(false);
-  const [url, setUrl] = useState("");
+  //   const [url, setUrl] = useState("");
   const router = useRouter();
 
   useEffect(() => {
@@ -58,8 +58,6 @@ const Search = () => {
         onInputChange={(event, newValue) => setSearchText(newValue)}
         className="bg-white outline-none"
         onChange={(e: any, value: any) => {
-          //   console.log(value);
-          //   setUrl(value.id);
           console.log(value);
           router.push(`/service/${value?.id}`);
         }}
@@ -68,17 +66,17 @@ const Search = () => {
             {...params}
             // variant="outlined"
             label="Search service here..."
-            // InputProps={{
-            //   ...params.InputProps,
-            //   endAdornment: (
-            //     <>
-            //       {loading ? (
-            //         <CircularProgress color="inherit" size={20} />
-            //       ) : null}
-            //       {params.InputProps.endAdornment}
-            //     </>
-            //   ),
-            // }}
+            InputProps={{
+              ...params.InputProps,
+              endAdornment: (
+                <>
+                  {loading ? (
+                    <CircularProgress color="inherit" size={20} />
+                  ) : null}
+                  {params.InputProps.endAdornment}
+                </>
+              ),
+            }}
           />
         )}
       />
@@ -98,4 +96,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default MobileSearch;
