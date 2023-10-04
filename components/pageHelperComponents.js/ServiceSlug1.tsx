@@ -78,7 +78,7 @@ const ServiceSlug1 = ({ data }: any) => {
 
               {/* banner product description paragraph */}
               <div className=" w-full  absolute left-0">
-                <div className=" max-w-[1280px] mx-auto px-[2px]">
+                <div className=" max-w-[1280px] mx-auto px-[14px] md:px-[2px]">
                   <div className=" flex flex-col ">
                     <h3 className="text-[#cdcecf] font-[600] text-[16px] ">
                       {val?.brand_name} /
