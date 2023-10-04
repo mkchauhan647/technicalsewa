@@ -20,6 +20,7 @@ import { MdModelTraining } from "react-icons/md";
 import useLocalstorage from "./HelperFuncion/useLocalstorage";
 import axios from "axios";
 import useAuthStore from "@/store/useAuthStore";
+import Search from "./Search";
 
 interface TrainingCategory {
   text: string;
@@ -96,15 +97,8 @@ const Nav = () => {
               alt="logo"
             />
           </Link>
-          <div className={`${showinput ? "flex gap-4" : "hidden"} `}>
-            <input
-              className="pl-[10px]  md:mx-0 border-[1px] border-[#C4C4C4] w-[172px] md:w-[400px] outline-[#2591b2] rounded-[5px] h-[29px] md:h-[43px]"
-              placeholder="Search Service here..."
-              type="text"
-            />
-            <div className="hidden md:flex justify-center items-center bg-[#2591B2] h-full py-[10px] px-[12px] rounded-[6px] ">
-              <BsSearch size={25} className="text-white cursor-pointer " />
-            </div>
+          <div className={`${showinput ? "w-full" : "hidden"} `}>
+            <Search />
           </div>
           <div className="nav-links  hidden md:flex items-center gap-4 text-[#505056] ">
             <div className="group">

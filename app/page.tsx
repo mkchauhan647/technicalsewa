@@ -22,7 +22,7 @@ export default async function Home() {
 
   // dataa for ApplicationRepairData
   const applicationRepairData = result?.data?.brands?.filter((val: any) => {
-    return val.brand_name === "Appliances Repair";
+    return val.brand_name === "Appliances Repair Sewa";
   });
 
   const popularBrandsData = result?.data?.brands?.filter((val: any) => {
