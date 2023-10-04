@@ -41,7 +41,7 @@ const Search = () => {
         label: service.product_name,
         id: service.url_product_name,
       }));
-    if (searchText.length > 0) {
+    if (searchText.length > 2) {
       setSuggestions(filteredSuggestions);
     }
   }, [searchText, services]);

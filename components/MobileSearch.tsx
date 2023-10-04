@@ -43,7 +43,7 @@ const MobileSearch = () => {
         id: service.url_product_name,
       }));
     setSuggestions(filteredSuggestions);
-    if (searchText.length > 0) {
+    if (searchText.length > 2) {
       setSuggestions(filteredSuggestions);
     }
   }, [searchText, services]);
