@@ -18,7 +18,7 @@ const SlideCard = ({ length, data }: any) => {
 
   const breakpoints = {
     // Define your breakpoints here
-    500: {
+    200: {
       slidesPerView: 2,
       spaceBetween: 1,
     },
