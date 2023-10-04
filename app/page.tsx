@@ -12,6 +12,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/footer/Footer";
 import ForSeo from "@/components/ForSeo";
 import MedicalEquipment from "@/components/repair/MedicalEquipment";
+import Number from "@/components/Number";
 
 export default async function Home() {
   const result = await axios.get(
@@ -22,7 +23,7 @@ export default async function Home() {
 
   // dataa for ApplicationRepairData
   const applicationRepairData = result?.data?.brands?.filter((val: any) => {
-    return val.brand_name === "Appliances Repair";
+    return val.brand_name === "Appliances Repair Sewa";
   });
 
   const popularBrandsData = result?.data?.brands?.filter((val: any) => {
@@ -60,6 +61,7 @@ export default async function Home() {
           electiricianPlumbersData={electiricianPlumbersData}
         />
         <MedicalEquipment medicalEquipmentData={medicalEquipmentData} />
+        <Number />
         <WhyChooseUs />
         <FooterContact />
       </main>

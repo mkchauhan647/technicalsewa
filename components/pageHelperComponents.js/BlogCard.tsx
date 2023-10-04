@@ -31,12 +31,14 @@ const BlogCard = ({ blog }: any) => {
       <div className="flex flex-wrap gap-2 md:gap-0 md:justify-between rounded-[10px] border-[2px] border-gray-200 p-4">
         <div className="w-full md:basis-[40%]  h-[180px] hover:opacity-95 order-2 md:order-1">
           <Link
-            href={`/blogs/${blog.blog_name.replaceAll(" ", "-").toLowerCase()}`}
+            href={`/blogs/${blog?.blog_name
+              ?.replaceAll(" ", "-")
+              .toLowerCase()}`}
             className="w-full h-full"
           >
             <img
               className="object-contain w-full h-full"
-              src={blog.filename?.replace(
+              src={blog?.filename?.replace(
                 "https://smartcare.com.np/multiservice/",
                 "https://smartcare.com.np/multiservice/test/"
               )}
@@ -47,12 +49,12 @@ const BlogCard = ({ blog }: any) => {
         <div className="w-full md:basis-[54%] order-1 md:order-2">
           <Link
             // href={`/blogs/${blog.blog_name.replaceAll(" ", "-").toLowerCase()}`}
-            href={`/blogs/${blog.blog_name
-              ?.replaceAll(" ", "-")
-              ?.toLowerCase()}#${blog.blog_id}`}
+            href={`/blogs/${blog?.blog_name
+              .replaceAll(" ", "-")
+              .toLowerCase()}#${blog?.blog_id}`}
           >
             <h3 className="hover:text-[#2591B2] font-bold text-[19px] md:text-[25px] mb-3 h-[40px] ">
-              {blog.blog_name}
+              {blog?.blog_name}
             </h3>
           </Link>
           <div className="h-[50px]"></div>
@@ -61,12 +63,12 @@ const BlogCard = ({ blog }: any) => {
             dangerouslySetInnerHTML={{ __html: blog.blog_desc.split("\n")[0] }}
           ></div> */}
           <div className="pb-[10px] text-gray-500 font-bold">
-            {blog.created_ts}
+            {blog?.created_ts}
           </div>
           <Link
-            href={`/blogs/${blog.blog_name
-              ?.replaceAll(" ", "-")
-              ?.toLowerCase()}#${blog.blog_id}`}
+            href={`/blogs/${blog?.blog_name
+              .replaceAll(" ", "-")
+              .toLowerCase()}#${blog?.blog_id}`}
           >
             <button className="p-2 hover:bg-[#2591B2] text-white bg-black rounded">
               Readmore
