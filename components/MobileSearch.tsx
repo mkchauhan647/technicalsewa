@@ -43,6 +43,9 @@ const MobileSearch = () => {
         id: service.url_product_name,
       }));
     setSuggestions(filteredSuggestions);
+    if (searchText.length > 0) {
+      setSuggestions(filteredSuggestions);
+    }
   }, [searchText, services]);
 
   return (
@@ -56,7 +59,8 @@ const MobileSearch = () => {
         noOptionsText="No results found"
         sx={{ width: "100%" }}
         onInputChange={(event, newValue) => setSearchText(newValue)}
-        className="bg-white outline-none"
+        className="bg-white outline-none "
+        size="small"
         onChange={(e: any, value: any) => {
           console.log(value);
           router.push(`/service/${value?.id}`);
