@@ -114,7 +114,7 @@ const Nav = () => {
                         <Link
                           key={i}
                           href={`/training/${cat.text
-                            .replace(" ", "-")
+                            ?.replace(" ", "-")
                             .toLowerCase()}`}
                           className="w-[full]"
                         >
@@ -139,7 +139,7 @@ const Nav = () => {
                     <div className="py-2 pt-1"></div>
 
                     {categories.map((cat, i) => {
-                      const slug = cat.text.replace(" ", "-").toLowerCase();
+                      const slug = cat?.text?.replace(" ", "-").toLowerCase();
                       return (
                         <Link
                           key={i}
