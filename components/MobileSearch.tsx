@@ -56,7 +56,7 @@ const MobileSearch = () => {
         noOptionsText="No results found"
         sx={{ width: "100%" }}
         onInputChange={(event, newValue) => setSearchText(newValue)}
-        className="bg-white outline-none"
+        className="bg-white outline-none  "
         onChange={(e: any, value: any) => {
           console.log(value);
           router.push(`/service/${value?.id}`);
