@@ -12,6 +12,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/footer/Footer";
 import ForSeo from "@/components/ForSeo";
 import MedicalEquipment from "@/components/repair/MedicalEquipment";
+import Number from "@/components/Number";
 
 export default async function Home() {
   const result = await axios.get(
@@ -60,6 +61,7 @@ export default async function Home() {
           electiricianPlumbersData={electiricianPlumbersData}
         />
         <MedicalEquipment medicalEquipmentData={medicalEquipmentData} />
+        <Number />
         <WhyChooseUs />
         <FooterContact />
       </main>

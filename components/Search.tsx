@@ -81,7 +81,7 @@ const Search = () => {
         )}
       />
       <div
-        className="flex justify-center items-center bg-[#2591B2] h-full py-[10px] px-[12px] rounded-[6px] cursor-pointer"
+        className="flex justify-center items-center bg-[#2591B2] h-full py-[10px] px-[12px] rounded-[6px] cursor-pointer "
         // onClick={handleSearch}
       >
         <BsSearch

@@ -97,7 +97,7 @@ const Nav = () => {
               alt="logo"
             />
           </Link>
-          <div className={`${showinput ? "w-full" : "hidden"} `}>
+          <div className={`${showinput ? "w-72" : "hidden"} `}>
             <Search />
           </div>
           <div className="nav-links  hidden md:flex items-center gap-4 text-[#505056] ">
