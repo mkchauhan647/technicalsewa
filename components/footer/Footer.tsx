@@ -1,10 +1,26 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { ImFacebook } from "react-icons/im";
 import { BiLogoInstagramAlt } from "react-icons/bi";
 import { BsYoutube, BsTwitter } from "react-icons/bs";
 import { IoLocationOutline, IoLocationSharp } from "react-icons/io5";
+import axios from "axios";
 const Footer = () => {
+  const [description, setDescription] = useState("");
+
+  useEffect(() => {
+    axios
+      .get(
+        "https://smartcare.com.np/techsewa/masterconfig/publicmasterconfig/GetContactUs"
+      )
+      .then((response: any) => {
+        let data = response.data;
+        console.log(data);
+        setDescription(data?.brands[0].description);
+      });
+  }, []);
+
   return (
     <div>
       <div className="bg-[#2591B2] ">
@@ -140,7 +156,7 @@ const Footer = () => {
                 <Link href="#" className="font-bold text-[14px] leading-[16px]">
                   Contact us
                 </Link>
-                <p className="font-[300px] text-[13px] leading-[15px] ">
+                {/* <p className="font-[300px] text-[13px] leading-[15px] ">
                   Technical Sewa and Solution Pvt. Ltd.
                 </p>
                 <p className="font-[300px] text-[13px] leading-[15px]">
@@ -154,7 +170,8 @@ const Footer = () => {
                 </p>
                 <p className="font-[300px] text-[13px] leading-[15px]">
                   Toll Free Number:16600144555
-                </p>
+                </p> */}
+                <div dangerouslySetInnerHTML={{ __html: description }} />
               </div>
             </div>
             <div className="">
