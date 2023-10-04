@@ -63,7 +63,7 @@ const BlogCard = ({ blog }: any) => {
 
           {/* <div className="h-[50px]"></div> */}
           <div
-            className="mt-[21px] md:mt-[47px] overflow-hidden text-black font-normal"
+            className="mt-[21px] md:mt-[44px] overflow-hidden text-black font-normal"
             dangerouslySetInnerHTML={{ __html: blog.blog_desc.split("\n")[0] }}
           ></div>
 
