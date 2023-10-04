@@ -51,7 +51,7 @@ const BlogCard = ({ blog }: any) => {
             // href={`/blogs/${blog.blog_name.replaceAll(" ", "-").toLowerCase()}`}
             href={`/blogs/${blog?.blog_name
               .replaceAll(" ", "-")
-              .toLowerCase()}#${blog?.blog_id}`}
+              .toLowerCase()}/${blog?.blog_id}`}
           >
             <h3 className="hover:text-[#2591B2] font-bold text-[19px] md:text-[25px] mb-3 h-[40px] ">
               {blog?.blog_name}

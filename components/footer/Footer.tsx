@@ -156,21 +156,6 @@ const Footer = () => {
                 <Link href="#" className="font-bold text-[14px] leading-[16px]">
                   Contact us
                 </Link>
-                {/* <p className="font-[300px] text-[13px] leading-[15px] ">
-                  Technical Sewa and Solution Pvt. Ltd.
-                </p>
-                <p className="font-[300px] text-[13px] leading-[15px]">
-                  Kumaripati,Lalitpur,Near Bluebird College,Nepal
-                </p>
-                <p className="font-[300px] text-[13px] leading-[15px]">
-                  Contact Number:977-1-5970066
-                </p>
-                <p className="font-[300px] text-[13px] leading-[15px]">
-                  Mobile Number:9851201580
-                </p>
-                <p className="font-[300px] text-[13px] leading-[15px]">
-                  Toll Free Number:16600144555
-                </p> */}
                 <div dangerouslySetInnerHTML={{ __html: description }} />
               </div>
             </div>
