@@ -59,43 +59,15 @@ const MobileSearch = () => {
         noOptionsText="No results found"
         sx={{ width: "100%" }}
         onInputChange={(event, newValue) => setSearchText(newValue)}
-        className="bg-white outline-none "
+        className="bg-white outline-none"
         size="small"
         onChange={(e: any, value: any) => {
-          console.log(value);
           router.push(`/service/${value?.id}`);
         }}
         renderInput={(params) => (
-          <TextField
-            {...params}
-            // variant="outlined"
-            label="Search service here..."
-            InputProps={{
-              ...params.InputProps,
-              endAdornment: (
-                <>
-                  {loading ? (
-                    <CircularProgress color="inherit" size={20} />
-                  ) : null}
-                  {params.InputProps.endAdornment}
-                </>
-              ),
-            }}
-          />
+          <TextField {...params} label="Search service here..." />
         )}
       />
-      {/* <div
-        className="flex justify-center items-center bg-[#2591B2] h-full py-[10px] px-[12px] rounded-[6px] cursor-pointer "
-        // onClick={handleSearch}
-      >
-        <BsSearch
-          size={25}
-          className="text-white"
-          onClick={() => {
-            router.push(`/service/${url}`);
-          }}
-        />
-      </div> */}
     </div>
   );
 };

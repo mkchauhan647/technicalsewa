@@ -59,7 +59,6 @@ const Search = () => {
         onInputChange={(event, newValue) => setSearchText(newValue)}
         className="bg-white outline-none"
         onChange={(e: any, value: any) => {
-          console.log(value);
           router.push(`/service/${value?.id}`);
         }}
         renderInput={(params) => (
