@@ -45,10 +45,8 @@ const page = async ({ params }: any) => {
   // find category id by matching slug/name
 
   const trainingId = 1;
-  console.log(finddata);
 
   let data = await getData(finddata?.value);
-  console.log("data ", data);
   data = data?.[0] || data;
 
   const trainingCategories = await getTrainingCategoriesData();
