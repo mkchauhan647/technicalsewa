@@ -1,12 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 import { ImFacebook } from "react-icons/im";
 import { BiLogoInstagramAlt } from "react-icons/bi";
 import { BsYoutube, BsTwitter } from "react-icons/bs";
 import { IoLocationOutline, IoLocationSharp } from "react-icons/io5";
 import axios from "axios";
 import "./footer.css";
+import Link from "next/link";
 const Footer = () => {
   const [description, setDescription] = useState("");
 
@@ -134,19 +134,19 @@ const Footer = () => {
                   Featured Product
                 </Link>
                 <Link
-                  href="#"
+                  href="/about"
                   className="font-[300px] text-[13px] leading-[15px]"
                 >
                   About
                 </Link>
                 <Link
-                  href="#"
+                  href="privacy-policy"
                   className="font-[300px] text-[13px] leading-[15px]"
                 >
                   Privacy Policy
                 </Link>
                 <Link
-                  href="#"
+                  href="/terms"
                   className="font-[300px] text-[13px] leading-[15px]"
                 >
                   Terms and Condition
