@@ -156,7 +156,10 @@ const Footer = () => {
                 <Link href="#" className="font-bold text-[14px] leading-[16px]">
                   Contact us
                 </Link>
-                <div dangerouslySetInnerHTML={{ __html: description }} />
+                <div
+                  dangerouslySetInnerHTML={{ __html: description }}
+                  className="footercontact"
+                />
               </div>
             </div>
             <div className="">

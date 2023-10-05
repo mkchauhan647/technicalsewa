@@ -53,10 +53,10 @@ const BlogCard = ({ blog }: any) => {
               .replaceAll(" ", "-")
               .toLowerCase()}/${blog?.blog_id}`}
           >
-            <div className="md:pb-[10px] text-gray-500 font-bold">
+            <div className="md:pb-[3px] text-gray-500 font-bold">
               {blog?.created_ts}
             </div>
-            <h3 className="hover:text-[#2591B2] font-bold text-[19px] md:text-[25px] mb-3 h-[40px] ">
+            <h3 className="hover:text-[#2591B2] font-bold text-[19px] md:text-[25px] mb-2 h-[40px] ">
               {blog?.blog_name}
             </h3>
           </Link>
