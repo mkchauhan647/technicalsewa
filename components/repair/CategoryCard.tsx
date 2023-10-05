@@ -22,10 +22,16 @@ const CategoryCard = ({ imageUrl, brandName, imgAlt, allBrands, id }: any) => {
         onClick={() => {
           setShow(!show);
         }}
-        className="flex flex-col cursor-pointer items-center  md:gap-3 w-[92px] md:w-[230px]"
+        className="flex flex-col cursor-pointer items-center  md:gap-3 w-[92px] md:w-[144px]"
       >
-        <Image src={imageUrl} alt={imgAlt} width={30} height={30} />
-        <p className="text-[12px] md:text-base text-center leading-[15px] md:leading-[17px]">
+        <img
+          src={imageUrl}
+          alt={imgAlt}
+          width={30}
+          height={30}
+          className="w-[30px] h-[30px] md:w-[40px] md:h-[40px]"
+        />
+        <p className="text-[12px] md:text-[13px] text-center leading-[15px] md:leading-[17px]">
           {brandName}
         </p>
       </div>
