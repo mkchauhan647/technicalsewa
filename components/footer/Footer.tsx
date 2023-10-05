@@ -165,7 +165,7 @@ const Footer = () => {
             <div className="">
               <div className="flex  justify-start xl:justify-end gap-[10px]">
                 <Link
-                  href=""
+                  href="https://www.facebook.com/61551939094429"
                   className="flex items-center justify-center bg-[white] w-[35px] h-[35px] rounded-[50%]"
                 >
                   <ImFacebook className="text-[#2591B2] " size={20} />
@@ -183,7 +183,7 @@ const Footer = () => {
                   <BsYoutube className="text-[#2591B2] " size={20} />
                 </Link>
                 <Link
-                  href=""
+                  href="https://twitter.com/technicals2023"
                   className="flex items-center justify-center bg-[white] w-[35px] h-[35px] rounded-[50%]"
                 >
                   <BsTwitter className="text-[#2591B2] " size={20} />
