@@ -171,7 +171,7 @@ const Footer = () => {
                   <ImFacebook className="text-[#2591B2] " size={20} />
                 </Link>
                 <Link
-                  href=""
+                  href="https://www.instagram.com/technicalsewa.np/"
                   className="flex items-center justify-center bg-[white] w-[35px] h-[35px] rounded-[50%]"
                 >
                   <BiLogoInstagramAlt className="text-[#2591B2] " size={20} />
