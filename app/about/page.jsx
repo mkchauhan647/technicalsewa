@@ -12,7 +12,7 @@ const About = async () => {
   return (
     <div>
       <Nav />
-      <div className="bg-[#2591b2ca]  md:h-[389px] xsm:h-[200px] text-white text-5xl flex items-center">
+      <div className="bg-[#2591b2ca]  md:h-[200px] xsm:h-[100px] text-white text-5xl flex items-center">
         <h1 className="xsm:w- md:w-[800px] m-auto text-center font-extrabold xsm:text-2xl  lg:text-4xl">
           About Us
         </h1>
