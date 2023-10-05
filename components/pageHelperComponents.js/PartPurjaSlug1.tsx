@@ -8,7 +8,6 @@ const PartPurjaSlug1 = () => {
 
   useEffect(() => {
     const data = getSinglePartPurjaData();
-    console.log(data);
     setSingleData(data);
   }, []);
 

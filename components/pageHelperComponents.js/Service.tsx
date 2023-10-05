@@ -154,7 +154,6 @@ const Service = ({ data, PopularBrands }: any) => {
       })
     );
   }, [data]);
-  console.log("carenter service", filtercarenter);
   const handleTabClick = (index: any, n: any) => {
     setValue(index);
     setFilteredData(

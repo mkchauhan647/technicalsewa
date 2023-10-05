@@ -5,7 +5,6 @@ import Image from "next/image";
 import { RxCross2 } from "react-icons/rx";
 import Link from "next/link";
 const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
-  console.log(imgAlt, filterData);
   const myDialog: any = useRef(null);
 
   useEffect(() => {
