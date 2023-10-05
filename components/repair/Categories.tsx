@@ -17,16 +17,15 @@ const Categories = async ({ allBrands }: any) => {
   //   fetching();
   // }, []);
 
-  const data: any = await fetch(
-    `${baseUrl}techsewa/masterconfig/publicmasterconfig/getServiceList`,
-    {
+  const data: any = await axios
+    .get(`${baseUrl}techsewa/masterconfig/publicmasterconfig/getServiceList`, {
       headers: {
-        "Cache-Control": `no-cache`, // max 1 hour cache
+        "Cache-Control": `no-cache`,
       },
-    }
-  ).then((res) => {
-    return res.json();
-  });
+    })
+    .then((res) => {
+      return res.data;
+    });
 
   return (
     <div className="pt-[40px] pb-[40px]  flex justify-around md:justify-center items-center flex-wrap  ">
