@@ -21,7 +21,6 @@ import useLocalstorage from "./HelperFuncion/useLocalstorage";
 import axios from "axios";
 import useAuthStore from "@/store/useAuthStore";
 import Search from "./Search";
-import MobileSearch from "./MobileSearch";
 
 interface TrainingCategory {
   text: string;
@@ -99,7 +98,7 @@ const Nav = () => {
             />
           </Link>
           <div className={`${showinput ? "w-72" : "hidden"} `}>
-            <MobileSearch />
+            <Search />
           </div>
           <div className="nav-links  hidden md:flex items-center gap-4 text-[#505056] ">
             <div className="group">
