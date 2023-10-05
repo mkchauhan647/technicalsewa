@@ -1,12 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 import { ImFacebook } from "react-icons/im";
 import { BiLogoInstagramAlt } from "react-icons/bi";
 import { BsYoutube, BsTwitter } from "react-icons/bs";
 import { IoLocationOutline, IoLocationSharp } from "react-icons/io5";
 import axios from "axios";
 import "./footer.css";
+import Link from "next/link";
 const Footer = () => {
   const [description, setDescription] = useState("");
 
@@ -134,19 +134,19 @@ const Footer = () => {
                   Featured Product
                 </Link>
                 <Link
-                  href="#"
+                  href="/about"
                   className="font-[300px] text-[13px] leading-[15px]"
                 >
                   About
                 </Link>
                 <Link
-                  href="#"
+                  href="privacy-policy"
                   className="font-[300px] text-[13px] leading-[15px]"
                 >
                   Privacy Policy
                 </Link>
                 <Link
-                  href="#"
+                  href="/terms"
                   className="font-[300px] text-[13px] leading-[15px]"
                 >
                   Terms and Condition
@@ -165,25 +165,29 @@ const Footer = () => {
             <div className="">
               <div className="flex  justify-start xl:justify-end gap-[10px]">
                 <Link
-                  href=""
+                  href="https://www.facebook.com/61551939094429"
                   className="flex items-center justify-center bg-[white] w-[35px] h-[35px] rounded-[50%]"
+                  target="_blank"
                 >
                   <ImFacebook className="text-[#2591B2] " size={20} />
                 </Link>
                 <Link
-                  href=""
+                  href="https://www.instagram.com/technicalsewa.np/"
                   className="flex items-center justify-center bg-[white] w-[35px] h-[35px] rounded-[50%]"
+                  target="_blank"
                 >
                   <BiLogoInstagramAlt className="text-[#2591B2] " size={20} />
                 </Link>
                 <Link
-                  href=""
+                  href="https://www.youtube.com/channel/UCw2U7K_AKEkws0uzyI4T_kA"
+                  target="_blank"
                   className="flex items-center justify-center bg-[white] w-[35px] h-[35px] rounded-[50%]"
                 >
                   <BsYoutube className="text-[#2591B2] " size={20} />
                 </Link>
                 <Link
-                  href=""
+                  href="https://twitter.com/technicals2023"
+                  target="_blank"
                   className="flex items-center justify-center bg-[white] w-[35px] h-[35px] rounded-[50%]"
                 >
                   <BsTwitter className="text-[#2591B2] " size={20} />

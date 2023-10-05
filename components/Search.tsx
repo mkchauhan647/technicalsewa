@@ -2,7 +2,7 @@ import { baseUrl } from "@/public/baseUrl";
 import React, { useEffect, useState } from "react";
 import { BsSearch } from "react-icons/bs";
 import Autocomplete from "@mui/material/Autocomplete";
-import { TextField, CircularProgress } from "@mui/material";
+import { TextField, CircularProgress, useMediaQuery } from "@mui/material";
 import { useRouter } from "next/navigation";
 
 const Search = () => {
@@ -11,6 +11,7 @@ const Search = () => {
   const [suggestions, setSuggestions] = useState([{ label: "", id: "" }]);
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+  const isMobile = useMediaQuery("(max-width: 600px)");
 
   useEffect(() => {
     fetchServices();
@@ -61,6 +62,7 @@ const Search = () => {
         onChange={(e: any, value: any) => {
           router.push(`/service/${value?.id}`);
         }}
+        size={isMobile ? "small" : "medium"}
         renderInput={(params) => (
           <TextField {...params} label="Search service here..." />
         )}
