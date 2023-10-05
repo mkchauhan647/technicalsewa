@@ -78,7 +78,7 @@ const ServiceSlug1 = ({ data }: any) => {
 
               {/* banner product description paragraph */}
               <div className=" w-full  absolute left-0">
-                <div className=" max-w-[1280px] mx-auto px-[2px]">
+                <div className=" max-w-[1280px] mx-auto px-[14px] md:px-[2px]">
                   <div className=" flex flex-col ">
                     <h3 className="text-[#cdcecf] font-[600] text-[16px] ">
                       {val?.brand_name} /
@@ -97,7 +97,7 @@ const ServiceSlug1 = ({ data }: any) => {
                     <p className="pl-[5px] self-end mb-[5px]">Out of 5</p>
                   </div>
 
-                  <div className="  flex flex-col mt-[20px]  md:gap-[14px] ">
+                  <div className="  flex flex-col mt-[11px] md:mt-[20px]  md:gap-[14px] ">
                     <div className="flex items-center">
                       <div
                         className="flex pb-4 text-white text-justify flex-col gap-1 md:gap-3"
