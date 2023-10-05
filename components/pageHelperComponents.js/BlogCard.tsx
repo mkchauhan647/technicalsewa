@@ -53,17 +53,17 @@ const BlogCard = ({ blog }: any) => {
               .replaceAll(" ", "-")
               .toLowerCase()}/${blog?.blog_id}`}
           >
-            <div className="md:pb-[10px] text-gray-500 font-bold">
+            <div className="md:pb-[3px] text-gray-500 font-bold">
               {blog?.created_ts}
             </div>
-            <h3 className="hover:text-[#2591B2] font-bold text-[19px] md:text-[25px] mb-3 h-[40px] ">
+            <h3 className="hover:text-[#2591B2] font-bold text-[19px] md:text-[25px] mb-2 h-[40px] ">
               {blog?.blog_name}
             </h3>
           </Link>
 
           {/* <div className="h-[50px]"></div> */}
           <div
-            className="mt-[21px] md:mt-[47px] overflow-hidden text-black font-normal"
+            className="mt-[21px] md:mt-[44px] overflow-hidden text-black font-normal"
             dangerouslySetInnerHTML={{ __html: blog.blog_desc.split("\n")[0] }}
           ></div>
 
