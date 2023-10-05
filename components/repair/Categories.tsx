@@ -18,7 +18,12 @@ const Categories = async ({ allBrands }: any) => {
   // }, []);
 
   const data: any = await fetch(
-    `${baseUrl}techsewa/masterconfig/publicmasterconfig/getServiceList`
+    `${baseUrl}techsewa/masterconfig/publicmasterconfig/getServiceList`,
+    {
+      headers: {
+        "Cache-Control": `no-cache`, // max 1 hour cache
+      },
+    }
   ).then((res) => {
     return res.json();
   });

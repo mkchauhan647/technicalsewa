@@ -6,6 +6,7 @@ import { BiLogoInstagramAlt } from "react-icons/bi";
 import { BsYoutube, BsTwitter } from "react-icons/bs";
 import { IoLocationOutline, IoLocationSharp } from "react-icons/io5";
 import axios from "axios";
+import "./footer.css";
 const Footer = () => {
   const [description, setDescription] = useState("");
 
@@ -16,7 +17,6 @@ const Footer = () => {
       )
       .then((response: any) => {
         let data = response.data;
-        console.log(data);
         setDescription(data?.brands[0].description);
       });
   }, []);
@@ -157,8 +157,8 @@ const Footer = () => {
                   Contact us
                 </Link>
                 <div
+                  className="font-[300px] text-[13px] leading-[15px]"
                   dangerouslySetInnerHTML={{ __html: description }}
-                  className="footercontact"
                 />
               </div>
             </div>
