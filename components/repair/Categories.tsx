@@ -30,7 +30,7 @@ const Categories = async ({ allBrands }: any) => {
 
   return (
     <div className="pt-[40px] pb-[40px]  flex justify-around md:justify-center items-center flex-wrap  ">
-      <div className="lg:!container md:w-[1280px] flex justify-around items-center flex-wrap gap-5 md:gap-4 ">
+      <div className="lg:!container md:max-w-[1140px] mx-auto flex justify-around items-center flex-wrap gap-5 md:gap-4 ">
         {data?.brands?.map((category: any) => (
           <CategoryCard
             id={category.brand_id}
