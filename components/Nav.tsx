@@ -99,7 +99,7 @@ const Nav = () => {
             />
           </Link>
           <div className={`${showinput ? "w-72" : "hidden"} `}>
-            <MobileSearch />
+            <Search />
           </div>
           <div className="nav-links  hidden md:flex items-center gap-4 text-[#505056] ">
             <div className="group">

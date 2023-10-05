@@ -40,7 +40,7 @@ const HeroSection = () => {
           </div>
         </div>
         <div className=" flex mt-4 md:mt-0 px-[40px] justify-center md:hidden">
-          <MobileSearch />
+          <Search />
         </div>
       </div>
     </>
