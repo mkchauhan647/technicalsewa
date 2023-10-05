@@ -21,7 +21,6 @@ import useLocalstorage from "./HelperFuncion/useLocalstorage";
 import axios from "axios";
 import useAuthStore from "@/store/useAuthStore";
 import Search from "./Search";
-import MobileSearch from "./MobileSearch";
 
 interface TrainingCategory {
   text: string;

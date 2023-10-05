@@ -6,7 +6,6 @@ import React from "react";
 import { MdLocationPin } from "react-icons/md";
 import { BsSearch } from "react-icons/bs";
 import Search from "./Search";
-import MobileSearch from "./MobileSearch";
 
 const HeroSection = () => {
   return (
