@@ -167,23 +167,27 @@ const Footer = () => {
                 <Link
                   href="https://www.facebook.com/61551939094429"
                   className="flex items-center justify-center bg-[white] w-[35px] h-[35px] rounded-[50%]"
+                  target="_blank"
                 >
                   <ImFacebook className="text-[#2591B2] " size={20} />
                 </Link>
                 <Link
                   href="https://www.instagram.com/technicalsewa.np/"
                   className="flex items-center justify-center bg-[white] w-[35px] h-[35px] rounded-[50%]"
+                  target="_blank"
                 >
                   <BiLogoInstagramAlt className="text-[#2591B2] " size={20} />
                 </Link>
                 <Link
-                  href=""
+                  href="https://www.youtube.com/channel/UCw2U7K_AKEkws0uzyI4T_kA"
+                  target="_blank"
                   className="flex items-center justify-center bg-[white] w-[35px] h-[35px] rounded-[50%]"
                 >
                   <BsYoutube className="text-[#2591B2] " size={20} />
                 </Link>
                 <Link
                   href="https://twitter.com/technicals2023"
+                  target="_blank"
                   className="flex items-center justify-center bg-[white] w-[35px] h-[35px] rounded-[50%]"
                 >
                   <BsTwitter className="text-[#2591B2] " size={20} />
