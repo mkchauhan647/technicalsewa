@@ -175,7 +175,7 @@ const Service = ({ data, PopularBrands }: any) => {
       <div className="md:bg-[#f5f5f5] relative pt-[20px] pb-[79px] xl:w-[80rem] 2xl:w-[80rem] px-4 sm:w-full m-auto ">
         {/* input in mobile responsive  */}
 
-        <div className="fixed top-[80px] w-[18%] 2xl:w-[11%] flex-shrink-0 flex-grow-0 flex flex-col gap-1 overflow-y-auto  md:overflow-hidden max-md:h-auto cursor-pointer h-screen">
+        <div className="sticky top-[80px] w-[16%] 2xl:w-[11%] flex-shrink-0 flex-grow-0 flex flex-col gap-1 overflow-y-auto  md:overflow-hidden max-md:h-auto cursor-pointer h-screen">
           {services.map(({ n, src }, index): any => (
             <ScrollLink
               key={index}
@@ -200,7 +200,6 @@ const Service = ({ data, PopularBrands }: any) => {
             </ScrollLink>
           ))}
         </div>
-
         <div className="flex gap-2 justify-center py-4 md:gap-6">
           {/* left side services div  */}
           {/* <div className="fixed   rounded-lg md:bg-[#2591b2] md:p-5 flex flex-col gap-4 overflow-y-auto h-[80vh] md:overflow-hidden md:h-auto cursor-pointer">

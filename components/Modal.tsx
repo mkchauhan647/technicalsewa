@@ -42,7 +42,7 @@ const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
               href={`service/${val.url_product_name}`}
               className="flex flex-col justify-center items-center w-[80px] md:w-[120px] h-[120px]"
             >
-              <div className="rounded-md p-2 border-[1px] border-[#2591b2] flex flex-col items-center w-[100px] h-[100px] overflow-hidden">
+              <div className="rounded-md p-2 border-[1px] border-[#2591b2] flex flex-col items-center w-[115px] h-[100px] overflow-hidden">
                 {val.image_url && (
                   <Image
                     src={val.image_url.replace(

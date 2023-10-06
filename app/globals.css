@@ -45,3 +45,10 @@ body {
   width: 95vw !important;
   }
   }
+  .service p{
+    background-color: white !important;
+    margin:0px 0px !important;
+  }
+  .service p span{
+    color:black !important;
+  }
