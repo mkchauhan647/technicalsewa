@@ -88,7 +88,7 @@ const Nav = () => {
   return (
     <>
       <div className="sticky top-0 z-50 bg-white">
-        <div className="Navbar relative border-b-[1px] mx-auto max-w-[1140px]  border-[#ededed] gap-[15px]   flex justify-between max-lg:p-4 items-center bg-white h-[70px] ">
+        <div className="Navbar relative border-b-[1px] mx-auto max-w-[1280px]  border-[#ededed] gap-[15px]   flex justify-between max-lg:p-4 items-center bg-white h-[70px] ">
           <Link href="/">
             <Image
               src="/assets/ts-final-logo.png"
