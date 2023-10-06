@@ -1,6 +1,7 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/footer/Footer";
 import React from "react";
+import "./page.css";
 
 const page = async () => {
   const privacyPolicy = await fetch(
