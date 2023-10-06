@@ -32,9 +32,7 @@ const SignUp = () => {
 
       await axios
         .post(`${baseUrl}techsewa/masterConfig/publicLogin/Signup`, data)
-        .then((response) => {
-          console.log(response.data.message);
-        });
+        .then((response) => {});
     } else {
       alert("Password and confirm password do not match");
     }

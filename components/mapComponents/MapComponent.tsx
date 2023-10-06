@@ -79,7 +79,6 @@ const MapComponent = ({ onProceed }: IProps) => {
   useEffect(() => {
     // ASK FOR USER LOCATION
     if (navigator.geolocation) {
-      console.log(navigator);
       navigator.geolocation.getCurrentPosition(
         (position) => {
           const { latitude, longitude } = position.coords;
