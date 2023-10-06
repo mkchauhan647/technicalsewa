@@ -86,7 +86,7 @@ const ServiceSlug1 = ({ data }: any) => {
                         {val?.product_name}
                       </span>
                     </h3>
-                    <h3 className="w-[308px] md:w-[500px] text-white leading-[1.5] tracking-[1px] md:text-[30px] text-[24px] font-bold">
+                    <h3 className="w-[308px] md:w-[576px] text-white leading-[1.5] tracking-[1px] md:text-[27px] text-[20px] font-bold">
                       {val?.title}
                     </h3>
                   </div>
@@ -100,7 +100,7 @@ const ServiceSlug1 = ({ data }: any) => {
                   <div className="  flex flex-col mt-[11px] md:mt-[20px]  md:gap-[14px] ">
                     <div className="flex items-center">
                       <div
-                        className="flex pb-4 text-white text-justify flex-col gap-1 md:gap-3"
+                        className="flex pb-4 text-white text-justify flex-col gap-1 md:gap-3 text-[16px]"
                         dangerouslySetInnerHTML={{ __html: val?.product_desc }}
                       />
                     </div>
@@ -137,7 +137,7 @@ const ServiceSlug1 = ({ data }: any) => {
             {/* description of product paragraph  */}
             <div className="my-[50px] max-w-[1280px] mx-auto px-[2px]">
               <div
-                className="flex text-justify md:w-[66%] flex-col gap-2"
+                className="flex text-justify md:w-[66%] flex-col gap-2 service"
                 dangerouslySetInnerHTML={{ __html: val?.content }}
               />
             </div>
