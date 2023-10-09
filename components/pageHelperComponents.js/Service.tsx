@@ -172,10 +172,10 @@ const Service = ({ data, PopularBrands }: any) => {
         />
         <AiOutlineSearch />
       </div>
-      <div className="md:bg-[#f5f5f5] relative pt-[20px] pb-[79px] xl:w-[80rem] 2xl:w-[80rem] px-4 sm:w-full m-auto ">
+      <div className="md:bg-[#f5f5f5]  pt-[20px] pb-[79px] xl:w-[80rem] 2xl:w-[80rem] px-4 sm:w-full m-auto ">
         {/* input in mobile responsive  */}
 
-        <div className="sticky top-[80px] w-[16%] 2xl:w-[11%] flex-shrink-0 flex-grow-0 flex flex-col gap-1 overflow-y-auto  md:overflow-hidden max-md:h-auto cursor-pointer h-screen">
+        <div className="sticky top-[80px] w-[16%] 2xl:w-[11%] flex-shrink-0 flex-grow-0 flex flex-col gap-1 overflow-y-auto  md:overflow-hidden max-md:h-auto cursor-pointer ">
           {services.map(({ n, src }, index): any => (
             <ScrollLink
               key={index}
