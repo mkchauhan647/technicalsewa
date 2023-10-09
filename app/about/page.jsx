@@ -23,6 +23,7 @@ const About = async () => {
       </div>
       <div className="w-full px-10 lg:px-0 m-auto text-justify content  my-10 max-w-[70rem] text-lg">
         <div
+          className="about"
           dangerouslySetInnerHTML={{
             __html: aboutUsData?.brands[0].description,
           }}
