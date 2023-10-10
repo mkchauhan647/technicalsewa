@@ -4,6 +4,7 @@ import Link from "next/link";
 import React from "react";
 
 const BlogCard = ({ blog }: any) => {
+  console.log("desc", blog?.blog_desc);
   return (
     //     <div className='flex gap-4 rounded-[10px] border-[2px] border-gray-200 p-4'>
     //         <div className='basis-[10%] dark:text-black font-bold'>
@@ -64,7 +65,7 @@ const BlogCard = ({ blog }: any) => {
           {/* <div className="h-[50px]"></div> */}
           <div
             className="mt-[21px] md:mt-[44px] overflow-hidden text-black font-normal"
-            dangerouslySetInnerHTML={{ __html: blog?.blog_desc.split("\n")[0] }}
+            dangerouslySetInnerHTML={{ __html: blog?.short_content }}
           ></div>
 
           {/* <Link

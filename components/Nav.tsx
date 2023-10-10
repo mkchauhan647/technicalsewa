@@ -209,7 +209,7 @@ const Nav = () => {
             <div className="bg-white flex flex-col gap-[24px] shadow-lg z-10 absolute w-max   h-screen top-[70px] right-0 ">
               <Link
                 onClick={handleNavclose}
-                className="flex px-[30px] gap-4 text-[20px] font-normal items-center  w-full justify-starts"
+                className="flex px-[16px] gap-4 text-[14px] font-normal items-center  w-full justify-starts"
                 href="/"
               >
                 <FaHome className="text-[#2591b2]" />
@@ -228,7 +228,7 @@ const Nav = () => {
               <div className="relative group">
                 <Link
                   href="/trainings"
-                  className="hover:text-[#2591b2] px-[30px] text-[20px] font-normal flex items-center justify-start gap-4"
+                  className="hover:text-[#2591b2] px-[14px] text-[16px] font-normal flex items-center justify-start gap-4"
                   onClick={handleNavclose}
                 >
                   <MdModelTraining className="text-[#2591b2]" />
@@ -259,7 +259,7 @@ const Nav = () => {
 
               <Link
                 onClick={handleNavclose}
-                className="flex px-[30px] gap-4 text-[20px] font-normal items-center  w-full justify-starts"
+                className="flex px-[16px] gap-4 text-[14px] font-normal items-center  w-full justify-starts"
                 href="/blogs"
               >
                 <LiaBlogSolid className="text-[#2591b2]" />
@@ -268,7 +268,7 @@ const Nav = () => {
 
               <Link
                 onClick={handleNavclose}
-                className="flex px-[30px] gap-4 text-[20px] font-normal items-center  w-full justify-starts"
+                className="flex px-[16px] gap-4 text-[14px] font-normal items-center  w-full justify-starts"
                 href="/professionals"
               >
                 <BsFillPersonCheckFill className="text-[#2591b2]" />
@@ -276,7 +276,7 @@ const Nav = () => {
               </Link>
               <Link
                 onClick={handleNavclose}
-                className="flex px-[30px] gap-4 text-[20px] font-normal items-center  w-full justify-starts"
+                className="flex px-[16px] gap-4 text-[14px] font-normal items-center  w-full justify-starts"
                 href="/partpurja"
               >
                 <HiMiniWrenchScrewdriver className="text-[#2591b2]" />
@@ -286,7 +286,7 @@ const Nav = () => {
                 <div className="flex flex-col gap-[24px]">
                   <Link
                     onClick={handleNavclose}
-                    className="flex px-[30px] gap-4 text-[20px] font-normal items-center  w-full justify-starts"
+                    className="flex px-[16px] gap-4 text-[14px] font-normal items-center  w-full justify-starts"
                     href="/service"
                   >
                     <MdOutlineHomeRepairService className="text-[#2591b2]" />
@@ -294,7 +294,7 @@ const Nav = () => {
                   </Link>
                   <Link
                     onClick={handleNavclose}
-                    className="flex px-[30px] gap-4 text-[20px] font-normal items-center  w-full justify-starts"
+                    className="flex px-[16px] gap-4 text-[14px] font-normal items-center  w-full justify-starts"
                     href="/profile"
                   >
                     <CgProfile className="text-[#2591b2]" />
@@ -302,7 +302,7 @@ const Nav = () => {
                   </Link>
                   <Link
                     onClick={handleNavclose}
-                    className="flex px-[30px] gap-4 text-[20px] font-normal items-center  w-full justify-starts"
+                    className="flex px-[16px] gap-4 text-[14px] font-normal items-center  w-full justify-starts"
                     href="/complains"
                   >
                     <LuMailWarning className="text-[#2591b2]" />
@@ -313,7 +313,7 @@ const Nav = () => {
               {!isAuthenticated ? (
                 <Link
                   onClick={handleNavclose}
-                  className="flex px-[30px] gap-4 text-[20px] font-normal items-center  w-full justify-starts"
+                  className="flex px-[16px] gap-4 text-[14px] font-normal items-center  w-full justify-starts"
                   href="/login"
                 >
                   <MdLogin className="text-[#2591b2]" />
@@ -325,7 +325,7 @@ const Nav = () => {
                     handleNavclose();
                     handleLogout();
                   }}
-                  className="flex px-[30px] gap-4 text-[20px] font-normal items-center  w-full justify-starts"
+                  className="flex px-[16px] gap-4 text-[14px] font-normal items-center  w-full justify-starts"
                   href="#"
                 >
                   <MdLogin className="text-[#2591b2]" />

@@ -98,11 +98,16 @@ const ServiceSlug1 = ({ data }: any) => {
                   </div>
 
                   <div className="  flex flex-col mt-[11px] md:mt-[20px]  md:gap-[14px] ">
-                    <div className="flex items-center">
-                      <div
-                        className="flex pb-4 text-white text-justify flex-col gap-1 md:gap-3 text-[16px]"
-                        dangerouslySetInnerHTML={{ __html: val?.product_desc }}
-                      />
+                    <div className="flex items-center gap-2">
+                      <div className="flex gap-2 items-center">
+                        <div className="w-[6px] h-[6px] bg-[#203e9a] border-[4px] border-solid border-[#203e9a] rounded-[50%] "></div>
+                        <div
+                          className="flex pb-4 text-white text-justify flex-col gap-1 md:gap-3 text-[16px] "
+                          dangerouslySetInnerHTML={{
+                            __html: val?.product_desc,
+                          }}
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>

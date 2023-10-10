@@ -2,7 +2,7 @@ import React from "react";
 import { baseUrl } from "../../public/baseUrl";
 import CategoryCard from "./CategoryCard";
 import axios from "axios";
-
+import { apiClient } from "@/lib/catchfn";
 const Categories = async ({ allBrands }: any) => {
   // const [data, setData] = useState<any>([]);
   // const fetching = async () => {
@@ -26,6 +26,10 @@ const Categories = async ({ allBrands }: any) => {
     .then((res) => {
       return res.data;
     });
+  // const data: any = apiClient(
+  //   "get",
+  //   `${baseUrl}techsewa/masterconfig/publicmasterconfig/getServiceList`
+  // );
 
   return (
     <div className="pt-[40px] pb-[40px]  flex justify-around md:justify-center items-center flex-wrap  ">

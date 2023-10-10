@@ -27,13 +27,13 @@ const Footer = () => {
         <div className="py-[10px]   max-w-[1280px] mx-auto">
           {/* heading of footer */}
 
-          <div className="font-semibold text-base leading-[19px] text-[#FFF] font-Roboto text-center ">
+          {/* <div className="font-semibold text-base leading-[19px] text-[#FFF] font-Roboto text-center ">
             We Are Available in
-          </div>
+          </div> */}
           {/* link of location */}
-          <div className="flex flex-col gap-4 justify-between items-center py-8 md:flex-row">
-            <div className="flex-1 flex gap-8 font-Roboto font-normal text-base leading-[24px] text-[#FFF]">
-              <div className="flex flex-col gap-[10px]">
+          <div className="">
+            <div className=" font-Roboto font-normal text-[12px] md:text-base leading-[24px] text-[#FFF]">
+              <div className="grid grid-cols-4 md:grid-cols-9 px-[10px] md:px-[0px] gap-[10px] my-2">
                 <Link prefetch={false} href="Pokhara">
                   Pokhara
                 </Link>
@@ -52,8 +52,6 @@ const Footer = () => {
                 <Link prefetch={false} href="Dhangadi">
                   Dhangadi
                 </Link>
-              </div>
-              <div className="flex flex-col gap-[10px]">
                 <Link prefetch={false} href="butwal">
                   Butwal
                 </Link>
@@ -69,8 +67,6 @@ const Footer = () => {
                 <Link prefetch={false} href="hetauda">
                   Hetauda
                 </Link>
-              </div>
-              <div className="flex flex-col gap-[10px]">
                 <Link prefetch={false} href="kathmandu">
                   Kathmandu
                 </Link>
@@ -87,24 +83,21 @@ const Footer = () => {
                   Sindupalchowk
                 </Link>
               </div>
+              {/* <div className="flex  gap-[10px]">
+               
+              </div>
+              <div className="flex gap-[10px]">
+               
+              </div> */}
             </div>
 
             {/* direction  */}
-            <div className="flex flex-1 justify-center items-center">
-              <Link
-                target="_blank"
-                href="https://www.google.com/maps/place/27%C2%B042'08.4%22N+85%C2%B018'35.8%22E/@27.702328,85.309943,15z/data=!4m4!3m3!8m2!3d27.7023333!4d85.3099444?hl=en&entry=ttu"
-                className=" bg-white text-[#2591B2] flex py-4 items-center justify-center w-[95px] h-[28px] font-Roboto font-normal text-base leading-[24px]  text-center border-[1px] border-solid border-[#E5E7EB]"
-              >
-                Direction
-                <IoLocationSharp className="text-green-500" size={20} />
-              </Link>
-            </div>
+            <div className="flex flex-1 justify-center items-center"></div>
           </div>
           <hr />
           {/* Next Foter */}
           <div className="flex flex-col md:flex-row items-center justify-between  mt-[10px] gap-4 ">
-            <div className="flex flex-col gap-4 md:gap-[48px]   md:flex-row">
+            <div className="flex flex-col gap-4 items-center   ">
               <Link
                 href=""
                 className="w-[210px] h-[52px] 2xl:h-[67px] bg-[#FFF] p-[3px] rounded-[3px]"
@@ -114,6 +107,14 @@ const Footer = () => {
                   alt="image of logo"
                   className="object-contain w-full h-full"
                 />
+              </Link>
+              <Link
+                target="_blank"
+                href="https://www.google.com/maps/place/27%C2%B042'08.4%22N+85%C2%B018'35.8%22E/@27.702328,85.309943,15z/data=!4m4!3m3!8m2!3d27.7023333!4d85.3099444?hl=en&entry=ttu"
+                className=" bg-white text-[#2591B2] flex py-4 items-center justify-center w-[95px] h-[28px] font-Roboto font-normal text-base leading-[24px]  text-center border-[1px] border-solid border-[#E5E7EB]"
+              >
+                Direction
+                <IoLocationSharp className="text-green-500" size={20} />
               </Link>
             </div>
             <div className="flex flex-col gap-4 md:gap-[48px]   md:flex-row">
