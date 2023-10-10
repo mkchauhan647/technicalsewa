@@ -28,9 +28,9 @@ const Number = (props: Props) => {
 
   return (
     <div className="md:mt-[92px] mt-[50px] bg-[#2591B2]">
-      <div className="container mx-auto grid md:grid-cols-4 grid-cols-2 text-white pt-[65px] pb-[75px] md:gap-[30px]">
+      <div className="container mx-auto grid md:grid-cols-4 grid-cols-2 text-white pt-[20px] md:pt-[65px] pb-[20px] md:pb-[75px] md:gap-[30px]">
         <div className="flex items-center justify-center flex-col">
-          <div className=" text-[37px] leading-[78px] font-medium cursor-pointer transform hover:scale-105 sm:text-[30px] transition duration-300 ease-out">
+          <div className="text-[29px] md:text-[37px] leaing-[56px] md:leading-[78px] font-medium cursor-pointer transform hover:scale-105  transition duration-300 ease-out">
             {" "}
             <CountUp
               end={users?.complains}

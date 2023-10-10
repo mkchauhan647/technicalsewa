@@ -16,7 +16,7 @@ const WhyChooseUs = () => {
           Because We care about your safety..
         </h3>
         <div className="flex  flex-col md:flex-row  gap-4 md:gap-[40px] mt-[30px]">
-          <div className="basis-[45%] grid grid-cols-2 gap-[30px]">
+          <div className="basis-[45%] grid grid-cols-2 gap-[11px] md:gap-[30px]">
             <div className="bg-white h-[120px] cursor-pointer w-full flex border items-center justify-center transform hover:scale-[102%] duration-300 ease-out ">
               <div className="flex items-center gap-[10px]">
                 <MdMasks color="#2591B2" fontSize={46} />

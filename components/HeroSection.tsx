@@ -38,8 +38,18 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-        <div className=" flex mt-4 md:mt-0 px-[40px] justify-center md:hidden">
-          <Search />
+        <div className="md:hidden">
+          <Image
+            className="w-full h-[164px] object-cover relative"
+            src="/assets/banner.jpg"
+            // layout="responsive"
+            alt="banner"
+            width={1000}
+            height={164}
+          />
+          <div className="absolute top-[21%] flex  md:mt-0 px-[40px] justify-center  w-[363px]">
+            <Search />
+          </div>
         </div>
       </div>
     </>

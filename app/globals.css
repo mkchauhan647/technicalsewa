@@ -58,7 +58,13 @@ body {
   .about ul li p{
     color:black !important;
   }
- 
   .css-52llsg-MuiAutocomplete-root .MuiOutlinedInput-root .MuiAutocomplete-endAdornment {
     display: none;
   }
+  .swiper-pagination .swiper-pagination-clickable .swiper-pagination-bullets .swiper-pagination-horizontal{
+    bottom:-6px !important;
+  }
+  .css-1dxqrv5-MuiAutocomplete-root .MuiOutlinedInput-root .MuiAutocomplete-endAdornment {
+    display: none;
+  }
+    
