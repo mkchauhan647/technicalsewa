@@ -22,7 +22,7 @@ const CategoryCard = ({ imageUrl, brandName, imgAlt, allBrands, id }: any) => {
         onClick={() => {
           setShow(!show);
         }}
-        className="flex flex-col cursor-pointer items-center border-2px border-solid border-[#d3d1d1] border-l-0 border-t-0  md:gap-3 w-[92px] md:w-[144px]"
+        className="flex flex-col cursor-pointer items-center bordercategory md:gap-3 w-[92px] md:w-[144px]"
       >
         <img
           src={imageUrl}

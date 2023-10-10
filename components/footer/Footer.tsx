@@ -96,8 +96,8 @@ const Footer = () => {
           </div>
           <hr />
           {/* Next Foter */}
-          <div className="flex flex-col md:flex-row items-center justify-between  mt-[10px] gap-4 ">
-            <div className="flex flex-col gap-4 items-center   ">
+          <div className="flex flex-col md:flex-row md:items-center justify-between  mt-[10px] gap-4 px-[10px] md:px-[0px]">
+            <div className="flex flex-row md:flex-col gap-4 items-center   ">
               <Link
                 href=""
                 className="w-[210px] h-[52px] 2xl:h-[67px] bg-[#FFF] p-[3px] rounded-[3px]"
@@ -117,7 +117,7 @@ const Footer = () => {
                 <IoLocationSharp className="text-green-500" size={20} />
               </Link>
             </div>
-            <div className="flex flex-col gap-4 md:gap-[48px]   md:flex-row">
+            <div className="flex  gap-4 md:gap-[48px] flex-row ">
               <div className="flex flex-col font-Roboto text-[#FFF] gap-[10px]">
                 <p className="font-bold text-[14px] leading-[16px]">
                   Quick Links
@@ -130,7 +130,7 @@ const Footer = () => {
                 </Link>
                 <Link
                   href="/partpurja"
-                  className="font-[300px] text-[13px] leading-[15px]"
+                  className="font-[300px] text-[13px] leading-[15px] "
                 >
                   Featured Product
                 </Link>
@@ -213,7 +213,7 @@ const Footer = () => {
         </div>
       </div>
       {/* copyright footer */}
-      <div className="py-[9px] bg-[#054355]">
+      <div className="py-[9px] bg-[#054355] px-[10px] md:px-0">
         <h6 className="font-light text-[14px] text-white/[0.5] tracking-[0.3px] leading-[14.06px] text-center">
           Copyright {new Date().getFullYear()} Technical Sewa All Rights
           Reserved
