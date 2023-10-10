@@ -59,12 +59,32 @@ body {
     color:black !important;
   }
   .css-52llsg-MuiAutocomplete-root .MuiOutlinedInput-root .MuiAutocomplete-endAdornment {
-    display: none;
+    display: none !important;
   }
-  .swiper-pagination .swiper-pagination-clickable .swiper-pagination-bullets .swiper-pagination-horizontal{
+  
+  .css-1dxqrv5-MuiAutocomplete-root .MuiOutlinedInput-root .MuiAutocomplete-endAdornment {
+    display: none !important;
+  }
+  .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{
     bottom:-6px !important;
   }
-  .css-1dxqrv5-MuiAutocomplete-root .MuiOutlinedInput-root .MuiAutocomplete-endAdornment {
-    display: none;
-  }
-    
+  .listpoint P::before{
+      content: "";
+      display: inline-block;
+      width:10px !important;
+      height:10px !important;
+      border:2px solid white;
+      background-color: #1D738D;
+      border-radius: 50%;
+      margin-right:10px;
+      
+    }
+    @media only screen and (max-width: 500px) {
+      .bordercategory{
+        border-width: 2px;
+        border-style: solid;
+        border-color: #d3d1d1;
+        border-left-width: 0px;
+        border-top-width:0px;
+      }
+    }

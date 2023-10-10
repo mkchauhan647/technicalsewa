@@ -42,7 +42,7 @@ const SlideCard = ({ length, data }: any) => {
       className="mySwiper overflow-hidden flex justify-center items-center cursor-pointer px-10 pb-12 pt-4"
       autoplay={{
         delay: 2500,
-        disableOnInteraction: true,
+        disableOnInteraction: false,
       }}
       breakpoints={breakpoints}
       resizeObserver
