@@ -94,7 +94,7 @@ const page = async ({ params }: any) => {
             )}
             {data?.detail && (
               <p
-                className="text-gray-600"
+                className="blogdesc"
                 dangerouslySetInnerHTML={{ __html: data?.detail }}
               ></p>
             )}

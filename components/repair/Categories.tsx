@@ -4,6 +4,8 @@ import CategoryCard from "./CategoryCard";
 import axios from "axios";
 import { apiClient } from "@/lib/catchfn";
 const Categories = async ({ allBrands }: any) => {
+  //
+  //grid grid-cols-3 md:grid-cols-8
   // const [data, setData] = useState<any>([]);
   // const fetching = async () => {
   //   await axios
@@ -33,7 +35,7 @@ const Categories = async ({ allBrands }: any) => {
 
   return (
     <div className="pt-[40px] pb-[40px]  flex justify-around md:justify-center items-center flex-wrap  ">
-      <div className="lg:!container md:max-w-[1140px] mx-auto flex justify-around items-center flex-wrap gap-5 md:gap-4 ">
+      <div className="lg:!container md:max-w-[1140px] mx-auto flex justify-around items-center flex-wrap gap-5 md:gap-4 rightbordre">
         {data?.brands?.map((category: any) => (
           <CategoryCard
             id={category.brand_id}

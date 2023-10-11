@@ -53,7 +53,7 @@ const page = async ({ params }: any) => {
               )}
               {data?.blog_desc && (
                 <div
-                  className="mt-6"
+                  className="mt-6 blogdesc"
                   dangerouslySetInnerHTML={{ __html: data?.blog_desc }}
                 ></div>
               )}

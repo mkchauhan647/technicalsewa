@@ -105,12 +105,12 @@ const MapComponent = ({ onProceed }: IProps) => {
 
   return (
     <div className="flex max-w-[1280px] m-auto  justify-center items-center  ">
-      <div className="map-container w-full my-4 p-4 shadow-md rounded-md bg-[#f5f5f5] ">
-        <div className="flex flex-col gap-4">
+      <div className="map-container w-full my-4 p-[10px] md:p-4 shadow-md rounded-md bg-[#f5f5f5] ">
+        <div className="flex flex-col gap-[4px] md:gap-4">
           <h1 className="text-[#203EB2] font-bold">Location Info</h1>
           <h3>Enter Address</h3>
         </div>
-        <div className="flex gap-4 items-center my-4 max-md:flex-col">
+        <div className="flex gap-4 items-center my-[8px] md:my-4 max-md:flex-col">
           {/* <Autocomplete>
             <input
               ref={originRef}
