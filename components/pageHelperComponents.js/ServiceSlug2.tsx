@@ -140,7 +140,7 @@ const ServiceSlug2 = ({ data }: any) => {
                                 return (
                                   <div
                                     key={index}
-                                    className="flex pb-4 text-white text-justify flex-col gap-2"
+                                    className="flex pb-4 text-white text-justify flex-col gap-2 listpoint"
                                     dangerouslySetInnerHTML={{
                                       __html: val?.description,
                                     }}
