@@ -193,7 +193,7 @@ const Service = ({ data, PopularBrands }: any) => {
               >
                 <div className="flex flex-col gap-2 justify-center max-md:items-center">
                   <div className="md:hidden  text-[#2591b2]">{src}</div>
-                  <h3 className="md:text-[black] font-medium text-[12px] md:text-[16px] text-center  md:text-left">
+                  <h3 className="md:text-[black] font-medium text-[12px] md:text-[14px] text-center  md:text-left">
                     {n}
                   </h3>
                 </div>
