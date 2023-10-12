@@ -14,6 +14,7 @@ import ForSeo from "@/components/ForSeo";
 import MedicalEquipment from "@/components/repair/MedicalEquipment";
 import Number from "@/components/Number";
 import MidContent from "@/components/MidContent";
+import Fotterupcontent from "@/components/Fotterupcontent";
 
 export default async function Home() {
   const result = await axios.get(
@@ -81,6 +82,7 @@ export default async function Home() {
         <WhyChooseUs />
         <MidContent />
         <FooterContact />
+        <Fotterupcontent />
       </main>
       <Footer />
     </>

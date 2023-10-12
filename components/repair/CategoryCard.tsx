@@ -29,7 +29,7 @@ const CategoryCard = ({ imageUrl, brandName, imgAlt, allBrands, id }: any) => {
           alt={imgAlt}
           width={30}
           height={30}
-          className="w-[30px] h-[30px] md:w-[40px] md:h-[40px]"
+          className="w-[30px] h-[30px] md:w-[40px] md:h-[40px] hover:scale-110 duration-100"
         />
         <p className="text-[12px] md:text-[13px] text-center leading-[15px] md:leading-[17px]">
           {brandName}
