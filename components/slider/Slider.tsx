@@ -10,7 +10,7 @@ const Slider = ({ data }: any) => {
       <div
         className={`${length > 3 ? "md:max-w-[1280px]" : "max-w-[500px]"}  `}
       >
-        <SlideCard length={length > 3 ? 6 : 2} data={data} />
+        <SlideCard length={length > 3 ? 5 : 2} data={data} />
       </div>
     </div>
   );

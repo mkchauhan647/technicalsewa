@@ -19,9 +19,9 @@ const page = async () => {
   return (
     <>
       <Nav />
-      <div className="bg-[#FBFBFB] py-4 px-2 md:px-0">
+      <div className="bg-[#FBFBFB] py-[10px] px-2 md:px-0">
         <div className="container mx-auto xl:w-[80rem] sm:w-full  sm-w-full m-auto">
-          <h3 className="text-[25px] md:text-[35px] text-black my-[10px] text-left font-bold">
+          <h3 className="text-[25px] md:text-[30px] text-black my-[5px] text-left font-bold">
             All Blogs
           </h3>
           <div className="flex flex-wrap space-y-2 md:justify-between">

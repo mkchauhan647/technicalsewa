@@ -19,11 +19,11 @@ const page = async () => {
       <div className="  pt-[20px] pb-[79px] max-w-[1280px]  mx-auto flex flex-col items-center justify-center">
         <div className=" px-2 md:p-0 ">
           {/* header  */}
-          <h2 className="text-[32px] md:text-[42px] text-center md:text-left">
+          <h2 className="text-[32px] md:text-[31px] text-center md:text-left">
             Our Professionals
           </h2>
 
-          <div className="flex justify-between items-center pt-4 px-2 md:px-0">
+          <div className="flex justify-between items-center pt-[3px] px-2 md:px-0">
             {/* page number  */}
             <p className="text-center md:text-left text-[14px]">
               Showing 1-20 of 50
@@ -96,10 +96,10 @@ const page = async () => {
         <div className="bg-[#fbfcfe] py-10">
           <div className="flex flex-col md:flex-row justify-center items-center gap-4">
             <div className="flex-1 flex flex-col gap-4">
-              <p className="md:text-[32px] text-[18px] text-[#a6adbb] font-semibold text-center md:text-left">
+              <p className="md:text-[29px] text-[18px] text-[#a6adbb] font-semibold text-center md:text-left">
                 Download our App
               </p>
-              <p className="text-[14px] md:text-[20px]">
+              <p className="text-[14px] md:text-[27px]">
                 Enter mobile number to get APP download Link
               </p>
             </div>

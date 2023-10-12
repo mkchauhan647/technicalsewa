@@ -16,7 +16,7 @@ const page = async () => {
         {/* text and option div */}
         <div className="flex justify-between items-center border-b-[1px] pb-10">
           <div className="flex flex-col gap-4">
-            <h2 className="text-[32px] leading-9">Featured Products</h2>
+            <h2 className="text-[32px] leading-9">Part Purja</h2>
             <p className="text-[14px] ">
               {/* page number */}
               Showing 1-20 of 200
@@ -87,14 +87,13 @@ const page = async () => {
 
 export default page;
 
-
-export async function generateMetadata(){
+export async function generateMetadata() {
   // const seocontet = await fetch(
   //   "https://smartcare.com.np/techsewa/publiccontrol/publicmasterconfig/getSeoContent?url=https://smartcare.com.np/blogs"
   // );
   // const seocontetdata:[] = await seocontet.json();
 
-  return{
-    title:`PartPurja | Technical sewa`
-  }
+  return {
+    title: `PartPurja | Technical sewa`,
+  };
 }

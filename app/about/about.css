@@ -20,3 +20,11 @@ p.MsoNormal span{
     object-fit: contain;
     object-position: center;
 }
+.about h1 span{
+    font-size:18pt !important;
+}
+@media screen and (max-width: 767px) {
+    .about h1 span{
+        font-size:14pt !important;
+    }
+}
