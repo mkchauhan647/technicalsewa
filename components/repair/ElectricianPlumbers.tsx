@@ -9,13 +9,13 @@ const ElectricianPlumbers = ({
     <div className="max-w-[1280px] m-auto flex max-md:flex-col justify-between items-center ">
       <div className="flex justify-center flex-col items-center">
         <b className="text-[#2591b2] font-bold text-[20px] my-2 border-b-[0.5px] pb-1 border-b-[#4f4b4b]">
-          Electrician & Plumbers
+          {electiricianPlumbersData[0].brand_name}
         </b>
         <Slider data={electiricianPlumbersData} />
       </div>
       <div className="flex justify-center flex-col items-center ">
         <p className="text-[#2591b2] font-bold text-[20px] my-2 border-b-[0.5px] pb-1 border-b-[#4f4b4b]">
-          Computer/Printer
+          {computerPrinterData[0].brand_name}
         </p>
         <Slider data={computerPrinterData} />
       </div>

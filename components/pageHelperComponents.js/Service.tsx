@@ -293,7 +293,7 @@ const Service = ({ data, PopularBrands }: any) => {
                   {filteredAppliances?.map((value: any, index: any) => {
                     console.log("image url", value?.image_url);
                     return (
-                      <div className="flex items-center w-[120px] border-r-[1px]  borderline ">
+                      <div className="flex items-center w-[120px] border-r-[1px] border-black borderline ">
                         <Link
                           href={`/service/${value?.url_product_name}`}
                           key={index}
@@ -312,7 +312,7 @@ const Service = ({ data, PopularBrands }: any) => {
                                 src={value.image_url && value.image_url}
                                 alt={value.alt2 && value.alt2}
                               />
-                              <p className="text-[10px]  whitespace-pre-wrap  ">
+                              <p className="text-[10px]  whitespace-pre-wrap ">
                                 {value.product_name}
                               </p>
                             </>

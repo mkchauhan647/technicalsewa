@@ -32,7 +32,7 @@ const SlideCard = ({ length, data }: any) => {
     },
     1280: {
       slidesPerView: length,
-      spaceBetween: 25,
+      spaceBetween: 15,
     },
     // Add more breakpoints as needed
   };
