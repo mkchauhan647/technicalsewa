@@ -65,7 +65,7 @@ export default async function Home() {
       >
         <i className="fa fa-whatsapp whatsapp-icon"></i>
       </a>
-      <Facebook />
+      {/* <Facebook /> */}
       <ForSeo />
       <Nav />
       <main>

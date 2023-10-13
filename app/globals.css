@@ -102,7 +102,7 @@ body {
       align-items: center;
       justify-content: center;
       bottom: 40px;
-      right: 40px;
+      left: 40px;
       background-color: #25d366;
       color: #FFF;
       border-radius: 50px;
@@ -120,7 +120,7 @@ body {
         width: 40px;
         height: 40px;
         bottom: 20px;
-        right: 10px;
+        left: 10px;
         font-size: 22px;
       }
     }
@@ -134,4 +134,7 @@ body {
     }
     .MuiAutocomplete-popper{
       display:none;
+    }
+    .catline:nth-child(4n){
+      border-right:0px;
     }
