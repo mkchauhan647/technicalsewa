@@ -17,18 +17,18 @@ const page = async () => {
     <>
       <Nav />
       <div className="  pt-[20px] pb-[79px] max-w-[1280px]  mx-auto flex flex-col items-center justify-center">
-        <div className=" px-2 md:p-0 ">
+        <div className="px-2  md:p-0">
           {/* header  */}
           <h2 className="text-[32px] md:text-[42px] text-center md:text-left">
             Our Professionals
           </h2>
 
-          <div className="flex justify-between items-center pt-4 px-2 md:px-0">
+          <div className="flex justify-between items-center px-2 pt-4 md:px-0">
             {/* page number  */}
             <p className="text-center md:text-left text-[14px]">
               Showing 1-20 of 50
             </p>
-            <div className="flex gap-4  items-center">
+            <div className="flex gap-4 items-center">
               <RiLayoutGridFill color="#d9d9d9" size="30px" />
               <TfiLayoutColumn3Alt
                 color="#2591b2"
@@ -39,7 +39,7 @@ const page = async () => {
           </div>
 
           {/* card  */}
-          <div className=" grid grid-cols-1 md:grid-cols-3  gap-5 py-4 md:py-8 px-2 md:px-0">
+          <div className="grid grid-cols-1 gap-5 px-2 py-4  md:grid-cols-3 md:py-8 md:px-0">
             {professionalsData.map((s: any, index: any) => (
               <div
                 key={index}
@@ -53,7 +53,7 @@ const page = async () => {
                     className="w-full max-h-[200px]"
                   />
                 </div>
-                <div className="flex-1 flex flex-col gap-2 md:gap-5">
+                <div className="flex flex-col flex-1 gap-2 md:gap-5">
                   <h3 className="text-[#2591b2] text-[17px] font-bold">
                     {s.sc_name}
                   </h3>
@@ -94,8 +94,8 @@ const page = async () => {
 
         {/* download app section  */}
         <div className="bg-[#fbfcfe] py-10">
-          <div className="flex flex-col md:flex-row justify-center items-center gap-4">
-            <div className="flex-1 flex flex-col gap-4">
+          <div className="flex flex-col gap-4 justify-center items-center md:flex-row">
+            <div className="flex flex-col flex-1 gap-4">
               <p className="md:text-[32px] text-[18px] text-[#a6adbb] font-semibold text-center md:text-left">
                 Download our App
               </p>
@@ -105,7 +105,7 @@ const page = async () => {
             </div>
 
             {/* input and send button  */}
-            <div className="flex-1 flex px-2 md:p-0">
+            <div className="flex flex-1 px-2 md:p-0">
               <input
                 className="w-full border-[2px]  rounded-l-md p-3 md:p-4 outline-none text-[14px]"
                 type="text"
@@ -126,10 +126,6 @@ const page = async () => {
 export default page;
 
 export async function generateMetadata() {
-  // const seocontet = await fetch(
-  //   "https://smartcare.com.np/techsewa/publiccontrol/publicmasterconfig/getSeoContent?url=https://smartcare.com.np/blogs"
-  // );
-  // const seocontetdata:[] = await seocontet.json();
 
   return {
     title: `Professionals | Technical sewa`,

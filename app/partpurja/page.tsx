@@ -39,7 +39,7 @@ const page = async () => {
 
         {/* card */}
 
-        <div className="relative flex flex-wrap justify-center gap-14 pt-10">
+        <div className="flex relative flex-wrap gap-14 justify-center pt-10">
           {partpurjadata?.map((s: any, index: any) => (
             <Link
               key={index}
@@ -89,10 +89,6 @@ export default page;
 
 
 export async function generateMetadata(){
-  // const seocontet = await fetch(
-  //   "https://smartcare.com.np/techsewa/publiccontrol/publicmasterconfig/getSeoContent?url=https://smartcare.com.np/blogs"
-  // );
-  // const seocontetdata:[] = await seocontet.json();
 
   return{
     title:`PartPurja | Technical sewa`
