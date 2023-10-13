@@ -2,7 +2,7 @@ import Categorylist from "@/components/Categorylist";
 import Nav from "@/components/Nav";
 import { SEOBase } from "@/components/SEOBase";
 import Footer from "@/components/footer/Footer";
-import { getTrainingCategoriesData } from "@/lib/api";
+import { getSEOByPageURL, getTrainingCategoriesData } from "@/lib/api";
 import { baseUrl } from "@/public/baseUrl";
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -32,7 +32,8 @@ async function getData(id: string) {
 }
 
 const page = async ({ params }: any) => {
-  let trainingSlug = params.traningType;
+  let trainingSlug = params.slug;
+
   const res1 = await fetch(
     "https://smartcare.com.np/techsewa/publiccontrol/publicmasterconfig/gettrainingcategories"
   );
@@ -93,10 +94,10 @@ const page = async ({ params }: any) => {
               </div>
             )}
             {data?.detail && (
-              <div
-                className="blogdesc"
+              <p
+                className="text-gray-600"
                 dangerouslySetInnerHTML={{ __html: data?.detail }}
-              ></div>
+              ></p>
             )}
             {data?.image_2 && (
               <div className="w-full h-[500px] cursor-pointer mb-[10px]">
@@ -126,13 +127,37 @@ const page = async ({ params }: any) => {
 
 export default page;
 
-export async function generateMetadata() {
-  // const seocontet = await fetch(
-  //   "https://smartcare.com.np/techsewa/publiccontrol/publicmasterconfig/getSeoContent?url=https://smartcare.com.np/blogs"
-  // );
-  // const seocontetdata:[] = await seocontet.json();
+export async function generateMetadata({ params }: any) {
+  const trainingSlug = params.slug;
+
+  // fetch seo data for page based on slug
+  const seoData = await getSEOByPageURL(
+    `https://technicalsewa.com/training/${trainingSlug}`
+  );
+
+  const seoExists = seoData?.content && !Array.isArray(seoData?.content);
+
+  const seoContent = seoData?.content;
+
+  if (seoExists) {
+    return {
+      title: `${
+        seoExists ? seoContent?.page_title : "Training | Technical sewa"
+      } `,
+      description: `${seoContent?.description}`,
+      keywords: `${seoContent?.key_words}`,
+      openGraph: {
+        title: `${
+          seoExists ? seoContent?.page_title : "Training | Technical sewa"
+        } `,
+        description: `${seoContent?.description} `,
+        url: seoContent?.page_url,
+        type: "website",
+      },
+    };
+  }
 
   return {
-    title: `Training | Technical sewa`,
+    title: `${trainingSlug} - Training | Technical sewa`,
   };
 }

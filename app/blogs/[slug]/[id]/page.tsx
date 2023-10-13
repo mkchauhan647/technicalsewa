@@ -2,7 +2,11 @@ import BlogCategorylist from "@/components/BlogCategorylist";
 import Nav from "@/components/Nav";
 import { SEOBase } from "@/components/SEOBase";
 import Footer from "@/components/footer/Footer";
-import { getBlogDataById, getTrainingCategoriesData } from "@/lib/api";
+import {
+  getBlogDataById,
+  getSEOByPageURL,
+  getTrainingCategoriesData,
+} from "@/lib/api";
 import Head from "next/head";
 import React from "react";
 
@@ -74,13 +78,36 @@ const page = async ({ params }: any) => {
 
 export default page;
 
-// export async function generateMetadata() {
-//   // const seocontet = await fetch(
-//   //   "https://smartcare.com.np/techsewa/publiccontrol/publicmasterconfig/getSeoContent?url=https://smartcare.com.np/blogs"
-//   // );
-//   // const seocontetdata:[] = await seocontet.json();
+export async function generateMetadata({ params }: any) {
+  const slug = params.slug;
+  const blogId = params.blogId;
 
-//   return {
-//     title: `SingleBlog | Technical sewa`,
-//   };
-// }
+  // fetch seo data for page based on slug
+  const seoData = await getSEOByPageURL(
+    `https://technicalsewa.com/blogs/${slug}/${blogId}`
+  );
+
+  const seoExists = seoData?.content && !Array.isArray(seoData?.content);
+
+  const seoContent = seoData?.content;
+
+  if (seoExists) {
+    return {
+      title: `${seoExists ? seoContent?.page_title : "Blog | Technical sewa"} `,
+      description: `${seoContent?.description}`,
+      keywords: `${seoContent?.key_words}`,
+      openGraph: {
+        title: `${
+          seoExists ? seoContent?.page_title : "Blog | Technical sewa"
+        } `,
+        description: `${seoContent?.description} `,
+        url: seoContent?.page_url,
+        type: "website",
+      },
+    };
+  }
+
+  return {
+    title: `Technical sewa`,
+  };
+}

@@ -1,7 +1,13 @@
-export const SEOBase = ({ title }: { title?: string }) => {
+export const SEOBase = ({
+  title,
+  description,
+}: {
+  title?: string;
+  description?: string;
+}) => {
   return (
     <>
-      <title>${title ? `${title} | ` : ""} TechnicalSewa</title>
+      <title>{title ? `${title} | ` : ""} TechnicalSewa</title>
       <link rel="icon" href="/favicon.ico" />
       <link rel="canonical" href="https://technicalsewa.com/" />
 
@@ -27,6 +33,14 @@ export const SEOBase = ({ title }: { title?: string }) => {
 
       <meta charSet="UTF-8" />
       <meta name="theme-color" content="#005ae0" />
+
+      <meta
+        name="description"
+        content={
+          description ||
+          "Welcome to Technical Sewa, a one-stop-shop for all of electronic repair needs. We specialize in repairing a wide range of appliances. "
+        }
+      />
     </>
   );
 };
