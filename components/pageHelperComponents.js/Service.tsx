@@ -105,7 +105,7 @@ const Service = ({ data, PopularBrands }: any) => {
     );
     setFilterwarranty(
       data?.filter((val: any) => {
-        return val.brand_name === "Warranty Products";
+        return val.brand_name === "Warranty Products" && val.image_url !== null;
       })
     );
     setFilterplumber(
@@ -162,6 +162,7 @@ const Service = ({ data, PopularBrands }: any) => {
       })
     );
   };
+  console.log();
   return (
     <>
       <div className="md:hidden flex items-center border-[1px] bg-[#ffeeda] p-3">
@@ -289,34 +290,37 @@ const Service = ({ data, PopularBrands }: any) => {
                 {/* Card container started... */}
                 {/* */}
                 <div className=" flex flex-wrap gap-6 justify-around items-center p-4 md:justify-center md:gap-16">
-                  {filteredAppliances?.map((value: any, index: any) => (
-                    <div className="flex items-center w-[120px] border-r-[1px]  borderline ">
-                      <Link
-                        href={`/service/${value?.url_product_name}`}
-                        key={index}
-                        className={`${
-                          value.image_url
-                            ? "flex flex-col w-[80px] justify-center "
-                            : "hidden"
-                        }`}
-                      >
-                        {value.image_url && (
-                          <>
-                            <Image
-                              width={100}
-                              height={100}
-                              className="h-[60px] w-[80px]"
-                              src={value.image_url && value.image_url}
-                              alt={value.alt2 && value.alt2}
-                            />
-                            <p className="text-[10px]  whitespace-pre-wrap  ">
-                              {value.product_name}
-                            </p>
-                          </>
-                        )}
-                      </Link>
-                    </div>
-                  ))}
+                  {filteredAppliances?.map((value: any, index: any) => {
+                    console.log("image url", value?.image_url);
+                    return (
+                      <div className="flex items-center w-[120px] border-r-[1px]  borderline ">
+                        <Link
+                          href={`/service/${value?.url_product_name}`}
+                          key={index}
+                          className={`${
+                            value.image_url
+                              ? "flex flex-col w-[80px] justify-center "
+                              : "hidden"
+                          }`}
+                        >
+                          {value.image_url && (
+                            <>
+                              <Image
+                                width={100}
+                                height={100}
+                                className="h-[60px] w-[80px]"
+                                src={value.image_url && value.image_url}
+                                alt={value.alt2 && value.alt2}
+                              />
+                              <p className="text-[10px]  whitespace-pre-wrap  ">
+                                {value.product_name}
+                              </p>
+                            </>
+                          )}
+                        </Link>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </ScrollElement>

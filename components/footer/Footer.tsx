@@ -34,46 +34,46 @@ const Footer = () => {
           <div className="">
             <div className=" font-Roboto font-normal text-[12px] md:text-base leading-[24px] text-[#FFF] pt-[8px]">
               <div className="grid grid-cols-4 md:grid-cols-9 px-[10px] md:px-[0px] gap-[10px] my-2">
-                <Link prefetch={false} href="Pokhara">
+                <Link prefetch={false} href="kathmandu">
                   Kathmnadu
                 </Link>
-                <Link prefetch={false} href="Chitwan">
+                <Link prefetch={false} href="lalitpur">
                   Lalitpur
                 </Link>
-                <Link prefetch={false} href="Lalitpur">
+                <Link prefetch={false} href="bhaktapur">
                   Bhaktapur
                 </Link>
-                <Link prefetch={false} href="Ilam">
+                <Link prefetch={false} href="pokhara">
                   Pokhara
                 </Link>
-                <Link prefetch={false} href="Manang">
+                <Link prefetch={false} href="narayangath">
                   Narayangath
                 </Link>
-                <Link prefetch={false} href="Dhangadi">
+                <Link prefetch={false} href="Nepalgunj">
                   Nepalgunj
                 </Link>
-                <Link prefetch={false} href="butwal">
+                <Link prefetch={false} href="biratnagar">
                   Biratnagar
                 </Link>
-                <Link prefetch={false} href="bhairahwa">
+                <Link prefetch={false} href="dharan">
                   Dharan
                 </Link>
-                <Link prefetch={false} href="lumbini">
+                <Link prefetch={false} href="hetouda">
                   Hetouda
                 </Link>
-                <Link prefetch={false} href="jhapa">
+                <Link prefetch={false} href="biratmode">
                   Biratmode
                 </Link>
-                <Link prefetch={false} href="hetauda">
+                <Link prefetch={false} href="damak">
                   Damak
                 </Link>
-                <Link prefetch={false} href="kathmandu">
+                <Link prefetch={false} href="chanpur">
                   Chapur
                 </Link>
-                <Link prefetch={false} href="kavre">
+                <Link prefetch={false} href="mahendranagar">
                   Mahendranagar
                 </Link>
-                <Link prefetch={false} href="mustang">
+                <Link prefetch={false} href="dhanggadi">
                   Dhanggadi
                 </Link>
                 {/* <Link prefetch={false} href="dharan">

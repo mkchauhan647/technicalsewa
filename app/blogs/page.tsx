@@ -24,7 +24,7 @@ const page = async () => {
           <h3 className="text-[25px] md:text-[30px] text-black my-[5px] text-left font-bold">
             All Blogs
           </h3>
-          <div className="flex flex-wrap space-y-2 md:justify-between">
+          <div className="flex flex-wrap space-y-2 md:justify-between mb-[36px]">
             <div className="w-full md:basis-[81%]">
               <div className="grid gap-4 md:grid-cols-1">
                 {blogs?.data?.map((blog: any, i: number) => (
