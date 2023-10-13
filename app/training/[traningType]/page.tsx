@@ -93,10 +93,10 @@ const page = async ({ params }: any) => {
               </div>
             )}
             {data?.detail && (
-              <p
+              <div
                 className="blogdesc"
                 dangerouslySetInnerHTML={{ __html: data?.detail }}
-              ></p>
+              ></div>
             )}
             {data?.image_2 && (
               <div className="w-full h-[500px] cursor-pointer mb-[10px]">

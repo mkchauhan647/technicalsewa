@@ -2,9 +2,9 @@ import React from "react";
 
 const Fotterupcontent = () => {
   return (
-    <div className="bg-[#2591B2] py-[10px] mt-[10px] mb-[35px] md:mb-[60px]">
+    <div className="bg-[#2591B2] py-[21px] mt-[10px] mb-[35px] md:mb-[48px]">
       <div className="max-w-[1280px] mx-auto font-normal text-[12px] md:text-[14px] leading-[21px] text-white px-[10px] md:px-0">
-        <p className="py-[5px]">
+        <p className="pt-[5px] pb-[10px]">
           Technical Sewa Service and Solution Pvt. Ltd is a leading national
           company that deals with various repairing and maintenance services of
           multi brands and multi products viz. mobile devices, electronics and
