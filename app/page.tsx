@@ -15,6 +15,7 @@ import MedicalEquipment from "@/components/repair/MedicalEquipment";
 import Number from "@/components/Number";
 import MidContent from "@/components/MidContent";
 import Fotterupcontent from "@/components/Fotterupcontent";
+import Facebook from "@/components/Facebook";
 
 export default async function Home() {
   const result = await axios.get(
@@ -64,6 +65,7 @@ export default async function Home() {
       >
         <i className="fa fa-whatsapp whatsapp-icon"></i>
       </a>
+      <Facebook />
       <ForSeo />
       <Nav />
       <main>

@@ -44,7 +44,7 @@ const page = async ({ params }: any) => {
             <div className="w-full md:basis-[79%]">
               <h1 className="text-[30px] mb-2 font-bold">{data?.blog_name}</h1>
               {data?.filename && (
-                <div className="w-[100%] h-[340px]">
+                <div className="w-[100%] h-[281px] md:h-[340px]">
                   <img
                     className="object-cover w-full h-full"
                     src={data.filename}

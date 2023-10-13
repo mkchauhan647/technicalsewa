@@ -34,46 +34,98 @@ const Footer = () => {
           <div className="">
             <div className=" font-Roboto font-normal text-[12px] md:text-base leading-[24px] text-[#FFF] pt-[8px]">
               <div className="grid grid-cols-4 md:grid-cols-9 px-[10px] md:px-[0px] gap-[10px] my-2">
-                <Link prefetch={false} href="kathmandu">
+                <Link
+                  prefetch={false}
+                  href="kathmandu"
+                  className="hover:underline"
+                >
                   Kathmnadu
                 </Link>
-                <Link prefetch={false} href="lalitpur">
+                <Link
+                  prefetch={false}
+                  href="lalitpur"
+                  className="hover:underline"
+                >
                   Lalitpur
                 </Link>
-                <Link prefetch={false} href="bhaktapur">
+                <Link
+                  prefetch={false}
+                  href="bhaktapur"
+                  className="hover:underline"
+                >
                   Bhaktapur
                 </Link>
-                <Link prefetch={false} href="pokhara">
+                <Link
+                  prefetch={false}
+                  href="pokhara"
+                  className="hover:underline"
+                >
                   Pokhara
                 </Link>
-                <Link prefetch={false} href="narayangath">
+                <Link
+                  prefetch={false}
+                  href="narayangath"
+                  className="hover:underline"
+                >
                   Narayangath
                 </Link>
-                <Link prefetch={false} href="Nepalgunj">
+                <Link
+                  prefetch={false}
+                  href="Nepalgunj"
+                  className="hover:underline"
+                >
                   Nepalgunj
                 </Link>
-                <Link prefetch={false} href="biratnagar">
+                <Link
+                  prefetch={false}
+                  href="biratnagar"
+                  className="hover:underline"
+                >
                   Biratnagar
                 </Link>
-                <Link prefetch={false} href="dharan">
+                <Link
+                  prefetch={false}
+                  href="dharan"
+                  className="hover:underline"
+                >
                   Dharan
                 </Link>
-                <Link prefetch={false} href="hetouda">
+                <Link
+                  prefetch={false}
+                  href="hetouda"
+                  className="hover:underline"
+                >
                   Hetouda
                 </Link>
-                <Link prefetch={false} href="biratmode">
+                <Link
+                  prefetch={false}
+                  href="biratmode"
+                  className="hover:underline"
+                >
                   Biratmode
                 </Link>
-                <Link prefetch={false} href="damak">
+                <Link prefetch={false} href="damak" className="hover:underline">
                   Damak
                 </Link>
-                <Link prefetch={false} href="chanpur">
+                <Link
+                  prefetch={false}
+                  href="chanpur"
+                  className="hover:underline"
+                >
                   Chapur
                 </Link>
-                <Link prefetch={false} href="mahendranagar">
+                <Link
+                  prefetch={false}
+                  href="mahendranagar"
+                  className="hover:underline"
+                >
                   Mahendranagar
                 </Link>
-                <Link prefetch={false} href="dhanggadi">
+                <Link
+                  prefetch={false}
+                  href="dhanggadi"
+                  className="hover:underline"
+                >
                   Dhanggadi
                 </Link>
                 {/* <Link prefetch={false} href="dharan">
@@ -124,31 +176,31 @@ const Footer = () => {
                 </p>
                 <Link
                   href="/"
-                  className="font-[300px] text-[13px] leading-[15px] "
+                  className="font-[300px] text-[13px] leading-[15px] hover:underline"
                 >
                   Home
                 </Link>
                 <Link
                   href="/partpurja"
-                  className="font-[300px] text-[13px] leading-[15px] "
+                  className="font-[300px] text-[13px] leading-[15px] hover:underline"
                 >
                   Featured Product
                 </Link>
                 <Link
                   href="/about"
-                  className="font-[300px] text-[13px] leading-[15px]"
+                  className="font-[300px] text-[13px] leading-[15px] hover:underline"
                 >
                   About
                 </Link>
                 <Link
                   href="privacy-policy"
-                  className="font-[300px] text-[13px] leading-[15px]"
+                  className="font-[300px] text-[13px] leading-[15px] hover:underline"
                 >
                   Privacy Policy
                 </Link>
                 <Link
                   href="/terms"
-                  className="font-[300px] text-[13px] leading-[15px]"
+                  className="font-[300px] text-[13px] leading-[15px] hover:underline"
                 >
                   Terms and Condition
                 </Link>
@@ -182,7 +234,7 @@ const Footer = () => {
                 <Link
                   href="https://www.youtube.com/channel/UCw2U7K_AKEkws0uzyI4T_kA"
                   target="_blank"
-                  className="flex items-center justify-center bg-[white] w-[35px] h-[35px] rounded-[50%]"
+                  className="flex items-center justify-center bg-[white]  w-[35px] h-[35px] rounded-[50%]"
                 >
                   <BsYoutube className="text-[#2591B2] " size={20} />
                 </Link>
