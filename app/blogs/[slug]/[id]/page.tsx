@@ -38,13 +38,13 @@ const page = async ({ params }: any) => {
         <meta property="og:locale" content="en_US" />
       </Head>
       <Nav />
-      <div className="container flex justify-center py-6 mx-auto">
+      <div className="container flex justify-center py-6 mx-auto px-[10px] md:px-[0px]">
         <div className="max-w-[1200px]">
           <div className="flex flex-wrap gap-[30px] md:gap-0  md:justify-between pb-8">
             <div className="w-full md:basis-[79%]">
               <h1 className="text-[30px] mb-2 font-bold">{data?.blog_name}</h1>
               {data?.filename && (
-                <div className="max-w-[80%] h-[324px]">
+                <div className="w-[100%] h-[340px]">
                   <img
                     className="object-cover w-full h-full"
                     src={data.filename}
