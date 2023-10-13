@@ -19,7 +19,7 @@ const page = async () => {
       <div className="  pt-[20px] pb-[79px] max-w-[1280px]  mx-auto flex flex-col items-center justify-center">
         <div className="px-2  md:p-0">
           {/* header  */}
-          <h2 className="text-[32px] md:text-[42px] text-center md:text-left">
+          <h2 className="text-[32px] md:text-[31px] text-center md:text-left">
             Our Professionals
           </h2>
 
@@ -99,7 +99,7 @@ const page = async () => {
               <p className="md:text-[32px] text-[18px] text-[#a6adbb] font-semibold text-center md:text-left">
                 Download our App
               </p>
-              <p className="text-[14px] md:text-[20px]">
+              <p className="text-[14px] md:text-[27px]">
                 Enter mobile number to get APP download Link
               </p>
             </div>

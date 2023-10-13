@@ -33,8 +33,8 @@ const BlogCard = ({ blog }: any) => {
         <div className="w-full md:basis-[40%]  h-[180px] hover:opacity-95 order-2 md:order-1">
           <Link
             href={`/blogs/${blog?.blog_name
-              ?.replaceAll(" ", "-")
-              .toLowerCase()}`}
+              .replaceAll(" ", "-")
+              .toLowerCase()}/${blog?.blog_id}`}
             className="w-full h-full"
           >
             <img

@@ -76,7 +76,7 @@ const Service = ({ data, PopularBrands }: any) => {
       n: "Cleaning & Pest Control",
     },
   ];
-
+  //flex gap-2 justify-center py-4 md:gap-6
   const [value, setValue] = useState(0);
 
   const [filteredData, setFilteredData] = useState<any>([]);
@@ -105,7 +105,7 @@ const Service = ({ data, PopularBrands }: any) => {
     );
     setFilterwarranty(
       data?.filter((val: any) => {
-        return val.brand_name === "Warranty Products";
+        return val.brand_name === "Warranty Products" && val.image_url !== null;
       })
     );
     setFilterplumber(
@@ -162,6 +162,7 @@ const Service = ({ data, PopularBrands }: any) => {
       })
     );
   };
+  console.log();
   return (
     <>
       <div className="md:hidden flex items-center border-[1px] bg-[#ffeeda] p-3">
@@ -172,35 +173,37 @@ const Service = ({ data, PopularBrands }: any) => {
         />
         <AiOutlineSearch />
       </div>
-      <div className="md:bg-[#f5f5f5]  pt-[20px] pb-[79px] xl:w-[80rem] 2xl:w-[80rem] px-4 sm:w-full m-auto ">
+      <div className="md:bg-[#f5f5f5] flex justify-between  pt-[20px] pb-[79px] xl:w-[80rem] 2xl:w-[80rem] px-4 sm:w-full m-auto ">
         {/* input in mobile responsive  */}
-
-        <div className="sticky top-[80px] w-[16%] 2xl:w-[11%] flex-shrink-0 flex-grow-0 flex flex-col gap-1 overflow-y-auto  md:overflow-hidden max-md:h-auto cursor-pointer ">
-          {services.map(({ n, src }, index): any => (
-            <ScrollLink
-              key={index}
-              activeClass="bgd-[#EFEFEF] bg-[#dddddd] border-0 border-r-4 border-[#2591B2]"
-              onSetActive={() => setActiveview(n)}
-              className={` text-black  md:p-1  pl-2    ${
-                activeview === n ? "font-bold" : ""
-              }`}
-              to={n}
-              spy={true}
-              smooth={true}
-              duration={500}
-              onClick={() => handleTabClick(index, n)}
-              offset={-100}
-            >
-              <div className="flex flex-col gap-2 justify-center max-md:items-center">
-                <div className="md:hidden  text-[#2591b2]">{src}</div>
-                <h3 className="md:text-[black] font-medium text-[12px] md:text-[16px] text-center  md:text-left">
-                  {n}
-                </h3>
-              </div>
-            </ScrollLink>
-          ))}
+        <div className="relative basis-[20%]">
+          <div className="sticky top-[80px]  flex-shrink-0 flex-grow-0 flex flex-col gap-1 overflow-y-auto  md:overflow-hidden max-md:h-auto cursor-pointer ">
+            {services.map(({ n, src }, index): any => (
+              <ScrollLink
+                key={index}
+                activeClass="bgd-[#EFEFEF] bg-[#dddddd] border-0 border-r-4 border-[#2591B2]"
+                onSetActive={() => setActiveview(n)}
+                className={` text-black  md:p-1  pl-2    ${
+                  activeview === n ? "font-bold" : ""
+                }`}
+                to={n}
+                spy={true}
+                smooth={true}
+                duration={500}
+                onClick={() => handleTabClick(index, n)}
+                offset={-100}
+              >
+                <div className="flex flex-col gap-2 justify-center max-md:items-center">
+                  <div className="md:hidden  text-[#2591b2]">{src}</div>
+                  <h3 className="md:text-[black] font-medium text-[12px] md:text-[14px] text-center  md:text-left">
+                    {n}
+                  </h3>
+                </div>
+              </ScrollLink>
+            ))}
+          </div>
         </div>
-        <div className="flex gap-2 justify-center py-4 md:gap-6">
+
+        <div className="basis-[70%] md:basis-[70%]">
           {/* left side services div  */}
           {/* <div className="fixed   rounded-lg md:bg-[#2591b2] md:p-5 flex flex-col gap-4 overflow-y-auto h-[80vh] md:overflow-hidden md:h-auto cursor-pointer">
           {services.map(({ n, src }, index): any => (
@@ -220,7 +223,7 @@ const Service = ({ data, PopularBrands }: any) => {
         </div> */}
 
           {/* right side item div  */}
-          <div className="bg-[#f5f5f5] basis-[70%] md:basis-[70%] ml-[130px] 2xl:ml-[236px] flex flex-col gap-8 text-center ">
+          <div className="bg-[#f5f5f5]  mx-[26px] flex flex-col gap-8 text-center ">
             {/* <div className="md:hidden">
             {services[value] && (
               <h2 className="text-[14px] text-[#2591b2] text-left p-2">
@@ -285,33 +288,39 @@ const Service = ({ data, PopularBrands }: any) => {
                   <span className="text-[#2591b2]">Appliances Repair</span>
                 </div>
                 {/* Card container started... */}
-                <div className="flex flex-wrap gap-6 justify-around items-center p-4 md:justify-center md:gap-16">
-                  {filteredAppliances?.map((value: any, index: any) => (
-                    <Link
-                      href={`/service/${value?.url_product_name}`}
-                      key={index}
-                      className={`${
-                        value.image_url
-                          ? "flex flex-col w-[80px] justify-center"
-                          : "hidden"
-                      }`}
-                    >
-                      {value.image_url && (
-                        <>
-                          <Image
-                            width={100}
-                            height={100}
-                            className="h-[60px] w-[80px]"
-                            src={value.image_url && value.image_url}
-                            alt={value.alt2 && value.alt2}
-                          />
-                          <p className="text-[10px]  whitespace-pre-wrap  ">
-                            {value.product_name}
-                          </p>
-                        </>
-                      )}
-                    </Link>
-                  ))}
+                {/* */}
+                <div className=" flex flex-wrap gap-6 justify-around items-center p-4 md:justify-center md:gap-16">
+                  {filteredAppliances?.map((value: any, index: any) => {
+                    console.log("image url", value?.image_url);
+                    return (
+                      <div className="flex items-center w-[120px] border-r-[1px]  borderline ">
+                        <Link
+                          href={`/service/${value?.url_product_name}`}
+                          key={index}
+                          className={`${
+                            value.image_url
+                              ? "flex flex-col w-[80px] justify-center "
+                              : "hidden"
+                          }`}
+                        >
+                          {value.image_url && (
+                            <>
+                              <Image
+                                width={100}
+                                height={100}
+                                className="h-[60px] w-[80px]"
+                                src={value.image_url && value.image_url}
+                                alt={value.alt2 && value.alt2}
+                              />
+                              <p className="text-[10px]  whitespace-pre-wrap  ">
+                                {value.product_name}
+                              </p>
+                            </>
+                          )}
+                        </Link>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </ScrollElement>
@@ -332,26 +341,30 @@ const Service = ({ data, PopularBrands }: any) => {
                 {/* Card container started... */}
                 <div className="flex flex-wrap gap-16 justify-center items-center p-4">
                   {PopularBrands?.map((value: any, index: any) => (
-                    <div
-                      key={index}
-                      className={`${
-                        value.image_url
-                          ? "flex flex-col justify-center"
-                          : "hidden"
-                      }`}
-                    >
-                      {value.image_url && (
-                        <Link href={`/service/${value?.url_product_name}`}>
-                          <Image
-                            width={100}
-                            height={100}
-                            className="h-[80px] w-[80px]"
-                            src={value.image_url && value.image_url}
-                            alt={value.alt2 && value.alt2}
-                          />
-                          <h3 className="text-[10px]">{value.product_name}</h3>
-                        </Link>
-                      )}
+                    <div className="flex items-center w-[120px] border-r-[1px]  borderline ">
+                      <div
+                        key={index}
+                        className={`${
+                          value.image_url
+                            ? "flex flex-col justify-center"
+                            : "hidden"
+                        }`}
+                      >
+                        {value.image_url && (
+                          <Link href={`/service/${value?.url_product_name}`}>
+                            <Image
+                              width={100}
+                              height={100}
+                              className="h-[80px] w-[80px]"
+                              src={value.image_url && value.image_url}
+                              alt={value.alt2 && value.alt2}
+                            />
+                            <h3 className="text-[10px]">
+                              {value.product_name}
+                            </h3>
+                          </Link>
+                        )}
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -374,26 +387,30 @@ const Service = ({ data, PopularBrands }: any) => {
                 {/* Card container started... */}
                 <div className="flex flex-wrap gap-16 justify-center items-center p-4">
                   {filterwarranty?.map((value: any, index: any) => (
-                    <div
-                      key={index}
-                      className={`${
-                        value.image_url
-                          ? "flex flex-col justify-center"
-                          : "hidden"
-                      }`}
-                    >
-                      {value.image_url && (
-                        <Link href={`/service/${value?.url_product_name}`}>
-                          <Image
-                            width={100}
-                            height={100}
-                            className="h-[80px] w-[80px]"
-                            src={value.image_url && value.image_url}
-                            alt={value.alt2 && value.alt2}
-                          />
-                          <h3 className="text-[10px]">{value.product_name}</h3>
-                        </Link>
-                      )}
+                    <div className="flex items-center w-[120px] border-r-[1px]  borderline ">
+                      <div
+                        key={index}
+                        className={`${
+                          value.image_url
+                            ? "flex flex-col justify-center"
+                            : "hidden"
+                        }`}
+                      >
+                        {value.image_url && (
+                          <Link href={`/service/${value?.url_product_name}`}>
+                            <Image
+                              width={100}
+                              height={100}
+                              className="h-[80px] w-[80px]"
+                              src={value.image_url && value.image_url}
+                              alt={value.alt2 && value.alt2}
+                            />
+                            <h3 className="text-[10px]">
+                              {value.product_name}
+                            </h3>
+                          </Link>
+                        )}
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -416,26 +433,30 @@ const Service = ({ data, PopularBrands }: any) => {
                 {/* Card container started... */}
                 <div className="flex flex-wrap gap-16 justify-center items-center p-4">
                   {filterplumber?.map((value: any, index: any) => (
-                    <div
-                      key={index}
-                      className={`${
-                        value.image_url
-                          ? "flex flex-col justify-center"
-                          : "hidden"
-                      }`}
-                    >
-                      {value.image_url && (
-                        <Link href={`/service/${value?.url_product_name}`}>
-                          <Image
-                            width={100}
-                            height={100}
-                            className="h-[80px] w-[80px]"
-                            src={value.image_url && value.image_url}
-                            alt={value.alt2 && value.alt2}
-                          />
-                          <h3 className="text-[10px]">{value.product_name}</h3>
-                        </Link>
-                      )}
+                    <div className="flex items-center w-[120px] border-r-[1px]  borderline ">
+                      <div
+                        key={index}
+                        className={`${
+                          value.image_url
+                            ? "flex flex-col justify-center"
+                            : "hidden"
+                        }`}
+                      >
+                        {value.image_url && (
+                          <Link href={`/service/${value?.url_product_name}`}>
+                            <Image
+                              width={100}
+                              height={100}
+                              className="h-[80px] w-[80px]"
+                              src={value.image_url && value.image_url}
+                              alt={value.alt2 && value.alt2}
+                            />
+                            <h3 className="text-[10px]">
+                              {value.product_name}
+                            </h3>
+                          </Link>
+                        )}
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -460,26 +481,30 @@ const Service = ({ data, PopularBrands }: any) => {
                 {/* Card container started... */}
                 <div className="flex flex-wrap gap-16 justify-center items-center p-4">
                   {filterair?.map((value: any, index: any) => (
-                    <div
-                      key={index}
-                      className={`${
-                        value.image_url
-                          ? "flex flex-col justify-center"
-                          : "hidden"
-                      }`}
-                    >
-                      {value.image_url && (
-                        <Link href={`/service/${value?.url_product_name}`}>
-                          <Image
-                            width={100}
-                            height={100}
-                            className="h-[80px] w-[80px]"
-                            src={value.image_url && value.image_url}
-                            alt={value.alt2 && value.alt2}
-                          />
-                          <h3 className="text-[10px]">{value.product_name}</h3>
-                        </Link>
-                      )}
+                    <div className="flex items-center w-[120px] border-r-[1px]  borderline ">
+                      <div
+                        key={index}
+                        className={`${
+                          value.image_url
+                            ? "flex flex-col justify-center"
+                            : "hidden"
+                        }`}
+                      >
+                        {value.image_url && (
+                          <Link href={`/service/${value?.url_product_name}`}>
+                            <Image
+                              width={100}
+                              height={100}
+                              className="h-[80px] w-[80px]"
+                              src={value.image_url && value.image_url}
+                              alt={value.alt2 && value.alt2}
+                            />
+                            <h3 className="text-[10px]">
+                              {value.product_name}
+                            </h3>
+                          </Link>
+                        )}
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -502,26 +527,30 @@ const Service = ({ data, PopularBrands }: any) => {
                 {/* Card container started... */}
                 <div className="flex flex-wrap gap-16 justify-center items-center p-4">
                   {filtermobile?.map((value: any, index: any) => (
-                    <div
-                      key={index}
-                      className={`${
-                        value.image_url
-                          ? "flex flex-col justify-center"
-                          : "hidden"
-                      }`}
-                    >
-                      {value.image_url && (
-                        <Link href={`/service/${value?.url_product_name}`}>
-                          <Image
-                            width={100}
-                            height={100}
-                            className="h-[80px] w-[80px]"
-                            src={value.image_url && value.image_url}
-                            alt={value.alt2 && value.alt2}
-                          />
-                          <h3 className="text-[10px]">{value.product_name}</h3>
-                        </Link>
-                      )}
+                    <div className="flex items-center w-[120px] border-r-[1px]  borderline ">
+                      <div
+                        key={index}
+                        className={`${
+                          value.image_url
+                            ? "flex flex-col justify-center"
+                            : "hidden"
+                        }`}
+                      >
+                        {value.image_url && (
+                          <Link href={`/service/${value?.url_product_name}`}>
+                            <Image
+                              width={100}
+                              height={100}
+                              className="h-[80px] w-[80px]"
+                              src={value.image_url && value.image_url}
+                              alt={value.alt2 && value.alt2}
+                            />
+                            <h3 className="text-[10px]">
+                              {value.product_name}
+                            </h3>
+                          </Link>
+                        )}
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -544,26 +573,30 @@ const Service = ({ data, PopularBrands }: any) => {
                 {/* Card container started... */}
                 <div className="flex flex-wrap gap-16 justify-center items-center p-4">
                   {filtercctv?.map((value: any, index: any) => (
-                    <div
-                      key={index}
-                      className={`${
-                        value.image_url
-                          ? "flex flex-col justify-center"
-                          : "hidden"
-                      }`}
-                    >
-                      {value.image_url && (
-                        <Link href={`/service/${value?.url_product_name}`}>
-                          <Image
-                            width={100}
-                            height={100}
-                            className="h-[80px] w-[80px]"
-                            src={value.image_url && value.image_url}
-                            alt={value.alt2 && value.alt2}
-                          />
-                          <h3 className="text-[10px]">{value.product_name}</h3>
-                        </Link>
-                      )}
+                    <div className="flex items-center w-[120px] border-r-[1px]  borderline ">
+                      <div
+                        key={index}
+                        className={`${
+                          value.image_url
+                            ? "flex flex-col justify-center"
+                            : "hidden"
+                        }`}
+                      >
+                        {value.image_url && (
+                          <Link href={`/service/${value?.url_product_name}`}>
+                            <Image
+                              width={100}
+                              height={100}
+                              className="h-[80px] w-[80px]"
+                              src={value.image_url && value.image_url}
+                              alt={value.alt2 && value.alt2}
+                            />
+                            <h3 className="text-[10px]">
+                              {value.product_name}
+                            </h3>
+                          </Link>
+                        )}
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -586,26 +619,30 @@ const Service = ({ data, PopularBrands }: any) => {
                 {/* Card container started... */}
                 <div className="flex flex-wrap gap-16 justify-center items-center p-4">
                   {filtercomputer?.map((value: any, index: any) => (
-                    <div
-                      key={index}
-                      className={`${
-                        value.image_url
-                          ? "flex flex-col justify-center"
-                          : "hidden"
-                      }`}
-                    >
-                      {value.image_url && (
-                        <Link href={`/service/${value?.url_product_name}`}>
-                          <Image
-                            width={100}
-                            height={100}
-                            className="h-[80px] w-[80px]"
-                            src={value.image_url && value.image_url}
-                            alt={value.alt2 && value.alt2}
-                          />
-                          <h3 className="text-[10px]">{value.product_name}</h3>
-                        </Link>
-                      )}
+                    <div className="flex items-center w-[120px] border-r-[1px]  borderline ">
+                      <div
+                        key={index}
+                        className={`${
+                          value.image_url
+                            ? "flex flex-col justify-center"
+                            : "hidden"
+                        }`}
+                      >
+                        {value.image_url && (
+                          <Link href={`/service/${value?.url_product_name}`}>
+                            <Image
+                              width={100}
+                              height={100}
+                              className="h-[80px] w-[80px]"
+                              src={value.image_url && value.image_url}
+                              alt={value.alt2 && value.alt2}
+                            />
+                            <h3 className="text-[10px]">
+                              {value.product_name}
+                            </h3>
+                          </Link>
+                        )}
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -628,26 +665,30 @@ const Service = ({ data, PopularBrands }: any) => {
                 {/* Card container started... */}
                 <div className="flex flex-wrap gap-16 justify-center items-center p-4">
                   {filtermedical?.map((value: any, index: any) => (
-                    <div
-                      key={index}
-                      className={`${
-                        value.image_url
-                          ? "flex flex-col justify-center"
-                          : "hidden"
-                      }`}
-                    >
-                      {value.image_url && (
-                        <Link href={`/service/${value?.url_product_name}`}>
-                          <Image
-                            width={100}
-                            height={100}
-                            className="h-[80px] w-[80px]"
-                            src={value.image_url && value.image_url}
-                            alt={value.alt2 && value.alt2}
-                          />
-                          <h3 className="text-[10px]">{value.product_name}</h3>
-                        </Link>
-                      )}
+                    <div className="flex items-center w-[120px] border-r-[1px]  borderline ">
+                      <div
+                        key={index}
+                        className={`${
+                          value.image_url
+                            ? "flex flex-col justify-center"
+                            : "hidden"
+                        }`}
+                      >
+                        {value.image_url && (
+                          <Link href={`/service/${value?.url_product_name}`}>
+                            <Image
+                              width={100}
+                              height={100}
+                              className="h-[80px] w-[80px]"
+                              src={value.image_url && value.image_url}
+                              alt={value.alt2 && value.alt2}
+                            />
+                            <h3 className="text-[10px]">
+                              {value.product_name}
+                            </h3>
+                          </Link>
+                        )}
+                      </div>
                     </div>
                   ))}
                 </div>

@@ -16,7 +16,7 @@ const page = async () => {
         {/* text and option div */}
         <div className="flex justify-between items-center border-b-[1px] pb-10">
           <div className="flex flex-col gap-4">
-            <h2 className="text-[32px] leading-9">Featured Products</h2>
+            <h2 className="text-[32px] leading-9">Part Purja</h2>
             <p className="text-[14px] ">
               {/* page number */}
               Showing 1-20 of 200
@@ -90,7 +90,7 @@ export default page;
 
 export async function generateMetadata(){
 
-  return{
-    title:`PartPurja | Technical sewa`
-  }
+  return {
+    title: `PartPurja | Technical sewa`,
+  };
 }

@@ -32,7 +32,7 @@ const SlideCard = ({ length, data }: any) => {
     },
     1280: {
       slidesPerView: length,
-      spaceBetween: 20,
+      spaceBetween: 25,
     },
     // Add more breakpoints as needed
   };
@@ -42,7 +42,7 @@ const SlideCard = ({ length, data }: any) => {
       className="mySwiper overflow-hidden flex justify-center items-center cursor-pointer px-10 pb-12 pt-4"
       autoplay={{
         delay: 2500,
-        disableOnInteraction: true,
+        disableOnInteraction: false,
       }}
       breakpoints={breakpoints}
       resizeObserver
@@ -65,7 +65,7 @@ const SlideCard = ({ length, data }: any) => {
                   "https://smartcare.com.np/techsewa"
                 )}
                 alt={ele?.alt2}
-                className="bg-white h-[120px] w-[150px] border-[1px] border-gray-100 rounded-sm hover:scale-[1.1] transition-hover duration-300"
+                className="bg-white h-[120px] w-[190px] border-[1px] border-gray-100 rounded-sm hover:scale-[1.1] transition-hover duration-300"
               />
               <p className="text-[16px] text-center  font-bold">
                 {ele?.product_name}

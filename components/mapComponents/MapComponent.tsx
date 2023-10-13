@@ -105,12 +105,12 @@ const MapComponent = ({ onProceed }: IProps) => {
 
   return (
     <div className="flex max-w-[1280px] m-auto  justify-center items-center  ">
-      <div className="map-container w-full my-4 p-4 shadow-md rounded-md bg-[#f5f5f5] ">
-        <div className="flex flex-col gap-4">
+      <div className="map-container w-full mt-[16px] mb-[39px] p-[9px] shadow-md rounded-md bg-[#f5f5f5] ">
+        <div className="flex flex-col gap-[3px]">
           <h1 className="text-[#203EB2] font-bold">Location Info</h1>
           <h3>Enter Address</h3>
         </div>
-        <div className="flex gap-4 items-center my-4 max-md:flex-col">
+        <div className="flex gap-4 items-center my-[8px] md:my-4 max-md:flex-col">
           {/* <Autocomplete>
             <input
               ref={originRef}
@@ -141,37 +141,42 @@ const MapComponent = ({ onProceed }: IProps) => {
             Direction
           </button> */}
         </div>
-        <div className="w-[full] h-[50vh]  p-4 ">
-          <GoogleMap
-            center={center}
-            zoom={14}
-            mapContainerStyle={{ width: "100%", height: "100%" }}
-          >
-            <Marker position={center} />
-            {directionResponse && (
-              <DirectionsRenderer directions={directionResponse} />
-            )}
-          </GoogleMap>
-        </div>
-        <div className="mt-2">
-          <p className="font-bold">Address:</p>
-          <p>
-            Latitude : {center.lat} Longitude : {center.lng}
-          </p>
-        </div>
-        <div className="flex gap-5 justify-center">
-          <button
-            className=" bg-[#2591B2] rounded-[3px] cursor-pointer text-white px-[13px] py-[8.5px]"
-            onClick={() => router.back()}
-          >
-            Back
-          </button>
-          <button
-            className=" bg-[#2591B2] rounded-[3px] cursor-pointer text-white px-[13px] py-[8.5px]"
-            onClick={handlePlaceService}
-          >
-            Proceed
-          </button>
+        <div className="w-[full] h-[50vh] flex-wrap p-4 flex justify-between ">
+          <div className="w-full md:basis-[58%] h-[46%] md:h-full">
+            <GoogleMap
+              center={center}
+              zoom={14}
+              mapContainerStyle={{ width: "100%", height: "100%" }}
+            >
+              <Marker position={center} />
+              {directionResponse && (
+                <DirectionsRenderer directions={directionResponse} />
+              )}
+            </GoogleMap>
+          </div>
+
+          <div className="w-full md:basis-[37%]">
+            <div className="mt-2 ">
+              <p className="font-bold">Address:</p>
+              <p>
+                Latitude : {center.lat} Longitude : {center.lng}
+              </p>
+            </div>
+            <div className="flex gap-5 mt-[20px]">
+              <button
+                className=" bg-[#2591B2] rounded-[3px] cursor-pointer text-white px-[13px] py-[8.5px]"
+                onClick={() => router.back()}
+              >
+                Back
+              </button>
+              <button
+                className=" bg-[#2591B2] rounded-[3px] cursor-pointer text-white px-[13px] py-[8.5px]"
+                onClick={handlePlaceService}
+              >
+                Proceed
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

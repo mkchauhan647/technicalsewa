@@ -24,6 +24,10 @@ export default function RootLayout({
           sizes="180x180"
           href="/../assets/apple-icon.png"
         />
+        <link
+          rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+        />
       </head>
       <body className={inter.className}>{children}</body>
     </html>

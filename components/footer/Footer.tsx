@@ -23,65 +23,117 @@ const Footer = () => {
 
   return (
     <div>
-      <div className="bg-[#2591B2] ">
+      <div className="bg-[#2591B2] relative">
         <div className="py-[10px]   max-w-[1280px] mx-auto">
           {/* heading of footer */}
 
-          {/* <div className="font-semibold text-base leading-[19px] text-[#FFF] font-Roboto text-center ">
+          <div className=" border border-solid border-white font-semibold text-[12px] md:text-base leading-[19px] text-[#FFF] font-Roboto text-center bg-[#2591B2] shadow-xl max-w-[300px] flex justify-center items-center px-[40px] h-[43px] absolute left-[50%] tranform translate-x-[-50%] top-[-4%] md:top-[-9%] rounded-md">
             We Are Available in
-          </div> */}
+          </div>
           {/* link of location */}
           <div className="">
-            <div className=" font-Roboto font-normal text-[12px] md:text-base leading-[24px] text-[#FFF]">
+            <div className=" font-Roboto font-normal text-[12px] md:text-base leading-[24px] text-[#FFF] pt-[8px]">
               <div className="grid grid-cols-4 md:grid-cols-9 px-[10px] md:px-[0px] gap-[10px] my-2">
-                <Link prefetch={false} href="Pokhara">
-                  Pokhara
+                <Link
+                  prefetch={false}
+                  href="kathmandu"
+                  className="hover:underline"
+                >
+                  Kathmnadu
                 </Link>
-                <Link prefetch={false} href="Chitwan">
-                  Chitwan
-                </Link>
-                <Link prefetch={false} href="Lalitpur">
+                <Link
+                  prefetch={false}
+                  href="lalitpur"
+                  className="hover:underline"
+                >
                   Lalitpur
                 </Link>
-                <Link prefetch={false} href="Ilam">
-                  Ilam
+                <Link
+                  prefetch={false}
+                  href="bhaktapur"
+                  className="hover:underline"
+                >
+                  Bhaktapur
                 </Link>
-                <Link prefetch={false} href="Manang">
-                  Manang
+                <Link
+                  prefetch={false}
+                  href="pokhara"
+                  className="hover:underline"
+                >
+                  Pokhara
                 </Link>
-                <Link prefetch={false} href="Dhangadi">
-                  Dhangadi
+                <Link
+                  prefetch={false}
+                  href="narayangath"
+                  className="hover:underline"
+                >
+                  Narayangath
                 </Link>
-                <Link prefetch={false} href="butwal">
-                  Butwal
+                <Link
+                  prefetch={false}
+                  href="Nepalgunj"
+                  className="hover:underline"
+                >
+                  Nepalgunj
                 </Link>
-                <Link prefetch={false} href="bhairahwa">
-                  Bhairahawa
+                <Link
+                  prefetch={false}
+                  href="biratnagar"
+                  className="hover:underline"
+                >
+                  Biratnagar
                 </Link>
-                <Link prefetch={false} href="lumbini">
-                  Lumbini
+                <Link
+                  prefetch={false}
+                  href="dharan"
+                  className="hover:underline"
+                >
+                  Dharan
                 </Link>
-                <Link prefetch={false} href="jhapa">
-                  Jhapa
+                <Link
+                  prefetch={false}
+                  href="hetouda"
+                  className="hover:underline"
+                >
+                  Hetouda
                 </Link>
-                <Link prefetch={false} href="hetauda">
-                  Hetauda
+                <Link
+                  prefetch={false}
+                  href="biratmode"
+                  className="hover:underline"
+                >
+                  Biratmode
                 </Link>
-                <Link prefetch={false} href="kathmandu">
-                  Kathmandu
+                <Link prefetch={false} href="damak" className="hover:underline">
+                  Damak
                 </Link>
-                <Link prefetch={false} href="kavre">
-                  Kavre
+                <Link
+                  prefetch={false}
+                  href="chanpur"
+                  className="hover:underline"
+                >
+                  Chapur
                 </Link>
-                <Link prefetch={false} href="mustang">
-                  Mustang
+                <Link
+                  prefetch={false}
+                  href="mahendranagar"
+                  className="hover:underline"
+                >
+                  Mahendranagar
                 </Link>
-                <Link prefetch={false} href="dharan">
+                <Link
+                  prefetch={false}
+                  href="dhanggadi"
+                  className="hover:underline"
+                >
+                  Dhanggadi
+                </Link>
+                {/* <Link prefetch={false} href="dharan">
                   Dharan
                 </Link>
                 <Link prefetch={false} href="sindupalchowk">
                   Sindupalchowk
-                </Link>
+                </Link> */}
               </div>
               {/* <div className="flex  gap-[10px]">
                
@@ -96,8 +148,8 @@ const Footer = () => {
           </div>
           <hr />
           {/* Next Foter */}
-          <div className="flex flex-col md:flex-row items-center justify-between  mt-[10px] gap-4 ">
-            <div className="flex flex-col gap-4 items-center   ">
+          <div className="flex flex-col md:flex-row md:items-center justify-between  mt-[10px] gap-4 px-[10px] md:px-[0px]">
+            <div className="flex flex-row md:flex-col gap-4 items-center   ">
               <Link
                 href=""
                 className="w-[210px] h-[52px] 2xl:h-[67px] bg-[#FFF] p-[3px] rounded-[3px]"
@@ -117,38 +169,38 @@ const Footer = () => {
                 <IoLocationSharp className="text-green-500" size={20} />
               </Link>
             </div>
-            <div className="flex flex-col gap-4 md:gap-[48px]   md:flex-row">
+            <div className="flex  gap-4 md:gap-[48px] flex-row ">
               <div className="flex flex-col font-Roboto text-[#FFF] gap-[10px]">
                 <p className="font-bold text-[14px] leading-[16px]">
                   Quick Links
                 </p>
                 <Link
                   href="/"
-                  className="font-[300px] text-[13px] leading-[15px] "
+                  className="font-[300px] text-[13px] leading-[15px] hover:underline"
                 >
                   Home
                 </Link>
                 <Link
                   href="/partpurja"
-                  className="font-[300px] text-[13px] leading-[15px]"
+                  className="font-[300px] text-[13px] leading-[15px] hover:underline"
                 >
                   Featured Product
                 </Link>
                 <Link
                   href="/about"
-                  className="font-[300px] text-[13px] leading-[15px]"
+                  className="font-[300px] text-[13px] leading-[15px] hover:underline"
                 >
                   About
                 </Link>
                 <Link
                   href="privacy-policy"
-                  className="font-[300px] text-[13px] leading-[15px]"
+                  className="font-[300px] text-[13px] leading-[15px] hover:underline"
                 >
                   Privacy Policy
                 </Link>
                 <Link
                   href="/terms"
-                  className="font-[300px] text-[13px] leading-[15px]"
+                  className="font-[300px] text-[13px] leading-[15px] hover:underline"
                 >
                   Terms and Condition
                 </Link>
@@ -182,7 +234,7 @@ const Footer = () => {
                 <Link
                   href="https://www.youtube.com/channel/UCw2U7K_AKEkws0uzyI4T_kA"
                   target="_blank"
-                  className="flex items-center justify-center bg-[white] w-[35px] h-[35px] rounded-[50%]"
+                  className="flex items-center justify-center bg-[white]  w-[35px] h-[35px] rounded-[50%]"
                 >
                   <BsYoutube className="text-[#2591B2] " size={20} />
                 </Link>
@@ -213,7 +265,7 @@ const Footer = () => {
         </div>
       </div>
       {/* copyright footer */}
-      <div className="py-[9px] bg-[#054355]">
+      <div className="py-[9px] bg-[#054355] px-[10px] md:px-0">
         <h6 className="font-light text-[14px] text-white/[0.5] tracking-[0.3px] leading-[14.06px] text-center">
           Copyright {new Date().getFullYear()} Technical Sewa All Rights
           Reserved

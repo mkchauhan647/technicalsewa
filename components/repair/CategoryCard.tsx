@@ -8,7 +8,7 @@ type props = {
   brandName: string;
   imgAlt: string;
 };
-
+// h-[119px] p-[11px]
 const CategoryCard = ({ imageUrl, brandName, imgAlt, allBrands, id }: any) => {
   const [show, setShow] = useState(false);
 
@@ -17,19 +17,19 @@ const CategoryCard = ({ imageUrl, brandName, imgAlt, allBrands, id }: any) => {
   });
 
   return (
-    <div>
+    <div className="right">
       <div
         onClick={() => {
           setShow(!show);
         }}
-        className="flex flex-col cursor-pointer items-center border-2px border-solid border-[#d3d1d1] border-l-0 border-t-0  md:gap-3 w-[92px] md:w-[144px]"
+        className="flex flex-col cursor-pointer items-center bordercategory md:gap-3 w-[92px] md:w-[144px] "
       >
         <img
           src={imageUrl}
           alt={imgAlt}
           width={30}
           height={30}
-          className="w-[30px] h-[30px] md:w-[40px] md:h-[40px]"
+          className="w-[30px] h-[30px] md:w-[40px] md:h-[40px] hover:scale-110 duration-100"
         />
         <p className="text-[12px] md:text-[13px] text-center leading-[15px] md:leading-[17px]">
           {brandName}
