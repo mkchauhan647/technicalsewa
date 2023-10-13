@@ -51,10 +51,6 @@ const BlogsByCategoriesPage = async ({ params }: any) => {
 export default BlogsByCategoriesPage;
 
 export async function generateMetadata() {
-  // const seocontet = await fetch(
-  //   "https://smartcare.com.np/techsewa/publiccontrol/publicmasterconfig/getSeoContent?url=https://smartcare.com.np/blogs"
-  // );
-  // const seocontetdata:[] = await seocontet.json();
 
   return {
     title: `Blogs | Technical sewa`,
