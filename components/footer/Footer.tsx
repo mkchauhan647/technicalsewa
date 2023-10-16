@@ -210,7 +210,7 @@ const Footer = () => {
                   Contact us
                 </Link>
                 <div
-                  className="font-[300px] text-[13px] leading-[15px]"
+                  className="font-[300px] text-[13px] leading-[15px] contact"
                   dangerouslySetInnerHTML={{ __html: description }}
                 />
               </div>

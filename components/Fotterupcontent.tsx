@@ -20,10 +20,7 @@ const Fotterupcontent = () => {
       <div className="max-w-[1280px] mx-auto font-normal text-[12px] md:text-[14px] leading-[21px] text-white px-[2px] md:px-0">
         {paragraphs?.map((paragraph: any, index: any) => (
           <div key={index} className="p-1  rounded ">
-            <div
-              className="text-white text-justify text-[14px]"
-              dangerouslySetInnerHTML={{ __html: `${paragraph}</p>` }}
-            />
+            <div dangerouslySetInnerHTML={{ __html: `${paragraph}</p>` }} />
           </div>
         ))}
       </div>

@@ -94,10 +94,11 @@ const page = async ({ params }: any) => {
               </div>
             )}
             {data?.detail && (
-              <p
-                className="text-gray-600"
+              <div
+                style={{ color: "black" }}
+                className="trainingdescription"
                 dangerouslySetInnerHTML={{ __html: data?.detail }}
-              ></p>
+              ></div>
             )}
             {data?.image_2 && (
               <div className="w-full h-[500px] cursor-pointer mb-[10px]">
