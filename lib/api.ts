@@ -104,7 +104,6 @@ export async function getBlogsByCategoryId(id: string) {
 // get seo by page url
 
 export async function getSEOByPageURL(url: string) {
-  console.log("getting seo for ? ", url);
   try {
     const res = await fetch(
       `${baseUrl}/techsewa/publiccontrol/publicmasterconfig/getSeoContent?url=${url}`,
