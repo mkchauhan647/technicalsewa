@@ -154,6 +154,17 @@ const Service = ({ data, PopularBrands }: any) => {
       })
     );
   }, [data]);
+
+  const getUniqueBrands = () => {
+    let uniqueBrands: string[] = [];
+    data.forEach((d: any, index: number) => {
+      if (!uniqueBrands.includes(d.brand_name)) {
+        uniqueBrands.push(d.brand_name);
+      }
+    });
+
+    return uniqueBrands;
+  };
   const handleTabClick = (index: any, n: any) => {
     setValue(index);
     setFilteredData(
@@ -162,7 +173,7 @@ const Service = ({ data, PopularBrands }: any) => {
       })
     );
   };
-  console.log();
+  const uniqueBrandData = getUniqueBrands();
   return (
     <>
       <div className="md:hidden flex items-center border-[1px] bg-[#ffeeda] p-3">
@@ -177,25 +188,25 @@ const Service = ({ data, PopularBrands }: any) => {
         {/* input in mobile responsive  */}
         <div className="relative basis-[20%]">
           <div className="sticky top-[80px]  flex-shrink-0 flex-grow-0 flex flex-col gap-1 overflow-y-auto  md:overflow-hidden max-md:h-auto cursor-pointer ">
-            {services.map(({ n, src }, index): any => (
+            {uniqueBrandData?.map((val: any, index: number) => (
               <ScrollLink
                 key={index}
                 activeClass="bgd-[#EFEFEF] bg-[#dddddd] border-0 border-r-4 border-[#2591B2]"
-                onSetActive={() => setActiveview(n)}
+                onSetActive={() => setActiveview(val)}
                 className={` text-black  md:p-1  pl-2    ${
-                  activeview === n ? "font-bold" : ""
+                  activeview === val ? "font-bold" : ""
                 }`}
-                to={n}
+                to={val}
                 spy={true}
                 smooth={true}
                 duration={500}
-                onClick={() => handleTabClick(index, n)}
+                onClick={() => handleTabClick(index, val)}
                 offset={-100}
               >
                 <div className="flex flex-col gap-2 justify-center max-md:items-center">
-                  <div className="md:hidden  text-[#2591b2]">{src}</div>
+                  <div className="md:hidden  text-[#2591b2]">{}</div>
                   <h3 className="md:text-[black] font-medium text-[12px] md:text-[14px] text-center  md:text-left">
-                    {n}
+                    {val}
                   </h3>
                 </div>
               </ScrollLink>
@@ -291,7 +302,6 @@ const Service = ({ data, PopularBrands }: any) => {
                 {/* */}
                 <div className=" flex flex-wrap gap-6 justify-around items-center p-4 md:justify-center md:gap-16">
                   {filteredAppliances?.map((value: any, index: any) => {
-                    console.log("image url", value?.image_url);
                     return (
                       <div className="flex items-center w-[120px] border-r-[1px] border-black borderline ">
                         <Link
