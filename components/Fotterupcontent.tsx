@@ -17,7 +17,7 @@ const Fotterupcontent = () => {
   const paragraphs = desc?.description?.split("</p>");
   return (
     <div className="bg-[#2591B2] py-[21px] mt-[10px] mb-[35px] md:mb-[48px]">
-      <div className="max-w-[1280px] mx-auto font-normal text-[12px] md:text-[14px] leading-[21px] text-white px-[2px] md:px-0">
+      <div className="max-w-[1280px]  mx-auto font-normal text-[12px] md:text-[14px] leading-[21px] text-white px-[2px] md:px-0 footerup">
         {paragraphs?.map((paragraph: any, index: any) => (
           <div key={index} className="p-1  rounded ">
             <div dangerouslySetInnerHTML={{ __html: `${paragraph}</p>` }} />

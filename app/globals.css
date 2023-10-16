@@ -157,4 +157,7 @@ body {
       color:black !important;
       font-size: 10pt;
     }
-   
+   .footerup p span{
+    color:white !important;
+    font-size:14px
+   }
