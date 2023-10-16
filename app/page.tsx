@@ -13,11 +13,9 @@ import Footer from "@/components/footer/Footer";
 import MedicalEquipment from "@/components/repair/MedicalEquipment";
 import Number from "@/components/Number";
 import MidContent from "@/components/MidContent";
-import { SEOBase } from "@/components/SEOBase";
 import { getSEOByPageURL } from "@/lib/api";
 import Fotterupcontent from "@/components/Fotterupcontent";
 import Facebook from "@/components/Facebook";
-import ForSeo from "@/components/ForSeo";
 
 export default async function Home() {
   const result = await axios.get(
@@ -59,8 +57,6 @@ export default async function Home() {
 
   return (
     <>
-      <SEOBase />
-      {/* <ForSeo /> */}
       <Nav />
       <main>
         <HeroSection />

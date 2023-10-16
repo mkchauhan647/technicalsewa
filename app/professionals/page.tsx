@@ -1,6 +1,7 @@
 import Nav from "@/components/Nav";
 import ProfessionalsCardButton from "@/components/ProfessionalsCardButton";
 import Footer from "@/components/footer/Footer";
+import { getSEOByPageURL } from "@/lib/api";
 import Link from "next/link";
 import React from "react";
 import { RiLayoutGridFill } from "react-icons/ri";
@@ -126,7 +127,31 @@ const page = async () => {
 export default page;
 
 export async function generateMetadata() {
+  const seoData = await getSEOByPageURL(
+    `https://technicalsewa.com/professionals`
+  );
 
+  const seoExists = seoData?.content && !Array.isArray(seoData?.content);
+
+  const seoContent = seoData?.content;
+
+  if (seoExists) {
+    return {
+      title: `${
+        seoExists ? seoContent?.page_title : "Professionals | Technical sewa"
+      } `,
+      description: `${seoContent?.description}`,
+      keywords: `${seoContent?.key_words}`,
+      openGraph: {
+        title: `${
+          seoExists ? seoContent?.page_title : "Professionals | Technical sewa"
+        } `,
+        description: `${seoContent?.description} `,
+        url: seoContent?.page_url,
+        type: "website",
+      },
+    };
+  }
   return {
     title: `Professionals | Technical sewa`,
   };
