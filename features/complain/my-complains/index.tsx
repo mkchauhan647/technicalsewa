@@ -36,7 +36,10 @@ export default function UserComplains() {
     if (user) getComplainsData();
   }, [user, page]);
 
-  if (!isAuthenticated) push("/");
+  if (!isAuthenticated) {
+    push("/");
+    return <></>;
+  }
   return (
     <div className="container mx-auto">
       <ComplainsTable

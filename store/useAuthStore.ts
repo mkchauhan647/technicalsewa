@@ -11,6 +11,7 @@ export interface CustomerInfo {
   name: string;
   dealer: string;
   address: string;
+  phone?: string;
   mobile: string;
   email: string;
   type: string;
