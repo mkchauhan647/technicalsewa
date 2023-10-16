@@ -138,3 +138,23 @@ body {
     .catline:nth-child(4n){
       border-right:0px;
     }
+    .trainingdescription{
+      color:black !important;
+    }
+    .trainingdescription h1 span{
+     color:black !important;
+     font-size:10pt;
+    };
+    .trainingdescription p span{
+      color:black !important;
+      font-size:10pt;
+    };
+    .trainingdescription h2 span{
+      color:black !important;
+      font-size: 10pt;
+    }
+    .trainingdescription p strong{
+      color:black !important;
+      font-size: 10pt;
+    }
+   

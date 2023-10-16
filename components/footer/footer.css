@@ -6,7 +6,7 @@ h5 span{
 h5{
     line-height: 1.5 !important;
 }
-p span{
+.contact p span{
     font-size: 10pt !important;
     color:white !important;
-}
+} 
