@@ -16,53 +16,55 @@ import MidContent from "@/components/MidContent";
 import { getSEOByPageURL } from "@/lib/api";
 import Fotterupcontent from "@/components/Fotterupcontent";
 import Facebook from "@/components/Facebook";
+import ServicesSLiders from "@/features/home/servicesSliders";
 
 export default async function Home() {
   const result = await axios.get(
-    `${baseUrl}techsewa/masterconfig/publicmasterconfig/getSliderListpop1`
+    `${baseUrl}/techsewa/masterconfig/publicmasterconfig/getSliderListpop1`
   );
 
-  const allBrands = result?.data?.brands;
+  let allBrands = result?.data?.brands;
+  allBrands?.sort((a: any, b: any) => +a?.brand_id - +b?.brand_id);
 
   // dataa for ApplicationRepairData
   const applicationRepairData = result?.data?.brands?.filter((val: any) => {
     return val.brand_id === "62";
   });
-
   const popularBrandsData = result?.data?.brands?.filter((val: any) => {
     return val.brand_id === "76";
   });
-
   const warrantyProductsData = result?.data?.brands?.filter((val: any) => {
     return val.brand_id === "61";
   });
-
   const electiricianPlumbersData = result?.data?.brands?.filter((val: any) => {
     return val.brand_id === "63";
   });
-
   const medicalEquipmentData = result?.data?.brands?.filter((val: any) => {
     return val.brand_id === "67";
   });
-
   const computerPrinterData = result?.data?.brands?.filter((val: any) => {
     return val.brand_id === "65";
   });
+  ///
 
+  const brands = new Set(allBrands?.map((b: any) => b?.brand_name));
   return (
     <>
       <Nav />
       <main>
         <HeroSection />
         <Categories allBrands={allBrands} />
-        <ApplicationRepair applicationRepairData={applicationRepairData} />
+        <ServicesSLiders brands={Array.from(brands)} data={allBrands} />
+
+        {/* <ApplicationRepair applicationRepairData={applicationRepairData} />
         <PopularBrands popularBrandsData={popularBrandsData} />
         <Warrantyproducts warrantyProductsData={warrantyProductsData} />
         <ElectricianPlumbers
           computerPrinterData={computerPrinterData}
           electiricianPlumbersData={electiricianPlumbersData}
         />
-        <MedicalEquipment medicalEquipmentData={medicalEquipmentData} />
+        <MedicalEquipment medicalEquipmentData={medicalEquipmentData} /> */}
+
         <Number />
 
         <WhyChooseUs />

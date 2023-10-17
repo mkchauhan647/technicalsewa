@@ -24,8 +24,8 @@ export default function ComplainView({ complainId }: { complainId: number }) {
   return (
     <div className="container mx-auto">
       <div className="py-4 space-x-4 space-y-4">
-        <div className="flex">
-          <div className="md:col-span-6">
+        <div className="md:grid md:grid-cols-2">
+          <div className="">
             <div className="px-2 text-white bg-primary">Customer Info</div>
             <div className="flex">
               <div className="md:col-span-6">
@@ -36,7 +36,7 @@ export default function ComplainView({ complainId }: { complainId: number }) {
               </div>
             </div>
           </div>
-          <div className="md:col-span-6">
+          <div className="">
             <div className="px-2 text-white bg-primary">Product Information</div>
             <div className="flex">
               <div className="md:col-span-6">
