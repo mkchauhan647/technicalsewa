@@ -173,8 +173,3 @@ const ForSeo = () => {
 };
 
 export default ForSeo;
-
-// export const seocontent = async ()=>{
-//   const seoData = await fetch("https://smartcare.com.np/multiservice/publiccontrol/publicmasterconfig/getSeoContent?url=https://smartcare.com.np/service/lg/led-tv")
-//   console.log( await seoData.json())
-// }

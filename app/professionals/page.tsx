@@ -10,7 +10,7 @@ import { TfiLayoutColumn3Alt } from "react-icons/tfi";
 // professionals page
 const page = async () => {
   const professinals = await fetch(
-    "https://smartcare.com.np/multiservice/publiccontrol/getTechnicianProfilePublic"
+    "https://smartcare.com.np/techsewa/publiccontrol/getTechnicianProfilePublic"
   );
   const professionalsData = await professinals.json();
 
@@ -18,7 +18,7 @@ const page = async () => {
     <>
       <Nav />
       <div className="  pt-[20px] pb-[79px] max-w-[1280px]  mx-auto flex flex-col items-center justify-center">
-        <div className="px-2  md:p-0">
+        <div className="px-2 md:p-0">
           {/* header  */}
           <h2 className="text-[32px] md:text-[31px] text-center md:text-left">
             Our Professionals
@@ -40,7 +40,7 @@ const page = async () => {
           </div>
 
           {/* card  */}
-          <div className="grid grid-cols-1 gap-5 px-2 py-4  md:grid-cols-3 md:py-8 md:px-0">
+          <div className="grid grid-cols-1 gap-5 px-2 py-4 md:grid-cols-3 md:py-8 md:px-0">
             {professionalsData.map((s: any, index: any) => (
               <div
                 key={index}

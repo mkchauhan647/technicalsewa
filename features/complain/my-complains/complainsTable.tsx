@@ -9,25 +9,39 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { Complain } from "./types";
 import { TablePagination } from "@mui/material";
+import { useRouter } from "next/navigation";
 
 export default function ComplainsTable({
+  loading,
   page,
   data,
   total,
   setPage,
 }: {
+  loading: boolean;
   data?: Complain[];
   page: number;
   total: number;
   setPage: (size: number) => void;
 }) {
+  const { push } = useRouter();
   return (
     <div className="py-4 mb-4">
       <h2 className="mb-2 text-2xl font-semibold">Complains List</h2>
+      {loading && (
+        <div>
+          <div className="flex justify-center items-center space-x-2">
+            <span className="sr-only">Loading...</span>
+            <div className="h-5 w-5 bg-black rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+            <div className="h-5 w-5 bg-black rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+            <div className="w-5 h-5 bg-black rounded-full animate-bounce"></div>
+          </div>
+        </div>
+      )}
       <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+        <Table sx={{ minWidth: 650 }} size="small">
           <TableHead>
-            <TableRow>
+            <TableRow className="bg-gray-300">
               <TableCell>SN</TableCell>
               <TableCell>UID</TableCell>
               <TableCell>Customer</TableCell>
@@ -49,6 +63,10 @@ export default function ComplainsTable({
               <TableRow
                 key={i}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                className={`hover:bg-primary hover:bg-opacity-20 hover:cursor-pointer ${
+                  i % 2 ? "bg-gray-100" : ""
+                }`}
+                onClick={() => push(`/complains/${row?.id}`)}
               >
                 <TableCell component="th" scope="row">
                   {i + 1}

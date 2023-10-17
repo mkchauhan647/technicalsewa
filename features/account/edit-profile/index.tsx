@@ -31,7 +31,7 @@ export default function EditProfile() {
       for (const key of Object.keys(formData)) {
         fdata.append(key, formData[key]);
       }
-      await api.post("/multiservice/publiccontrol/updateCustomer", fdata);
+      await api.post("/techsewa/publiccontrol/updateCustomer", fdata);
       alert("Profile data updated!");
     } catch (error: any) {
       console.log("error", error);

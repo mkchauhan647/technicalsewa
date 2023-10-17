@@ -29,7 +29,7 @@ const Login = () => {
     data.append("password", input.password);
     try {
       const loginRes = await axios.post(
-        `https://smartcare.com.np/multiservice/masterconfig/publiclogin/signinlate`,
+        `https://smartcare.com.np/techsewa/masterconfig/publiclogin/signinlate`,
         data
       );
 
