@@ -1,3 +1,4 @@
+import { getTrainings } from "@/lib/api";
 import { MetadataRoute } from "next";
 
 const siteUrl = "https://technicalsewa.com";
@@ -16,6 +17,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 1,
     lastModified: new Date(),
   }));
+
+  const trainings = await getTrainings();
+
+  const trainingsSiteMap = trainings.map((t: any) => {
+    return {
+      url: `${siteUrl}/training/${t?.training_title
+        ?.replaceAll(" ", "-")
+        .toLowerCase()}`,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    };
+  });
 
   const services = await fetch(
     "https://smartcare.com.np/techsewa/masterconfig/publicmasterconfig/getSliderListpop1"
@@ -42,5 +55,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     };
   });
 
-  return [...routesSiteMap, ...servicesSiteMap, ...partPurjaSiteMap];
+  return [
+    ...routesSiteMap,
+    ...trainingsSiteMap,
+    ...servicesSiteMap,
+    ...partPurjaSiteMap,
+  ];
 }
