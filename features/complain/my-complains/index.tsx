@@ -36,10 +36,10 @@ export default function UserComplains() {
     if (user) getComplainsData();
   }, [user, page]);
 
-  if (!isAuthenticated) {
-    push("/");
-    return <></>;
-  }
+  useEffect(() => {
+    if (!isAuthenticated) push("/");
+  }, [isAuthenticated]);
+
   return (
     <div className="container mx-auto">
       <ComplainsTable
