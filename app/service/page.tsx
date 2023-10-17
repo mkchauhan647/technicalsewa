@@ -14,19 +14,10 @@ const page = async () => {
   );
   const data = result?.data?.brands;
 
-  // dataa for Popular Brands
-  const PopularBrands = data?.filter((val: any) => {
-    return val.brand_name === "Popular Brands";
-  });
-
   return (
     <>
       <Nav />
-      <Service
-        services={servicesData?.brands}
-        data={data}
-        PopularBrands={PopularBrands}
-      />
+      <Service services={servicesData?.brands} data={data} />
       <Footer />
     </>
   );
