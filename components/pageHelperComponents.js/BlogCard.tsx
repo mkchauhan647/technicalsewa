@@ -4,7 +4,6 @@ import Link from "next/link";
 import React from "react";
 
 const BlogCard = ({ blog }: any) => {
-  console.log("desc", blog?.blog_desc);
   return (
     //     <div className='flex gap-4 rounded-[10px] border-[2px] border-gray-200 p-4'>
     //         <div className='basis-[10%] dark:text-black font-bold'>

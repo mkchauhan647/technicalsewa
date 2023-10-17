@@ -17,14 +17,6 @@ const ServiceSlug2 = ({ data }: any) => {
   const [serviceCategoryData, setServiceCategoryData] = useState<any>();
   const params = useParams();
 
-  // ===========function-to-call-api-==========
-  // const fetchedData = async () => {
-  //   const result = await axios.get(
-  //     `${baseUrl}multiservice/masterconfig/publicmasterconfig/getSliderListpop`
-  //   );
-  //   setData(result?.data?.brands);
-  // };
-
   // filter data based on URL params and stored to fitlerData vaiables
   const filterData = useMemo(
     () => data?.filter((val: any) => val.url_product_name === params.slug1),
@@ -134,13 +126,13 @@ const ServiceSlug2 = ({ data }: any) => {
                         </div>
 
                         <div className="flex flex-col mt-[11px]  md:gap-[14px] ">
-                          <div className="flex  items-center">
+                          <div className="flex items-center">
                             {finalData &&
                               finalData.map((val: any, index: any) => {
                                 return (
                                   <div
                                     key={index}
-                                    className="flex pb-4 text-white text-justify flex-col gap-2 listpoint"
+                                    className="flex flex-col gap-2 pb-4 text-justify text-white listpoint"
                                     dangerouslySetInnerHTML={{
                                       __html: val?.description,
                                     }}

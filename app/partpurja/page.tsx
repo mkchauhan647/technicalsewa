@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const page = async () => {
   const partpurja = await fetch(
-    "https://smartcare.com.np/multiservice/publiccontrol/publicmasterconfig/getfeaturedDetails"
+    "https://smartcare.com.np/techsewa/publiccontrol/publicmasterconfig/getfeaturedDetails"
   );
   const partpurjadata = await partpurja.json();
 

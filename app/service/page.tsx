@@ -6,11 +6,11 @@ import React from "react";
 
 const page = async () => {
   const { data: servicesData } = await api.get(
-    `/multiservice/masterconfig/publicmasterconfig/getServiceList`
+    `/techsewa/masterconfig/publicmasterconfig/getServiceList`
   );
 
   const result = await api.get(
-    `/multiservice/masterconfig/publicmasterconfig/getSliderListpop1`
+    `/techsewa/masterconfig/publicmasterconfig/getSliderListpop1`
   );
   const data = result?.data?.brands;
 

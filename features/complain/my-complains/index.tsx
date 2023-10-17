@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import ComplainsTable from "./complainsTable";
 import { Complain } from "./types";
+import ComplainsFilter from "./complainsFilter";
 
 export default function UserComplains() {
   const { push } = useRouter();
@@ -15,6 +16,7 @@ export default function UserComplains() {
   const { page, setPage } = usePagination();
   const [totalData, setTotalData] = useState(0);
   const [data, setData] = useState<Complain[]>([]);
+  const [searchQuery, setSearchQuery] = useState<any>({});
 
   const getComplainsData = async () => {
     setLoading(true);
@@ -22,9 +24,12 @@ export default function UserComplains() {
     fdata.append("page", `${page + 1}`);
     user?.id && fdata.append("id", user?.id);
     user?.type && fdata.append("type", user?.type);
+    for (const key of Object.keys(searchQuery)) {
+      searchQuery[key] && fdata.append(key, searchQuery[key]);
+    }
 
     const { data } = await api.post(
-      "/multiservice/publiccontrol/getComplain",
+      "/techsewa/publiccontrol/getComplain",
       fdata
     );
     setTotalData(data?.total);
@@ -34,7 +39,7 @@ export default function UserComplains() {
 
   useEffect(() => {
     if (user) getComplainsData();
-  }, [user, page]);
+  }, [user, page, searchQuery]);
 
   useEffect(() => {
     if (!isAuthenticated) push("/");
@@ -42,7 +47,12 @@ export default function UserComplains() {
 
   return (
     <div className="container mx-auto">
+      <ComplainsFilter
+        onSearch={setSearchQuery}
+        onReset={() => setSearchQuery({})}
+      />
       <ComplainsTable
+        loading={loading}
         data={data}
         page={page}
         setPage={setPage}

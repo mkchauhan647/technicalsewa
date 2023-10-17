@@ -59,7 +59,7 @@ export async function generateMetadata({ params }: any) {
       keywords: `${seoContent?.key_words}`,
       openGraph: {
         title: `${
-          seoExists ? seoContent?.og_title : "art Purja | Technical sewa"
+          seoExists ? seoContent?.og_title : "Part Purja | Technical sewa"
         } `,
         type: `${seoContent?.og_type}`,
         description: `${seoContent?.og_desc} `,
