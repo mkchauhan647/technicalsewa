@@ -1,3 +1,4 @@
+import FacebookPixel from "@/components/FacebookPixel";
 import "./globals.css";
 import { Inter } from "next/font/google";
 
@@ -29,7 +30,10 @@ export default function RootLayout({
           href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
         />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        <FacebookPixel />
+      </body>
     </html>
   );
 }
