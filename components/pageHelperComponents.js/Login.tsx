@@ -8,7 +8,7 @@ import axios from "axios";
 import useAuthStore from "@/store/useAuthStore";
 import { useRouter } from "next/navigation";
 
-const Login = () => {
+const LoginForm = () => {
   const { push } = useRouter();
   const { signin } = useAuthStore();
   const [loading, setLoading] = useState(false);
@@ -103,36 +103,7 @@ const Login = () => {
         >
           Sign in
         </button>
-        <div className="flex  items-center justify-center  mt-[29px]">
-          <div className="bg-[#666666]/[0.4] h-[3px] w-[60px]"></div>
-          <p className="text-[#666666] text-[13px] leading-[10px] font-normal alsolute left-[50%] text-center">
-            OR
-          </p>
-          <div className="bg-[#666666]/[0.4] h-[3px] w-[60px]"></div>
-        </div>
-        <div className="flex gap-[10px] items-center justify-center mt-[20px] ">
-          <Link href="">
-            <img
-              src="/../assets/google.png"
-              alt="image of google"
-              className="cursor-pointer"
-            />
-          </Link>
-          <Link href="">
-            <img
-              src="/../assets/facebook.png"
-              alt="image of google "
-              className="cursor-pointer"
-            />
-          </Link>
-          <Link href="">
-            <img
-              src="/../assets/instagram.png"
-              alt="image of google"
-              className="cursor-pointer"
-            />
-          </Link>
-        </div>
+
         <div className="flex items-center justify-center mt-[57px] mb-[10px] space-x-1">
           <p className="text-[13px] text-[#666666] leading-[10.72px] font-normal">
             Need an account?
@@ -149,4 +120,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginForm;
