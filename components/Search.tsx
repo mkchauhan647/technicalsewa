@@ -34,7 +34,7 @@ const Search = () => {
 
   // Update suggestions based on user input
   useEffect(() => {
-    const filteredSuggestions = services
+    const filteredSuggestions = [...services]
       .filter((service: any) =>
         service?.product_name.toLowerCase().includes(searchText.toLowerCase())
       )
@@ -48,7 +48,7 @@ const Search = () => {
   }, [searchText, services]);
 
   return (
-    <div className="flex gap-4 w-full ">
+    <div className="flex gap-4 w-full">
       <Autocomplete
         disablePortal
         options={suggestions}
@@ -56,7 +56,10 @@ const Search = () => {
         // You can customize the loading indicator here
         loadingText="Loading..."
         noOptionsText="No results found"
-        sx={{ width: "100%" }}
+        sx={{
+          width: "100%",
+        }}
+        // ChipProps={{ sx: { display: "none" } }}
         onInputChange={(event, newValue) => setSearchText(newValue)}
         className="bg-white outline-none"
         onChange={(e: any, value: any) => {
