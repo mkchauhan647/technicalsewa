@@ -73,7 +73,7 @@ const Nav = () => {
   const [categories, setCategories] = useState<TrainingCategory[]>([]);
 
   const getCategories = async () => {
-    await axios
+    axios
       .get(
         "https://smartcare.com.np/techsewa/publiccontrol/publicmasterconfig/gettrainingcategories"
       )
@@ -102,36 +102,8 @@ const Nav = () => {
           </div>
           <div className="nav-links  hidden md:flex items-center gap-4 text-[#505056] ">
             <div className="group">
-              <Link href="/trainings" className="hover:text-[#2591b2]">
+              <Link href="/trainings" className="hover:text-primary">
                 Training
-              </Link>
-              <div className="hidden group-hover:block">
-                <div className="absolute z-10 mt-0 bg-white rounded-md shadow-lg md:w-[350px]">
-                  <div className="py-1 h-[400px] overflow-y-scroll ">
-                    <div className="py-2 pt-1"></div>
-                    {categories.map((cat, i) => {
-                      return (
-                        <Link
-                          key={i}
-                          href={`/training/${cat.text
-                            ?.replace(" ", "-")
-                            .toLowerCase()}`}
-                          className="w-[full]"
-                        >
-                          <p className="block px-6 py-2 text-sm text-[grey] hover:bg-gray-100">
-                            {cat.text}
-                          </p>
-                          <hr />
-                        </Link>
-                      );
-                    })}
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="group">
-              <Link className="hover:text-[#2591b2]" href="/blogs">
-                Blogs
               </Link>
               <div className="hidden group-hover:block">
                 <div className="absolute z-10 mt-0 bg-white rounded-md shadow-lg md:w-[350px]">
@@ -156,29 +128,55 @@ const Nav = () => {
                 </div>
               </div>
             </div>
+            <div className="group">
+              <Link className="hover:text-primary" href="/blogs">
+                Blogs
+              </Link>
+              <div className="hidden group-hover:block">
+                <div className="absolute z-10 mt-0 bg-white rounded-md shadow-lg md:w-[350px]">
+                  <div className="py-1 h-[400px] overflow-y-scroll ">
+                    <div className="py-2 pt-1"></div>
+                    {categories.map((cat, i) => {
+                      return (
+                        <Link
+                          key={i}
+                          href={`/blogs/category/${cat?.value}`}
+                          className="w-[full]"
+                        >
+                          <p className="block px-6 py-2 text-sm text-[grey] hover:bg-gray-100">
+                            {cat.text}
+                          </p>
+                          <hr />
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
 
-            <Link className="hover:text-[#2591b2]" href="/service">
+            <Link className="hover:text-primary" href="/service">
               Services
             </Link>
-            <Link className="hover:text-[#2591b2]" href="/professionals">
+            <Link className="hover:text-primary" href="/professionals">
               Professionals
             </Link>
-            <Link className="hover:text-[#2591b2]" href="/partpurja">
+            <Link className="hover:text-primary" href="/partpurja">
               Part Purja
             </Link>
             {isAuthenticated ? (
               <div className="flex gap-4 items-center">
-                <Link className="hover:text-[#2591b2]" href="/profile">
+                <Link className="hover:text-primary" href="/profile">
                   Profile
                 </Link>
-                <Link className="hover:text-[#2591b2]" href="/complains">
+                <Link className="hover:text-primary" href="/complains">
                   Complains
                 </Link>
               </div>
             ) : null}
             {!isAuthenticated ? (
-              <Link className="hover:text-[#2591b2]" href="/login">
-                <button className="flex gap-[5px] justify-center items-center bg-[#2591B2] rounded-[3px] cursor-pointer text-white px-[13px] py-[8.5px] ">
+              <Link className="hover:text-primary" href="/login">
+                <button className="flex gap-[5px] justify-center items-center bg-primary rounded-[3px] cursor-pointer text-white px-[13px] py-[8.5px] ">
                   <HiArrowRightOnRectangle size={20} className="text-white" />
                   Sign In
                 </button>
@@ -186,7 +184,7 @@ const Nav = () => {
             ) : (
               <button
                 onClick={handleLogout}
-                className="flex transition-all hover:scale-105 gap-[5px] justify-center items-center bg-[#2591B2] rounded-[3px] cursor-pointer text-white px-[13px] py-[8.5px] "
+                className="flex transition-all hover:scale-105 gap-[5px] justify-center items-center bg-primary rounded-[3px] cursor-pointer text-white px-[13px] py-[8.5px] "
               >
                 <HiArrowRightOnRectangle size={20} className="text-white" />
                 Log Out
@@ -197,9 +195,9 @@ const Nav = () => {
           {/* ========toggle-menu-bar-click======== */}
           <div onClick={handleNavClick} className="menu-btn md:hidden">
             {!nav ? (
-              <FaBars className="text-[#2591b2] cursor-pointer " size={30} />
+              <FaBars className="cursor-pointer text-primary" size={30} />
             ) : (
-              <FaTimes className="text-[#2591b2] cursor-pointer " size={30} />
+              <FaTimes className="cursor-pointer text-primary" size={30} />
             )}
           </div>
 
@@ -211,7 +209,7 @@ const Nav = () => {
                 className="flex px-[16px] gap-4 text-[14px] font-normal items-center  w-full justify-starts"
                 href="/"
               >
-                <FaHome className="text-[#2591b2]" />
+                <FaHome className="text-primary" />
                 Home
               </Link>
 
@@ -220,17 +218,17 @@ const Nav = () => {
                 className="flex px-[30px] gap-4 text-[20px] font-normal items-center  w-full justify-starts"
                 href="#"
               >
-                <IoIosNotifications className="text-[#2591b2]" />
+                <IoIosNotifications className="text-primary" />
                 Notifications
               </Link>
                */}
               <div className="relative group">
                 <Link
                   href="/trainings"
-                  className="hover:text-[#2591b2] px-[14px] text-[16px] font-normal flex items-center justify-start gap-4"
+                  className="hover:text-primary px-[14px] text-[16px] font-normal flex items-center justify-start gap-4"
                   onClick={handleNavclose}
                 >
-                  <MdModelTraining className="text-[#2591b2]" />
+                  <MdModelTraining className="text-primary" />
                   Training
                 </Link>
                 <div className="hidden group-hover:block">
@@ -261,7 +259,7 @@ const Nav = () => {
                 className="flex px-[16px] gap-4 text-[14px] font-normal items-center  w-full justify-starts"
                 href="/blogs"
               >
-                <LiaBlogSolid className="text-[#2591b2]" />
+                <LiaBlogSolid className="text-primary" />
                 Blog
               </Link>
 
@@ -270,7 +268,7 @@ const Nav = () => {
                 className="flex px-[16px] gap-4 text-[14px] font-normal items-center  w-full justify-starts"
                 href="/professionals"
               >
-                <BsFillPersonCheckFill className="text-[#2591b2]" />
+                <BsFillPersonCheckFill className="text-primary" />
                 Professionals
               </Link>
               <Link
@@ -278,7 +276,7 @@ const Nav = () => {
                 className="flex px-[16px] gap-4 text-[14px] font-normal items-center  w-full justify-starts"
                 href="/partpurja"
               >
-                <HiMiniWrenchScrewdriver className="text-[#2591b2]" />
+                <HiMiniWrenchScrewdriver className="text-primary" />
                 Part Purja
               </Link>
               {isAuthenticated ? (
@@ -288,7 +286,7 @@ const Nav = () => {
                     className="flex px-[16px] gap-4 text-[14px] font-normal items-center  w-full justify-starts"
                     href="/service"
                   >
-                    <MdOutlineHomeRepairService className="text-[#2591b2]" />
+                    <MdOutlineHomeRepairService className="text-primary" />
                     All services
                   </Link>
                   <Link
@@ -296,7 +294,7 @@ const Nav = () => {
                     className="flex px-[16px] gap-4 text-[14px] font-normal items-center  w-full justify-starts"
                     href="/profile"
                   >
-                    <CgProfile className="text-[#2591b2]" />
+                    <CgProfile className="text-primary" />
                     profile
                   </Link>
                   <Link
@@ -304,7 +302,7 @@ const Nav = () => {
                     className="flex px-[16px] gap-4 text-[14px] font-normal items-center  w-full justify-starts"
                     href="/complains"
                   >
-                    <LuMailWarning className="text-[#2591b2]" />
+                    <LuMailWarning className="text-primary" />
                     Complains
                   </Link>
                 </div>
@@ -315,7 +313,7 @@ const Nav = () => {
                   className="flex px-[16px] gap-4 text-[14px] font-normal items-center  w-full justify-starts"
                   href="/login"
                 >
-                  <MdLogin className="text-[#2591b2]" />
+                  <MdLogin className="text-primary" />
                   Login
                 </Link>
               ) : (
@@ -327,7 +325,7 @@ const Nav = () => {
                   className="flex px-[16px] gap-4 text-[14px] font-normal items-center  w-full justify-starts"
                   href="#"
                 >
-                  <MdLogin className="text-[#2591b2]" />
+                  <MdLogin className="text-primary" />
                   Logout
                 </Link>
               )}
@@ -338,7 +336,7 @@ const Nav = () => {
                 className="flex px-[30px] gap-4 text-[20px] font-normal items-center  w-full justify-starts"
                 href="/"
               >
-                <BiSolidInfoCircle className="text-[#2591b2]" />
+                <BiSolidInfoCircle className="text-primary" />
                 About Us
               </Link>
               <Link
@@ -346,7 +344,7 @@ const Nav = () => {
                 className="flex px-[30px] gap-4 text-[20px] font-normal items-center  w-full justify-starts"
                 href="/"
               >
-                <IoMdCall className="text-[#2591b2]" />
+                <IoMdCall className="text-primary" />
                 Contact Us
               </Link> */}
             </div>

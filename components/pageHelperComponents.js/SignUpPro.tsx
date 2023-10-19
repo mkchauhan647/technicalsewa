@@ -144,7 +144,7 @@ const SignUpPro = () => {
 
         <button
           onClick={handleSignUPPro}
-          className="w-full bg-[#2591b2] p-4 text-white rounded-md"
+          className="w-full bg-primary p-4 text-white rounded-md"
         >
           Submit
         </button>

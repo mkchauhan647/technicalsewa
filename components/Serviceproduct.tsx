@@ -17,12 +17,12 @@ const ServiceProducts = ({ id, icon, brandname, data }: IProps) => {
       className="hidden md:block bg-white min-h-[112px] w-full p-5 rounded-md border-[1px] border-gray-400 "
     >
       <div>
-        <div className="flex justify-center items-center gap-2 text-[#2591b2]">
+        <div className="flex justify-center items-center gap-2 text-primary">
           {/* Heading Icon  */}
           {icon}
 
           {/* Title Name  */}
-          <span className="text-[#2591b2]">{brandname}</span>
+          <span className="text-primary">{brandname}</span>
         </div>
 
         {/* Card container started... */}

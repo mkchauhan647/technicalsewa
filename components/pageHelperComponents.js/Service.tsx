@@ -60,7 +60,7 @@ const Service = ({ services, data = [] }: any) => {
                 offset={-100}
               >
                 <div className="flex flex-col gap-2 justify-center max-md:items-center">
-                  <div className="md:hidden  text-[#2591b2]">{}</div>
+                  <div className="md:hidden  text-primary">{}</div>
                   <h3 className="md:text-[black] font-medium text-[12px] md:text-[14px] text-center  md:text-left">
                     {item.name}
                   </h3>
@@ -75,7 +75,7 @@ const Service = ({ services, data = [] }: any) => {
           <div className="bg-[#f5f5f5]  mx-[26px] flex flex-col gap-8 text-center ">
             {/* <div className="md:hidden">
             {services[value] && (
-              <h2 className="text-[14px] text-[#2591b2] text-left p-2">
+              <h2 className="text-[14px] text-primary text-left p-2">
                 {services[value].n}
               </h2>
             )}
@@ -83,7 +83,7 @@ const Service = ({ services, data = [] }: any) => {
 
             <div className="md:hidden bg-white min-h-[112px] w-full p-0 md:p-5 rounded-md border-[1px] border-gray-400 ">
               <div>
-                <div className="flex justify-center items-center gap-2 text-[#2591b2]">
+                <div className="flex justify-center items-center gap-2 text-primary">
                   {/* Heading Icon  */}
                   {activeService?.icon && (
                     <Image
@@ -95,7 +95,7 @@ const Service = ({ services, data = [] }: any) => {
                   )}
 
                   {/* Title Name  */}
-                  <span className="text-[#2591b2]">{activeService?.name}</span>
+                  <span className="text-primary">{activeService?.name}</span>
                 </div>
                 {/* Card container started... */}
                 <div className="flex flex-wrap gap-6 justify-around items-center p-4 md:justify-center md:gap-16">
