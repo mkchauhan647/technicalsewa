@@ -30,6 +30,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     };
   });
 
+  const blogs = await fetch(
+    "https://smartcare.com.np/techsewa/publiccontrol/publicmasterconfig/getblogdetails"
+  ).then((response) => response.json());
+
+  const blogsSiteMap = blogs.map((b: any) => {
+    return {
+      url: `${siteUrl}/blogs/${b?.blog_name
+        ?.replaceAll(" ", "-")
+        .toLowerCase()}/${b?.blog_id}`,
+      changeFrequency: "daily",
+      priority: 0.8,
+    };
+  });
+
   const services = await fetch(
     "https://smartcare.com.np/techsewa/masterconfig/publicmasterconfig/getSliderListpop1"
   ).then((response) => response.json());
@@ -57,6 +71,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [
     ...routesSiteMap,
+    ...blogsSiteMap,
     ...trainingsSiteMap,
     ...servicesSiteMap,
     ...partPurjaSiteMap,
