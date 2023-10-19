@@ -1,12 +1,12 @@
 import Nav from "@/components/Nav";
-import SignUp from "@/components/pageHelperComponents.js/SignUp";
+import StandardSignUp from "@/features/authentication/signup/standard-signup";
 import React from "react";
 
 const page = () => {
   return (
     <>
       <Nav />
-      <SignUp />
+      <StandardSignUp />
     </>
   );
 };
