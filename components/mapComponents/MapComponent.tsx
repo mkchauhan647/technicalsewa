@@ -108,39 +108,35 @@ const MapComponent = ({ onProceed }: IProps) => {
       <div className="map-container w-full mt-[16px] mb-[39px] p-[9px] shadow-md rounded-md bg-[#f5f5f5] ">
         <div className="flex flex-col gap-[3px]">
           <h1 className="text-[#203EB2] font-bold">Location Info</h1>
-          <h3>Enter Address</h3>
         </div>
-        <div className="flex gap-4 items-center my-[8px] md:my-4 max-md:flex-col">
-          {/* <Autocomplete>
-            <input
-              ref={originRef}
-              className="bg-white outline-[1px] outline-[#2591B2]  p-2 "
-              type="text"
-              placeholder="origin"
-            />
-          </Autocomplete> */}
-
-          <Autocomplete
-            className="w-full"
-            onLoad={(autocomplete) => {
-              autocompleteRef.current = autocomplete;
-              autocomplete.setFields(["geometry"]);
-            }}
-            onPlaceChanged={handlePlaceSelect}
-          >
-            <input
-              className="w-full bg-white outline-[1px] outline-[#2591B2]  p-2 "
-              type="text"
-              placeholder="Search Nearest Location"
-            />
-          </Autocomplete>
-          {/* <button
+        <div className="pt-2 lg:flex lg:space-x-3 lg:items-center">
+          <div className="">
+            <h3 className="font-medium">Enter Address</h3>
+          </div>
+          <div className="flex flex-grow gap-4 items-center my-[8px] md:my-4 max-md:flex-col">
+            <Autocomplete
+              className="w-full"
+              onLoad={(autocomplete) => {
+                autocompleteRef.current = autocomplete;
+                autocomplete.setFields(["geometry"]);
+              }}
+              onPlaceChanged={handlePlaceSelect}
+            >
+              <input
+                className="w-full bg-white outline-[1px] outline-[#2591B2]  p-2 "
+                type="text"
+                placeholder="Search Nearest Location"
+              />
+            </Autocomplete>
+            {/* <button
             onClick={calculateRoute}
             className="bg-primary rounded-[3px] cursor-pointer text-white px-[13px] py-[8.5px] "
           >
             Direction
           </button> */}
+          </div>
         </div>
+
         <div className="w-[full] h-[50vh] flex-wrap p-4 flex justify-between ">
           <div className="w-full md:basis-[58%] h-[46%] md:h-full">
             <GoogleMap
@@ -156,7 +152,7 @@ const MapComponent = ({ onProceed }: IProps) => {
           </div>
 
           <div className="w-full md:basis-[37%]">
-            <div className="mt-2 ">
+            <div className="mt-2">
               <p className="font-bold">Address:</p>
               <p>
                 Latitude : {center.lat} Longitude : {center.lng}
