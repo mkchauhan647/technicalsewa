@@ -50,7 +50,7 @@ const StandardSignUp = () => {
     // sign up page started..
     <div className="flex flex-col gap-10 items-center py-10">
       {/* logo and text  */}
-      <div className="flex flex-col items-center">
+      {/* <div className="flex flex-col items-center">
         <img
           className="w-[100px] md:w-[150px]"
           src="/assets/ts-final-logo.png"
@@ -60,14 +60,16 @@ const StandardSignUp = () => {
         <p className="text-[13px] text-[#747774] leading-9">
           Sign Up to use our services
         </p>
-      </div>
+      </div> */}
+
+      <h2 className="text-lg font-bold">Sign Up</h2>
 
       {/* input  */}
       <div className="w-[80%] lg:w-[40%] flex flex-col gap-5">
         <input
           minLength={10}
           name="mobilenumber"
-          className=" w-full  p-4 border-[1px] text-[14px] italic outline-none"
+          className=" w-full px-4 py-3 border-[1px] text-[14px] italic outline-none"
           type="text"
           placeholder="Mobile Number"
           onChange={handleChange}
@@ -76,7 +78,7 @@ const StandardSignUp = () => {
         <div className="lg:space-x-4 max-lg:space-y-5 lg:grid lg:grid-cols-2">
           <input
             name="firstname"
-            className="max-lg:w-full p-4 border-[1px] text-[14px] italic outline-none"
+            className="max-lg:w-full px-4 py-3 border-[1px] text-[14px] italic outline-none"
             type="text"
             placeholder="First Name"
             onChange={handleChange}
@@ -84,7 +86,7 @@ const StandardSignUp = () => {
           />
           <input
             name="lastname"
-            className="max-lg:w-full  p-4 border-[1px] text-[14px] italic outline-none"
+            className="max-lg:w-full  px-4 py-3 border-[1px] text-[14px] italic outline-none"
             type="text"
             placeholder="Last Name"
             onChange={handleChange}
@@ -93,7 +95,7 @@ const StandardSignUp = () => {
         </div>
         <input
           name="emailaddress"
-          className=" w-full  p-4 border-[1px] text-[14px] italic outline-none"
+          className=" w-full  px-4 py-3 border-[1px] text-[14px] italic outline-none"
           type="text"
           placeholder="Email Address"
           onChange={handleChange}
@@ -105,7 +107,7 @@ const StandardSignUp = () => {
           <div className="flex items-center  border-[1px] justify-between">
             <input
               name="password"
-              className="w-full py-[12px] pl-[20px]   placeholder:italic placeholder:font-normal rounded-[2px] outline-none text-[14px]"
+              className="w-full px-4 py-3   pl-[20px]   placeholder:italic placeholder:font-normal rounded-[2px] outline-none text-[14px]"
               type={`${showPassword === false ? "password" : "text"}`}
               placeholder="Password"
               onChange={handleChange}
@@ -122,7 +124,7 @@ const StandardSignUp = () => {
           <div className="flex items-center  border-[1px] justify-between">
             <input
               name="confirmpassword"
-              className=" w-full py-[12px] pl-[20px]   placeholder:italic placeholder:font-normal rounded-[2px] outline-none text-[14px]"
+              className=" w-full px-4 py-3 pl-[20px]   placeholder:italic placeholder:font-normal rounded-[2px] outline-none text-[14px]"
               type={`${showConfirmPassword === false ? "password" : "text"}`}
               placeholder="Confirm Password"
               onChange={handleChange}
@@ -141,7 +143,7 @@ const StandardSignUp = () => {
         <div className="lg:space-x-4 max-lg:space-y-5 lg:grid lg:grid-cols-2">
           <input
             name="address"
-            className="max-lg:w-full  p-4 border-[1px] text-[14px] italic outline-none"
+            className="max-lg:w-full px-4 py-3 border-[1px] text-[14px] italic outline-none"
             type="text"
             placeholder="Address"
             onChange={handleChange}
@@ -149,7 +151,7 @@ const StandardSignUp = () => {
           />
           <input
             name="refferedby"
-            className="max-lg:w-full  p-4 border-[1px] text-[14px] italic outline-none"
+            className="max-lg:w-full px-4 py-3 border-[1px] text-[14px] italic outline-none"
             type="text"
             placeholder="Reffered By"
             onChange={handleChange}

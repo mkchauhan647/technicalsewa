@@ -3,7 +3,6 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { BsEyeSlashFill } from "react-icons/bs";
 import { AiOutlineEye } from "react-icons/ai";
-import { baseUrl } from "../../public/baseUrl";
 import axios from "axios";
 import useAuthStore from "@/store/useAuthStore";
 import { useRouter } from "next/navigation";
@@ -51,7 +50,7 @@ const LoginForm = () => {
   return (
     <div className="bg-white  pt-[20px] pb-[79px]">
       <div className="flex flex-col  justify-center pt-[50px] w-[80%] lg:w-[33.33%]  mx-auto px-4 md:p-0">
-        <div className="flex flex-col items-center">
+        {/* <div className="flex flex-col items-center">
           <div className="w-[150px] h-auto">
             <img
               src="/../assets/logoofts.png"
@@ -62,7 +61,9 @@ const LoginForm = () => {
           <h2 className="text-[#666666] text-normal leading-[19.5px] font-semibold mt-[12px]">
             Sign in to use our service
           </h2>
-        </div>
+        </div> */}
+
+        <h2 className="text-lg font-bold">Login</h2>
 
         <input
           type="text"
@@ -70,7 +71,7 @@ const LoginForm = () => {
           required
           onChange={handleChange}
           placeholder="Username"
-          className="border w-full border-[#D9D9D9] py-[12px] pl-[20px] mt-[20px] placeholder:text-[#666666]/[0.4] placeholder:italic placeholder:font-normal rounded-[2px] outline-none"
+          className="border w-full border-[#D9D9D9] px-4 py-3 pl-[20px] mt-[20px] placeholder:text-[#666666]/[0.4] placeholder:italic placeholder:font-normal rounded-[2px] outline-none"
         />
 
         <div className=" border border-[#D9D9D9] rounded-[2px] flex items-center mt-[24px]  w-full">
@@ -80,7 +81,7 @@ const LoginForm = () => {
             placeholder="Password"
             required
             onChange={handleChange}
-            className="w-full py-[12px] pl-[20px]  placeholder:text-[#666666]/[0.4] placeholder:italic placeholder:font-normal rounded-[2px] outline-none"
+            className="w-full px-4 py-3 pl-[20px]  placeholder:text-[#666666]/[0.4] placeholder:italic placeholder:font-normal rounded-[2px] outline-none"
           />
           <div
             className=" border-l-[1px] p-4"
@@ -104,7 +105,7 @@ const LoginForm = () => {
           Sign in
         </button>
 
-        <div className="flex items-center justify-center mt-[57px] mb-[10px] space-x-1">
+        <div className="flex items-center justify-center mt-10 mb-[10px] space-x-1">
           <p className="text-[13px] text-[#666666] leading-[10.72px] font-normal">
             Need an account?
           </p>

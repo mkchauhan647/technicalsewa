@@ -1,5 +1,5 @@
 import Nav from '@/components/Nav'
-import LoginForm from '@/components/pageHelperComponents.js/Login'
+import LoginForm from '@/features/authentication/login'
 import React from 'react'
 
 const page = () => {
