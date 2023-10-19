@@ -55,12 +55,12 @@ const page = async () => {
                   />
                 </div>
                 <div className="flex flex-col flex-1 gap-2 md:gap-5">
-                  <h3 className="text-[#2591b2] text-[17px] font-bold">
+                  <h3 className="text-primary text-[17px] font-bold">
                     {s.sc_name}
                   </h3>
 
                   {/* three small button */}
-                  <div className="flex gap-1 text-[12px] text-[#2591b2]">
+                  <div className="flex gap-1 text-[12px] text-primary">
                     <button className="bg-[#e8ebf4] px-[9px] py-[2px] rounded-sm">
                       Kent
                     </button>
@@ -76,7 +76,7 @@ const page = async () => {
                   <div className="flex gap-2 text-[11px]">
                     <Link
                       href="/service"
-                      className="text-white bg-[#2591b2] rounded-md px-2 py-1 md:px-[17px] md:py-[6px]"
+                      className="text-white bg-primary rounded-md px-2 py-1 md:px-[17px] md:py-[6px]"
                     >
                       Book Now
                     </Link>
@@ -112,7 +112,7 @@ const page = async () => {
                 type="text"
                 placeholder="Type your mobile number"
               />
-              <button className="bg-[#2591b2] text-white px-6 md:px-10 md:py-4 rounded-r-md">
+              <button className="bg-primary text-white px-6 md:px-10 md:py-4 rounded-r-md">
                 SEND
               </button>
             </div>

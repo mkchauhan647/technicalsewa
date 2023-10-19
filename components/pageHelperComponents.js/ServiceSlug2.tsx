@@ -147,7 +147,7 @@ const ServiceSlug2 = ({ data }: any) => {
 
                   {/* side hire a expert div  */}
                   <div className="w-[30%] lg:px-4 z-40  md:absolute md:top-[100px] md:right-14   xl:right-4 2xl:right-28">
-                    <div className="bg-[#2591b2] rounded-md shadow-md w-[340px]  md:w-[355px] p-4 lg:fixed  ">
+                    <div className="bg-primary rounded-md shadow-md w-[340px]  md:w-[355px] p-4 lg:fixed  ">
                       {finalData?.map((val: any, index: any) => {
                         return (
                           <div

@@ -16,7 +16,7 @@ export default function ServiceSlider({ index, service, data }: IProps) {
         index % 2 === 0 ? "bg-[#efefef]" : "bg-white"
       } `}
     >
-      <b className="text-[#2591b2] font-bold text-[20px] mb-[12px] mt-[5px]">
+      <b className="text-primary font-bold text-[20px] mb-[12px] mt-[5px]">
         {service}
       </b>
       <Slider data={data || []} />

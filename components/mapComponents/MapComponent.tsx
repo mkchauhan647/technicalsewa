@@ -136,7 +136,7 @@ const MapComponent = ({ onProceed }: IProps) => {
           </Autocomplete>
           {/* <button
             onClick={calculateRoute}
-            className="bg-[#2591B2] rounded-[3px] cursor-pointer text-white px-[13px] py-[8.5px] "
+            className="bg-primary rounded-[3px] cursor-pointer text-white px-[13px] py-[8.5px] "
           >
             Direction
           </button> */}
@@ -164,13 +164,13 @@ const MapComponent = ({ onProceed }: IProps) => {
             </div>
             <div className="flex gap-5 mt-[20px]">
               <button
-                className=" bg-[#2591B2] rounded-[3px] cursor-pointer text-white px-[13px] py-[8.5px]"
+                className=" bg-primary rounded-[3px] cursor-pointer text-white px-[13px] py-[8.5px]"
                 onClick={() => router.back()}
               >
                 Back
               </button>
               <button
-                className=" bg-[#2591B2] rounded-[3px] cursor-pointer text-white px-[13px] py-[8.5px]"
+                className=" bg-primary rounded-[3px] cursor-pointer text-white px-[13px] py-[8.5px]"
                 onClick={handlePlaceService}
               >
                 Proceed

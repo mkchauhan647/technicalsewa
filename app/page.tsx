@@ -1,16 +1,12 @@
 import HeroSection from "@/components/HeroSection";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import FooterContact from "@/components/footer/FooterContact";
-import ApplicationRepair from "@/components/repair/ApplicationRepair";
 import Categories from "@/components/repair/Categories";
-import ElectricianPlumbers from "@/components/repair/ElectricianPlumbers";
-import PopularBrands from "@/components/repair/PopularBrands";
-import Warrantyproducts from "@/components/repair/Warrantyproducts";
+
 import { baseUrl } from "../public/baseUrl";
 import axios from "axios";
 import Nav from "@/components/Nav";
 import Footer from "@/components/footer/Footer";
-import MedicalEquipment from "@/components/repair/MedicalEquipment";
 import Number from "@/components/Number";
 import MidContent from "@/components/MidContent";
 import { getSEOByPageURL } from "@/lib/api";
@@ -26,27 +22,6 @@ export default async function Home() {
   let allBrands = result?.data?.brands;
   allBrands?.sort((a: any, b: any) => +a?.brand_id - +b?.brand_id);
 
-  // dataa for ApplicationRepairData
-  const applicationRepairData = result?.data?.brands?.filter((val: any) => {
-    return val.brand_id === "62";
-  });
-  const popularBrandsData = result?.data?.brands?.filter((val: any) => {
-    return val.brand_id === "76";
-  });
-  const warrantyProductsData = result?.data?.brands?.filter((val: any) => {
-    return val.brand_id === "61";
-  });
-  const electiricianPlumbersData = result?.data?.brands?.filter((val: any) => {
-    return val.brand_id === "63";
-  });
-  const medicalEquipmentData = result?.data?.brands?.filter((val: any) => {
-    return val.brand_id === "67";
-  });
-  const computerPrinterData = result?.data?.brands?.filter((val: any) => {
-    return val.brand_id === "65";
-  });
-  ///
-
   const brands = new Set(allBrands?.map((b: any) => b?.brand_name));
   return (
     <>
@@ -56,14 +31,13 @@ export default async function Home() {
         <Categories allBrands={allBrands} />
         <ServicesSLiders brands={Array.from(brands)} data={allBrands} />
 
-        {/* <ApplicationRepair applicationRepairData={applicationRepairData} />
-        <PopularBrands popularBrandsData={popularBrandsData} />
-        <Warrantyproducts warrantyProductsData={warrantyProductsData} />
+        {/*
+        <MedicalEquipment medicalEquipmentData={medicalEquipmentData} /> 
         <ElectricianPlumbers
           computerPrinterData={computerPrinterData}
           electiricianPlumbersData={electiricianPlumbersData}
         />
-        <MedicalEquipment medicalEquipmentData={medicalEquipmentData} /> */}
+        */}
 
         <Number />
 

@@ -23,11 +23,11 @@ const Footer = () => {
 
   return (
     <div>
-      <div className="bg-[#2591B2] relative">
+      <div className="bg-primary relative">
         <div className="py-[10px]   max-w-[1280px] mx-auto">
           {/* heading of footer */}
 
-          <div className=" border border-solid border-white font-semibold text-[12px] md:text-base leading-[19px] text-[#FFF] font-Roboto text-center bg-[#2591B2] shadow-xl max-w-[300px] flex justify-center items-center px-[40px] h-[43px] absolute left-[50%] tranform translate-x-[-50%] top-[-4%] md:top-[-9%] rounded-md">
+          <div className=" border border-solid border-white font-semibold text-[12px] md:text-base leading-[19px] text-[#FFF] font-Roboto text-center bg-primary shadow-xl max-w-[300px] flex justify-center items-center px-[40px] h-[43px] absolute left-[50%] tranform translate-x-[-50%] top-[-4%] md:top-[-9%] rounded-md">
             We Are Available in
           </div>
           {/* link of location */}
@@ -163,7 +163,7 @@ const Footer = () => {
               <Link
                 target="_blank"
                 href="https://www.google.com/maps/place/27%C2%B042'08.4%22N+85%C2%B018'35.8%22E/@27.702328,85.309943,15z/data=!4m4!3m3!8m2!3d27.7023333!4d85.3099444?hl=en&entry=ttu"
-                className=" bg-white text-[#2591B2] flex py-4 items-center justify-center w-[95px] h-[28px] font-Roboto font-normal text-base leading-[24px]  text-center border-[1px] border-solid border-[#E5E7EB]"
+                className=" bg-white text-primary flex py-4 items-center justify-center w-[95px] h-[28px] font-Roboto font-normal text-base leading-[24px]  text-center border-[1px] border-solid border-[#E5E7EB]"
               >
                 Direction
                 <IoLocationSharp className="text-green-500" size={20} />
@@ -222,28 +222,28 @@ const Footer = () => {
                   className="flex items-center justify-center bg-[white] w-[35px] h-[35px] rounded-[50%]"
                   target="_blank"
                 >
-                  <ImFacebook className="text-[#2591B2] " size={20} />
+                  <ImFacebook className="text-primary " size={20} />
                 </Link>
                 <Link
                   href="https://www.instagram.com/technicalsewa.np/"
                   className="flex items-center justify-center bg-[white] w-[35px] h-[35px] rounded-[50%]"
                   target="_blank"
                 >
-                  <BiLogoInstagramAlt className="text-[#2591B2] " size={20} />
+                  <BiLogoInstagramAlt className="text-primary " size={20} />
                 </Link>
                 <Link
                   href="https://www.youtube.com/channel/UCw2U7K_AKEkws0uzyI4T_kA"
                   target="_blank"
                   className="flex items-center justify-center bg-[white]  w-[35px] h-[35px] rounded-[50%]"
                 >
-                  <BsYoutube className="text-[#2591B2] " size={20} />
+                  <BsYoutube className="text-primary " size={20} />
                 </Link>
                 <Link
                   href="https://twitter.com/technicals2023"
                   target="_blank"
                   className="flex items-center justify-center bg-[white] w-[35px] h-[35px] rounded-[50%]"
                 >
-                  <BsTwitter className="text-[#2591B2] " size={20} />
+                  <BsTwitter className="text-primary " size={20} />
                 </Link>
               </div>
               <h5 className="font-normal text-[13px] leading-[24px] text-[#FFF] pt-[10px] text-left md:text-right">

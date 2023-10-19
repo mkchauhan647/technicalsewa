@@ -152,7 +152,7 @@ const SignUp = () => {
         />
 
         <button
-          className="w-full bg-[#2591b2] p-4 text-white rounded-md"
+          className="w-full bg-primary p-4 text-white rounded-md"
           onClick={handleSignUp}
         >
           Submit

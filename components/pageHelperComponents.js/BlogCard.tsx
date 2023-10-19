@@ -56,7 +56,7 @@ const BlogCard = ({ blog }: any) => {
             <div className="md:pb-[3px] text-gray-500 font-bold">
               {blog?.created_ts}
             </div>
-            <h3 className="hover:text-[#2591B2] font-bold text-[19px] md:text-[25px] mb-2 h-[40px] ">
+            <h3 className="hover:text-primary font-bold text-[19px] md:text-[25px] mb-2 h-[40px] ">
               {blog?.blog_name}
             </h3>
           </Link>
@@ -72,7 +72,7 @@ const BlogCard = ({ blog }: any) => {
               .replaceAll(" ", "-")
               .toLowerCase()}/${blog?.blog_id}`}
           >
-            <button className="p-2 hover:bg-[#2591B2] text-white bg-black rounded">
+            <button className="p-2 hover:bg-primary text-white bg-black rounded">
               Readmore
             </button>
           </Link> */}

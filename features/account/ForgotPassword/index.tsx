@@ -61,7 +61,7 @@ export default function ForgotPasswordForm() {
 
         <button
           onClick={handleSignIn}
-          className="text-white text-[15px] leading-[18px] bg-[#2591B2] font-normal rounded-[2px] w-full py-[15px]
+          className="text-white text-[15px] leading-[18px] bg-primary font-normal rounded-[2px] w-full py-[15px]
         mt-[44px]"
         >
           Reset Your Password
