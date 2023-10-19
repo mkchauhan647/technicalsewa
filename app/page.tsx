@@ -11,7 +11,6 @@ import Number from "@/components/Number";
 import MidContent from "@/components/MidContent";
 import { getSEOByPageURL } from "@/lib/api";
 import Fotterupcontent from "@/components/Fotterupcontent";
-import Facebook from "@/components/Facebook";
 import ServicesSLiders from "@/features/home/servicesSliders";
 
 export default async function Home() {
@@ -56,7 +55,6 @@ export default async function Home() {
         >
           <i className="fa fa-whatsapp whatsapp-icon"></i>
         </a>
-        <Facebook />
       </>
     </>
   );
