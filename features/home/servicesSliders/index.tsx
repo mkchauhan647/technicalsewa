@@ -9,9 +9,20 @@ export default function ServicesSLiders({
   brands: any[];
   data: any[];
 }) {
-  const pairBrands = brands?.length > 1 ? [...brands].slice(1) : [];
+  let pairBrands = brands?.length > 1 ? [...brands].slice(1) : [];
+
+  pairBrands = pairBrands.filter((b: any) => b !== "Appliances Repairs");
+  pairBrands = pairBrands.filter((b: any) => b !== "Popular Brands Repair");
 
   const numberOfPairs = Math.ceil(pairBrands.length / 2);
+
+  const appliancesServices = [...data]?.filter(
+    (d: any) => d?.brand_name === "Appliances Repairs"
+  );
+  const popularBrandsServices = [...data]?.filter(
+    (d: any) => d?.brand_name === "Popular Brands Repair"
+  );
+
   return (
     <>
       {[
@@ -23,9 +34,23 @@ export default function ServicesSLiders({
             );
           }),
       ]}
+      {appliancesServices.length && (
+        <ServiceSlider
+          index={1}
+          service={"Appliances Repairs"}
+          data={appliancesServices}
+        />
+      )}
+      {popularBrandsServices.length && (
+        <ServiceSlider
+          index={0}
+          service={"Popular Brands Repair"}
+          data={popularBrandsServices}
+        />
+      )}
       {Array.from({ length: numberOfPairs }, (_, index) => {
         const brand1 = index * 2;
-        const brand2 = (index * 2) + 1;
+        const brand2 = index * 2 + 1;
         const brand1Services = data?.filter(
           (d: any) => d?.brand_name === pairBrands[brand1]
         );
