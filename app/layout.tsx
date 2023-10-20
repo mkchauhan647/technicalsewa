@@ -2,6 +2,7 @@ import FacebookPixel from "@/components/FacebookPixel";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import FacebookMessenger from "@/components/FacebookMessenger";
+import AutoScrollToTop from "@/components/scrollToTop";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -35,6 +36,7 @@ export default function RootLayout({
         {children}
         <FacebookPixel />
         <FacebookMessenger />
+        <AutoScrollToTop />
       </body>
     </html>
   );
