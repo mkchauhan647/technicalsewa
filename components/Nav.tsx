@@ -140,7 +140,9 @@ const Nav = () => {
                       return (
                         <Link
                           key={i}
-                          href={`/blogs/category/${cat?.value}`}
+                          href={`/blogs/category/${cat?.text
+                            ?.replaceAll(" ", "-")
+                            .toLowerCase()}/${cat?.value}`}
                           className="w-[full]"
                         >
                           <p className="block px-6 py-2 text-sm text-[grey] hover:bg-gray-100">

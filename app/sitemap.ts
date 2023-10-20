@@ -1,4 +1,4 @@
-import { getTrainings } from "@/lib/api";
+import { getTrainingCategoriesData, getTrainings } from "@/lib/api";
 import { MetadataRoute } from "next";
 
 const siteUrl = "https://technicalsewa.com";
@@ -30,6 +30,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     };
   });
 
+  const trainingCategories = await getTrainingCategoriesData();
+
   const blogs = await fetch(
     "https://smartcare.com.np/techsewa/publiccontrol/publicmasterconfig/getblogdetails"
   ).then((response) => response.json());
@@ -40,6 +42,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         ?.replaceAll(" ", "-")
         .toLowerCase()}/${b?.blog_id}`,
       changeFrequency: "daily",
+      priority: 0.8,
+    };
+  });
+
+  const blogCatsSiteMap = trainingCategories.map((c: any) => {
+    return {
+      url: `${siteUrl}/blogs/category/${c?.text
+        ?.replaceAll(" ", "-")
+        .toLowerCase()}/${c?.value}`,
+      changeFrequency: "weekly",
       priority: 0.8,
     };
   });
@@ -72,6 +84,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     ...routesSiteMap,
     ...blogsSiteMap,
+    ...blogCatsSiteMap,
     ...trainingsSiteMap,
     ...servicesSiteMap,
     ...partPurjaSiteMap,
