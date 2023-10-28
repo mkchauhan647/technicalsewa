@@ -2,6 +2,16 @@ import { baseUrl } from "@/public/baseUrl";
 import axios from "axios";
 
 export const api = axios.create({ baseURL: baseUrl });
+export async function fetchClient(url: string, options = {}) {
+  const defaultOptions = {
+    cache: "no-store",
+  };
+
+  const mergedOptions = { ...defaultOptions, ...options };
+
+  const response = await fetch(`${baseUrl}${url}`, mergedOptions as any);
+  return response.json();
+}
 
 export async function getTrainings() {
   try {

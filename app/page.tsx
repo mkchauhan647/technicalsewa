@@ -4,21 +4,19 @@ import FooterContact from "@/components/footer/FooterContact";
 import Categories from "@/components/repair/Categories";
 
 import { baseUrl } from "../public/baseUrl";
-import axios from "axios";
 import Nav from "@/components/Nav";
 import Footer from "@/components/footer/Footer";
 import Number from "@/components/Number";
 import MidContent from "@/components/MidContent";
-import { getSEOByPageURL } from "@/lib/api";
+import { fetchClient, getSEOByPageURL } from "@/lib/api";
 import Fotterupcontent from "@/components/Fotterupcontent";
 import ServicesSLiders from "@/features/home/servicesSliders";
 
 export default async function Home() {
-  const result = await axios.get(
-    `${baseUrl}/techsewa/masterconfig/publicmasterconfig/getSliderListpop1`
+  const result = await fetchClient(
+    `/techsewa/masterconfig/publicmasterconfig/getSliderListpop1`
   );
-
-  let allBrands = result?.data?.brands;
+  let allBrands = result?.brands;
   allBrands?.sort((a: any, b: any) => +a?.brand_id - +b?.brand_id);
 
   const brands = new Set(allBrands?.map((b: any) => b?.brand_name));

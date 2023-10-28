@@ -1,18 +1,18 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/footer/Footer";
 import Service from "@/components/pageHelperComponents.js/Service";
-import { api } from "@/lib/api";
+import { fetchClient } from "@/lib/api";
 import React from "react";
 
 const page = async () => {
-  const { data: servicesData } = await api.get(
+  const servicesData = await fetchClient(
     `/techsewa/masterconfig/publicmasterconfig/getServiceList`
   );
 
-  const result = await api.get(
+  const result = await fetchClient(
     `/techsewa/masterconfig/publicmasterconfig/getSliderListpop1`
   );
-  const data = result?.data?.brands;
+  const data = result?.brands;
 
   return (
     <>
