@@ -115,16 +115,20 @@ export async function getBlogsByCategoryId(id: string) {
 
 export async function getSEOByPageURL(url: string) {
   try {
-    const res = await fetch(
-      `${baseUrl}/techsewa/publiccontrol/publicmasterconfig/getSeoContent?url=${url}`,
-      {
-        headers: {
-          "Cache-Control": `max-age=${600}`, // max 10min cache
-        },
-      }
-    );
+    // const res = await fetch(
+    //   `${baseUrl}/techsewa/publiccontrol/publicmasterconfig/getSeoContent?url=${url}`,
+    //   {
+    //     headers: {
+    //       "Cache-Control": `max-age=${600}`, // max 10min cache
+    //     },
+    //   }
+    // );
 
-    return res.json();
+    // return res.json();
+    const res = await fetchClient(
+      `/techsewa/publiccontrol/publicmasterconfig/getSeoContent?url=${url}`
+    );
+    return res;
   } catch (error) {
     return { error: true };
   }

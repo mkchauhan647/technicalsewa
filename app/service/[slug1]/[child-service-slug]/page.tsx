@@ -1,14 +1,14 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/footer/Footer";
 import ServiceSlug2 from "@/components/pageHelperComponents.js/ServiceSlug2";
+import { fetchClient } from "@/lib/api";
 import { baseUrl } from "@/public/baseUrl";
 import React from "react";
 
 const page = async () => {
-  const result = await fetch(
-    `${baseUrl}techsewa/masterconfig/publicmasterconfig/getSliderListpop`
+  const data = await fetchClient(
+    `/techsewa/masterconfig/publicmasterconfig/getSliderListpop`
   );
-  const data = await result.json();
 
   return (
     <>
@@ -22,8 +22,7 @@ const page = async () => {
 export default page;
 
 export async function generateMetadata({ params }: any) {
-  
   return {
-    title: `${params.slug1} ${params['child-service-slug']} | Technical sewa`,
+    title: `${params.slug1} ${params["child-service-slug"]} | Technical sewa`,
   };
 }

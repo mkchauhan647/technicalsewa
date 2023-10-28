@@ -1,7 +1,7 @@
 import Nav from "@/components/Nav";
 import ProfessionalsCardButton from "@/components/ProfessionalsCardButton";
 import Footer from "@/components/footer/Footer";
-import { getSEOByPageURL } from "@/lib/api";
+import { fetchClient, getSEOByPageURL } from "@/lib/api";
 import Link from "next/link";
 import React from "react";
 import { RiLayoutGridFill } from "react-icons/ri";
@@ -9,10 +9,9 @@ import { TfiLayoutColumn3Alt } from "react-icons/tfi";
 
 // professionals page
 const page = async () => {
-  const professinals = await fetch(
-    "https://smartcare.com.np/techsewa/publiccontrol/getTechnicianProfilePublic"
+  const professionalsData = await fetchClient(
+    "/techsewa/publiccontrol/getTechnicianProfilePublic"
   );
-  const professionalsData = await professinals.json();
 
   return (
     <>
@@ -112,7 +111,7 @@ const page = async () => {
                 type="text"
                 placeholder="Type your mobile number"
               />
-              <button className="bg-primary text-white px-6 md:px-10 md:py-4 rounded-r-md">
+              <button className="px-6 text-white rounded-r-md bg-primary md:px-10 md:py-4">
                 SEND
               </button>
             </div>

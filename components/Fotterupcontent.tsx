@@ -1,16 +1,16 @@
 "use client";
+import { fetchClient } from "@/lib/api";
 import { baseUrl } from "@/public/baseUrl";
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 const Fotterupcontent = () => {
   const [desc, setDesc] = useState<any>(null);
   useEffect(() => {
     let fetchData = async () => {
-      let data = await axios.get(
+      let data = await fetchClient(
         `${baseUrl}/techsewa/publicControl/midcontent`
       );
-      setDesc(data.data);
+      setDesc(data);
     };
     fetchData();
   }, []);
