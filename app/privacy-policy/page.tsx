@@ -2,12 +2,12 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/footer/Footer";
 import React from "react";
 import "./page.css";
+import { fetchClient } from "@/lib/api";
 
 const page = async () => {
-  const privacyPolicy = await fetch(
-    "https://smartcare.com.np/techsewa/publicControl/privacy"
+  const privacyPolicyData = await fetchClient(
+    "/techsewa/publicControl/privacy"
   );
-  const privacyPolicyData = await privacyPolicy.json();
   return (
     <div>
       <Nav />

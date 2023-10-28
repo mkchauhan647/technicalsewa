@@ -2,7 +2,11 @@ import Categorylist from "@/components/Categorylist";
 import Nav from "@/components/Nav";
 import { SEOBase } from "@/components/SEOBase";
 import Footer from "@/components/footer/Footer";
-import { getSEOByPageURL, getTrainingCategoriesData } from "@/lib/api";
+import {
+  fetchClient,
+  getSEOByPageURL,
+  getTrainingCategoriesData,
+} from "@/lib/api";
 import { baseUrl } from "@/public/baseUrl";
 import { useRouter } from "next/router";
 import React from "react";
@@ -33,11 +37,10 @@ async function getData(id: string) {
 const page = async ({ params }: any) => {
   let trainingSlug = params.slug;
 
-  const res1 = await fetch(
-    "https://smartcare.com.np/techsewa/publiccontrol/publicmasterconfig/gettrainingcategories"
+  const data1 = await fetchClient(
+    "/techsewa/publiccontrol/publicmasterconfig/gettrainingcategories"
   );
-  const data2 = await res1.json();
-  const finddata = data2.find(
+  const finddata = data1.find(
     (i: any) => i?.text?.replace(" ", "-").toLowerCase() === trainingSlug
   );
 

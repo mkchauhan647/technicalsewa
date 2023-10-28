@@ -1,12 +1,10 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/footer/Footer";
+import { fetchClient } from "@/lib/api";
 import React from "react";
 
 const page = async () => {
-  const terms = await fetch(
-    "https://smartcare.com.np/techsewa/publicControl/terms"
-  );
-  const termsData = await terms.json();
+  const termsData = await fetchClient("/techsewa/publicControl/terms");
   return (
     <>
       <Nav />

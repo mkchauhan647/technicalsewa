@@ -1,4 +1,8 @@
-import { getTrainingCategoriesData, getTrainings } from "@/lib/api";
+import {
+  fetchClient,
+  getTrainingCategoriesData,
+  getTrainings,
+} from "@/lib/api";
 import { MetadataRoute } from "next";
 
 const siteUrl = "https://technicalsewa.com";
@@ -32,9 +36,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const trainingCategories = await getTrainingCategoriesData();
 
-  const blogs = await fetch(
-    "https://smartcare.com.np/techsewa/publiccontrol/publicmasterconfig/getblogdetails"
-  ).then((response) => response.json());
+  const blogs = await fetchClient(
+    "/techsewa/publiccontrol/publicmasterconfig/getblogdetails"
+  );
 
   const blogsSiteMap = blogs.map((b: any) => {
     return {
@@ -56,9 +60,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     };
   });
 
-  const services = await fetch(
-    "https://smartcare.com.np/techsewa/masterconfig/publicmasterconfig/getSliderListpop1"
-  ).then((response) => response.json());
+  const services = await fetchClient(
+    "/techsewa/masterconfig/publicmasterconfig/getSliderListpop1"
+  );
 
   const servicesSiteMap = services.brands.map((item: any) => {
     return {
@@ -68,9 +72,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     };
   });
 
-  const partPurjaList = await fetch(
-    `https://smartcare.com.np/techsewa/publiccontrol/publicmasterconfig/getfeaturedDetails`
-  ).then((response) => response.json());
+  const partPurjaList = await fetchClient(
+    `/techsewa/publiccontrol/publicmasterconfig/getfeaturedDetails`
+  );
 
   const partPurjaSiteMap = partPurjaList.map((item: any) => {
     const slug = item?.page_url.replace(/\s+/g, "-");
