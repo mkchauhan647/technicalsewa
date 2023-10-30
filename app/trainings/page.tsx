@@ -15,6 +15,11 @@ import { URLSearchParams } from "url";
 const Page = async () => {
   const trainings = await getTrainings();
 
+  trainings?.sort(
+    (a: any, b: any) =>
+      new Date(b?.created_date).getTime() - new Date(a?.created_date).getTime()
+  );
+
   const trainingCategories = await getTrainingCategoriesData();
   return (
     <>

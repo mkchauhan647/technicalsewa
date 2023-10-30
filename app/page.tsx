@@ -3,7 +3,6 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 import FooterContact from "@/components/footer/FooterContact";
 import Categories from "@/components/repair/Categories";
 
-import { baseUrl } from "../public/baseUrl";
 import Nav from "@/components/Nav";
 import Footer from "@/components/footer/Footer";
 import Number from "@/components/Number";
