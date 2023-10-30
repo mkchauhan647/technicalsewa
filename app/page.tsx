@@ -74,7 +74,6 @@ export default async function Home() {
         />
         <MedicalEquipment medicalEquipmentData={medicalEquipmentData} />
         <Number />
-
         <WhyChooseUs />
         <MidContent />
         <FooterContact />
