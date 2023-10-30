@@ -19,7 +19,13 @@ export default async function Home() {
   let allBrands = result?.brands;
   allBrands?.sort((a: any, b: any) => +a?.brand_id - +b?.brand_id);
 
-  const brands = new Set(allBrands?.map((b: any) => b?.brand_name));
+  const brands: { [key: string]: any }[] = [];
+
+  allBrands.forEach((b: any) => {
+    const brandExists = brands.findIndex((i) => i?.id === +b?.brand_id) !== -1;
+    if (!brandExists) brands.push({ id: +b?.brand_id, name: b?.brand_name });
+  });
+
   return (
     <>
       <Nav />

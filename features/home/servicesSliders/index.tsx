@@ -11,40 +11,44 @@ export default function ServicesSLiders({
 }) {
   let pairBrands = brands?.length > 1 ? [...brands].slice(1) : [];
 
-  pairBrands = pairBrands.filter((b: any) => b !== "Appliances Repairs");
-  pairBrands = pairBrands.filter((b: any) => b !== "Popular Brands Repair");
+  // remove for appliances, popular brands
+  pairBrands = pairBrands.filter((b: any) => b?.id !== 62);
+  pairBrands = pairBrands.filter((b: any) => b?.id !== 76);
 
   const numberOfPairs = Math.ceil(pairBrands.length / 2);
 
   const appliancesServices = [...data]?.filter(
-    (d: any) => d?.brand_name === "Appliances Repairs"
+    (d: any) => +d?.brand_id === 62 // "Appliances Repairs"
   );
   const popularBrandsServices = [...data]?.filter(
-    (d: any) => d?.brand_name === "Popular Brands Repair"
+    (d: any) => +d?.brand_id === 76 // specified id for "Popular Brands Repair"
   );
+
+  const popularBrand = brands?.find((b: any) => b?.id === 76);
+  const applianceRepair = brands?.find((b: any) => b?.id === 62);
 
   return (
     <>
       {[
         brands?.length > 0 &&
           [brands[0]].map((b: any, k) => {
-            const services = data?.filter((d: any) => d?.brand_name === b);
+            const services = data?.filter((d: any) => +d?.brand_id === b?.id);
             return (
-              <ServiceSlider key={k} index={k} service={b} data={services} />
+              <ServiceSlider key={k} index={k} service={b?.name} data={services} />
             );
           }),
       ]}
       {appliancesServices.length && (
         <ServiceSlider
           index={1}
-          service={"Appliances Repairs"}
+          service={applianceRepair?.name}
           data={appliancesServices}
         />
       )}
       {popularBrandsServices.length && (
         <ServiceSlider
           index={0}
-          service={"Popular Brands Repair"}
+          service={popularBrand?.name}
           data={popularBrandsServices}
         />
       )}
@@ -52,10 +56,10 @@ export default function ServicesSLiders({
         const brand1 = index * 2;
         const brand2 = index * 2 + 1;
         const brand1Services = data?.filter(
-          (d: any) => d?.brand_name === pairBrands[brand1]
+          (d: any) => +d?.brand_id === pairBrands[brand1]?.id
         );
         const brand2Services = data?.filter(
-          (d: any) => d?.brand_name === pairBrands[brand2]
+          (d: any) => +d?.brand_id === pairBrands[brand2]?.id
         );
         return (
           <div
@@ -68,14 +72,14 @@ export default function ServicesSLiders({
           >
             <div className="flex overflow-hidden flex-col justify-center items-center">
               <b className="text-primary font-bold text-[20px] my-2 border-b-[0.5px] pb-1 border-b-[#4f4b4b]">
-                {pairBrands[brand1]}
+                {pairBrands[brand1]?.name}
               </b>
               <Slider data={brand1Services} />
             </div>
             {pairBrands[brand2] && (
               <div className="flex overflow-hidden flex-col justify-center items-center">
                 <p className="text-primary font-bold text-[20px] my-2 border-b-[0.5px] pb-1 border-b-[#4f4b4b]">
-                  {pairBrands[brand2]}
+                  {pairBrands[brand2]?.name}
                 </p>
                 <Slider data={brand2Services} />
               </div>
