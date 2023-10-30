@@ -29,8 +29,7 @@ export default function ForgotPasswordForm() {
       .then(({ data }) => {
         if ((!data?.status || data?.status === "False") && data?.msg) {
           toast(`❌ ${data?.msg}`);
-        }
-        if (data?.status === "Success") {
+        } else if (data?.status === "Success") {
           toast(
             data?.msg ?? `New password has been sent to your mobile number.`
           );
