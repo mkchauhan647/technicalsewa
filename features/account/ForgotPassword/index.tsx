@@ -1,13 +1,15 @@
 "use client";
 import axios from "axios";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 
 export default function ForgotPasswordForm() {
+  const { push } = useRouter();
   const [accountType, setAccountType] = useState("");
   const [input, setInput] = useState({
-    username: "",
+    mobile: "",
   });
 
   const handleChange = (e: any) => {
@@ -18,7 +20,7 @@ export default function ForgotPasswordForm() {
   const handleSignIn = async () => {
     let data = new FormData();
     data.append("type", accountType);
-    data.append("username", input.username);
+    data.append("mobile", input.mobile);
     await axios
       .post(
         `https://smartcare.com.np/techsewa/publiccontrol/resetpassword`,
@@ -28,9 +30,10 @@ export default function ForgotPasswordForm() {
         if ((!data?.status || data?.status === "False") && data?.msg) {
           toast(`❌ ${data?.msg}`);
         }
-        console.log("reset response ? = ", data);
-        // const credObj = JSON.stringify(data);
-        // localStorage.setItem("loginKey", credObj);
+        if (data?.status === "True") {
+          toast(`New password has been sent to your mobile number.`);
+          push("/login");
+        }
       });
   };
 
@@ -43,11 +46,11 @@ export default function ForgotPasswordForm() {
               Reset your password
             </h2>
 
-            {/* {accountType && (
+            {accountType && (
               <p className="text-gray-500">
                 Enter your registered phone number to reset password.
               </p>
-            )} */}
+            )}
           </div>
         </div>
 
@@ -78,10 +81,10 @@ export default function ForgotPasswordForm() {
           <>
             <input
               type="text"
-              name="username"
+              name="mobile"
               required
               onChange={handleChange}
-              placeholder="Username"
+              placeholder="Phone Number"
               className="border w-full border-[#D9D9D9] py-[12px] pl-[20px] mt-[20px] placeholder:text-[#666666]/[0.4] placeholder:italic placeholder:font-normal rounded-[2px] outline-none"
             />
 

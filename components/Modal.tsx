@@ -55,7 +55,7 @@ const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
                     className="h-[60px] "
                   />
                 )}
-                <p className="text-xs mt-2 text-center font-bold truncate text-[#1C1E21] w-32 h-10">
+                <p className="text-xs mt-2 text-center font-bold text-[#1C1E21] w-32 h-10">
                   {val.product_name}
                 </p>
               </div>

@@ -16,7 +16,8 @@ export default async function Home() {
     `/techsewa/masterconfig/publicmasterconfig/getSliderListpop1`
   );
   let allBrands = result?.brands;
-  allBrands?.sort((a: any, b: any) => +a?.brand_id - +b?.brand_id);
+  // allBrands?.sort((a: any, b: any) => +a?.brand_id - +b?.brand_id);
+  allBrands?.sort((a: any, b: any) => +a?.ordering - +b?.ordering);
 
   const brands: { [key: string]: any }[] = [];
 
