@@ -2,6 +2,7 @@
 import axios from "axios";
 import Link from "next/link";
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 
 export default function ForgotPasswordForm() {
   const [input, setInput] = useState({
@@ -21,9 +22,12 @@ export default function ForgotPasswordForm() {
         `https://smartcare.com.np/techsewa/publiccontrol/resetpassword`,
         data
       )
-      .then((response) => {
-        console.log("reset response ? = ", response);
-        // const credObj = JSON.stringify(response?.data);
+      .then(({ data }) => {
+        if ((!data?.status || data?.status === "False") && data?.msg) {
+          toast(`❌ ${data?.msg}`);
+        }
+        console.log("reset response ? = ", data);
+        // const credObj = JSON.stringify(data);
         // localStorage.setItem("loginKey", credObj);
       });
   };
@@ -32,13 +36,6 @@ export default function ForgotPasswordForm() {
     <div className="bg-white  pt-10 pb-[79px]">
       <div className="flex flex-col justify-center pt-[50px] w-[80%] lg:w-[33.33%]  mx-auto px-4 md:p-0">
         <div className="flex flex-col items-center">
-          <div className="w-[150px] h-auto pb-2">
-            <img
-              src="/../assets/logoofts.png"
-              alt="image of logo"
-              className="w-full h-full object-container"
-            />
-          </div>
           <div className="py-2">
             <h2 className="text-[#666666] text-xl leading-[19.5px] font-semibold mt-[12px]">
               Reset your password
