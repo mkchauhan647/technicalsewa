@@ -1,8 +1,12 @@
-import FacebookPixel from "@/components/FacebookPixel";
 import "./globals.css";
 import { Inter } from "next/font/google";
-import FacebookMessenger from "@/components/FacebookMessenger";
 import AutoScrollToTop from "@/components/scrollToTop";
+import dynamic from "next/dynamic";
+
+const LazyClientRenderer = dynamic(
+  () => import("@/features/lazyClientRenderer"),
+  { ssr: false }
+);
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,9 +38,8 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         {children}
-        <FacebookPixel />
-        <FacebookMessenger />
         <AutoScrollToTop />
+        <LazyClientRenderer />
       </body>
     </html>
   );

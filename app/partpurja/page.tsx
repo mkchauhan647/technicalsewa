@@ -1,14 +1,13 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/footer/Footer";
 import LinkButton from "@/components/pageHelperComponents.js/PartPurjaLinkButton";
-import { getSEOByPageURL } from "@/lib/api";
+import { fetchServerClient, getSEOByPageURL } from "@/lib/api";
 import Link from "next/link";
 
 const page = async () => {
-  const partpurja = await fetch(
-    "https://smartcare.com.np/techsewa/publiccontrol/publicmasterconfig/getfeaturedDetails"
+  const partpurjadata = await fetchServerClient(
+    "/techsewa/publiccontrol/publicmasterconfig/getfeaturedDetails"
   );
-  const partpurjadata = await partpurja.json();
 
   return (
     <>

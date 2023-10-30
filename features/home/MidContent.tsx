@@ -7,9 +7,7 @@ const MidContent = () => {
 
   useEffect(() => {
     let fetchData = async () => {
-      let data = await fetchClient(
-        "https://smartcare.com.np/techsewa/publicControl/midcontent"
-      );
+      let data = await fetchClient("/techsewa/publicControl/midcontent");
       setDesc(data);
     };
     fetchData();

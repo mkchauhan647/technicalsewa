@@ -6,6 +6,7 @@ import { AiOutlineEye } from "react-icons/ai";
 import axios from "axios";
 import useAuthStore from "@/store/useAuthStore";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 const LoginForm = () => {
   const { push } = useRouter();
@@ -21,8 +22,32 @@ const LoginForm = () => {
     setInput({ ...input, [name]: value });
   };
 
+  const handleCRMLogin = () => {
+    const form = document.createElement("form");
+    form.setAttribute("method", "post");
+    form.setAttribute(
+      "action",
+      "https://smartcare.com.np/techsewa/verify/signin"
+    );
+
+    const loginParams: any = { ...input };
+
+    form.setAttribute("id", "form");
+    for (var key in loginParams) {
+      var hiddenField = document.createElement("input");
+      hiddenField.setAttribute("type", "hidden");
+      hiddenField.setAttribute("name", key);
+      hiddenField.setAttribute("value", loginParams[key]);
+      form.appendChild(hiddenField);
+    }
+
+    document.body.appendChild(form);
+    form.submit();
+  };
+
   const handleSignIn = async () => {
     setLoading(true);
+
     let data = new FormData();
     data.append("username", input.username);
     data.append("password", input.password);
@@ -32,10 +57,18 @@ const LoginForm = () => {
         data
       );
 
+      // crm login if only success response
+      if (loginRes.data === "success") {
+        toast("Loggining to CRM...");
+        handleCRMLogin();
+        return;
+      }
+
       if (typeof loginRes.data === "object" && loginRes.data !== null) {
         signin(loginRes.data);
         push("/");
       } else {
+        toast("❌ Invalid login!");
         throw new Error("Login Failed");
       }
     } catch (error) {

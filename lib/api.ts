@@ -3,6 +3,15 @@ import axios from "axios";
 
 export const api = axios.create({ baseURL: baseUrl });
 export async function fetchClient(url: string, options = {}) {
+  const defaultOptions = {};
+
+  const mergedOptions = { ...defaultOptions, ...options };
+
+  const response = await fetch(`${baseUrl}${url}`, mergedOptions as any);
+  return response.json();
+}
+// for server side requests
+export async function fetchServerClient(url: string, options = {}) {
   const defaultOptions = {
     cache: "no-store",
   };
@@ -125,7 +134,7 @@ export async function getSEOByPageURL(url: string) {
     // );
 
     // return res.json();
-    const res = await fetchClient(
+    const res = await fetchServerClient(
       `/techsewa/publiccontrol/publicmasterconfig/getSeoContent?url=${url}`
     );
     return res;

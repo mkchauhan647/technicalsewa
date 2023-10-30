@@ -3,7 +3,7 @@ import Nav from "@/components/Nav";
 import { SEOBase } from "@/components/SEOBase";
 import Footer from "@/components/footer/Footer";
 import {
-  fetchClient,
+  fetchServerClient,
   getSEOByPageURL,
   getTrainingCategoriesData,
 } from "@/lib/api";
@@ -37,7 +37,7 @@ async function getData(id: string) {
 const page = async ({ params }: any) => {
   let trainingSlug = params.slug;
 
-  const data1 = await fetchClient(
+  const data1 = await fetchServerClient(
     "/techsewa/publiccontrol/publicmasterconfig/gettrainingcategories"
   );
   const finddata = data1.find(

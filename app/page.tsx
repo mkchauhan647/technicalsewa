@@ -7,19 +7,34 @@ import { baseUrl } from "../public/baseUrl";
 import Nav from "@/components/Nav";
 import Footer from "@/components/footer/Footer";
 import Number from "@/components/Number";
-import MidContent from "@/components/MidContent";
-import { fetchClient, getSEOByPageURL } from "@/lib/api";
-import Fotterupcontent from "@/components/Fotterupcontent";
+import MidContent from "@/features/home/MidContent";
+import MidContent2 from "@/features/home/MidContent2";
+import { fetchServerClient, getSEOByPageURL } from "@/lib/api";
 import ServicesSLiders from "@/features/home/servicesSliders";
 
 export default async function Home() {
-  const result = await fetchClient(
+  const result = await fetchServerClient(
     `/techsewa/masterconfig/publicmasterconfig/getSliderListpop1`
   );
   let allBrands = result?.brands;
   allBrands?.sort((a: any, b: any) => +a?.brand_id - +b?.brand_id);
 
-  const brands = new Set(allBrands?.map((b: any) => b?.brand_name));
+  const brands: { [key: string]: any }[] = [];
+
+  allBrands.forEach((b: any) => {
+    const brandExists = brands.findIndex((i) => i?.id === +b?.brand_id) !== -1;
+    if (!brandExists) {
+      brands.push({
+        id: +b?.brand_id,
+        name: b?.brand_name,
+        order: +(b?.ordering || 0),
+      });
+    }
+  });
+
+  brands?.sort((a: any, b: any) => a?.order - b?.order);
+  // ===============================
+
   return (
     <>
       <Nav />
@@ -41,19 +56,9 @@ export default async function Home() {
         <WhyChooseUs />
         <MidContent />
         <FooterContact />
-        <Fotterupcontent />
+        <MidContent2 />
       </main>
       <Footer />
-      <>
-        <a
-          href="https://wa.me/+9779851201580"
-          className="whatsapp_float"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fa fa-whatsapp whatsapp-icon"></i>
-        </a>
-      </>
     </>
   );
 }

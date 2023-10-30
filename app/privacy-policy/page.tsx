@@ -2,10 +2,10 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/footer/Footer";
 import React from "react";
 import "./page.css";
-import { fetchClient } from "@/lib/api";
+import { fetchServerClient } from "@/lib/api";
 
 const page = async () => {
-  const privacyPolicyData = await fetchClient(
+  const privacyPolicyData = await fetchServerClient(
     "/techsewa/publicControl/privacy"
   );
   return (

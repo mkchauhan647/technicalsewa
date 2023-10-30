@@ -1,5 +1,5 @@
 import {
-  fetchClient,
+  fetchServerClient,
   getTrainingCategoriesData,
   getTrainings,
 } from "@/lib/api";
@@ -36,7 +36,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const trainingCategories = await getTrainingCategoriesData();
 
-  const blogs = await fetchClient(
+  const blogs = await fetchServerClient(
     "/techsewa/publiccontrol/publicmasterconfig/getblogdetails"
   );
 
@@ -60,7 +60,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     };
   });
 
-  const services = await fetchClient(
+  const services = await fetchServerClient(
     "/techsewa/masterconfig/publicmasterconfig/getSliderListpop1"
   );
 
@@ -72,7 +72,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     };
   });
 
-  const partPurjaList = await fetchClient(
+  const partPurjaList = await fetchServerClient(
     `/techsewa/publiccontrol/publicmasterconfig/getfeaturedDetails`
   );
 

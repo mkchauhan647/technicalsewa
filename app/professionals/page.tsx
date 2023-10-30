@@ -1,7 +1,7 @@
 import Nav from "@/components/Nav";
 import ProfessionalsCardButton from "@/components/ProfessionalsCardButton";
 import Footer from "@/components/footer/Footer";
-import { fetchClient, getSEOByPageURL } from "@/lib/api";
+import { fetchServerClient, getSEOByPageURL } from "@/lib/api";
 import Link from "next/link";
 import React from "react";
 import { RiLayoutGridFill } from "react-icons/ri";
@@ -9,7 +9,7 @@ import { TfiLayoutColumn3Alt } from "react-icons/tfi";
 
 // professionals page
 const page = async () => {
-  const professionalsData = await fetchClient(
+  const professionalsData = await fetchServerClient(
     "/techsewa/publiccontrol/getTechnicianProfilePublic"
   );
 
