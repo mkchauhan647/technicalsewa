@@ -20,7 +20,7 @@ export default function ForgotPasswordForm() {
   const handleSignIn = async () => {
     let data = new FormData();
     data.append("type", accountType);
-    data.append("mobile", input.mobile);
+    data.append("username", input.mobile);
     await axios
       .post(
         `https://smartcare.com.np/techsewa/publiccontrol/resetpassword`,
@@ -29,9 +29,10 @@ export default function ForgotPasswordForm() {
       .then(({ data }) => {
         if ((!data?.status || data?.status === "False") && data?.msg) {
           toast(`❌ ${data?.msg}`);
-        }
-        if (data?.status === "True") {
-          toast(`New password has been sent to your mobile number.`);
+        } else if (data?.status === "Success") {
+          toast(
+            data?.msg ?? `New password has been sent to your mobile number.`
+          );
           push("/login");
         }
       });
