@@ -15,6 +15,11 @@ import { URLSearchParams } from "url";
 const Page = async () => {
   const trainings = await getTrainings();
 
+  trainings?.sort(
+    (a: any, b: any) =>
+      new Date(b?.created_date).getTime() - new Date(a?.created_date).getTime()
+  );
+
   const trainingCategories = await getTrainingCategoriesData();
   return (
     <>
@@ -48,7 +53,7 @@ const Page = async () => {
                           href={`/training/${item?.training_title
                             ?.replaceAll(" ", "-")
                             .toLowerCase()}`}
-                          className="  font-bold hover:text-[#2591B2] text-[19px] md:text-[27px] mb-3 h-[40px] "
+                          className="  font-bold hover:text-primary text-[19px] md:text-[27px] mb-3 h-[40px] "
                         >
                           {item?.training_title}
                         </Link>

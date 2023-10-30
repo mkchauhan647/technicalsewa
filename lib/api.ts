@@ -2,18 +2,32 @@ import { baseUrl } from "@/public/baseUrl";
 import axios from "axios";
 
 export const api = axios.create({ baseURL: baseUrl });
+export async function fetchClient(url: string, options = {}) {
+  const defaultOptions = {};
+
+  const mergedOptions = { ...defaultOptions, ...options };
+
+  const response = await fetch(`${baseUrl}${url}`, mergedOptions as any);
+  return response.json();
+}
+// for server side requests
+export async function fetchServerClient(url: string, options = {}) {
+  const defaultOptions = {
+    cache: "no-store",
+  };
+
+  const mergedOptions = { ...defaultOptions, ...options };
+
+  const response = await fetch(`${baseUrl}${url}`, mergedOptions as any);
+  return response.json();
+}
 
 export async function getTrainings() {
   try {
-    const res = await fetch(
-      `${baseUrl}/techsewa/publiccontrol/publicmasterconfig/gettrainingDetails`,
-      {
-        headers: {
-          "Cache-Control": `max-age=${2 * 60}`, // max 30min cache
-        },
-      }
+    const res = await fetchServerClient(
+      "/techsewa/publiccontrol/publicmasterconfig/gettrainingDetails"
     );
-    return res.json();
+    return res;
   } catch (error) {
     return [];
   }
@@ -28,9 +42,10 @@ export async function getTrainingDataById(id: string) {
       {
         method: "POST",
         body: formData,
-        headers: {
-          "Cache-Control": `max-age=${2 * 60}`, // max 2min cache
-        },
+        cache: "no-store",
+        // headers: {
+        //   "Cache-Control": `max-age=${2 * 60}`, // max 2min cache
+        // },
       }
     );
     return res.json();
@@ -66,9 +81,10 @@ export async function getBlogDataById(id: string) {
       {
         method: "POST",
         body: formData,
-        headers: {
-          "Cache-Control": `max-age=${2 * 60}`, // max 30min cache
-        },
+        cache: "no-store",
+        // headers: {
+        //   "Cache-Control": `max-age=${2 * 60}`, // max 30min cache
+        // },
       }
     );
 
@@ -89,9 +105,10 @@ export async function getBlogsByCategoryId(id: string) {
       {
         method: "POST",
         body: formData,
-        headers: {
-          "Cache-Control": `max-age=${600}`, // max 10min cache
-        },
+        cache: "no-store",
+        // headers: {
+        //   "Cache-Control": `max-age=${600}`, // max 10min cache
+        // },
       }
     );
 
@@ -104,18 +121,21 @@ export async function getBlogsByCategoryId(id: string) {
 // get seo by page url
 
 export async function getSEOByPageURL(url: string) {
-  console.log("getting seo for ? ", url);
   try {
-    const res = await fetch(
-      `${baseUrl}/techsewa/publiccontrol/publicmasterconfig/getSeoContent?url=${url}`,
-      {
-        headers: {
-          "Cache-Control": `max-age=${600}`, // max 10min cache
-        },
-      }
-    );
+    // const res = await fetch(
+    //   `${baseUrl}/techsewa/publiccontrol/publicmasterconfig/getSeoContent?url=${url}`,
+    //   {
+    //     headers: {
+    //       "Cache-Control": `max-age=${600}`, // max 10min cache
+    //     },
+    //   }
+    // );
 
-    return res.json();
+    // return res.json();
+    const res = await fetchServerClient(
+      `/techsewa/publiccontrol/publicmasterconfig/getSeoContent?url=${url}`
+    );
+    return res;
   } catch (error) {
     return { error: true };
   }

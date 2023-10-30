@@ -1,13 +1,13 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/footer/Footer";
 import LinkButton from "@/components/pageHelperComponents.js/PartPurjaLinkButton";
+import { fetchServerClient, getSEOByPageURL } from "@/lib/api";
 import Link from "next/link";
 
 const page = async () => {
-  const partpurja = await fetch(
-    "https://smartcare.com.np/multiservice/publiccontrol/publicmasterconfig/getfeaturedDetails"
+  const partpurjadata = await fetchServerClient(
+    "/techsewa/publiccontrol/publicmasterconfig/getfeaturedDetails"
   );
-  const partpurjadata = await partpurja.json();
 
   return (
     <>
@@ -44,7 +44,7 @@ const page = async () => {
             <Link
               key={index}
               href={{
-                pathname: `/partpurja/${s.page_url}`,
+                pathname: `/partpurja/${s.page_url?.replace(/ /g, "-")}`,
               }}
             >
               <LinkButton data={s} />
@@ -87,9 +87,32 @@ const page = async () => {
 
 export default page;
 
+export async function generateMetadata() {
+  const seoData = await getSEOByPageURL(
+    `https://technicalsewa.com/professionals`
+  );
 
-export async function generateMetadata(){
+  const seoExists = seoData?.content && !Array.isArray(seoData?.content);
 
+  const seoContent = seoData?.content;
+
+  if (seoExists) {
+    return {
+      title: `${
+        seoExists ? seoContent?.page_title : "PartPurja | Technical sewa"
+      } `,
+      description: `${seoContent?.description}`,
+      keywords: `${seoContent?.key_words}`,
+      openGraph: {
+        title: `${
+          seoExists ? seoContent?.page_title : "PartPurja | Technical sewa"
+        } `,
+        description: `${seoContent?.description} `,
+        url: seoContent?.page_url,
+        type: "website",
+      },
+    };
+  }
   return {
     title: `PartPurja | Technical sewa`,
   };

@@ -7,7 +7,6 @@ import {
   getSEOByPageURL,
   getTrainingCategoriesData,
 } from "@/lib/api";
-import Head from "next/head";
 import React from "react";
 
 const page = async ({ params }: any) => {
@@ -21,26 +20,6 @@ const page = async ({ params }: any) => {
   const pageTitle = `${data?.blog_name} - Blog`;
   return (
     <>
-      <Head>
-        <SEOBase title={pageTitle} />
-        {/* Open Graph tags */}
-        <meta property="og:title" content={`${pageTitle}`} />
-
-        <meta
-          property="og:image"
-          content={data?.filename ? data?.filename : "/favicon.ico"}
-        />
-        <meta
-          property="og:url"
-          content={`https://technicalsewa.com/blogs/${data?.blog_id}`}
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:site_name"
-          content=" technicalsewa.com Repair Services on Demand "
-        />
-        <meta property="og:locale" content="en_US" />
-      </Head>
       <Nav />
       <div className="container flex justify-center py-6 mx-auto px-[10px] md:px-[0px]">
         <div className="max-w-[1200px]">
@@ -90,6 +69,12 @@ export async function generateMetadata({ params }: any) {
   const seoExists = seoData?.content && !Array.isArray(seoData?.content);
 
   const seoContent = seoData?.content;
+
+  // <SEOBase title={pageTitle} />
+  // <meta
+  //   property="og:image"
+  //   content={data?.filename ? data?.filename : "/favicon.ico"}
+  // />
 
   if (seoExists) {
     return {

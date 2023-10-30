@@ -1,6 +1,7 @@
 import Nav from "@/components/Nav";
 import ProfessionalsCardButton from "@/components/ProfessionalsCardButton";
 import Footer from "@/components/footer/Footer";
+import { fetchServerClient, getSEOByPageURL } from "@/lib/api";
 import Link from "next/link";
 import React from "react";
 import { RiLayoutGridFill } from "react-icons/ri";
@@ -8,16 +9,15 @@ import { TfiLayoutColumn3Alt } from "react-icons/tfi";
 
 // professionals page
 const page = async () => {
-  const professinals = await fetch(
-    "https://smartcare.com.np/multiservice/publiccontrol/getTechnicianProfilePublic"
+  const professionalsData = await fetchServerClient(
+    "/techsewa/publiccontrol/getTechnicianProfilePublic"
   );
-  const professionalsData = await professinals.json();
 
   return (
     <>
       <Nav />
       <div className="  pt-[20px] pb-[79px] max-w-[1280px]  mx-auto flex flex-col items-center justify-center">
-        <div className="px-2  md:p-0">
+        <div className="px-2 md:p-0">
           {/* header  */}
           <h2 className="text-[32px] md:text-[31px] text-center md:text-left">
             Our Professionals
@@ -39,7 +39,7 @@ const page = async () => {
           </div>
 
           {/* card  */}
-          <div className="grid grid-cols-1 gap-5 px-2 py-4  md:grid-cols-3 md:py-8 md:px-0">
+          <div className="grid grid-cols-1 gap-5 px-2 py-4 md:grid-cols-3 md:py-8 md:px-0">
             {professionalsData.map((s: any, index: any) => (
               <div
                 key={index}
@@ -54,12 +54,12 @@ const page = async () => {
                   />
                 </div>
                 <div className="flex flex-col flex-1 gap-2 md:gap-5">
-                  <h3 className="text-[#2591b2] text-[17px] font-bold">
+                  <h3 className="text-primary text-[17px] font-bold">
                     {s.sc_name}
                   </h3>
 
                   {/* three small button */}
-                  <div className="flex gap-1 text-[12px] text-[#2591b2]">
+                  <div className="flex gap-1 text-[12px] text-primary">
                     <button className="bg-[#e8ebf4] px-[9px] py-[2px] rounded-sm">
                       Kent
                     </button>
@@ -75,7 +75,7 @@ const page = async () => {
                   <div className="flex gap-2 text-[11px]">
                     <Link
                       href="/service"
-                      className="text-white bg-[#2591b2] rounded-md px-2 py-1 md:px-[17px] md:py-[6px]"
+                      className="text-white bg-primary rounded-md px-2 py-1 md:px-[17px] md:py-[6px]"
                     >
                       Book Now
                     </Link>
@@ -111,7 +111,7 @@ const page = async () => {
                 type="text"
                 placeholder="Type your mobile number"
               />
-              <button className="bg-[#2591b2] text-white px-6 md:px-10 md:py-4 rounded-r-md">
+              <button className="px-6 text-white rounded-r-md bg-primary md:px-10 md:py-4">
                 SEND
               </button>
             </div>
@@ -126,7 +126,31 @@ const page = async () => {
 export default page;
 
 export async function generateMetadata() {
+  const seoData = await getSEOByPageURL(
+    `https://technicalsewa.com/professionals`
+  );
 
+  const seoExists = seoData?.content && !Array.isArray(seoData?.content);
+
+  const seoContent = seoData?.content;
+
+  if (seoExists) {
+    return {
+      title: `${
+        seoExists ? seoContent?.page_title : "Professionals | Technical sewa"
+      } `,
+      description: `${seoContent?.description}`,
+      keywords: `${seoContent?.key_words}`,
+      openGraph: {
+        title: `${
+          seoExists ? seoContent?.page_title : "Professionals | Technical sewa"
+        } `,
+        description: `${seoContent?.description} `,
+        url: seoContent?.page_url,
+        type: "website",
+      },
+    };
+  }
   return {
     title: `Professionals | Technical sewa`,
   };

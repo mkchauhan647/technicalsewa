@@ -1,12 +1,10 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/footer/Footer";
+import { fetchServerClient } from "@/lib/api";
 import React from "react";
 
 const page = async () => {
-  const terms = await fetch(
-    "https://smartcare.com.np/multiservice/publicControl/terms"
-  );
-  const termsData = await terms.json();
+  const termsData = await fetchServerClient("/techsewa/publicControl/terms");
   return (
     <>
       <Nav />
@@ -14,7 +12,7 @@ const page = async () => {
         <div className="relative h-[200px] md:h-[350px]">
           <img
             src="/../assets/Aboutus.jpg"
-            className="w-full h-full object-cover"
+            className="object-cover w-full h-full"
           />
           <h2 className="absolute top-[50%] left-[50%] transform translate-x-[-50%] translate-y-[-50%] text-white font-semibold text-[40px] md:text-[60px]">
             Terms and Conditions

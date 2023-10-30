@@ -2,9 +2,12 @@ import Categorylist from "@/components/Categorylist";
 import Nav from "@/components/Nav";
 import { SEOBase } from "@/components/SEOBase";
 import Footer from "@/components/footer/Footer";
-import { getSEOByPageURL, getTrainingCategoriesData } from "@/lib/api";
+import {
+  fetchServerClient,
+  getSEOByPageURL,
+  getTrainingCategoriesData,
+} from "@/lib/api";
 import { baseUrl } from "@/public/baseUrl";
-import Head from "next/head";
 import { useRouter } from "next/router";
 import React from "react";
 async function getData(id: string) {
@@ -34,11 +37,10 @@ async function getData(id: string) {
 const page = async ({ params }: any) => {
   let trainingSlug = params.slug;
 
-  const res1 = await fetch(
-    "https://smartcare.com.np/techsewa/publiccontrol/publicmasterconfig/gettrainingcategories"
+  const data1 = await fetchServerClient(
+    "/techsewa/publiccontrol/publicmasterconfig/gettrainingcategories"
   );
-  const data2 = await res1.json();
-  const finddata = data2.find(
+  const finddata = data1.find(
     (i: any) => i?.text?.replace(" ", "-").toLowerCase() === trainingSlug
   );
 
@@ -56,26 +58,6 @@ const page = async ({ params }: any) => {
 
   return (
     <>
-      <Head>
-        <SEOBase title={pageTitle} />
-        {/* Open Graph tags */}
-        <meta property="og:title" content={`${data?.meta_title}`} />
-        <meta property="og:description" content={`${data?.meta_desc}`} />
-        <meta
-          property="og:image"
-          content={data?.image_1 ? data?.image_1 : "/favicon.ico"}
-        />
-        <meta
-          property="og:url"
-          content={`https://technicalsewa.com/training/${trainingId}`}
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:site_name"
-          content=" technicalsewa.com Repair Services on Demand "
-        />
-        <meta property="og:locale" content="en_US" />
-      </Head>
       <Nav />
       <div className="max-w-[1280px] py-8  mx-auto md:px-0 px-[10px]">
         {/* fridge training  */}

@@ -1,96 +1,63 @@
 import HeroSection from "@/components/HeroSection";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import FooterContact from "@/components/footer/FooterContact";
-import ApplicationRepair from "@/components/repair/ApplicationRepair";
 import Categories from "@/components/repair/Categories";
-import ElectricianPlumbers from "@/components/repair/ElectricianPlumbers";
-import PopularBrands from "@/components/repair/PopularBrands";
-import Warrantyproducts from "@/components/repair/Warrantyproducts";
-import { baseUrl } from "../public/baseUrl";
-import axios from "axios";
+
 import Nav from "@/components/Nav";
 import Footer from "@/components/footer/Footer";
-import MedicalEquipment from "@/components/repair/MedicalEquipment";
 import Number from "@/components/Number";
-import MidContent from "@/components/MidContent";
-import { SEOBase } from "@/components/SEOBase";
-import { getSEOByPageURL } from "@/lib/api";
-import Fotterupcontent from "@/components/Fotterupcontent";
-import Facebook from "@/components/Facebook";
-import ForSeo from "@/components/ForSeo";
+import MidContent from "@/features/home/MidContent";
+import MidContent2 from "@/features/home/MidContent2";
+import { fetchServerClient, getSEOByPageURL } from "@/lib/api";
+import ServicesSLiders from "@/features/home/servicesSliders";
 
 export default async function Home() {
-  const result = await axios.get(
-    `${baseUrl}techsewa/masterconfig/publicmasterconfig/getSliderListpop1`
+  const result = await fetchServerClient(
+    `/techsewa/masterconfig/publicmasterconfig/getSliderListpop1`
   );
+  let allBrands = result?.brands;
+  // allBrands?.sort((a: any, b: any) => +a?.brand_id - +b?.brand_id);
+  allBrands?.sort((a: any, b: any) => +a?.ordering - +b?.ordering);
 
-  const allBrands = result?.data?.brands;
+  const brands: { [key: string]: any }[] = [];
 
-  // dataa for ApplicationRepairData
-  const applicationRepairData = result?.data?.brands?.filter((val: any) => {
-    // return val.brand_name === "Appliances Repair Sewa";
-    return val.brand_id === "62";
+  allBrands.forEach((b: any) => {
+    const brandExists = brands.findIndex((i) => i?.id === +b?.brand_id) !== -1;
+    if (!brandExists) {
+      brands.push({
+        id: +b?.brand_id,
+        name: b?.brand_name,
+        order: +(b?.ordering || 0),
+      });
+    }
   });
 
-  const popularBrandsData = result?.data?.brands?.filter((val: any) => {
-    // return val.brand_name === "Popular Brands Repair";
-    return val.brand_id === "76";
-  });
-
-  const warrantyProductsData = result?.data?.brands?.filter((val: any) => {
-    // return val.brand_name === "Warranty Repair Sewa";
-    return val.brand_id === "61";
-  });
-
-  const electiricianPlumbersData = result?.data?.brands?.filter((val: any) => {
-    // return val.brand_name === "Electrician & Plumber";
-    return val.brand_id === "63";
-  });
-
-  const medicalEquipmentData = result?.data?.brands?.filter((val: any) => {
-    // return val.brand_name === "Medical Equipment Repair";
-    return val.brand_id === "67";
-  });
-
-  const computerPrinterData = result?.data?.brands?.filter((val: any) => {
-    // return val.brand_name === "Computer/Printer Repair";
-    return val.brand_id === "65";
-  });
+  brands?.sort((a: any, b: any) => a?.order - b?.order);
+  // ===============================
 
   return (
     <>
-      <SEOBase />
-      {/* <ForSeo /> */}
       <Nav />
       <main>
         <HeroSection />
         <Categories allBrands={allBrands} />
-        <ApplicationRepair applicationRepairData={applicationRepairData} />
-        <PopularBrands popularBrandsData={popularBrandsData} />
-        <Warrantyproducts warrantyProductsData={warrantyProductsData} />
+        <ServicesSLiders brands={Array.from(brands)} data={allBrands} />
+
+        {/*
+        <MedicalEquipment medicalEquipmentData={medicalEquipmentData} /> 
         <ElectricianPlumbers
           computerPrinterData={computerPrinterData}
           electiricianPlumbersData={electiricianPlumbersData}
         />
-        <MedicalEquipment medicalEquipmentData={medicalEquipmentData} />
+        */}
+
         <Number />
         <WhyChooseUs />
         <MidContent />
         <FooterContact />
-        <Fotterupcontent />
+        <MidContent2 />
       </main>
       <Footer />
-      <>
-        <a
-          href="https://wa.me/+9779851201580"
-          className="whatsapp_float"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fa fa-whatsapp whatsapp-icon"></i>
-        </a>
-        <Facebook />
-      </>
     </>
   );
 }

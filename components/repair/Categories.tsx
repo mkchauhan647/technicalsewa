@@ -20,7 +20,7 @@ const Categories = async ({ allBrands }: any) => {
   // }, []);
 
   const data: any = await axios
-    .get(`${baseUrl}techsewa/masterconfig/publicmasterconfig/getServiceList`, {
+    .get(`${baseUrl}/techsewa/masterconfig/publicmasterconfig/getServiceList`, {
       headers: {
         "Cache-Control": `no-cache`,
       },
@@ -28,10 +28,6 @@ const Categories = async ({ allBrands }: any) => {
     .then((res) => {
       return res.data;
     });
-  // const data: any = apiClient(
-  //   "get",
-  //   `${baseUrl}techsewa/masterconfig/publicmasterconfig/getServiceList`
-  // );
 
   return (
     <div className="pt-[40px] pb-[40px]  flex justify-around md:justify-center items-center flex-wrap  ">

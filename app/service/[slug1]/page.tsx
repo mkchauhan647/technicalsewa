@@ -1,31 +1,56 @@
-import Nav from '@/components/Nav'
-import Footer from '@/components/footer/Footer'
-import ServiceSlug1 from '@/components/pageHelperComponents.js/ServiceSlug1'
-import { baseUrl } from '@/public/baseUrl'
-import React from 'react'
+import Nav from "@/components/Nav";
+import Footer from "@/components/footer/Footer";
+import ServiceSlug1 from "@/components/pageHelperComponents.js/ServiceSlug1";
+import { fetchServerClient, getSEOByPageURL } from "@/lib/api";
+import { baseUrl } from "@/public/baseUrl";
+import React from "react";
 
 const page = async () => {
+  const data = await fetchServerClient(
+    `/techsewa/masterconfig/publicmasterconfig/getSliderListpop`
+  );
 
-  const result = await fetch(`${baseUrl}techsewa/masterconfig/publicmasterconfig/getSliderListpop`);
-  const data = await result.json();
-  
   return (
     <>
-    <Nav />
-    <ServiceSlug1 data={data.brands} />
-    <Footer />
+      <Nav />
+      <ServiceSlug1 data={data.brands} />
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default page
+export default page;
 
-export async function generateMetadata({params}:any){
-  // const seocontet = await fetch(
-  //   "https://smartcare.com.np/techsewa/publiccontrol/publicmasterconfig/getSeoContent?url=https://smartcare.com.np/blogs"
-  // );
-  // const seocontetdata:[] = await seocontet.json();
-  return{
-    title:`${params.slug1} | Technical sewa`
+export async function generateMetadata({ params }: any) {
+  const slug = params.slug1;
+
+  // fetch seo data for page based on slug
+  const seoData = await getSEOByPageURL(
+    `https://technicalsewa.com/part-purja/${slug}`
+  );
+
+  const seoExists = seoData?.content && !Array.isArray(seoData?.content);
+
+  const seoContent = seoData?.content;
+  if (seoExists) {
+    return {
+      title: `${
+        seoExists ? seoContent?.page_title : `${slug} | Technical sewa`
+      } `,
+      description: `${seoContent?.description}`,
+      keywords: `${seoContent?.key_words}`,
+      openGraph: {
+        title: `${
+          seoExists ? seoContent?.og_title : `${slug} | Technical sewa`
+        } `,
+        type: `${seoContent?.og_type}`,
+        description: `${seoContent?.og_desc} `,
+        url: seoContent?.og_url,
+      },
+    };
   }
+
+  return {
+    title: `${slug} | Technical sewa`,
+  };
 }

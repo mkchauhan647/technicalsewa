@@ -20,7 +20,7 @@ const ProfessionalsCardModal = ({ email, address, name, image }: any) => {
       >
         <div className="flex justify-between ">
           <div className="flex flex-col gap-[10px] items-center">
-            <h3 className="text-[#2591b2] text-[18px] lg:text-[24px] font-bold">
+            <h3 className="text-primary text-[18px] lg:text-[24px] font-bold">
               {name}
             </h3>
             <div className="flex items-center gap-4">
@@ -40,10 +40,10 @@ const ProfessionalsCardModal = ({ email, address, name, image }: any) => {
               />
             </div>
             <div className="flex gap-4 items-center">
-              <p className="text-[16px] text-[#2591b2] px-2 py-1 border-[2px] border-[#2591b2] hover:text-white hover:bg-[#2591b2]">
+              <p className="text-[16px] text-primary px-2 py-1 border-[2px] border-[#2591b2] hover:text-white hover:bg-primary">
                 Ratings
               </p>
-              <p className="text-[16px] text-[#2591b2]  px-2 py-1 border-[2px] border-[#2591b2] hover:text-white hover:bg-[#2591b2]">
+              <p className="text-[16px] text-primary  px-2 py-1 border-[2px] border-[#2591b2] hover:text-white hover:bg-primary">
                 Locations
               </p>
             </div>

@@ -2,12 +2,12 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/footer/Footer";
 import React from "react";
 import "./page.css";
+import { fetchServerClient } from "@/lib/api";
 
 const page = async () => {
-  const privacyPolicy = await fetch(
-    "https://smartcare.com.np/multiservice/publicControl/privacy"
+  const privacyPolicyData = await fetchServerClient(
+    "/techsewa/publicControl/privacy"
   );
-  const privacyPolicyData = await privacyPolicy.json();
   return (
     <div>
       <Nav />
@@ -19,7 +19,7 @@ const page = async () => {
       <div className="relative h-[200px] md:h-[350px]">
         <img
           src="/../assets/Aboutus.jpg"
-          className="w-full h-full object-cover"
+          className="object-cover w-full h-full"
         />
         <h2 className="absolute top-[50%] left-[50%] transform translate-x-[-50%] translate-y-[-50%] text-white font-semibold text-[40px] md:text-[60px]">
           Privacy Policy

@@ -1,5 +1,12 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
+import AutoScrollToTop from "@/components/scrollToTop";
+import dynamic from "next/dynamic";
+
+const LazyClientRenderer = dynamic(
+  () => import("@/features/lazyClientRenderer"),
+  { ssr: false }
+);
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,7 +36,11 @@ export default function RootLayout({
           href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
         />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        <AutoScrollToTop />
+        <LazyClientRenderer />
+      </body>
     </html>
   );
 }

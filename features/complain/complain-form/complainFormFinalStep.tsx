@@ -12,7 +12,6 @@ export default function ComplainFormFinalStep({
   onBack: () => void;
 }) {
   const [complain, setComplain] = useState<any>({});
-  const { push } = useRouter();
   const { user } = useAuthStore();
   const { inquiryData } = useComplainFormStore();
 

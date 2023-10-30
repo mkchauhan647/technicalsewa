@@ -6,9 +6,9 @@ const Slider = ({ data }: any) => {
   const length = data?.length;
 
   return (
-    <div className="flex justify-center ">
+    <div className="flex justify-center w-full">
       <div
-        className={`${length > 3 ? "md:max-w-[1280px]" : "max-w-[500px]"}  `}
+        className={`relative w-full ${length > 3 ? "md:max-w-[1280px]" : "max-w-[500px]"}  `}
       >
         <SlideCard length={length > 3 ? 5 : 2} data={data} />
       </div>

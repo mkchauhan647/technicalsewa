@@ -26,20 +26,13 @@ const ServiceSlug1 = ({ data }: any) => {
   // filtering product_id from data
   const filteredId: any = filterData?.map((element: any) => element.product_id);
 
-  // ===========function-to-call-api-==========
-  // const fetchedData = async () => {
-  //   const result = await axios.get(
-  //     `${baseUrl}multiservice/masterconfig/publicmasterconfig/getSliderListpop`
-  //   );
-  //   setData(result?.data?.brands);
-  // };
 
   // =====data fetched for selectProductCategory====
   const fetchedData1 = async () => {
     const formData = new FormData();
     formData.append("product_id", filteredId);
     const result = await axios.post(
-      `${baseUrl}techsewa/publicControl/GetProductcategiryByProduct`,
+      `${baseUrl}/techsewa/publicControl/GetProductcategiryByProduct`,
       formData
     );
     setSelectCategoryData(result?.data);
@@ -74,12 +67,12 @@ const ServiceSlug1 = ({ data }: any) => {
               }}
               className="bg-white h-[350px] bg-contain bg-no-repeat bg-center w-full relative py-[20px]"
             >
-              <div className="absolute top-0 z-0 h-full w-full left-0 bg-black/50 "></div>
+              <div className="absolute top-0 left-0 z-0 w-full h-full bg-black/50"></div>
 
               {/* banner product description paragraph */}
-              <div className=" w-full  absolute left-0">
+              <div className="absolute left-0 w-full">
                 <div className=" max-w-[1280px] mx-auto px-[14px] md:px-[2px]">
-                  <div className=" flex flex-col ">
+                  <div className="flex flex-col">
                     <h3 className="text-[#cdcecf] font-[600] text-[16px] ">
                       {val?.brand_name} /
                       <span className="text-white font-[600] text-[16px]">
@@ -98,7 +91,7 @@ const ServiceSlug1 = ({ data }: any) => {
                   </div>
 
                   <div className="  flex flex-col mt-[11px] md:mt-[20px]  md:gap-[14px] ">
-                    <div className="flex items-center gap-2">
+                    <div className="flex gap-2 items-center">
                       <div className="flex gap-2 items-center">
                         <div
                           className="flex pb-4 text-white text-justify flex-col gap-1 md:gap-3 text-[16px] listpoint"
@@ -115,11 +108,11 @@ const ServiceSlug1 = ({ data }: any) => {
 
             {/* side select product category  */}
             <div className="w-[30%] lg:px-4 z-40 md:absolute top-5 right-[1%] 2xl:right-[6%] ">
-              <div className="bg-[#2591b2] rounded-md shadow-md w-[340px] md:w-[355px] p-4 lg:fixed ">
+              <div className="bg-primary rounded-md shadow-md w-[340px] md:w-[355px] p-4 lg:fixed ">
                 <h3 className="text-white mb-4 text-[24px] font-medium text-center ">
                   Select product Category
                 </h3>
-                <div className="flex flex-col px-2 gap-2 justify-center items-center">
+                <div className="flex flex-col gap-2 justify-center items-center px-2">
                   {selectCategoryData?.map((val: any) => {
                     return (
                       <div
