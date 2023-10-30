@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import toast from "react-hot-toast";
 
 export default function ForgotPasswordForm() {
+  const [accountType, setAccountType] = useState("");
   const [input, setInput] = useState({
     username: "",
   });
@@ -16,6 +17,7 @@ export default function ForgotPasswordForm() {
 
   const handleSignIn = async () => {
     let data = new FormData();
+    data.append("type", accountType);
     data.append("username", input.username);
     await axios
       .post(
@@ -35,34 +37,63 @@ export default function ForgotPasswordForm() {
   return (
     <div className="bg-white  pt-10 pb-[79px]">
       <div className="flex flex-col justify-center pt-[50px] w-[80%] lg:w-[33.33%]  mx-auto px-4 md:p-0">
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col">
           <div className="py-2">
-            <h2 className="text-[#666666] text-xl leading-[19.5px] font-semibold mt-[12px]">
+            <h2 className="text-xl leading-[19.5px] font-semibold mt-[12px]">
               Reset your password
             </h2>
 
-            <p className="text-gray-500">
-              Enter your registered phone number to reset password.
-            </p>
+            {/* {accountType && (
+              <p className="text-gray-500">
+                Enter your registered phone number to reset password.
+              </p>
+            )} */}
           </div>
         </div>
 
-        <input
-          type="text"
-          name="username"
-          required
-          onChange={handleChange}
-          placeholder="Phone Number"
-          className="border w-full border-[#D9D9D9] py-[12px] pl-[20px] mt-[20px] placeholder:text-[#666666]/[0.4] placeholder:italic placeholder:font-normal rounded-[2px] outline-none"
-        />
+        {!accountType && (
+          <div className="mt-5">
+            <div className="mb-2 w-full border-2 border-b border-gray-300"></div>
+            <p className="">
+              Please specify forgot password is for customer or technician
+            </p>
+            <div className="py-2 max-md:space-y-2 md:space-x-2 md:flex">
+              <button
+                onClick={() => setAccountType("Customer")}
+                className="text-white text-lg leading-[18px] bg-primary font-normal rounded-sm w-full py-[15px]"
+              >
+                Customer
+              </button>
+              <button
+                onClick={() => setAccountType("Technician")}
+                className="text-white text-lg leading-[18px] bg-primary font-normal rounded-sm w-full py-[15px]"
+              >
+                Technician
+              </button>
+            </div>
+          </div>
+        )}
 
-        <button
-          onClick={handleSignIn}
-          className="text-white text-[15px] leading-[18px] bg-primary font-normal rounded-[2px] w-full py-[15px]
+        {accountType && (
+          <>
+            <input
+              type="text"
+              name="username"
+              required
+              onChange={handleChange}
+              placeholder="Username"
+              className="border w-full border-[#D9D9D9] py-[12px] pl-[20px] mt-[20px] placeholder:text-[#666666]/[0.4] placeholder:italic placeholder:font-normal rounded-[2px] outline-none"
+            />
+
+            <button
+              onClick={handleSignIn}
+              className="text-white text-[15px] leading-[18px] bg-primary font-normal rounded-[2px] w-full py-[15px]
         mt-[44px]"
-        >
-          Reset Your Password
-        </button>
+            >
+              Reset Your Password
+            </button>
+          </>
+        )}
 
         <div className="flex items-center justify-center mt-[57px] mb-[10px] space-x-1">
           <p className="text-[13px] text-[#666666] leading-[10.72px] font-normal">
