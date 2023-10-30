@@ -21,6 +21,7 @@ import useLocalstorage from "./HelperFuncion/useLocalstorage";
 import axios from "axios";
 import useAuthStore from "@/store/useAuthStore";
 import Search from "./Search";
+import { usePathname } from "next/navigation";
 
 interface TrainingCategory {
   text: string;
@@ -32,6 +33,9 @@ const Nav = () => {
   const [nav, setNav] = useState(false);
   const [showinput, setShowinput] = useState(false);
   const { isAuthenticated, user, signout } = useAuthStore();
+  const pathname = usePathname();
+
+  const isHomePage = pathname === "/";
 
   const handleLogout = () => {
     signout();
@@ -97,7 +101,11 @@ const Nav = () => {
               alt="logo"
             />
           </Link>
-          <div className={`${showinput ? "w-72" : "hidden"} `}>
+          <div
+            className={`${
+              showinput || !isHomePage ? "max-md:w-72 md:!w-80" : "hidden"
+            } `}
+          >
             <Search />
           </div>
           <div className="nav-links  hidden md:flex items-center gap-4 text-[#505056] ">
@@ -105,28 +113,30 @@ const Nav = () => {
               <Link href="/trainings" className="hover:text-primary">
                 Training
               </Link>
-              <div className="hidden group-hover:block">
-                <div className="absolute z-10 mt-0 bg-white rounded-md shadow-lg md:w-[350px]">
-                  <div className="py-1 h-[400px] overflow-y-scroll ">
-                    <div className="py-2 pt-1"></div>
-                    {categories.map((cat, i) => {
-                      const slug = cat?.text?.replace(" ", "-").toLowerCase();
-                      return (
-                        <Link
-                          key={i}
-                          href={`/training/${slug}`}
-                          className="w-[full]"
-                        >
-                          <p className="block px-6 py-2 text-sm text-[grey] hover:bg-gray-100">
-                            {cat.text}
-                          </p>
-                          <hr />
-                        </Link>
-                      );
-                    })}
+              {(Array.isArray(categories) && categories.length) && (
+                <div className="hidden group-hover:block">
+                  <div className="absolute z-10 mt-0 bg-white rounded-md shadow-lg md:w-[350px]">
+                    <div className="py-1 h-[400px] overflow-y-scroll ">
+                      <div className="py-2 pt-1"></div>
+                      {categories.map((cat, i) => {
+                        const slug = cat?.text?.replace(" ", "-").toLowerCase();
+                        return (
+                          <Link
+                            key={i}
+                            href={`/training/${slug}`}
+                            className="w-[full]"
+                          >
+                            <p className="block px-6 py-2 text-sm text-[grey] hover:bg-gray-100">
+                              {cat.text}
+                            </p>
+                            <hr />
+                          </Link>
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
-              </div>
+              )}
             </div>
             <div className="group">
               <Link className="hover:text-primary" href="/blogs">
