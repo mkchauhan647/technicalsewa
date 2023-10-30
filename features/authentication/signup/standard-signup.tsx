@@ -5,8 +5,13 @@ import { BsEyeSlashFill } from "react-icons/bs";
 import { AiOutlineEye } from "react-icons/ai";
 import axios from "axios";
 import { baseUrl } from "@/public/baseUrl";
+import { useRouter } from "next/navigation";
+import useAuthStore from "@/store/useAuthStore";
+import toast from "react-hot-toast";
 
 const StandardSignUp = () => {
+  const { push } = useRouter();
+  const { signin } = useAuthStore();
   const [input, setInput] = useState({
     mobilenumber: "",
     firstname: "",
@@ -32,7 +37,11 @@ const StandardSignUp = () => {
 
       await axios
         .post(`${baseUrl}techsewa/masterConfig/publicLogin/Signup`, data)
-        .then((response) => {});
+        .then(({ data }) => {
+          toast("✅ You have successfully signed up!");
+          signin(data);
+          push("/");
+        });
     } else {
       alert("Password and confirm password do not match");
     }
