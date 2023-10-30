@@ -4,8 +4,13 @@ import React, { useState } from "react";
 import { BsEyeSlashFill } from "react-icons/bs";
 import { AiOutlineEye } from "react-icons/ai";
 import axios from "axios";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
+import useAuthStore from "@/store/useAuthStore";
 
 const SignUpPro = () => {
+  const { push } = useRouter();
+  const { signin } = useAuthStore();
   const [input, setInput] = useState({
     mobilenumber: "",
     name: "",
@@ -40,8 +45,11 @@ const SignUpPro = () => {
           "https://smartcare.com.np/techsewa/masterConfig/publicLogin/TechSignUp",
           data
         )
-        .then((response) => {
-          console.log(response.data.message);
+        .then(({ data }) => {
+          toast("✅ You have successfully signed up");
+          signin(data);
+          push("/");
+          // console.log(response.data.message);
         });
     } else {
       alert("Password and confirm password do not match");

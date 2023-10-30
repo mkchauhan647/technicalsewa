@@ -24,15 +24,10 @@ export async function fetchServerClient(url: string, options = {}) {
 
 export async function getTrainings() {
   try {
-    const res = await fetch(
-      `${baseUrl}/techsewa/publiccontrol/publicmasterconfig/gettrainingDetails`,
-      {
-        headers: {
-          "Cache-Control": `max-age=${2 * 60}`, // max 30min cache
-        },
-      }
+    const res = await fetchServerClient(
+      "/techsewa/publiccontrol/publicmasterconfig/gettrainingDetails"
     );
-    return res.json();
+    return res;
   } catch (error) {
     return [];
   }
@@ -47,9 +42,10 @@ export async function getTrainingDataById(id: string) {
       {
         method: "POST",
         body: formData,
-        headers: {
-          "Cache-Control": `max-age=${2 * 60}`, // max 2min cache
-        },
+        cache: "no-store",
+        // headers: {
+        //   "Cache-Control": `max-age=${2 * 60}`, // max 2min cache
+        // },
       }
     );
     return res.json();
@@ -85,9 +81,10 @@ export async function getBlogDataById(id: string) {
       {
         method: "POST",
         body: formData,
-        headers: {
-          "Cache-Control": `max-age=${2 * 60}`, // max 30min cache
-        },
+        cache: "no-store",
+        // headers: {
+        //   "Cache-Control": `max-age=${2 * 60}`, // max 30min cache
+        // },
       }
     );
 
@@ -108,9 +105,10 @@ export async function getBlogsByCategoryId(id: string) {
       {
         method: "POST",
         body: formData,
-        headers: {
-          "Cache-Control": `max-age=${600}`, // max 10min cache
-        },
+        cache: "no-store",
+        // headers: {
+        //   "Cache-Control": `max-age=${600}`, // max 10min cache
+        // },
       }
     );
 
