@@ -1,16 +1,10 @@
-import BlogCategorylist from "@/components/BlogCategorylist";
 import Categorylist from "@/components/Categorylist";
 import Nav from "@/components/Nav";
 import Footer from "@/components/footer/Footer";
-import BlogCard from "@/components/pageHelperComponents.js/BlogCard";
 import { getTrainingCategoriesData, getTrainings } from "@/lib/api";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { GiGloves } from "react-icons/gi";
-import { ImPhone } from "react-icons/im";
-import { MdMasks, MdSanitizer } from "react-icons/md";
-import { URLSearchParams } from "url";
 
 const Page = async () => {
   const trainings = await getTrainings();
@@ -66,9 +60,6 @@ const Page = async () => {
                   );
                 })}
 
-                {/* {blogsdata.map((blog, i) => (
-                  <BlogCard key={i} blog={blog} />
-                ))} */}
               </div>
             </div>
             <div className="w-full md:basis-[15%]">
