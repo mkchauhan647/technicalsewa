@@ -1,8 +1,9 @@
 import FacebookPixel from "@/components/FacebookPixel";
 import "./globals.css";
 import { Inter } from "next/font/google";
-import FacebookMessenger from "@/components/FacebookMessenger";
+// import FacebookMessenger from "@/components/FacebookMessenger";
 import AutoScrollToTop from "@/components/scrollToTop";
+import CallToWhatsapp from "@/components/CallToWhatsapp";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -35,7 +36,8 @@ export default function RootLayout({
       <body className={inter.className}>
         {children}
         <FacebookPixel />
-        <FacebookMessenger />
+        {/* <FacebookMessenger /> */}
+        <CallToWhatsapp />
         <AutoScrollToTop />
       </body>
     </html>

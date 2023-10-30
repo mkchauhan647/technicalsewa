@@ -105,7 +105,9 @@ body {
   align-items: center;
   justify-content: center;
   bottom: 40px;
-  left: 40px;
+  /* left: 40px; */
+  left: auto;
+  right: 24px;
   background-color: #25d366;
   color: #fff;
   border-radius: 50px;
