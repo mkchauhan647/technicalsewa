@@ -2,13 +2,16 @@ import BlogCategorylist from "@/components/BlogCategorylist";
 import Nav from "@/components/Nav";
 import Footer from "@/components/footer/Footer";
 import BlogCard from "@/components/pageHelperComponents.js/BlogCard";
-import { getTrainingCategoriesData } from "@/lib/api";
-import { apiClient } from "@/lib/catchfn";
+import { fetchServerClient, getTrainingCategoriesData } from "@/lib/api";
 import React from "react";
 const page = async () => {
-  const blogs: any = await apiClient(
-    "get",
-    "https://smartcare.com.np/techsewa/publiccontrol/publicmasterconfig/getblogdetails"
+  const blogs: any = await fetchServerClient(
+    "/techsewa/publiccontrol/publicmasterconfig/getblogdetails"
+  );
+  
+  blogs?.sort(
+    (a: any, b: any) =>
+      new Date(b?.created_ts).getTime() - new Date(a?.created_ts).getTime()
   );
 
   const trainingCategories = await getTrainingCategoriesData();
@@ -23,7 +26,7 @@ const page = async () => {
           <div className="flex flex-wrap space-y-2 md:justify-between mb-[36px]">
             <div className="w-full md:basis-[81%]">
               <div className="grid gap-4 md:grid-cols-1">
-                {blogs?.data?.map((blog: any, i: number) => (
+                {blogs?.map((blog: any, i: number) => (
                   <BlogCard key={i} blog={blog} />
                 ))}
               </div>
