@@ -1,10 +1,10 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/footer/Footer";
-import { fetchClient } from "@/lib/api";
+import { fetchServerClient } from "@/lib/api";
 import React from "react";
 
 const page = async () => {
-  const termsData = await fetchClient("/techsewa/publicControl/terms");
+  const termsData = await fetchServerClient("/techsewa/publicControl/terms");
   return (
     <>
       <Nav />

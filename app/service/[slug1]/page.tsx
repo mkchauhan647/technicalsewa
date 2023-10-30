@@ -1,12 +1,12 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/footer/Footer";
 import ServiceSlug1 from "@/components/pageHelperComponents.js/ServiceSlug1";
-import { fetchClient, getSEOByPageURL } from "@/lib/api";
+import { fetchServerClient, getSEOByPageURL } from "@/lib/api";
 import { baseUrl } from "@/public/baseUrl";
 import React from "react";
 
 const page = async () => {
-  const data = await fetchClient(
+  const data = await fetchServerClient(
     `/techsewa/masterconfig/publicmasterconfig/getSliderListpop`
   );
 

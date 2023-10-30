@@ -7,13 +7,13 @@ import { baseUrl } from "../public/baseUrl";
 import Nav from "@/components/Nav";
 import Footer from "@/components/footer/Footer";
 import Number from "@/components/Number";
-import MidContent from "@/components/MidContent";
-import { fetchClient, getSEOByPageURL } from "@/lib/api";
-import Fotterupcontent from "@/components/Fotterupcontent";
+import MidContent from "@/features/home/MidContent";
+import MidContent2 from "@/features/home/MidContent2";
+import { fetchServerClient, getSEOByPageURL } from "@/lib/api";
 import ServicesSLiders from "@/features/home/servicesSliders";
 
 export default async function Home() {
-  const result = await fetchClient(
+  const result = await fetchServerClient(
     `/techsewa/masterconfig/publicmasterconfig/getSliderListpop1`
   );
   let allBrands = result?.brands;
@@ -56,7 +56,7 @@ export default async function Home() {
         <WhyChooseUs />
         <MidContent />
         <FooterContact />
-        <Fotterupcontent />
+        <MidContent2 />
       </main>
       <Footer />
     </>
