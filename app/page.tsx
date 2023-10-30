@@ -23,8 +23,17 @@ export default async function Home() {
 
   allBrands.forEach((b: any) => {
     const brandExists = brands.findIndex((i) => i?.id === +b?.brand_id) !== -1;
-    if (!brandExists) brands.push({ id: +b?.brand_id, name: b?.brand_name });
+    if (!brandExists) {
+      brands.push({
+        id: +b?.brand_id,
+        name: b?.brand_name,
+        order: +(b?.ordering || 0),
+      });
+    }
   });
+
+  brands?.sort((a: any, b: any) => a?.order - b?.order);
+  // ===============================
 
   return (
     <>
