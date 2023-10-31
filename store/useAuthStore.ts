@@ -11,11 +11,13 @@ export interface CustomerInfo {
   name: string;
   dealer: string;
   address: string;
-  phone?: string;
+  phone: string;
   mobile: string;
   email: string;
   type: string;
   photo: string;
+  // extra
+  [key:string]: string
 }
 
 type AuthStoreType = {
