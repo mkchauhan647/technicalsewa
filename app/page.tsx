@@ -52,7 +52,6 @@ export default async function Home() {
         */}
 
         <Number />
-
         <WhyChooseUs />
         <MidContent />
         <FooterContact />
