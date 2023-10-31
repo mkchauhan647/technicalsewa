@@ -49,6 +49,7 @@ export default function ServicesSLiders({
           index={1}
           service={applianceRepair?.name}
           data={appliancesServices}
+          topSliders
         />
       )}
       {popularBrandsServices.length && (
@@ -56,6 +57,7 @@ export default function ServicesSLiders({
           index={0}
           service={popularBrand?.name}
           data={popularBrandsServices}
+          topSliders
         />
       )}
       {warrantyRepairServices.length && (
@@ -63,6 +65,7 @@ export default function ServicesSLiders({
           index={1}
           service={warrantyRepair?.name}
           data={warrantyRepairServices}
+          topSliders
         />
       )}
       {Array.from({ length: numberOfPairs }, (_, index) => {
