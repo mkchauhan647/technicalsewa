@@ -67,7 +67,7 @@ export default function ChangePasswordForm() {
 
         <>
           <input
-            type="text"
+            type="password"
             name="old_password"
             required
             onChange={handleChange}
@@ -75,7 +75,7 @@ export default function ChangePasswordForm() {
             className="border w-full border-[#D9D9D9] py-[12px] pl-[20px] mt-[20px] placeholder:text-[#666666]/[0.4] placeholder:italic placeholder:font-normal rounded-[2px] outline-none"
           />
           <input
-            type="text"
+            type="password"
             name="new_password"
             required
             onChange={handleChange}
