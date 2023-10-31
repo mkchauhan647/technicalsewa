@@ -5,8 +5,14 @@ interface IProps {
   index: number;
   service: any;
   data: any;
+  topSliders?: boolean;
 }
-export default function ServiceSlider({ index, service, data }: IProps) {
+export default function ServiceSlider({
+  index,
+  service,
+  data,
+  topSliders = false,
+}: IProps) {
   if (!Array.isArray(data) || (Array.isArray(data) && data.length < 1)) {
     return <></>;
   }
@@ -19,7 +25,7 @@ export default function ServiceSlider({ index, service, data }: IProps) {
       <b className="text-primary font-bold text-[20px] mb-[12px] mt-[5px]">
         {service}
       </b>
-      <Slider data={data || []} />
+      <Slider data={data || []} top={topSliders} />
     </div>
   );
 }

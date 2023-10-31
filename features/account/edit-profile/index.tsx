@@ -1,4 +1,5 @@
 "use client";
+import Loader from "@/features/loader";
 import { api } from "@/lib/api";
 import useAuthStore from "@/store/useAuthStore";
 import { useRouter } from "next/navigation";
@@ -8,31 +9,49 @@ import toast from "react-hot-toast";
 export default function EditProfile() {
   const { push } = useRouter();
   const { user } = useAuthStore();
+  const [profileLoading, setProfileLoading] = useState(true);
   const [formData, setFormData] = useState<any>({});
   const [loading, setLoading] = useState(false);
   const isTechnician = user?.type === "Technician";
-  useEffect(() => {
-    if (!user) return;
+  const getProfile = async () => {
+    const fdata = new FormData();
+    if (isTechnician) fdata.append("tech_id", `${user?.id}`);
+    else fdata.append("id", `${user?.id}`);
+    const { data } = await api.post(
+      `/techsewa/publiccontrol/${
+        isTechnician ? "getTechnicianProfile" : "getCustomerProfile"
+      }`,
+      fdata
+    );
     setFormData({
       ...(isTechnician
         ? {
             id: user?.id,
-            name: user.name,
-            skill: user?.skill ?? "",
-            ctzn: user?.ctzn ?? "",
-            certificate: user?.certificate ?? "",
-            contract: user?.contract ?? "",
+            name: data.sc_name,
+            skill: data?.skill ?? "",
+            ctzn: data?.ctzn ?? "",
+            certificate: data?.certificate ?? "",
+            contract: data?.contract ?? "",
+            phone: data?.sc_phone1 ?? "",
+            mobile: data?.mobile ?? "",
+            email: data?.sc_email ?? "",
+            address: data?.sc_address ?? "",
           }
         : {
-            firstname: user.name?.split(" ")[0],
-            lastname: user.name?.split(" ")?.[1],
-            cust_id: user.id,
+            firstname: data.first_name,
+            lastname: data.last_name,
+            cust_id: user?.id,
+            phone: data?.phone ?? "",
+            mobile: data?.mobile_number ?? "",
+            address: data?.address ?? "",
+            email: data?.email,
           }),
-      email: user?.email,
-      phone: user?.phone ?? "",
-      mobile: user?.mobile ?? "",
-      address: user?.address ?? "",
     });
+    setProfileLoading(false);
+  };
+  useEffect(() => {
+    if (!user) return;
+    getProfile();
   }, [user]);
   const handleChangeField = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -60,10 +79,11 @@ export default function EditProfile() {
     }
   };
   return (
-    <div className="container py-4 mx-auto md:max-w-5xl">
+    <div className="container py-4 mx-auto mb-10 md:max-w-5xl">
       <div className="flex mb-2 space-x-3 space-y-2 max-md:flex-col max-md:!space-y-4 max-md:px-2">
         <div className="p-4 rounded-sm border max-md:mt-3 max-sm:order-2 border-primary">
           <h2 className="text-2xl font-semibold">Update Profile</h2>
+          {profileLoading && <Loader />}
           <div className="mt-4">
             <form
               onSubmit={handleUpdateProfile}
