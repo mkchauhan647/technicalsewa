@@ -9,14 +9,19 @@ export default function ServicesSLiders({
   brands: any[];
   data: any[];
 }) {
-  let pairBrands = brands?.length > 1 ? [...brands].slice(1) : [];
+  // let pairBrands = brands?.length > 1 ? [...brands].slice(1) : [];
+  let pairBrands = brands?.length > 1 ? [...brands] : [];
 
-  // remove for appliances, popular brands
+  // remove for appliances, popular brands, warranty repair
   pairBrands = pairBrands.filter((b: any) => b?.id !== 62);
   pairBrands = pairBrands.filter((b: any) => b?.id !== 76);
+  pairBrands = pairBrands.filter((b: any) => b?.id !== 61);
 
   const numberOfPairs = Math.ceil(pairBrands.length / 2);
 
+  const warrantyRepairServices = [...data]?.filter(
+    (d: any) => +d?.brand_id === 61 // "warranty Repairs"
+  );
   const appliancesServices = [...data]?.filter(
     (d: any) => +d?.brand_id === 62 // "Appliances Repairs"
   );
@@ -26,10 +31,11 @@ export default function ServicesSLiders({
 
   const popularBrand = brands?.find((b: any) => b?.id === 76);
   const applianceRepair = brands?.find((b: any) => b?.id === 62);
+  const warrantyRepair = brands?.find((b: any) => b?.id === 61);
 
   return (
     <>
-      {[
+      {/* {[
         brands?.length > 0 &&
           [brands[0]].map((b: any, k) => {
             const services = data?.filter((d: any) => +d?.brand_id === b?.id);
@@ -37,7 +43,7 @@ export default function ServicesSLiders({
               <ServiceSlider key={k} index={k} service={b?.name} data={services} />
             );
           }),
-      ]}
+      ]} */}
       {appliancesServices.length && (
         <ServiceSlider
           index={1}
@@ -50,6 +56,13 @@ export default function ServicesSLiders({
           index={0}
           service={popularBrand?.name}
           data={popularBrandsServices}
+        />
+      )}
+      {warrantyRepairServices.length && (
+        <ServiceSlider
+          index={1}
+          service={warrantyRepair?.name}
+          data={warrantyRepairServices}
         />
       )}
       {Array.from({ length: numberOfPairs }, (_, index) => {

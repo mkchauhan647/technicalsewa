@@ -10,7 +10,7 @@ const Slider = ({ data }: any) => {
       <div
         className={`relative w-full ${length > 3 ? "md:max-w-[1280px]" : "max-w-[500px]"}  `}
       >
-        <SlideCard length={length > 3 ? 5 : 2} data={data} />
+        <SlideCard length={length > 3 ? 3 : 2} data={data} />
       </div>
     </div>
   );
