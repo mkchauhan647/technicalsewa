@@ -45,7 +45,9 @@ export default function ChangePasswordForm() {
   const isValidForm = input.old_password && input.new_password;
 
   useEffect(() => {
-    if (!isLoading && !isAuthenticated) push("/login");
+    if (!isLoading && !isAuthenticated) {
+      window.location.href = "/login";
+    }
   }, [isLoading, isAuthenticated]);
 
   return (
@@ -86,7 +88,6 @@ export default function ChangePasswordForm() {
             onClick={handleChangePassword}
             className="text-white text-[15px] leading-[18px] bg-primary font-normal rounded-[2px] w-full py-[15px]
         mt-[44px] disabled:bg-opacity-60 disabled:cursor-not-allowed"
-            
           >
             Change Password
           </button>
