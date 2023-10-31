@@ -113,12 +113,12 @@ const Nav = () => {
               <Link href="/trainings" className="hover:text-primary">
                 Training
               </Link>
-              {(Array.isArray(categories) && categories.length) && (
+              {categories && (
                 <div className="hidden group-hover:block">
                   <div className="absolute z-10 mt-0 bg-white rounded-md shadow-lg md:w-[350px]">
                     <div className="py-1 h-[400px] overflow-y-scroll ">
                       <div className="py-2 pt-1"></div>
-                      {categories.map((cat, i) => {
+                      {categories?.map((cat, i) => {
                         const slug = cat?.text?.replace(" ", "-").toLowerCase();
                         return (
                           <Link

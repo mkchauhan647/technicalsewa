@@ -56,6 +56,9 @@ const SignUpPro = () => {
     }
   };
 
+  const isValidForm =
+    input.name && input.password && input.confirmpassword && input.mobilenumber;
+
   return (
     <div className="flex flex-col gap-10 items-center py-10">
       {/* logo and text  */}
@@ -78,7 +81,7 @@ const SignUpPro = () => {
         <input
           name="mobilenumber"
           className=" w-full px-4 py-3 border-[1px] text-[14px] italic outline-none"
-          type="text"
+          type="number"
           placeholder="Mobile Number"
           onChange={handleChange}
           required
@@ -157,8 +160,9 @@ const SignUpPro = () => {
         />
 
         <button
+          disabled={!isValidForm}
           onClick={handleSignUPPro}
-          className="p-4 w-full text-white rounded-md bg-primary"
+          className="p-4 w-full text-white rounded-md bg-primary disabled:bg-opacity-60"
         >
           Submit
         </button>

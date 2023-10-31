@@ -55,6 +55,12 @@ const StandardSignUp = () => {
   const [showPassword, setshowPassword] = useState(false);
   const [showConfirmPassword, setshowConfirmPassword] = useState(false);
 
+  const isValidForm =
+    input.firstname &&
+    input.password &&
+    input.confirmpassword &&
+    input.mobilenumber;
+
   return (
     // sign up page started..
     <div className="flex flex-col gap-10 items-center py-10">
@@ -79,7 +85,7 @@ const StandardSignUp = () => {
           minLength={10}
           name="mobilenumber"
           className=" w-full px-4 py-3 border-[1px] text-[14px] italic outline-none"
-          type="text"
+          type="number"
           placeholder="Mobile Number"
           onChange={handleChange}
           required
@@ -169,7 +175,8 @@ const StandardSignUp = () => {
         </div>
 
         <button
-          className="p-4 w-full text-white rounded-md bg-primary"
+          disabled={!isValidForm}
+          className={`p-4 w-full text-white rounded-md bg-primary disabled:bg-opacity-60`}
           onClick={handleSignUp}
         >
           Submit

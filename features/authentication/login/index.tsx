@@ -80,6 +80,8 @@ const LoginForm = () => {
 
   const [showPassword, setshowPassword] = useState(false);
 
+  const isValidForm = input.username && input.password;
+
   return (
     <div className="bg-white  pt-[20px] pb-[79px]">
       <div className="flex flex-col  justify-center pt-[50px] w-[80%] lg:w-[33.33%]  mx-auto px-4 md:p-0">
@@ -130,10 +132,10 @@ const LoginForm = () => {
           Forgot Password ?
         </Link>
         <button
-          disabled={loading}
+          disabled={loading || !isValidForm}
           onClick={handleSignIn}
-          className="text-white text-[15px] leading-[18px] bg-primary font-normal rounded-[2px] w-full py-[15px]
-        mt-[44px]"
+          className={`text-white text-[15px] leading-[18px] bg-primary font-normal rounded-[2px] w-full py-[15px]
+        mt-[44px] disabled:!text-gray-400 disabled:!bg-opacity-40`}
         >
           Sign in
         </button>
