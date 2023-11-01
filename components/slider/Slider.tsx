@@ -12,7 +12,7 @@ const Slider = ({ data, top }: any) => {
           length > 3 ? "md:max-w-[1280px]" : "max-w-[500px]"
         }  `}
       >
-        <SlideCard length={length > 3 ? (top ? 5 : 3) : 2} data={data} />
+        <SlideCard length={length > 2 ? (top ? 5 : 3) : 2} data={data} />
       </div>
     </div>
   );
