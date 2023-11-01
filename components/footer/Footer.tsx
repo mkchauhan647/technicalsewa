@@ -23,7 +23,7 @@ const Footer = () => {
 
   return (
     <div>
-      <div className="bg-primary relative">
+      <div className="relative bg-primary">
         <div className="py-[10px]   max-w-[1280px] mx-auto">
           {/* heading of footer */}
 
@@ -39,7 +39,7 @@ const Footer = () => {
                   href="kathmandu"
                   className="hover:underline"
                 >
-                  Kathmnadu
+                  Kathmandu
                 </Link>
                 <Link
                   prefetch={false}
@@ -67,7 +67,7 @@ const Footer = () => {
                   href="narayangath"
                   className="hover:underline"
                 >
-                  Narayangath
+                  Narayanghat
                 </Link>
                 <Link
                   prefetch={false}
@@ -95,14 +95,14 @@ const Footer = () => {
                   href="hetouda"
                   className="hover:underline"
                 >
-                  Hetouda
+                  Hetauda
                 </Link>
                 <Link
                   prefetch={false}
                   href="biratmode"
                   className="hover:underline"
                 >
-                  Biratmode
+                  Birtamode
                 </Link>
                 <Link prefetch={false} href="damak" className="hover:underline">
                   Damak
@@ -126,21 +126,12 @@ const Footer = () => {
                   href="dhanggadi"
                   className="hover:underline"
                 >
-                  Dhanggadi
-                </Link>
-                {/* <Link prefetch={false} href="dharan">
-                  Dharan
+                  Dhangadi
                 </Link>
                 <Link prefetch={false} href="sindupalchowk">
                   Sindupalchowk
-                </Link> */}
+                </Link>
               </div>
-              {/* <div className="flex  gap-[10px]">
-               
-              </div>
-              <div className="flex gap-[10px]">
-               
-              </div> */}
             </div>
 
             {/* direction  */}
@@ -149,7 +140,7 @@ const Footer = () => {
           <hr />
           {/* Next Foter */}
           <div className="flex flex-col md:flex-row md:items-center justify-between  mt-[10px] gap-4 px-[10px] md:px-[0px]">
-            <div className="flex flex-row md:flex-col gap-4 items-center   ">
+            <div className="flex flex-row gap-4 items-center md:flex-col">
               <Link
                 href=""
                 className="w-[210px] h-[52px] 2xl:h-[67px] bg-[#FFF] p-[3px] rounded-[3px]"
@@ -222,28 +213,28 @@ const Footer = () => {
                   className="flex items-center justify-center bg-[white] w-[35px] h-[35px] rounded-[50%]"
                   target="_blank"
                 >
-                  <ImFacebook className="text-primary " size={20} />
+                  <ImFacebook className="text-primary" size={20} />
                 </Link>
                 <Link
                   href="https://www.instagram.com/technicalsewa.np/"
                   className="flex items-center justify-center bg-[white] w-[35px] h-[35px] rounded-[50%]"
                   target="_blank"
                 >
-                  <BiLogoInstagramAlt className="text-primary " size={20} />
+                  <BiLogoInstagramAlt className="text-primary" size={20} />
                 </Link>
                 <Link
                   href="https://www.youtube.com/channel/UCw2U7K_AKEkws0uzyI4T_kA"
                   target="_blank"
                   className="flex items-center justify-center bg-[white]  w-[35px] h-[35px] rounded-[50%]"
                 >
-                  <BsYoutube className="text-primary " size={20} />
+                  <BsYoutube className="text-primary" size={20} />
                 </Link>
                 <Link
                   href="https://twitter.com/technicals2023"
                   target="_blank"
                   className="flex items-center justify-center bg-[white] w-[35px] h-[35px] rounded-[50%]"
                 >
-                  <BsTwitter className="text-primary " size={20} />
+                  <BsTwitter className="text-primary" size={20} />
                 </Link>
               </div>
               <h5 className="font-normal text-[13px] leading-[24px] text-[#FFF] pt-[10px] text-left md:text-right">

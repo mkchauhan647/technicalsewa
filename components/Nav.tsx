@@ -123,7 +123,7 @@ const Nav = () => {
                         return (
                           <Link
                             key={i}
-                            href={`/training/${slug}`}
+                            href={`/trainings/${slug}`}
                             className="w-[full]"
                           >
                             <p className="block px-6 py-0.5 text-sm text-[grey] hover:bg-gray-100">
