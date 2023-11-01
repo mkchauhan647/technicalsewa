@@ -116,7 +116,7 @@ const Nav = () => {
               {categories && (
                 <div className="hidden group-hover:block">
                   <div className="absolute z-10 mt-0 bg-white rounded-md shadow-lg md:w-[350px]">
-                    <div className="py-1 h-[360px] overflow-y-scroll ">
+                    <div className="py-1 h-[400px] overflow-y-auto ">
                       <div className="py-2 pt-1"></div>
                       {categories?.map((cat, i) => {
                         const slug = cat?.text?.replace(" ", "-").toLowerCase();
@@ -124,7 +124,7 @@ const Nav = () => {
                           <Link
                             key={i}
                             href={`/trainings/${slug}`}
-                            className="w-[full]"
+                            className="py-1"
                           >
                             <p className="block px-6 py-0.5 text-sm text-[grey] hover:bg-gray-100">
                               {cat.text}
@@ -167,7 +167,7 @@ const Nav = () => {
               </Link>
               <div className="hidden group-hover:block">
                 <div className="absolute z-10 mt-0 bg-white rounded-md shadow-lg md:w-[350px]">
-                  <div className="py-1 h-[360px] overflow-y-scroll ">
+                  <div className="py-1 h-[400px] overflow-y-auto">
                     <div className="py-2 pt-1"></div>
                     {categories.map((cat, i) => {
                       return (
@@ -176,7 +176,7 @@ const Nav = () => {
                           href={`/blogs/category/${cat?.text
                             ?.replaceAll(" ", "-")
                             .toLowerCase()}/${cat?.value}`}
-                          className="w-[full]"
+                          className="py-1"
                         >
                           <p className="block px-6 py-0.5 text-sm text-[grey] hover:bg-gray-100">
                             {cat.text}
