@@ -2,7 +2,6 @@
 
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { BsNewspaper } from "react-icons/bs";
 import { useParams } from "next/navigation";
 import { AiFillStar } from "react-icons/ai";
 import { SlArrowRight } from "react-icons/sl";
