@@ -7,7 +7,7 @@ const page = async () => {
       <Nav />
       <EditProfile />
       <Footer />
-    </>
+    </> 
   );
 };
 

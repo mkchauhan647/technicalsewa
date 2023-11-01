@@ -13,6 +13,11 @@ export default function EditProfile() {
   const [formData, setFormData] = useState<any>({});
   const [loading, setLoading] = useState(false);
   const isTechnician = user?.type === "Technician";
+  const [selectedPhoto, setSelectedPhoto] = useState<any>("");
+  // technician attachments
+  const [selectedCertificate, setSelectedCertificate] = useState<any>("");
+  const [selectedContract, setSelectedContract] = useState<any>("");
+  const [selectedCitzn, setSelectedCitzn] = useState<any>("");
   const getProfile = async () => {
     const fdata = new FormData();
     if (isTechnician) fdata.append("tech_id", `${user?.id}`);
@@ -41,8 +46,7 @@ export default function EditProfile() {
             firstname: data.first_name,
             lastname: data.last_name,
             cust_id: user?.id,
-            phone: data?.phone ?? "",
-            mobile: data?.mobile_number ?? "",
+            phone: data?.mobile_number ?? "",
             address: data?.address ?? "",
             email: data?.email,
           }),
@@ -65,6 +69,10 @@ export default function EditProfile() {
       for (const key of Object.keys(formData)) {
         fdata.append(key, formData[key]);
       }
+      if (selectedPhoto) fdata.append("photo", selectedPhoto);
+      if (selectedCertificate) fdata.append("certificate", selectedCertificate);
+      selectedCitzn && fdata.append("ctzn", selectedCitzn);
+      selectedContract && fdata.append("contract", selectedContract);
       if (user?.type === "Technician") {
         await api.post("/techsewa/publiccontrol/updateTechnician", fdata);
       } else {
@@ -78,10 +86,15 @@ export default function EditProfile() {
       setLoading(false);
     }
   };
+
+  const handleChangePhotoField = (e: any) => {
+    const file = e.target.files[0];
+    setSelectedPhoto(file);
+  };
   return (
-    <div className="container py-4 mx-auto mb-10 md:max-w-5xl">
+    <div className="container py-4 mx-auto mb-10 md:max-w-3xl lg:!max-w-4xl">
       <div className="flex mb-2 space-x-3 space-y-2 max-md:flex-col max-md:!space-y-4 max-md:px-2">
-        <div className="p-4 rounded-sm border max-md:mt-3 max-sm:order-2 border-primary">
+        <div className="p-4 w-full rounded-sm border max-md:mt-3 max-sm:order-2 border-primary">
           <h2 className="text-2xl font-semibold">Update Profile</h2>
           {profileLoading && <Loader />}
           <div className="mt-4">
@@ -168,6 +181,81 @@ export default function EditProfile() {
                   value={formData?.email}
                 />
               </div>
+
+              {/* profile photo */}
+              <div className="col-span-6 sm:col-span-3">
+                <label
+                  htmlFor="Photo"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Profile
+                </label>
+
+                <input
+                  type="file"
+                  id="Photo"
+                  name="photo"
+                  className="py-2 pl-1 mt-1 w-full text-gray-700 rounded-sm border-b border-gray-200 shadow-sm outline-none placeholder:text-gray-600"
+                  onChange={handleChangePhotoField}
+                  // value={formData?.phone}
+                />
+              </div>
+
+              {isTechnician && (
+                <>
+                  <div className="col-span-6 sm:col-span-3">
+                    <label
+                      htmlFor="citzn"
+                      className="block text-sm font-medium text-gray-700"
+                    >
+                      Citizenship
+                    </label>
+
+                    <input
+                      type="file"
+                      id="citzn"
+                      name="citzn"
+                      className="py-2 pl-1 mt-1 w-full text-gray-700 rounded-sm border-b border-gray-200 shadow-sm outline-none placeholder:text-gray-600"
+                      onChange={(e) => setSelectedCitzn(e.target.files?.[0])}
+                    />
+                  </div>
+
+                  <div className="col-span-6 sm:col-span-3">
+                    <label
+                      htmlFor="certficate"
+                      className="block text-sm font-medium text-gray-700"
+                    >
+                      Certificate
+                    </label>
+
+                    <input
+                      type="file"
+                      id="certficate"
+                      name="certficate"
+                      className="py-2 pl-1 mt-1 w-full text-gray-700 rounded-sm border-b border-gray-200 shadow-sm outline-none placeholder:text-gray-600"
+                      onChange={(e) =>
+                        setSelectedCertificate(e.target.files?.[0])
+                      }
+                    />
+                  </div>
+                  <div className="col-span-6 sm:col-span-3">
+                    <label
+                      htmlFor="contract"
+                      className="block text-sm font-medium text-gray-700"
+                    >
+                      Contract
+                    </label>
+
+                    <input
+                      type="file"
+                      id="contract"
+                      name="contract"
+                      className="py-2 pl-1 mt-1 w-full text-gray-700 rounded-sm border-b border-gray-200 shadow-sm outline-none placeholder:text-gray-600"
+                      onChange={(e) => setSelectedContract(e.target.files?.[0])}
+                    />
+                  </div>
+                </>
+              )}
 
               <div className="col-span-6">
                 <label
