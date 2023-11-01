@@ -36,13 +36,13 @@ const Categories = async ({ allBrands }: any) => {
           <CategoryCard
             id={category.brand_id}
             allBrands={allBrands}
-            key={category.imageUrl}
-            imageUrl={category.image_url.replace(
+            key={category?.imageUrl}
+            imageUrl={category?.image_url?.replace(
               "https://smartcare.com.np/multiservice/",
               "https://smartcare.com.np/techsewa/"
             )}
             brandName={category.brand_name}
-            imgAlt={category.imageUrl || category.alt2 || category.brand_name}
+            imgAlt={category?.imageUrl || category.alt2 || category.brand_name}
           />
         ))}
       </div>
