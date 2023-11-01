@@ -1,4 +1,4 @@
-import Categorylist from "@/components/Categorylist";
+import TrainingCategorylist from "@/components/Categorylist";
 import Nav from "@/components/Nav";
 import { SEOBase } from "@/components/SEOBase";
 import Footer from "@/components/footer/Footer";
@@ -47,8 +47,6 @@ const page = async ({ params }: any) => {
   // fetch all the categories
   // find category id by matching slug/name
 
-  const trainingId = 1;
-
   let data = await getData(finddata?.value);
   data = data?.[0] || data;
 
@@ -95,7 +93,7 @@ const page = async ({ params }: any) => {
           <div className="w-full md:basis-[15%]">
             <div className="py-1 px-4 rounded-[10px] border-[2px] border-gray-200 text-[#3d4145] font-normal">
               <h2 className="text-[24px] leading-[29px] pb-3">CATEGORIES</h2>
-              <Categorylist
+              <TrainingCategorylist
                 categories={trainingCategories}
                 activeId={finddata}
               />

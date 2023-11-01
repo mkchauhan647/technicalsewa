@@ -1,22 +1,50 @@
-import Categorylist from "@/components/Categorylist";
+/* eslint-disable @next/next/no-img-element */
+import TrainingCategorylist from "@/components/Categorylist";
 import Nav from "@/components/Nav";
 import Footer from "@/components/footer/Footer";
-import { getTrainingCategoriesData, getTrainings } from "@/lib/api";
+import { fetchServerClient, getTrainingCategoriesData } from "@/lib/api";
+import { baseUrl } from "@/public/baseUrl";
 import Link from "next/link";
 import React from "react";
+async function getData(id: string) {
+  const formData = new FormData();
+  formData.append("id", id);
 
-const Page = async () => {
-  const trainings = await getTrainings();
-
-  trainings?.sort(
-    (a: any, b: any) =>
-      new Date(b?.created_date).getTime() - new Date(a?.created_date).getTime()
+  const res = await fetch(
+    `${baseUrl}/techsewa/publiccontrol/publicmasterconfig/gettrainingDetails`,
+    {
+      method: "POST",
+      body: formData,
+      cache: "no-store",
+    }
   );
 
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+  return res.json();
+}
+
+export default async function TrainingCategoryPage({ params }: any) {
+  const categorySlug = params.category;
+
+  const trainingCats = await fetchServerClient(
+    "/techsewa/publiccontrol/publicmasterconfig/gettrainingcategories"
+  );
+  const finddata = trainingCats.find(
+    (i: any) => i?.text?.replace(" ", "-").toLowerCase() === categorySlug
+  );
+
+  // all trainigs posts by cat id
+  const data = await getData(finddata?.value);
+
   const trainingCategories = await getTrainingCategoriesData();
+
   return (
     <>
       <Nav />
+
       <div className="bg-[#FBFBFB] py-4 px-2 md:px-0">
         <div className="container mx-auto xl:w-[80rem] sm:w-full  sm-w-full m-auto">
           <h3 className="text-[25px] md:text-[35px] text-black my-[10px] text-left font-bold">
@@ -25,7 +53,7 @@ const Page = async () => {
           <div className="flex flex-wrap md:justify-between mb-[36px]">
             <div className="w-full md:basis-[81%]">
               <div className="grid gap-4 md:grid-cols-1">
-                {trainings.map((item: any, i: number) => {
+                {data?.map((item: any, i: number) => {
                   return (
                     <div
                       key={i}
@@ -59,8 +87,8 @@ const Page = async () => {
                   );
                 })}
 
-                {(!trainings || trainings?.length < 1) && (
-                  <div className="text-base font-medium">
+                {(!data || data?.length < 1) && (
+                  <div className="text-lg font-medium">
                     No any trainings found
                   </div>
                 )}
@@ -69,7 +97,7 @@ const Page = async () => {
             <div className="w-full md:basis-[15%]">
               <div className="py-1 px-4 rounded-[10px] border-[2px] border-gray-200 text-[#3d4145] font-normal">
                 <h2 className="text-[24px] leading-[29px] pb-3">CATEGORIES</h2>
-                <Categorylist categories={trainingCategories} />
+                <TrainingCategorylist categories={trainingCategories} />
               </div>
             </div>
           </div>
@@ -78,12 +106,4 @@ const Page = async () => {
       <Footer />
     </>
   );
-};
-
-export default Page;
-
-export async function generateMetadata() {
-  return {
-    title: `Trainings | Technical sewa`,
-  };
 }
