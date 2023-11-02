@@ -80,26 +80,31 @@ export default function ServicesSLiders({
         return (
           <div
             key={index}
-            className={`container w-full px-2 overflow-hidden m-auto mb-2 max-md:flex-col justify-between items-center ${
-              pairBrands[brand2]
-                ? "md:grid md:grid-cols-2 md:space-x-2"
-                : "mx-auto"
-            }`}
+            className={`w-full ${index % 2 === 0 ? "md:bg-[#efefef]" : "bg-white"}`}
           >
-            <div className="flex overflow-hidden flex-col justify-center items-center">
-              <b className="text-primary font-bold text-[20px] my-2 border-b-[0.5px] pb-1 border-b-[#4f4b4b]">
-                {pairBrands[brand1]?.name}
-              </b>
-              <Slider data={brand1Services} />
-            </div>
-            {pairBrands[brand2] && (
+            <div
+              key={index}
+              className={`container w-full px-2 overflow-hidden m-auto mb-2 max-md:flex-col justify-between items-center ${
+                pairBrands[brand2]
+                  ? "md:grid md:grid-cols-2 md:space-x-2"
+                  : "mx-auto"
+              }`}
+            >
               <div className="flex overflow-hidden flex-col justify-center items-center">
-                <p className="text-primary font-bold text-[20px] my-2 border-b-[0.5px] pb-1 border-b-[#4f4b4b]">
-                  {pairBrands[brand2]?.name}
-                </p>
-                <Slider data={brand2Services} />
+                <b className="text-primary font-bold text-[20px] my-2 border-b-[0.5px] pb-1 border-b-[#4f4b4b]">
+                  {pairBrands[brand1]?.name}
+                </b>
+                <Slider data={brand1Services} />
               </div>
-            )}
+              {pairBrands[brand2] && (
+                <div className="flex overflow-hidden flex-col justify-center items-center">
+                  <p className="text-primary font-bold text-[20px] my-2 border-b-[0.5px] pb-1 border-b-[#4f4b4b]">
+                    {pairBrands[brand2]?.name}
+                  </p>
+                  <Slider data={brand2Services} />
+                </div>
+              )}
+            </div>
           </div>
         );
       })}

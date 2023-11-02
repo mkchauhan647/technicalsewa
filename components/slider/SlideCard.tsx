@@ -65,7 +65,7 @@ const SlideCard = ({ length, data, top }: any) => {
               <p className="text-[16px] text-center  font-bold">
                 {ele?.product_name}
               </p>
-              <p className="text-[12px] text-[#000000] px-2 text-center">
+              <p className="text-[12px] text-[#000000] px-2 text-center truncate line-clamp-2 whitespace-normal">
                 {ele.title}
               </p>
             </Link>

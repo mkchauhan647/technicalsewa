@@ -164,7 +164,7 @@ const ChildService = ({ data }: any) => {
                         );
                       })}
                       <div className="flex flex-col gap-2 justify-center items-center px-2">
-                        {serviceCategoryData?.map((val: any, i) => {
+                        {serviceCategoryData?.map((val: any, i: number) => {
                           return (
                             <div className="flex relative w-full group" key={i}>
                               <div

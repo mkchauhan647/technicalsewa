@@ -10,6 +10,7 @@ import MidContent from "@/features/home/MidContent";
 import MidContent2 from "@/features/home/MidContent2";
 import { fetchServerClient, getSEOByPageURL } from "@/lib/api";
 import ServicesSLiders from "@/features/home/servicesSliders";
+import ClientsSlider from "@/features/home/clients";
 
 export default async function Home() {
   const result = await fetchServerClient(
@@ -57,6 +58,7 @@ export default async function Home() {
         <MidContent />
         <FooterContact />
         <MidContent2 />
+        <ClientsSlider />
       </main>
       <Footer />
     </>
