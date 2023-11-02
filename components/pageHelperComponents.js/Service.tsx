@@ -27,20 +27,23 @@ const Service = ({ services, data = [] }: any) => {
   const activeServiceData = [...data]?.filter(
     (s: any) => +s?.brand_id === activeviewId
   );
+  activeServiceData?.sort(
+    (a: any, b: any) => +a?.second_ordering - +b?.second_ordering
+  );
 
   const handleTabClick = (id: any) => setActiveviewId(id);
 
   return (
     <>
-      <div className="md:hidden flex items-center border-[1px] bg-[#ffeeda] p-3">
+      {/* <div className="md:hidden flex items-center border-[1px] bg-[#ffeeda] p-3">
         <input
           className="text-[12px] w-full bg-[#ffeeda]"
           type="text"
           placeholder="Search for a service"
         />
         <AiOutlineSearch />
-      </div>
-      <div className="md:bg-[#f5f5f5] flex justify-between  pt-[20px] pb-[79px] xl:w-[80rem] 2xl:w-[80rem] px-4 sm:w-full m-auto ">
+      </div> */}
+      <div className="md:bg-[#f5f5f5] flex justify-between pt-[20px] pb-[79px] xl:w-[80rem] 2xl:w-[80rem] px-4 sm:w-full m-auto ">
         {/* input in mobile responsive  */}
         <div className="relative basis-[20%]">
           <div className="sticky top-[80px]  flex-shrink-0 flex-grow-0 flex flex-col gap-1 overflow-y-auto  md:overflow-hidden max-md:h-auto cursor-pointer ">
@@ -60,7 +63,7 @@ const Service = ({ services, data = [] }: any) => {
                 offset={-100}
               >
                 <div className="flex flex-col gap-2 justify-center max-md:items-center">
-                  <div className="md:hidden  text-primary">{}</div>
+                  <div className="md:hidden text-primary">{}</div>
                   <h3 className="md:text-[black] font-medium text-[12px] md:text-[14px] text-center  md:text-left">
                     {item.name}
                   </h3>
@@ -70,7 +73,7 @@ const Service = ({ services, data = [] }: any) => {
           </div>
         </div>
 
-        <div className="basis-[70%] md:basis-[70%]">
+        <div className="basis-[70%] md:basis-[75%]">
           {/* right side item div  */}
           <div className="bg-[#f5f5f5]  mx-[26px] flex flex-col gap-8 text-center ">
             {/* <div className="md:hidden">
@@ -81,9 +84,9 @@ const Service = ({ services, data = [] }: any) => {
             )}
           </div> */}
 
-            <div className="md:hidden bg-white min-h-[112px] w-full p-0 md:p-5 rounded-md border-[1px] border-gray-400 ">
+            <div className="md:hidden bg-white min-h-[112px] w-full p-0 max-md:py-2 md:p-5 rounded-md border-[1px] border-gray-400 ">
               <div>
-                <div className="flex justify-center items-center gap-2 text-primary">
+                <div className="flex gap-2 justify-center items-center text-primary">
                   {/* Heading Icon  */}
                   {activeService?.icon && (
                     <Image
@@ -93,8 +96,6 @@ const Service = ({ services, data = [] }: any) => {
                       alt={activeService.name}
                     />
                   )}
-
-                  {/* Title Name  */}
                   <span className="text-primary">{activeService?.name}</span>
                 </div>
                 {/* Card container started... */}
@@ -132,6 +133,9 @@ const Service = ({ services, data = [] }: any) => {
             {servicesList.map((s, k) => {
               const serviceData = [...data]?.filter(
                 (i: any) => +i?.brand_id === s.id
+              );
+              serviceData?.sort(
+                (a: any, b: any) => +a?.second_ordering - +b?.second_ordering
               );
               return (
                 <ServiceProducts
