@@ -16,6 +16,8 @@ const CategoryCard = ({ imageUrl, brandName, imgAlt, allBrands, id }: any) => {
     return val.brand_id === id;
   });
 
+  filterData?.sort((a: any, b: any) => +a?.second_ordering - +b?.second_ordering);
+  
   return (
     <div className="right">
       <div
