@@ -17,7 +17,7 @@ const ServiceProducts = ({ id, icon, brandname, data }: IProps) => {
       className="hidden md:block bg-white min-h-[112px] w-full p-5 rounded-md border-[1px] border-gray-400 "
     >
       <div>
-        <div className="flex justify-center items-center gap-2 text-primary">
+        <div className="flex gap-2 justify-center items-center text-primary">
           {/* Heading Icon  */}
           {icon}
 
@@ -26,7 +26,7 @@ const ServiceProducts = ({ id, icon, brandname, data }: IProps) => {
         </div>
 
         {/* Card container started... */}
-        <div className="flex flex-wrap gap-16 justify-center items-center p-4">
+        <div className="flex flex-wrap max-sm:!gap-6 gap-16 justify-center items-center py-4 md:!gap-8 lg:!gap-6">
           {data?.map((value: any, index: any) => (
             <div
               key={index}
