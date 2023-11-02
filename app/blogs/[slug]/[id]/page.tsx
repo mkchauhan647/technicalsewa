@@ -17,7 +17,6 @@ const page = async ({ params }: any) => {
 
   const trainingCategories = await getTrainingCategoriesData();
 
-  const pageTitle = `${data?.blog_name} - Blog`;
   return (
     <>
       <Nav />
@@ -27,11 +26,30 @@ const page = async ({ params }: any) => {
             <div className="w-full md:basis-[79%]">
               <h1 className="text-[30px] mb-2 font-bold">{data?.blog_name}</h1>
               {data?.filename && (
-                <div className="w-[100%] h-[281px] md:h-[340px]">
-                  <img
-                    className="object-cover w-full h-full"
-                    src={data.filename}
-                  />
+                <div className="border-primary rounded-md border border-opacity-60 p-0.5">
+                  <div className="w-[100%] rounded-md h-[281px] md:h-[340px] overflow-hidden">
+                    <img
+                      className="object-cover w-full h-full rounded-md"
+                      src={data.filename}
+                    />
+                  </div>
+                </div>
+              )}
+              {data?.youtube && (
+                <div className="lg:float-right lg:w-[30rem] mt-6 max-md:w-full p-1">
+                  <div className="border-primary border-opacity-60 p-0.5 rounded-md border overflow-hidden">
+                    <iframe
+                      className="w-full rounded-md"
+                      height="300"
+                      src={`https://www.youtube.com/embed/${data?.youtube?.replace(
+                        "https://www.youtube.com/watch?v=",
+                        ""
+                      )}`}
+                      title="YouTube video player"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
                 </div>
               )}
               {data?.blog_desc && (
