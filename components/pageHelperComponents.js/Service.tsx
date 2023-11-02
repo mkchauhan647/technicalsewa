@@ -73,7 +73,7 @@ const Service = ({ services, data = [] }: any) => {
           </div>
         </div>
 
-        <div className="basis-[70%] md:basis-[75%]">
+        <div className="basis-[fit-content]">
           {/* right side item div  */}
           <div className="bg-[#f5f5f5]  mx-[26px] flex flex-col gap-8 text-center ">
             {/* <div className="md:hidden">
@@ -115,7 +115,7 @@ const Service = ({ services, data = [] }: any) => {
                           <Image
                             width={100}
                             height={100}
-                            className="h-[60px] w-[80px]"
+                            className="h-[60px] w-[80px] object-contain"
                             src={value.image_url && value.image_url}
                             alt={value.alt2 && value.alt2}
                           />

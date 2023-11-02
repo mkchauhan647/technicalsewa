@@ -42,7 +42,7 @@ const ServiceProducts = ({ id, icon, brandname, data }: IProps) => {
                     <Image
                       width={100}
                       height={100}
-                      className="h-[80px] w-[80px]"
+                      className="h-[80px] w-[80px] object-contain"
                       src={value.image_url && value.image_url}
                       alt={value.alt2 && value.alt2}
                     />

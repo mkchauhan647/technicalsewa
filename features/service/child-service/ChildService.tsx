@@ -11,7 +11,7 @@ import { baseUrl } from "@/public/baseUrl";
 import ComplainForm from "@/features/complain/complain-form/complainForm";
 import useComplainFormStore from "@/store/useComplainInquiryStore";
 
-const ServiceSlug2 = ({ data }: any) => {
+const ChildService = ({ data }: any) => {
   const [complainForm, setComplainForm] = useState(false);
   const [selectCategoryData, setSelectCategoryData] = useState<any>();
   const [serviceCategoryData, setServiceCategoryData] = useState<any>();
@@ -164,15 +164,23 @@ const ServiceSlug2 = ({ data }: any) => {
                         );
                       })}
                       <div className="flex flex-col gap-2 justify-center items-center px-2">
-                        {serviceCategoryData?.map((val: any) => {
+                        {serviceCategoryData?.map((val: any, i: number) => {
                           return (
-                            <div
-                              key={val.value}
-                              onClick={() => setComplainForm(true)}
-                              className="hover:bg-gray-500 h-[20pxpx] cursor-pointer flex justify-between items-center px-4 py-[12px] bg-white w-full text-black rounded-md "
-                            >
-                              {val.text}
-                              <SlArrowRight />
+                            <div className="flex relative w-full group" key={i}>
+                              <div
+                                key={val.value}
+                                onClick={() => setComplainForm(true)}
+                                className="hover:bg-gray-500 h-[20pxpx] cursor-pointer flex justify-between items-center px-4 py-[12px] bg-white w-full text-black rounded-md "
+                              >
+                                {val.text}
+                                <SlArrowRight />
+                              </div>
+
+                              {/* <span
+                                className="absolute top-[-12sma0%] left-1/2 px-1 m-4 mx-auto text-sm text-gray-100 bg-gray-800 rounded-md opacity-0 transition-opacity -translate-x-1/2 translate-y-full group-hover:opacity-100"
+                              >
+                                Tooltip
+                              </span> */}
                             </div>
                           );
                         })}
@@ -203,4 +211,4 @@ const ServiceSlug2 = ({ data }: any) => {
   );
 };
 
-export default ServiceSlug2;
+export default ChildService;

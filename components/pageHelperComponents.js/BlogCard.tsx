@@ -1,5 +1,4 @@
 "use client";
-
 import Link from "next/link";
 import React from "react";
 
@@ -31,7 +30,7 @@ const BlogCard = ({ blog }: any) => {
       <div className="flex flex-wrap gap-2 md:gap-0 md:justify-between rounded-[10px] border-[2px] border-gray-200 p-4">
         <div className="w-full md:basis-[40%]  h-[180px] hover:opacity-95 order-2 md:order-1">
           <Link
-            href={`/blogs/${blog?.blog_name
+            href={`/blog/${blog?.blog_name
               .replaceAll(" ", "-")
               .toLowerCase()}/${blog?.blog_id}`}
             className="w-full h-full"
@@ -49,7 +48,7 @@ const BlogCard = ({ blog }: any) => {
         <div className="w-full md:basis-[54%] order-1 md:order-2">
           <Link
             // href={`/blogs/${blog.blog_name.replaceAll(" ", "-").toLowerCase()}`}
-            href={`/blogs/${blog?.blog_name
+            href={`/blog/${blog?.blog_name
               .replaceAll(" ", "-")
               .toLowerCase()}/${blog?.blog_id}`}
           >
@@ -72,7 +71,7 @@ const BlogCard = ({ blog }: any) => {
               .replaceAll(" ", "-")
               .toLowerCase()}/${blog?.blog_id}`}
           >
-            <button className="p-2 hover:bg-primary text-white bg-black rounded">
+            <button className="p-2 text-white bg-black rounded hover:bg-primary">
               Readmore
             </button>
           </Link> */}

@@ -42,7 +42,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const blogsSiteMap = blogs.map((b: any) => {
     return {
-      url: `${siteUrl}/blogs/${b?.blog_name
+      url: `${siteUrl}/blog/${b?.blog_name
         ?.replaceAll(" ", "-")
         .toLowerCase()}/${b?.blog_id}`,
       changeFrequency: "daily",
@@ -52,7 +52,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const blogCatsSiteMap = trainingCategories.map((c: any) => {
     return {
-      url: `${siteUrl}/blogs/category/${c?.text
+      url: `${siteUrl}/blogs/${c?.text
         ?.replaceAll(" ", "-")
         .toLowerCase()}/${c?.value}`,
       changeFrequency: "weekly",

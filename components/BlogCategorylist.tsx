@@ -12,7 +12,7 @@ const BlogCategorylist = ({ categories = [] }: { categories: string[] }) => {
       {categories.map((cat: any, index: number) => (
         <Link
           // onClick={() => handleCatClick(cat?.value)}
-          href={`/blogs/category/${cat?.text
+          href={`/blogs/${cat?.text
             ?.replaceAll(" ", "-")
             .toLowerCase()}/${cat?.value}`}
           key={index}

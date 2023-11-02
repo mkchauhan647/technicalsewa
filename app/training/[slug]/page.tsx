@@ -8,7 +8,6 @@ import {
   getTrainingCategoriesData,
 } from "@/lib/api";
 import { baseUrl } from "@/public/baseUrl";
-import { useRouter } from "next/router";
 import React from "react";
 async function getData(id: string) {
   const formData = new FormData();
