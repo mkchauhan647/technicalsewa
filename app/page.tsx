@@ -38,7 +38,7 @@ export default async function Home() {
 
   return (
     <>
-      {/* <Nav /> */}
+      <Nav />
       <main>
         <HeroSection />
         <Categories allBrands={allBrands} />
