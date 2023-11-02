@@ -231,7 +231,17 @@ const Nav = () => {
                 Notifications
               </Link>
                */}
-              <div className="relative group">
+               
+              <Link
+                href="/trainings"
+                className="hover:text-primary px-[14px] text-base font-normal flex items-center justify-start gap-4"
+              >
+                <MdModelTraining className="text-primary" />
+                Training
+              </Link>
+
+              {/* ! BUG */}
+              {/* <div className="relative group">
                 <Link
                   href="/trainings"
                   className="hover:text-primary px-[14px] text-[16px] font-normal flex items-center justify-start gap-4"
@@ -245,10 +255,11 @@ const Nav = () => {
                     <div className="py-1 h-[400px] overflow-y-scroll ">
                       <div className="py-2 pt-1"></div>
                       {categories.map((cat, i) => {
+                        const slug = cat?.text?.replace(" ", "-").toLowerCase();
                         return (
                           <Link
                             key={i}
-                            href={`/training/${cat.value}`}
+                            href={`/training/${slug}`}
                             className="w-[full]"
                           >
                             <p className="block px-6 py-2 text-sm text-[grey] hover:bg-gray-100">
@@ -261,7 +272,7 @@ const Nav = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               <Link
                 onClick={handleNavclose}
