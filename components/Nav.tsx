@@ -170,15 +170,12 @@ const Nav = () => {
                   <div className="py-1 h-[400px] overflow-y-auto">
                     <div className="py-2 pt-1"></div>
                     {categories.map((cat, i) => {
+                      const slug = `/blogs/${cat?.text
+                        ?.replaceAll(" ", "-")
+                        .toLowerCase()}/${cat?.value}`;
                       return (
-                        <Link
-                          key={i}
-                          href={`/blogs/category/${cat?.text
-                            ?.replaceAll(" ", "-")
-                            .toLowerCase()}/${cat?.value}`}
-                          className="py-1"
-                        >
-                          <p className="block px-6 py-0.5 text-sm text-[grey] hover:bg-gray-100">
+                        <Link key={i} href={slug} className="py-1">
+                          <p className="block px-6 py-2 text-sm text-[grey] hover:bg-gray-100">
                             {cat.text}
                           </p>
                           <hr />
