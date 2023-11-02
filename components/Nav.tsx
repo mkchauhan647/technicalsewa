@@ -116,8 +116,8 @@ const Nav = () => {
               {categories && (
                 <div className="hidden group-hover:block">
                   <div className="absolute z-10 mt-0 bg-white rounded-md shadow-lg md:w-[350px]">
-                    <div className="py-1 h-[400px] overflow-y-auto ">
-                      <div className="py-2 pt-1"></div>
+                    <div className="py-1 max-h-[400px] overflow-y-auto ">
+                      <div className="py-1"></div>
                       {categories?.map((cat, i) => {
                         const slug = cat?.text?.replace(" ", "-").toLowerCase();
                         return (
@@ -126,7 +126,7 @@ const Nav = () => {
                             href={`/trainings/${slug}`}
                             className="py-1"
                           >
-                            <p className="block px-6 py-2 text-sm text-[grey] hover:bg-gray-100">
+                            <p className="block px-6 py-1 text-sm text-[grey] hover:bg-gray-100">
                               {cat.text}
                             </p>
                             <hr />
@@ -144,15 +144,15 @@ const Nav = () => {
               </Link>
               <div className="hidden group-hover:block">
                 <div className="absolute z-10 mt-0 bg-white rounded-md shadow-lg md:w-[350px]">
-                  <div className="py-1 h-[400px] overflow-y-auto">
-                    <div className="py-2 pt-1"></div>
+                  <div className="py-1 max-h-[400px] overflow-y-auto">
+                    <div className="py-2"></div>
                     {categories.map((cat, i) => {
                       const slug = `/blogs/${cat?.text
                         ?.replaceAll(" ", "-")
                         .toLowerCase()}/${cat?.value}`;
                       return (
                         <Link key={i} href={slug} className="py-1">
-                          <p className="block px-6 py-2 text-sm text-[grey] hover:bg-gray-100">
+                          <p className="block px-6 py-1 text-sm text-[grey] hover:bg-gray-100">
                             {cat.text}
                           </p>
                           <hr />
