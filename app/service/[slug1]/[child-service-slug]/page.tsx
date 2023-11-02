@@ -1,6 +1,6 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/footer/Footer";
-import ServiceSlug2 from "@/components/pageHelperComponents.js/ServiceSlug2";
+import ChildService from "@/features/service/child-service/ChildService";
 import { fetchServerClient } from "@/lib/api";
 import { baseUrl } from "@/public/baseUrl";
 import React from "react";
@@ -13,7 +13,7 @@ const page = async () => {
   return (
     <>
       <Nav />
-      <ServiceSlug2 data={data.brands} />
+      <ChildService data={data.brands} />
       <Footer />
     </>
   );
