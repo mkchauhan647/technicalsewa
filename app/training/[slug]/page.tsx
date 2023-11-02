@@ -60,7 +60,7 @@ const page = async ({ params }: any) => {
       <div className="max-w-[1280px] py-8  mx-auto md:px-0 px-[10px]">
         {/* fridge training  */}
         <div className="flex flex-wrap gap-[30px] md:gap-0  md:justify-between pb-8">
-          <div className="w-full md:basis-[81%]">
+          <div className="w-full md:basis-[78%]">
             <h2 className="mb-2 text-2xl font-bold pb-[10px]">
               {data?.training_title}
             </h2>
@@ -90,7 +90,7 @@ const page = async ({ params }: any) => {
               </div>
             )}
           </div>
-          <div className="w-full md:basis-[15%]">
+          <div className="w-full md:basis-[19%]">
             <div className="py-1 px-4 rounded-[10px] border-[2px] border-gray-200 text-[#3d4145] font-normal">
               <h2 className="text-[24px] leading-[29px] pb-3">CATEGORIES</h2>
               <TrainingCategorylist
