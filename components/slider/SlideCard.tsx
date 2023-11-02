@@ -13,7 +13,7 @@ import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import Link from "next/link";
 
-const SlideCard = ({ length, data }: any) => {
+const SlideCard = ({ length, data, top }: any) => {
   const breakpoints = {
     // Define your breakpoints here
     200: {
@@ -49,7 +49,7 @@ const SlideCard = ({ length, data }: any) => {
     >
       {data?.map((ele: any, index: any) => (
         <SwiperSlide key={index}>
-          <div className="py-1">
+          <div className={`py-1`}>
             <Link
               href={`/service/${ele?.url_product_name}`}
               className={`flex flex-col gap-1 items-center py-2`}
