@@ -26,7 +26,7 @@ const BlogsByCategoriesPage = async ({ params }: any) => {
             Blogs
           </h3>
           <div className="flex flex-wrap md:justify-between">
-            <div className="w-full md:basis-[60%]">
+            <div className="w-full md:basis-[78%]">
               <div className="grid gap-4 md:grid-cols-1">
                 {blogs.map((blog: any, i: number) => (
                   <BlogCard key={i} blog={blog} />
@@ -36,7 +36,7 @@ const BlogsByCategoriesPage = async ({ params }: any) => {
                 )}
               </div>
             </div>
-            <div className="w-full  md:basis-[35%] py-12 px-10 rounded-[10px] border-[2px] border-gray-200 text-[#3d4145] font-normal">
+            <div className="w-full md:basis-[19%] py-12 px-10 rounded-[10px] border-[2px] border-gray-200 text-[#3d4145] font-normal">
               <h2 className="text-[24px] leading-[29px] pb-3">CATEGORIES</h2>
               <BlogCategorylist categories={trainingCategories} />
             </div>
@@ -51,7 +51,6 @@ const BlogsByCategoriesPage = async ({ params }: any) => {
 export default BlogsByCategoriesPage;
 
 export async function generateMetadata() {
-
   return {
     title: `Blogs | Technical sewa`,
   };
