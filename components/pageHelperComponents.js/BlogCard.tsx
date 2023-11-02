@@ -3,6 +3,10 @@ import Link from "next/link";
 import React from "react";
 
 const BlogCard = ({ blog }: any) => {
+  const slug = blog?.blog_name
+    ?.toLowerCase()
+    .replace(/[^a-zA-Z0-9\s]/g, "-") // Replace special characters with -
+    .replace(/\s+/g, "-");
   return (
     //     <div className='flex gap-4 rounded-[10px] border-[2px] border-gray-200 p-4'>
     //         <div className='basis-[10%] dark:text-black font-bold'>
@@ -30,9 +34,7 @@ const BlogCard = ({ blog }: any) => {
       <div className="flex flex-wrap gap-2 md:gap-0 md:justify-between rounded-[10px] border-[2px] border-gray-200 p-4">
         <div className="w-full md:basis-[40%]  h-[180px] hover:opacity-95 order-2 md:order-1">
           <Link
-            href={`/blog/${blog?.blog_name
-              .replaceAll(" ", "-")
-              .toLowerCase()}/${blog?.blog_id}`}
+            href={`/blog/${slug}/${blog?.blog_id}`}
             className="w-full h-full"
           >
             <img

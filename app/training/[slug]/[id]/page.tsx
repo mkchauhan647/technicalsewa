@@ -11,7 +11,7 @@ import { baseUrl } from "@/public/baseUrl";
 import React from "react";
 async function getData(id: string) {
   const formData = new FormData();
-  formData.append("id", id);
+  formData.append("training_id", id);
 
   const res = await fetch(
     `${baseUrl}/techsewa/publiccontrol/publicmasterconfig/gettrainingDetails`,
@@ -34,24 +34,18 @@ async function getData(id: string) {
 }
 
 const page = async ({ params }: any) => {
-  let trainingSlug = params.slug;
+  const trainingId = params.id;
 
   const data1 = await fetchServerClient(
     "/techsewa/publiccontrol/publicmasterconfig/gettrainingcategories"
   );
-  const finddata = data1.find(
-    (i: any) => i?.text?.replace(" ", "-").toLowerCase() === trainingSlug
-  );
 
-  // fetch all the categories
-  // find category id by matching slug/name
-
-  let data = await getData(finddata?.value);
+  let data = await getData(trainingId);
   data = data?.[0] || data;
 
-  const trainingCategories = await getTrainingCategoriesData();
+  const finddata = data1.find((i: any) => +i?.value === +trainingId);
 
-  const pageTitle = `${data?.training_title} - Training`;
+  const trainingCategories = await getTrainingCategoriesData();
 
   return (
     <>

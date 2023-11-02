@@ -54,6 +54,10 @@ export default async function TrainingCategoryPage({ params }: any) {
             <div className="w-full md:basis-[78%]">
               <div className="grid gap-4 md:grid-cols-1">
                 {data?.map((item: any, i: number) => {
+                  const slug = item?.training_title
+                    ?.toLowerCase()
+                    .replace(/[^a-zA-Z0-9\s]/g, "-") // Replace special characters with -
+                    .replace(/\s+/g, "-");
                   return (
                     <div
                       key={i}
@@ -71,9 +75,7 @@ export default async function TrainingCategoryPage({ params }: any) {
                       </div>
                       <div className="w-full md:basis-[73%] order-1 md:order-2">
                         <Link
-                          href={`/training/${item?.training_title
-                            ?.replaceAll(" ", "-")
-                            .toLowerCase()}`}
+                          href={`/training/${slug}/${item?.id}`}
                           className="  font-bold hover:text-primary text-[19px] md:text-[27px] mb-3 h-[40px] "
                         >
                           {item?.training_title}
