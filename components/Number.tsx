@@ -24,12 +24,11 @@ const Number = (props: Props) => {
         setUsers(numberedData);
       });
   }, []);
-  // console.log(users, "users");
 
   return (
     <div className="mt-[20px] md:mt-[50px] bg-primary">
-      <div className="container mx-auto grid md:grid-cols-4 grid-cols-2 text-white pt-[20px] md:pt-[65px] pb-[20px] md:pb-[75px] md:gap-[30px]">
-        <div className="flex items-center justify-center flex-col">
+      <div className="container mx-auto grid md:grid-cols-4 grid-cols-2 text-white pt-[20px] md:py-[35px] pb-[20px] md:gap-[30px]">
+        <div className="flex flex-col justify-center items-center">
           <div className="text-[29px] md:text-[37px] leaing-[56px] md:leading-[78px] font-medium cursor-pointer transform hover:scale-105  transition duration-300 ease-out">
             {" "}
             <CountUp
@@ -45,7 +44,7 @@ const Number = (props: Props) => {
             Complaints
           </h2>
         </div>
-        <div className="flex items-center justify-center flex-col">
+        <div className="flex flex-col justify-center items-center">
           <div className=" text-[37px]  sm:text-[30px] leading-[78px] font-medium cursor-pointer transform hover:scale-105 transition duration-300 ease-out">
             <CountUp end={users?.customers} duration={3.1} enableScrollSpy />+
           </div>
@@ -53,7 +52,7 @@ const Number = (props: Props) => {
             Customers
           </h2>
         </div>
-        <div className="flex items-center justify-center flex-col">
+        <div className="flex flex-col justify-center items-center">
           <div className=" text-[37px]  sm:text-[30px] leading-[78px] font-medium cursor-pointer transform hover:scale-105 transition duration-300 ease-out">
             <CountUp end={users?.technicians} duration={3} enableScrollSpy />+
           </div>
@@ -61,7 +60,7 @@ const Number = (props: Props) => {
             Technicians
           </h2>
         </div>
-        <div className="flex items-center justify-center flex-col">
+        <div className="flex flex-col justify-center items-center">
           <div className=" text-[37px]  sm:text-[30px] leading-[78px] font-medium cursor-pointer transform hover:scale-105 transition duration-300 ease-out">
             <CountUp end={12} duration={1.1} enableScrollSpy />+
           </div>
