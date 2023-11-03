@@ -67,7 +67,7 @@ const Search = () => {
             router.push(`/service/${value?.id}`);
           }
         }}
-        size={isMobile ? "small" : "medium"}
+        size="small"
         renderInput={(params) => (
           <TextField {...params} label="Search service here..." />
         )}

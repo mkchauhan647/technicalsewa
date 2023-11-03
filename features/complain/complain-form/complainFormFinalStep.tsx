@@ -14,6 +14,7 @@ export default function ComplainFormFinalStep({
   const [complain, setComplain] = useState<any>({});
   const { user } = useAuthStore();
   const { inquiryData } = useComplainFormStore();
+  const [selectedWarrantyFile, setSelectedWarrantyFile] = useState<File>();
 
   const userInfo: any = {
     name: user?.name,
@@ -25,12 +26,18 @@ export default function ComplainFormFinalStep({
   const handleSubmitForm = (e: any) => {
     e.preventDefault();
     const { location, ...data } = inquiryData!;
-    axios.post("https://smartcare.com.np/techsewa/publicControl/logComplain", {
+    const input = {
       ...data,
       ...complain,
       lat: location?.lat,
       long: location?.long,
-    });
+    };
+    const fdata = new FormData();
+    for (const key in input) {
+      fdata.append(key, input[key]);
+    }
+    selectedWarrantyFile && fdata.append("cust_warranty", selectedWarrantyFile);
+    axios.post("https://smartcare.com.np/techsewa/publicControl/logComplain");
   };
 
   const handleChange = (event: any) => {
@@ -58,7 +65,7 @@ export default function ComplainFormFinalStep({
                 <div className="">{userInfo[k]}</div>
               </div>
             ))}
-            {/* <div>
+            <div>
               <label
                 htmlFor="warrantyFile"
                 className="block font-medium text-gray-700 text"
@@ -70,8 +77,9 @@ export default function ComplainFormFinalStep({
                 type="file"
                 id="warrantyFile"
                 className="mt-1 w-full rounded-md border-gray-200 shadow-sm max-sm:text-sm"
+                onChange={(e) => setSelectedWarrantyFile(e.target.files?.[0])}
               />
-            </div> */}
+            </div>
             <div>
               <label
                 htmlFor="complain"
