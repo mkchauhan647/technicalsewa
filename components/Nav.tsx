@@ -106,7 +106,7 @@ const Nav = () => {
               showinput || !isHomePage ? "max-md:w-72 md:!w-80" : "hidden"
             } `}
           >
-            <Search />
+            <Search isTopNav />
           </div>
           <div className="nav-links  hidden md:flex items-center gap-4 text-[#505056] ">
             <div className="group">

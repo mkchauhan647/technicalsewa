@@ -8,7 +8,7 @@ const Slider = ({ data, top }: any) => {
   return (
     <div className="flex justify-center px-1 w-full">
       <div
-        className={`relative w-full ${
+        className={`relative w-full pb-2 ${
           length > 2 ? "md:max-w-[1280px]" : "max-w-[500px]"
         }  `}
       >

@@ -48,7 +48,7 @@ export default function ClientsSlider() {
     <div className="flex flex-col items-center mb-10">
       <div className="text-primary font-bold text-2xl mb-[12px]">Clients</div>
 
-      <div className="relative w-full md:max-w-[1280px]">
+      <div className="relative w-full md:max-w-[1280px] pb-2">
         <Swiper
           className="flex overflow-hidden justify-center items-center px-10 py-4 cursor-pointer"
           autoplay={{
