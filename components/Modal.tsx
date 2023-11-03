@@ -37,9 +37,9 @@ const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
         </div>
         <div className="grid place-items-center space-x-1 space-y-1 w-full max-md:grid-cols-2 md:grid-cols-4">
           {filterData?.map((val: any) => (
-            <Link
+            <a
               key={val.product_name}
-              href={`service/${val.url_product_name}`}
+              href={`/service/${val.url_product_name}`}
               className="flex flex-col justify-center items-center w-[80px] md:w-[120px] h-[120px] p-0.5"
             >
               <div className="rounded-md p-2 border border-[#2591b2] flex flex-col h-full justify-center items-center w-[115px] overflow-hidden">
@@ -59,7 +59,7 @@ const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
                   {val.product_name}
                 </p>
               </div>
-            </Link>
+            </a>
           ))}
         </div>
       </dialog>

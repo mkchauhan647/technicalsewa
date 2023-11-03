@@ -33,10 +33,7 @@ const BlogCard = ({ blog }: any) => {
     <>
       <div className="flex flex-wrap gap-2 md:gap-0 md:justify-between rounded-[10px] border-[2px] border-gray-200 p-4">
         <div className="w-full md:basis-[40%]  h-[180px] hover:opacity-95 order-2 md:order-1">
-          <Link
-            href={`/blog/${slug}/${blog?.blog_id}`}
-            className="w-full h-full"
-          >
+          <a href={`/blog/${slug}/${blog?.blog_id}`} className="w-full h-full">
             <img
               className="object-contain w-full h-full"
               src={blog?.filename?.replace(
@@ -44,11 +41,11 @@ const BlogCard = ({ blog }: any) => {
                 "https://smartcare.com.np/multiservice/test/"
               )}
             />
-          </Link>
+          </a>
         </div>
 
         <div className="w-full md:basis-[54%] order-1 md:order-2">
-          <Link
+          <a
             // href={`/blogs/${blog.blog_name.replaceAll(" ", "-").toLowerCase()}`}
             href={`/blog/${blog?.blog_name
               .replaceAll(" ", "-")
@@ -60,9 +57,8 @@ const BlogCard = ({ blog }: any) => {
             <h3 className="hover:text-primary font-bold text-[19px] md:text-[25px] mb-2 h-[40px] ">
               {blog?.blog_name}
             </h3>
-          </Link>
+          </a>
 
-          {/* <div className="h-[50px]"></div> */}
           <div
             className="mt-[21px] md:mt-[44px] overflow-hidden text-black font-normal"
             dangerouslySetInnerHTML={{ __html: blog?.short_content }}
