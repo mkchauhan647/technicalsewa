@@ -18,10 +18,12 @@ export default function UserComplains() {
   const [data, setData] = useState<Complain[]>([]);
   const [searchQuery, setSearchQuery] = useState<any>({});
 
+  useEffect(() => setPage(0), []);
+
   const getComplainsData = async () => {
     setLoading(true);
     const fdata = new FormData();
-    fdata.append("page", `${page}`);
+    fdata.append("page", `${page + 1}`);
     user?.id && fdata.append("id", user?.id);
     user?.type && fdata.append("type", user?.type);
     for (const key of Object.keys(searchQuery)) {
