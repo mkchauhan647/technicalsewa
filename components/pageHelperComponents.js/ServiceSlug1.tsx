@@ -26,7 +26,6 @@ const ServiceSlug1 = ({ data }: any) => {
   // filtering product_id from data
   const filteredId: any = filterData?.map((element: any) => element.product_id);
 
-
   // =====data fetched for selectProductCategory====
   const fetchedData1 = async () => {
     const formData = new FormData();
@@ -34,7 +33,7 @@ const ServiceSlug1 = ({ data }: any) => {
     const result = await axios.post(
       `${baseUrl}/techsewa/publicControl/GetProductcategiryByProduct`,
       formData
-    );  
+    );
     setSelectCategoryData(result?.data);
   };
 
@@ -118,16 +117,14 @@ const ServiceSlug1 = ({ data }: any) => {
                   <div className="flex flex-col gap-2 justify-center items-center px-2">
                     {selectCategoryData?.map((val: any) => {
                       return (
-                        <div
-                          onClick={() =>
-                            router.push(`/service/${params.slug1}/${val.model}`)
-                          }
+                        <a
+                          href={`/service/${params.slug1}/${val.model}`}
                           key={val.value}
                           className=" hover:bg-gray-500 h-[20pxpx] cursor-pointer flex justify-between items-center px-4 py-[12px] bg-white w-full text-black rounded-md "
                         >
                           {val.text}
                           <SlArrowRight />
-                        </div>
+                        </a>
                       );
                     })}
                   </div>
