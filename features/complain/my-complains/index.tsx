@@ -11,7 +11,7 @@ import ComplainsFilter from "./complainsFilter";
 
 export default function UserComplains() {
   const { push } = useRouter();
-  const { user, isAuthenticated } = useAuthStore();
+  const { user, isAuthenticated, isLoading } = useAuthStore();
   const [loading, setLoading] = useState(true);
   const { page, setPage } = usePagination();
   const [totalData, setTotalData] = useState(0);
@@ -21,7 +21,7 @@ export default function UserComplains() {
   const getComplainsData = async () => {
     setLoading(true);
     const fdata = new FormData();
-    fdata.append("page", `${page + 1}`);
+    fdata.append("page", `${page}`);
     user?.id && fdata.append("id", user?.id);
     user?.type && fdata.append("type", user?.type);
     for (const key of Object.keys(searchQuery)) {
@@ -42,8 +42,8 @@ export default function UserComplains() {
   }, [user, page, searchQuery]);
 
   useEffect(() => {
-    if (!isAuthenticated) push("/");
-  }, [isAuthenticated]);
+    if (!isLoading && !isAuthenticated) push("/");
+  }, [isAuthenticated, isLoading]);
 
   return (
     <div className="container mx-auto">

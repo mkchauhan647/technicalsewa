@@ -5,12 +5,16 @@ import useAuthStore from "@/store/useAuthStore";
 import useComplainStore from "@/store/useComplainInquiryStore";
 import useComplainFormStore from "@/store/useComplainInquiryStore";
 import axios from "axios";
+import toast from "react-hot-toast";
+import { clsx } from "@/lib/essentials";
 
 export default function ComplainFormFinalStep({
   onBack,
 }: {
   onBack: () => void;
 }) {
+  const { back } = useRouter();
+  const [loading, setLoading] = useState(false);
   const [complain, setComplain] = useState<any>({});
   const { user } = useAuthStore();
   const { inquiryData } = useComplainFormStore();
@@ -23,8 +27,9 @@ export default function ComplainFormFinalStep({
     mobile: user?.mobile,
   };
 
-  const handleSubmitForm = (e: any) => {
+  const handleSubmitForm = async (e: any) => {
     e.preventDefault();
+    setLoading(true);
     const { location, ...data } = inquiryData!;
     const input = {
       ...data,
@@ -37,7 +42,13 @@ export default function ComplainFormFinalStep({
       fdata.append(key, input[key]);
     }
     selectedWarrantyFile && fdata.append("cust_warranty", selectedWarrantyFile);
-    axios.post("https://smartcare.com.np/techsewa/publicControl/logComplain");
+    const { data: resData } = await axios.post(
+      "https://smartcare.com.np/techsewa/publicControl/logComplain",
+      fdata
+    );
+    toast(resData?.msg ?? "Your complain has been received!");
+    setLoading(false);
+    if (resData?.status === "Success") back();
   };
 
   const handleChange = (event: any) => {
@@ -106,8 +117,12 @@ export default function ComplainFormFinalStep({
                 Back
               </button>
               <button
+                disabled={loading}
                 type="submit"
-                className="inline-block px-12 py-2 text-sm font-medium text-white rounded border transition-all bg-primary hover:scale-105 focus:outline-none focus:ring"
+                className={clsx(
+                  "inline-block px-12 py-2 text-sm font-medium text-white rounded border transition-all bg-primary hover:scale-105 focus:outline-none focus:ring",
+                  loading ? "bg-opacity-60" : ""
+                )}
               >
                 Submit
               </button>
