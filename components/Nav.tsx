@@ -93,14 +93,14 @@ const Nav = () => {
     <>
       <div className="sticky top-0 z-50 bg-white">
         <div className="Navbar relative border-b-[1px] mx-auto max-w-[1280px]  border-[#ededed] gap-[15px]   flex justify-between max-lg:p-4 items-center bg-white h-[70px] ">
-          <Link href="/">
+          <a href="/">
             <Image
               src="/assets/ts-final-logo.png"
               height={200}
               width={200}
               alt="logo"
             />
-          </Link>
+          </a>
           <div
             className={`${
               showinput || !isHomePage ? "max-md:w-72 md:!w-80" : "hidden"
@@ -110,9 +110,9 @@ const Nav = () => {
           </div>
           <div className="nav-links  hidden md:flex items-center gap-4 text-[#505056] ">
             <div className="group">
-              <Link href="/trainings" className="hover:text-primary">
+              <a href="/trainings" className="hover:text-primary">
                 Training
-              </Link>
+              </a>
               {categories && (
                 <div className="hidden group-hover:block">
                   <div className="absolute z-10 mt-0 bg-white rounded-md shadow-lg md:w-[350px]">
@@ -121,7 +121,7 @@ const Nav = () => {
                       {categories?.map((cat, i) => {
                         const slug = cat?.text?.replace(" ", "-").toLowerCase();
                         return (
-                          <Link
+                          <a
                             key={i}
                             href={`/trainings/${slug}`}
                             className="py-1"
@@ -130,7 +130,7 @@ const Nav = () => {
                               {cat.text}
                             </p>
                             <hr />
-                          </Link>
+                          </a>
                         );
                       })}
                     </div>
@@ -151,12 +151,12 @@ const Nav = () => {
                         ?.replaceAll(" ", "-")
                         .toLowerCase()}/${cat?.value}`;
                       return (
-                        <Link key={i} href={slug} className="py-1">
+                        <a key={i} href={slug} className="py-1">
                           <p className="block px-6 py-1 text-sm text-[grey] hover:bg-gray-100">
                             {cat.text}
                           </p>
                           <hr />
-                        </Link>
+                        </a>
                       );
                     })}
                   </div>
@@ -164,15 +164,15 @@ const Nav = () => {
               </div>
             </div>
 
-            <Link className="hover:text-primary" href="/service">
+            <a className="hover:text-primary" href="/service">
               Services
-            </Link>
-            <Link className="hover:text-primary" href="/professionals">
+            </a>
+            <a className="hover:text-primary" href="/professionals">
               Professionals
-            </Link>
-            <Link className="hover:text-primary" href="/partpurja">
+            </a>
+            <a className="hover:text-primary" href="/partpurja">
               Part Purja
-            </Link>
+            </a>
             {isAuthenticated ? (
               <div className="flex gap-4 items-center">
                 <Link className="hover:text-primary" href="/profile">
@@ -213,14 +213,14 @@ const Nav = () => {
           {/* =========mobile-navigation======== */}
           {nav && (
             <div className="bg-white flex flex-col gap-[24px] shadow-lg z-10 absolute w-max   h-screen top-[70px] right-0 ">
-              <Link
+              <a
                 onClick={handleNavclose}
                 className="flex px-[16px] gap-4 text-[14px] font-normal items-center  w-full justify-starts"
                 href="/"
               >
                 <FaHome className="text-primary" />
                 Home
-              </Link>
+              </a>
 
               {/* <Link
                 onClick={handleNavclose}
@@ -231,14 +231,14 @@ const Nav = () => {
                 Notifications
               </Link>
                */}
-               
-              <Link
+
+              <a
                 href="/trainings"
                 className="hover:text-primary px-[14px] text-base font-normal flex items-center justify-start gap-4"
               >
                 <MdModelTraining className="text-primary" />
                 Training
-              </Link>
+              </a>
 
               {/* ! BUG */}
               {/* <div className="relative group">
@@ -274,41 +274,41 @@ const Nav = () => {
                 </div>
               </div> */}
 
-              <Link
+              <a
                 onClick={handleNavclose}
                 className="flex px-[16px] gap-4 text-[14px] font-normal items-center  w-full justify-starts"
                 href="/blogs"
               >
                 <LiaBlogSolid className="text-primary" />
                 Blog
-              </Link>
+              </a>
 
-              <Link
+              <a
                 onClick={handleNavclose}
                 className="flex px-[16px] gap-4 text-[14px] font-normal items-center  w-full justify-starts"
                 href="/professionals"
               >
                 <BsFillPersonCheckFill className="text-primary" />
                 Professionals
-              </Link>
-              <Link
+              </a>
+              <a
                 onClick={handleNavclose}
                 className="flex px-[16px] gap-4 text-[14px] font-normal items-center  w-full justify-starts"
                 href="/partpurja"
               >
                 <HiMiniWrenchScrewdriver className="text-primary" />
                 Part Purja
-              </Link>
+              </a>
               {isAuthenticated ? (
                 <div className="flex flex-col gap-[24px]">
-                  <Link
+                  <a
                     onClick={handleNavclose}
                     className="flex px-[16px] gap-4 text-[14px] font-normal items-center  w-full justify-starts"
                     href="/service"
                   >
                     <MdOutlineHomeRepairService className="text-primary" />
                     All services
-                  </Link>
+                  </a>
                   <Link
                     onClick={handleNavclose}
                     className="flex px-[16px] gap-4 text-[14px] font-normal items-center  w-full justify-starts"

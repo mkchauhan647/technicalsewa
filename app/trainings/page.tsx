@@ -46,12 +46,12 @@ const Page = async () => {
                         />
                       </div>
                       <div className="w-full md:basis-[73%] order-1 md:order-2">
-                        <Link
+                        <a
                           href={`/training/${slug}/${item?.id}`}
                           className="  font-bold hover:text-primary text-[19px] md:text-[27px] mb-3 h-[40px] "
                         >
                           {item?.training_title}
-                        </Link>
+                        </a>
 
                         <div className="h-[50px] overflow-hidden text-black font-normal">
                           {item?.short_detail}

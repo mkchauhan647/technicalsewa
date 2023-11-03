@@ -50,7 +50,7 @@ const SlideCard = ({ length, data, top }: any) => {
       {data?.map((ele: any, index: any) => (
         <SwiperSlide key={index}>
           <div className={`py-1`}>
-            <Link
+            <a
               href={`/service/${ele?.url_product_name}`}
               className={`flex flex-col gap-1 items-center py-2`}
             >
@@ -68,7 +68,7 @@ const SlideCard = ({ length, data, top }: any) => {
               <p className="text-[12px] text-[#000000] px-2 text-center truncate line-clamp-2 whitespace-normal">
                 {ele.title}
               </p>
-            </Link>
+            </a>
           </div>
         </SwiperSlide>
       ))}
