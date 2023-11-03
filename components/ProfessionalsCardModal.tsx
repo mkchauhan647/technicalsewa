@@ -55,7 +55,7 @@ const ProfessionalsCardModal = ({ email, address, name, image }: any) => {
           <RxCross2
             size={16}
             className="text-[#8C8C8C]"
-            onClick={() => myDialog?.current.close()}
+            onClick={() => myDialog?.current?.close()}
           />
         </div>
       </dialog>

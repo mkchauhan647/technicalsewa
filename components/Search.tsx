@@ -5,7 +5,7 @@ import Autocomplete from "@mui/material/Autocomplete";
 import { TextField, CircularProgress, useMediaQuery } from "@mui/material";
 import { useRouter } from "next/navigation";
 
-const Search = () => {
+const Search = ({ isTopNav }: { isTopNav?: boolean }) => {
   const [searchText, setSearchText] = useState("");
   const [services, setServices] = useState([]);
   const [suggestions, setSuggestions] = useState([{ label: "", id: "" }]);
@@ -67,7 +67,7 @@ const Search = () => {
             router.push(`/service/${value?.id}`);
           }
         }}
-        size="small"
+        size={isMobile || isTopNav ? "small" : "medium"}
         renderInput={(params) => (
           <TextField {...params} label="Search service here..." />
         )}

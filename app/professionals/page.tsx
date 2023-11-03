@@ -23,8 +23,8 @@ const page = async () => {
             Our Professionals
           </h2>
 
-          <div className="flex justify-between items-center px-2 pt-4 md:px-0">
-            {/* page number  */}
+          {/* filter/ */}
+          {/* <div className="flex justify-between items-center px-2 pt-4 md:px-0">
             <p className="text-center md:text-left text-[14px]">
               Showing 1-20 of 50
             </p>
@@ -36,7 +36,7 @@ const page = async () => {
                 size="23px"
               />
             </div>
-          </div>
+          </div> */}
 
           {/* card  */}
           <div className="grid grid-cols-1 gap-5 px-2 py-4 md:grid-cols-3 md:py-8 md:px-0">
