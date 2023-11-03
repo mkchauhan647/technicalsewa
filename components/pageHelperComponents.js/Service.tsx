@@ -101,7 +101,7 @@ const Service = ({ services, data = [] }: any) => {
                 {/* Card container started... */}
                 <div className="flex flex-wrap gap-6 justify-around items-center p-4 md:justify-center md:gap-16">
                   {activeServiceData?.map((value: any, index: any) => (
-                    <Link
+                    <a
                       href={`/service/${value?.url_product_name}`}
                       key={index}
                       className={`${
@@ -124,7 +124,7 @@ const Service = ({ services, data = [] }: any) => {
                           </p>
                         </>
                       )}
-                    </Link>
+                    </a>
                   ))}
                 </div>
               </div>

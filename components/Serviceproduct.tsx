@@ -37,7 +37,7 @@ const ServiceProducts = ({ id, icon, brandname, data }: IProps) => {
                   value.product_name ? "flex flex-col justify-center mx-auto" : "hidden"
                 } `}
               >
-                <Link href={`/service/${value?.url_product_name}`}>
+                <a href={`/service/${value?.url_product_name}`}>
                   {value.image_url && (
                     <Image
                       width={100}
@@ -48,7 +48,7 @@ const ServiceProducts = ({ id, icon, brandname, data }: IProps) => {
                     />
                   )}
                   <h3 className="text-[10px]">{value.product_name}</h3>
-                </Link>
+                </a>
               </div>
             </div>
           ))}

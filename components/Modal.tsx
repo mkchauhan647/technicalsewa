@@ -19,9 +19,9 @@ const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
         ref={myDialog}
         id="myDialog"
         data-modal
-        className="outline-none shadow-lg bg-[white] md:px-[24px] px-[10px] py-[20px] rounded-[10px] "
+        className="outline-none shadow-lg bg-[white] px-[10px] py-[20px] rounded-[10px] "
       >
-        <div className="flex md:justify-between items-center gap-[10px] ">
+        <div className="flex md:justify-between items-center gap-[10px] mb-2">
           <div className="flex gap-[10px] items-center pl-[10px] mx-auto">
             <Image src={imageUrl} alt={imgAlt} width={30} height={30} />
             <p className="text-black font-medium md:text-[28px] text-[21px] leading-[20px]">
@@ -35,7 +35,7 @@ const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
             onClick={() => myDialog?.current.close()}
           />
         </div>
-        <div className="grid place-items-center space-x-1 space-y-1 w-full max-md:grid-cols-2 md:grid-cols-4">
+        <div className="flex flex-wrap justify-center place-items-center space-x-1 space-y-1 w-full max-w-xl max-md:grid max-md:grid-cols-2">
           {filterData?.map((val: any) => (
             <a
               key={val.product_name}
