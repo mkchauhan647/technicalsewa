@@ -68,7 +68,7 @@ export default function ClientsSlider() {
               <SwiperSlide key={index}>
                 <div
                   className={
-                    "flex flex-col justify-center items-center p-2 rounded-md border h-[130px] border-primary"
+                    "flex flex-col justify-center items-center p-2 rounded-md border h-[110px] border-primary"
                   }
                 >
                   <img

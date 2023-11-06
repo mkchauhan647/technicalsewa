@@ -59,26 +59,25 @@ const page = async () => {
                   </h3>
 
                   {/* three small button */}
-                  <div className="flex gap-1 text-[12px] text-primary">
-                    <button className="bg-[#e8ebf4] px-[9px] py-[2px] rounded-sm">
-                      Kent
-                    </button>
-                    <button className="bg-[#e8ebf4] px-[9px] py-[2px] rounded-sm">
-                      Bravos
-                    </button>
-                    <button className="bg-[#e8ebf4] px-[9px] py-[2px] rounded-sm">
-                      Haier
-                    </button>
+                  <div className="flex gap-1 text-[12px] text-primary flex-wrap">
+                    {s?.skill?.split(",")?.map((skill: string, i: number) => (
+                      <button
+                        key={i}
+                        className="bg-[#e8ebf4] px-[9px] py-[2px] rounded-sm"
+                      >
+                        {skill}
+                      </button>
+                    ))}
                   </div>
 
                   {/* book now and view button */}
                   <div className="flex gap-2 text-[11px]">
-                    <Link
+                    <a
                       href="/service"
-                      className="text-white bg-primary rounded-md px-2 py-1 md:px-[17px] md:py-[6px]"
+                      className="text-white whitespace-nowrap bg-primary rounded-md px-2 py-1 md:px-[17px] md:py-[6px]"
                     >
                       Book Now
-                    </Link>
+                    </a>
                     <ProfessionalsCardButton
                       name={s.sc_name}
                       address={s.sc_address}
