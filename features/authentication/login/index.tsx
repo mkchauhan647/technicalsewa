@@ -8,7 +8,7 @@ import useAuthStore from "@/store/useAuthStore";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 
-const LoginForm = () => {
+const LoginForm = ({cb}:{cb?:() => void}) => {
   const { push } = useRouter();
   const { signin } = useAuthStore();
   const [loading, setLoading] = useState(false);
@@ -66,7 +66,8 @@ const LoginForm = () => {
 
       if (typeof loginRes.data === "object" && loginRes.data !== null) {
         signin(loginRes.data);
-        push("/");
+        cb && cb?.();
+        !cb && push("/");
       } else {
         toast("❌ Invalid login!");
         throw new Error("Login Failed");
