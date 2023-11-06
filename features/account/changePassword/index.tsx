@@ -4,6 +4,7 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import CryptoJS from "crypto-js";
 
 export default function ChangePasswordForm() {
   const { user, signout, isLoading, isAuthenticated } = useAuthStore();
@@ -24,8 +25,8 @@ export default function ChangePasswordForm() {
     data.append("id", `${user?.id}`);
     data.append("type", `${user?.type}`);
     // data.append("type", accountType);
-    data.append("old_password", input.old_password);
-    data.append("new_password", input.new_password);
+    data.append("old_password", `${CryptoJS.MD5(input.old_password)}`);
+    data.append("new_password", `${CryptoJS.MD5(input.new_password)}`);
     await axios
       .post(
         `https://smartcare.com.np/techsewa/publiccontrol/changePassword`,
