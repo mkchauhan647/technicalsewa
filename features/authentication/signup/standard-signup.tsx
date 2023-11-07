@@ -23,7 +23,8 @@ const StandardSignUp = () => {
     refferedby: "",
   });
 
-  const handleSignUp = async () => {
+  const handleSignUp = async (e: React.FormEvent) => {
+    e.preventDefault();
     let data = new FormData();
     if (input.password === input.confirmpassword) {
       data.append("phone", input.mobilenumber);
@@ -80,107 +81,111 @@ const StandardSignUp = () => {
       <h2 className="text-lg font-bold">Sign Up</h2>
 
       {/* input  */}
-      <div className="w-[80%] lg:w-[40%] flex flex-col gap-5">
-        <input
-          minLength={10}
-          name="mobilenumber"
-          className=" w-full px-4 py-3 border-[1px] text-[14px] italic outline-none"
-          type="number"
-          placeholder="Mobile Number"
-          onChange={handleChange}
-          required
-        />
-        <div className="lg:space-x-4 max-lg:space-y-5 lg:grid lg:grid-cols-2">
+      <div className="w-[80%] lg:w-[40%]">
+        <form onSubmit={handleSignUp} className="flex flex-col gap-5 w-full">
           <input
-            name="firstname"
-            className="max-lg:w-full px-4 py-3 border-[1px] text-[14px] italic outline-none"
-            type="text"
-            placeholder="First Name"
+            minLength={10}
+            name="mobilenumber"
+            className=" w-full px-4 py-3 border-[1px] text-[14px] italic outline-none"
+            type="number"
+            placeholder="Mobile Number"
             onChange={handleChange}
             required
           />
-          <input
-            name="lastname"
-            className="max-lg:w-full  px-4 py-3 border-[1px] text-[14px] italic outline-none"
-            type="text"
-            placeholder="Last Name"
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <input
-          name="emailaddress"
-          className=" w-full  px-4 py-3 border-[1px] text-[14px] italic outline-none"
-          type="text"
-          placeholder="Email Address"
-          onChange={handleChange}
-          required
-        />
-
-        <div className="lg:space-x-4 max-lg:space-y-5 lg:grid lg:grid-cols-2">
-          {/* password  */}
-          <div className="flex items-center  border-[1px] justify-between">
+          <div className="lg:space-x-4 max-lg:space-y-5 lg:grid lg:grid-cols-2">
             <input
-              name="password"
-              className="w-full px-4 py-3   pl-[20px]   placeholder:italic placeholder:font-normal rounded-[2px] outline-none text-[14px]"
-              type={`${showPassword === false ? "password" : "text"}`}
-              placeholder="Password"
+              name="firstname"
+              className="max-lg:w-full px-4 py-3 border-[1px] text-[14px] italic outline-none"
+              type="text"
+              placeholder="First Name"
               onChange={handleChange}
               required
             />
-
-            <div
-              className=" border-l-[1px] p-4"
-              onClick={() => setshowPassword(!showPassword)}
-            >
-              {showPassword ? <AiOutlineEye /> : <BsEyeSlashFill />}
-            </div>
-          </div>
-          <div className="flex items-center  border-[1px] justify-between">
             <input
-              name="confirmpassword"
-              className=" w-full px-4 py-3 pl-[20px]   placeholder:italic placeholder:font-normal rounded-[2px] outline-none text-[14px]"
-              type={`${showConfirmPassword === false ? "password" : "text"}`}
-              placeholder="Confirm Password"
+              name="lastname"
+              className="max-lg:w-full  px-4 py-3 border-[1px] text-[14px] italic outline-none"
+              type="text"
+              placeholder="Last Name"
               onChange={handleChange}
               required
             />
+          </div>
+          <input
+            name="emailaddress"
+            className=" w-full  px-4 py-3 border-[1px] text-[14px] italic outline-none"
+            type="text"
+            placeholder="Email Address"
+            onChange={handleChange}
+            required
+          />
 
-            <div
-              className=" border-l-[1px] p-4"
-              onClick={() => setshowConfirmPassword(!showConfirmPassword)}
-            >
-              {showConfirmPassword ? <AiOutlineEye /> : <BsEyeSlashFill />}
+          <div className="lg:space-x-4 max-lg:space-y-5 lg:grid lg:grid-cols-2">
+            {/* password  */}
+            <div className="flex items-center  border-[1px] justify-between">
+              <input
+                name="password"
+                className="w-full px-4 py-3   pl-[20px]   placeholder:italic placeholder:font-normal rounded-[2px] outline-none text-[14px]"
+                type={`${showPassword === false ? "password" : "text"}`}
+                placeholder="Password"
+                onChange={handleChange}
+                required
+                minLength={6}
+              />
+
+              <div
+                className=" border-l-[1px] p-4"
+                onClick={() => setshowPassword(!showPassword)}
+              >
+                {showPassword ? <AiOutlineEye /> : <BsEyeSlashFill />}
+              </div>
+            </div>
+            <div className="flex items-center  border-[1px] justify-between">
+              <input
+                name="confirmpassword"
+                className=" w-full px-4 py-3 pl-[20px]   placeholder:italic placeholder:font-normal rounded-[2px] outline-none text-[14px]"
+                type={`${showConfirmPassword === false ? "password" : "text"}`}
+                placeholder="Confirm Password"
+                onChange={handleChange}
+                required
+                minLength={6}
+              />
+
+              <div
+                className=" border-l-[1px] p-4"
+                onClick={() => setshowConfirmPassword(!showConfirmPassword)}
+              >
+                {showConfirmPassword ? <AiOutlineEye /> : <BsEyeSlashFill />}
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="lg:space-x-4 max-lg:space-y-5 lg:grid lg:grid-cols-2">
-          <input
-            name="address"
-            className="max-lg:w-full px-4 py-3 border-[1px] text-[14px] italic outline-none"
-            type="text"
-            placeholder="Address"
-            onChange={handleChange}
-            required
-          />
-          <input
-            name="refferedby"
-            className="max-lg:w-full px-4 py-3 border-[1px] text-[14px] italic outline-none"
-            type="text"
-            placeholder="Reffered By"
-            onChange={handleChange}
-            required
-          />
-        </div>
+          <div className="lg:space-x-4 max-lg:space-y-5 lg:grid lg:grid-cols-2">
+            <input
+              name="address"
+              className="max-lg:w-full px-4 py-3 border-[1px] text-[14px] italic outline-none"
+              type="text"
+              placeholder="Address"
+              onChange={handleChange}
+              required
+            />
+            <input
+              name="refferedby"
+              className="max-lg:w-full px-4 py-3 border-[1px] text-[14px] italic outline-none"
+              type="text"
+              placeholder="Reffered By"
+              onChange={handleChange}
+              required
+            />
+          </div>
 
-        <button
-          disabled={!isValidForm}
-          className={`p-4 w-full text-white rounded-md bg-primary disabled:bg-opacity-60`}
-          onClick={handleSignUp}
-        >
-          Submit
-        </button>
+          <button
+            type="submit"
+            disabled={!isValidForm}
+            className={`p-4 w-full text-white rounded-md bg-primary disabled:bg-opacity-60`}
+          >
+            Submit
+          </button>
+        </form>
       </div>
     </div>
   );

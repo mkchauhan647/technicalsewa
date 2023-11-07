@@ -13,7 +13,7 @@ export default function ComplainFormFinalStep({
 }: {
   onBack: () => void;
 }) {
-  const { back } = useRouter();
+  const { back, push } = useRouter();
   const [loading, setLoading] = useState(false);
   const [complain, setComplain] = useState<any>({});
   const { user } = useAuthStore();
@@ -32,6 +32,7 @@ export default function ComplainFormFinalStep({
     setLoading(true);
     const { location, ...data } = inquiryData!;
     const input = {
+      customer_id: user?.id,
       ...data,
       ...complain,
       lat: location?.lat,
@@ -48,7 +49,10 @@ export default function ComplainFormFinalStep({
     );
     toast(resData?.msg ?? "Your complain has been received!");
     setLoading(false);
-    if (resData?.status === "Success") back();
+    if (resData?.status === "Success") {
+      push("/");
+      // back();
+    }
   };
 
   const handleChange = (event: any) => {
