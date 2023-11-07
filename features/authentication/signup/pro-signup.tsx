@@ -29,7 +29,8 @@ const SignUpPro = () => {
   const [showPassword, setshowPassword] = useState(false);
   const [showConfirmPassword, setshowConfirmPassword] = useState(false);
 
-  const handleSignUPPro = async () => {
+  const handleSignUpPro = async (e: React.FormEvent) => {
+    e.preventDefault();
     if (input.password === input.confirmpassword) {
       var data = new FormData();
       data.append("name", input.name);
@@ -78,94 +79,98 @@ const SignUpPro = () => {
 
       {/* input  */}
       <div className="w-[80%] lg:w-[40%] flex flex-col gap-5">
-        <input
-          name="mobilenumber"
-          className=" w-full px-4 py-3 border-[1px] text-[14px] italic outline-none"
-          type="number"
-          placeholder="Mobile Number"
-          onChange={handleChange}
-          required
-        />
-        <div className="lg:space-x-4 max-lg:space-y-5 lg:grid lg:grid-cols-2">
+        <form onSubmit={handleSignUpPro} className="flex flex-col gap-5 w-full">
           <input
-            name="name"
-            className="max-lg:w-full  px-4 py-3 border-[1px] text-[14px] italic outline-none"
-            type="text"
-            placeholder="Name"
+            name="mobilenumber"
+            className=" w-full px-4 py-3 border-[1px] text-[14px] italic outline-none"
+            type="number"
+            placeholder="Mobile Number"
             onChange={handleChange}
             required
           />
+          <div className="lg:space-x-4 max-lg:space-y-5 lg:grid lg:grid-cols-2">
+            <input
+              name="name"
+              className="max-lg:w-full  px-4 py-3 border-[1px] text-[14px] italic outline-none"
+              type="text"
+              placeholder="Name"
+              onChange={handleChange}
+              required
+            />
+            <input
+              name="address"
+              className="max-lg:w-full  px-4 py-3 border-[1px] text-[14px] italic outline-none"
+              type="text"
+              placeholder="Address"
+              required
+            />
+          </div>
           <input
-            name="address"
-            className="max-lg:w-full  px-4 py-3 border-[1px] text-[14px] italic outline-none"
+            name="emailaddress"
+            className=" w-full  px-4 py-3 border-[1px] text-[14px] italic outline-none"
             type="text"
-            placeholder="Address"
+            placeholder="Email Address"
+            onChange={handleChange}
             required
           />
-        </div>
-        <input
-          name="emailaddress"
-          className=" w-full  px-4 py-3 border-[1px] text-[14px] italic outline-none"
-          type="text"
-          placeholder="Email Address"
-          onChange={handleChange}
-          required
-        />
 
-        <div className="lg:space-x-4 max-lg:space-y-5 lg:grid lg:grid-cols-2">
-          {/* password  */}
-          <div className="flex items-center  border-[1px] justify-between">
-            <input
-              name="password"
-              className="w-full px-4 py-3 pl-[20px]   placeholder:italic placeholder:font-normal rounded-[2px] outline-none text-[14px]"
-              type={`${showPassword === false ? "password" : "text"}`}
-              placeholder="Password"
-              onChange={handleChange}
-              required
-            />
+          <div className="lg:space-x-4 max-lg:space-y-5 lg:grid lg:grid-cols-2">
+            {/* password  */}
+            <div className="flex items-center  border-[1px] justify-between">
+              <input
+                name="password"
+                className="w-full px-4 py-3 pl-[20px]   placeholder:italic placeholder:font-normal rounded-[2px] outline-none text-[14px]"
+                type={`${showPassword === false ? "password" : "text"}`}
+                placeholder="Password"
+                onChange={handleChange}
+                required
+                minLength={6}
+              />
 
-            <div
-              className="border-l-[1px] p-4"
-              onClick={() => setshowPassword(!showPassword)}
-            >
-              {showPassword ? <AiOutlineEye /> : <BsEyeSlashFill />}
+              <div
+                className="border-l-[1px] p-4"
+                onClick={() => setshowPassword(!showPassword)}
+              >
+                {showPassword ? <AiOutlineEye /> : <BsEyeSlashFill />}
+              </div>
+            </div>
+            <div className="flex items-center  border-[1px] justify-between">
+              <input
+                name="confirmpassword"
+                className=" w-full px-4 py-3 pl-[20px]   placeholder:italic placeholder:font-normal rounded-[2px] outline-none text-[14px]"
+                type={`${showConfirmPassword === false ? "password" : "text"}`}
+                placeholder="Confirm Password"
+                onChange={handleChange}
+                required
+                minLength={6}
+              />
+
+              <div
+                className=" border-l-[1px] p-4"
+                onClick={() => setshowConfirmPassword(!showConfirmPassword)}
+              >
+                {showConfirmPassword ? <AiOutlineEye /> : <BsEyeSlashFill />}
+              </div>
             </div>
           </div>
-          <div className="flex items-center  border-[1px] justify-between">
-            <input
-              name="confirmpassword"
-              className=" w-full px-4 py-3 pl-[20px]   placeholder:italic placeholder:font-normal rounded-[2px] outline-none text-[14px]"
-              type={`${showConfirmPassword === false ? "password" : "text"}`}
-              placeholder="Confirm Password"
-              onChange={handleChange}
-              required
-            />
 
-            <div
-              className=" border-l-[1px] p-4"
-              onClick={() => setshowConfirmPassword(!showConfirmPassword)}
-            >
-              {showConfirmPassword ? <AiOutlineEye /> : <BsEyeSlashFill />}
-            </div>
-          </div>
-        </div>
+          <input
+            name="skill"
+            className=" w-full px-4 py-3 border-[1px] text-[14px] italic outline-none"
+            type="text"
+            placeholder="Skill"
+            onChange={handleChange}
+            required
+          />
 
-        <input
-          name="skill"
-          className=" w-full px-4 py-3 border-[1px] text-[14px] italic outline-none"
-          type="text"
-          placeholder="Skill"
-          onChange={handleChange}
-          required
-        />
-
-        <button
-          disabled={!isValidForm}
-          onClick={handleSignUPPro}
-          className="p-4 w-full text-white rounded-md bg-primary disabled:bg-opacity-60"
-        >
-          Submit
-        </button>
+          <button
+            type="submit"
+            disabled={!isValidForm}
+            className="p-4 w-full text-white rounded-md bg-primary disabled:bg-opacity-60"
+          >
+            Submit
+          </button>
+        </form>
       </div>
     </div>
   );
