@@ -13,7 +13,8 @@ export async function fetchClient(url: string, options = {}) {
 // for server side requests
 export async function fetchServerClient(url: string, options = {}) {
   const defaultOptions = {
-    cache: "no-store",
+    // cache: "no-store",
+    next: { revalidate: 120 }, // 2 minute cache timeout
   };
 
   const mergedOptions = { ...defaultOptions, ...options };
