@@ -524,7 +524,7 @@ const page = async ({ params })=>{
 async function generateMetadata({ params }) {
     const trainingSlug = params.slug;
     // fetch seo data for page based on slug
-    const seoData = await (0,_lib_api__WEBPACK_IMPORTED_MODULE_4__/* .getSEOByPageURL */ .$p)(`https://www.technicalsewa.com/training/${trainingSlug}`);
+    const seoData = await (0,_lib_api__WEBPACK_IMPORTED_MODULE_4__/* .getSEOByPageURL */ .$p)(`https://technicalsewa.com/training/${trainingSlug}`);
     const seoExists = seoData?.content && !Array.isArray(seoData?.content);
     const seoContent = seoData?.content;
     if (seoExists) {

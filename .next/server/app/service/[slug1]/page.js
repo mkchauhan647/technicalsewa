@@ -713,7 +713,7 @@ const page = async ()=>{
 async function generateMetadata({ params }) {
     const slug = params.slug1;
     // fetch seo data for page based on slug
-    const seoData = await (0,api/* getSEOByPageURL */.$p)(`https://www.technicalsewa.com/part-purja/${slug}`);
+    const seoData = await (0,api/* getSEOByPageURL */.$p)(`https://technicalsewa.com/part-purja/${slug}`);
     const seoExists = seoData?.content && !Array.isArray(seoData?.content);
     const seoContent = seoData?.content;
     if (seoExists) {

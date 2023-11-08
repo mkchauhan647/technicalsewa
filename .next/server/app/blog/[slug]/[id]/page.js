@@ -501,7 +501,7 @@ async function generateMetadata({ params }) {
     const slug = params.slug;
     const blogId = params.blogId;
     // fetch seo data for page based on slug
-    const seoData = await (0,_lib_api__WEBPACK_IMPORTED_MODULE_4__/* .getSEOByPageURL */ .$p)(`https://www.technicalsewa.com/blogs/${slug}/${blogId}`);
+    const seoData = await (0,_lib_api__WEBPACK_IMPORTED_MODULE_4__/* .getSEOByPageURL */ .$p)(`https://technicalsewa.com/blogs/${slug}/${blogId}`);
     const seoExists = seoData?.content && !Array.isArray(seoData?.content);
     const seoContent = seoData?.content;
     // <SEOBase title={pageTitle} />

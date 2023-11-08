@@ -686,7 +686,7 @@ const page = async ()=>{
 };
 /* harmony default export */ const professionals_page = (page);
 async function generateMetadata() {
-    const seoData = await (0,api/* getSEOByPageURL */.$p)(`https://www.technicalsewa.com/professionals`);
+    const seoData = await (0,api/* getSEOByPageURL */.$p)(`https://technicalsewa.com/professionals`);
     const seoExists = seoData?.content && !Array.isArray(seoData?.content);
     const seoContent = seoData?.content;
     if (seoExists) {
