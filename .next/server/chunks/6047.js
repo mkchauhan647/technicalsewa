@@ -1,11 +1,21 @@
-"use strict";
-exports.id = 7786;
-exports.ids = [7786];
+exports.id = 6047;
+exports.ids = [6047];
 exports.modules = {
+
+/***/ 45194:
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 62390));
+Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 70625));
+Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 66953));
+Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 48886))
+
+/***/ }),
 
 /***/ 48886:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -92,6 +102,7 @@ const BlogCard = ({ blog })=>{
 /***/ 39643:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ZP: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });

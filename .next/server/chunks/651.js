@@ -61,7 +61,9 @@ async function getTrainingDataById(id) {
         const res = await fetch(`${baseUrl}/techsewa/publiccontrol/publicmasterconfig/gettrainingDetails`, {
             method: "POST",
             body: formData,
-            cache: "no-store"
+            next: {
+                revalidate: 120
+            }
         });
         return res.json();
     } catch (error) {
@@ -74,8 +76,8 @@ async function getTrainingDataById(id) {
 async function getTrainingCategoriesData() {
     try {
         const res = await fetch(`${_public_baseUrl__WEBPACK_IMPORTED_MODULE_1__/* .baseUrl */ .F}/techsewa/publiccontrol/publicmasterconfig/gettrainingcategories`, {
-            headers: {
-                "Cache-Control": `max-age=${2 * 60}`
+            next: {
+                revalidate: 120
             }
         });
         return res.json();
@@ -90,7 +92,10 @@ async function getBlogDataById(id) {
         const res = await fetch(`${_public_baseUrl__WEBPACK_IMPORTED_MODULE_1__/* .baseUrl */ .F}/techsewa/publiccontrol/publicmasterconfig/getblogDetailsbyidd`, {
             method: "POST",
             body: formData,
-            cache: "no-store"
+            // cache: "no-store",
+            next: {
+                revalidate: 120
+            }
         });
         return res.json();
     } catch (error) {
@@ -107,7 +112,10 @@ async function getBlogsByCategoryId(id) {
         const res = await fetch(`${_public_baseUrl__WEBPACK_IMPORTED_MODULE_1__/* .baseUrl */ .F}/techsewa/publiccontrol/publicmasterconfig/getblogDetailsbyCatid`, {
             method: "POST",
             body: formData,
-            cache: "no-store"
+            // cache: "no-store",
+            next: {
+                revalidate: 120
+            }
         });
         return res.json();
     } catch (error) {
