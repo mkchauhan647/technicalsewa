@@ -397,17 +397,6 @@ Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_re
 
 /***/ }),
 
-/***/ 90836:
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
-
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 61522, 23));
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 97844, 23));
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 86249, 23));
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 90125, 23));
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 13100, 23))
-
-/***/ }),
-
 /***/ 65785:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -560,7 +549,7 @@ const page = async ({ params })=>{
 async function generateMetadata({ params }) {
     const trainingSlug = params.slug;
     // fetch seo data for page based on slug
-    const seoData = await (0,api/* getSEOByPageURL */.$p)(`https://technicalsewa.com/part-purja/${trainingSlug}`);
+    const seoData = await (0,api/* getSEOByPageURL */.$p)(`https://www.technicalsewa.com/part-purja/${trainingSlug}`);
     const seoExists = seoData?.content && !Array.isArray(seoData?.content);
     const seoContent = seoData?.content;
     if (seoExists) {
@@ -593,7 +582,7 @@ async function generateMetadata({ params }) {
 var __webpack_require__ = require("../../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [3763,3190,6893,6558,3760,7776,651], () => (__webpack_exec__(47781)));
+var __webpack_exports__ = __webpack_require__.X(0, [3763,3190,6893,6558,5824,7776,651], () => (__webpack_exec__(47781)));
 module.exports = __webpack_exports__;
 
 })();

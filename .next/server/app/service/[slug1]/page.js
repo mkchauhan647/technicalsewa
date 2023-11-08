@@ -713,7 +713,7 @@ const page = async ()=>{
 async function generateMetadata({ params }) {
     const slug = params.slug1;
     // fetch seo data for page based on slug
-    const seoData = await (0,api/* getSEOByPageURL */.$p)(`https://technicalsewa.com/part-purja/${slug}`);
+    const seoData = await (0,api/* getSEOByPageURL */.$p)(`https://www.technicalsewa.com/part-purja/${slug}`);
     const seoExists = seoData?.content && !Array.isArray(seoData?.content);
     const seoContent = seoData?.content;
     if (seoExists) {
@@ -737,6 +737,38 @@ async function generateMetadata({ params }) {
 }
 
 
+/***/ }),
+
+/***/ 58515:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(56786);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7887);
+/* harmony import */ var react_icons_ai__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(70495);
+
+
+
+const loading = ()=>{
+    return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+        className: "w-full h-[100vh] flex justify-center items-center",
+        children: [
+            " ",
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_icons_ai__WEBPACK_IMPORTED_MODULE_2__/* .AiOutlineLoading3Quarters */ .Z7b, {
+                size: 100
+            }),
+            " "
+        ]
+    });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (loading);
+
+
 /***/ })
 
 };
@@ -746,7 +778,7 @@ async function generateMetadata({ params }) {
 var __webpack_require__ = require("../../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [3763,3190,6893,6558,9722,9864,3760,7776,651,9506], () => (__webpack_exec__(84159)));
+var __webpack_exports__ = __webpack_require__.X(0, [3763,3190,6893,6558,9722,9864,5824,7776,651], () => (__webpack_exec__(84159)));
 module.exports = __webpack_exports__;
 
 })();

@@ -379,23 +379,12 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 4283:
+/***/ 32018:
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 62390));
-Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 18096));
-Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 70625))
-
-/***/ }),
-
-/***/ 90836:
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
-
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 61522, 23));
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 97844, 23));
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 86249, 23));
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 90125, 23));
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 13100, 23))
+Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 70625));
+Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 18096))
 
 /***/ }),
 
@@ -697,7 +686,7 @@ const page = async ()=>{
 };
 /* harmony default export */ const professionals_page = (page);
 async function generateMetadata() {
-    const seoData = await (0,api/* getSEOByPageURL */.$p)(`https://technicalsewa.com/professionals`);
+    const seoData = await (0,api/* getSEOByPageURL */.$p)(`https://www.technicalsewa.com/professionals`);
     const seoExists = seoData?.content && !Array.isArray(seoData?.content);
     const seoContent = seoData?.content;
     if (seoExists) {
@@ -728,7 +717,7 @@ async function generateMetadata() {
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [3763,3190,6893,6558,2175,3760,7776,651], () => (__webpack_exec__(50113)));
+var __webpack_exports__ = __webpack_require__.X(0, [3763,3190,6893,6558,2175,5824,7776,651], () => (__webpack_exec__(50113)));
 module.exports = __webpack_exports__;
 
 })();

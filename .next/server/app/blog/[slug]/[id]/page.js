@@ -397,11 +397,11 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 25082:
+/***/ 86921:
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 62390));
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 66953));
+Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 62390));
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 70625))
 
 /***/ }),
@@ -501,7 +501,7 @@ async function generateMetadata({ params }) {
     const slug = params.slug;
     const blogId = params.blogId;
     // fetch seo data for page based on slug
-    const seoData = await (0,_lib_api__WEBPACK_IMPORTED_MODULE_4__/* .getSEOByPageURL */ .$p)(`https://technicalsewa.com/blogs/${slug}/${blogId}`);
+    const seoData = await (0,_lib_api__WEBPACK_IMPORTED_MODULE_4__/* .getSEOByPageURL */ .$p)(`https://www.technicalsewa.com/blogs/${slug}/${blogId}`);
     const seoExists = seoData?.content && !Array.isArray(seoData?.content);
     const seoContent = seoData?.content;
     // <SEOBase title={pageTitle} />
@@ -537,7 +537,7 @@ async function generateMetadata({ params }) {
 var __webpack_require__ = require("../../../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [3763,3190,6893,6558,3760,7776,651,5838], () => (__webpack_exec__(53003)));
+var __webpack_exports__ = __webpack_require__.X(0, [3763,3190,6893,6558,5824,7776,651,6854], () => (__webpack_exec__(53003)));
 module.exports = __webpack_exports__;
 
 })();

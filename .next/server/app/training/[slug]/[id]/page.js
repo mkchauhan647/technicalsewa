@@ -524,7 +524,7 @@ const page = async ({ params })=>{
 async function generateMetadata({ params }) {
     const trainingSlug = params.slug;
     // fetch seo data for page based on slug
-    const seoData = await (0,_lib_api__WEBPACK_IMPORTED_MODULE_4__/* .getSEOByPageURL */ .$p)(`https://technicalsewa.com/training/${trainingSlug}`);
+    const seoData = await (0,_lib_api__WEBPACK_IMPORTED_MODULE_4__/* .getSEOByPageURL */ .$p)(`https://www.technicalsewa.com/training/${trainingSlug}`);
     const seoExists = seoData?.content && !Array.isArray(seoData?.content);
     const seoContent = seoData?.content;
     if (seoExists) {
@@ -555,7 +555,7 @@ async function generateMetadata({ params }) {
 var __webpack_require__ = require("../../../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [3763,3190,6893,6558,3760,7776,651,6927], () => (__webpack_exec__(46062)));
+var __webpack_exports__ = __webpack_require__.X(0, [3763,3190,6893,6558,5824,7776,651,9441], () => (__webpack_exec__(46062)));
 module.exports = __webpack_exports__;
 
 })();

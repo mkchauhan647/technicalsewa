@@ -370,31 +370,20 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 42841:
+/***/ 24841:
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 62390));
+Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 70625));
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 41636));
-Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 95581));
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 66405));
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 66707));
-Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 70625));
+Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 95581));
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 72154));
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 1406));
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 40477));
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 82677));
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 89406))
-
-/***/ }),
-
-/***/ 49940:
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
-
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 97844, 23));
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 86249, 23));
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 90125, 23));
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 13100, 23));
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 61522, 23))
 
 /***/ }),
 
@@ -1679,7 +1668,8 @@ async function Home() {
 }
 async function generateMetadata() {
     // fetch seo data for page based on slug
-    const seoData = await (0,api/* getSEOByPageURL */.$p)(`https://technicalsewa.com`);
+    const seoData = await (0,api/* getSEOByPageURL */.$p)(`https://www.technicalsewa.com`);
+    console.log("get seo  dat ? ", seoData);
     const seoExists = seoData?.content && !Array.isArray(seoData?.content);
     const seoContent = seoData?.content;
     if (seoExists) {
@@ -1718,7 +1708,7 @@ async function generateMetadata() {
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [3763,3190,6893,6558,2175,2664,3760,7776,651,1289], () => (__webpack_exec__(97655)));
+var __webpack_exports__ = __webpack_require__.X(0, [3763,3190,6893,6558,2175,2664,5824,7776,651,1289], () => (__webpack_exec__(97655)));
 module.exports = __webpack_exports__;
 
 })();
