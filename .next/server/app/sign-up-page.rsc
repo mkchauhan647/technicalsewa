@@ -1,9 +1,9 @@
 1:HL["/_next/static/media/c9a5bc6a7c948fb0-s.p.woff2",{"as":"font","type":"font/woff2"}]
 2:HL["/_next/static/css/2521cb7d8934d1e5.css",{"as":"style"}]
-0:["uiwzw_cQJPuCPzJ82SfGS",[[["",{"children":["sign-up-page",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],"$L3",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/2521cb7d8934d1e5.css","precedence":"next"}]],["$L4",["$","meta",null,{"name":"next-size-adjust"}]]]]]]
-5:I{"id":3211,"chunks":["2272:static/chunks/webpack-5e57fe12f5c73631.js","9253:static/chunks/bce60fc1-ee809d29bbca5343.js","5769:static/chunks/5769-8a5108fa3d9da444.js"],"name":"default","async":false}
-6:I{"id":5767,"chunks":["2272:static/chunks/webpack-5e57fe12f5c73631.js","9253:static/chunks/bce60fc1-ee809d29bbca5343.js","5769:static/chunks/5769-8a5108fa3d9da444.js"],"name":"default","async":false}
-7:I{"id":7396,"chunks":["2272:static/chunks/webpack-5e57fe12f5c73631.js","9253:static/chunks/bce60fc1-ee809d29bbca5343.js","5769:static/chunks/5769-8a5108fa3d9da444.js"],"name":"default","async":false}
+0:["vA79VjznDz_tlWOQ8G-RL",[[["",{"children":["sign-up-page",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],"$L3",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/2521cb7d8934d1e5.css","precedence":"next"}]],["$L4",["$","meta",null,{"name":"next-size-adjust"}]]]]]]
+5:I{"id":3211,"chunks":["2272:static/chunks/webpack-bfb262559b0eeacd.js","9253:static/chunks/bce60fc1-ee809d29bbca5343.js","5769:static/chunks/5769-8a5108fa3d9da444.js"],"name":"default","async":false}
+6:I{"id":5767,"chunks":["2272:static/chunks/webpack-bfb262559b0eeacd.js","9253:static/chunks/bce60fc1-ee809d29bbca5343.js","5769:static/chunks/5769-8a5108fa3d9da444.js"],"name":"default","async":false}
+7:I{"id":7396,"chunks":["2272:static/chunks/webpack-bfb262559b0eeacd.js","9253:static/chunks/bce60fc1-ee809d29bbca5343.js","5769:static/chunks/5769-8a5108fa3d9da444.js"],"name":"default","async":false}
 8:I{"id":9379,"chunks":["2775:static/chunks/4b7c8aa5-f9dd35fcd905619f.js","5625:static/chunks/e218cc02-38e75fcd35793372.js","6680:static/chunks/ff48af57-989f5af57d869245.js","3296:static/chunks/2e3a737e-629da08e98c697b0.js","8166:static/chunks/38b7644e-dbd1f8dccc0bba44.js","1524:static/chunks/d127adfb-4332066c5c32d296.js","7269:static/chunks/be3cb1ad-7cfa829033aac644.js","5383:static/chunks/5383-c1ba27fa10f24bf0.js","381:static/chunks/381-ceedca50d50c27bc.js","5545:static/chunks/app/sign-up-page/page-5c707f18531bff31.js"],"name":"","async":false}
 9:I{"id":5179,"chunks":["3185:static/chunks/app/layout-dbd2e9cb627fa24c.js"],"name":"","async":false}
 a:"$Sreact.suspense"

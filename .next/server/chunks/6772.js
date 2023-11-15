@@ -1,11 +1,20 @@
-"use strict";
-exports.id = 9441;
-exports.ids = [9441];
+exports.id = 6772;
+exports.ids = [6772];
 exports.modules = {
+
+/***/ 60126:
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 62390));
+Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 17036));
+Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 70625))
+
+/***/ }),
 
 /***/ 17036:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -39,6 +48,7 @@ const TrainingCategorylist = ({ activeId, categories = [] })=>{
 /***/ 50793:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ZP: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });

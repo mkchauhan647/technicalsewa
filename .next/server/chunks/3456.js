@@ -81,7 +81,7 @@ const LoginForm = ({ cb })=>{
             if (typeof loginRes.data === "object" && loginRes.data !== null) {
                 signin(loginRes.data);
                 cb && cb?.();
-                !cb && push("/");
+                !cb && push("/complains");
             } else {
                 (0,react_hot_toast__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .ZP)("❌ Invalid login!");
                 throw new Error("Login Failed");
