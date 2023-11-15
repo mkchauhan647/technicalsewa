@@ -7,6 +7,7 @@ import useComplainFormStore from "@/store/useComplainInquiryStore";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { clsx } from "@/lib/essentials";
+import LoginForm from "@/features/authentication/login";
 
 export default function ComplainFormFinalStep({
   onBack,
@@ -16,7 +17,8 @@ export default function ComplainFormFinalStep({
   const { back, push } = useRouter();
   const [loading, setLoading] = useState(false);
   const [complain, setComplain] = useState<any>({});
-  const { user } = useAuthStore();
+
+  const { user, isAuthenticated } = useAuthStore();
   const { inquiryData } = useComplainFormStore();
   const [selectedWarrantyFile, setSelectedWarrantyFile] = useState<File>();
 
@@ -50,7 +52,7 @@ export default function ComplainFormFinalStep({
     toast(resData?.msg ?? "Your complain has been received!");
     setLoading(false);
     if (resData?.status === "Success") {
-      push("/");
+      push("/complains");
       // back();
     }
   };
@@ -61,6 +63,8 @@ export default function ComplainFormFinalStep({
     input[name] = value;
     setComplain({ ...complain, ...input });
   };
+
+  if (!isAuthenticated) return <LoginForm cb={() => {}} />;
 
   return (
     <div className="flex max-w-[1280px] m-auto  justify-center items-center  ">

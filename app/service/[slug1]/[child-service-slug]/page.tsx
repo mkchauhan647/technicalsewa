@@ -2,7 +2,6 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/footer/Footer";
 import ChildService from "@/features/service/child-service/ChildService";
 import { fetchServerClient, getSEOByPageURL } from "@/lib/api";
-import { baseUrl } from "@/public/baseUrl";
 import React from "react";
 
 const page = async () => {

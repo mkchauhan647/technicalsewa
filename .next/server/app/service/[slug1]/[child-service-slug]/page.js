@@ -453,10 +453,9 @@ const MapComponent = ({ onProceed })=>{
     const destinatinonRef = (0,react_.useRef)();
     const nearestlocation = (0,react_.useRef)();
     const [center, setCenter] = (0,react_.useState)({
-        lat: 27.7172,
-        lng: 85.324
+        lat: 27.6701866,
+        lng: 85.3197062
     });
-    // let center = { lat: 27.7172, lng: 85.324 }; // center location
     const autocompleteRef = (0,react_.useRef)();
     // Function to handle Autocomplete place selection and setting value of lat and long of center.
     const handlePlaceSelect = ()=>{
@@ -671,8 +670,11 @@ var dist = __webpack_require__(33518);
 ;// CONCATENATED MODULE: ./lib/essentials.ts
 const clsx = (...classes)=>classes.join(" ");
 
+// EXTERNAL MODULE: ./features/authentication/login/index.tsx
+var login = __webpack_require__(43456);
 ;// CONCATENATED MODULE: ./features/complain/complain-form/complainFormFinalStep.tsx
 /* __next_internal_client_entry_do_not_use__ default auto */ 
+
 
 
 
@@ -684,7 +686,7 @@ function ComplainFormFinalStep({ onBack }) {
     const { back, push } = (0,navigation.useRouter)();
     const [loading, setLoading] = (0,react_.useState)(false);
     const [complain, setComplain] = (0,react_.useState)({});
-    const { user } = (0,useAuthStore/* default */.Z)();
+    const { user, isAuthenticated } = (0,useAuthStore/* default */.Z)();
     const { inquiryData } = useComplainInquiryStore();
     const [selectedWarrantyFile, setSelectedWarrantyFile] = (0,react_.useState)();
     const userInfo = {
@@ -713,7 +715,7 @@ function ComplainFormFinalStep({ onBack }) {
         (0,dist/* default */.ZP)(resData?.msg ?? "Your complain has been received!");
         setLoading(false);
         if (resData?.status === "Success") {
-            push("/");
+            push("/complains");
         // back();
         }
     };
@@ -726,6 +728,9 @@ function ComplainFormFinalStep({ onBack }) {
             ...input
         });
     };
+    if (!isAuthenticated) return /*#__PURE__*/ jsx_runtime_.jsx(login["default"], {
+        cb: ()=>{}
+    });
     return /*#__PURE__*/ jsx_runtime_.jsx("div", {
         className: "flex max-w-[1280px] m-auto  justify-center items-center  ",
         children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
@@ -821,11 +826,7 @@ function ComplainFormFinalStep({ onBack }) {
     });
 }
 
-// EXTERNAL MODULE: ./features/authentication/login/index.tsx
-var login = __webpack_require__(43456);
 ;// CONCATENATED MODULE: ./features/complain/complain-form/complainForm.tsx
-
-
 
 
 
@@ -834,7 +835,6 @@ var login = __webpack_require__(43456);
 function ComplainForm() {
     const [formStep2, setFormStep2] = (0,react_.useState)(false);
     const { setInquiryData } = useComplainInquiryStore();
-    const { isAuthenticated } = (0,useAuthStore/* default */.Z)();
     const handleProceedToStep2 = (location)=>{
         setInquiryData({
             location: {
@@ -844,9 +844,6 @@ function ComplainForm() {
         });
         setFormStep2(true);
     };
-    if (!isAuthenticated) return /*#__PURE__*/ jsx_runtime_.jsx(login["default"], {
-        cb: ()=>{}
-    });
     if (formStep2) {
         return /*#__PURE__*/ jsx_runtime_.jsx(ComplainFormFinalStep, {
             onBack: ()=>setFormStep2(false)
@@ -961,9 +958,12 @@ const ChildService = ({ data })=>{
                                                             " "
                                                         ]
                                                     }),
-                                                    /*#__PURE__*/ jsx_runtime_.jsx("h3", {
+                                                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)("h3", {
                                                         className: "max-w-[637px] text-white leading-[1.5] tracking-[1px] md:text-[30px] text-[24px] font-bold",
-                                                        children: val?.title
+                                                        children: [
+                                                            "Yes Title ",
+                                                            val?.title
+                                                        ]
                                                     })
                                                 ]
                                             }),
