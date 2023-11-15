@@ -26,8 +26,7 @@ const MapComponent = ({ onProceed }: IProps) => {
   const destinatinonRef = useRef<any>();
   const nearestlocation = useRef<any>();
 
-  const [center, setCenter] = useState({ lat: 27.7172, lng: 85.324 });
-  // let center = { lat: 27.7172, lng: 85.324 }; // center location
+  const [center, setCenter] = useState({ lat: 27.6701866, lng: 85.3197062 });
 
   const autocompleteRef = useRef<any>();
 
