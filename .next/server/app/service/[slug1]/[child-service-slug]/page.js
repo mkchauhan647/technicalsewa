@@ -397,12 +397,12 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 32468:
+/***/ 62367:
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 62390));
-Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 65867));
-Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 70625))
+Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 70625));
+Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 65867))
 
 /***/ }),
 
@@ -958,12 +958,9 @@ const ChildService = ({ data })=>{
                                                             " "
                                                         ]
                                                     }),
-                                                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)("h3", {
+                                                    /*#__PURE__*/ jsx_runtime_.jsx("h3", {
                                                         className: "max-w-[637px] text-white leading-[1.5] tracking-[1px] md:text-[30px] text-[24px] font-bold",
-                                                        children: [
-                                                            "Yes Title ",
-                                                            val?.title
-                                                        ]
+                                                        children: val?.title
                                                     })
                                                 ]
                                             }),
@@ -1190,7 +1187,7 @@ const loading = ()=>{
 var __webpack_require__ = require("../../../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [3763,3190,6893,6558,9722,9864,8357,5824,7776,651,3456], () => (__webpack_exec__(81723)));
+var __webpack_exports__ = __webpack_require__.X(0, [3763,3190,6893,6558,9722,9864,8357,2735,7776,651,3456], () => (__webpack_exec__(81723)));
 module.exports = __webpack_exports__;
 
 })();
