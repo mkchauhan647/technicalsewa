@@ -76,9 +76,9 @@ export default function ComplainsFilter({ onSearch, onReset }: Iprops) {
     <div>
       <div className="p-3 bg-gray-200 rounded-sm">
         <form onSubmit={handleSearchForm}>
-          <div className="space-x-2 space-y-2 md:space-x-3 md:grid md:grid-cols-3">
+          <div className="space-x-2 space-y-2 md:space-x-3 md:grid md:grid-cols-5">
             <div className="flex space-x-2">
-              <label className="w-2/5" htmlFor="call_id">
+              <label className="w-1/3" htmlFor="call_id">
                 Call ID
               </label>
               <input
@@ -89,9 +89,9 @@ export default function ComplainsFilter({ onSearch, onReset }: Iprops) {
                 onChange={handleChangeField}
               />
             </div>
-            <div className="flex space-x-2">
+            {/* <div className="flex space-x-2">
               <label className="w-2/5" htmlFor="serviceCat">
-                Service Category
+                Service Categori
               </label>
               <select
                 name="service_category"
@@ -117,9 +117,9 @@ export default function ComplainsFilter({ onSearch, onReset }: Iprops) {
                 id="call_status"
                 onChange={handleChangeField}
               />
-            </div>
+            </div> */}
             <div className="flex">
-              <label className="w-2/5" htmlFor="customer_name">
+              <label className="w-1/3" htmlFor="customer_name">
                 Name
               </label>
               <input
@@ -130,7 +130,7 @@ export default function ComplainsFilter({ onSearch, onReset }: Iprops) {
                 onChange={handleChangeField}
               />
             </div>
-            <div className="flex space-x-2">
+            {/* <div className="flex space-x-2">
               <label className="w-2/5" htmlFor="product">
                 Product
               </label>
@@ -158,9 +158,9 @@ export default function ComplainsFilter({ onSearch, onReset }: Iprops) {
                 id="reason"
                 onChange={handleChangeField}
               />
-            </div>
+            </div> */}
             <div className="flex space-x-2">
-              <label className="w-2/5" htmlFor="phone">
+              <label className="w-1/3" htmlFor="phone">
                 Phone
               </label>
               <input
@@ -171,7 +171,7 @@ export default function ComplainsFilter({ onSearch, onReset }: Iprops) {
                 onChange={handleChangeField}
               />
             </div>
-            <div className="flex space-x-2">
+            {/* <div className="flex space-x-2">
               <label className="w-2/5" htmlFor="product_category">
                 Product Category
               </label>
@@ -187,9 +187,9 @@ export default function ComplainsFilter({ onSearch, onReset }: Iprops) {
                   </option>
                 ))}
               </select>
-            </div>
+            </div> */}
             <div className="flex space-x-2">
-              <label className="w-2/5" htmlFor="from_date">
+              <label className="w-1/3" htmlFor="from_date">
                 From Date
               </label>
               <input
@@ -201,7 +201,7 @@ export default function ComplainsFilter({ onSearch, onReset }: Iprops) {
               />
             </div>
             <div className="flex space-x-2">
-              <label className="w-2/5" htmlFor="to_date">
+              <label className="w-1/3" htmlFor="to_date">
                 To Date
               </label>
               <input
