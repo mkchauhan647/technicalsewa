@@ -79,6 +79,8 @@ const ChildService = ({ data }: any) => {
     setInquiryData(inquiryData);
   }, [selectCategoryData]);
 
+  const childService = finalData?.[0];
+
   return (
     <div>
       {!complainForm ? (
@@ -113,7 +115,7 @@ const ChildService = ({ data }: any) => {
                             </span>{" "}
                           </h3>
                           <h3 className="max-w-[637px] text-white leading-[1.5] tracking-[1px] md:text-[30px] text-[24px] font-bold">
-                            {val?.title}
+                            {childService?.title}
                           </h3>
                         </div>
 
@@ -127,18 +129,14 @@ const ChildService = ({ data }: any) => {
 
                         <div className="flex flex-col mt-[11px]  md:gap-[14px] ">
                           <div className="flex items-center">
-                            {finalData &&
-                              finalData.map((val: any, index: any) => {
-                                return (
-                                  <div
-                                    key={index}
-                                    className="flex flex-col gap-2 pb-4 text-justify text-white listpoint"
-                                    dangerouslySetInnerHTML={{
-                                      __html: val?.description,
-                                    }}
-                                  />
-                                );
-                              })}
+                            {childService && (
+                              <div
+                                className="flex flex-col gap-2 pb-4 text-justify text-white listpoint"
+                                dangerouslySetInnerHTML={{
+                                  __html: childService?.description,
+                                }}
+                              />
+                            )}
                           </div>
                         </div>
                       </div>

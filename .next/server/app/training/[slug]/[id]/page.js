@@ -555,7 +555,7 @@ async function generateMetadata({ params }) {
 var __webpack_require__ = require("../../../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [3763,3190,6893,6558,3940,7776,651,9441], () => (__webpack_exec__(46062)));
+var __webpack_exports__ = __webpack_require__.X(0, [3763,3190,6893,6558,8641,7776,651,9441], () => (__webpack_exec__(46062)));
 module.exports = __webpack_exports__;
 
 })();
