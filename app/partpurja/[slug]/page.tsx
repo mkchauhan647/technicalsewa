@@ -61,7 +61,8 @@ export async function generateMetadata({ params }: any) {
         title: `${
           seoExists ? seoContent?.og_title : "Part Purja | Technical sewa"
         } `,
-        ...(seoContent?.og_type ? {type: seoContent?.og_type}:{}),
+        // ...(seoContent?.og_type ? {type: seoContent?.og_type}:{}),
+        type: 'website',
         description: `${seoContent?.og_desc} `,
         url: seoContent?.og_url,
       },

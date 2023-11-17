@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: any) {
         title: `${
           seoExists ? seoContent?.og_title : `${slug} | Technical sewa`
         } `,
-        ...(seoContent?.og_type ? { type: seoContent?.og_type } : {}),
+        // ...(seoContent?.og_type ? { type: seoContent?.og_type } : {}),
         // type: seoContent?.og_type ?? "website",
         type: "website",
         description: `${seoContent?.og_desc} `,
