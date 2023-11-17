@@ -917,6 +917,7 @@ const ChildService = ({ data })=>{
     }, [
         selectCategoryData
     ]);
+    const childService = finalData?.[0];
     return /*#__PURE__*/ jsx_runtime_.jsx("div", {
         children: !complainForm ? /*#__PURE__*/ jsx_runtime_.jsx("div", {
             children: filterData && filterData.map((val, index)=>{
@@ -960,7 +961,7 @@ const ChildService = ({ data })=>{
                                                     }),
                                                     /*#__PURE__*/ jsx_runtime_.jsx("h3", {
                                                         className: "max-w-[637px] text-white leading-[1.5] tracking-[1px] md:text-[30px] text-[24px] font-bold",
-                                                        children: val?.title
+                                                        children: childService?.title
                                                     })
                                                 ]
                                             }),
@@ -984,13 +985,11 @@ const ChildService = ({ data })=>{
                                                 className: "flex flex-col mt-[11px]  md:gap-[14px] ",
                                                 children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                                     className: "flex items-center",
-                                                    children: finalData && finalData.map((val, index)=>{
-                                                        return /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                                            className: "flex flex-col gap-2 pb-4 text-justify text-white listpoint",
-                                                            dangerouslySetInnerHTML: {
-                                                                __html: val?.description
-                                                            }
-                                                        }, index);
+                                                    children: childService && /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                                        className: "flex flex-col gap-2 pb-4 text-justify text-white listpoint",
+                                                        dangerouslySetInnerHTML: {
+                                                            __html: childService?.description
+                                                        }
                                                     })
                                                 })
                                             })
@@ -1186,7 +1185,7 @@ const loading = ()=>{
 var __webpack_require__ = require("../../../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [3763,3190,6893,6558,9722,9864,8357,3940,7776,651,3456], () => (__webpack_exec__(81723)));
+var __webpack_exports__ = __webpack_require__.X(0, [3763,3190,6893,6558,9722,9864,8357,8641,7776,651,3456], () => (__webpack_exec__(81723)));
 module.exports = __webpack_exports__;
 
 })();
