@@ -926,7 +926,7 @@ const ChildService = ({ data })=>{
                     children: [
                         /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
                             style: {
-                                backgroundImage: `url(${val?.image_url?.replace("https://smartcare.com.np/multiservice/", "https://smartcare.com.np/multiservice/test/")})`
+                                backgroundImage: `url(${(childService?.image_url ?? val?.image_url)?.replace("https://smartcare.com.np/multiservice/", "https://smartcare.com.np/multiservice/test/")})`
                             },
                             className: "bg-white h-[350px] bg-contain bg-no-repeat bg-center w-full relative  py-[20px]",
                             children: [
@@ -1185,7 +1185,7 @@ const loading = ()=>{
 var __webpack_require__ = require("../../../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [3763,3190,6893,6558,9722,9864,8357,8641,7776,651,3456], () => (__webpack_exec__(81723)));
+var __webpack_exports__ = __webpack_require__.X(0, [3763,3190,6893,6558,9722,9864,8357,5824,7776,651,3456], () => (__webpack_exec__(81723)));
 module.exports = __webpack_exports__;
 
 })();

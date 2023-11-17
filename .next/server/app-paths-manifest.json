@@ -8,8 +8,8 @@
   "/login/page": "app/login/page.js",
   "/partpurja/page": "app/partpurja/page.js",
   "/privacy-policy/page": "app/privacy-policy/page.js",
-  "/professionals/page": "app/professionals/page.js",
   "/profile/page": "app/profile/page.js",
+  "/professionals/page": "app/professionals/page.js",
   "/service/page": "app/service/page.js",
   "/sign-up-page/page": "app/sign-up-page/page.js",
   "/terms/page": "app/terms/page.js",
@@ -23,8 +23,8 @@
   "/sign-up-page/sign-up-pro/page": "app/sign-up-page/sign-up-pro/page.js",
   "/sign-up-page/sign-up/page": "app/sign-up-page/sign-up/page.js",
   "/trainings/[category]/page": "app/trainings/[category]/page.js",
-  "/blogs/[category_name]/[id]/page": "app/blogs/[category_name]/[id]/page.js",
   "/blog/[slug]/[id]/page": "app/blog/[slug]/[id]/page.js",
+  "/blogs/[category_name]/[id]/page": "app/blogs/[category_name]/[id]/page.js",
   "/service/[slug1]/[child-service-slug]/page": "app/service/[slug1]/[child-service-slug]/page.js",
   "/training/[slug]/[id]/page": "app/training/[slug]/[id]/page.js"
 }

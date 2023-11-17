@@ -94,7 +94,9 @@ const ChildService = ({ data }: any) => {
                 >
                   <div
                     style={{
-                      backgroundImage: `url(${val?.image_url?.replace(
+                      backgroundImage: `url(${(
+                        childService?.image_url ?? val?.image_url
+                      )?.replace(
                         "https://smartcare.com.np/multiservice/",
                         "https://smartcare.com.np/multiservice/test/"
                       )})`,

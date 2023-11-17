@@ -8,8 +8,8 @@
   "/login/page": "/login",
   "/partpurja/page": "/partpurja",
   "/privacy-policy/page": "/privacy-policy",
-  "/professionals/page": "/professionals",
   "/profile/page": "/profile",
+  "/professionals/page": "/professionals",
   "/service/page": "/service",
   "/sign-up-page/page": "/sign-up-page",
   "/terms/page": "/terms",
@@ -23,8 +23,8 @@
   "/sign-up-page/sign-up-pro/page": "/sign-up-page/sign-up-pro",
   "/sign-up-page/sign-up/page": "/sign-up-page/sign-up",
   "/trainings/[category]/page": "/trainings/[category]",
-  "/blogs/[category_name]/[id]/page": "/blogs/[category_name]/[id]",
   "/blog/[slug]/[id]/page": "/blog/[slug]/[id]",
+  "/blogs/[category_name]/[id]/page": "/blogs/[category_name]/[id]",
   "/service/[slug1]/[child-service-slug]/page": "/service/[slug1]/[child-service-slug]",
   "/training/[slug]/[id]/page": "/training/[slug]/[id]"
 }
