@@ -440,7 +440,7 @@ const page = async ({ params })=>{
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                 className: "container flex justify-center py-6 mx-auto px-[10px] md:px-[0px]",
                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                    className: "max-w-[1200px]",
+                    className: "max-w-[1200px] w-full",
                     children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                         className: "flex flex-wrap gap-[30px] md:gap-0  md:justify-between pb-8",
                         children: [
@@ -537,7 +537,7 @@ async function generateMetadata({ params }) {
 var __webpack_require__ = require("../../../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [3763,3190,6893,6558,2735,7776,651,6854], () => (__webpack_exec__(53003)));
+var __webpack_exports__ = __webpack_require__.X(0, [3763,3190,6893,6558,3940,7776,651,6854], () => (__webpack_exec__(53003)));
 module.exports = __webpack_exports__;
 
 })();

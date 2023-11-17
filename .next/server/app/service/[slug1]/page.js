@@ -723,9 +723,8 @@ async function generateMetadata({ params }) {
             keywords: `${seoContent?.key_words}`,
             openGraph: {
                 title: `${seoExists ? seoContent?.og_title : `${slug} | Technical sewa`} `,
-                ...seoContent?.og_type ? {
-                    type: seoContent?.og_type
-                } : {},
+                // ...(seoContent?.og_type ? {type: seoContent?.og_type}:{}),
+                type: "website",
                 description: `${seoContent?.og_desc} `,
                 url: seoContent?.og_url
             }
@@ -778,7 +777,7 @@ const loading = ()=>{
 var __webpack_require__ = require("../../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [3763,3190,6893,6558,9722,9864,2735,7776,651], () => (__webpack_exec__(84159)));
+var __webpack_exports__ = __webpack_require__.X(0, [3763,3190,6893,6558,9722,9864,3940,7776,651], () => (__webpack_exec__(84159)));
 module.exports = __webpack_exports__;
 
 })();
