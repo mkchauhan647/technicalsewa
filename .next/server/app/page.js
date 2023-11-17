@@ -370,12 +370,12 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 34275:
+/***/ 30249:
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 62390));
-Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 41636));
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 66405));
+Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 41636));
+Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 62390));
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 95581));
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 66707));
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 70625));
@@ -1066,7 +1066,9 @@ const SlideCard = ({ length, data, top })=>{
                             }),
                             /*#__PURE__*/ jsx_runtime_.jsx("p", {
                                 className: "text-[12px] text-[#000000] px-2 text-center truncate line-clamp-2 whitespace-normal",
-                                children: ele.title
+                                dangerouslySetInnerHTML: {
+                                    __html: ele.prod_sec_content ?? ""
+                                }
                             })
                         ]
                     })
@@ -1707,7 +1709,7 @@ async function generateMetadata() {
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [3763,3190,6893,6558,2175,2664,8641,7776,651,1289], () => (__webpack_exec__(97655)));
+var __webpack_exports__ = __webpack_require__.X(0, [3763,3190,6893,6558,2175,2664,5824,7776,651,1289], () => (__webpack_exec__(97655)));
 module.exports = __webpack_exports__;
 
 })();
