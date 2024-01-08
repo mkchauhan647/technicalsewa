@@ -5,6 +5,8 @@ import { getSEOByPageURL } from "@/lib/api";
 import { baseUrl } from "@/public/baseUrl";
 import React, { useEffect } from "react";
 
+import { redirect } from "next/navigation";
+
 async function getData(id: string) {
   const formData = new FormData();
   formData.append("id", id);
@@ -26,6 +28,10 @@ async function getData(id: string) {
 const page = async ({ params }: any) => {
   const slug = `${params.slug}`;
   let data = await getData(slug?.toLowerCase());
+
+  if (!data || (Array.isArray(data) && data.length === 0)) {
+    redirect("/");
+  }
 
   return (
     <>
@@ -62,7 +68,7 @@ export async function generateMetadata({ params }: any) {
           seoExists ? seoContent?.og_title : "Part Purja | Technical sewa"
         } `,
         // ...(seoContent?.og_type ? {type: seoContent?.og_type}:{}),
-        type: 'website',
+        type: "website",
         description: `${seoContent?.og_desc} `,
         url: seoContent?.og_url,
       },

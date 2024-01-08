@@ -6,6 +6,8 @@ import { fetchServerClient, getTrainingCategoriesData } from "@/lib/api";
 import { baseUrl } from "@/public/baseUrl";
 import Link from "next/link";
 import React from "react";
+import { redirect } from "next/navigation";
+
 async function getData(id: string) {
   const formData = new FormData();
   formData.append("id", id);
