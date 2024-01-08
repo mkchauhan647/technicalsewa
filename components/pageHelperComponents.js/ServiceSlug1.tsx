@@ -49,6 +49,12 @@ const ServiceSlug1 = ({ data }: any) => {
   }, [data]);
   // ===============================================
 
+  useEffect(() => {
+    if (Array.isArray(filterData) && filterData.length === 0) {
+      router.push("/");
+    }
+  }, [filterData]);
+
   return (
     <div>
       {filterData &&

@@ -8,12 +8,17 @@ import {
   getTrainingCategoriesData,
 } from "@/lib/api";
 import React from "react";
+import { redirect } from "next/navigation";
 
 const page = async ({ params }: any) => {
   const title = params.slug;
   const blogId = params.id;
   const blogData = await getBlogDataById(blogId);
   const data = blogData?.[0] || blogData;
+
+  if (!data || (Array.isArray(data) && data.length === 0)) {
+    redirect("/");
+  }
 
   const trainingCategories = await getTrainingCategoriesData();
 

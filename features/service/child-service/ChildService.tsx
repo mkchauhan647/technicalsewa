@@ -16,6 +16,7 @@ const ChildService = ({ data }: any) => {
   const [selectCategoryData, setSelectCategoryData] = useState<any>();
   const [serviceCategoryData, setServiceCategoryData] = useState<any>();
   const params = useParams();
+  const router = useRouter();
 
   // filter data based on URL params and stored to fitlerData vaiables
   const filterData = useMemo(
@@ -80,6 +81,12 @@ const ChildService = ({ data }: any) => {
   }, [selectCategoryData]);
 
   const childService = finalData?.[0];
+
+  useEffect(() => {
+    if (Array.isArray(filterData) && filterData.length === 0) {
+      router.push("/");
+    }
+  }, [filterData]);
 
   return (
     <div>

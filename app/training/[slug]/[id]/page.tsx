@@ -8,10 +8,13 @@ import {
   getTrainingCategoriesData,
 } from "@/lib/api";
 import { baseUrl } from "@/public/baseUrl";
+import { redirect } from "next/navigation";
 import React from "react";
 async function getData(id: string) {
   const formData = new FormData();
   formData.append("training_id", id);
+
+  console.log("training_id ? ", id);
 
   const res = await fetch(
     `${baseUrl}/techsewa/publiccontrol/publicmasterconfig/gettrainingDetails`,
@@ -42,6 +45,10 @@ const page = async ({ params }: any) => {
 
   let data = await getData(trainingId);
   data = data?.[0] || data;
+
+  if (!data || (Array.isArray(data) && data.length === 0)) {
+    redirect("/");
+  }
 
   const finddata = data1.find((i: any) => +i?.value === +trainingId);
 
