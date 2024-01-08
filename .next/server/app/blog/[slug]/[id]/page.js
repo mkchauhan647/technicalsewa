@@ -397,6 +397,7 @@ __webpack_require__.r(__webpack_exports__);
         {
           'layout': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 2753)), "/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/app/layout.tsx"],
 'loading': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 24521)), "/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/app/loading.tsx"],
+'not-found': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 49986)), "/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/app/not-found.tsx"],
           metadata: {
     icon: [(async (props) => (await Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 83174))).default(props))],
     apple: [],
@@ -421,16 +422,16 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 7389:
+/***/ 5844:
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
 Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 3280, 23));
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 3349, 23));
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 90701, 23));
 Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 69274, 23));
+Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 90701, 23));
+Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 3349, 23));
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 62390));
-Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 70625));
-Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 66953))
+Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 66953));
+Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 70625))
 
 /***/ }),
 
@@ -571,7 +572,7 @@ async function generateMetadata({ params }) {
 var __webpack_require__ = require("../../../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [3763,3190,6893,6558,188,8875,706,7776,651,6854], () => (__webpack_exec__(71873)));
+var __webpack_exports__ = __webpack_require__.X(0, [3663,6726,2776,6893,6558,4551,2390,7776,651,6854], () => (__webpack_exec__(71873)));
 module.exports = __webpack_exports__;
 
 })();
