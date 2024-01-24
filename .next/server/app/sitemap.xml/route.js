@@ -96,7 +96,7 @@ module.exports = require("zlib");
 
 /***/ }),
 
-/***/ 46925:
+/***/ 51433:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -248,7 +248,7 @@ async function GET(_, ctx) {
 
 
 
-;// CONCATENATED MODULE: ./node_modules/next/dist/build/webpack/loaders/next-app-loader.js?page=%2Fsitemap.xml%2Froute&name=app%2Fsitemap.xml%2Froute&pagePath=private-next-app-dir%2Fsitemap.ts&appDir=%2Fmnt%2FCC1CE4DE1CE4C494%2Fworkspaces%2Fsupreme%2Ftechnicalsewa%2Ftechnicalsewa%2Fapp&appPaths=%2Fsitemap&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!
+;// CONCATENATED MODULE: ./node_modules/next/dist/build/webpack/loaders/next-app-loader.js?page=%2Fsitemap.xml%2Froute&name=app%2Fsitemap.xml%2Froute&pagePath=private-next-app-dir%2Fsitemap.ts&appDir=E%3A%5CNEXT%5Ctechnicalsewa%5Capp&appPaths=%2Fsitemap&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!
 
     
 
@@ -256,7 +256,7 @@ async function GET(_, ctx) {
 
     
 
-    const options = {"definition":{"kind":"APP_ROUTE","page":"/sitemap.xml/route","pathname":"/sitemap.xml","filename":"sitemap","bundlePath":"app/sitemap.xml/route"},"resolvedPagePath":"next-metadata-route-loader?page=%2Fsitemap.xml%2Froute&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js!/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/app/sitemap.ts?__next_metadata__","nextConfigOutput":""}
+    const options = {"definition":{"kind":"APP_ROUTE","page":"/sitemap.xml/route","pathname":"/sitemap.xml","filename":"sitemap","bundlePath":"app/sitemap.xml/route"},"resolvedPagePath":"next-metadata-route-loader?page=%2Fsitemap.xml%2Froute&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js!E:\\NEXT\\technicalsewa\\app\\sitemap.ts?__next_metadata__","nextConfigOutput":""}
     const routeModule = new (module_default())({
       ...options,
       userland: sitemap_next_metadata_namespaceObject,
@@ -286,7 +286,7 @@ async function GET(_, ctx) {
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [3663,6558,4572,9334,651], () => (__webpack_exec__(46925)));
+var __webpack_exports__ = __webpack_require__.X(0, [3663,6558,4572,9334,651], () => (__webpack_exec__(51433)));
 module.exports = __webpack_exports__;
 
 })();

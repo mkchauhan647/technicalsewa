@@ -332,7 +332,7 @@ module.exports = require("zlib");
 
 /***/ }),
 
-/***/ 35451:
+/***/ 86786:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -357,7 +357,7 @@ __webpack_require__.r(__webpack_exports__);
         '',
         {
         children: ['__PAGE__', {}, {
-          page: [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 10972)), "/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/app/page.tsx"],
+          page: [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 31972)), "E:\\NEXT\\technicalsewa\\app\\page.tsx"],
           metadata: {
     icon: [(async (props) => (await Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 83174))).default(props))],
     apple: [],
@@ -368,9 +368,9 @@ __webpack_require__.r(__webpack_exports__);
         }]
       },
         {
-          'layout': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 2753)), "/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/app/layout.tsx"],
-'loading': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 24521)), "/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/app/loading.tsx"],
-'not-found': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 49986)), "/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/app/not-found.tsx"],
+          'layout': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 2753)), "E:\\NEXT\\technicalsewa\\app\\layout.tsx"],
+'loading': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 24521)), "E:\\NEXT\\technicalsewa\\app\\loading.tsx"],
+'not-found': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 49986)), "E:\\NEXT\\technicalsewa\\app\\not-found.tsx"],
           metadata: {
     icon: [(async (props) => (await Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 83174))).default(props))],
     apple: [],
@@ -381,7 +381,7 @@ __webpack_require__.r(__webpack_exports__);
         }
       ]
       }.children;
-    const pages = ["/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/app/page.tsx"];
+    const pages = ["E:\\NEXT\\technicalsewa\\app\\page.tsx"];
     
     const originalPathname = "/page"
     const __next_app__ = {
@@ -395,19 +395,17 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 54911:
+/***/ 83892:
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 66405));
+Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 95581));
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 41636));
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 62390));
-Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 95581));
-Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 70625));
-Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 66707));
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 72154));
+Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 70625));
+Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 1406));
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 40477));
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 82677));
-Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 1406));
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 89406))
 
 /***/ }),
@@ -636,224 +634,6 @@ const Number = (props)=>{
     });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Number);
-
-
-/***/ }),
-
-/***/ 66405:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(56786);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_icons_gi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(93347);
-/* harmony import */ var react_icons_im__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(16142);
-/* harmony import */ var react_icons_md__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(64348);
-/* __next_internal_client_entry_do_not_use__ default auto */ 
-
-
-
-const WhyChooseUs = ()=>{
-    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-        className: "bg-[#FBFBFB]",
-        children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-            className: "container mx-auto py-[60px] xl:w-[80rem] sm:w-full  sm-w-full m-auto px-4",
-            children: [
-                /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                    className: "flex items-center gap-[10px]",
-                    children: [
-                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                            className: "h-[3px] w-[40px] bg-black/[0.5]"
-                        }),
-                        " ",
-                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                            children: " WHY CHOOSE US"
-                        })
-                    ]
-                }),
-                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h3", {
-                    className: "text-[25px] md:text-[35px] text-black mt-[10px] text-left font-bold",
-                    children: "Because We care about your safety.."
-                }),
-                /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                    className: "flex  flex-col md:flex-row  gap-4 md:gap-[40px] mt-[30px]",
-                    children: [
-                        /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                            className: "basis-[45%] grid grid-cols-2 gap-[11px] md:gap-[30px]",
-                            children: [
-                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                    className: "bg-white h-[120px] cursor-pointer w-full flex border items-center justify-center transform hover:scale-[102%] duration-300 ease-out ",
-                                    children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: "flex items-center gap-[10px]",
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_1__/* .MdMasks */ .un5, {
-                                                color: "#2591B2",
-                                                fontSize: 46
-                                            }),
-                                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
-                                                className: "text-[16px] md:text-[19px] font-medium  inline-block",
-                                                children: [
-                                                    "Ensuring ",
-                                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("br", {}),
-                                                    " Masks"
-                                                ]
-                                            })
-                                        ]
-                                    })
-                                }),
-                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                    className: "bg-white h-[120px] cursor-pointer border w-full flex items-center justify-center transform hover:scale-[102%] duration-300 ease-out ",
-                                    children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: "flex items-center gap-[10px]",
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_icons_im__WEBPACK_IMPORTED_MODULE_2__/* .ImPhone */ .MdO, {
-                                                color: "#2591B2",
-                                                fontSize: 34
-                                            }),
-                                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
-                                                className: "text-[16px] md:text-[19px] font-medium  inline-block",
-                                                children: [
-                                                    "24/7 ",
-                                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("br", {}),
-                                                    " Support"
-                                                ]
-                                            })
-                                        ]
-                                    })
-                                }),
-                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                    className: "bg-white h-[120px] cursor-pointer border w-full flex items-center justify-center transform hover:scale-[102%] duration-300 ease-out ",
-                                    children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: "flex items-center gap-[10px]",
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_1__/* .MdSanitizer */ .MoZ, {
-                                                color: "#2591B2",
-                                                fontSize: 44
-                                            }),
-                                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
-                                                className: "text-[16px] md:text-[19px] font-medium  inline-block",
-                                                children: [
-                                                    "Sanitising",
-                                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("br", {}),
-                                                    " hands & ",
-                                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("br", {}),
-                                                    " Equipment"
-                                                ]
-                                            })
-                                        ]
-                                    })
-                                }),
-                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                    className: "bg-white h-[120px] cursor-pointer border w-full flex items-center justify-center transform hover:scale-[102%] duration-300 ease-out ",
-                                    children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: "flex items-center gap-[10px]",
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_icons_gi__WEBPACK_IMPORTED_MODULE_3__/* .GiGloves */ .UyR, {
-                                                color: "#2591B2",
-                                                fontSize: 44
-                                            }),
-                                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
-                                                className: "text-[16px] md:text-[19px] font-medium  inline-block",
-                                                children: [
-                                                    "Ensuring ",
-                                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("br", {}),
-                                                    " Gloves"
-                                                ]
-                                            })
-                                        ]
-                                    })
-                                })
-                            ]
-                        }),
-                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                            className: "basis-[55%] bg-white h-[280px] rounded-[3px]  cursor-pointer",
-                            children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
-                                width: 250,
-                                height: 200,
-                                src: "/assets/whyus.jpg",
-                                className: "h-full w-full object-contain",
-                                alt: "why us banner"
-                            })
-                        })
-                    ]
-                })
-            ]
-        })
-    });
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (WhyChooseUs);
-
-
-/***/ }),
-
-/***/ 66707:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(56786);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(18038);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_icons_bs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(75484);
-/* __next_internal_client_entry_do_not_use__ default auto */ 
-
-
-const FooterContact = ()=>{
-    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-        className: "bg-[#F4F5F9]  ",
-        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-            className: "  max-w-[1280px] mx-auto px-4 py-4 md:px-0",
-            children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                className: "flex items-center",
-                children: [
-                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                        className: "container mx-auto ",
-                        children: [
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h4", {
-                                className: "font-bold text-[25px] leading-[38px] desired",
-                                children: "Can't find your desired service? Let us know 24/7 in 9851201580"
-                            }),
-                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                className: "flex gap-[20px] mt-[20px]",
-                                children: [
-                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
-                                        className: "w-[180px] h-[50px] rounded-[4px] bg-primary hover:bg-primary/[0.7] text-white text-base font-semibold tracking-[0.02em] ",
-                                        children: "Request a service"
-                                    }),
-                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("a", {
-                                        href: "tel:9851201580",
-                                        className: "flex items-center justify-center  gap-[10px] h-[50px] w-[180px] border border-[#2591B2] rounded-[4px] text-black",
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_icons_bs__WEBPACK_IMPORTED_MODULE_2__/* .BsFillTelephoneFill */ .lfG, {
-                                                className: "text-primary",
-                                                size: 20
-                                            }),
-                                            "9851201580"
-                                        ]
-                                    })
-                                ]
-                            })
-                        ]
-                    }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
-                        src: "/../assets/girlssmile.png",
-                        alt: "image of fottercontact",
-                        className: " w-[250px] h-auto md:block hidden"
-                    })
-                ]
-            })
-        })
-    });
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FooterContact);
 
 
 /***/ }),
@@ -1282,7 +1062,7 @@ function ClientsSlider() {
     };
     if (!showSlider) return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {});
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-        className: "flex flex-col items-center mb-10",
+        className: "flex flex-col items-center py-10",
         children: [
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                 className: "text-primary font-bold text-2xl mb-[12px]",
@@ -1330,7 +1110,7 @@ function ClientsSlider() {
 
 /***/ }),
 
-/***/ 10972:
+/***/ 31972:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1349,7 +1129,7 @@ var jsx_runtime_ = __webpack_require__(56786);
 var module_proxy = __webpack_require__(21313);
 ;// CONCATENATED MODULE: ./components/HeroSection.tsx
 
-const proxy = (0,module_proxy.createProxy)(String.raw`/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/components/HeroSection.tsx`)
+const proxy = (0,module_proxy.createProxy)(String.raw`E:\NEXT\technicalsewa\components\HeroSection.tsx`)
 
 // Accessing the __esModule property and exporting $$typeof are required here.
 // The __esModule getter forces the proxy target to create the default export
@@ -1360,39 +1140,13 @@ const __default__ = proxy.default;
 
 
 /* harmony default export */ const HeroSection = (__default__);
-;// CONCATENATED MODULE: ./components/WhyChooseUs.tsx
-
-const WhyChooseUs_proxy = (0,module_proxy.createProxy)(String.raw`/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/components/WhyChooseUs.tsx`)
-
-// Accessing the __esModule property and exporting $$typeof are required here.
-// The __esModule getter forces the proxy target to create the default export
-// and the $$typeof value is for rendering logic to determine if the module
-// is a client boundary.
-const { __esModule: WhyChooseUs_esModule, $$typeof: WhyChooseUs_$$typeof } = WhyChooseUs_proxy;
-const WhyChooseUs_default_ = WhyChooseUs_proxy.default;
-
-
-/* harmony default export */ const WhyChooseUs = (WhyChooseUs_default_);
-;// CONCATENATED MODULE: ./components/footer/FooterContact.tsx
-
-const FooterContact_proxy = (0,module_proxy.createProxy)(String.raw`/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/components/footer/FooterContact.tsx`)
-
-// Accessing the __esModule property and exporting $$typeof are required here.
-// The __esModule getter forces the proxy target to create the default export
-// and the $$typeof value is for rendering logic to determine if the module
-// is a client boundary.
-const { __esModule: FooterContact_esModule, $$typeof: FooterContact_$$typeof } = FooterContact_proxy;
-const FooterContact_default_ = FooterContact_proxy.default;
-
-
-/* harmony default export */ const FooterContact = (FooterContact_default_);
 // EXTERNAL MODULE: ./node_modules/next/dist/compiled/react/react.shared-subset.js
 var react_shared_subset = __webpack_require__(7887);
 // EXTERNAL MODULE: ./public/baseUrl.ts
 var baseUrl = __webpack_require__(79162);
 ;// CONCATENATED MODULE: ./components/repair/CategoryCard.tsx
 
-const CategoryCard_proxy = (0,module_proxy.createProxy)(String.raw`/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/components/repair/CategoryCard.tsx`)
+const CategoryCard_proxy = (0,module_proxy.createProxy)(String.raw`E:\NEXT\technicalsewa\components\repair\CategoryCard.tsx`)
 
 // Accessing the __esModule property and exporting $$typeof are required here.
 // The __esModule getter forces the proxy target to create the default export
@@ -1454,7 +1208,7 @@ var Nav = __webpack_require__(85462);
 var Footer = __webpack_require__(13938);
 ;// CONCATENATED MODULE: ./components/Number.tsx
 
-const Number_proxy = (0,module_proxy.createProxy)(String.raw`/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/components/Number.tsx`)
+const Number_proxy = (0,module_proxy.createProxy)(String.raw`E:\NEXT\technicalsewa\components\Number.tsx`)
 
 // Accessing the __esModule property and exporting $$typeof are required here.
 // The __esModule getter forces the proxy target to create the default export
@@ -1467,7 +1221,7 @@ const Number_default_ = Number_proxy.default;
 /* harmony default export */ const components_Number = (Number_default_);
 ;// CONCATENATED MODULE: ./features/home/MidContent.tsx
 
-const MidContent_proxy = (0,module_proxy.createProxy)(String.raw`/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/features/home/MidContent.tsx`)
+const MidContent_proxy = (0,module_proxy.createProxy)(String.raw`E:\NEXT\technicalsewa\features\home\MidContent.tsx`)
 
 // Accessing the __esModule property and exporting $$typeof are required here.
 // The __esModule getter forces the proxy target to create the default export
@@ -1480,7 +1234,7 @@ const MidContent_default_ = MidContent_proxy.default;
 /* harmony default export */ const MidContent = (MidContent_default_);
 ;// CONCATENATED MODULE: ./features/home/MidContent2.tsx
 
-const MidContent2_proxy = (0,module_proxy.createProxy)(String.raw`/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/features/home/MidContent2.tsx`)
+const MidContent2_proxy = (0,module_proxy.createProxy)(String.raw`E:\NEXT\technicalsewa\features\home\MidContent2.tsx`)
 
 // Accessing the __esModule property and exporting $$typeof are required here.
 // The __esModule getter forces the proxy target to create the default export
@@ -1495,7 +1249,7 @@ const MidContent2_default_ = MidContent2_proxy.default;
 var api = __webpack_require__(80651);
 ;// CONCATENATED MODULE: ./components/slider/Slider.tsx
 
-const Slider_proxy = (0,module_proxy.createProxy)(String.raw`/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/components/slider/Slider.tsx`)
+const Slider_proxy = (0,module_proxy.createProxy)(String.raw`E:\NEXT\technicalsewa\components\slider\Slider.tsx`)
 
 // Accessing the __esModule property and exporting $$typeof are required here.
 // The __esModule getter forces the proxy target to create the default export
@@ -1625,7 +1379,7 @@ function ServicesSLiders({ brands, data }) {
 
 ;// CONCATENATED MODULE: ./features/home/clients.tsx
 
-const clients_proxy = (0,module_proxy.createProxy)(String.raw`/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/features/home/clients.tsx`)
+const clients_proxy = (0,module_proxy.createProxy)(String.raw`E:\NEXT\technicalsewa\features\home\clients.tsx`)
 
 // Accessing the __esModule property and exporting $$typeof are required here.
 // The __esModule getter forces the proxy target to create the default export
@@ -1637,8 +1391,6 @@ const clients_default_ = clients_proxy.default;
 
 /* harmony default export */ const clients = (clients_default_);
 ;// CONCATENATED MODULE: ./app/page.tsx
-
-
 
 
 
@@ -1682,11 +1434,9 @@ async function Home() {
                         data: allBrands
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx(components_Number, {}),
-                    /*#__PURE__*/ jsx_runtime_.jsx(WhyChooseUs, {}),
                     /*#__PURE__*/ jsx_runtime_.jsx(MidContent, {}),
-                    /*#__PURE__*/ jsx_runtime_.jsx(FooterContact, {}),
-                    /*#__PURE__*/ jsx_runtime_.jsx(MidContent2, {}),
-                    /*#__PURE__*/ jsx_runtime_.jsx(clients, {})
+                    /*#__PURE__*/ jsx_runtime_.jsx(clients, {}),
+                    /*#__PURE__*/ jsx_runtime_.jsx(MidContent2, {})
                 ]
             }),
             /*#__PURE__*/ jsx_runtime_.jsx(Footer/* default */.ZP, {})
@@ -1734,7 +1484,7 @@ async function generateMetadata() {
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [3663,6726,2776,6893,6558,2175,2664,4551,2390,7776,651,1289], () => (__webpack_exec__(35451)));
+var __webpack_exports__ = __webpack_require__.X(0, [3663,1380,2776,6893,6558,2175,8678,7353,2390,7776,651,1289], () => (__webpack_exec__(86786)));
 module.exports = __webpack_exports__;
 
 })();

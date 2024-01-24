@@ -90,13 +90,22 @@ const Nav = ()=>{
     };
     // gettrainingcategories
     const [categories, setCategories] = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)([]);
+    // service categories
+    const [services, setServices] = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)([]);
     const getCategories = async ()=>{
         axios__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z.get("https://smartcare.com.np/techsewa/publiccontrol/publicmasterconfig/gettrainingcategories").then((res)=>{
             setCategories(res.data);
         });
     };
+    // services categories
+    const getServicesCategories = async ()=>{
+        axios__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z.get(" https://smartcare.com.np/techsewa/masterconfig/publicmasterconfig/getServiceList").then((res)=>{
+            setServices(res?.data?.brands);
+        });
+    };
     (0,react__WEBPACK_IMPORTED_MODULE_3__.useEffect)(()=>{
         getCategories();
+        getServicesCategories();
     }, []);
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
@@ -198,10 +207,40 @@ const Nav = ()=>{
                                     })
                                 ]
                             }),
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
-                                className: "hover:text-primary",
-                                href: "/service",
-                                children: "Services"
+                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                className: "group",
+                                children: [
+                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
+                                        className: "hover:text-primary",
+                                        href: "/service",
+                                        children: "Services"
+                                    }),
+                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                                        className: "hidden group-hover:block",
+                                        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                                            className: "absolute z-10 mt-0 bg-white rounded-md shadow-lg md:w-[350px]",
+                                            children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                                className: "py-1 max-h-[400px] overflow-y-auto",
+                                                children: [
+                                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                                                        className: "py-2"
+                                                    }),
+                                                    services.map((service, i)=>{
+                                                        return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                                            children: [
+                                                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("p", {
+                                                                    className: "block px-6 py-1 text-sm text-[grey] hover:bg-gray-100",
+                                                                    children: service.brand_name
+                                                                }),
+                                                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("hr", {})
+                                                            ]
+                                                        }, i);
+                                                    })
+                                                ]
+                                            })
+                                        })
+                                    })
+                                ]
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
                                 className: "hover:text-primary",

@@ -332,7 +332,7 @@ module.exports = require("zlib");
 
 /***/ }),
 
-/***/ 98812:
+/***/ 25386:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -363,7 +363,7 @@ __webpack_require__.r(__webpack_exports__);
         'change-password',
         {
         children: ['__PAGE__', {}, {
-          page: [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 69549)), "/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/app/account/change-password/page.tsx"],
+          page: [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 69549)), "E:\\NEXT\\technicalsewa\\app\\account\\change-password\\page.tsx"],
           
         }]
       },
@@ -386,9 +386,9 @@ __webpack_require__.r(__webpack_exports__);
       ]
       },
         {
-          'layout': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 2753)), "/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/app/layout.tsx"],
-'loading': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 24521)), "/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/app/loading.tsx"],
-'not-found': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 49986)), "/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/app/not-found.tsx"],
+          'layout': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 2753)), "E:\\NEXT\\technicalsewa\\app\\layout.tsx"],
+'loading': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 24521)), "E:\\NEXT\\technicalsewa\\app\\loading.tsx"],
+'not-found': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 49986)), "E:\\NEXT\\technicalsewa\\app\\not-found.tsx"],
           metadata: {
     icon: [(async (props) => (await Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 83174))).default(props))],
     apple: [],
@@ -399,7 +399,7 @@ __webpack_require__.r(__webpack_exports__);
         }
       ]
       }.children;
-    const pages = ["/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/app/account/change-password/page.tsx"];
+    const pages = ["E:\\NEXT\\technicalsewa\\app\\account\\change-password\\page.tsx"];
     
     const originalPathname = "/account/change-password/page"
     const __next_app__ = {
@@ -413,7 +413,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 46051:
+/***/ 75104:
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 62390));
@@ -548,7 +548,7 @@ function ChangePasswordForm() {
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
                             type: "submit",
                             disabled: !isValidForm,
-                            className: "text-white text-[15px] leading-[18px] bg-primary font-normal rounded-[2px] w-full py-[15px] mt-[44px] disabled:bg-opacity-60 disabled:cursor-not-allowed",
+                            className: "text-white text-[15px] leading-[18px] bg-primary font-normal rounded-[2px] w-full py-[15px]   mt-[44px] disabled:bg-opacity-60 disabled:cursor-not-allowed",
                             children: "Change Password"
                         })
                     ]
@@ -584,7 +584,7 @@ var Nav = __webpack_require__(85462);
 var module_proxy = __webpack_require__(21313);
 ;// CONCATENATED MODULE: ./features/account/changePassword/index.tsx
 
-const proxy = (0,module_proxy.createProxy)(String.raw`/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/features/account/changePassword/index.tsx`)
+const proxy = (0,module_proxy.createProxy)(String.raw`E:\NEXT\technicalsewa\features\account\changePassword\index.tsx`)
 
 // Accessing the __esModule property and exporting $$typeof are required here.
 // The __esModule getter forces the proxy target to create the default export
@@ -627,7 +627,7 @@ async function generateMetadata() {
 /* unused harmony exports __esModule, $$typeof */
 /* harmony import */ var next_dist_build_webpack_loaders_next_flight_loader_module_proxy__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(21313);
 
-const proxy = (0,next_dist_build_webpack_loaders_next_flight_loader_module_proxy__WEBPACK_IMPORTED_MODULE_0__.createProxy)(String.raw`/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/components/Nav.tsx`)
+const proxy = (0,next_dist_build_webpack_loaders_next_flight_loader_module_proxy__WEBPACK_IMPORTED_MODULE_0__.createProxy)(String.raw`E:\NEXT\technicalsewa\components\Nav.tsx`)
 
 // Accessing the __esModule property and exporting $$typeof are required here.
 // The __esModule getter forces the proxy target to create the default export
@@ -648,7 +648,7 @@ const __default__ = proxy.default;
 var __webpack_require__ = require("../../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [3663,6726,2776,4551,2390], () => (__webpack_exec__(98812)));
+var __webpack_exports__ = __webpack_require__.X(0, [3663,1380,2776,7353,2390], () => (__webpack_exec__(25386)));
 module.exports = __webpack_exports__;
 
 })();
