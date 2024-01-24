@@ -332,7 +332,7 @@ module.exports = require("zlib");
 
 /***/ }),
 
-/***/ 99312:
+/***/ 43336:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -363,7 +363,7 @@ __webpack_require__.r(__webpack_exports__);
         '[slug1]',
         {
         children: ['__PAGE__', {}, {
-          page: [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 5830)), "/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/app/service/[slug1]/page.tsx"],
+          page: [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 5830)), "E:\\NEXT\\technicalsewa\\app\\service\\[slug1]\\page.tsx"],
           
         }]
       },
@@ -374,7 +374,7 @@ __webpack_require__.r(__webpack_exports__);
       ]
       },
         {
-          'loading': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 58515)), "/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/app/service/loading.tsx"],
+          'loading': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 58515)), "E:\\NEXT\\technicalsewa\\app\\service\\loading.tsx"],
           metadata: {
     icon: [(async (props) => (await Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 83174))).default(props))],
     apple: [],
@@ -386,9 +386,9 @@ __webpack_require__.r(__webpack_exports__);
       ]
       },
         {
-          'layout': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 2753)), "/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/app/layout.tsx"],
-'loading': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 24521)), "/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/app/loading.tsx"],
-'not-found': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 49986)), "/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/app/not-found.tsx"],
+          'layout': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 2753)), "E:\\NEXT\\technicalsewa\\app\\layout.tsx"],
+'loading': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 24521)), "E:\\NEXT\\technicalsewa\\app\\loading.tsx"],
+'not-found': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 49986)), "E:\\NEXT\\technicalsewa\\app\\not-found.tsx"],
           metadata: {
     icon: [(async (props) => (await Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 83174))).default(props))],
     apple: [],
@@ -399,7 +399,7 @@ __webpack_require__.r(__webpack_exports__);
         }
       ]
       }.children;
-    const pages = ["/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/app/service/[slug1]/page.tsx"];
+    const pages = ["E:\\NEXT\\technicalsewa\\app\\service\\[slug1]\\page.tsx"];
     
     const originalPathname = "/service/[slug1]/page"
     const __next_app__ = {
@@ -413,7 +413,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 4236:
+/***/ 63287:
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 62390));
@@ -707,7 +707,7 @@ var Footer = __webpack_require__(13938);
 var module_proxy = __webpack_require__(21313);
 ;// CONCATENATED MODULE: ./components/pageHelperComponents.js/ServiceSlug1.tsx
 
-const proxy = (0,module_proxy.createProxy)(String.raw`/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/components/pageHelperComponents.js/ServiceSlug1.tsx`)
+const proxy = (0,module_proxy.createProxy)(String.raw`E:\NEXT\technicalsewa\components\pageHelperComponents.js\ServiceSlug1.tsx`)
 
 // Accessing the __esModule property and exporting $$typeof are required here.
 // The __esModule getter forces the proxy target to create the default export
@@ -809,7 +809,7 @@ const loading = ()=>{
 var __webpack_require__ = require("../../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [3663,6726,2776,6893,6558,9722,9864,4551,2390,7776,651], () => (__webpack_exec__(99312)));
+var __webpack_exports__ = __webpack_require__.X(0, [3663,1380,2776,6893,6558,9722,9864,7353,2390,7776,651], () => (__webpack_exec__(43336)));
 module.exports = __webpack_exports__;
 
 })();

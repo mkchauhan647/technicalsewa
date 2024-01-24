@@ -1,4 +1,4 @@
-// File: /mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/app/service/[slug1]/page.tsx
+// File: E:\NEXT\technicalsewa\app\service\[slug1]\page.tsx
 import * as entry from '../../../../../app/service/[slug1]/page.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

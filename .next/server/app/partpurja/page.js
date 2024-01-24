@@ -332,7 +332,7 @@ module.exports = require("zlib");
 
 /***/ }),
 
-/***/ 23224:
+/***/ 10687:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -360,7 +360,7 @@ __webpack_require__.r(__webpack_exports__);
         'partpurja',
         {
         children: ['__PAGE__', {}, {
-          page: [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 66093)), "/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/app/partpurja/page.tsx"],
+          page: [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 66093)), "E:\\NEXT\\technicalsewa\\app\\partpurja\\page.tsx"],
           
         }]
       },
@@ -377,9 +377,9 @@ __webpack_require__.r(__webpack_exports__);
       ]
       },
         {
-          'layout': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 2753)), "/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/app/layout.tsx"],
-'loading': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 24521)), "/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/app/loading.tsx"],
-'not-found': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 49986)), "/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/app/not-found.tsx"],
+          'layout': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 2753)), "E:\\NEXT\\technicalsewa\\app\\layout.tsx"],
+'loading': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 24521)), "E:\\NEXT\\technicalsewa\\app\\loading.tsx"],
+'not-found': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 49986)), "E:\\NEXT\\technicalsewa\\app\\not-found.tsx"],
           metadata: {
     icon: [(async (props) => (await Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 83174))).default(props))],
     apple: [],
@@ -390,7 +390,7 @@ __webpack_require__.r(__webpack_exports__);
         }
       ]
       }.children;
-    const pages = ["/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/app/partpurja/page.tsx"];
+    const pages = ["E:\\NEXT\\technicalsewa\\app\\partpurja\\page.tsx"];
     
     const originalPathname = "/partpurja/page"
     const __next_app__ = {
@@ -404,7 +404,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 37657:
+/***/ 99949:
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
 Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 27977, 23));
@@ -477,7 +477,7 @@ var Footer = __webpack_require__(13938);
 var module_proxy = __webpack_require__(21313);
 ;// CONCATENATED MODULE: ./components/pageHelperComponents.js/PartPurjaLinkButton.tsx
 
-const proxy = (0,module_proxy.createProxy)(String.raw`/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/components/pageHelperComponents.js/PartPurjaLinkButton.tsx`)
+const proxy = (0,module_proxy.createProxy)(String.raw`E:\NEXT\technicalsewa\components\pageHelperComponents.js\PartPurjaLinkButton.tsx`)
 
 // Accessing the __esModule property and exporting $$typeof are required here.
 // The __esModule getter forces the proxy target to create the default export
@@ -639,7 +639,7 @@ async function generateMetadata() {
 "use strict";
 /* __next_internal_client_entry_do_not_use__  cjs */ 
 const { createProxy } = __webpack_require__(21313);
-module.exports = createProxy("/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/node_modules/next/dist/client/link.js");
+module.exports = createProxy("E:\\NEXT\\technicalsewa\\node_modules\\next\\dist\\client\\link.js");
  //# sourceMappingURL=link.js.map
 
 
@@ -662,7 +662,7 @@ module.exports = __webpack_require__(90273);
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [3663,6726,2776,6893,6558,4551,2390,7776,651], () => (__webpack_exec__(23224)));
+var __webpack_exports__ = __webpack_require__.X(0, [3663,1380,2776,6893,6558,7353,2390,7776,651], () => (__webpack_exec__(10687)));
 module.exports = __webpack_exports__;
 
 })();

@@ -332,7 +332,7 @@ module.exports = require("zlib");
 
 /***/ }),
 
-/***/ 72766:
+/***/ 38430:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -363,7 +363,7 @@ __webpack_require__.r(__webpack_exports__);
         '[category]',
         {
         children: ['__PAGE__', {}, {
-          page: [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 95662)), "/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/app/trainings/[category]/page.tsx"],
+          page: [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 95662)), "E:\\NEXT\\technicalsewa\\app\\trainings\\[category]\\page.tsx"],
           
         }]
       },
@@ -386,9 +386,9 @@ __webpack_require__.r(__webpack_exports__);
       ]
       },
         {
-          'layout': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 2753)), "/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/app/layout.tsx"],
-'loading': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 24521)), "/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/app/loading.tsx"],
-'not-found': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 49986)), "/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/app/not-found.tsx"],
+          'layout': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 2753)), "E:\\NEXT\\technicalsewa\\app\\layout.tsx"],
+'loading': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 24521)), "E:\\NEXT\\technicalsewa\\app\\loading.tsx"],
+'not-found': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 49986)), "E:\\NEXT\\technicalsewa\\app\\not-found.tsx"],
           metadata: {
     icon: [(async (props) => (await Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 83174))).default(props))],
     apple: [],
@@ -399,7 +399,7 @@ __webpack_require__.r(__webpack_exports__);
         }
       ]
       }.children;
-    const pages = ["/mnt/CC1CE4DE1CE4C494/workspaces/supreme/technicalsewa/technicalsewa/app/trainings/[category]/page.tsx"];
+    const pages = ["E:\\NEXT\\technicalsewa\\app\\trainings\\[category]\\page.tsx"];
     
     const originalPathname = "/trainings/[category]/page"
     const __next_app__ = {
@@ -413,12 +413,12 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 40870:
+/***/ 58542:
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 62390));
-Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 17036));
-Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 70625))
+Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 70625));
+Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 17036))
 
 /***/ }),
 
@@ -558,7 +558,7 @@ async function TrainingCategoryPage({ params }) {
 var __webpack_require__ = require("../../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [3663,6726,2776,6893,6558,4551,2390,7776,651,9441], () => (__webpack_exec__(72766)));
+var __webpack_exports__ = __webpack_require__.X(0, [3663,1380,2776,6893,6558,7353,2390,7776,651,9441], () => (__webpack_exec__(38430)));
 module.exports = __webpack_exports__;
 
 })();
