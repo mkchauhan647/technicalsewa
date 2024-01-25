@@ -1,10 +1,8 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { AiOutlineSearch } from "react-icons/ai";
 import Image from "next/image";
 
-import Link from "next/link";
 import { Link as ScrollLink } from "react-scroll";
 import ServiceProducts from "../Serviceproduct";
 
