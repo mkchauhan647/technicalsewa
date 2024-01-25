@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import {
   HiArrowRightOnRectangle,
@@ -22,6 +21,7 @@ import axios from "axios";
 import useAuthStore from "@/store/useAuthStore";
 import Search from "./Search";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 interface TrainingCategory {
   text: string;
@@ -196,13 +196,18 @@ const Nav = () => {
               <div className="hidden group-hover:block">
                 <div className="absolute z-10 mt-0 bg-white rounded-md shadow-lg md:w-[350px]">
                   <div className="py-1 max-h-[400px] overflow-y-auto">
-                    <div className="py-2"></div>
                     {services.map((service, i) => {
                       return (
                         <div key={i}>
-                          <p className="block px-6 py-1 text-sm text-[grey] hover:bg-gray-100">
-                            {service.brand_name}
-                          </p>
+                          <a
+                            key={i}
+                            href={`/service#service_${service?.brand_id}`}
+                            className="py-1"
+                          >
+                            <p className="block px-6 py-1 text-sm text-[grey] hover:bg-gray-100">
+                              {service?.brand_name}
+                            </p>
+                          </a>
                           <hr />
                         </div>
                       );

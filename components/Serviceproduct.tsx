@@ -14,6 +14,7 @@ const ServiceProducts = ({ id, icon, brandname, data }: IProps) => {
   return (
     <ScrollElement
       name={id}
+      id={id}
       className="hidden md:block bg-white min-h-[112px] w-full p-5 rounded-md border-[1px] border-gray-400 "
     >
       <div>
@@ -34,7 +35,9 @@ const ServiceProducts = ({ id, icon, brandname, data }: IProps) => {
             >
               <div
                 className={`${
-                  value.product_name ? "flex flex-col justify-center mx-auto" : "hidden"
+                  value.product_name
+                    ? "flex flex-col justify-center mx-auto"
+                    : "hidden"
                 } `}
               >
                 <a href={`/service/${value?.url_product_name}`}>
