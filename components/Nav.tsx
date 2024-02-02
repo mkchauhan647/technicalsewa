@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import {
   HiArrowRightOnRectangle,
@@ -22,10 +21,18 @@ import axios from "axios";
 import useAuthStore from "@/store/useAuthStore";
 import Search from "./Search";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 interface TrainingCategory {
   text: string;
   value: string;
+}
+
+interface ServiceCategory {
+  brand_id: string;
+  brand_name: string;
+  image_url: string;
+  alt: string;
 }
 
 const Nav = () => {
@@ -76,6 +83,9 @@ const Nav = () => {
   // gettrainingcategories
   const [categories, setCategories] = useState<TrainingCategory[]>([]);
 
+  // service categories
+  const [services, setServices] = useState<ServiceCategory[]>([]);
+
   const getCategories = async () => {
     axios
       .get(
@@ -85,8 +95,21 @@ const Nav = () => {
         setCategories(res.data);
       });
   };
+
+  // services categories
+  const getServicesCategories = async () => {
+    axios
+      .get(
+        " https://smartcare.com.np/techsewa/masterconfig/publicmasterconfig/getServiceList"
+      )
+      .then((res) => {
+        setServices(res?.data?.brands);
+      });
+  };
+
   useEffect(() => {
     getCategories();
+    getServicesCategories();
   }, []);
 
   return (
@@ -138,6 +161,7 @@ const Nav = () => {
                 </div>
               )}
             </div>
+
             <div className="group">
               <Link className="hover:text-primary" href="/blogs">
                 Blogs
@@ -164,9 +188,35 @@ const Nav = () => {
               </div>
             </div>
 
-            <a className="hover:text-primary" href="/service">
-              Services
-            </a>
+            {/* services  */}
+            <div className="group">
+              <a className="hover:text-primary" href="/service">
+                Services
+              </a>
+              <div className="hidden group-hover:block">
+                <div className="absolute z-10 mt-0 bg-white rounded-md shadow-lg md:w-[350px]">
+                  <div className="py-1 max-h-[400px] overflow-y-auto">
+                    {services.map((service, i) => {
+                      return (
+                        <div key={i}>
+                          <a
+                            key={i}
+                            href={`/service#service_${service?.brand_id}`}
+                            className="py-1"
+                          >
+                            <p className="block px-6 py-1 text-sm text-[grey] hover:bg-gray-100">
+                              {service?.brand_name}
+                            </p>
+                          </a>
+                          <hr />
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <a className="hover:text-primary" href="/professionals">
               Professionals
             </a>

@@ -53,11 +53,12 @@ export default async function Home() {
         */}
 
         <Number />
-        <WhyChooseUs />
+        {/* <WhyChooseUs /> */}
         <MidContent />
-        <FooterContact />
-        <MidContent2 />
+        {/* <FooterContact /> */}
         <ClientsSlider />
+
+        <MidContent2 />
       </main>
       <Footer />
     </>
