@@ -108,6 +108,6 @@ export async function generateMetadata({ params }: any) {
   }
 
   return {
-    title: `Technical sewa`,
+    title: `Blog | Technical sewa`,
   };
 }
