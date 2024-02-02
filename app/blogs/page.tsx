@@ -2,13 +2,17 @@ import BlogCategorylist from "@/components/BlogCategorylist";
 import Nav from "@/components/Nav";
 import Footer from "@/components/footer/Footer";
 import BlogCard from "@/components/pageHelperComponents.js/BlogCard";
-import { fetchServerClient, getTrainingCategoriesData } from "@/lib/api";
+import {
+  fetchServerClient,
+  getSEOByPageURL,
+  getTrainingCategoriesData,
+} from "@/lib/api";
 import React from "react";
 const page = async () => {
   const blogs: any = await fetchServerClient(
     "/techsewa/publiccontrol/publicmasterconfig/getblogdetails"
   );
-  
+
   blogs?.sort(
     (a: any, b: any) =>
       new Date(b?.created_ts).getTime() - new Date(a?.created_ts).getTime()
@@ -46,7 +50,33 @@ const page = async () => {
 export default page;
 
 export async function generateMetadata() {
+  // fetch seo data for page based on slug
+  const seoData = await getSEOByPageURL(`/blogs`);
+
+  const seoExists = seoData?.content && !Array.isArray(seoData?.content);
+
+  const seoContent = seoData?.content;
+
+  if (seoExists) {
+    return {
+      title: `${
+        seoExists ? seoContent?.page_title : "Blogs | Technical sewa"
+      } `,
+      description: `${seoContent?.description}`,
+      keywords: `${seoContent?.key_words}`,
+      openGraph: {
+        title: `${
+          seoExists ? seoContent?.og_title : "Blogs | Technical sewa"
+        } `,
+        // ...(seoContent?.og_type ? {type: seoContent?.og_type}:{}),
+        type: "website",
+        description: `${seoContent?.og_desc} `,
+        url: seoContent?.og_url,
+      },
+    };
+  }
+
   return {
-    title: `Blog | Technical sewa`,
+    title: `Blogs | Technical sewa`,
   };
 }

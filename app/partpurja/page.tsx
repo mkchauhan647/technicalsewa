@@ -88,9 +88,7 @@ const page = async () => {
 export default page;
 
 export async function generateMetadata() {
-  const seoData = await getSEOByPageURL(
-    `https://technicalsewa.com/professionals`
-  );
+  const seoData = await getSEOByPageURL(`professionals`);
 
   const seoExists = seoData?.content && !Array.isArray(seoData?.content);
 

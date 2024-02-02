@@ -118,6 +118,7 @@ export async function getBlogsByCategoryId(id: string) {
 
 export async function getSEOByPageURL(url: string) {
   try {
+    const SEO_BASE_URL = "https://www.technicalsewa.com";
     // const res = await fetch(
     //   `${baseUrl}/techsewa/publiccontrol/publicmasterconfig/getSeoContent?url=${url}`,
     //   {
@@ -128,11 +129,33 @@ export async function getSEOByPageURL(url: string) {
     // );
 
     // return res.json();
+
+    const fdata = new FormData();
+    if (isURL(url)) {
+      fdata.append("url", url);
+    } else {
+      console.log("request ing url  ? ", `${SEO_BASE_URL}${url}`);
+      fdata.append("url", `${SEO_BASE_URL}${url}`);
+    }
+
     const res = await fetchServerClient(
-      `/techsewa/publiccontrol/publicmasterconfig/getSeoContent?url=${url}`
+      `/techsewa/publiccontrol/publicmasterconfig/getSeoContent`,
+      {
+        method: "POST",
+        body: fdata,
+      }
     );
     return res;
   } catch (error) {
     return { error: true };
   }
+}
+
+function isURL(str: string) {
+  // Regular expression for a simple URL validation
+  var urlRegex =
+    /^(https?:\/\/)?([a-zA-Z0-9-]+\.){1,}([a-zA-Z]{2,})(:[0-9]+)?(\/.*)?$/;
+
+  // Test the input string against the regex
+  return urlRegex.test(str);
 }
