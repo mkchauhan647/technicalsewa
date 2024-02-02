@@ -25,9 +25,7 @@ export async function generateMetadata({ params }: any) {
   const slug = params.slug1;
 
   // fetch seo data for page based on slug
-  const seoData = await getSEOByPageURL(
-    `https://technicalsewa.com/part-purja/${slug}`
-  );
+  const seoData = await getSEOByPageURL(`/service/${slug}`);
 
   const seoExists = seoData?.content && !Array.isArray(seoData?.content);
 

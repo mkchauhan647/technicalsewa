@@ -85,19 +85,11 @@ export async function generateMetadata({ params }: any) {
   const blogId = params.blogId;
 
   // fetch seo data for page based on slug
-  const seoData = await getSEOByPageURL(
-    `https://technicalsewa.com/blogs/${slug}/${blogId}`
-  );
+  const seoData = await getSEOByPageURL(`/blogs/${slug}/${blogId}`);
 
   const seoExists = seoData?.content && !Array.isArray(seoData?.content);
 
   const seoContent = seoData?.content;
-
-  // <SEOBase title={pageTitle} />
-  // <meta
-  //   property="og:image"
-  //   content={data?.filename ? data?.filename : "/favicon.ico"}
-  // />
 
   if (seoExists) {
     return {

@@ -53,12 +53,11 @@ export default async function Home() {
         */}
 
         <Number />
-        {/* <WhyChooseUs /> */}
+        <WhyChooseUs />
         <MidContent />
-        {/* <FooterContact /> */}
-        <ClientsSlider />
-
+        <FooterContact />
         <MidContent2 />
+        <ClientsSlider />
       </main>
       <Footer />
     </>
@@ -67,7 +66,7 @@ export default async function Home() {
 
 export async function generateMetadata() {
   // fetch seo data for page based on slug
-  const seoData = await getSEOByPageURL(`https://technicalsewa.com`);
+  const seoData = await getSEOByPageURL(`https://www.technicalsewa.com/`);
 
   const seoExists = seoData?.content && !Array.isArray(seoData?.content);
 
