@@ -9,7 +9,7 @@ import {
 import { FaBars, FaHome, FaTimes } from "react-icons/fa";
 import { IoIosNotifications, IoMdCall } from "react-icons/io";
 import { LiaBlogSolid } from "react-icons/lia";
-import { BsFillPersonCheckFill } from "react-icons/bs";
+import { BsFillPersonCheckFill, BsFillTelephoneFill } from "react-icons/bs";
 import { BsSearch } from "react-icons/bs";
 import { MdLogin, MdOutlineHomeRepairService } from "react-icons/md";
 import { BiSolidInfoCircle } from "react-icons/bi";
@@ -89,7 +89,7 @@ const Nav = () => {
   const getCategories = async () => {
     axios
       .get(
-        "https://smartcare.com.np/techsewa/publiccontrol/publicmasterconfig/gettrainingcategories"
+        "https://www.technicalsewa.com/techsewa/publiccontrol/publicmasterconfig/gettrainingcategories"
       )
       .then((res) => {
         setCategories(res.data);
@@ -100,7 +100,7 @@ const Nav = () => {
   const getServicesCategories = async () => {
     axios
       .get(
-        " https://smartcare.com.np/techsewa/masterconfig/publicmasterconfig/getServiceList"
+        "https://www.technicalsewa.com/techsewa/masterconfig/publicmasterconfig/getServiceList"
       )
       .then((res) => {
         setServices(res?.data?.brands);
@@ -118,19 +118,38 @@ const Nav = () => {
         <div className="Navbar relative border-b-[1px] mx-auto max-w-[1280px]  border-[#ededed] gap-[15px]   flex justify-between max-lg:p-4 items-center bg-white h-[70px] ">
           <a href="/">
             <Image
-              src="/assets/ts-final-logo.png"
+              src="/assets/tslogo-final1.png"
               height={200}
               width={200}
               alt="logo"
             />
           </a>
-          <div
+          {/* <div
             className={`${
               showinput || !isHomePage ? "max-md:w-72 md:!w-80" : "hidden"
             } `}
           >
             <Search isTopNav />
           </div>
+        
+          {!showinput ?  <a
+                href="tel:9851201580"
+                className="flex items-center justify-center  gap-[5px] h-[45px] w-[150px] border border-[#2591B2] rounded-[4px] text-black"
+              >
+                <BsFillTelephoneFill className="text-primary" size={20} />
+                9851201580
+              </a>: <></>} */}
+          <div className="max-md:w-72 md:!w-80">
+            <Search isTopNav />
+          </div>
+          <a
+            href="tel:9851201580"
+            className="flex items-center justify-center px-1  gap-[5px] h-[45px] w-[150px] border border-[#2591B2] rounded-[4px] text-black"
+          >
+            <BsFillTelephoneFill className="text-primary" size={20} />
+            9851201580
+          </a>
+
           <div className="nav-links  hidden md:flex items-center gap-4 text-[#505056] ">
             <div className="group">
               <a href="/trainings" className="hover:text-primary">

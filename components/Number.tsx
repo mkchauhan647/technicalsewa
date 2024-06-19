@@ -13,7 +13,7 @@ const Number = (props: Props) => {
   });
   useEffect(() => {
     axios
-      .get("https://smartcare.com.np/techsewa/publiccontrol/getGetTotalFooter")
+      .get("https://www.technicalsewa.com/techsewa/publiccontrol/getGetTotalFooter")
       .then((response) => {
         let data = response.data;
         let numberedData = {

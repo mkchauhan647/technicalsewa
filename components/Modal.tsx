@@ -46,8 +46,8 @@ const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
                 {val.image_url && (
                   <Image
                     src={val.image_url.replace(
-                      "https://smartcare.com.np/multiservice",
-                      "https://smartcare.com.np/techsewa"
+                      "https://www.technicalsewa.com/multiservice",
+                      "https://www.technicalsewa.com/techsewa"
                     )}
                     alt={val.alt2}
                     width={80}

@@ -5,7 +5,7 @@ import "./about.css";
 
 const About = async () => {
   const aboutUs = await fetch(
-    "https://smartcare.com.np/techsewa/masterconfig/publicmasterconfig/GetAboutUs"
+    "https://www.technicalsewa.com/techsewa/masterconfig/publicmasterconfig/GetAboutUs"
   );
   const aboutUsData = await aboutUs.json();
 
@@ -39,7 +39,7 @@ export default About;
 
 export async function generateMetadata() {
   // const seocontet = await fetch(
-  //   "https://smartcare.com.np/techsewa/publiccontrol/publicmasterconfig/getSeoContent?url=https://smartcare.com.np/blogs"
+  //   "https://www.technicalsewa.com/techsewa/publiccontrol/publicmasterconfig/getSeoContent?url=https://www.technicalsewa.com/blogs"
   // );
   // const seocontetdata:[] = await seocontet.json();
 

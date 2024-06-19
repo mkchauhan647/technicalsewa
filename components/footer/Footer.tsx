@@ -13,7 +13,7 @@ const Footer = () => {
   useEffect(() => {
     axios
       .get(
-        "https://smartcare.com.np/techsewa/masterconfig/publicmasterconfig/GetContactUs"
+        "https://www.technicalsewa.com/techsewa/masterconfig/publicmasterconfig/GetContactUs"
       )
       .then((response: any) => {
         let data = response.data;
@@ -36,100 +36,104 @@ const Footer = () => {
               <div className="grid grid-cols-4 md:grid-cols-9 px-[10px] md:px-[0px] gap-[10px] my-2">
                 <Link
                   prefetch={false}
-                  href="kathmandu"
+                  href="/about"
                   className="hover:underline"
                 >
                   Kathmandu
                 </Link>
                 <Link
                   prefetch={false}
-                  href="lalitpur"
-                  className="hover:underline"
+                  href="/about"
+                 className="hover:underline"
                 >
                   Lalitpur
                 </Link>
                 <Link
                   prefetch={false}
-                  href="bhaktapur"
+                  href="/about"
                   className="hover:underline"
                 >
                   Bhaktapur
                 </Link>
                 <Link
                   prefetch={false}
-                  href="pokhara"
-                  className="hover:underline"
+                  href="/about"
+                className="hover:underline"
                 >
                   Pokhara
                 </Link>
                 <Link
                   prefetch={false}
-                  href="narayangath"
-                  className="hover:underline"
+                  href="/about"
+                    className="hover:underline"
                 >
                   Narayanghat
                 </Link>
                 <Link
                   prefetch={false}
-                  href="Nepalgunj"
+                  href="/about"
                   className="hover:underline"
                 >
                   Nepalgunj
                 </Link>
                 <Link
                   prefetch={false}
-                  href="biratnagar"
-                  className="hover:underline"
+                  href="/about"
+                   className="hover:underline"
                 >
                   Biratnagar
                 </Link>
                 <Link
                   prefetch={false}
-                  href="dharan"
-                  className="hover:underline"
+                  href="/about"
+               className="hover:underline"
                 >
                   Dharan
                 </Link>
                 <Link
                   prefetch={false}
-                  href="hetouda"
-                  className="hover:underline"
+                  href="/about"
+                className="hover:underline"
                 >
                   Hetauda
                 </Link>
                 <Link
                   prefetch={false}
-                  href="biratmode"
+                  href="/about"
                   className="hover:underline"
                 >
                   Birtamode
                 </Link>
-                <Link prefetch={false} href="damak" className="hover:underline">
+                <Link
+                  prefetch={false}
+                  href="/about"
+                  className="hover:underline"
+                >
                   Damak
                 </Link>
                 <Link
                   prefetch={false}
-                  href="chanpur"
-                  className="hover:underline"
+                  href="/about"
+                className="hover:underline"
                 >
                   Chapur
                 </Link>
                 <Link
                   prefetch={false}
-                  href="mahendranagar"
-                  className="hover:underline"
+                  href="/about"
+                      className="hover:underline"
                 >
                   Mahendranagar
                 </Link>
                 <Link
                   prefetch={false}
-                  href="dhanggadi"
+                  href="/about"
                   className="hover:underline"
                 >
                   Dhangadi
                 </Link>
-                <Link prefetch={false} href="sindupalchowk">
-                  Sindupalchowk
+                <Link prefetch={false} href="/about">
+                sindupalchowk
                 </Link>
               </div>
             </div>
@@ -146,7 +150,7 @@ const Footer = () => {
                 className="w-[210px] h-[52px] 2xl:h-[67px] bg-[#FFF] p-[3px] rounded-[3px]"
               >
                 <img
-                  src="/../assets/logoofts.png"
+                  src="/../assets/tslogo-final1.png"
                   alt="image of logo"
                   className="object-contain w-full h-full"
                 />
@@ -170,12 +174,6 @@ const Footer = () => {
                   className="font-[300px] text-[13px] leading-[15px] hover:underline"
                 >
                   Home
-                </Link>
-                <Link
-                  href="/partpurja"
-                  className="font-[300px] text-[13px] leading-[15px] hover:underline"
-                >
-                  Featured Product
                 </Link>
                 <Link
                   href="/about"

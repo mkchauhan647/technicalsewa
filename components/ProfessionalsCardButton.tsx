@@ -11,7 +11,7 @@ const ProfessionalsCardButton = ({ email, address, name, image }: any) => {
         onClick={() => {
           setShow(!show);
         }}
-        className="bg-[#f2dedf] text-black rounded-md px-2 py-1 md:px-[17px] md:py-[6px]"
+        className="bg-[#f2dedf] text-black rounded-md px-2 py-1 md:px-[17px] md:py-[6px] hover:scale-105"
       >
         View
       </button>
