@@ -43,7 +43,7 @@ const SignUpPro = () => {
 
       await axios
         .post(
-          "https://smartcare.com.np/techsewa/masterConfig/publicLogin/TechSignUp",
+          "https://www.technicalsewa.com/techsewa/masterConfig/publicLogin/TechSignUp",
           data
         )
         .then(({ data }) => {

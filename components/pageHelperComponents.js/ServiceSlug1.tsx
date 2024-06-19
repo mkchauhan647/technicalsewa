@@ -8,6 +8,7 @@ import { SlArrowRight } from "react-icons/sl";
 import { useRouter } from "next/navigation";
 import { baseUrl } from "@/public/baseUrl";
 import ServiceReviews from "@/features/service/reviews";
+import { BsFillTelephoneFill } from "react-icons/bs";
 
 const ServiceSlug1 = ({ data }: any) => {
   //state variable
@@ -67,8 +68,8 @@ const ServiceSlug1 = ({ data }: any) => {
               <div
                 style={{
                   backgroundImage: `url(${val?.image_url?.replace(
-                    "https://smartcare.com.np/multiservice/",
-                    "https://smartcare.com.np/multiservice/test/"
+                    "https://www.technicalsewa.com/multiservice/",
+                    "https://www.technicalsewa.com/multiservice/test/"
                   )})`,
                 }}
                 className="bg-white h-[350px] bg-contain bg-no-repeat bg-center w-full relative py-[20px]"
@@ -90,12 +91,24 @@ const ServiceSlug1 = ({ data }: any) => {
                       </h3>
                     </div>
 
-                    <div className="w-[200px] h-[45px] bg-[#1D738D] flex itmes-center text-white py-[5px] px-[15px] rounded-[6px] mt-[5px]">
-                      <AiFillStar size={30} />
-                      <p className="pl-[10px] text-[24px] font-semibold">
-                        4.65
-                      </p>
-                      <p className="pl-[5px] self-end mb-[5px]">Out of 5</p>
+                    <div className="flex flex-row gap-[10px]">
+                      <div className="w-[200px] h-[45px] bg-[#1D738D] flex itmes-center text-white py-[5px] px-[15px] rounded-[6px] mt-[5px]">
+                        <AiFillStar size={30} />
+                        <p className="pl-[10px] text-[24px] font-semibold">
+                          4.65
+                        </p>
+                        <p className="pl-[5px] self-end mb-[5px]">Out of 5</p>
+                      </div>
+                      <a
+                        href="tel:9851201580"
+                        className="flex items-center justify-center bg-white gap-[8px] h-[45px] w-[180px] border border-[#2591B2] rounded-[6px] text-[#1D738D] mt-[5px]"
+                      >
+                        <BsFillTelephoneFill
+                          className="text-primary"
+                          size={20}
+                        />
+                        9851201580
+                      </a>
                     </div>
 
                     <div className="  flex flex-col mt-[11px] md:mt-[20px]  md:gap-[14px] ">
@@ -115,7 +128,7 @@ const ServiceSlug1 = ({ data }: any) => {
               </div>
 
               {/* side select product category  */}
-              <div className="w-[30%] lg:px-4 z-40 md:absolute top-5 right-[1%] 2xl:right-[6%] ">
+              <div className="w-[30%] lg:px-4 z-40 md:absolute top-5 right-[7%] 2xl:right-[10%] ">
                 <div className="bg-primary rounded-md shadow-md w-[340px] md:w-[355px] p-4 lg:fixed ">
                   <h3 className="text-white mb-4 text-[24px] font-medium text-center ">
                     Select product Category

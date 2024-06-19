@@ -32,7 +32,7 @@ export default function ChangePasswordForm() {
     data.append("new_password", input.new_password);
     await axios
       .post(
-        `https://smartcare.com.np/techsewa/publiccontrol/changePassword`,
+        `https://www.technicalsewa.com/techsewa/publiccontrol/changePassword`,
         data
       )
       .then(({ data }) => {

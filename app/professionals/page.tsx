@@ -4,6 +4,7 @@ import Footer from "@/components/footer/Footer";
 import { fetchServerClient, getSEOByPageURL } from "@/lib/api";
 import Link from "next/link";
 import React from "react";
+import { BsFillTelephoneFill } from "react-icons/bs";
 import { RiLayoutGridFill } from "react-icons/ri";
 import { TfiLayoutColumn3Alt } from "react-icons/tfi";
 
@@ -39,18 +40,17 @@ const page = async () => {
           </div> */}
 
           {/* card  */}
-          <div className="grid grid-cols-1 gap-5 px-2 py-4 md:grid-cols-3 md:py-8 md:px-0">
+          <div className="grid grid-cols-1 gap-10 px-2 py-4 md:grid-cols-3 md:py-8 md:px-0">
             {professionalsData.map((s: any, index: any) => (
               <div
                 key={index}
-                className="flex items-center border-[1px] rounded-md p-2 md:px-8 md:py-4 gap-2 lg:gap-10 "
-              >
+                className="flex items-center border-[1px] rounded-xl p-2 md:px-8 md:py-4 gap-1 lg:gap-8 shadow-lg shadow-gray-400"             >
                 {/* image  */}
                 <div className="flex-1">
                   <img
-                    src={s.photo ? s.photo : "/assets/user.jpg"}
+                    src={s.photo ? s.photo : "/assets/user.png"}
                     alt="image"
-                    className="w-full max-h-[200px]"
+                    className="w-full h-[180px] object-cover rounded-xl "
                   />
                 </div>
                 <div className="flex flex-col flex-1 gap-2 md:gap-5">
@@ -59,22 +59,29 @@ const page = async () => {
                   </h3>
 
                   {/* three small button */}
-                  <div className="flex gap-1 text-[12px] text-primary flex-wrap">
-                    {s?.skill?.split(",")?.map((skill: string, i: number) => (
+                  <div className="flex text-[15px] text-primary">
+                    {/* {s?.skill?.split(",")?.map((skill: string, i: number) => (
                       <button
                         key={i}
                         className="bg-[#e8ebf4] px-[9px] py-[2px] rounded-sm"
                       >
                         {skill}
                       </button>
-                    ))}
+                    ))} */}
+                    <a
+                      href="tel:9851201580"
+                      className="flex items-center justify-center  gap-[5px] h-[40px] w-full border border-[#2591B2] rounded-[2px] text-black"
+                    >
+                      <BsFillTelephoneFill className="text-primary" size={20} />
+                      {s?.mobile}
+                    </a>
                   </div>
 
                   {/* book now and view button */}
-                  <div className="flex gap-2 text-[11px]">
+                  <div className="flex gap-2 text-[12px]">
                     <a
                       href="/service"
-                      className="text-white whitespace-nowrap bg-primary rounded-md px-2 py-1 md:px-[17px] md:py-[6px]"
+                      className="text-white whitespace-nowrap bg-primary rounded-md px-2 py-1 md:px-[17px] md:py-[6px] hover:scale-105"
                     >
                       Book Now
                     </a>

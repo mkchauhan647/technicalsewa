@@ -104,8 +104,8 @@ const ChildService = ({ data }: any) => {
                       backgroundImage: `url(${(
                         childService?.image_url ?? val?.image_url
                       )?.replace(
-                        "https://smartcare.com.np/multiservice/",
-                        "https://smartcare.com.np/multiservice/test/"
+                        "https://www.technicalsewa.com/multiservice/",
+                        "https://www.technicalsewa.com/multiservice/test/"
                       )})`,
                     }}
                     className="bg-white h-[350px] bg-contain bg-no-repeat bg-center w-full relative  py-[20px]"

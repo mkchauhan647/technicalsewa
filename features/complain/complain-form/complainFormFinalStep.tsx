@@ -46,7 +46,7 @@ export default function ComplainFormFinalStep({
     }
     selectedWarrantyFile && fdata.append("cust_warranty", selectedWarrantyFile);
     const { data: resData } = await axios.post(
-      "https://smartcare.com.np/techsewa/publicControl/logComplain",
+      "https://www.technicalsewa.com/techsewa/publicControl/logComplain",
       fdata
     );
     toast(resData?.msg ?? "Your complain has been received!");

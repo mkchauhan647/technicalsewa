@@ -4,7 +4,7 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    domains: ["smartcare.com.np"],
+    domains: ["www.technicalsewa.com"],
   },
 };
 

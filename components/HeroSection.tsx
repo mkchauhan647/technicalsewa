@@ -6,15 +6,19 @@ import React from "react";
 import { MdLocationPin } from "react-icons/md";
 import { BsSearch } from "react-icons/bs";
 import Search from "./Search";
+import { baseUrl } from "@/public/baseUrl";
 
-const HeroSection = () => {
+const HeroSection = async () => {
+
+  const banner = await fetch(`${baseUrl}/techsewa/masterconfig/publicmasterconfig/getConfigList`).then((res)=>res.json());
+
   return (
     <>
       <div className="hero-section">
         <div className="hidden relative image-banner-container md:flex">
           <Image
             className="w-full h-[240px] object-cover "
-            src="/assets/banner.jpg"
+            src={banner?.brands[0].image_url}
             // layout="responsive"
             alt="banner"
             width={1000}
@@ -38,17 +42,31 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-        <div className="md:hidden">
+        <div className="md:hidden relative image-banner-container">
           <Image
             className="w-full h-[164px] object-cover relative"
-            src="/assets/banner.jpg"
+            src={banner?.brands[0].image_url}
             // layout="responsive"
             alt="banner"
             width={1000}
             height={164}
           />
-          <div className="absolute top-[21%] flex  md:mt-0 px-[40px] justify-center  w-[363px]">
-            <Search />
+          <div className=" absolute top-0 left-[50%] translate-x-[-50%] bg-white/[0.8] w-full ">
+            <h1 className="text-primary text-[20px] font-bold text-center px-[5px]">
+              Professional Repair Services On Demand
+            </h1>
+            <p className="text-[#505056] font-normal text-center px-[1px] mt-2 ">
+              One-stop solution for your services. Order any service, anytime.
+            </p>
+            <div className="flex justify-around w-full gap-[10px] px-[12px] mt-[15px] ">
+              <div className=" flex justify-center items-center gap-[12px] px-1 py-[15px] bg-white rounded-[6px]">
+                <MdLocationPin size={20} className="text-primary" />
+                <span className="text-[#1A1A1A] text-[12px] font-semibold ">
+                  Kathmandu
+                </span>
+              </div>
+              <Search />
+            </div>
           </div>
         </div>
       </div>

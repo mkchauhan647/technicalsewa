@@ -1,1 +1,1 @@
-export const baseUrl = "https://smartcare.com.np/";
+export const baseUrl = "https://www.technicalsewa.com/";

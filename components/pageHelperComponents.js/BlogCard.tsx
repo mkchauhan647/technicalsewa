@@ -19,8 +19,8 @@ const BlogCard = ({ blog }: any) => {
     //             <div className='flex gap-4'>
     //                 <div className='basis-[40%] h-[150px]'>
     //                     <img className='object-cover w-full h-full' src={blog.filename.replace(
-    //                     "https://smartcare.com.np/multiservice/",
-    //                     "https://smartcare.com.np/multiservice/test/")} />
+    //                     "https://www.technicalsewa.com/multiservice/",
+    //                     "https://www.technicalsewa.com/multiservice/test/")} />
     //                 </div>
 
     //                 <div className='basis-[60%] gap-2'>
@@ -37,8 +37,8 @@ const BlogCard = ({ blog }: any) => {
             <img
               className="object-contain w-full h-full"
               src={blog?.filename?.replace(
-                "https://smartcare.com.np/multiservice/",
-                "https://smartcare.com.np/multiservice/test/"
+                "https://www.technicalsewa.com/multiservice/",
+                "https://www.technicalsewa.com/multiservice/test/"
               )}
             />
           </a>

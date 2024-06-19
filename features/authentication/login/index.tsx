@@ -7,6 +7,8 @@ import axios from "axios";
 import useAuthStore from "@/store/useAuthStore";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
+import { FaFacebook } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 
 const LoginForm = ({ cb }: { cb?: () => void }) => {
   const { push } = useRouter();
@@ -27,7 +29,7 @@ const LoginForm = ({ cb }: { cb?: () => void }) => {
     form.setAttribute("method", "post");
     form.setAttribute(
       "action",
-      "https://smartcare.com.np/techsewa/verify/signin"
+      "https://www.technicalsewa.com/techsewa/verify/signin"
     );
 
     const loginParams: any = { ...input };
@@ -53,7 +55,7 @@ const LoginForm = ({ cb }: { cb?: () => void }) => {
     data.append("password", input.password);
     try {
       const loginRes = await axios.post(
-        `https://smartcare.com.np/techsewa/masterconfig/publiclogin/signinlate`,
+        `https://www.technicalsewa.com/techsewa/masterconfig/publiclogin/signinlate`,
         data
       );
 
@@ -85,8 +87,8 @@ const LoginForm = ({ cb }: { cb?: () => void }) => {
 
   return (
     <div className="bg-white  pt-[20px] pb-[79px]">
-      <div className="flex flex-col  justify-center pt-[50px] w-[80%] lg:w-[33.33%]  mx-auto px-4 md:p-0">
-        {/* <div className="flex flex-col items-center">
+      <div className="flex flex-col  justify-center pt-[50px] w-[80%] lg:w-[33.33%]  mx-auto mt-4 px-4 md:p-0">
+        <div className="flex flex-col items-center">
           <div className="w-[150px] h-auto">
             <img
               src="/../assets/logoofts.png"
@@ -94,12 +96,10 @@ const LoginForm = ({ cb }: { cb?: () => void }) => {
               className="w-full h-full object-container"
             />
           </div>
-          <h2 className="text-[#666666] text-normal leading-[19.5px] font-semibold mt-[12px]">
-            Sign in to use our service
-          </h2>
-        </div> */}
 
-        <h2 className="text-lg font-bold">Login</h2>
+        </div>
+
+        <p className="text-2xl font-bold text-[#3398b7] text-center mt-6 mb-3">Login</p>
 
         <input
           type="text"
@@ -107,17 +107,17 @@ const LoginForm = ({ cb }: { cb?: () => void }) => {
           required
           onChange={handleChange}
           placeholder="Username"
-          className="border w-full border-[#D9D9D9] px-4 py-3 pl-[20px] mt-[20px] placeholder:text-[#666666]/[0.4] placeholder:italic placeholder:font-normal rounded-[2px] outline-none"
+          className="border w-full border-[#666666]/[0.8] px-4 py-3 pl-[20px] mt-[20px] placeholder:text-[#666666]/[0.8] placeholder:italic placeholder:font-normal rounded outline-none"
         />
 
-        <div className=" border border-[#D9D9D9] rounded-[2px] flex items-center mt-[24px]  w-full">
+        <div className=" border border-[#666666]/[0.8] rounded-[2px] flex items-center mt-[24px]  w-full">
           <input
             type={`${showPassword === false ? "password" : "text"}`}
             name="password"
             placeholder="Password"
             required
             onChange={handleChange}
-            className="w-full px-4 py-3 pl-[20px]  placeholder:text-[#666666]/[0.4] placeholder:italic placeholder:font-normal rounded-[2px] outline-none"
+            className="w-full px-4 py-3 pl-[20px]  placeholder:text-[#666666]/[0.8] placeholder:italic placeholder:font-normal rounded outline-none"
           />
           <div
             className=" border-l-[1px] p-4"
@@ -128,20 +128,20 @@ const LoginForm = ({ cb }: { cb?: () => void }) => {
         </div>
         <Link
           href="/account/forgot-password"
-          className="text-[#666666] text-[13px] leading-[10px] font-light mt-[20px]"
+          className="text-[#555] text-[13px] leading-[10px] font-light mt-[20px]"
         >
           Forgot Password ?
         </Link>
         <button
           disabled={loading || !isValidForm}
           onClick={handleSignIn}
-          className={`text-white text-[15px] leading-[18px] bg-primary font-normal rounded-[2px] w-full py-[15px]
-        mt-[44px] disabled:!text-gray-400 disabled:!bg-opacity-40`}
+          className={`text-white text-[15px] leading-[18px] bg-primary font-bold rounded w-full py-[15px]
+        mt-[44px] disabled:!text-gray-600 disabled:!bg-opacity-40 disabled:cursor-not-allowed`}
         >
-          Sign in
+          SIGN IN
         </button>
 
-        <div className="flex items-center justify-center mt-10 mb-[10px] space-x-1">
+        <div className="flex items-center justify-center mt-5 mb-[10px] space-x-1">
           <p className="text-[13px] text-[#666666] leading-[10.72px] font-normal">
             Need an account?
           </p>
@@ -152,6 +152,15 @@ const LoginForm = ({ cb }: { cb?: () => void }) => {
             Sign up
           </Link>
         </div>
+
+
+        <div className="text-center">or</div>
+
+        <div className="flex items-center justify-center mt-5 mb-[10px] space-x-1 gap-4">
+          <FcGoogle size={30}  className="text-[#34A853] cursor-pointer"/>
+          <FaFacebook size={30} className="text-[#1877F2] cursor-pointer" />
+        </div>
+
       </div>
     </div>
   );

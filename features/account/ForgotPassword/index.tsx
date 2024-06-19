@@ -23,7 +23,7 @@ export default function ForgotPasswordForm() {
     data.append("username", input.mobile);
     await axios
       .post(
-        `https://smartcare.com.np/techsewa/publiccontrol/resetpassword`,
+        `https://www.technicalsewa.com/techsewa/publiccontrol/resetpassword`,
         data
       )
       .then(({ data }) => {
