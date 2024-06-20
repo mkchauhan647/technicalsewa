@@ -1,7 +1,7 @@
 "use client";
 import axios from "axios";
 import React, { useEffect, useMemo, useState } from "react";
-import { BsNewspaper } from "react-icons/bs";
+import { BsFillTelephoneFill, BsNewspaper } from "react-icons/bs";
 import { useParams } from "next/navigation";
 import { AiFillStar } from "react-icons/ai";
 import { url } from "inspector";
@@ -123,18 +123,30 @@ const ChildService = ({ data }: any) => {
                               {decodeURIComponent(params["child-service-slug"])}
                             </span>{" "}
                           </h3>
-                          <h3 className="max-w-[637px] text-white leading-[1.5] tracking-[1px] md:text-[30px] text-[24px] font-bold">
+                          <h3 className="md:w-[66%] text-white leading-[1.5] tracking-[1px] md:text-[30px] text-[24px] font-bold">
                             {childService?.title}
                           </h3>
                         </div>
 
-                        <div className="w-[200px] h-[45px] bg-[#1D738D] flex itmes-center  text-white py-[5px] px-[15px] rounded-[6px] mt-[5px]">
-                          <AiFillStar size={30} />
-                          <p className="pl-[10px] text-[24px] font-semibold">
-                            4.65
-                          </p>
-                          <p className="pl-[5px] self-end mb-[5px]">Out of 5</p>
-                        </div>
+                        <div className="flex flex-row gap-[10px]">
+                      <div className="w-[200px] h-[45px] bg-[#1D738D] flex itmes-center text-white py-[5px] px-[15px] rounded-[6px] mt-[5px]">
+                        <AiFillStar size={30} />
+                        <p className="pl-[10px] text-[24px] font-semibold">
+                          4.65
+                        </p>
+                        <p className="pl-[5px] self-end mb-[5px]">Out of 5</p>
+                      </div>
+                      <a
+                        href="tel:9851201580"
+                        className="flex items-center justify-center bg-white gap-[8px] h-[45px] w-[180px] border border-[#2591B2] rounded-[6px] text-[#1D738D] mt-[5px]"
+                      >
+                        <BsFillTelephoneFill
+                          className="text-primary"
+                          size={20}
+                        />
+                        9851201580
+                      </a>
+                    </div>
 
                         <div className="flex flex-col mt-[11px]  md:gap-[14px] ">
                           <div className="flex items-center">
@@ -153,7 +165,8 @@ const ChildService = ({ data }: any) => {
                   </div>
 
                   {/* side hire a expert div  */}
-                  <div className="w-[30%] lg:px-4 z-40  md:absolute md:top-[100px] md:right-14   xl:right-4 2xl:right-28">
+                  {/* <div className="w-[30%] lg:px-4 z-40  lg:absolute md:top-[100px] md:right-14   xl:right-4 2xl:right-28"> */}
+                  <div className="w-[30%] lg:px-4 z-40 lg:absolute top-5 right-[5%]">
                     <div className="bg-primary rounded-md shadow-md w-[340px]  md:w-[355px] p-4 lg:fixed  ">
                       {finalData?.map((val: any, index: any) => {
                         return (

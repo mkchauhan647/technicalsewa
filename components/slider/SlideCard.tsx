@@ -85,9 +85,8 @@ const SlideCard = ({ length, data, top }: any) => {
               </p>
               <p
                 className="text-[12px] text-[#000000] px-2 text-center truncate line-clamp-2 whitespace-normal"
-                dangerouslySetInnerHTML={{ __html: ele.prod_sec_content ?? "" }}
               >
-                {/* {ele.title} */}
+                {ele.title}
               </p>
             </a>
           </div>

@@ -25,7 +25,7 @@ export default function ServiceSlider({
       <b className="text-primary font-bold text-[20px] mb-[12px] mt-[5px]">
         {service}
       </b>
-      <Slider data={data || []} top={topSliders} />
+      <Slider data={data} top={topSliders} />
     </div>
   );
 }
