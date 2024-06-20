@@ -52,14 +52,16 @@ export default function ServicesSLiders({
           topSliders
         />
       )}
+      
       {popularBrandsServices.length && (
         <ServiceSlider
-          index={0}
+          index={2}
           service={popularBrand?.name}
           data={popularBrandsServices}
           topSliders
         />
       )}
+
       {warrantyRepairServices.length && (
         <ServiceSlider
           index={1}
@@ -68,15 +70,18 @@ export default function ServicesSLiders({
           topSliders
         />
       )}
+
       {Array.from({ length: numberOfPairs }, (_, index) => {
         const brand1 = index * 2;
         const brand2 = index * 2 + 1;
         const brand1Services = data?.filter(
           (d: any) => +d?.brand_id === pairBrands[brand1]?.id
         );
+
         const brand2Services = data?.filter(
           (d: any) => +d?.brand_id === pairBrands[brand2]?.id
         );
+
         return (
           <div
             key={index}

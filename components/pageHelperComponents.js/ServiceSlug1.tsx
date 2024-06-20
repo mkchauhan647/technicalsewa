@@ -86,7 +86,7 @@ const ServiceSlug1 = ({ data }: any) => {
                           {val?.product_name}
                         </span>
                       </h3>
-                      <h3 className="w-[308px] md:w-[576px] text-white leading-[1.5] tracking-[1px] md:text-[27px] text-[20px] font-bold">
+                      <h3 className="md:w-[66%] text-white leading-[1.5] tracking-[1px] md:text-[27px] text-[20px] font-bold">
                         {val?.title}
                       </h3>
                     </div>
@@ -128,8 +128,8 @@ const ServiceSlug1 = ({ data }: any) => {
               </div>
 
               {/* side select product category  */}
-              <div className="w-[30%] lg:px-4 z-40 md:absolute top-5 right-[7%] 2xl:right-[10%] ">
-                <div className="bg-primary rounded-md shadow-md w-[340px] md:w-[355px] p-4 lg:fixed ">
+              <div className="w-[30%] lg:px-4 z-40 lg:absolute top-5 right-[5%]">
+                <div className="bg-primary rounded-md shadow-md w-[340px] md:w-[355px] p-4 lg:fixed">
                   <h3 className="text-white mb-4 text-[24px] font-medium text-center ">
                     Select product Category
                   </h3>
