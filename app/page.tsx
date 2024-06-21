@@ -43,15 +43,6 @@ export default async function Home() {
         <HeroSection />
         <Categories allBrands={allBrands} />
         <ServicesSLiders brands={Array.from(brands)} data={allBrands} />
-
-        {/*
-        <MedicalEquipment medicalEquipmentData={medicalEquipmentData} /> 
-        <ElectricianPlumbers
-          computerPrinterData={computerPrinterData}
-          electiricianPlumbersData={electiricianPlumbersData}
-        />
-        */}
-
         <Number />
         <WhyChooseUs />
         <MidContent />

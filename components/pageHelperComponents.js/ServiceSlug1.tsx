@@ -9,11 +9,23 @@ import { useRouter } from "next/navigation";
 import { baseUrl } from "@/public/baseUrl";
 import ServiceReviews from "@/features/service/reviews";
 import { BsFillTelephoneFill } from "react-icons/bs";
+import { FaMinus, FaPlus } from "react-icons/fa";
 
 const ServiceSlug1 = ({ data }: any) => {
   //state variable
   // const [data, setData] = useState<any>(null);
   const [selectCategoryData, setSelectCategoryData] = useState<any>();
+
+  // handling FAQ state.
+  const [faqData, setFaqData] = useState([]);
+  console.log(faqData);
+  const [openIndex, setOpenIndex] = useState(0);
+
+  // FAQ toggle function
+  const handleToggle = (index: number) => {
+    setOpenIndex(index === openIndex ? 0 : index);
+  };
+
   const params = useParams(); // getting params from URL
   const router = useRouter();
 
@@ -26,6 +38,21 @@ const ServiceSlug1 = ({ data }: any) => {
 
   // filtering product_id from data
   const filteredId: any = filterData?.map((element: any) => element.product_id);
+
+  const FAQ = async () => {
+    const formData = new FormData();
+    formData.append("product_id", filteredId);
+
+    const result = await axios
+      .post(`${baseUrl}/techsewa/publicControl/publicfaq/getFaqList`, formData)
+      .then((res) => res?.data.list);
+
+    setFaqData(result);
+  };
+
+  useEffect(() => {
+    FAQ();
+  }, [data]);
 
   // =====data fetched for selectProductCategory====
   const fetchedData1 = async () => {
@@ -151,13 +178,41 @@ const ServiceSlug1 = ({ data }: any) => {
               </div>
 
               {/* description of product paragraph  */}
-              <div className="my-[50px] max-w-[1280px] mx-auto px-[2px]">
+              {/* <div className="my-[50px] max-w-[1280px] mx-auto px-[2px]">
                 <div
                   className="flex text-justify md:w-[66%] flex-col gap-2 service"
                   dangerouslySetInnerHTML={{ __html: val?.content }}
                 />
-              </div>
+              </div> */}
+              
             </div>
+
+            {/* FAQ Part. */}
+            <div className="my-[50px] max-w-[1280px] mx-auto px-[2px]">
+              <span className="text-xl font-bold">Frequently Asked Question.</span>
+                {faqData?.map((item: any, index) => (
+                  <div key={index} className="md:w-[66%] my-5">
+                    <div
+                      className="flex justify-between items-center w-full text-left focus:outline-none"
+                      onClick={() => handleToggle(index)}
+                    >
+                      <span className="text-[16px] font-bold">
+                       {item.question}
+                      </span>
+                      <span>
+                        {openIndex === index ? (
+                          <FaMinus className="w-5 h-5 text-[#1D738D]" />
+                        ) : (
+                          <FaPlus className="w-5 h-5 text-[#1D738D]" />
+                        )}
+                      </span>
+                    </div>
+                    {openIndex === index && (
+                      <div className="mt-2 text-gray-700">{item.answer}</div>
+                    )}
+                  </div>
+                ))}
+              </div>
 
             <ServiceReviews productId={filteredId} />
           </>
