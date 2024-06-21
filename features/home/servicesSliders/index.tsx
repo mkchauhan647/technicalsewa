@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import ServiceSlider from "./slider";
 import Slider from "@/components/slider/Slider";
@@ -16,6 +18,9 @@ export default function ServicesSLiders({
   pairBrands = pairBrands.filter((b: any) => b?.id !== 62);
   pairBrands = pairBrands.filter((b: any) => b?.id !== 76);
   pairBrands = pairBrands.filter((b: any) => b?.id !== 61);
+  pairBrands = pairBrands.filter((b: any) => b?.id !== 67);
+  // remove E-Commerce since it doesn't have image associated with it.
+  pairBrands = pairBrands.filter((b: any) => b?.id !== 78);
 
   const numberOfPairs = Math.ceil(pairBrands.length / 2);
 
@@ -28,10 +33,14 @@ export default function ServicesSLiders({
   const popularBrandsServices = [...data]?.filter(
     (d: any) => +d?.brand_id === 76 // specified id for "Popular Brands Repair"
   );
+  const medicalEquipmentServices  = [...data]?.filter(
+    (d: any) => +d?.brand_id === 67 // specified id for "Medical Equipment Repair"
+  );
 
   const popularBrand = brands?.find((b: any) => b?.id === 76);
   const applianceRepair = brands?.find((b: any) => b?.id === 62);
   const warrantyRepair = brands?.find((b: any) => b?.id === 61);
+  const medicalEquipmentRepair = brands?.find((b: any) => b?.id === 67);
 
   return (
     <>
@@ -46,16 +55,16 @@ export default function ServicesSLiders({
       ]} */}
       {appliancesServices.length && (
         <ServiceSlider
-          index={1}
+          index={2}
           service={applianceRepair?.name}
           data={appliancesServices}
           topSliders
         />
       )}
-      
+
       {popularBrandsServices.length && (
         <ServiceSlider
-          index={2}
+          index={1}
           service={popularBrand?.name}
           data={popularBrandsServices}
           topSliders
@@ -64,9 +73,18 @@ export default function ServicesSLiders({
 
       {warrantyRepairServices.length && (
         <ServiceSlider
-          index={1}
+          index={2}
           service={warrantyRepair?.name}
           data={warrantyRepairServices}
+          topSliders
+        />
+      )}
+
+      {medicalEquipmentServices.length && (
+        <ServiceSlider
+          index={1}
+          service={medicalEquipmentRepair?.name}
+          data={medicalEquipmentServices}
           topSliders
         />
       )}
@@ -85,7 +103,9 @@ export default function ServicesSLiders({
         return (
           <div
             key={index}
-            className={`w-full ${index % 2 === 0 ? "md:bg-[#efefef]" : "bg-white"}`}
+            className={`w-full ${
+              index % 2 === 0 ? "md:bg-[#efefef]" : "bg-white"
+            }`}
           >
             <div
               key={index}
