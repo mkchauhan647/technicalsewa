@@ -178,17 +178,17 @@ const ServiceSlug1 = ({ data }: any) => {
               </div>
 
               {/* description of product paragraph  */}
-              {/* <div className="my-[50px] max-w-[1280px] mx-auto px-[2px]">
+              <div className="my-[50px] max-w-[1280px] mx-auto px-[2px]">
                 <div
                   className="flex text-justify md:w-[66%] flex-col gap-2 service"
                   dangerouslySetInnerHTML={{ __html: val?.content }}
                 />
-              </div> */}
+              </div>
               
             </div>
 
             {/* FAQ Part. */}
-            <div className="my-[50px] max-w-[1280px] mx-auto px-[2px]">
+            <div className="mb-[50px] max-w-[1280px] mx-auto px-[2px]">
               <span className="text-xl font-bold">Frequently Asked Question.</span>
                 {faqData?.map((item: any, index) => (
                   <div key={index} className="md:w-[66%] my-5">
