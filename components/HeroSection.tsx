@@ -9,22 +9,28 @@ import Search from "./Search";
 import { baseUrl } from "@/public/baseUrl";
 
 const HeroSection = async () => {
+  const banner = await fetch(
+    `${baseUrl}/techsewa/masterconfig/publicmasterconfig/getConfigList`
+  ).then((res) => res.json());
 
-  const banner = await fetch(`${baseUrl}/techsewa/masterconfig/publicmasterconfig/getConfigList`).then((res)=>res.json());
+  const banners = banner.brands.filter(
+    (item: any) => item.image_type === "banner"
+  );
+  const currentbanner = banners[Math.floor(Math.random() * 3)];
 
   return (
     <>
       <div className="hero-section">
         <div className="hidden relative image-banner-container md:flex">
-          <Image
-            className="w-full h-[240px] object-cover "
-            src={banner?.brands[0].image_url}
-            // layout="responsive"
-            alt="banner"
-            width={1000}
-            height={240}
-          />
-          <div className=" absolute top-0 left-[50%] translate-x-[-50%] bg-white/[0.85] h-[240px] w-[720px] ">
+          <div className="w-full h-[250px]">
+            <Image
+              className="object-cover"
+              src={currentbanner.image_url}
+              alt={currentbanner.alt}
+              layout="fill" // Use layout="fill" for responsive behavior
+            />
+          </div>
+          <div className=" absolute top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] bg-white/[0.85] h-[210px] w-[690px] ">
             <h1 className="text-primary text-[20px] leading-[60.94px] font-medium text-center pl-[124.5px] mt-5 pr-[125.5px] ">
               Professional Repair Services On Demand
             </h1>
@@ -43,15 +49,15 @@ const HeroSection = async () => {
           </div>
         </div>
         <div className="md:hidden relative image-banner-container">
-          <Image
-            className="w-full h-[164px] object-cover relative"
-            src={banner?.brands[0].image_url}
-            // layout="responsive"
-            alt="banner"
-            width={1000}
-            height={164}
-          />
-          <div className=" absolute top-0 left-[50%] translate-x-[-50%] bg-white/[0.8] w-full ">
+          <div className="relative w-full h-[164px]">
+            <Image
+              className="object-cover object-center"
+              src={currentbanner.image_url}
+              alt={currentbanner.alt}
+              layout="fill" // Use layout="fill" for responsive behavior
+            />
+          </div>
+          <div className=" absolute top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] bg-white/[0.85] w-full ">
             <h1 className="text-primary text-[20px] font-bold text-center px-[5px]">
               Professional Repair Services On Demand
             </h1>
