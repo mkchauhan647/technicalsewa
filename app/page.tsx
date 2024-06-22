@@ -65,11 +65,11 @@ export async function generateMetadata() {
 
   if (seoExists) {
     return {
-      title: `${seoExists ? seoContent?.page_title : "Technical sewa"} `,
+      title: `${seoContent?.page_title} `,
       description: `${seoContent?.description}`,
       keywords: `${seoContent?.key_words}`,
       openGraph: {
-        title: `${seoExists ? seoContent?.page_title : "Technical sewa"} `,
+        title: `${seoContent?.page_title} `,
         description: `${seoContent?.description} `,
         url: seoContent?.page_url,
         type: "website",
