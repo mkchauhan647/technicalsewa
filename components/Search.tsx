@@ -1,3 +1,4 @@
+"use client";
 import { baseUrl } from "@/public/baseUrl";
 import React, { useEffect, useState } from "react";
 import { BsSearch } from "react-icons/bs";
@@ -48,7 +49,7 @@ const Search = ({ isTopNav }: { isTopNav?: boolean }) => {
   }, [searchText, services]);
 
   return (
-    <div className="flex gap-4 w-full">
+    <div className={`flex gap-4 ${!isTopNav && "md:w-2/3 w-3/4"} `}>
       <Autocomplete
         disablePortal
         options={suggestions}

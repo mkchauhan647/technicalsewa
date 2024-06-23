@@ -144,9 +144,9 @@ const Nav = () => {
           </div>
           <a
             href="tel:9851201580"
-            className="flex items-center justify-center px-1  gap-[5px] h-[45px] w-[150px] border border-[#2591B2] rounded-[4px] text-black"
+            className="flex items-center justify-center px-1  gap-[5px] h-[40px] w-[130px] border border-[#2591B2] rounded-[4px] text-sm text-black"
           >
-            <BsFillTelephoneFill className="text-primary" size={20} />
+            <BsFillTelephoneFill className="text-primary" size={15} />
             9851201580
           </a>
 
