@@ -124,31 +124,41 @@ const Nav = () => {
               alt="logo"
             />
           </a>
-          {/* <div
+
+         
+         <div
             className={`${
               showinput || !isHomePage ? "max-md:w-72 md:!w-80" : "hidden"
             } `}
           >
             <Search isTopNav />
           </div>
+                  
+          {!showinput ? <a
+              href="tel:9851201580"
+              className={`flex items-center justify-center px-1  gap-[5px] h-[40px] w-[130px] border border-[#2591B2] rounded-[4px] text-sm text-black  `}
+            >
+              <BsFillTelephoneFill className="text-primary" size={20} />
+              9851201580
+            </a>: <a
+              href="tel:9851201580"
+              className={`hidden md:flex items-center justify-center px-1  gap-[5px] h-[40px] w-[130px] border border-[#2591B2] rounded-[4px] text-sm text-black  `}
+            >
+              <BsFillTelephoneFill className="text-primary" size={20} />
+              9851201580
+            </a>}
         
-          {!showinput ?  <a
-                href="tel:9851201580"
-                className="flex items-center justify-center  gap-[5px] h-[45px] w-[150px] border border-[#2591B2] rounded-[4px] text-black"
-              >
-                <BsFillTelephoneFill className="text-primary" size={20} />
-                9851201580
-              </a>: <></>} */}
-          <div className="max-md:w-72 md:!w-80">
+
+          {/* <div className="max-md:w-72 md:!w-80">
             <Search isTopNav />
           </div>
           <a
             href="tel:9851201580"
-            className="flex items-center justify-center px-1  gap-[5px] h-[40px] w-[130px] border border-[#2591B2] rounded-[4px] text-sm text-black"
+            className="flex items-center justify-center px-1  gap-[5px] h-[45px] w-[150px] border border-[#2591B2] rounded-[4px] text-black"
           >
-            <BsFillTelephoneFill className="text-primary" size={15} />
+            <BsFillTelephoneFill className="text-primary" size={20} />
             9851201580
-          </a>
+          </a> */}
 
           <div className="nav-links  hidden md:flex items-center gap-4 text-[#505056] ">
             <div className="group">
