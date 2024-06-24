@@ -14,7 +14,7 @@ import ClientsSlider from "@/features/home/clients";
 
 export default async function Home() {
   const result = await fetchServerClient(
-    `/techsewa/masterconfig/publicmasterconfig/getSliderListpop1`
+    `techsewa/masterconfig/publicmasterconfig/getSliderListpop1`
   );
   let allBrands = result?.brands;
   // allBrands?.sort((a: any, b: any) => +a?.brand_id - +b?.brand_id);
