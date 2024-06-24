@@ -7,6 +7,7 @@ import { IoLocationOutline, IoLocationSharp } from "react-icons/io5";
 import axios from "axios";
 import "./footer.css";
 import Link from "next/link";
+import Locations from "./Locations";
 const Footer = () => {
   const [description, setDescription] = useState("");
 
@@ -26,121 +27,8 @@ const Footer = () => {
       <div className="relative bg-primary">
         <div className="py-[10px]   max-w-[1280px] mx-auto">
           {/* heading of footer */}
-
-          <div className=" border border-solid border-white font-semibold text-[12px] md:text-base leading-[19px] text-[#FFF] font-Roboto text-center bg-primary shadow-xl max-w-[300px] flex justify-center items-center px-[40px] h-[43px] absolute left-[50%] tranform translate-x-[-50%] top-[-4%] md:top-[-9%] rounded-md">
-            We Are Available in
-          </div>
-          {/* link of location */}
-          <div className="">
-            <div className=" font-Roboto font-normal text-[12px] md:text-base leading-[24px] text-[#FFF] pt-[8px]">
-              <div className="grid grid-cols-4 md:grid-cols-9 px-[10px] md:px-[0px] gap-[10px] my-2">
-                <Link
-                  prefetch={false}
-                  href="/about"
-                  className="hover:underline"
-                >
-                  Kathmandu
-                </Link>
-                <Link
-                  prefetch={false}
-                  href="/about"
-                 className="hover:underline"
-                >
-                  Lalitpur
-                </Link>
-                <Link
-                  prefetch={false}
-                  href="/about"
-                  className="hover:underline"
-                >
-                  Bhaktapur
-                </Link>
-                <Link
-                  prefetch={false}
-                  href="/about"
-                className="hover:underline"
-                >
-                  Pokhara
-                </Link>
-                <Link
-                  prefetch={false}
-                  href="/about"
-                    className="hover:underline"
-                >
-                  Narayanghat
-                </Link>
-                <Link
-                  prefetch={false}
-                  href="/about"
-                  className="hover:underline"
-                >
-                  Nepalgunj
-                </Link>
-                <Link
-                  prefetch={false}
-                  href="/about"
-                   className="hover:underline"
-                >
-                  Biratnagar
-                </Link>
-                <Link
-                  prefetch={false}
-                  href="/about"
-               className="hover:underline"
-                >
-                  Dharan
-                </Link>
-                <Link
-                  prefetch={false}
-                  href="/about"
-                className="hover:underline"
-                >
-                  Hetauda
-                </Link>
-                <Link
-                  prefetch={false}
-                  href="/about"
-                  className="hover:underline"
-                >
-                  Birtamode
-                </Link>
-                <Link
-                  prefetch={false}
-                  href="/about"
-                  className="hover:underline"
-                >
-                  Damak
-                </Link>
-                <Link
-                  prefetch={false}
-                  href="/about"
-                className="hover:underline"
-                >
-                  Chapur
-                </Link>
-                <Link
-                  prefetch={false}
-                  href="/about"
-                      className="hover:underline"
-                >
-                  Mahendranagar
-                </Link>
-                <Link
-                  prefetch={false}
-                  href="/about"
-                  className="hover:underline"
-                >
-                  Dhangadi
-                </Link>
-                <Link prefetch={false} href="/about">
-                sindupalchowk
-                </Link>
-              </div>
-            </div>
-
-            {/* direction  */}
-            <div className="flex flex-1 justify-center items-center"></div>
-          </div>
+          <Locations />
+          
           <hr />
           {/* Next Foter */}
           <div className="flex flex-col md:flex-row md:items-center justify-between  mt-[10px] gap-4 px-[10px] md:px-[0px]">

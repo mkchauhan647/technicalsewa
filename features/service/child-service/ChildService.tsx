@@ -1,6 +1,6 @@
 "use client";
 import axios from "axios";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { BsFillTelephoneFill, BsNewspaper } from "react-icons/bs";
 import { useParams } from "next/navigation";
 import { AiFillStar } from "react-icons/ai";
@@ -35,7 +35,7 @@ const ChildService = ({ data }: any) => {
     );
     setSelectCategoryData(result?.data);
   };
-  useEffect(() => {
+  useMemo(() => {
     fetchedData1();
   }, [data]);
   //  ===============================
@@ -58,14 +58,14 @@ const ChildService = ({ data }: any) => {
     setServiceCategoryData(result?.data);
   };
 
-  useEffect(() => {
+  useMemo(() => {
     serviceDataFetched();
   }, [selectCategoryData]);
   // ==================================================
   const { setInquiryData } = useComplainFormStore();
 
   // prp inquiry form data
-  useEffect(() => {
+  useMemo(() => {
     const item = data?.find(
       (val: any) => val.url_product_name === params.slug1
     );
@@ -82,7 +82,7 @@ const ChildService = ({ data }: any) => {
 
   const childService = finalData?.[0];
 
-  useEffect(() => {
+  useMemo(() => {
     if (Array.isArray(filterData) && filterData.length === 0) {
       router.push("/");
     }

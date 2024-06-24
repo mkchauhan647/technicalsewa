@@ -191,7 +191,7 @@ const ServiceSlug1 = ({ data }: any) => {
             <div className="mb-[50px] max-w-[1280px] mx-auto px-[2px]">
               <span className="text-xl font-bold">Frequently Asked Question.</span>
                 {faqData?.map((item: any, index) => (
-                  <div key={index} className="md:w-[66%] my-5">
+                  <div key={index} className="md:w-[66%] md:mx-0 mx-4 my-5">
                     <div
                       className="flex justify-between items-center w-full text-left focus:outline-none"
                       onClick={() => handleToggle(index)}

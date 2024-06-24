@@ -1,7 +1,7 @@
 "use client";
 
 import Image from 'next/image';
-import React, { memo, useEffect, useState } from 'react'
+import React, { memo, useMemo, useState } from 'react'
 
 const HeroCarousel = ({banners}:any) => {
     const [banner, setBanner] = useState(0);
@@ -15,11 +15,11 @@ const HeroCarousel = ({banners}:any) => {
         }
       }
 
-      useEffect(() => {
+      useMemo(() => {
         const interval = setInterval(handlebanner, 5000);
         // Cleanup interval on component unmount
         return () => clearInterval(interval);
-      }, []);
+      }, [banner]);
 
   return (
     <>
