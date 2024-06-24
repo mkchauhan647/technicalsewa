@@ -18,7 +18,6 @@ const ServiceSlug1 = ({ data }: any) => {
 
   // handling FAQ state.
   const [faqData, setFaqData] = useState([]);
-  console.log(faqData);
   const [openIndex, setOpenIndex] = useState(0);
 
   // FAQ toggle function
@@ -108,9 +107,9 @@ const ServiceSlug1 = ({ data }: any) => {
                   <div className=" max-w-[1280px] mx-auto px-[14px] md:px-[2px]">
                     <div className="flex flex-col">
                       <h3 className="text-[#cdcecf] font-[600] text-[16px] ">
-                        {val?.brand_name} /
+                        {val?.brand_name.toLowerCase()} /
                         <span className="text-white font-[600] text-[16px]">
-                          {val?.product_name}
+                          {val?.product_name.toLowerCase()}
                         </span>
                       </h3>
                       <h3 className="md:w-[66%] text-white leading-[1.5] tracking-[1px] md:text-[27px] text-[20px] font-bold">
@@ -119,20 +118,20 @@ const ServiceSlug1 = ({ data }: any) => {
                     </div>
 
                     <div className="flex flex-row gap-[10px]">
-                      <div className="w-[200px] h-[45px] bg-[#1D738D] flex itmes-center text-white py-[5px] px-[15px] rounded-[6px] mt-[5px]">
-                        <AiFillStar size={30} />
-                        <p className="pl-[10px] text-[24px] font-semibold">
+                      <div className="w-[200px] h-[40px] bg-[#1D738D] flex itmes-center text-white py-[5px] px-[15px] rounded-[6px] mt-[5px]">
+                        <AiFillStar size={26} />
+                        <p className="pl-[10px] text-[20px] font-semibold">
                           4.65
                         </p>
                         <p className="pl-[5px] self-end mb-[5px]">Out of 5</p>
                       </div>
                       <a
                         href="tel:9851201580"
-                        className="flex items-center justify-center bg-white gap-[8px] h-[45px] w-[180px] border border-[#2591B2] rounded-[6px] text-[#1D738D] mt-[5px]"
+                        className="flex items-center justify-center bg-white gap-[8px] h-[40px] w-[160px] border border-[#2591B2] rounded-[6px] text-[#1D738D] mt-[5px]"
                       >
                         <BsFillTelephoneFill
                           className="text-primary"
-                          size={20}
+                          size={18}
                         />
                         9851201580
                       </a>
@@ -142,7 +141,7 @@ const ServiceSlug1 = ({ data }: any) => {
                       <div className="flex gap-2 items-center">
                         <div className="flex gap-2 items-center">
                           <div
-                            className="flex pb-4 text-white text-justify flex-col gap-1 md:gap-3 text-[16px] listpoint"
+                            className="flex pb-4 text-white text-justify flex-col gap-1 md:gap-3 text-[14px] listpoint"
                             dangerouslySetInnerHTML={{
                               __html: val?.product_desc,
                             }}
