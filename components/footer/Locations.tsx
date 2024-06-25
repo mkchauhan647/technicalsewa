@@ -23,8 +23,7 @@ const Locations = async () => {
               key={place?.id}
                 prefetch={false}
                 href={{
-                  pathname: `/location/${place?.location?.toLowerCase()}`,
-                  query:place?.description?.toLowerCase()  
+                  pathname: `/location/technicalsewa-service-center-${place?.location?.toLowerCase()} `
                 }}
                 className="hover:underline"
               >
