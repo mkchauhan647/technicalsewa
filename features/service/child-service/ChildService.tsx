@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 import { baseUrl } from "@/public/baseUrl";
 import ComplainForm from "@/features/complain/complain-form/complainForm";
 import useComplainFormStore from "@/store/useComplainInquiryStore";
+import Faqlist from "../Faqlist";
 
 const ChildService = ({ data }: any) => {
   const [complainForm, setComplainForm] = useState(false);
@@ -223,6 +224,7 @@ const ChildService = ({ data }: any) => {
                 </div>
               );
             })}
+            <Faqlist filteredId = {filteredId} />
         </div>
       ) : (
         <ComplainForm />

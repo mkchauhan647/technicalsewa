@@ -22,7 +22,10 @@ const Locations = async () => {
               <Link
               key={place?.id}
                 prefetch={false}
-                href={`/location/${place?.location?.toLowerCase()}`}
+                href={{
+                  pathname: `/location/${place?.location?.toLowerCase()}`,
+                  query:place?.description?.toLowerCase()  
+                }}
                 className="hover:underline"
               >
                 {place?.location}
