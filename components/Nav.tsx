@@ -7,17 +7,12 @@ import {
   HiMiniWrenchScrewdriver,
 } from "react-icons/hi2";
 import { FaBars, FaHome, FaTimes } from "react-icons/fa";
-import { IoIosNotifications, IoMdCall } from "react-icons/io";
 import { LiaBlogSolid } from "react-icons/lia";
 import { BsFillPersonCheckFill, BsFillTelephoneFill } from "react-icons/bs";
-import { BsSearch } from "react-icons/bs";
 import { MdLogin, MdOutlineHomeRepairService } from "react-icons/md";
-import { BiSolidInfoCircle } from "react-icons/bi";
 import { CgProfile } from "react-icons/cg";
 import { LuMailWarning } from "react-icons/lu";
 import { MdModelTraining } from "react-icons/md";
-import useLocalstorage from "./HelperFuncion/useLocalstorage";
-import axios from "axios";
 import useAuthStore from "@/store/useAuthStore";
 import Search from "./Search";
 import { usePathname } from "next/navigation";
@@ -35,7 +30,7 @@ interface ServiceCategory {
   alt: string;
 }
 
-const Nav = () => {
+const Nav = ({services,trainingCategories:categories}:any) => {
   //state for navbar
   const [nav, setNav] = useState(false);
   const [showinput, setShowinput] = useState(false);
@@ -80,38 +75,6 @@ const Nav = () => {
     setNav(false);
   };
 
-  // gettrainingcategories
-  const [categories, setCategories] = useState<TrainingCategory[]>([]);
-
-  // service categories
-  const [services, setServices] = useState<ServiceCategory[]>([]);
-
-  const getCategories = async () => {
-    axios
-      .get(
-        "https://www.technicalsewa.com/techsewa/publiccontrol/publicmasterconfig/gettrainingcategories"
-      )
-      .then((res) => {
-        setCategories(res.data);
-      });
-  };
-
-  // services categories
-  const getServicesCategories = async () => {
-    axios
-      .get(
-        "https://www.technicalsewa.com/techsewa/masterconfig/publicmasterconfig/getServiceList"
-      )
-      .then((res) => {
-        setServices(res?.data?.brands);
-      });
-  };
-
-  useEffect(() => {
-    getCategories();
-    getServicesCategories();
-  }, []);
-
   return (
     <>
       <div className="sticky top-0 z-50 bg-white">
@@ -125,13 +88,14 @@ const Nav = () => {
             />
           </a>
 
-         
          <div
             className={`${
               showinput || !isHomePage ? "max-md:w-72 md:!w-80" : "hidden"
             } `}
           >
-            <Search isTopNav />
+            <div onClick={()=> setShowinput(true)}>
+              <Search isTopNav />
+            </div>
           </div>
                   
           {!showinput ? <a
@@ -170,7 +134,7 @@ const Nav = () => {
                   <div className="absolute z-10 mt-0 bg-white rounded-md shadow-lg md:w-[350px]">
                     <div className="py-1 max-h-[400px] overflow-y-auto ">
                       <div className="py-1"></div>
-                      {categories?.map((cat, i) => {
+                      {categories?.map((cat:TrainingCategory, i:number) => {
                         const slug = cat?.text?.replace(" ", "-").toLowerCase();
                         return (
                           <a
@@ -199,7 +163,7 @@ const Nav = () => {
                 <div className="absolute z-10 mt-0 bg-white rounded-md shadow-lg md:w-[350px]">
                   <div className="py-1 max-h-[400px] overflow-y-auto">
                     <div className="py-2"></div>
-                    {categories.map((cat, i) => {
+                    {categories?.map((cat:TrainingCategory, i:number) => {
                       const slug = `/blogs/${cat?.text
                         ?.replaceAll(" ", "-")
                         .toLowerCase()}/${cat?.value}`;
@@ -225,11 +189,10 @@ const Nav = () => {
               <div className="hidden group-hover:block">
                 <div className="absolute z-10 mt-0 bg-white rounded-md shadow-lg md:w-[350px]">
                   <div className="py-1 max-h-[400px] overflow-y-auto">
-                    {services.map((service, i) => {
+                    {services?.map((service:ServiceCategory) => {
                       return (
-                        <div key={i}>
+                        <div key={service?.brand_id}>
                           <a
-                            key={i}
                             href={`/service#service_${service?.brand_id}`}
                             className="py-1"
                           >

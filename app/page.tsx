@@ -11,6 +11,7 @@ import MidContent2 from "@/features/home/MidContent2";
 import { fetchServerClient, getSEOByPageURL } from "@/lib/api";
 import ServicesSLiders from "@/features/home/servicesSliders";
 import ClientsSlider from "@/features/home/clients";
+import axios from "axios";
 
 export default async function Home() {
   const result = await fetchServerClient(
@@ -35,10 +36,26 @@ export default async function Home() {
 
   brands?.sort((a: any, b: any) => a?.order - b?.order);
   // ===============================
+  const services = await axios
+    .get(
+      "https://www.technicalsewa.com/techsewa/masterconfig/publicmasterconfig/getServiceList"
+    )
+    .then((res) => {
+      //set others brands and removing E-Commerce since it doesn't have image associated with it.
+      return res?.data?.brands.filter((b: any) => b?.brand_id !== "78");
+    });
+
+  // gettrainingcategories
+  const trainingCategories = await axios.get(
+      "https://www.technicalsewa.com/techsewa/publiccontrol/publicmasterconfig/gettrainingcategories"
+    )
+    .then((res) => {
+      return res.data;
+    });
 
   return (
     <>
-      <Nav />
+      <Nav services={services} trainingCategories={trainingCategories} />
       <main>
         <HeroSection />
         <Categories allBrands={allBrands} />
@@ -57,8 +74,8 @@ export default async function Home() {
 
 export async function generateMetadata() {
   // fetch seo data for page based on slug
-  const seoData = await getSEOByPageURL(`https://www.technicalsewa.com/`);
-
+  const seoData = await getSEOByPageURL(`https://www.technicalsewa.com`);
+ console.log(seoData)
   const seoExists = seoData?.content && !Array.isArray(seoData?.content);
 
   const seoContent = seoData?.content;

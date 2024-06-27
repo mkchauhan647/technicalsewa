@@ -117,38 +117,21 @@ export async function getBlogsByCategoryId(id: string) {
 // get seo by page url
 
 export async function getSEOByPageURL(url: string) {
-  try {
-    const SEO_BASE_URL = "https://www.technicalsewa.com";
-    // const res = await fetch(
-    //   `${baseUrl}/techsewa/publiccontrol/publicmasterconfig/getSeoContent?url=${url}`,
-    //   {
-    //     headers: {
-    //       "Cache-Control": `max-age=${600}`, // max 10min cache
-    //     },
-    //   }
-    // );
+  const SEO_BASE_URL = "https://www.technicalsewa.com";
+ 
+const params = {
+  url: url,
+  };
 
-    // return res.json();
-
-    const fdata = new FormData();
-    if (isURL(url)) {
-      fdata.append("url", url);
-    } else {
-      console.log("request ing url  ? ", `${SEO_BASE_URL}${url}`);
-      fdata.append("url", `${SEO_BASE_URL}${url}`);
-    }
-
-    const res = await fetchServerClient(
-      `/techsewa/publiccontrol/publicmasterconfig/getSeoContent`,
-      {
-        method: "POST",
-        body: fdata,
-      }
-    );
-    return res;
-  } catch (error) {
-    return { error: true };
+const res = axios.get(`${baseUrl}/techsewa/publiccontrol/publicmasterconfig/getSeoContent`, {
+  params: params,
+  headers: {
+    'Content-Type': 'application/json',
   }
+}).then(response => response.data)
+
+return res
+
 }
 
 function isURL(str: string) {

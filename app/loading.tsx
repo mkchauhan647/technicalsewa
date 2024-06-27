@@ -1,10 +1,18 @@
+import Image from 'next/image';
 import React from 'react'
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 
 const loading = () => {
   return (
-    <div className='w-full h-[100vh] flex justify-center items-center'> <AiOutlineLoading3Quarters size={100} /> </div>
+    <div className='w-full h-[100vh] flex flex-col justify-center items-center gap-2'> 
+    <Image
+    src="/assets/tslogo-final1.png"
+    height={200}
+    width={200}
+    alt="logo"
+  />
+    <h1 className='text-2xl text-primary'>Please Wait...</h1>
+    </div>
   )
 }
 
