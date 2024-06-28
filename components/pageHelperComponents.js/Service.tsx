@@ -14,12 +14,14 @@ interface ServiceItem {
 
 const Service = ({ services, data = [] }: any) => {
   const [activeviewId, setActiveviewId] = useState<number>(0);
-
-  const servicesList = services.map((i: any) => ({
+ 
+  let servicesList = services.map((i: any) => ({
     name: i?.brand_name,
     id: +i?.brand_id,
     icon: i?.image_url,
   })) as ServiceItem[];
+  // removing E_commerce from the list.
+  servicesList = servicesList.filter((b: any) => b?.id !== 78);
 
   const activeService = servicesList.find((s) => s.id === activeviewId);
   const activeServiceData = [...data]?.filter(

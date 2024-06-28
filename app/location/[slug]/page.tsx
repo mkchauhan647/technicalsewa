@@ -4,6 +4,7 @@ import Categories from "@/components/repair/Categories";
 import { fetchServerClient } from "@/lib/api";
 import axios from "axios";
 import React from "react";
+import SlugHelper from "../SlugHelper";
 
 const page = async(props: any) => {
 
@@ -30,11 +31,9 @@ const page = async(props: any) => {
     <>
       <Nav />
       <div className="text-center md:px-8 px-3 mb-8">
-      <Categories allBrands={allBrands} />
-      <h1 className="bg-primary md:font-extrabold font-bold text-white md:text-2xl text-xl md:py-4 py-3 mb-2">{location.toUpperCase()}</h1>
-
-       <p  className="text-left font-normal whitespace-pre-wrap">{formatedDescription}</p>
+        <Categories allBrands={allBrands} />
       </div>
+      <SlugHelper location={location} formatedDescription={formatedDescription} />
       <Footer />
     </>
   );

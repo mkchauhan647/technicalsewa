@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -53,7 +53,7 @@ const SlideCard = ({ length, data, top }: any) => {
     onSwiper={(swiper) => (swiperRef.current = swiper)}
       className="flex overflow-hidden justify-center items-center px-10 pt-4 pb-12 cursor-pointer"
       autoplay={{
-        delay: 2500,
+        delay: 3000,
       }}
       breakpoints={breakpoints}
       resizeObserver
