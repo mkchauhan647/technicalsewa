@@ -23,7 +23,7 @@ const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
       >
         <div className="flex md:justify-between items-center gap-[10px] mb-2">
           <div className="flex gap-[10px] items-center pl-[10px] mx-auto">
-            <Image src={imageUrl} alt={imgAlt} width={30} height={30} />
+            <Image src={imageUrl} alt={imgAlt} width={30} height={30} loading="lazy"/>
             <p className="text-black font-medium md:text-[28px] text-[21px] leading-[20px]">
               {brandName}
             </p>
@@ -51,8 +51,9 @@ const Modal = ({ brandName, imgAlt, filterData, imageUrl }: any) => {
                     )}
                     alt={val.alt2}
                     width={80}
-                    height={80}
-                    className="h-[60px] "
+                    height={60}
+                    loading="lazy"
+                    className="h-[60px] w-[80px]"
                   />
                 )}
                 <p className="text-xs mt-2 text-center font-bold text-[#1C1E21] w-32 h-10">

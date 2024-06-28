@@ -1,5 +1,4 @@
-"use client";
-
+import Image from "next/image";
 import { GiGloves } from "react-icons/gi";
 import { ImPhone } from "react-icons/im";
 import { MdMasks, MdSanitizer } from "react-icons/md";
@@ -51,12 +50,13 @@ const WhyChooseUs = () => {
             </div>
           </div>
           <div className="basis-[55%] bg-white h-[280px] rounded-[3px]  cursor-pointer">
-            <img
+            <Image
               width={250}
-              height={200}
+              height={280}
               src="/assets/whyus.jpg"
               className="h-full w-full object-contain"
               alt="why us banner"
+              loading="lazy"
             />
           </div>
         </div>

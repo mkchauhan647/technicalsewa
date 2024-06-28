@@ -1,18 +1,11 @@
-import Image from "next/image";
 import React from "react";
 
-import { MdLocationPin } from "react-icons/md";
 import Search from "./Search";
-import { baseUrl } from "@/public/baseUrl";
 import HeroCarousel from "./HeroCarousel";
 
-const HeroSection = async () => {
+const HeroSection = async ({data}:any) => {
 
-  const data = await fetch(
-    `${baseUrl}/techsewa/masterconfig/publicmasterconfig/getConfigList`
-  ).then((res) => res.json());
-
-  const banners = data.brands.filter(
+  const banners = data?.brands?.filter(
     (item: any) => item.image_type === "banner"
   ); 
 

@@ -116,22 +116,13 @@ export async function getBlogsByCategoryId(id: string) {
 
 // get seo by page url
 
-export async function getSEOByPageURL(url: string) {
-  const SEO_BASE_URL = "https://www.technicalsewa.com";
- 
-const params = {
-  url: url,
-  };
+export async function getSEOByPageURL(requesturl: string) {
 
-const res = axios.get(`${baseUrl}/techsewa/publiccontrol/publicmasterconfig/getSeoContent`, {
-  params: params,
-  headers: {
-    'Content-Type': 'application/json',
-  }
+const res = axios.get(`${baseUrl}techsewa/publiccontrol/publicmasterconfig/getSeoContent`, {
+  params: {url:requesturl}
 }).then(response => response.data)
 
 return res
-
 }
 
 function isURL(str: string) {

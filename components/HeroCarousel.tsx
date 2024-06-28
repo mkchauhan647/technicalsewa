@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import React, { memo, useEffect, useState } from "react";
+import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
 
 const HeroCarousel = ({ banners }: any) => {
   const [banner, setBanner] = useState(0);
@@ -26,22 +27,22 @@ const HeroCarousel = ({ banners }: any) => {
         onClick={() => handlebanner("prev")}
         className="prev absolute bg-none z-10 border-none text-[4rem] p-2 rounded bg-black/20 hover:text-white hover:bg-black/20 text-white/20 top-[50%] translate-y-[-50%] cursor-pointer left-4"
       >
-        &#8656;{" "}
+        <BiLeftArrow  />
       </button>
       <button
         onClick={() => handlebanner("next")}
         className="next absolute bg-none z-10 border-none text-[4rem] p-2 rounded bg-black/20 hover:text-white hover:bg-black/20 text-white/20 top-[50%] translate-y-[-50%] cursor-pointer right-4"
       >
-        {" "}
-        &#8658;{" "}
+        <BiRightArrow  />
       </button>
 
       <Image
+        loading="eager"
         className="object-fill w-full h-full"
         src={banners[banner]?.image_url}
-        alt={banners[banner]?.alt}
-        width={1000}
-        height={400}
+        alt={banners[banner]?.alt1}
+        width={600}
+        height={600}
       />
     </>
   );

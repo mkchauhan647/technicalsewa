@@ -3,11 +3,6 @@ import Image from "next/image";
 import React, { useState } from "react";
 import Modal from "../Modal";
 
-type props = {
-  imageUrl: string;
-  brandName: string;
-  imgAlt: string;
-};
 // h-[119px] p-[11px]
 const CategoryCard = ({ imageUrl, brandName, imgAlt, allBrands, id }: any) => {
   const [show, setShow] = useState(false);
@@ -26,7 +21,7 @@ const CategoryCard = ({ imageUrl, brandName, imgAlt, allBrands, id }: any) => {
         }}
         className="py-1 flex flex-col cursor-pointer items-center bordercategory md:gap-3 w-[92px] md:w-[144px] shadow-lg"
       >
-        <img
+        <Image
           src={imageUrl}
           alt={imgAlt}
           width={30}

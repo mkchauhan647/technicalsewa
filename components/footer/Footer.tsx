@@ -1,5 +1,4 @@
-"use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { ImFacebook } from "react-icons/im";
 import { BiLogoInstagramAlt } from "react-icons/bi";
 import { BsYoutube, BsTwitter } from "react-icons/bs";
@@ -8,19 +7,14 @@ import axios from "axios";
 import "./footer.css";
 import Link from "next/link";
 import Locations from "./Locations";
-const Footer = () => {
-  const [description, setDescription] = useState("");
+import Image from "next/image";
+const Footer = async () => {
 
-  useEffect(() => {
-    axios
-      .get(
-        "https://www.technicalsewa.com/techsewa/masterconfig/publicmasterconfig/GetContactUs"
-      )
-      .then((response: any) => {
-        let data = response.data;
-        setDescription(data?.brands[0].description);
-      });
-  }, []);
+ const data =await axios
+ .get(
+   "https://www.technicalsewa.com/techsewa/masterconfig/publicmasterconfig/GetContactUs"
+ )
+ const description = data?.data?.brands[0].description
 
   return (
     <div>
@@ -34,11 +28,14 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row md:items-center justify-between  mt-[10px] gap-4 px-[10px] md:px-[0px]">
             <div className="flex flex-row gap-4 items-center md:flex-col">
               <Link
-                href=""
+                href="/"
                 className="w-[210px] h-[52px] 2xl:h-[67px] bg-[#FFF] p-[3px] rounded-[3px]"
               >
-                <img
-                  src="/../assets/tslogo-final1.png"
+                <Image
+                height={52}
+                width={210}
+                loading="lazy"
+                  src="/assets/tslogo-final1.png"
                   alt="image of logo"
                   className="object-contain w-full h-full"
                 />
@@ -94,34 +91,34 @@ const Footer = () => {
             </div>
             <div className="">
               <div className="flex  justify-start xl:justify-end gap-[10px]">
-                <Link
+                <a
                   href="https://www.facebook.com/61551939094429"
                   className="flex items-center justify-center bg-[white] w-[35px] h-[35px] rounded-[50%]"
                   target="_blank"
                 >
                   <ImFacebook className="text-primary" size={20} />
-                </Link>
-                <Link
+                </a>
+                <a
                   href="https://www.instagram.com/technicalsewa.np/"
                   className="flex items-center justify-center bg-[white] w-[35px] h-[35px] rounded-[50%]"
                   target="_blank"
                 >
                   <BiLogoInstagramAlt className="text-primary" size={20} />
-                </Link>
-                <Link
+                </a>
+                <a
                   href="https://www.youtube.com/channel/UCw2U7K_AKEkws0uzyI4T_kA"
                   target="_blank"
                   className="flex items-center justify-center bg-[white]  w-[35px] h-[35px] rounded-[50%]"
                 >
                   <BsYoutube className="text-primary" size={20} />
-                </Link>
-                <Link
+                </a>
+                <a
                   href="https://twitter.com/technicals2023"
                   target="_blank"
                   className="flex items-center justify-center bg-[white] w-[35px] h-[35px] rounded-[50%]"
                 >
                   <BsTwitter className="text-primary" size={20} />
-                </Link>
+                </a>
               </div>
               <h5 className="font-normal text-[13px] leading-[24px] text-[#FFF] pt-[10px] text-left md:text-right">
                 Enter mobile number to get APP download Link
