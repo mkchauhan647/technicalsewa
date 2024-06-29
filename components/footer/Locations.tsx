@@ -20,8 +20,7 @@ const Locations = async () => {
           <div className="grid grid-cols-4 md:grid-cols-9 px-[10px] md:px-[0px] gap-[10px] my-2">
             {allLocation.map((place:any) => (
               <Link
-              key={place?.id}
-                prefetch={false}
+                key={place?.id}
                 href={{
                   pathname: `/location/technicalsewa-service-center-${place?.location?.toLowerCase()} `
                 }}

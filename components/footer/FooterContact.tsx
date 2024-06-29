@@ -1,5 +1,4 @@
-"use client";
-
+import Image from "next/image";
 import React from "react";
 import { BsFillTelephoneFill } from "react-icons/bs";
 const FooterContact = () => {
@@ -24,10 +23,13 @@ const FooterContact = () => {
               </a>
             </div>
           </div>
-          <img
-            src="/../assets/girlssmile.png"
+          <Image
+            width={250}
+            height={320}
+            src="/assets/girlssmile.png"
             alt="image of fottercontact"
-            className=" w-[250px] h-auto md:block hidden"
+            loading="lazy"
+            className=" w-[250px] h-[320px] md:block hidden"
           />
         </div>
       </div>

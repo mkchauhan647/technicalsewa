@@ -45,6 +45,7 @@ export default async function Home() {
       return res?.data?.brands.filter((b: any) => b?.brand_id !== "78");
     });
 
+
   // gettrainingcategories
   const trainingCategories = await axios.get(
       "https://www.technicalsewa.com/techsewa/publiccontrol/publicmasterconfig/gettrainingcategories"
@@ -53,19 +54,25 @@ export default async function Home() {
       return res.data;
     });
 
+  // getConfiglist
+
+  const configlist = await fetch(
+    `https://www.technicalsewa.com/techsewa/masterconfig/publicmasterconfig/getConfigList`
+  ).then((res) => res.json());
+
   return (
     <>
       <Nav services={services} trainingCategories={trainingCategories} />
       <main>
-        <HeroSection />
-        <Categories allBrands={allBrands} />
+        <HeroSection data={configlist}  />
+        <Categories allBrands={allBrands} data={services} />
         <ServicesSLiders brands={Array.from(brands)} data={allBrands} />
         <Number />
         <WhyChooseUs />
         <MidContent />
         <FooterContact />
         <MidContent2 />
-        <ClientsSlider />
+        <ClientsSlider clients={configlist} />
       </main>
       <Footer />
     </>
@@ -74,8 +81,7 @@ export default async function Home() {
 
 export async function generateMetadata() {
   // fetch seo data for page based on slug
-  const seoData = await getSEOByPageURL(`https://www.technicalsewa.com`);
- console.log(seoData)
+  const seoData = await getSEOByPageURL(`www.technicalsewa.com/`);
   const seoExists = seoData?.content && !Array.isArray(seoData?.content);
 
   const seoContent = seoData?.content;

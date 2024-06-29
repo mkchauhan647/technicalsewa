@@ -9,20 +9,18 @@ import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import Image from "next/image";
 
-export default function ClientsSlider() {
-  const [clients, setClients] = useState<any>([]);
+export default function ClientsSlider({clients}:any) {
   const [showSlider, setShowSlider] = useState(false);
-  const fetchClients = async () => {
-    const clients = await fetchClient(
-      "/techsewa/masterconfig/publicmasterconfig/getConfigList"
-    );
-    setClients(clients?.brands ?? []);
-    setShowSlider(clients?.brands?.length > 0);
-  };
+
   useEffect(() => {
-    fetchClients();
+    setShowSlider(clients?.brands?.length > 0);
   }, []);
+
+  const clientsImage = clients?.brands?.filter(
+    (item: any) => item.image_type === "clients"
+  ); 
 
   const breakpoints = {
     // Define your breakpoints here
@@ -39,7 +37,7 @@ export default function ClientsSlider() {
       spaceBetween: 10,
     },
     1280: {
-      slidesPerView: clients?.length,
+      slidesPerView: clients?.brands?.length,
       spaceBetween: 15,
     },
   };
@@ -62,24 +60,24 @@ export default function ClientsSlider() {
           modules={[Autoplay, Pagination, Navigation]}
           wrapperClass="pb-4 justify-center"
         >
-          {clients?.map((ele: any, index: any) => {
-            if (ele?.image_type !== "clients" || !ele?.image_url) return <></>;
-            return (
+          {clientsImage?.map((ele: any, index: any) => (
               <SwiperSlide key={index}>
                 <div
                   className={
                     "flex flex-col justify-center items-center p-2 rounded-md border h-[110px] border-primary"
                   }
                 >
-                  <img
+                  <Image
+                  width={100}
+                  height={110}
+                  loading="lazy"
                     src={ele?.image_url}
                     alt={ele?.alt ?? ""}
-                    className="w-[80px] object-contain h-auto md:w-[100px] hover:scale-110 duration-100"
+                    className="w-[80px] object-contain h-full md:w-[100px] hover:scale-110 duration-100"
                   />
                 </div>
               </SwiperSlide>
-            );
-          })}
+            ))}
         </Swiper>
       </div>
     </div>

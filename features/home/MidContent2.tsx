@@ -1,17 +1,11 @@
-"use client";
-import { fetchClient } from "@/lib/api";
-import React, { useEffect, useState } from "react";
+import { baseUrl } from "@/public/baseUrl";
+import axios from "axios";
+import React from "react";
 
-const MidContent2 = () => {
-  const [desc, setDesc] = useState<any>(null);
-  useEffect(() => {
-    let fetchData = async () => {
-      let data = await fetchClient(`/techsewa/publicControl/bottomcontent`);
-      setDesc(data);
-    };
-    fetchData();
-  }, []);
-  const paragraphs = desc?.description?.split("</p>");
+const MidContent2 = async () => {
+  const desc = await axios.get(`${baseUrl}techsewa/publicControl/bottomcontent`)
+ 
+  const paragraphs = desc?.data?.description?.split("</p>");
   return (
     <div
       className="bg-primary py-[21px] mt-[10px] mb-[35px] md:mb-[48px]"

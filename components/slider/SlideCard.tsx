@@ -11,6 +11,8 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import Link from "next/link";
+import Image from "next/image";
 
 const SlideCard = ({ length, data, top }: any) => {
   const breakpoints = {
@@ -68,11 +70,14 @@ const SlideCard = ({ length, data, top }: any) => {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
 >
-            <a
+            <Link
               href={`/service/${ele?.url_product_name}`}
               className={`flex flex-col gap-1 items-center py-2`}
             >
-              <img
+              <Image
+              height={120}
+              width={200}
+              loading="lazy"
                 src={ele?.image_url?.replace(
                   "https://www.technicalsewa.com/multiservice",
                   "https://www.technicalsewa.com/techsewa"
@@ -88,7 +93,7 @@ const SlideCard = ({ length, data, top }: any) => {
               >
                 {ele.title}
               </p>
-            </a>
+            </Link>
           </div>
         </SwiperSlide>
       ))}
