@@ -23,7 +23,6 @@ const BlogsByCategoriesPage = async ({ params }: any) => {
 
   return (
     <>
-      <Nav />
       <div className="bg-[#FBFBFB] py-4 px-2 md:px-0">
         <div className="container mx-auto xl:w-[80rem] sm:w-full  sm-w-full m-auto">
           <h3 className="text-[25px] md:text-[35px] text-black my-[10px] text-left font-bold">
@@ -47,7 +46,7 @@ const BlogsByCategoriesPage = async ({ params }: any) => {
           </div>
         </div>
       </div>
-      <Footer />
+      
     </>
   );
 };

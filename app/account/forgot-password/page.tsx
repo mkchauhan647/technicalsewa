@@ -5,7 +5,6 @@ import ForgotPasswordForm from "@/features/account/ForgotPassword";
 export default function ForgotPasswordPage() {
   return (
     <>
-      <Nav />
       <ForgotPasswordForm />
     </>
   );

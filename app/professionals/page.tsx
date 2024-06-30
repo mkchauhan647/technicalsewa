@@ -16,7 +16,6 @@ const page = async () => {
 
   return (
     <>
-      <Nav />
       <div className="  pt-[20px] pb-[79px] max-w-[1280px]  mx-auto flex flex-col items-center justify-center">
         <div className="px-2 md:p-0">
           {/* header  */}
@@ -124,7 +123,6 @@ const page = async () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

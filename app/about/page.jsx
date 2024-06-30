@@ -11,7 +11,6 @@ const About = async () => {
 
   return (
     <div>
-      <Nav />
       <div className="relative h-[200px] md:h-[350px]">
         <img
           src="/../assets/Aboutus.jpg"
@@ -30,7 +29,6 @@ const About = async () => {
         />
         ;
       </div>
-      <Footer />
     </div>
   );
 };

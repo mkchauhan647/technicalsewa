@@ -21,7 +21,7 @@ const page = async () => {
   const trainingCategories = await getTrainingCategoriesData();
   return (
     <>
-      <Nav />
+      
       <div className="bg-[#FBFBFB] py-[10px] px-2 md:px-0">
         <div className="container mx-auto xl:w-[80rem] sm:w-full  sm-w-full m-auto">
           <h3 className="text-[25px] md:text-[30px] text-black my-[5px] text-left font-bold">
@@ -42,7 +42,7 @@ const page = async () => {
           </div>
         </div>
       </div>
-      <Footer />
+      
     </>
   );
 };

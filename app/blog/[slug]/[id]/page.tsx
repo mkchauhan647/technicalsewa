@@ -24,7 +24,6 @@ const page = async ({ params }: any) => {
 
   return (
     <>
-      <Nav />
       <div className="container flex justify-center py-6 mx-auto px-[10px] md:px-[0px]">
         <div className="max-w-[1200px] w-full">
           <div className="flex flex-wrap gap-[30px] md:gap-0  md:justify-between pb-8">
@@ -73,7 +72,6 @@ const page = async ({ params }: any) => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

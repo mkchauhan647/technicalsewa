@@ -10,7 +10,6 @@ const page = async () => {
   );
   return (
     <div>
-      <Nav />
       {/* <div className="  md:h-[200px] xsm:h-[100px] text-white text-5xl flex items-center">
         <h2 className="xsm:w- md:w-[800px] m-auto text-center font-extrabold xsm:text-2xl  lg:text-4xl">
           Privacy Policy
@@ -33,7 +32,6 @@ const page = async () => {
           }}
         />
       </div>
-      <Footer />
     </div>
   );
 };

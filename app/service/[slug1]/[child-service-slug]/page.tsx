@@ -11,9 +11,7 @@ const page = async () => {
 
   return (
     <>
-      <Nav />
       <ChildService data={data.brands} />
-      <Footer />
     </>
   );
 };
