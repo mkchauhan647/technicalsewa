@@ -1,6 +1,3 @@
-import Nav from "@/components/Nav";
-import Footer from "@/components/footer/Footer";
-import { fetchServerClient } from "@/lib/api";
 import axios from "axios";
 import React from "react";
 import SlugHelper from "../SlugHelper";
@@ -20,11 +17,9 @@ const page = async(props: any) => {
 
   return (
     <>
-      <Nav />
       <div className="text-center md:px-8 px-3 mb-8">
       </div>
       <SlugHelper location={location} formatedDescription={formatedDescription} />
-      <Footer />
     </>
   );
 };

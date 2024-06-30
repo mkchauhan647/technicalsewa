@@ -62,10 +62,9 @@ const ServiceSlug1 = ({ data }: any) => {
   return (
     <div>
       {filterData &&
-        filterData.map((val: any, index: any) => (
-          <>
+        filterData.map((val: any) => (
+          <div key={val?.title}>
             <div
-              key={index}
               className="mb-[20px] overflow-hidden max-md:p-4 flex flex-col gap-4 relative"
             >
               <div
@@ -89,7 +88,7 @@ const ServiceSlug1 = ({ data }: any) => {
                           {val?.product_name.toLowerCase()}
                         </span>
                       </h3>
-                      <h3 className="md:w-[66%] text-white leading-[1.5] tracking-[1px] md:text-[27px] text-[20px] font-bold">
+                      <h3 className="md:w-[66%] text-white leading-[1.2] tracking-[0.5px] md:text-[25px] text-[20px] font-bold">
                         {val?.title}
                       </h3>
                     </div>
@@ -133,22 +132,21 @@ const ServiceSlug1 = ({ data }: any) => {
               {/* side select product category  */}
               <div className="w-[30%] lg:px-4 z-40 lg:absolute top-5 right-[5%]">
                 <div className="bg-primary rounded-md shadow-md w-[340px] md:w-[355px] p-4 lg:fixed">
-                  <h3 className="text-white mb-4 text-[24px] font-medium text-center ">
+                  <h3 className="text-white mb-4 text-[22px] font-medium text-center ">
                     Select product Category
                   </h3>
                   <div className="flex flex-col gap-2 justify-center items-center px-2">
-                    {selectCategoryData?.map((val: any) => {
-                      return (
+                    {selectCategoryData?.map((val: any) => (
                         <a
                           href={`/service/${params.slug1}/${val.model}`}
-                          key={val.value}
-                          className=" hover:bg-gray-500 h-[20pxpx] cursor-pointer flex justify-between items-center px-4 py-[12px] bg-white w-full text-black rounded-md "
+                          key={val.text}
+                          className=" hover:bg-gray-500 cursor-pointer flex justify-between items-center px-4 py-[12px] bg-white w-full text-black rounded-md "
                         >
                           {val.text}
                           <SlArrowRight />
                         </a>
-                      );
-                    })}
+                      )
+                    )}
                   </div>
                 </div>
               </div>
@@ -166,7 +164,7 @@ const ServiceSlug1 = ({ data }: any) => {
             <Faqlist filteredId = {filteredId} />
 
             <ServiceReviews productId={filteredId} />
-          </>
+          </div>
         ))}
     </div>
   );

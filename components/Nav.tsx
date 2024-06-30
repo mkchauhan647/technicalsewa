@@ -81,13 +81,13 @@ const Nav = ({services,trainingCategories:categories}:any) => {
         <div className="Navbar relative border-b-[1px] mx-auto max-w-[1280px]  border-[#ededed] gap-[15px]   flex justify-between max-lg:p-4 items-center bg-white h-[70px] ">
           <a href="/">
             <Image
+              loading="eager"
               src="/assets/tslogo-final1.png"
               height={200}
               width={200}
               alt="logo"
             />
           </a>
-
          <div
             className={`${
               showinput || !isHomePage ? "max-md:w-72 md:!w-80" : "hidden"

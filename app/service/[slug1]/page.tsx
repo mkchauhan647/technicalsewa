@@ -11,9 +11,7 @@ const page = async () => {
 
   return (
     <>
-      <Nav />
       <ServiceSlug1 data={data.brands} />
-      <Footer />
     </>
   );
 };

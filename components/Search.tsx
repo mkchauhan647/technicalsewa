@@ -1,9 +1,8 @@
 "use client"
 import { baseUrl } from "@/public/baseUrl";
 import React, { useEffect, useState } from "react";
-import { BsSearch } from "react-icons/bs";
 import Autocomplete from "@mui/material/Autocomplete";
-import { TextField, CircularProgress, useMediaQuery } from "@mui/material";
+import { TextField, useMediaQuery } from "@mui/material";
 import { useRouter } from "next/navigation";
 
 const Search = ({ isTopNav }: { isTopNav?: boolean }) => {
