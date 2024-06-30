@@ -40,7 +40,7 @@ const HeroCarousel = ({ banners }: any) => {
         loading="eager"
         className="object-fill w-full h-full"
         src={banners[banner]?.image_url}
-        alt={banners[banner]?.alt1}
+        alt={banners[banner]?.alt}
         width={600}
         height={600}
       />

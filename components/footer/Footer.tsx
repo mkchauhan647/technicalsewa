@@ -6,8 +6,8 @@ import { IoLocationOutline, IoLocationSharp } from "react-icons/io5";
 import axios from "axios";
 import "./footer.css";
 import Link from "next/link";
-import Locations from "./Locations";
 import Image from "next/image";
+import Locations from "./Locations";
 const Footer = async () => {
 
  const data =await axios

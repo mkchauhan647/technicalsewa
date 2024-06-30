@@ -2,22 +2,19 @@ import HeroSection from "@/components/HeroSection";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import FooterContact from "@/components/footer/FooterContact";
 import Categories from "@/components/repair/Categories";
-
-import Nav from "@/components/Nav";
-import Footer from "@/components/footer/Footer";
 import Number from "@/components/Number";
 import MidContent from "@/features/home/MidContent";
 import MidContent2 from "@/features/home/MidContent2";
 import { fetchServerClient, getSEOByPageURL } from "@/lib/api";
 import ServicesSLiders from "@/features/home/servicesSliders";
 import ClientsSlider from "@/features/home/clients";
-import axios from "axios";
 
 export default async function Home() {
   const result = await fetchServerClient(
     `techsewa/masterconfig/publicmasterconfig/getSliderListpop1`
   );
   let allBrands = result?.brands;
+
   // allBrands?.sort((a: any, b: any) => +a?.brand_id - +b?.brand_id);
   allBrands?.sort((a: any, b: any) => +a?.ordering - +b?.ordering);
 
@@ -36,36 +33,16 @@ export default async function Home() {
 
   brands?.sort((a: any, b: any) => a?.order - b?.order);
   // ===============================
-  const services = await axios
-    .get(
-      "https://www.technicalsewa.com/techsewa/masterconfig/publicmasterconfig/getServiceList"
-    )
-    .then((res) => {
-      //set others brands and removing E-Commerce since it doesn't have image associated with it.
-      return res?.data?.brands.filter((b: any) => b?.brand_id !== "78");
-    });
-
-
-  // gettrainingcategories
-  const trainingCategories = await axios.get(
-      "https://www.technicalsewa.com/techsewa/publiccontrol/publicmasterconfig/gettrainingcategories"
-    )
-    .then((res) => {
-      return res.data;
-    });
 
   // getConfiglist
-
   const configlist = await fetch(
     `https://www.technicalsewa.com/techsewa/masterconfig/publicmasterconfig/getConfigList`
   ).then((res) => res.json());
 
   return (
-    <>
-      <Nav services={services} trainingCategories={trainingCategories} />
       <main>
-        <HeroSection data={configlist}  />
-        <Categories allBrands={allBrands} data={services} />
+        <HeroSection data={configlist} allBrands={allBrands}  />
+        <Categories allBrands={allBrands} />
         <ServicesSLiders brands={Array.from(brands)} data={allBrands} />
         <Number />
         <WhyChooseUs />
@@ -74,8 +51,6 @@ export default async function Home() {
         <MidContent2 />
         <ClientsSlider clients={configlist} />
       </main>
-      <Footer />
-    </>
   );
 }
 
