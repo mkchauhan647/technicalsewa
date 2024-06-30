@@ -4,9 +4,7 @@ import UserProfile from "@/features/account/profile";
 const page = async () => {
   return (
     <>
-      <Nav />
       <UserProfile />
-      <Footer />
     </>
   );
 };

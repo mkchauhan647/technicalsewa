@@ -6,9 +6,7 @@ import React from "react";
 export default function ComplainViewPage({ params }: any) {
   return (
     <>
-      <Nav />
       <ComplainView complainId={params?.complainId} />
-      <Footer />
     </>
   );
 }

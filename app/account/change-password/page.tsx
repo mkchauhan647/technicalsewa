@@ -5,7 +5,6 @@ import ChangePasswordForm from "@/features/account/changePassword";
 export default function ChangePasswordPage() {
   return (
     <>
-      <Nav />
       <ChangePasswordForm />
     </>
   );

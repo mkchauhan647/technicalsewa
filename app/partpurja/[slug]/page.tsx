@@ -35,9 +35,7 @@ const page = async ({ params }: any) => {
 
   return (
     <>
-      <Nav />
       <PartPurjaSlug1 slug={slug} data={data} />
-      <Footer />
     </>
   );
 };

@@ -56,7 +56,6 @@ const page = async ({ params }: any) => {
 
   return (
     <>
-      <Nav />
       <div className="max-w-[1280px] py-8  mx-auto md:px-0 px-[10px]">
         {/* fridge training  */}
         <div className="flex flex-wrap gap-[30px] md:gap-0  md:justify-between pb-8">
@@ -101,7 +100,6 @@ const page = async ({ params }: any) => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

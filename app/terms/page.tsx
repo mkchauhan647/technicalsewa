@@ -7,7 +7,6 @@ const page = async () => {
   const termsData = await fetchServerClient("/techsewa/publicControl/terms");
   return (
     <>
-      <Nav />
       <div>
         <div className="relative h-[200px] md:h-[350px]">
           <img
@@ -26,7 +25,6 @@ const page = async () => {
           />
         </div>
       </div>
-      <Footer />
     </>
   );
 };

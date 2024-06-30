@@ -3,9 +3,7 @@ import Footer from "@/components/footer/Footer";
 import UserComplains from "@/features/complain/my-complains";
 const page = async () => {
     return <>
-      <Nav />
       <UserComplains />
-      <Footer />
     </>;
 };
 

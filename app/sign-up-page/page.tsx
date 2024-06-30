@@ -8,7 +8,6 @@ import { FaUserPlus } from "react-icons/fa";
 const page = () => {
   return (
     <>
-      <Nav />
       <div className="flex flex-col  items-center gap-16 py-10">
         <Link href="signup">
           <div className="flex flex-col items-center">
