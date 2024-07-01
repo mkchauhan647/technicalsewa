@@ -1,16 +1,14 @@
 "use client";
 
-import axios from "axios";
-import React, { useEffect, useMemo, useState } from "react";
-import { useParams } from "next/navigation";
-import { AiFillStar } from "react-icons/ai";
-import { SlArrowRight } from "react-icons/sl";
-import { useRouter } from "next/navigation";
-import { baseUrl } from "@/public/baseUrl";
-import ServiceReviews from "@/features/service/reviews";
-import { BsFillTelephoneFill } from "react-icons/bs";
-import { FaMinus, FaPlus } from "react-icons/fa";
 import Faqlist from "@/features/service/Faqlist";
+import ServiceReviews from "@/features/service/reviews";
+import { baseUrl } from "@/public/baseUrl";
+import axios from "axios";
+import { useParams, useRouter } from "next/navigation";
+import { useEffect, useMemo, useState } from "react";
+import { AiFillStar } from "react-icons/ai";
+import { BsFillTelephoneFill } from "react-icons/bs";
+import { SlArrowRight } from "react-icons/sl";
 
 const ServiceSlug1 = ({ data }: any) => {
   //state variable
@@ -73,6 +71,8 @@ const ServiceSlug1 = ({ data }: any) => {
                     "https://www.technicalsewa.com/multiservice/",
                     "https://www.technicalsewa.com/multiservice/test/"
                   )})`,
+                  backgroundPosition: 'center top', // Adjust background position here
+
                 }}
                 className="bg-white h-[350px] bg-contain bg-no-repeat bg-center w-full relative py-[20px]"
               >
@@ -93,7 +93,7 @@ const ServiceSlug1 = ({ data }: any) => {
                       </h3>
                     </div>
 
-                    <div className="flex flex-row gap-[10px]">
+                    <div className="flex flex-row gap-[10px] mt-4">
                       <div className="h-[40px] bg-[#1D738D] flex itmes-center text-white py-[5px] px-[15px] rounded-[6px] mt-[5px]">
                         <AiFillStar size={26} />
                         <p className="pl-[5px] text-[20px] font-semibold">
