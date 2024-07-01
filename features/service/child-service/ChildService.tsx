@@ -1,15 +1,13 @@
 "use client";
-import axios from "axios";
-import React, { useMemo, useState } from "react";
-import { BsFillTelephoneFill, BsNewspaper } from "react-icons/bs";
-import { useParams } from "next/navigation";
-import { AiFillStar } from "react-icons/ai";
-import { url } from "inspector";
-import { SlArrowRight } from "react-icons/sl";
-import { useRouter } from "next/navigation";
-import { baseUrl } from "@/public/baseUrl";
 import ComplainForm from "@/features/complain/complain-form/complainForm";
+import { baseUrl } from "@/public/baseUrl";
 import useComplainFormStore from "@/store/useComplainInquiryStore";
+import axios from "axios";
+import { useParams, useRouter } from "next/navigation";
+import { useMemo, useState } from "react";
+import { AiFillStar } from "react-icons/ai";
+import { BsFillTelephoneFill } from "react-icons/bs";
+import { SlArrowRight } from "react-icons/sl";
 import Faqlist from "../Faqlist";
 
 const ChildService = ({ data }: any) => {
@@ -129,7 +127,7 @@ const ChildService = ({ data }: any) => {
                           </h3>
                         </div>
 
-                        <div className="flex flex-row gap-[10px]">
+                        <div className="flex flex-row gap-[10px] mt-4">
                       <div className="w-[200px] h-[40px] bg-[#1D738D] flex itmes-center text-white py-[5px] px-[15px] rounded-[6px] mt-[5px]">
                         <AiFillStar size={26} />
                         <p className="pl-[10px] text-[20px] font-semibold">
