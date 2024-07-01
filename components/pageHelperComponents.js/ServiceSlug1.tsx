@@ -94,12 +94,12 @@ const ServiceSlug1 = ({ data }: any) => {
                     </div>
 
                     <div className="flex flex-row gap-[10px]">
-                      <div className="w-[200px] h-[40px] bg-[#1D738D] flex itmes-center text-white py-[5px] px-[15px] rounded-[6px] mt-[5px]">
+                      <div className="h-[40px] bg-[#1D738D] flex itmes-center text-white py-[5px] px-[15px] rounded-[6px] mt-[5px]">
                         <AiFillStar size={26} />
-                        <p className="pl-[10px] text-[20px] font-semibold">
+                        <p className="pl-[5px] text-[20px] font-semibold">
                           4.65
                         </p>
-                        <p className="pl-[5px] self-end mb-[5px]">Out of 5</p>
+                        <p className="pl-[5px] self-end mb-[3.5px]">Out of 5</p>
                       </div>
                       <a
                         href="tel:9851201580"
