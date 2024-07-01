@@ -1,14 +1,14 @@
 "use client";
-import { useRouter } from "next/navigation";
-import React, { useEffect, useRef, useState } from "react";
+import useAuthStore from "@/store/useAuthStore";
 import {
-  useJsApiLoader,
-  GoogleMap,
-  Marker,
   Autocomplete,
   DirectionsRenderer,
+  GoogleMap,
+  Marker,
+  useJsApiLoader,
 } from "@react-google-maps/api";
-import useAuthStore from "@/store/useAuthStore";
+import { useRouter } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 
 interface IProps {
   onProceed: (location: { lat: number; lng: number }) => void;
@@ -97,7 +97,7 @@ const MapComponent = ({ onProceed }: IProps) => {
   }
 
   const handlePlaceService = () => {
-    if (!isAuthenticated) router.push("/login");
+    if (!isAuthenticated) router.push("/signin");
     // order service
     onProceed(center);
   };
