@@ -51,7 +51,8 @@ export default async function RootLayout({
         <link
           rel="apple-touch-icon"
           type="image/x-icon"
-          href="/../assets/ogimage.png"
+          sizes="180x180"
+          href="/../assets/apple-icon.png"
         />
         <link
           rel="stylesheet"
