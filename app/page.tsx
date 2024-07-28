@@ -55,8 +55,7 @@ export default async function Home() {
         />
         <meta
           property="og:image"
-          content="
-https://technicalsewa-store-five.vercel.app/icon_footer.png"
+          content="https://technicalsewa-store-five.vercel.app/icon_footer.png"
         />
         <meta property="og:url" content="https://technicalsewa.com" />
       </Head>
@@ -89,7 +88,7 @@ export async function generateMetadata() {
         title: `${seoContent?.og_title} `,
         description: `${seoContent?.og_desc} `,
         url: seoContent?.og_url,
-        image: seoContent.image,
+        image: seoContent.image || `/default-og-image.png` ,
         type: seoContent.og_type,
       },
     };
