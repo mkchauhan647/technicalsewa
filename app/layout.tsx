@@ -51,12 +51,13 @@ export default async function RootLayout({
           rel="apple-touch-icon"
           type="image/x-icon"
           sizes="180x180"
-          href="/../assets/apple-icon.png"
+          href="/favicon.ico"
         />
         <link
           rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
         />
+        <meta property="og:image" content="/favicon.ico" />
       </head>
       <body className={inter.className}>
       <Nav services={services} trainingCategories={trainingCategories} />
