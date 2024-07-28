@@ -45,19 +45,19 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta property="og:image" content="/../assets/ogimage.png" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <link
           rel="apple-touch-icon"
           type="image/x-icon"
           sizes="180x180"
-          href="/favicon.ico"
+          href="/../assets/ogimage.png"
         />
         <link
           rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
         />
-        <meta property="og:image" content="/favicon.ico" />
       </head>
       <body className={inter.className}>
       <Nav services={services} trainingCategories={trainingCategories} />
