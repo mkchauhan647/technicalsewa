@@ -45,14 +45,14 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta property="og:image" content="/../assets/ogimage.png" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-        <meta property="og:image" content="/favicon.ico" />
         <link
           rel="apple-touch-icon"
           type="image/x-icon"
           sizes="180x180"
-          href="/favicon.ico"
+          href="/../assets/ogimage.png"
         />
         <link
           rel="stylesheet"
