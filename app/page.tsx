@@ -8,7 +8,6 @@ import MidContent2 from "@/features/home/MidContent2";
 import { fetchServerClient, getSEOByPageURL } from "@/lib/api";
 import ServicesSLiders from "@/features/home/servicesSliders";
 import ClientsSlider from "@/features/home/clients";
-import Head from "next/head";
 
 export default async function Home() {
   const result = await fetchServerClient(
@@ -42,24 +41,6 @@ export default async function Home() {
 
   return (
     <main>
-      <Head>
-        <title>Technical Sewa</title>
-        <meta
-          name="description"
-          content="Welcome to Technical Sewa, a one-stop-shop for all of electronic repair needs. We specialize in repairing a wide range of appliances."
-        />
-        <meta property="og:title" content="Technical Sewa" />
-        <meta
-          property="og:description"
-          content="Welcome to Technical Sewa, a one-stop-shop for all of electronic repair needs. We specialize in repairing a wide range of appliances."
-        />
-        <meta
-          property="og:image"
-          content="
-https://technicalsewa-store-five.vercel.app/icon_footer.png"
-        />
-        <meta property="og:url" content="https://technicalsewa.com" />
-      </Head>
       <HeroSection data={configlist} allBrands={allBrands} />
       <Categories allBrands={allBrands} />
       <ServicesSLiders brands={Array.from(brands)} data={allBrands} />
@@ -86,10 +67,11 @@ export async function generateMetadata() {
       description: `${seoContent?.description}`,
       keywords: `${seoContent?.key_words}`,
       openGraph: {
-        title: `${seoContent?.page_title} `,
-        description: `${seoContent?.description} `,
-        url: seoContent?.page_url,
-        type: "website",
+        title: `${seoContent?.og_title} `,
+        description: `${seoContent?.og_desc} `,
+        url: seoContent?.og_url,
+        image: seoContent.image,
+        type: seoContent.og_type,
       },
     };
   }
