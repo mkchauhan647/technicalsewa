@@ -86,10 +86,11 @@ export async function generateMetadata() {
       description: `${seoContent?.description}`,
       keywords: `${seoContent?.key_words}`,
       openGraph: {
-        title: `${seoContent?.page_title} `,
-        description: `${seoContent?.description} `,
-        url: seoContent?.page_url,
-        type: "website",
+        title: `${seoContent?.og_title} `,
+        description: `${seoContent?.og_desc} `,
+        url: seoContent?.og_url,
+        image: seoContent.image,
+        type: seoContent.og_type,
       },
     };
   }
