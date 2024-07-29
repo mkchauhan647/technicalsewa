@@ -207,7 +207,7 @@ const ChildService = ({ data }: any) => {
                     </div>
                   </div>
 
-                  <div className="max-w-[1280px] mx-auto mt-[50px] px-[2px] ">
+                  <div className="max-w-[1280px] mx-auto mt-[50px] px-[2px] servercontent ">
                     {finalData &&
                       finalData.map((val: any, index: any) => {
                         return (
@@ -219,6 +219,8 @@ const ChildService = ({ data }: any) => {
                         );
                       })}
                   </div>
+
+                  
                 </div>
               );
             })}

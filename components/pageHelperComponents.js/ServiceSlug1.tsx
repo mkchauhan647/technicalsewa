@@ -152,7 +152,7 @@ const ServiceSlug1 = ({ data }: any) => {
               </div>
 
               {/* description of product paragraph  */}
-              <div className="my-[50px] max-w-[1280px] mx-auto px-[2px]">
+              <div className="servercontent my-[50px] max-w-[1280px] mx-auto px-[2px]">
                 <div
                   className="flex text-justify md:w-[66%] flex-col gap-2 service"
                   dangerouslySetInnerHTML={{ __html: val?.content }}
