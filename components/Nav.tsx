@@ -212,8 +212,8 @@ const Nav = ({services,trainingCategories:categories}:any) => {
             <a className="hover:text-primary" href="/professionals">
               Professionals
             </a>
-            <a className="hover:text-primary" href="/partpurja">
-              Part Purja
+            <a className="hover:text-primary" href="/spareparts">
+              spareparts
             </a>
             {isAuthenticated ? (
               <div className="flex gap-4 items-center">
@@ -336,10 +336,10 @@ const Nav = ({services,trainingCategories:categories}:any) => {
               <a
                 onClick={handleNavclose}
                 className="flex px-[16px] gap-4 text-[14px] font-normal items-center  w-full justify-starts"
-                href="/partpurja"
+                href="/spareparts"
               >
                 <HiMiniWrenchScrewdriver className="text-primary" />
-                Part Purja
+                spareparts
               </a>
               {isAuthenticated ? (
                 <div className="flex flex-col gap-[24px]">
