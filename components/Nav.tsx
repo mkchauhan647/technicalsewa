@@ -213,7 +213,7 @@ const Nav = ({services,trainingCategories:categories}:any) => {
               Professionals
             </a>
             <a className="hover:text-primary" href="/spareparts">
-              SpareParts
+              Spare Parts
             </a>
             {isAuthenticated ? (
               <div className="flex gap-4 items-center">
