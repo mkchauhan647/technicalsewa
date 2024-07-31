@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import useAuthStore from "@/store/useAuthStore";
 import useComplainStore from "@/store/useComplainInquiryStore";
@@ -8,6 +8,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { clsx } from "@/lib/essentials";
 import LoginForm from "@/features/authentication/login";
+import LoginForm1 from "@/features/authentication/login1";
 
 export default function ComplainFormFinalStep({
   onBack,
@@ -64,9 +65,15 @@ export default function ComplainFormFinalStep({
     setComplain({ ...complain, ...input });
   };
 
-  if (!isAuthenticated) return <LoginForm cb={() => {}} />;
+  const [final,setfinal] = useState(false);
 
-  return (
+  useEffect(()=>{
+    if (isAuthenticated){
+      setfinal(true)
+    }
+  },[])
+
+  return(<>{!final ? <LoginForm1 cb={() => {setfinal(true)}} />:
     <div className="flex max-w-[1280px] m-auto  justify-center items-center  ">
       <div className="w-full max-w-2xl my-4 p-4 shadow-md rounded-md bg-[#f5f5f5] ">
         <div className="flex flex-col gap-4">
@@ -139,5 +146,5 @@ export default function ComplainFormFinalStep({
         </form>
       </div>
     </div>
-  );
+  }</>)
 }

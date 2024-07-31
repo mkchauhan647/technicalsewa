@@ -97,7 +97,7 @@ const MapComponent = ({ onProceed }: IProps) => {
   }
 
   const handlePlaceService = () => {
-    if (!isAuthenticated) router.push("/signin");
+    //if (!isAuthenticated) router.push("/signin");
     // order service
     onProceed(center);
   };

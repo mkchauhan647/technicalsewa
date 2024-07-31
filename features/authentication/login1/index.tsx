@@ -10,7 +10,7 @@ import { BsEyeSlashFill } from "react-icons/bs";
 import { FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 
-const LoginForm = ({ cb }: { cb?: () => void }) => {
+const LoginForm1 = ({ cb }: { cb?: () => void }) => {
   const { push } = useRouter();
   const { signin } = useAuthStore();
   const [loading, setLoading] = useState(false);
@@ -68,8 +68,7 @@ const LoginForm = ({ cb }: { cb?: () => void }) => {
 
       if (typeof loginRes.data === "object" && loginRes.data !== null) {
         signin(loginRes.data);
-        cb && cb?.();
-        !cb && push("/complains");
+        cb && cb();
       } else {
         toast("❌ Invalid login!");
         throw new Error("Login Failed");
@@ -166,4 +165,4 @@ const LoginForm = ({ cb }: { cb?: () => void }) => {
   );
 };
 
-export default LoginForm;
+export default LoginForm1;
