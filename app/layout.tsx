@@ -45,14 +45,14 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta property="og:image" content={`https://www.technicalsewa.com/techsewa/uploads/brands_image/technicalsewa-jpg-logo.jpg`} />
+        <meta property="og:image" content="/../assets/favlogo.png" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <link
           rel="apple-touch-icon"
           type="image/x-icon"
           sizes="180x180"
-          href="/../assets/apple-icon.png"
+          href="/../assets/tslogo-final1.png"
         />
         <link
           rel="stylesheet"
