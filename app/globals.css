@@ -164,18 +164,50 @@ body {
   font-size: 14px;
 }
 
-.servercontent{
-  font-size: 14.0pt;
-}
 .servercontent h1{
+  font-size: 27px;
   font-weight: bold;
   width: fit-content;
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid black;
 }
-.servercontent p > strong{
+
+.servercontent h1 *{
+  font-size: inherit !important;
+  font-weight: inherit !important;
+}
+
+.servercontent a {
+  color: blue !important;
+  border-bottom: 1px solid blue;
+}
+.servercontent p a *{
+  color: blue !important;
+}
+.servercontent h1,h2,h3,h4{
+  color: black;
   font-weight: bolder;
 }
-.servercontent a{
-  color: blue;
-  border-bottom: 1px solid blue;
+.servercontent h2{
+  font-size: 24px;
+}
+.servercontent h2 *{
+  color: inherit !important;
+  font-size: inherit !important;
+}
+.servercontent h3{
+  font-size: 21px;
+}
+.servercontent h3 *{
+  color: inherit !important;
+  font-weight: inherit !important;
+  font-size: inherit !important;
+}
+
+.servercontent h4{
+  font-size: 18px;
+}
+.servercontent h4 *{
+  color: inherit !important;
+  font-weight: inherit !important;
+  font-size: inherit !important;
 }
