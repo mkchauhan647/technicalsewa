@@ -129,7 +129,6 @@ const StandardSignUp = () => {
                 placeholder="Password"
                 onChange={handleChange}
                 required
-                minLength={6}
               />
 
               <div
@@ -147,7 +146,6 @@ const StandardSignUp = () => {
                 placeholder="Confirm Password"
                 onChange={handleChange}
                 required
-                minLength={6}
               />
 
               <div
