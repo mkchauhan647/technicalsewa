@@ -40,6 +40,7 @@ const Nav = ({services,trainingCategories:categories}:any) => {
   const isHomePage = pathname === "/";
 
   const handleLogout = () => {
+    localStorage.clear();
     signout();
     window.location.href = "/";
   };
@@ -238,7 +239,7 @@ const Nav = ({services,trainingCategories:categories}:any) => {
                 className="flex transition-all hover:scale-105 gap-[5px] justify-center items-center bg-primary rounded-[3px] cursor-pointer text-white px-[13px] py-[8.5px] "
               >
                 <HiArrowRightOnRectangle size={20} className="text-white" />
-                Log Out
+                Logout
               </button>
             )}
           </div>
