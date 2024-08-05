@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BsEyeSlashFill } from "react-icons/bs";
 import { AiOutlineEye } from "react-icons/ai";
 import axios from "axios";
@@ -12,7 +12,7 @@ import { FcGoogle } from "react-icons/fc";
 
 const LoginForm = ({ cb }: { cb?: () => void }) => {
   const { push } = useRouter();
-  const { signin } = useAuthStore();
+  const { isAuthenticated, signin } = useAuthStore();
   const [loading, setLoading] = useState(false);
   const [input, setInput] = useState({
     username: "",
@@ -67,6 +67,8 @@ const LoginForm = ({ cb }: { cb?: () => void }) => {
       }
 
       if (typeof loginRes.data === "object" && loginRes.data !== null) {
+        localStorage.setItem("data", JSON.stringify(loginRes.data));
+        localStorage.setItem("id", loginRes.data.id);
         signin(loginRes.data);
         cb && cb?.();
         !cb && push("/complains");
@@ -96,10 +98,11 @@ const LoginForm = ({ cb }: { cb?: () => void }) => {
               className="w-full h-full object-container"
             />
           </div>
-
         </div>
 
-        <p className="text-2xl font-bold text-[#3398b7] text-center mt-6 mb-3">Login</p>
+        <p className="text-2xl font-bold text-[#3398b7] text-center mt-6 mb-3">
+          Login
+        </p>
 
         <input
           type="text"
@@ -153,14 +156,12 @@ const LoginForm = ({ cb }: { cb?: () => void }) => {
           </Link>
         </div>
 
-
         <div className="text-center">or</div>
 
         <div className="flex items-center justify-center mt-5 mb-[10px] space-x-1 gap-4">
-          <FcGoogle size={30}  className="text-[#34A853] cursor-pointer"/>
+          <FcGoogle size={30} className="text-[#34A853] cursor-pointer" />
           <FaFacebook size={30} className="text-[#1877F2] cursor-pointer" />
         </div>
-
       </div>
     </div>
   );
