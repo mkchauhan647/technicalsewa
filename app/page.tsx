@@ -10,7 +10,7 @@ import ServicesSLiders from "@/features/home/servicesSliders";
 import ClientsSlider from "@/features/home/clients";
 import Head from "next/head";
 
-export default async function Home({schemaData}:any) {
+export default async function Home() {
   const result = await fetchServerClient(
     `techsewa/masterconfig/publicmasterconfig/getSliderListpop1`
   );
@@ -42,14 +42,6 @@ export default async function Home({schemaData}:any) {
 
   return (
     <main>
-      <Head>
-        <title>Technical Sewa</title>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
-        />
-
-      </Head>
       <HeroSection data={configlist} allBrands={allBrands} />
       <Categories allBrands={allBrands} />
       <ServicesSLiders brands={Array.from(brands)} data={allBrands} />
@@ -72,15 +64,16 @@ export async function generateMetadata() {
 
   const schemaData = {
     "@context": "https://schema.org",
-    "@type": seoContent.og_type,
-    "name": seoContent?.page_title,
-    "url": seoContent?.og_url,
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://www.technicalsewa.com/techsewa/publiccontrol/publicmasterconfig/getSeoContent?url=https://www.technicalsewa.com",
-      "query-input": "https://www.technicalsewa.com"
-    }
+    "@type": "website",
+    name: "technicalsewa",
+    url: "www.technicalsewa.com",
+    inLanguage: "en",
+    author: {
+      "@type": "Organization",
+      name: "Technical Sewa",
+    },
   };
+
 
   if (seoExists) {
     return {
@@ -91,33 +84,18 @@ export async function generateMetadata() {
         title: `${seoContent?.og_title} `,
         description: `${seoContent?.og_desc} `,
         url: seoContent?.og_url,
-        image: seoContent.image || `/default-og-image.png` ,
+        image: seoContent.image || `/default-og-image.png`,
         type: seoContent.og_type,
       },
       link: [
         {
-          rel: 'apple-touch-icon',
-          type: 'image/x-icon',
-          sizes: '180x180',
+          rel: "apple-touch-icon",
+          type: "image/x-icon",
+          sizes: "180x180",
           href: `${seoContent.image}`,
         },
       ],
       schemaData,
     };
   }
-
-  return {
-    title: `Technical sewa`,
-    description:
-      "Welcome to Technical Sewa, a one-stop-shop for all of electronic repair needs. We specialize in repairing a wide range of appliances. ",
-    keywords:
-      "technicalsewa, Technicalsewa and solution, Appliances Repair, popular Brands, Warranty Products, Electrician & Plumber, Air-Purifier/Humidifier, Mobiles & Tabs, cctv Repair Service, Computer/Printer, Medical Equipment, Drone Repair, Carpenter Service, Cleaning & Pest Control",
-    openGraph: {
-      title: "Training | Technical sewa",
-      description:
-        "Welcome to Technical Sewa, a one-stop-shop for all of electronic repair needs. We specialize in repairing a wide range of appliances. ",
-      url: "https://technicalsewa.com",
-      type: "website",
-    },
-  };
 }
