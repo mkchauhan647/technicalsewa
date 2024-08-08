@@ -48,12 +48,12 @@ export default async function RootLayout({
         <meta property="og:image" content="/../assets/favlogo.png" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-        <link
+        {/* <link
           rel="apple-touch-icon"
           type="image/x-icon"
           sizes="180x180"
           href="/../assets/tslogo-final1.png"
-        />
+        /> */}
         <link
           rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
