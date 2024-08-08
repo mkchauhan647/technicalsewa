@@ -23,7 +23,6 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-
   const services = await axios
     .get(
       "https://www.technicalsewa.com/techsewa/masterconfig/publicmasterconfig/getServiceList"
@@ -33,14 +32,26 @@ export default async function RootLayout({
       return res?.data?.brands.filter((b: any) => b?.brand_id !== "78");
     });
 
-
   // gettrainingcategories
-  const trainingCategories = await axios.get(
+  const trainingCategories = await axios
+    .get(
       "https://www.technicalsewa.com/techsewa/publiccontrol/publicmasterconfig/gettrainingcategories"
     )
     .then((res) => {
       return res.data;
     });
+
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "website",
+    name: "technicalsewa",
+    url: "www.technicalsewa.com",
+    inLanguage: "en",
+    author: {
+      "@type": "Organization",
+      name: "Technical Sewa",
+    },
+  };
 
   return (
     <html lang="en">
@@ -58,9 +69,14 @@ export default async function RootLayout({
           rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
         />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+        />
       </head>
       <body className={inter.className}>
-      <Nav services={services} trainingCategories={trainingCategories} />
+        <Nav services={services} trainingCategories={trainingCategories} />
         {children}
         <Footer />
         <AutoScrollToTop />
