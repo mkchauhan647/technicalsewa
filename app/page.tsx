@@ -8,7 +8,6 @@ import MidContent2 from "@/features/home/MidContent2";
 import { fetchServerClient, getSEOByPageURL } from "@/lib/api";
 import ServicesSLiders from "@/features/home/servicesSliders";
 import ClientsSlider from "@/features/home/clients";
-import Head from "next/head";
 
 export default async function Home() {
   const result = await fetchServerClient(
@@ -40,8 +39,65 @@ export default async function Home() {
     `https://www.technicalsewa.com/techsewa/masterconfig/publicmasterconfig/getConfigList`
   ).then((res) => res.json());
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "LocalBussiness",
+    name: "Technical Sewa",
+    address: "Kumaripati, Lalitpur, Near Bluebird Collage, Nepal",
+    aggragateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5",
+      ratingCount: "12",
+      reviewCount: "4",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: "27.6701114",
+      longitude: "85.3198698",
+    },
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      validFrom: "2022-01-01T00:00:00.000Z",
+      validThrough: "2024-01-01T00:00:00.000Z",
+      opens: "10:00",
+      closes: "19:00",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Sunday",
+      ],
+    },
+    telephone: "9851201580",
+    priceRange: "$",
+
+    url: "www.technicalsewa.com",
+    inLanguage: "en",
+   "author": {
+				"@type": "Organization",
+				"name": "Technical Sewa",
+				"url": "https://technicalsewa.com"
+			},  
+			"publisher": {
+				"@type": "Organization",
+				"name": "Technical Sewa",
+				"logo": {
+				"@type": "ImageObject",
+				"url": ""
+				}
+			} 
+  };
+
   return (
     <main>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+        />
+      </head>
       <HeroSection data={configlist} allBrands={allBrands} />
       <Categories allBrands={allBrands} />
       <ServicesSLiders brands={Array.from(brands)} data={allBrands} />
@@ -61,19 +117,6 @@ export async function generateMetadata() {
   const seoExists = seoData?.content && !Array.isArray(seoData?.content);
 
   const seoContent = seoData?.content;
-
-  const schemaData = {
-    "@context": "https://schema.org",
-    "@type": "website",
-    name: "technicalsewa",
-    url: "www.technicalsewa.com",
-    inLanguage: "en",
-    author: {
-      "@type": "Organization",
-      name: "Technical Sewa",
-    },
-  };
-
 
   if (seoExists) {
     return {
@@ -95,7 +138,6 @@ export async function generateMetadata() {
           href: `${seoContent.image}`,
         },
       ],
-      schemaData,
     };
   }
 }
