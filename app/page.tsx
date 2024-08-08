@@ -41,7 +41,7 @@ export default async function Home() {
 
   const schemaData = {
     "@context": "https://schema.org",
-    "@type": "LocalBussiness",
+    "@type": "LocalBusiness",
     name: "Technical Sewa",
     address: "Kumaripati, Lalitpur, Near Bluebird Collage, Nepal",
     aggragateRating: {
