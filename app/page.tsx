@@ -44,16 +44,16 @@ export default async function Home() {
     "@type": "LocalBusiness",
     name: "Technical Sewa",
     address: "Kumaripati, Lalitpur, Near Bluebird Collage, Nepal",
-    aggragateRating: {
+    "aggregateRating": {
       "@type": "AggregateRating",
-      ratingValue: "5",
-      ratingCount: "12",
-      reviewCount: "4",
+      "ratingValue": "5",
+      "ratingCount": "12",
+      "reviewCount": "4"
     },
-    geo: {
+    "geo": {
       "@type": "GeoCoordinates",
-      latitude: "27.6701114",
-      longitude: "85.3198698",
+      "latitude": "27.6701114",
+      "longitude": "85.3198698"
     },
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
@@ -74,20 +74,19 @@ export default async function Home() {
     priceRange: "$",
 
     url: "www.technicalsewa.com",
-    inLanguage: "en",
-   "author": {
-				"@type": "Organization",
-				"name": "Technical Sewa",
-				"url": "https://technicalsewa.com"
-			},  
-			"publisher": {
-				"@type": "Organization",
-				"name": "Technical Sewa",
-				"logo": {
-				"@type": "ImageObject",
-				"url": ""
-				}
-			} 
+  //  "author": {
+	// 			"@type": "Organization",
+	// 			"name": "Technical Sewa",
+	// 			"url": "https://technicalsewa.com"
+	// 		},  
+			// "publisher": {
+			// 	"@type": "Organization",
+			// 	"name": "Technical Sewa",
+			// 	"logo": {
+			// 	"@type": "ImageObject",
+			// 	"url": ""
+			// 	}
+			//} 
   };
 
   return (
