@@ -10,7 +10,52 @@ import ServicesSLiders from "@/features/home/servicesSliders";
 import ClientsSlider from "@/features/home/clients";
 import Head from "next/head";
 
-export default async function Home() {
+export async function generateMetadata() {
+  // fetch seo data for page based on slug
+  const seoData = await getSEOByPageURL(`www.technicalsewa.com`);
+  const seoExists = seoData?.content && !Array.isArray(seoData?.content);
+
+  const seoContent = seoData?.content;
+
+  const schemaData = seoExists
+  ? {
+      "@context": "https://schema.org",
+      "@type": seoContent.og_type,
+      "name": seoContent?.page_title,
+      "url": seoContent?.og_url,
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": seoContent?.og_url,
+      }
+    }
+  : null;
+
+  if (seoExists) {
+    return {
+      title: `${seoContent?.page_title} `,
+      description: `${seoContent?.description}`,
+      keywords: `${seoContent?.key_words}`,
+      openGraph: {
+        title: `${seoContent?.og_title} `,
+        description: `${seoContent?.og_desc} `,
+        url: seoContent?.og_url,
+        image: seoContent.image || `/default-og-image.png` ,
+        type: seoContent.og_type,
+      },
+      link: [
+        {
+          rel: 'apple-touch-icon',
+          type: 'image/x-icon',
+          sizes: '180x180',
+          href: `${seoContent.image}`,
+        },
+        schemaData,
+      ],
+    };
+  }
+}
+
+export default async function Home({schemaData}:any) {
   const result = await fetchServerClient(
     `techsewa/masterconfig/publicmasterconfig/getSliderListpop1`
   );
@@ -44,20 +89,10 @@ export default async function Home() {
     <main>
       <Head>
         <title>Technical Sewa</title>
-        <meta
-          name="description"
-          content="Welcome to Technical Sewa, a one-stop-shop for all of electronic repair needs. We specialize in repairing a wide range of appliances."
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
         />
-        <meta property="og:title" content="Technical Sewa" />
-        <meta
-          property="og:description"
-          content="Welcome to Technical Sewa, a one-stop-shop for all of electronic repair needs. We specialize in repairing a wide range of appliances."
-        />
-        <meta
-          property="og:image"
-          content="https://technicalsewa-store-five.vercel.app/icon_footer.png"
-        />
-        <meta property="og:url" content="https://technicalsewa.com" />
       </Head>
       <HeroSection data={configlist} allBrands={allBrands} />
       <Categories allBrands={allBrands} />
@@ -72,40 +107,4 @@ export default async function Home() {
   );
 }
 
-export async function generateMetadata() {
-  // fetch seo data for page based on slug
-  const seoData = await getSEOByPageURL(`www.technicalsewa.com`);
-  const seoExists = seoData?.content && !Array.isArray(seoData?.content);
 
-  const seoContent = seoData?.content;
-
-  if (seoExists) {
-    return {
-      title: `${seoContent?.page_title} `,
-      description: `${seoContent?.description}`,
-      keywords: `${seoContent?.key_words}`,
-      openGraph: {
-        title: `${seoContent?.og_title} `,
-        description: `${seoContent?.og_desc} `,
-        url: seoContent?.og_url,
-        image: seoContent.image || `/default-og-image.png` ,
-        type: seoContent.og_type,
-      },
-    };
-  }
-
-  return {
-    title: `Technical sewa`,
-    description:
-      "Welcome to Technical Sewa, a one-stop-shop for all of electronic repair needs. We specialize in repairing a wide range of appliances. ",
-    keywords:
-      "technicalsewa, Technicalsewa and solution, Appliances Repair, popular Brands, Warranty Products, Electrician & Plumber, Air-Purifier/Humidifier, Mobiles & Tabs, cctv Repair Service, Computer/Printer, Medical Equipment, Drone Repair, Carpenter Service, Cleaning & Pest Control",
-    openGraph: {
-      title: "Training | Technical sewa",
-      description:
-        "Welcome to Technical Sewa, a one-stop-shop for all of electronic repair needs. We specialize in repairing a wide range of appliances. ",
-      url: "https://technicalsewa.com",
-      type: "website",
-    },
-  };
-}
