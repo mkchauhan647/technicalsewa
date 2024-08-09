@@ -39,28 +39,6 @@ export default async function Home() {
     `https://www.technicalsewa.com/techsewa/masterconfig/publicmasterconfig/getConfigList`
   ).then((res) => res.json());
 
-  return (
-    <main>
-      <HeroSection data={configlist} allBrands={allBrands} />
-      <Categories allBrands={allBrands} />
-      <ServicesSLiders brands={Array.from(brands)} data={allBrands} />
-      <Number />
-      <WhyChooseUs />
-      <MidContent />
-      <FooterContact />
-      <MidContent2 />
-      <ClientsSlider clients={configlist} />
-    </main>
-  );
-}
-
-export async function generateMetadata() {
-  // fetch seo data for page based on slug
-  const seoData = await getSEOByPageURL(`www.technicalsewa.com`);
-  const seoExists = seoData?.content && !Array.isArray(seoData?.content);
-
-  const seoContent = seoData?.content;
-
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -97,6 +75,34 @@ export async function generateMetadata() {
     url: "www.technicalsewa.com",
   };
 
+  return (
+    <main>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+        />
+      </head>
+      <HeroSection data={configlist} allBrands={allBrands} />
+      <Categories allBrands={allBrands} />
+      <ServicesSLiders brands={Array.from(brands)} data={allBrands} />
+      <Number />
+      <WhyChooseUs />
+      <MidContent />
+      <FooterContact />
+      <MidContent2 />
+      <ClientsSlider clients={configlist} />
+    </main>
+  );
+}
+
+export async function generateMetadata() {
+  // fetch seo data for page based on slug
+  const seoData = await getSEOByPageURL(`www.technicalsewa.com`);
+  const seoExists = seoData?.content && !Array.isArray(seoData?.content);
+
+  const seoContent = seoData?.content;
+
   if (seoExists) {
     return {
       title: `${seoContent?.page_title} `,
@@ -117,9 +123,6 @@ export async function generateMetadata() {
           href: `${seoContent.image}`,
         },
       ],
-      other: {
-        "application/ld+json": JSON.stringify(schemaData),
-      },
     };
   }
 }
