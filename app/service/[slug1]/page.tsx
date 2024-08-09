@@ -27,6 +27,32 @@ export async function generateMetadata({ params }: any) {
   const seoExists = seoData?.content && !Array.isArray(seoData?.content);
 
   const seoContent = seoData?.content;
+
+  const schemaData = {
+    "@context": "https://schema.org",
+			"@type": "BlogPosting",
+			"mainEntityOfPage": {
+				"@type": "WebPage",
+				"@id": `https://technicalsewa.com/service/${slug}`
+			},
+			"headline": seoExists ? seoContent?.og_title : `${slug} | Technical sewa`,
+			"description": seoContent?.description,
+			"image": seoContent?.image,  
+			"author": {
+				"@type": "Organization",
+				"name": "Technical Sewa",
+				"url": "https://technicalsewa.com"
+			},  
+			"publisher": {
+				"@type": "Organization",
+				"name": "Technical Sewa",
+				"logo": {
+				"@type": "ImageObject",
+				"url": seoContent?.image
+				}
+			}  
+  };
+
   if (seoExists) {
     return {
       title: `${
@@ -35,13 +61,22 @@ export async function generateMetadata({ params }: any) {
       description: `${seoContent?.description}`,
       keywords: `${seoContent?.key_words}`,
       openGraph: {
-        title: `${
-          seoExists ? seoContent?.og_title : `${slug} | Technical sewa`
-        } `,
-        // ...(seoContent?.og_type ? {type: seoContent?.og_type}:{}),
-        type: "website",
+        title: `${seoContent?.og_title} `,
         description: `${seoContent?.og_desc} `,
         url: seoContent?.og_url,
+        image: seoContent.image || `/default-og-image.png`,
+        type: seoContent.og_type,
+      },
+      link: [
+        {
+          rel: "apple-touch-icon",
+          type: "image/x-icon",
+          sizes: "180x180",
+          href: `${seoContent.image}`,
+        },
+      ],
+      other: {
+        "application/ld+json": JSON.stringify(schemaData),
       },
     };
   }
