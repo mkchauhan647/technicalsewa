@@ -39,6 +39,9 @@ async function getData(id: string) {
 const page = async ({ params }: any) => {
   const trainingId = params.id;
 
+  // console.log("trainingId", trainingId);
+  // console.log("params", params);
+
   const data1 = await fetchServerClient(
     "/techsewa/publiccontrol/publicmasterconfig/gettrainingcategories"
   );
