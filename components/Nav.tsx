@@ -91,7 +91,8 @@ const Nav = ({services,trainingCategories:categories}:any) => {
           </a>
          <div
             className={`${
-              showinput || !isHomePage ? "max-md:w-72 md:!w-80" : "hidden"
+            // showinput || !isHomePage ? "max-md:w-72 md:!w-80" : "hidden"
+              "max-md:w-72 md:!w-80"
             } `}
           >
             <div onClick={()=> setShowinput(true)}>
