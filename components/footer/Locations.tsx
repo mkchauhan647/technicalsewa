@@ -25,6 +25,7 @@ const Locations = async () => {
                   pathname: `/location/technicalsewa-service-center-${place?.location?.toLowerCase().split(" ").join("-")} `
                 }}
                 className="hover:underline whitespace-nowrap"
+                target="_blank"
               >
                 {place?.location}
               </Link>

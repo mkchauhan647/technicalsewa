@@ -66,6 +66,23 @@ const page = async ({ params }: any) => {
             <h2 className="mb-2 text-2xl font-bold pb-[10px]">
               {data?.training_title}
             </h2>
+            {data?.video_link && (
+                <div className="lg:float-right lg:w-[30rem] mt-6 max-md:w-full p-1">
+                  <div className="border-primary border-opacity-60 p-0.5 rounded-md border overflow-hidden">
+                    <iframe
+                      className="w-full rounded-md"
+                      height="300"
+                      src={`https://www.youtube.com/embed/${data?.video_link?.replace(
+                        "https://www.youtube.com/watch?v=",
+                        ""
+                      )}`}
+                      title="YouTube video player"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                </div>
+              )}
             {data?.image_1 && (
               <div className="w-full h-[500px] cursor-pointer mb-[10px]">
                 <img

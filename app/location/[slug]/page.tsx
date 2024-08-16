@@ -9,8 +9,9 @@ const page = async(props: any) => {
       "https://www.technicalsewa.com/techsewa/publiccontrol/publicfaq/getLocation"
     )
     .then((res) => res.data);
+  
 
-  const location = props?.params?.slug?.split("-").pop();
+  const location = props?.params?.slug?.split("-").join(" ").replace("technicalsewa service center ", "");
 
   const singleLocationDetails = allLocation.filter((value:any)=> value?.location.toLowerCase() === location)
   const formatedDescription = singleLocationDetails[0]?.description.replace(/•/g, '\n•');
