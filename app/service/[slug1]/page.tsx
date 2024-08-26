@@ -8,7 +8,7 @@ const page = async ({ params }: any) => {
   const slug = params.slug1;
 
   const data = await fetchServerClient(
-    `/techsewa/masterconfig/publicmasterconfig/getSliderListpop`
+    `/techsewa/masterconfig/publicmasterconfig/getSliderListpop`,
   );
 
    // fetch seo data for page based on slug
@@ -105,7 +105,7 @@ export async function generateMetadata({ params }: any) {
         description: `${seoContent?.og_desc} `,
         url: seoContent?.og_url,
         image: seoContent.image || `/default-og-image.png`,
-        type: seoContent.og_type,
+        type: seoContent?.og_type?.toLowerCase() || "website",
       },
       link: [
         {

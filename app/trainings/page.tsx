@@ -27,10 +27,12 @@ const Page = async () => {
             <div className="w-full md:basis-[81%]">
               <div className="grid gap-4 md:grid-cols-1">
                 {trainings.map((item: any, i: number) => {
+                  // console.log("item",item.training_title);
                   const slug = item?.training_title
-                    ?.toLowerCase()
-                    .replace(/[^a-zA-Z0-9\s]/g, "-") // Replace special characters with -
-                    .replace(/\s+/g, "-");
+                    ?.toLowerCase().replace(/[|,-]/g,' ').split(" ").filter((p:string) => p.length > 0).join("-")
+                    // .replace(/[^a-zA-Z0-9\s]/g, "-") // Replace special characters with -
+                  // .replace(/\s+/g, "-");
+                  // console.log("slug", slug);
                   return (
                     <div
                       key={i}

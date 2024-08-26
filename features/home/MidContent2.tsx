@@ -4,8 +4,10 @@ import React from "react";
 
 const MidContent2 = async () => {
   const desc = await axios.get(`${baseUrl}techsewa/publicControl/bottomcontent`)
+
  
   const paragraphs = desc?.data?.description?.split("</p>");
+  console.log("paragraphs", paragraphs,desc.data);
   return (
     <div
       className="bg-primary py-[21px] mt-[10px] mb-[35px] md:mb-[48px]"

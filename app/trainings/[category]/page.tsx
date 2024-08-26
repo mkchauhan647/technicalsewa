@@ -56,9 +56,9 @@ export default async function TrainingCategoryPage({ params }: any) {
               <div className="grid gap-4 md:grid-cols-1">
                 {data?.map((item: any, i: number) => {
                   const slug = item?.training_title
-                    ?.toLowerCase()
-                    .replace(/[^a-zA-Z0-9\s]/g, "-") // Replace special characters with -
-                    .replace(/\s+/g, "-");
+                  ?.toLowerCase().replace(/[|,-]/g,' ').split(" ").filter((p:string) => p.length > 0).join("-")
+                    // .replace(/[^a-zA-Z0-9\s]/g, "-") // Replace special characters with -
+                    // .replace(/\s+/g, "-");
                   return (
                     <div
                       key={i}
