@@ -37,7 +37,7 @@ async function getData(id: string) {
 }
 
 const page = async ({ params }: any) => {
-  const trainingId = params.id;
+  const trainingId = params.slug;
 
   // console.log("trainingId", trainingId);
   // console.log("params", params);

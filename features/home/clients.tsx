@@ -60,24 +60,14 @@ export default function ClientsSlider({clients}:any) {
           modules={[Autoplay, Pagination, Navigation]}
           wrapperClass="pb-4 justify-center"
         >
+          <div className="flex flex-col lg:flex-row  gap-4 justify-center items-center">
           {clientsImage?.map((ele: any, index: any) => (
-              <SwiperSlide key={index}>
-                <div
-                  className={
-                    "flex flex-col justify-center items-center p-2 rounded-md border h-[110px] border-primary"
-                  }
-                >
-                  <Image
-                  width={100}
-                  height={110}
-                  loading="lazy"
-                    src={ele?.image_url}
-                    alt={ele?.alt ?? ""}
-                    className="w-[80px] object-contain h-full md:w-[100px] hover:scale-110 duration-100"
-                  />
-                </div>
-              </SwiperSlide>
-            ))}
+             
+             <div key={index} className="p-2 h-[130px] w-[130px] border shadow-md flex justify-center items-center ">
+                <img src={ele?.image_url} alt={ele?.alt ?? ""} className=" w-full h-full object-scale-down " />
+                  </div>
+             ))}
+         </div>
         </Swiper>
       </div>
     </div>

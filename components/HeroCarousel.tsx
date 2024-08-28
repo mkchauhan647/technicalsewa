@@ -16,34 +16,50 @@ const HeroCarousel = ({ banners }: any) => {
   };
 
   useEffect(() => {
-    const interval = setInterval(handlebanner, 5000);
-    // Cleanup interval on component unmount
-    return () => clearInterval(interval);
+    if (banners.length > 1) {
+      const interval = setInterval(() => {
+        setBanner((prevCount) => (prevCount + 1) % 3);
+      }, 5000);
+
+      return () => clearInterval(interval);
+    }
   }, [banner]);
 
   return (
     <>
-      <button
-        onClick={() => handlebanner("prev")}
-        className="prev absolute bg-none z-10 border-none text-[4rem] p-2 rounded bg-black/20 hover:text-white hover:bg-black/20 text-white/20 top-[50%] translate-y-[-50%] cursor-pointer left-4"
-      >
-        <BiLeftArrow  />
-      </button>
-      <button
+      {
+        banners.length > 1 && (
+          <>
+          <button
+            onClick={() => handlebanner("prev")}
+            className="prev absolute bg-none z-10 border-none text-[4rem] p-2 rounded bg-black/20 hover:text-white hover:bg-black/20 text-white/20 top-[50%] translate-y-[-50%] cursor-pointer left-4"
+          >
+            <BiLeftArrow />
+          </button>
+        < button
         onClick={() => handlebanner("next")}
-        className="next absolute bg-none z-10 border-none text-[4rem] p-2 rounded bg-black/20 hover:text-white hover:bg-black/20 text-white/20 top-[50%] translate-y-[-50%] cursor-pointer right-4"
+      className="next absolute bg-none z-10 border-none text-[4rem] p-2 rounded bg-black/20 hover:text-white hover:bg-black/20 text-white/20 top-[50%] translate-y-[-50%] cursor-pointer right-4"
       >
-        <BiRightArrow  />
-      </button>
+      <BiRightArrow />
+    </button >
+          
+          </>
+  )
+}
 
-      <Image
-        loading="eager"
-        className="object-fill w-full h-full"
+      {/* <Image
+        loading="lazy"
+        className="object-cover w-full h-full"
         src={banners[banner]?.image_url}
         alt={banners[banner]?.alt}
         width={600}
         height={600}
-      />
+      /> */}
+      <img
+        className="object-cover w-full h-full"
+        src={banners[banner]?.image_url}
+        alt={banners[banner]?.alt}
+        />
     </>
   );
 };
