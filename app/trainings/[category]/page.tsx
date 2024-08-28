@@ -76,7 +76,8 @@ export default async function TrainingCategoryPage({ params }: any) {
                       </div>
                       <div className="w-full md:basis-[73%] order-1 md:order-2">
                         <a
-                          href={`/training/${slug}/${item?.training_id}`}
+                            href={`/training/${slug} `}
+                          // /${item?.training_id}`}
                           className="  font-bold hover:text-primary text-[19px] md:text-[27px] mb-3 h-[40px] "
                         >
                           {item?.training_title}

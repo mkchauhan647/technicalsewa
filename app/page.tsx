@@ -87,7 +87,7 @@ export default async function Home() {
       <Categories allBrands={allBrands} />
       <ServicesSLiders brands={Array.from(brands)} data={allBrands} />
       <Number />
-      <WhyChooseUs />
+      {/* <WhyChooseUs /> */}
       <MidContent />
       <FooterContact />
       <MidContent2 />
