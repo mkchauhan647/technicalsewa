@@ -8,7 +8,7 @@ import React from "react";
 const Page = async () => {
   const trainings = await getTrainings();
 
-  // console.log('trainings', trainings);
+  console.log('trainings', trainings);
 
   trainings?.sort(
     (a: any, b: any) =>
