@@ -1,6 +1,6 @@
 import Categories from "@/components/repair/Categories";
 import React from "react";
-
+import parse from "html-react-parser";
 const SlugHelper = (props:any) => {
   return (
     <>
@@ -10,7 +10,11 @@ const SlugHelper = (props:any) => {
           {props?.location.toUpperCase()}
         </h1>
         <p className="text-left font-normal whitespace-pre-wrap">
-          {props?.formatedDescription}
+          {props?.formatedDescription
+            && 
+            parse(props?.formatedDescription || "")
+          
+          }
         </p>
       </div>
     </>

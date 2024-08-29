@@ -9,16 +9,16 @@ const HeroCarousel = ({ banners }: any) => {
 
   const handlebanner = (button: string) => {
     if (button === "prev") {
-      setBanner((prevCount) => (prevCount - 1 + 3) % 3);
+      setBanner((prevCount) => (prevCount - 1 + banners.length) % banners.length);
     } else {
-      setBanner((prevCount) => (prevCount + 1) % 3);
+      setBanner((prevCount) => (prevCount + 1) % banners.length);
     }
   };
 
   useEffect(() => {
     if (banners.length > 1) {
       const interval = setInterval(() => {
-        setBanner((prevCount) => (prevCount + 1) % 3);
+        setBanner((prevCount) => (prevCount + 1) % banners.length);
       }, 5000);
 
       return () => clearInterval(interval);
