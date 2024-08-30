@@ -42,8 +42,7 @@ const Page = async () => {
                         <img
                           className="object-cover w-full h-full"
                           src={
-                            item?.image_1 ??
-                            item?.image_2 ??
+                            item?.image_url ??
                             "/assets/no-image.jpg"
                           }
                         />
