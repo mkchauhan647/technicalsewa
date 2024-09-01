@@ -14,6 +14,7 @@ async function getData(id: string) {
 
   const res = await fetch(
     `${baseUrl}/techsewa/publiccontrol/publicmasterconfig/gettrainingDetails`,
+    // `${baseUrl}/techsewa/publiccontrol/publicmasterconfig/getblogDetailsbyid`,
     {
       method: "POST",
       body: formData,
@@ -68,7 +69,7 @@ export default async function TrainingCategoryPage({ params }: any) {
                         <img
                           className="object-cover w-full h-full"
                           src={
-                            item?.image_1 ??
+                            item?.image_url ??
                             item?.image_2 ??
                             "/assets/no-image.jpg"
                           }

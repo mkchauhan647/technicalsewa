@@ -8,7 +8,7 @@ import React from "react";
 const Page = async () => {
   const trainings = await getTrainings();
 
-  console.log('trainings', trainings);
+  //console.log('trainings', trainings);
 
   trainings?.sort(
     (a: any, b: any) =>
@@ -27,12 +27,12 @@ const Page = async () => {
             <div className="w-full md:basis-[81%]">
               <div className="grid gap-4 md:grid-cols-1">
                 {trainings.map((item: any, i: number) => {
-                  // console.log("item",item.training_title);
+                  // //console.log("item",item.training_title);
                   const slug = item?.training_title
                     ?.toLowerCase().replace(/[|,-]/g,' ').split(" ").filter((p:string) => p.length > 0).join("-")
                     // .replace(/[^a-zA-Z0-9\s]/g, "-") // Replace special characters with -
                   // .replace(/\s+/g, "-");
-                  // console.log("slug", slug);
+                  // //console.log("slug", slug);
                   return (
                     <div
                       key={i}

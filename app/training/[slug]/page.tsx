@@ -12,12 +12,14 @@ import { redirect } from "next/navigation";
 import React from "react";
 async function getData(id: string) {
   const formData = new FormData();
-  formData.append("training_id", id);
+  formData.append("id", id);
 
-  console.log("training_id ? ", id);
+  //console.log("training_id ? ", id);
 
   const res = await fetch(
     `${baseUrl}/techsewa/publiccontrol/publicmasterconfig/gettrainingDetails`,
+    // `${baseUrl}/techsewa/publiccontrol/publicmasterconfig/getblogDetailsbyid`,
+
     {
       method: "POST",
       body: formData,
@@ -31,22 +33,29 @@ async function getData(id: string) {
 
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
+    alert("Failed to fetch data");
     throw new Error("Failed to fetch data");
   }
-  return res.json();
+
+  const data = await res.json();
+
+  //console.log("res", data);
+
+  return data;
 }
 
 const page = async ({ params }: any) => {
   const trainingId = params.slug;
 
-  // console.log("trainingId", trainingId);
-  // console.log("params", params);
+  // //console.log("trainingId", trainingId);
+  // //console.log("params", params);
 
   const data1 = await fetchServerClient(
     "/techsewa/publiccontrol/publicmasterconfig/gettrainingcategories"
   );
 
   let data = await getData(trainingId);
+  //console.log("data", data);
   data = data?.[0] || data;
 
   if (!data || (Array.isArray(data) && data.length === 0)) {
@@ -83,15 +92,15 @@ const page = async ({ params }: any) => {
                   </div>
                 </div>
               )}
-            {data?.image_1 && (
-              <div className="w-full h-[500px] cursor-pointer mb-[10px]">
+            {/* {data?.image_url && (
+              <div className="w-full md:w-[500px] h-[300px] cursor-pointer mb-[10px]">
                 <img
-                  src={data?.image_1}
+                  src={data?.image_url}
                   alt={`${data?.training_title} image #1}`}
-                  className="object-fill w-full h-full"
+                  className=" w-full h-full"
                 />
               </div>
-            )}
+            )} */}
             {data?.detail && (
               <div
                 style={{ color: "black" }}
