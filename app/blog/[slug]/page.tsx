@@ -12,8 +12,9 @@ import { redirect } from "next/navigation";
 
 const page = async ({ params }: any) => {
   const title = params.slug;
-  const blogId = params.id;
-  const blogData = await getBlogDataById(blogId);
+  // const blogId = params.id;
+  const blogData = await getBlogDataById(title);
+  //console.log("blogdata", blogData);
   const data = blogData?.[0] || blogData;
 
   if (!data || (Array.isArray(data) && data.length === 0)) {

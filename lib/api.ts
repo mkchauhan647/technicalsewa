@@ -74,7 +74,8 @@ export async function getBlogDataById(id: string) {
   formData.append("id", id);
   try {
     const res = await fetch(
-      `${baseUrl}/techsewa/publiccontrol/publicmasterconfig/getblogDetailsbyidd`,
+      // `${baseUrl}/techsewa/publiccontrol/publicmasterconfig/getblogDetailsbyidd`,
+      `${baseUrl}/techsewa/publiccontrol/publicmasterconfig/getblogDetailsbyid`,
       {
         method: "POST",
         body: formData,
@@ -91,6 +92,8 @@ export async function getBlogDataById(id: string) {
     return { error: true };
   }
 }
+
+
 
 // get blogs by category id
 

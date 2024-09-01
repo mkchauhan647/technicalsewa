@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 
 const BlogCard = ({ blog }: any) => {
-  const slug = blog?.blog_name
+  const slug = blog?.page_url
     ?.toLowerCase()
     .replace(/[^a-zA-Z0-9\s]/g, "-") // Replace special characters with -
     .replace(/\s+/g, "-");
@@ -33,7 +33,8 @@ const BlogCard = ({ blog }: any) => {
     <>
       <div className="flex flex-wrap gap-2 md:gap-0 md:justify-between rounded-[10px] border-[2px] border-gray-200 p-4">
         <div className="w-full md:basis-[40%]  h-[180px] hover:opacity-95 order-2 md:order-1">
-          <a href={`/blog/${slug}/${blog?.blog_id}`} className="w-full h-full">
+          {/* <a href={`/blog/${slug}/${blog?.blog_id}`} className="w-full h-full"> */}
+          <a href={`/blog/${slug}`} className="w-full h-full">
             <img
               className="object-contain w-full h-full"
               src={blog?.filename?.replace(
@@ -47,9 +48,9 @@ const BlogCard = ({ blog }: any) => {
         <div className="w-full md:basis-[54%] order-1 md:order-2">
           <a
             // href={`/blogs/${blog.blog_name.replaceAll(" ", "-").toLowerCase()}`}
-            href={`/blog/${blog?.blog_name
+            href={`/blog/${blog?.page_url
               .replaceAll(" ", "-")
-              .toLowerCase()}/${blog?.blog_id}`}
+              .toLowerCase()}`}
           >
             <div className="md:pb-[3px] text-gray-500 font-bold">
               {blog?.created_ts}
