@@ -4,8 +4,8 @@ import React from "react";
 
 const BlogCard = ({ blog }: any) => {
   const slug = blog?.page_url
-    ?.toLowerCase()
-    .replace(/[^a-zA-Z0-9\s]/g, "-") // Replace special characters with -
+    ?.toLowerCase().trim()
+    .replace(/[^a-zA-Z0-9-\s]/g, "") // Replace special characters with -
     .replace(/\s+/g, "-");
   return (
     //     <div className='flex gap-4 rounded-[10px] border-[2px] border-gray-200 p-4'>
@@ -48,9 +48,7 @@ const BlogCard = ({ blog }: any) => {
         <div className="w-full md:basis-[54%] order-1 md:order-2">
           <a
             // href={`/blogs/${blog.blog_name.replaceAll(" ", "-").toLowerCase()}`}
-            href={`/blog/${blog?.page_url
-              .replaceAll(" ", "-")
-              .toLowerCase()}`}
+            href={`/blog/${slug}`}
           >
             <div className="md:pb-[3px] text-gray-500 font-bold">
               {blog?.created_ts}

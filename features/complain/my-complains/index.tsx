@@ -36,6 +36,7 @@ export default function UserComplains() {
     );
     setTotalData(data?.total);
     setData(data?.list);
+    // console.log("data", data);
     setLoading(false);
   };
 
