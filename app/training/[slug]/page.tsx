@@ -12,14 +12,12 @@ import { redirect } from "next/navigation";
 import React from "react";
 async function getData(id: string) {
   const formData = new FormData();
-  formData.append("id", id);
+  formData.append("title", id);
 
-  //console.log("training_id ? ", id);
+  // console.log("training_id ? ", id);
 
   const res = await fetch(
     `${baseUrl}/techsewa/publiccontrol/publicmasterconfig/gettrainingDetails`,
-    // `${baseUrl}/techsewa/publiccontrol/publicmasterconfig/getblogDetailsbyid`,
-
     {
       method: "POST",
       body: formData,
@@ -28,18 +26,15 @@ async function getData(id: string) {
       },
     }
   );
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
 
   if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
     alert("Failed to fetch data");
     throw new Error("Failed to fetch data");
   }
 
   const data = await res.json();
 
-  //console.log("res", data);
+  // console.log("res", data);
 
   return data;
 }
