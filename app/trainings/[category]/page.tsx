@@ -56,10 +56,11 @@ export default async function TrainingCategoryPage({ params }: any) {
             <div className="w-full md:basis-[78%]">
               <div className="grid gap-4 md:grid-cols-1">
                 {data?.map((item: any, i: number) => {
-                  const slug = item?.training_title
-                  ?.toLowerCase().replace(/[|,-]/g,' ').split(" ").filter((p:string) => p.length > 0).join("-")
+                  // const slug = item?.training_title
+                  // ?.toLowerCase().replace(/[|,-]/g,' ').split(" ").filter((p:string) => p.length > 0).join("-")
                     // .replace(/[^a-zA-Z0-9\s]/g, "-") // Replace special characters with -
-                    // .replace(/\s+/g, "-");
+                  // .replace(/\s+/g, "-");
+                  const slug = item?.slug_name;
                   return (
                     <div
                       key={i}
