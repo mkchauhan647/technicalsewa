@@ -9,13 +9,13 @@ const SlugHelper = (props:any) => {
         <h1 className="bg-primary md:font-extrabold font-bold text-white md:text-2xl text-xl md:py-4 py-3 mb-2">
           {props?.location.toUpperCase()}
         </h1>
-        <p className="text-left font-normal whitespace-pre-wrap">
+        <div className="text-left font-normal whitespace-pre-wrap blog-content">
           {props?.formatedDescription
             && 
             parse(props?.formatedDescription || "")
           
           }
-        </p>
+        </div>
       </div>
     </>
   );

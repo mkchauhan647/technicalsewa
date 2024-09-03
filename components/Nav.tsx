@@ -167,8 +167,8 @@ const Nav = ({services,trainingCategories:categories}:any) => {
                     <div className="py-2"></div>
                     {categories?.map((cat:TrainingCategory, i:number) => {
                       const slug = `/blogs/${cat?.text
-                        ?.replaceAll(" ", "-")
-                        .toLowerCase()}/${cat?.value}`;
+                        ?.replaceAll(" ", "-").toLowerCase()}`
+                        // .toLowerCase()}/${cat?.value}`;
                       return (
                         <a key={i} href={slug} className="py-1">
                           <p className="block px-6 py-1 text-sm text-[grey] hover:bg-gray-100">

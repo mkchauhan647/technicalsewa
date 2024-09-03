@@ -15,7 +15,7 @@ import { MdMasks, MdSanitizer } from "react-icons/md";
 import { URLSearchParams } from "url";
 
 const BlogsByCategoriesPage = async ({ params }: any) => {
-  let categoryId = params.id;
+  let categoryId = params.category_name;
 
   const blogs = await getBlogsByCategoryId(categoryId);
 
