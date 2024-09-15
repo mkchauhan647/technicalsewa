@@ -53,7 +53,7 @@ const ServiceSlug1 = ({ data }: any) => {
 
   useMemo(() => {
     if (Array.isArray(filterData) && filterData.length === 0) {
-      router.push("/");
+      router.push("/");``
     }
   }, [filterData]);
 
@@ -62,17 +62,14 @@ const ServiceSlug1 = ({ data }: any) => {
       {filterData &&
         filterData.map((val: any) => (
           <div key={val?.title}>
-            <div
-              className="mb-[20px] overflow-hidden max-md:p-4 flex flex-col gap-4 relative"
-            >
+            <div className="mb-[20px] overflow-hidden max-md:p-4 flex flex-col gap-4 relative">
               <div
                 style={{
                   backgroundImage: `url(${val?.image_url?.replace(
                     "https://www.technicalsewa.com/multiservice/",
                     "https://www.technicalsewa.com/multiservice/test/"
                   )})`,
-                  backgroundPosition: 'center top', // Adjust background position here
-
+                  backgroundPosition: "center top", // Adjust background position here
                 }}
                 className="bg-white h-[350px] bg-contain bg-no-repeat bg-center w-full relative py-[20px]"
               >
@@ -94,12 +91,16 @@ const ServiceSlug1 = ({ data }: any) => {
                     </div>
 
                     <div className="flex flex-row gap-[10px] mt-4">
-                      <div className="h-[40px] bg-[#1D738D] flex itmes-center text-white py-[5px] px-[15px] rounded-[6px] mt-[5px]">
-                        <AiFillStar size={26} />
-                        <p className="pl-[5px] text-[20px] font-semibold">
-                          4.65
-                        </p>
-                        <p className="pl-[5px] self-end mb-[3.5px]">Out of 5</p>
+                      <div className="h-[40px] bg-[#1D738D] flex itmes-center  text-white py-[5px] px-[15px] rounded-[6px] mt-[5px]">
+                        <div className="flex items-center">
+                          <AiFillStar className="text-[10px] md:text-[12px] lg:text-[14px]" />
+                          <p className="pl-[2px] md:pl-[5px] text-[10px] md:text-[12px] lg:text-[14px] font-semibold">
+                            4.65
+                          </p>
+                          <p className="pl-[2px] md:pl-[5px] text-[10px] md:text-[12px] lg:text-[14px] mb-[3.5px]">
+                            Out of 5
+                          </p>
+                        </div>
                       </div>
                       <a
                         href="tel:9851201580"
@@ -117,7 +118,7 @@ const ServiceSlug1 = ({ data }: any) => {
                       <div className="flex gap-2 items-center">
                         <div className="flex gap-2 items-center">
                           <div
-                            className="flex pb-4 text-white text-justify flex-col gap-1 md:gap-3 text-[14px] listpoint"
+                            className="flex pb-4 text-white text-justify flex-col gap-1 md:gap-3 text-[10px] md:text-[12px] listpoint"
                             dangerouslySetInnerHTML={{
                               __html: val?.product_desc,
                             }}
@@ -137,16 +138,15 @@ const ServiceSlug1 = ({ data }: any) => {
                   </h3>
                   <div className="flex flex-col gap-2 justify-center items-center px-2">
                     {selectCategoryData?.map((val: any) => (
-                        <a
-                          href={`/service/${params.slug1}/${val.model}`}
-                          key={val.text}
-                          className=" hover:bg-gray-500 cursor-pointer flex justify-between items-center px-4 py-[12px] bg-white w-full text-black rounded-md "
-                        >
-                          {val.text}
-                          <SlArrowRight />
-                        </a>
-                      )
-                    )}
+                      <a
+                        href={`/service/${params.slug1}/${val.model}`}
+                        key={val.text}
+                        className=" hover:bg-gray-500 cursor-pointer flex justify-between items-center px-4 py-[12px] bg-white w-full text-black rounded-md "
+                      >
+                        {val.text}
+                        <SlArrowRight />
+                      </a>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -154,14 +154,13 @@ const ServiceSlug1 = ({ data }: any) => {
               {/* description of product paragraph  */}
               <div className="servercontent my-[50px] max-w-[1280px] mx-auto px-[2px]">
                 <div
-                  className="flex text-justify md:w-[66%] flex-col gap-2 service"
+                  className="flex lg:text-justify md:w-[66%] flex-col gap-2 service"
                   dangerouslySetInnerHTML={{ __html: val?.content }}
                 />
               </div>
-              
             </div>
 
-            <Faqlist filteredId = {filteredId} />
+            <Faqlist filteredId={filteredId} />
 
             <ServiceReviews productId={filteredId} />
           </div>
