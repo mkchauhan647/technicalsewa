@@ -53,7 +53,8 @@ const ServiceSlug1 = ({ data }: any) => {
 
   useMemo(() => {
     if (Array.isArray(filterData) && filterData.length === 0) {
-      router.push("/");``
+      router.push("/");
+      ``;
     }
   }, [filterData]);
 
@@ -92,24 +93,21 @@ const ServiceSlug1 = ({ data }: any) => {
 
                     <div className="flex flex-row gap-[10px] mt-4">
                       <div className="h-[40px] bg-[#1D738D] flex itmes-center  text-white py-[5px] px-[15px] rounded-[6px] mt-[5px]">
-                        <div className="flex items-center">
-                          <AiFillStar className="text-[10px] md:text-[12px] lg:text-[14px]" />
-                          <p className="pl-[2px] md:pl-[5px] text-[10px] md:text-[12px] lg:text-[14px] font-semibold">
+                        <div className="flex items-center text-[12px] md:text-[14px] lg:text-[16px]">
+                          <AiFillStar className="" />
+                          <p className="pl-[2px] md:pl-[5px] font-semibold">
                             4.65
                           </p>
-                          <p className="pl-[2px] md:pl-[5px] text-[10px] md:text-[12px] lg:text-[14px] mb-[3.5px]">
+                          <p className="pl-[2px] md:pl-[5px] mb-[3.5px]">
                             Out of 5
                           </p>
                         </div>
                       </div>
                       <a
                         href="tel:9851201580"
-                        className="flex items-center justify-center bg-white gap-[8px] h-[40px] w-[160px] border border-[#2591B2] rounded-[6px] text-[#1D738D] mt-[5px]"
+                        className="flex items-center justify-center bg-white gap-[8px] h-[40px] w-[160px] border border-[#2591B2] rounded-[6px] text-[#1D738D] mt-[5px] text-[12px] md:text-[14px] lg:text-[16px]"
                       >
-                        <BsFillTelephoneFill
-                          className="text-primary"
-                          size={18}
-                        />
+                        <BsFillTelephoneFill className="text-primary " />
                         9851201580
                       </a>
                     </div>
@@ -118,7 +116,7 @@ const ServiceSlug1 = ({ data }: any) => {
                       <div className="flex gap-2 items-center">
                         <div className="flex gap-2 items-center">
                           <div
-                            className="flex pb-4 text-white text-justify flex-col gap-1 md:gap-3 text-[10px] md:text-[12px] listpoint"
+                            className="flex pb-4 text-white text-justify flex-col gap-1 md:gap-3 text-[12px] md:text-[14px] listpoint"
                             dangerouslySetInnerHTML={{
                               __html: val?.product_desc,
                             }}
