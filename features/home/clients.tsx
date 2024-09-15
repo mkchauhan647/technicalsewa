@@ -61,7 +61,7 @@ export default function ClientsSlider({ clients }: ClientsProps) {
         >
           {clientsImage?.map((ele: Brand, index: number) => (
             <SwiperSlide key={index}>
-              <div className="p-2 h-[130px] w-[130px] border shadow-md flex justify-center items-center">
+              <div className="p-2 h-[130px] w-[130px] border  flex justify-center items-center">
                 <Image
                   src={ele.image_url}
                   alt={ele.alt || "Client logo"}

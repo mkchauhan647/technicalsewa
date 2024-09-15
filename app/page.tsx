@@ -8,6 +8,7 @@ import MidContent2 from "@/features/home/MidContent2";
 import { fetchServerClient, getSEOByPageURL } from "@/lib/api";
 import ServicesSLiders from "@/features/home/servicesSliders";
 import ClientsSlider from "@/features/home/clients";
+import Layout from "@/layout/Layout";
 
 export default async function Home() {
   const result = await fetchServerClient(
@@ -44,16 +45,16 @@ export default async function Home() {
     "@type": "LocalBusiness",
     name: "Technical Sewa",
     address: "Kumaripati, Lalitpur, Near Bluebird Collage, Nepal",
-    "aggregateRating": {
+    aggregateRating: {
       "@type": "AggregateRating",
-      "ratingValue": "5",
-      "ratingCount": "12",
-      "reviewCount": "4"
+      ratingValue: "5",
+      ratingCount: "12",
+      reviewCount: "4",
     },
-    "geo": {
+    geo: {
       "@type": "GeoCoordinates",
-      "latitude": "27.6701114",
-      "longitude": "85.3198698"
+      latitude: "27.6701114",
+      longitude: "85.3198698",
     },
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
@@ -76,7 +77,7 @@ export default async function Home() {
   };
 
   return (
-    <main>
+    <Layout>
       <head>
         <script
           type="application/ld+json"
@@ -92,7 +93,7 @@ export default async function Home() {
       <FooterContact />
       <MidContent2 />
       <ClientsSlider clients={configlist} />
-    </main>
+    </Layout>
   );
 }
 
