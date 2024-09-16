@@ -8,7 +8,7 @@ import MidContent2 from "@/features/home/MidContent2";
 import { fetchServerClient, getSEOByPageURL } from "@/lib/api";
 import ServicesSLiders from "@/features/home/servicesSliders";
 import ClientsSlider from "@/features/home/clients";
-import Layout from "@/layout/Layout";
+import PopupBanner from "@/components/Modal/PopUp";
 
 export default async function Home() {
   const result = await fetchServerClient(
@@ -77,13 +77,14 @@ export default async function Home() {
   };
 
   return (
-    <Layout>
+    <>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
         />
       </head>
+      <PopupBanner />
       <HeroSection data={configlist} allBrands={allBrands} />
       <Categories allBrands={allBrands} />
       <ServicesSLiders brands={Array.from(brands)} data={allBrands} />
@@ -93,7 +94,7 @@ export default async function Home() {
       <FooterContact />
       <MidContent2 />
       <ClientsSlider clients={configlist} />
-    </Layout>
+    </>
   );
 }
 
