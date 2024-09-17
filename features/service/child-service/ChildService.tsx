@@ -122,36 +122,40 @@ const ChildService = ({ data }: any) => {
                               {decodeURIComponent(params["child-service-slug"])}
                             </span>{" "}
                           </h3>
-                          <h3 className="md:w-[66%] text-white leading-[1.5] tracking-[1px] md:text-[30px] text-[24px] font-bold">
+                          <h3 className="md:w-[66%] text-white leading-[1.2] tracking-[0.5px] md:text-[25px] text-[20px] font-bold">
                             {childService?.title}
                           </h3>
                         </div>
 
                         <div className="flex flex-row gap-[10px] mt-4">
-                      <div className="w-[200px] h-[40px] bg-[#1D738D] flex itmes-center text-white py-[5px] px-[15px] rounded-[6px] mt-[5px]">
-                        <AiFillStar size={26} />
-                        <p className="pl-[10px] text-[20px] font-semibold">
-                          4.65
-                        </p>
-                        <p className="pl-[5px] self-end mb-[5px]">Out of 5</p>
-                      </div>
-                      <a
-                        href="tel:9851201580"
-                        className="flex items-center justify-center bg-white gap-[8px] h-[40px] w-[160px] border border-[#2591B2] rounded-[6px] text-[#1D738D] mt-[5px]"
-                      >
-                        <BsFillTelephoneFill
-                          className="text-primary"
-                          size={20}
-                        />
-                        9851201580
-                      </a>
-                    </div>
+                          <div className="w-[200px] h-[40px] bg-[#1D738D] flex itmes-center text-white py-[5px] px-[15px] rounded-[6px] mt-[5px]">
+                            <div className="flex items-center text-[12px] md:text-[14px] lg:text-[16px]">
+                              <AiFillStar className="" />
+                              <p className="pl-[2px] md:pl-[5px]  font-semibold">
+                                4.65
+                              </p>
+                              <p className="pl-[2px] md:pl-[5px] mb-[3.5px]">
+                                Out of 5
+                              </p>
+                            </div>
+                          </div>
+                          <a
+                            href="tel:9851201580"
+                            className="flex items-center justify-center bg-white gap-[8px] h-[40px] w-[160px] border border-[#2591B2] rounded-[6px] text-[#1D738D] mt-[5px]  text-[12px] md:text-[14px] lg:text-[16px]"
+                          >
+                            <BsFillTelephoneFill
+                              className="text-primary"
+                              size={20}
+                            />
+                            9851201580
+                          </a>
+                        </div>
 
                         <div className="flex flex-col mt-[11px]  md:gap-[14px] ">
                           <div className="flex items-center">
                             {childService && (
                               <div
-                                className="flex flex-col gap-2 pb-4 text-justify text-white listpoint"
+                                className="flex flex-col gap-2 pb-4 text-justify text-[12px] md:text-[14px] text-white listpoint"
                                 dangerouslySetInnerHTML={{
                                   __html: childService?.description,
                                 }}
@@ -213,18 +217,16 @@ const ChildService = ({ data }: any) => {
                         return (
                           <div
                             key={index}
-                            className="flex text-justify md:w-[66%] flex-col gap-2"
+                            className="flex lg:text-justify md:w-[66%] flex-col gap-2"
                             dangerouslySetInnerHTML={{ __html: val?.content }}
                           />
                         );
                       })}
                   </div>
-
-                  
                 </div>
               );
             })}
-            <Faqlist filteredId = {filteredId} />
+          <Faqlist filteredId={filteredId} />
         </div>
       ) : (
         <ComplainForm />

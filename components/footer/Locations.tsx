@@ -17,12 +17,15 @@ const Locations = async () => {
       {/* link of location */}
       <div className="">
         <div className=" font-Roboto font-normal text-[12px] md:text-base leading-[24px] text-[#FFF] pt-[8px]">
-          <div className="grid grid-cols-4 md:grid-cols-9 px-[10px] md:px-[0px] gap-[10px] my-2">
-            {allLocation.map((place:any) => (
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-9 px-[10px] md:px-[0px] gap-[10px] my-2">
+            {allLocation.map((place: any) => (
               <Link
                 key={place?.id}
                 href={{
-                  pathname: `/location/technicalsewa-service-center-${place?.location?.toLowerCase().split(" ").join("-")} `
+                  pathname: `/location/technicalsewa-service-center-${place?.location
+                    ?.toLowerCase()
+                    .split(" ")
+                    .join("-")} `,
                 }}
                 className="hover:underline whitespace-nowrap"
                 target="_blank"

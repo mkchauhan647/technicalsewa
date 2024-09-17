@@ -45,16 +45,16 @@ export default async function Home() {
     "@type": "LocalBusiness",
     name: "Technical Sewa",
     address: "Kumaripati, Lalitpur, Near Bluebird Collage, Nepal",
-    "aggregateRating": {
+    aggregateRating: {
       "@type": "AggregateRating",
-      "ratingValue": "5",
-      "ratingCount": "12",
-      "reviewCount": "4"
+      ratingValue: "5",
+      ratingCount: "12",
+      reviewCount: "4",
     },
-    "geo": {
+    geo: {
       "@type": "GeoCoordinates",
-      "latitude": "27.6701114",
-      "longitude": "85.3198698"
+      latitude: "27.6701114",
+      longitude: "85.3198698",
     },
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
@@ -77,7 +77,7 @@ export default async function Home() {
   };
 
   return (
-    <main>
+    <>
       <head>
         <script
           type="application/ld+json"
@@ -94,7 +94,7 @@ export default async function Home() {
       <FooterContact />
       <MidContent2 />
       <ClientsSlider clients={configlist} />
-    </main>
+    </>
   );
 }
 
