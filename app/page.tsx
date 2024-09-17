@@ -8,7 +8,7 @@ import MidContent2 from "@/features/home/MidContent2";
 import { fetchServerClient, getSEOByPageURL } from "@/lib/api";
 import ServicesSLiders from "@/features/home/servicesSliders";
 import ClientsSlider from "@/features/home/clients";
-import PopupBanner from "@/components/Modal/PopUp";
+import PopupBanner from "@/components/pop-up/PopUp";
 
 export default async function Home() {
   const result = await fetchServerClient(
@@ -84,7 +84,7 @@ export default async function Home() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
         />
       </head>
-      <PopupBanner />
+      <PopupBanner/>
       <HeroSection data={configlist} allBrands={allBrands} />
       <Categories allBrands={allBrands} />
       <ServicesSLiders brands={Array.from(brands)} data={allBrands} />
