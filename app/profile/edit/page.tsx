@@ -4,7 +4,7 @@ import EditProfile from "@/features/account/edit-profile";
 const page = async () => {
   return (
     <>
-      <Nav />
+      {/* <Nav /> */}
       <EditProfile />
       <Footer />
     </> 

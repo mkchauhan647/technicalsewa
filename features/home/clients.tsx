@@ -44,7 +44,7 @@ export default function ClientsSlider({clients}:any) {
   if (!showSlider) return <></>;
   return (
     <div className="flex flex-col items-center py-10">
-      <div className="text-primary font-bold text-2xl mb-[12px]">Clients</div>
+      <div className="text-primary font-bold text-2xl mb-[12px]">Our Clients</div>
 
       <div className="relative w-full md:max-w-[1280px] pb-2">
         <Swiper

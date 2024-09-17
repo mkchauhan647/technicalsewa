@@ -332,7 +332,7 @@ export default function EditProfile() {
               <button
                 disabled={loading}
                 type="submit"
-                className="px-4 py-2 font-bold rounded border transition-all duration-100 border-primary hover:text-white hover:!bg-primary"
+                className="px-4 py-2 max-w-max font-bold rounded border transition-all duration-100 border-primary hover:text-white hover:!bg-primary"
               >
                 Save
               </button>
