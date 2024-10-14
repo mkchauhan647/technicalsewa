@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import Image from 'next/image';
 interface Banner {
   id: string;
   image_type_code: string;
@@ -74,9 +74,11 @@ const PopupBanner: React.FC = () => {
         >
           &times;
         </button>
-        <img
+        <Image
           src={popupBanner.image_url}
           alt={popupBanner.alt}
+          width={500}
+          height={500}
           className="  w-full h-[400px] lg:h-[550px] object-contain"
           />
         <p className="mt-2 text-center text-gray-700">{popupBanner.category}</p>
