@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import CategoryCard from "./CategoryCard";
 import axios from "axios";
-import { fetchServerClient } from "@/lib/api";
+// import { fetchServerClient } from "@/lib/api";
 
 const Categories = ({ allBrands }: any) => {
   const [data, setData] = useState([]);

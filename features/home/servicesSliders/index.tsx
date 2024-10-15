@@ -42,6 +42,8 @@ export default function ServicesSLiders({
   const warrantyRepair = brands?.find((b: any) => b?.id === 61);
   const medicalEquipmentRepair = brands?.find((b: any) => b?.id === 67);
 
+  console.log("appliancesServices", appliancesServices);
+
   return (
     <>
       {/* {[
