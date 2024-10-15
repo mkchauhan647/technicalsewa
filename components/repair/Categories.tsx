@@ -27,9 +27,10 @@ const Categories = ({ allBrands }: any) => {
     const fetchBrands = async () => {
       if (!brands) {
         try {
-          const result = await fetchServerClient(
-            `techsewa/masterconfig/publicmasterconfig/getSliderListpop1`
+          const response = await axios.get(
+            `https://www.technicalsewa.com/techsewa/masterconfig/publicmasterconfig/getSliderListpop1`
           );
+          const result = response?.data;
           let fetchNewBrands = result?.brands;
           fetchNewBrands?.sort((a: any, b: any) => +a?.ordering - +b?.ordering);
           setBrands(fetchNewBrands);
