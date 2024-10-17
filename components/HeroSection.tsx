@@ -3,7 +3,7 @@ import React from "react";
 import Search from "./Search";
 import HeroCarousel from "./HeroCarousel";
 
-const HeroSection = async ({ data }: any) => {
+const HeroSection = async ({ data,allBrands }: any) => {
   const banners = data?.brands?.filter(
     (item: any) => item.image_type === "banner"
   );
@@ -51,7 +51,7 @@ const HeroSection = async ({ data }: any) => {
                   Kathmandu
                 </span>
               </div> */}
-              <Search />
+              <Search data={allBrands} />
             </div>
           </div>
         </div>

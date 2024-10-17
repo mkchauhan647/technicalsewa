@@ -28,7 +28,7 @@ const Faqlist = ({ filteredId }: any) => {
 
   useEffect(() => {
     FAQ();
-  }, [filteredId]);
+  }, []);
 
   return (
     <div className="mb-[50px] max-w-[1280px] mx-auto px-[2px]">

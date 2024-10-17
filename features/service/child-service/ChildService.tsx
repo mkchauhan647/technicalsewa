@@ -50,6 +50,9 @@ const ChildService = ({ data }: any) => {
   const serviceDataFetched = async () => {
     const formData = new FormData();
     formData.append("brand_id", serviceCategoryId);
+    if (serviceCategoryId == undefined || serviceCategoryId == null) {
+      return;
+    }
     const result = await axios.post(
       `${baseUrl}/techsewa/publicControl/getServicesByProductCategory`,
       formData

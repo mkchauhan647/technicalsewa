@@ -5,7 +5,7 @@ import Autocomplete from "@mui/material/Autocomplete";
 import { TextField, useMediaQuery } from "@mui/material";
 import { useRouter } from "next/navigation";
 
-const Search = ({ isTopNav }: { isTopNav?: boolean }) => {
+const Search = ({ isTopNav,data }: { isTopNav?: boolean , data?:any}) => {
   const [searchText, setSearchText] = useState("");
   const [services, setServices] = useState([]);
   const [suggestions, setSuggestions] = useState([{ label: "", id: "" }]);
@@ -14,7 +14,14 @@ const Search = ({ isTopNav }: { isTopNav?: boolean }) => {
   const isMobile = useMediaQuery("(max-width: 600px)");
 
   useEffect(() => {
-    fetchServices();
+    if (data) {
+      // fetchServices();
+      // console.log("data", data);
+      setServices(data);
+    } else {
+    // console.log("fetching services",services);
+      fetchServices();
+    }
   }, []);
 
   const fetchServices = async () => {
@@ -24,6 +31,7 @@ const Search = ({ isTopNav }: { isTopNav?: boolean }) => {
         `${baseUrl}/techsewa/masterconfig/publicmasterconfig/getSliderListpop1`
       );
       const data = await response.json();
+      // console.log("data", data);
       setServices(data.brands);
       setLoading(false);
     } catch (error) {

@@ -3,14 +3,21 @@
 import React, { useEffect, useState } from "react";
 import CategoryCard from "./CategoryCard";
 import axios from "axios";
-import { fetchServerClient } from "@/lib/api";
+// import { fetchServerClient } from "@/lib/api";
 
 const Categories = ({ allBrands }: any) => {
   const [data, setData] = useState([]);
   const [brands, setBrands] = useState(allBrands);
 
+  console.log("allbrands", allBrands);
+
   useEffect(() => {
+
     const fetchData = async () => {
+      console.log("data", data);
+      if (data.length > 0) {
+        return;
+      }
       try {
         const res = await axios.get(
           "https://www.technicalsewa.com/techsewa/masterconfig/publicmasterconfig/getServiceList"
@@ -25,7 +32,8 @@ const Categories = ({ allBrands }: any) => {
     };
 
     const fetchBrands = async () => {
-      if (!brands) {
+      console.log("brands", allBrands);
+      if (!brands && allBrands === undefined) {
         try {
           const response = await axios.get(
             `https://www.technicalsewa.com/techsewa/masterconfig/publicmasterconfig/getSliderListpop1`

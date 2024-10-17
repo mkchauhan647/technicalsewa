@@ -30,7 +30,7 @@ export default function ServiceReviews({ productId }: { productId: number }) {
   };
   useEffect(() => {
     getReviews();
-  }, [productId, page]);
+  }, []);
 
   return (
     <div className="max-w-[1280px] mx-auto pb-10">
